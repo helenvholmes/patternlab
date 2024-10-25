@@ -8,6 +8,10 @@ Currently, this repo is in Prerelease. When it is released, this project will ad
 
 ## Prerelease
 
+### Updates
+
+- Updates Storybook to latest version.
+
 ## 3.4.1 (October 24, 2024)
 
 ### Adds
