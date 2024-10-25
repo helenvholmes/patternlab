@@ -131,6 +131,12 @@ export const Hero: ChakraComponent<
         />
       );
 
+      // Using the custom Image component's props to check requirements.
+      if (imageProps.component) {
+        const { src, alt } = imageProps.component.props;
+        Object.assign(imageProps, { src, alt });
+      }
+
       if (imageProps.src && !imageProps.alt) {
         console.warn(
           `NYPL Reservoir Hero: The "imageProps.src" prop was passed but the "imageProps.alt"` +

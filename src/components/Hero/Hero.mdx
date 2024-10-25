@@ -16,10 +16,10 @@ import Link from "../Link/Link";
 
 # Hero
 
-| Component Version | DS Version   |
-| ----------------- | ------------ |
-| Added             | `0.2.0`      |
-| Latest            | `Prerelease` |
+| Component Version | DS Version |
+| ----------------- | ---------- |
+| Added             | `0.2.0`    |
+| Latest            | `3.4.1`    |
 
 ## Table of Contents
 
@@ -484,47 +484,6 @@ should not be used at the same time.
 `}
   language="jsx"
 />
-
-## Custom Image Component
-
-Instead of passing a path for the `imageProps.src` prop, you can pass a custom image component using the `imageProps.component` prop.
-Note that this only impacts the "campaign" variant, and the custom component will only replace the foreground image, since the background image is set using `background-image`.
-
-<Source
-  code={`
-import Image as NextImage from "next/image";
-
-const CampaignCustomImageExample = () => {
-return (
-
-  <Hero
-    heroType="campaign"
-    heading={
-      <Heading
-        level="h1"
-        id="campaign-custom-image"
-        text="Hero Campaign with Custom Image"
-      />
-    }
-    imageProps={{
-      component: (
-        <NextImage
-          alt={"Alt text"}
-          fill
-          src={"/image.jpg""}
-          onError={(\_event) => {
-          handleError(\_event);
-          }}
-        />
-      ),
-    }}
-    />
-  )
-`}
-  language="jsx"
-/>
-
-<Canvas of={HeroStories.HeroWithCustomImage} />
 
 ## Fallback Campaign Image
 
