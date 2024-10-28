@@ -16,10 +16,11 @@ interface BaseStyleProps extends StyleFunctionProps {
 }
 
 const CellBorderColorStyles = () => {
-  const colorValues = useColorModeValue("ui.gray.semi-medium", {
-    base: "ui.gray.xx-dark",
-    md: "dark.ui.border.default",
-  });
+  // Using CSS vars here because of how the values are used in the styles
+  const colorValues = useColorModeValue(
+    "var(--nypl-colors-ui-gray-semi-medium)",
+    "var(--nypl-colors-ui-gray-x-dark)"
+  );
   return colorValues;
 };
 export const fixedColumnStyles = (
@@ -43,9 +44,14 @@ export const fixedColumnStyles = (
   position: useRowHeaders ? "sticky" : undefined,
   zIndex: "5",
   _dark: {
-    backgroundColor: useRowHeaders ? "dark.ui.bg.default" : undefined,
+    backgroundColor: useRowHeaders ? "dark.ui.bg.hover" : undefined,
     borderRight: useRowHeaders
-      ? "2px solid var(--nypl-colors-dark-ui-border-default)"
+      ? isScrollable
+        ? "1px solid var(--nypl-colors-ui-gray-x-dark)"
+        : {
+            base: undefined,
+            md: "1px solid var(--nypl-colors-ui-gray-x-dark)",
+          }
       : undefined,
   },
 });
@@ -105,7 +111,13 @@ export const baseCellStyles = (
   lineHeight: 1.5,
   paddingBottom: isScrollable ? "s" : { base: "0", md: "s" },
   paddingEnd: "s",
-  paddingStart: columnHeadersBackgroundColor ? { base: "0", md: "s" } : "s",
+  paddingStart: columnHeadersBackgroundColor
+    ? isScrollable
+      ? "s"
+      : { base: "0", md: "s" }
+    : isScrollable
+    ? "s"
+    : { base: "0", md: "s" },
   paddingTop: isScrollable ? "s" : { base: "0", md: "s" },
   _first: {
     borderBottom: showRowDividers
@@ -116,6 +128,16 @@ export const baseCellStyles = (
             md: "1px solid var(--nypl-colors-ui-gray-semi-medium)",
           }
       : "none",
+    _dark: {
+      borderBottom: showRowDividers
+        ? isScrollable
+          ? "1px solid var(--nypl-colors-ui-gray-x-dark)"
+          : {
+              base: "1px solid var(--nypl-colors-ui-gray-x-dark)",
+              md: "1px solid var(--nypl-colors-ui-gray-x-dark)",
+            }
+        : "none",
+    },
   },
   _last: {
     borderBottom: showRowDividers ? "1px solid" : "none",
@@ -191,9 +213,9 @@ export const baseTDStyles = (
     borderBottom: showRowDividers
       ? isScrollable
         ? "1px solid"
-        : { base: 0, md: "1px solid" }
-      : { base: 0, md: undefined },
-    borderColor: `${CellBorderColorStyles()} !important`,
+        : { base: 0, md: `1px solid ${CellBorderColorStyles()}` }
+      : { base: 0, md: "1px solid" },
+    borderColor: CellBorderColorStyles(),
   },
 });
 export const baseStyle = definePartsStyle(
@@ -212,13 +234,25 @@ export const baseStyle = definePartsStyle(
       whiteSpace: "wrap",
 
       /** Show shadow to scroll */
-      background:
-        "linear-gradient(to right, white 30%, rgba(255,255,255,0)), linear-gradient(to right, rgba(255,255,255,0), white 70%) 0 100%, radial-gradient(farthest-side at 0% 50%, rgba(0,0,0,.2), rgba(0,0,0,0)), radial-gradient(farthest-side at 100% 50%, rgba(0,0,0,.2), rgba(0,0,0,0)) 0 100%",
+      background: isScrollable
+        ? "linear-gradient(to right, white 30%, rgba(255,255,255,0)), linear-gradient(to right, rgba(255,255,255,0), white 70%) 0 100%, radial-gradient(farthest-side at 0% 50%, rgba(0,0,0,.2), rgba(0,0,0,0)), radial-gradient(farthest-side at 100% 50%, rgba(0,0,0,.2), rgba(0,0,0,0)) 0 100%"
+        : null,
       backgroundRepeat: "no-repeat",
-      backgroundColor: "white",
+      backgroundColor: "ui.white",
       backgroundSize: "40px 100%, 40px 100%, 14px 100%, 14px 100%",
       backgroundPosition: "0 0, 100%, 0 0, 100%",
       backgroundAttachment: "local, local, scroll, scroll",
+      _dark: {
+        /** Show shadow to scroll */
+        background: isScrollable
+          ? "linear-gradient(to right, var(--nypl-colors-dark-ui-bg-default) 30%, rgba(255,255,255,0)), linear-gradient(to right, rgba(255,255,255,0), var(--nypl-colors-dark-ui-bg-default) 70%) 0 100%, radial-gradient(farthest-side at 0% 50%, rgba(0,0,0,.4), rgba(0,0,0,0)), radial-gradient(farthest-side at 100% 50%, rgba(0,0,0,.4), rgba(0,0,0,0)) 0 100%"
+          : null,
+        backgroundRepeat: "no-repeat",
+        backgroundColor: "dark.ui.bg.default",
+        backgroundSize: "40px 100%, 40px 100%, 14px 100%, 14px 100%",
+        backgroundPosition: "0 0, 100%, 0 0, 100%",
+        backgroundAttachment: "local, local, scroll, scroll",
+      },
     },
     /* The actual table element */
     innerTable: {
@@ -247,9 +281,6 @@ export const baseStyle = definePartsStyle(
           textTransform: "capitalize",
           verticalAlign: "top",
           _dark: {
-            backgroundColor: useRowHeaders
-              ? { base: "dark.ui.bg.default", md: "unset" }
-              : undefined,
             color: "dark.ui.typography.heading",
           },
         },
@@ -268,6 +299,13 @@ export const baseStyle = definePartsStyle(
               : useRowHeaders
               ? "ui.gray.x-light-cool"
               : "ui.white",
+            _dark: {
+              backgroundColor: columnHeadersBackgroundColor
+                ? columnHeadersBackgroundColor
+                : useRowHeaders
+                ? "dark.ui.bg.hover"
+                : "transparent",
+            },
           },
         },
       },
