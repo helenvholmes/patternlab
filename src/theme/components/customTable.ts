@@ -111,31 +111,15 @@ export const baseCellStyles = (
   lineHeight: 1.5,
   paddingBottom: isScrollable ? "s" : { base: "0", md: "s" },
   paddingEnd: "s",
-  paddingStart: columnHeadersBackgroundColor
-    ? isScrollable
-      ? "s"
-      : { base: "0", md: "s" }
-    : isScrollable
-    ? "s"
-    : { base: "0", md: "s" },
+  paddingStart: isScrollable ? "s" : { base: "0", md: "s" },
   paddingTop: isScrollable ? "s" : { base: "0", md: "s" },
   _first: {
     borderBottom: showRowDividers
-      ? isScrollable
-        ? "1px solid var(--nypl-colors-ui-gray-semi-medium)"
-        : {
-            base: "1px solid var(--nypl-colors-ui-gray-semi-medium)",
-            md: "1px solid var(--nypl-colors-ui-gray-semi-medium)",
-          }
+      ? "1px solid var(--nypl-colors-ui-gray-semi-medium)"
       : "none",
     _dark: {
       borderBottom: showRowDividers
-        ? isScrollable
-          ? "1px solid var(--nypl-colors-ui-gray-x-dark)"
-          : {
-              base: "1px solid var(--nypl-colors-ui-gray-x-dark)",
-              md: "1px solid var(--nypl-colors-ui-gray-x-dark)",
-            }
+        ? "1px solid var(--nypl-colors-ui-gray-x-dark)"
         : "none",
     },
   },
@@ -212,10 +196,9 @@ export const baseTDStyles = (
   _last: {
     borderBottom: showRowDividers
       ? isScrollable
-        ? "1px solid"
+        ? `1px solid ${CellBorderColorStyles()}`
         : { base: 0, md: `1px solid ${CellBorderColorStyles()}` }
-      : { base: 0, md: "1px solid" },
-    borderColor: CellBorderColorStyles(),
+      : undefined,
   },
 });
 export const baseStyle = definePartsStyle(
