@@ -1,0 +1,36 @@
+import { ArgTypes, Canvas, Description, Meta, Source } from "@storybook/blocks";
+
+import * as SubNavStories from "./SubNav.stories";
+
+import Link from "../Link/Link";
+
+<Meta of={SubNavStories} />
+
+# SubNav
+
+| Component Version | DS Version |
+| ----------------- | ---------- |
+| Added             | `3.4.0`   |
+| Latest            | `3.4.0`   |
+
+
+- {<Link href="#overview" target="_self">Overview</Link>}
+- {<Link href="#component-props" target="_self">Component Props</Link>}
+
+
+## Overview
+
+<Description of={SubNavStories} />
+
+## Component Props
+
+<Canvas of={SubNavStories.WithControls} />
+
+<ArgTypes of={SubNavStories.WithControls} />
+
+## Accessibility
+
+
+<Canvas of={SubNavStories.WithSelectedItem} />
+
+<Canvas of={SubNavStories.WithBorderLine} />

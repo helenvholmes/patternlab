@@ -170,6 +170,8 @@ export type {
   ListItemsData,
   MenuProps,
 } from "./components/Menu/Menu";
+
+export { default as SubNav } from "./components/SubNav/SubNav";
 export { ModalTrigger, useModal } from "./components/Modal/Modal";
 export type {
   BaseModalProps,
