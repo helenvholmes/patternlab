@@ -68,6 +68,7 @@ import socialTikTok from "../../../icons/svg/social-tiktok.svg";
 import socialTumblr from "../../../icons/svg/social-tumblr.svg";
 import socialTwitter from "../../../icons/svg/social-twitter.svg";
 import socialVimeo from "../../../icons/svg/social-vimeo.svg";
+import socialX from "../../../icons/svg/social-x.svg";
 import socialYoutube from "../../../icons/svg/social-youtube.svg";
 import speakerNotes from "../../../icons/svg/speaker-notes.svg";
 import sunFull from "../../../icons/svg/sun-full.svg";
@@ -146,6 +147,7 @@ export default {
   socialTumblr,
   socialTwitter,
   socialVimeo,
+  socialX,
   socialYoutube,
   speakerNotes,
   sunFull,

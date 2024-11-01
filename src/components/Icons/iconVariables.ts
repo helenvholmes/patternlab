@@ -177,6 +177,7 @@ export const iconNamesArray = [
   "socialTumblr",
   "socialTwitter",
   "socialVimeo",
+  "socialX",
   "socialYoutube",
   "speakerNotes",
   "sunFull",
