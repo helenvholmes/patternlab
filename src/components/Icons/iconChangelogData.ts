@@ -14,7 +14,7 @@ export const changelogData: ChangelogData[] = [
     version: "Prerelease",
     type: "Update",
     affects: ["Functionality"],
-    notes: ["Added the `socialX` icon."],
+    notes: ["Added the `contentFilterList` and `socialX` icons."],
   },
   {
     date: "2024-10-24",
