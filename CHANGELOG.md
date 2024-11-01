@@ -8,6 +8,10 @@ Currently, this repo is in Prerelease. When it is released, this project will ad
 
 ## Prerelease
 
+### Adds
+
+- Adds the `"contentFilterRelease"` option to the `Icon` component.
+
 ### Updates
 
 - Updates Storybook and related dependencies to version 8.3.6.
