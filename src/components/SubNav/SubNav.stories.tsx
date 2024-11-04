@@ -69,6 +69,12 @@ export const WithControls: Story = {
             buttonType="text"
           >
             Label Text 3
+            <Icon
+              name="legacyAccountFilled"
+              size="small"
+              className="right"
+              align="right"
+            />
           </SubNavButton>
           <SubNavLink
             id="primary-sub-nav-link-1"
