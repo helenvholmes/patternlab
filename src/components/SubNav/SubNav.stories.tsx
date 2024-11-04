@@ -108,6 +108,7 @@ export const WithControls: Story = {
         buttonType="text"
       >
         Label Text 3
+        <Icon name="legacyAccountFilled" size="small" className="right" align="right" />
       </SubNavButton>
 
       <SubNavLink
@@ -117,24 +118,6 @@ export const WithControls: Story = {
         actionBackgroundColor={actionBackgroundColor}
       >
         Label Text 1
-        <Icon name="legacyAccountFilled" size="small" className="right" align="right" />
-      </SubNavLink>
-      <SubNavLink
-        id="sub-nav-link-2"
-        screenreaderOnlyText="of my account"
-        highlightColor={highlightColor}
-        actionBackgroundColor={actionBackgroundColor}
-      >
-        Label Text 2
-        <Icon name="legacyAccountFilled" size="small" className="right" align="right" />
-      </SubNavLink>
-      <SubNavLink
-        id="sub-nav-link-3"
-        screenreaderOnlyText="of my account"
-        highlightColor={highlightColor}
-        actionBackgroundColor={actionBackgroundColor}
-      >
-        Label Text 3
         <Icon name="legacyAccountFilled" size="small" className="right" align="right" />
       </SubNavLink>
     </>
@@ -302,26 +285,9 @@ export const Outline: Story = {
           screenreaderOnlyText="of my account"
           highlightColor={highlightColor}
           actionBackgroundColor={actionBackgroundColor}
+          href="#link"
         >
           Label Text 4
-          <Icon name="legacyAccountFilled" size="small" className="right" align="right" />
-        </SubNavLink>
-        <SubNavLink
-          id="primary-sub-nav-link-2"
-          screenreaderOnlyText="of my account"
-          highlightColor={highlightColor}
-          actionBackgroundColor={actionBackgroundColor}
-        >
-          Label Text 5
-          <Icon name="legacyAccountFilled" size="small" className="right" align="right" />
-        </SubNavLink>
-        <SubNavLink
-          id="primary-sub-nav-link-3"
-          screenreaderOnlyText="of my account"
-          highlightColor={highlightColor}
-          actionBackgroundColor={actionBackgroundColor}
-        >
-          Label Text 6
           <Icon name="legacyAccountFilled" size="small" className="right" align="right" />
         </SubNavLink>
       </>

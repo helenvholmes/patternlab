@@ -72,13 +72,29 @@
      * Use SubNavButton and SubNavLink components, which mirror 
      * the DS Button and Link functionalities, plus the isOutlined prop.
     */
-    primaryActions: React.ReactElement;
+    primaryActions: ({
+      highlightColor,
+      actionBackgroundColor,
+      selectedItem,
+    }: {
+      highlightColor?: string;
+      actionBackgroundColor?: string;
+      selectedItem?: string;
+    }) => React.ReactNode;
     /**
      * Secondary actions displayed on the right side of the SubNav.
      * Use SubNavButton and SubNavLink components, offering additional 
      * contextual options related to the primary content.
      */
-    secondaryActions?: React.ReactElement;
+    secondaryActions: ({
+      highlightColor,
+      actionBackgroundColor,
+      selectedItem,
+    }: {
+      highlightColor?: string;
+      actionBackgroundColor?: string;
+      selectedItem?: string;
+    }) => React.ReactNode;
     /** 
      * The background color to be applied to the hover and active states 
      * of the SubNavLink and SubNavButton components. 
@@ -132,13 +148,12 @@
         highlightColor: highlightColor,
         isOutlined: isOutlined,
       });
-
       return (
         <Link
           key={id}
           id={id}
-          target="_blank"
           type={type}
+          href={"#link"}
           screenreaderOnlyText={id}
           __css={{
             ...styles.a,
@@ -162,8 +177,6 @@
       (props) => {
         const {
           className,
-          children,
-          id,
           actionBackgroundColor,
           highlightColor,
           selectedItem,
@@ -229,16 +242,16 @@
 
         return (
           <>
-            <Flex alignItems="baseline" className={className}>
-              <HStack sx={styles.scrollableButtons} ref={scrollableRef}>
-                {primaryActions({ highlightColor, actionBackgroundColor, selectedItem })}
+            <Flex alignItems="baseline" className={className} gap="1rem">
+              <HStack sx={{  ...styles.scrollableButtons, ...styles.primaryActions }} ref={scrollableRef}>
+                {primaryActions({highlightColor, actionBackgroundColor, selectedItem})}
                 {showRightFade && (
                   <div style={fadeEffectStyles(styles.fadeEffect)} />
                 )}
               </HStack>
               <Spacer />  
-              <HStack sx={styles.secondaryActions}>
-                {secondaryActions({ highlightColor, actionBackgroundColor, selectedItem })}
+              <HStack sx={{ ...styles.scrollableButtons, ...styles.secondaryActions}}>
+                {secondaryActions({highlightColor, actionBackgroundColor, selectedItem})}
               </HStack>
             </Flex>
             <Box id="suv-nav-border" />

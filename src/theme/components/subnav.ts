@@ -10,6 +10,13 @@ interface SubNavStyleProps extends StyleFunctionProps {
   isOutlined: boolean;
 }
 
+const getSvgStyles = (highlightColor, backgroundColor, isPrimary) => ({
+  fill: highlightColor ? `${highlightColor} !important` : (isPrimary ? "ui.black !important" : "ui.link.primary !important"),
+  _dark: {
+    fill: backgroundColor ? `${backgroundColor} !important` : (isPrimary ? "ui.white !important" : "ui.link.primary-05 !important"),
+  },
+});
+
 const SubNav = defineMultiStyleConfig({
   baseStyle: definePartsStyle(
     ({
@@ -36,82 +43,93 @@ const SubNav = defineMultiStyleConfig({
           border: isOutlined !== undefined? "1px solid" : "none",
           borderRadius: "6px",
         },
+        secondaryActions: {
+          display: "flex",
+          whiteSpace: "nowrap",
+          position: "relative",
+          svg: getSvgStyles(highlightColor, backgroundColor, false),
+          _hover: {
+            svg: getSvgStyles(highlightColor, backgroundColor, false),
+          },
+          button: {
+            color: getSvgStyles(highlightColor, backgroundColor, false).fill,
+          },
+          a: {
+            color: getSvgStyles(highlightColor, backgroundColor, false).fill,
+          },
+        },
+        primaryActions: {
+          button: {
+            _hover: {
+              svg: getSvgStyles(highlightColor, backgroundColor, true),
+            },
+            _active: {
+              svg: getSvgStyles(highlightColor, backgroundColor, true),
+            },
+          },
+          a: {
+            _hover: {
+              svg: getSvgStyles(highlightColor, backgroundColor, true),
+            },
+            _active: {
+              svg: getSvgStyles(highlightColor, backgroundColor, true),
+            },
+          },
+        },
         button: {
           color: "ui.typography.body",
           padding: "4px 16px",
           gap: "4px",
-          margin: 0,
+          marginY: "4px",
+          width: "140px",
+          minWidth: "140px",
           transition: "background-color 0.2s, color 0.2s",
-          width: "auto",
           lineHeight: "normal",
           boxSizing: "border-box",
           _hover: {
-            padding: "4px 16px",
-            color: highlightColor !== undefined ? `${highlightColor}` : "ui.typography.body",
-            backgroundColor: backgroundColor !== undefined? backgroundColor : "ui.link.primary-05",
             svg: {
-              fill: highlightColor !== undefined ? `${highlightColor}` : "ui.black",
+              fill: highlightColor ? `${highlightColor} !important` : "ui.black !important",
               _dark: {
-                fill: backgroundColor !== undefined ? `${backgroundColor}` : "ui.white",
+                fill: backgroundColor ? `${backgroundColor} !important` : "ui.white !important",
               },
             },
+            color: highlightColor !== undefined ? `${highlightColor}` : "ui.typography.body",
+            backgroundColor: backgroundColor !== undefined? backgroundColor : "ui.link.primary-05",
           },
           _active: {
-            padding: "4px 16px",
+            svg: {
+              fill: highlightColor ? `${highlightColor} !important` : "ui.link.primary !important",
+              _dark: {
+                fill: backgroundColor ? `${backgroundColor} !important` : "ui.link.primary-05 !important",
+              },
+            },
+            fontWeight: "700",
             color: highlightColor !== undefined ? `${highlightColor}` : "ui.link.primary",
             backgroundColor: backgroundColor !== undefined? `${backgroundColor}` : "ui.link.primary-05",
             bold: "bold",
             display: "inline-block",
-            svg: {
-              fill: highlightColor !== undefined ? `${highlightColor}` : "ui.link.primary !important",
-              _dark: {
-                fill: backgroundColor !== undefined ? `${backgroundColor}` : "ui.link.primary-05 !important",
-              },
-            },
           },
         },
         a: {
           textDecoration: "none",
-          color: "ui.typography.body",
-          padding: "3px 14px",
+          color: "ui.typography.body !important",
+          padding: "4px 16px",
           gap: "4px",
+          marginY: "4px",
+          width: "140px",
+          minWidth: "140px",
           _hover: {
-            color: highlightColor !== undefined ? `${highlightColor}` : "ui.typography.body",
-            background: backgroundColor !== undefined ? `${backgroundColor}` : "ui.link.primary-05",
+            color: highlightColor !== undefined ? `${highlightColor} !important` : "ui.typography.body",
+            background: backgroundColor !== undefined ? `${backgroundColor} !important` : "ui.link.primary-05",
             textDecoration: "none",
-            svg: {
-              fill: highlightColor !== undefined ? `${highlightColor}` : "ui.black",
-              _dark: {
-                fill: backgroundColor !== undefined ? `${backgroundColor}` : "ui.white",
-              },
-            },
           },
           _active: {
-            padding: "3px 14px",
-            color: highlightColor !== undefined ? `${highlightColor}` : "ui.link.primary",
-            background: backgroundColor !== undefined ? `${backgroundColor}` : "ui.link.primary-05",
+            fontWeight: "700",
+            color: highlightColor !== undefined ? `${highlightColor} !important` : "ui.link.primary !important",
+            background: backgroundColor !== undefined ? `${backgroundColor} !important` : "ui.link.primary-05 !important",
             bold: "bold",
             display: "inline-block",
             textDecoration: "none",
-            svg: {
-              transition: "all 0.1s ease",
-              transform: "scale(0.95)",
-              fill: highlightColor !== undefined ? `${highlightColor} !important` : "ui.link.primary !important",
-              _dark: {
-                fill: backgroundColor !== undefined ? `${backgroundColor} !important` : "ui.link.primary-05 !important"
-              },
-            },
-          },
-        },
-        secondaryIcons: {
-          color: highlightColor !== undefined ? `${highlightColor}` : "ui.link.primary !important",
-          svg: {
-            transition: "all 0.1s ease",
-            transform: "scale(0.95)",
-            fill: highlightColor !== undefined ? `${highlightColor}` : "ui.link.primary !important",
-            _dark: {
-              fill: backgroundColor !== undefined ? `${backgroundColor}` : "ui.link.primary-05 !important",
-            },
           },
         },
         scrollableButtons: {
@@ -129,18 +147,6 @@ const SubNav = defineMultiStyleConfig({
           pointerEvents: "none",
           zIndex: 1,
         },
-        secondaryActions: {
-          display: "flex",
-          overflowX: "auto",
-          whiteSpace: "nowrap",
-          position: "relative",
-          button: {
-            color: highlightColor !== undefined ? `${highlightColor}` : "ui.link.primary !important",
-          },
-          a: {
-            color: highlightColor !== undefined ? `${highlightColor}` : "ui.link.primary !important",
-          },
-        }
       }
     }
   ),
