@@ -11,36 +11,47 @@ interface SubNavStyleProps extends StyleFunctionProps {
 }
 
 const getSvgStyles = (highlightColor, backgroundColor, isPrimary) => ({
-  fill: highlightColor ? `${highlightColor} !important` : (isPrimary ? "ui.black !important" : "ui.link.primary !important"),
+  fill: highlightColor
+    ? `${highlightColor} !important`
+    : isPrimary
+    ? "ui.black !important"
+    : "ui.link.primary !important",
   _dark: {
-    fill: backgroundColor ? `${backgroundColor} !important` : (isPrimary ? "ui.white !important" : "ui.link.primary-05 !important"),
+    fill: backgroundColor
+      ? `${backgroundColor} !important`
+      : isPrimary
+      ? "ui.white !important"
+      : "ui.link.primary-05 !important",
   },
 });
 
 const SubNav = defineMultiStyleConfig({
   baseStyle: definePartsStyle(
-    ({
-      backgroundColor,
-      highlightColor,
-      isOutlined,
-    }: SubNavStyleProps) => {
-      
+    ({ backgroundColor, highlightColor, isOutlined }: SubNavStyleProps) => {
       return {
-        base: {
-        },
+        base: {},
         selectedItem: {
-          color: highlightColor !== undefined ? `${highlightColor}` : "ui.link.primary !important",
+          color:
+            highlightColor !== undefined
+              ? `${highlightColor}`
+              : "ui.link.primary !important",
           fontWeight: "700",
-          backgroundColor: backgroundColor !== undefined? `${backgroundColor}` : "ui.link.primary-05",
+          backgroundColor:
+            backgroundColor !== undefined
+              ? `${backgroundColor}`
+              : "ui.link.primary-05",
         },
         borderLine: {
           borderTop: "1px solid",
           width: "100%",
           marginTop: "3px",
-          color: highlightColor !== undefined ? `${highlightColor}` : "ui.border.default",
+          color:
+            highlightColor !== undefined
+              ? `${highlightColor}`
+              : "ui.border.default",
         },
         outLine: {
-          border: isOutlined !== undefined? "1px solid" : "none",
+          border: isOutlined !== undefined ? "1px solid" : "none",
           borderRadius: "6px",
         },
         secondaryActions: {
@@ -88,24 +99,44 @@ const SubNav = defineMultiStyleConfig({
           boxSizing: "border-box",
           _hover: {
             svg: {
-              fill: highlightColor ? `${highlightColor} !important` : "ui.black !important",
+              fill: highlightColor
+                ? `${highlightColor} !important`
+                : "ui.black !important",
               _dark: {
-                fill: backgroundColor ? `${backgroundColor} !important` : "ui.white !important",
+                fill: backgroundColor
+                  ? `${backgroundColor} !important`
+                  : "ui.white !important",
               },
             },
-            color: highlightColor !== undefined ? `${highlightColor}` : "ui.typography.body",
-            backgroundColor: backgroundColor !== undefined? backgroundColor : "ui.link.primary-05",
+            color:
+              highlightColor !== undefined
+                ? `${highlightColor}`
+                : "ui.typography.body",
+            backgroundColor:
+              backgroundColor !== undefined
+                ? backgroundColor
+                : "ui.link.primary-05",
           },
           _active: {
             svg: {
-              fill: highlightColor ? `${highlightColor} !important` : "ui.link.primary !important",
+              fill: highlightColor
+                ? `${highlightColor} !important`
+                : "ui.link.primary !important",
               _dark: {
-                fill: backgroundColor ? `${backgroundColor} !important` : "ui.link.primary-05 !important",
+                fill: backgroundColor
+                  ? `${backgroundColor} !important`
+                  : "ui.link.primary-05 !important",
               },
             },
             fontWeight: "700",
-            color: highlightColor !== undefined ? `${highlightColor}` : "ui.link.primary",
-            backgroundColor: backgroundColor !== undefined? `${backgroundColor}` : "ui.link.primary-05",
+            color:
+              highlightColor !== undefined
+                ? `${highlightColor}`
+                : "ui.link.primary",
+            backgroundColor:
+              backgroundColor !== undefined
+                ? `${backgroundColor}`
+                : "ui.link.primary-05",
             bold: "bold",
             display: "inline-block",
           },
@@ -119,14 +150,26 @@ const SubNav = defineMultiStyleConfig({
           width: "140px",
           minWidth: "140px",
           _hover: {
-            color: highlightColor !== undefined ? `${highlightColor} !important` : "ui.typography.body",
-            background: backgroundColor !== undefined ? `${backgroundColor} !important` : "ui.link.primary-05",
+            color:
+              highlightColor !== undefined
+                ? `${highlightColor} !important`
+                : "ui.typography.body",
+            background:
+              backgroundColor !== undefined
+                ? `${backgroundColor} !important`
+                : "ui.link.primary-05",
             textDecoration: "none",
           },
           _active: {
             fontWeight: "700",
-            color: highlightColor !== undefined ? `${highlightColor} !important` : "ui.link.primary !important",
-            background: backgroundColor !== undefined ? `${backgroundColor} !important` : "ui.link.primary-05 !important",
+            color:
+              highlightColor !== undefined
+                ? `${highlightColor} !important`
+                : "ui.link.primary !important",
+            background:
+              backgroundColor !== undefined
+                ? `${backgroundColor} !important`
+                : "ui.link.primary-05 !important",
             bold: "bold",
             display: "inline-block",
             textDecoration: "none",
@@ -143,11 +186,12 @@ const SubNav = defineMultiStyleConfig({
           right: 0,
           height: "100%",
           width: "50px",
-          background: "linear-gradient(to left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%)",
+          background:
+            "linear-gradient(to left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%)",
           pointerEvents: "none",
           zIndex: 1,
         },
-      }
+      };
     }
   ),
 });
