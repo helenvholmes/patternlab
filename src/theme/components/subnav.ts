@@ -81,9 +81,13 @@ const SubNav = defineMultiStyleConfig({
           boxSizing: "border-box",
           _hover: {
             svg: {
-              fill: highlightColor ? `${highlightColor} !important` : "ui.black !important",
+              fill: highlightColor
+                ? `${highlightColor} !important`
+                : "ui.black !important",
               _dark: {
-                fill: backgroundColor ? `${backgroundColor} !important` : "ui.white !important",
+                fill: backgroundColor
+                  ? `${backgroundColor} !important`
+                  : "ui.white !important",
               },
             },
             color:
@@ -97,9 +101,13 @@ const SubNav = defineMultiStyleConfig({
           },
           _active: {
             svg: {
-              fill: highlightColor ? `${highlightColor} !important` : "ui.link.primary !important",
+              fill: highlightColor
+                ? `${highlightColor} !important`
+                : "ui.link.primary !important",
               _dark: {
-                fill: backgroundColor ? `${backgroundColor} !important` : "ui.link.primary-05 !important",
+                fill: backgroundColor
+                  ? `${backgroundColor} !important`
+                  : "ui.link.primary-05 !important",
               },
             },
             fontWeight: "700",
@@ -131,9 +139,13 @@ const SubNav = defineMultiStyleConfig({
           },
           _hover: {
             svg: {
-              fill: highlightColor ? `${highlightColor} !important` : "ui.black !important",
+              fill: highlightColor
+                ? `${highlightColor} !important`
+                : "ui.black !important",
               _dark: {
-                fill: backgroundColor ? `${backgroundColor} !important` : "ui.white !important",
+                fill: backgroundColor
+                  ? `${backgroundColor} !important`
+                  : "ui.white !important",
               },
             },
             color:
@@ -148,9 +160,13 @@ const SubNav = defineMultiStyleConfig({
           },
           _active: {
             svg: {
-              fill: highlightColor ? `${highlightColor} !important` : "ui.link.primary !important",
+              fill: highlightColor
+                ? `${highlightColor} !important`
+                : "ui.link.primary !important",
               _dark: {
-                fill: backgroundColor ? `${backgroundColor} !important` : "ui.link.primary-05 !important",
+                fill: backgroundColor
+                  ? `${backgroundColor} !important`
+                  : "ui.link.primary-05 !important",
               },
             },
             fontWeight: "700",
