@@ -271,7 +271,7 @@ export const SubNav: ChakraComponent<
           </HStack>
           <Spacer />
           <HStack
-            sx={{ ...styles.scrollableButtons, ...styles.secondaryActions }}
+            sx={{ ...styles.secondaryActions }}
           >
             {secondaryActions({
               highlightColor,
