@@ -64,21 +64,93 @@
   ]
   export type highlightColors = typeof highlightColorsArray[number];
 
-
   export interface SubNavProps {
     /** Additional class name for the `SubNav` component. */
     className?: string;
-    actionBackgroundColor?: actionBackgroundColors;
-    highlightColor?: highlightColors;
-    id?: string;
-    selectedItem?: string;
-    secondaryActions?: React.ReactElement;
+    /**
+     * Primary actions displayed on the left side of the SubNav.
+     * Use SubNavButton and SubNavLink components, which mirror 
+     * the DS Button and Link functionalities, plus the isOutlined prop.
+    */
     primaryActions: React.ReactElement;
+    /**
+     * Secondary actions displayed on the right side of the SubNav.
+     * Use SubNavButton and SubNavLink components, offering additional 
+     * contextual options related to the primary content.
+     */
+    secondaryActions?: React.ReactElement;
+    /** 
+     * The background color to be applied to the hover and active states 
+     * of the SubNavLink and SubNavButton components. 
+     * This allows for customization of the action items.
+    */
+    actionBackgroundColor?: actionBackgroundColors;
+    /** 
+      * Custom color for SubNavLink, SubNavButton, and icons.
+    */
+    highlightColor?: highlightColors;
+    /**
+     * Optional unique ID for accessibility, allowing other components 
+     * to reference this element.
+    */
+    id?: string;
+    /** Optional string used to identify and highlight an item. The value should
+      * match the id associated with one of the items.
+    */
+    selectedItem?: string;
   }
 
-  // SubNavButton child-component
-  export const SubNavButton: React.FC<React.PropsWithChildren<any>> = chakra(Button);
-  export const SubNavLink: React.FC<React.PropsWithChildren<any>> = chakra(Link);
+  export const SubNavButton: React.FC<React.PropsWithChildren<any>> = chakra(
+    ({ id, buttonType = "text", children, isOutlined, highlightColor, actionBackgroundColor, selectedItem }) => {
+      const isSelected = selectedItem === String(id);
+      const styles = useMultiStyleConfig("SubNav", {
+        backgroundColor: actionBackgroundColor,
+        highlightColor: highlightColor,
+        isOutlined: isOutlined,
+      });
+      return (
+        <Button
+          id={id}
+          buttonType={buttonType}
+          __css={{
+            ...styles.button,
+            ...styles.outLine,
+            ...(isSelected ? styles.selectedItem : {}),
+          }}
+        >
+          {children}
+        </Button>
+      );
+    }
+  );
+
+  export const SubNavLink: React.FC<React.PropsWithChildren<any>> = chakra(
+    ({ id, type="action", children, isOutlined, highlightColor, actionBackgroundColor, selectedItem }) => {
+      const isSelected = selectedItem === String(id);
+      const styles = useMultiStyleConfig("SubNav", {
+        backgroundColor: actionBackgroundColor,
+        highlightColor: highlightColor,
+        isOutlined: isOutlined,
+      });
+
+      return (
+        <Link
+          key={id}
+          id={id}
+          target="_blank"
+          type={type}
+          screenreaderOnlyText={id}
+          __css={{
+            ...styles.a,
+            ...styles.outLine,
+            ...(isSelected ? styles.selectedItem : {}),
+          }}
+        >
+          {children}
+        </Link>
+      );
+    }
+  );
 
   export const SubNav: ChakraComponent<
     React.ForwardRefExoticComponent<
@@ -87,7 +159,7 @@
     SubNavProps
   > = chakra(
     forwardRef<HTMLDivElement, React.PropsWithChildren<SubNavProps>>(
-      (props, ref?) => {
+      (props) => {
         const {
           className,
           children,
@@ -97,36 +169,39 @@
           selectedItem,
           primaryActions,
           secondaryActions,
-          ...rest
         } = props;
 
         const [showRightFade, setShowRightFade] = useState(false);
         const [lastScrollLeft, setLastScrollLeft] = useState(0);
         const scrollableRef = useRef(null);
 
+        const styles = useMultiStyleConfig("SubNav", {
+          backgroundColor: actionBackgroundColor,
+          highlightColor: highlightColor,
+        });
 
         if (actionBackgroundColor !== undefined && highlightColor === undefined) {
           console.warn(
             "NYPL Reservoir SubNav: The `actionBackgroundColor` prop has been passed, but the `highlightColor` prop has not been passed. Because of this, the `actionBackgroundColor` prop will be ignored."
           );
         }
-    
+
         const handleScroll = () => {
           if (scrollableRef.current) {
-              const { scrollLeft, scrollWidth, clientWidth } = scrollableRef.current;
-      
-              // Determine if we are scrolling to the left or right
-              const isScrollingRight = scrollLeft > lastScrollLeft;
-              setLastScrollLeft(scrollLeft); // Update last scroll position
-      
-              // Show right fade only if scrolling to the left
-              if (!isScrollingRight) {
-                  // Show right fade only if not at the end
-                  const atRightEdge = scrollLeft + clientWidth >= scrollWidth;
-                  setShowRightFade(!atRightEdge);
-              } else {
-                  setShowRightFade(false); // Hide when scrolling right
-              }
+            const { scrollLeft, scrollWidth, clientWidth } = scrollableRef.current;
+
+            // Determine if we are scrolling to the left or right
+            const isScrollingRight = scrollLeft > lastScrollLeft;
+            setLastScrollLeft(scrollLeft); // Update last scroll position
+
+            // Show right fade only if scrolling to the left
+            if (!isScrollingRight) {
+              // Show right fade only if not at the end
+              const atRightEdge = scrollLeft + clientWidth >= scrollWidth;
+              setShowRightFade(!atRightEdge);
+            } else {
+              setShowRightFade(false); // Hide when scrolling right
+            }
           }
         };
 
@@ -138,131 +213,39 @@
               const { scrollWidth, clientWidth } = refCurrent;
               setShowRightFade(scrollWidth > clientWidth); // Show fade if content is wider than the visible area
           }
-      
+
           return () => {
             if (refCurrent) {
-                refCurrent.removeEventListener('scroll', handleScroll);
+              refCurrent.removeEventListener('scroll', handleScroll);
             }
           };
         }, []);
-        
 
-        const styles = useMultiStyleConfig("SubNav", {
-          backgroundColor: actionBackgroundColor,
-          highlightColor: highlightColor,
-        });
-
-        const processChildren = (children, isPrimary) => {
-          const actionButtons = [];
-          const actionLinks = [];
-        
-          React.Children.forEach(children, (child: React.ReactElement) => {
-            if (child.type !== SubNavButton && child.type !== SubNavLink) {
-                console.warn("NYPL Reservoir SubNav: An element that is not a SubNavButton or SubNavLink component has been passed. It will be ignored.");
-                return;
-            }
-    
-            const isSelected = selectedItem === String(child.props.id);
-            const actionStyles = {
-              border: child.props.isOutlined === "true" ? "1px solid" : "none",
-              borderColor: child.props.isOutlined === "true" ? highlightColor : isPrimary ? "transparent" : "ui.typography.body",
-              borderRadius: "6px",
-            };
-    
-            const commonStyles = {
-              ...(isSelected ? styles.selectedItem : {}),
-            };
-    
-            if (child.type === SubNavButton) {
-                const button = (
-                    <Button
-                        key={child.props.id}
-                        id={child.props.id}
-                        buttonType="text"
-                        __css={{
-                            ...styles.button,
-                            ...actionStyles,
-                            ...commonStyles,
-                            ...(isPrimary ? {} : styles.secondaryIcons), // Apply secondary styles conditionally
-                        }}
-                    >
-                        {child.props.children}
-                    </Button>
-                );
-                actionButtons.push(button);
-            } else if (child.type === SubNavLink) {
-                const link = (
-                    <Link
-                        key={child.props.id}
-                        href={child.props.href}
-                        id={child.props.id}
-                        target="_blank"
-                        screenreaderOnlyText={child.props.screenreaderOnlyText}
-                        type="action"
-                        __css={{
-                            ...styles.a,
-                            ...actionStyles,
-                            ...commonStyles,
-                            ...(isPrimary ? {} : styles.secondaryIcons), // Apply secondary styles conditionally
-                        }}
-                    >
-                        {child.props.children}
-                    </Link>
-                );
-                actionLinks.push(link);
-              }
-          });
-          return { actionButtons, actionLinks };
-      };
-      
-      let secondaryActionButtons: JSX.Element[] = [];
-      let secondaryActionLinks: JSX.Element[] = [];
-
-      let primaryActionButtons: JSX.Element[] = [];
-      let primaryActionLinks: JSX.Element[] = [];
-
-      // Process primary actions
-      if (primaryActions && primaryActions.props) {
-          const { actionButtons, actionLinks } = processChildren(primaryActions.props.children, true);
-          primaryActionButtons = actionButtons;
-          primaryActionLinks = actionLinks;
-      }
-
-      // Process secondary actions
-      if (secondaryActions && secondaryActions.props) {
-        const { actionButtons, actionLinks } = processChildren(secondaryActions.props.children, false);
-        secondaryActionButtons = actionButtons;
-        secondaryActionLinks = actionLinks;
-      }
-
-        const borderStyles = {
-          ...styles.borderLine,
-        }
+        // Function to ensure only valid CSS properties are passed
+        const fadeEffectStyles = (styleObject) => {
+          const { accentColor, ...validStyles } = styleObject; // Exclude non-CSS properties
+          return validStyles;
+        };
 
         return (
           <>
-            <Flex alignItems="baseline">
+            <Flex alignItems="baseline" className={className}>
               <HStack sx={styles.scrollableButtons} ref={scrollableRef}>
-                {primaryActionButtons}
-                {primaryActionLinks}
+                {primaryActions({ highlightColor, actionBackgroundColor, selectedItem })}
                 {showRightFade && (
-                  <div style={{
-                      ...styles.fadeEffect,
-                  }} />
+                  <div style={fadeEffectStyles(styles.fadeEffect)} />
                 )}
-
               </HStack>
-            <Spacer />
+              <Spacer />  
               <HStack sx={styles.secondaryActions}>
-                {secondaryActionButtons}
-                {secondaryActionLinks}
+                {secondaryActions({ highlightColor, actionBackgroundColor, selectedItem })}
               </HStack>
             </Flex>
-            <Box id="suv-nav-border" sx={borderStyles} />
+            <Box id="suv-nav-border" />
           </>
         );
       }
     )
   );
 
-  export default SubNav;
+export default SubNav;

@@ -7,9 +7,6 @@ const { defineMultiStyleConfig, definePartsStyle } =
 interface SubNavStyleProps extends StyleFunctionProps {
   backgroundColor: string;
   highlightColor: string;
-}
-
-interface SubNavActionsStyleProps extends SubNavStyleProps {
   isOutlined: boolean;
 }
 
@@ -18,11 +15,11 @@ const SubNav = defineMultiStyleConfig({
     ({
       backgroundColor,
       highlightColor,
+      isOutlined,
     }: SubNavStyleProps) => {
       
       return {
         base: {
-          fontSize: "16px",
         },
         selectedItem: {
           color: highlightColor !== undefined ? `${highlightColor}` : "ui.link.primary !important",
@@ -34,6 +31,10 @@ const SubNav = defineMultiStyleConfig({
           width: "100%",
           marginTop: "3px",
           color: highlightColor !== undefined ? `${highlightColor}` : "ui.border.default",
+        },
+        outLine: {
+          border: isOutlined !== undefined? "1px solid" : "none",
+          borderRadius: "6px",
         },
         button: {
           color: "ui.typography.body",
@@ -113,11 +114,6 @@ const SubNav = defineMultiStyleConfig({
             },
           },
         },
-        secondaryActions: {
-          display: "flex",
-          whiteSpace: "nowrap",
-          position: "relative",
-        },
         scrollableButtons: {
           display: "flex",
           overflowX: "auto",
@@ -128,25 +124,23 @@ const SubNav = defineMultiStyleConfig({
           position: "absolute",
           right: 0,
           height: "100%",
-          width: "50px", // Adjust width as needed for the fade
+          width: "50px",
           background: "linear-gradient(to left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%)",
-          pointerEvents: "none", // Allow clicks to pass through
+          pointerEvents: "none",
           zIndex: 1,
         },
-        buttonStyles:  {
-          display: "flex",             // Use flexbox for alignment
-          alignItems: "center",        // Center items vertically
-          justifyContent: "center",    // Center items horizontally
-          padding: "10px 15px",       // Consistent padding
-          fontSize: "14px",           // Uniform font size
-          lineHeight: "1",             // Ensure line height is set to avoid vertical shifting
-          height: "40px",              // Fixed height for all buttons
-          border: "1px solid transparent", // Border style
-          borderRadius: "6px",        // Rounded corners
-          cursor: "pointer",           // Change cursor on hover
-          transition: "background 0.3s", // Smooth background transition
+        secondaryActions: {
+          display: "flex",
+          overflowX: "auto",
+          whiteSpace: "nowrap",
+          position: "relative",
+          button: {
+            color: highlightColor !== undefined ? `${highlightColor}` : "ui.link.primary !important",
+          },
+          a: {
+            color: highlightColor !== undefined ? `${highlightColor}` : "ui.link.primary !important",
+          },
         }
-        
       }
     }
   ),

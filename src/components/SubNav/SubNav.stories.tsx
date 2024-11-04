@@ -35,205 +35,327 @@ export const WithControls: Story = {
     className: undefined,
     actionBackgroundColor: undefined,
     highlightColor: undefined,
-    id: "SubNav-id",
-    selectedItem: "",
-    primaryActions: (
+    id: "sub-nav-id",
+    selectedItem: undefined,
+  },
+
+  render: (args: any) => (
+    <SubNav
+     {...args}
+      primaryActions={({ highlightColor, actionBackgroundColor }) => (
       <>
-        <SubNavButton id="sub-nav-button1" buttonType="secondary">
-          Label Text
+        <SubNavButton
+          id="primary-sub-nav-button-1"
+          highlightColor={highlightColor}
+          actionBackgroundColor={actionBackgroundColor}
+          buttonType="text"
+          isOutlined
+        >
+          Label Text 1
         </SubNavButton>
-        <SubNavButton id="sub-nav-button2" buttonType="text">
-          Label Text
+        
+        <SubNavButton
+          id="primary-sub-nav-button-2"
+          highlightColor={highlightColor}
+          actionBackgroundColor={actionBackgroundColor}
+          buttonType="text"
+        >
+          Label Text 2
         </SubNavButton>
-        <SubNavLink id="sub-nav-link1" screenreaderOnlyText="of my account">
-          Label Text
-          <Icon name="search" size="small" className="right" align="right" />
-        </SubNavLink>
-        <SubNavLink id="sub-nav-link2" screenreaderOnlyText="of my account">
-          Label Text
+        <SubNavButton
+          id="primary-sub-nav-button-3"
+          highlightColor={highlightColor}
+          actionBackgroundColor={actionBackgroundColor}
+          buttonType="text"
+        >
+          Label Text 3
+        </SubNavButton>
+        <SubNavLink
+          id="primary-sub-nav-link-1"
+          screenreaderOnlyText="of my account"
+          highlightColor={highlightColor}
+          actionBackgroundColor={actionBackgroundColor}
+        >
+          Label Text 4
           <Icon name="legacyAccountFilled" size="small" className="right" align="right" />
         </SubNavLink>
-        <SubNavButton id="sub-nav-button3" buttonType="text">
-          Label Text
-          <Icon name="legacyAccountFilled" size="small" className="right" align="right"/>
-        </SubNavButton>
-        <SubNavButton id="sub-nav-button4" buttonType="text">
-          Label Text
-        </SubNavButton>
-      </>
-    ),
-    secondaryActions: (
-      <>
-        <SubNavButton id="sub-nav-button-1" buttonType="text">
-          Label Text
-        </SubNavButton>
-        <SubNavButton id="sub-nav-button" buttonType="text">
-          Label Text
-        </SubNavButton>
-        <SubNavLink id="sub-nav-button1">
-          <Icon name="headset" size="small" className="right" align="right" />
-          Label Text
+        <SubNavLink
+          id="primary-sub-nav-link-2"
+          screenreaderOnlyText="of my account"
+          highlightColor={highlightColor}
+          actionBackgroundColor={actionBackgroundColor}
+        >
+          Label Text 5
+          <Icon name="legacyAccountFilled" size="small" className="right" align="right" />
         </SubNavLink>
-        <SubNavLink id="sub-nav-button">
-          <Icon name="headset" size="small" className="right" align="right" />
-          Label Text
+        <SubNavLink
+          id="primary-sub-nav-link-3"
+          screenreaderOnlyText="of my account"
+          highlightColor={highlightColor}
+          actionBackgroundColor={actionBackgroundColor}
+        >
+          Label Text 6
+          <Icon name="legacyAccountFilled" size="small" className="right" align="right" />
         </SubNavLink>
       </>
-    ),
-  },
+  )}
+  secondaryActions={ ({ highlightColor, actionBackgroundColor }) => (
+    <>
+      <SubNavButton
+        id="sub-nav-button-3" // Unique ID
+        highlightColor={highlightColor}
+        actionBackgroundColor={actionBackgroundColor}
+        buttonType="text"
+      >
+        Label Text 3
+      </SubNavButton>
 
-  render: (args: any) => (
-    <SubNav {...args}>
-      <SubNavButton id="sub-nav-button1" buttonType="text">
-        Label Text
-      </SubNavButton>
-      <SubNavButton id="sub-nav-button" buttonType="text">
-        Label Text
-      </SubNavButton>
-    </SubNav>
-  ),
-  argTypes: {
-    primaryActions: { control: false },
-    secondaryActions: { control: false },
-  },
+      <SubNavLink
+        id="sub-nav-link-1"
+        screenreaderOnlyText="of my account"
+        highlightColor={highlightColor}
+        actionBackgroundColor={actionBackgroundColor}
+      >
+        Label Text 1
+        <Icon name="legacyAccountFilled" size="small" className="right" align="right" />
+      </SubNavLink>
+      <SubNavLink
+        id="sub-nav-link-2"
+        screenreaderOnlyText="of my account"
+        highlightColor={highlightColor}
+        actionBackgroundColor={actionBackgroundColor}
+      >
+        Label Text 2
+        <Icon name="legacyAccountFilled" size="small" className="right" align="right" />
+      </SubNavLink>
+      <SubNavLink
+        id="sub-nav-link-3"
+        screenreaderOnlyText="of my account"
+        highlightColor={highlightColor}
+        actionBackgroundColor={actionBackgroundColor}
+      >
+        Label Text 3
+        <Icon name="legacyAccountFilled" size="small" className="right" align="right" />
+      </SubNavLink>
+    </>
+  )}
+/>)
 };
 
-export const WithSelectedItem: Story = {
+export const SelectedItem: Story = {
   args: {
     className: undefined,
     actionBackgroundColor: undefined,
     highlightColor: undefined,
-    id: "SubNav-id",
-    selectedItem: "sub-nav-button2",
-    primaryActions: (
-      <>
-        <SubNavButton id="sub-nav-button1" buttonType="secondary">
-          Label Text
-        </SubNavButton>
-        <SubNavButton id="sub-nav-button2" buttonType="text">
-          Label Text
-        </SubNavButton>
-        <SubNavLink id="sub-nav-link1" screenreaderOnlyText="of my account">
-          Label Text
-          <Icon name="search" align="left" size="small" />
-        </SubNavLink>
-        <SubNavLink id="sub-nav-link2" screenreaderOnlyText="of my account">
-          Label Text
-          <Icon name="legacyAccountFilled" align="left" size="small" />
-        </SubNavLink>
-        <SubNavButton id="sub-nav-button3" buttonType="text">
-          Label Text
-          <Icon name="legacyAccountFilled" align="left" size="small" />
-        </SubNavButton>
-        <SubNavButton id="sub-nav-button4" buttonType="text">
-          Label Text
-        </SubNavButton>
-      </>
-    ),
-    secondaryActions: (
-      <>
-        <SubNavButton id="sub-nav-button-1" buttonType="text">
-          Label Text
-        </SubNavButton>
-        <SubNavButton id="sub-nav-button" buttonType="text">
-          Label Text
-        </SubNavButton>
-        <SubNavLink id="sub-nav-button1">
-          <Icon name="headset" align="left" size="small" />
-          Label Text
-        </SubNavLink>
-        <SubNavLink id="sub-nav-button">
-          <Icon name="headset" align="left" size="small" />
-          Label Text
-        </SubNavLink>
-      </>
-    ),
+    id: "sub-nav-id",
+    selectedItem: "primary-sub-nav-button-1",
   },
 
   render: (args: any) => (
-    <SubNav {...args}>
-      <SubNavButton id="sub-nav-button1" buttonType="text">
-        Label Text
+    <SubNav
+     {...args}
+      primaryActions={({ highlightColor, actionBackgroundColor, selectedItem }) => (
+      <>
+        <SubNavButton
+          id="primary-sub-nav-button-1"
+          highlightColor={highlightColor}
+          actionBackgroundColor={actionBackgroundColor}
+          buttonType="text"
+          selectedItem={selectedItem}
+        >
+          Label Text 1
+        </SubNavButton>
+        
+        <SubNavButton
+          id="primary-sub-nav-button-2"
+          highlightColor={highlightColor}
+          actionBackgroundColor={actionBackgroundColor}
+          buttonType="text"
+        >
+          Label Text 2
+        </SubNavButton>
+        <SubNavButton
+          id="primary-sub-nav-button-3"
+          highlightColor={highlightColor}
+          actionBackgroundColor={actionBackgroundColor}
+          buttonType="text"
+        >
+          Label Text 3
+        </SubNavButton>
+        <SubNavLink
+          id="primary-sub-nav-link-1"
+          screenreaderOnlyText="of my account"
+          highlightColor={highlightColor}
+          actionBackgroundColor={actionBackgroundColor}
+        >
+          Label Text 4
+          <Icon name="legacyAccountFilled" size="small" className="right" align="right" />
+        </SubNavLink>
+        <SubNavLink
+          id="primary-sub-nav-link-2"
+          screenreaderOnlyText="of my account"
+          highlightColor={highlightColor}
+          actionBackgroundColor={actionBackgroundColor}
+        >
+          Label Text 5
+          <Icon name="legacyAccountFilled" size="small" className="right" align="right" />
+        </SubNavLink>
+        <SubNavLink
+          id="primary-sub-nav-link-3"
+          screenreaderOnlyText="of my account"
+          highlightColor={highlightColor}
+          actionBackgroundColor={actionBackgroundColor}
+        >
+          Label Text 6
+          <Icon name="legacyAccountFilled" size="small" className="right" align="right" />
+        </SubNavLink>
+      </>
+  )}
+  secondaryActions={ ({ highlightColor, actionBackgroundColor }) => (
+    <>
+      <SubNavButton
+        id="sub-nav-button-3" // Unique ID
+        highlightColor={highlightColor}
+        actionBackgroundColor={actionBackgroundColor}
+        buttonType="text"
+      >
+        Label Text 3
       </SubNavButton>
-      <SubNavButton id="sub-nav-button" buttonType="text">
-        Label Text
-      </SubNavButton>
-    </SubNav>
-  ),
-  argTypes: {
-    primaryActions: { control: false },
-    secondaryActions: { control: false },
-  },
+
+      <SubNavLink
+        id="sub-nav-link-1"
+        screenreaderOnlyText="of my account"
+        highlightColor={highlightColor}
+        actionBackgroundColor={actionBackgroundColor}
+      >
+        Label Text 1
+        <Icon name="legacyAccountFilled" size="small" className="right" align="right" />
+      </SubNavLink>
+      <SubNavLink
+        id="sub-nav-link-2"
+        screenreaderOnlyText="of my account"
+        highlightColor={highlightColor}
+        actionBackgroundColor={actionBackgroundColor}
+      >
+        Label Text 2
+        <Icon name="legacyAccountFilled" size="small" className="right" align="right" />
+      </SubNavLink>
+      <SubNavLink
+        id="sub-nav-link-3"
+        screenreaderOnlyText="of my account"
+        highlightColor={highlightColor}
+        actionBackgroundColor={actionBackgroundColor}
+      >
+        Label Text 3
+        <Icon name="legacyAccountFilled" size="small" className="right" align="right" />
+      </SubNavLink>
+    </>
+  )}
+/>)
 };
 
-export const WithBorderLine: Story = {
+export const Outline: Story = {
   args: {
     className: undefined,
     actionBackgroundColor: undefined,
     highlightColor: undefined,
-    id: "SubNav-id",
-    selectedItem: "sub-nav-button2",
-    primaryActions: (
-      <>
-        <SubNavButton id="sub-nav-button1" buttonType="secondary" isOutlined="true">
-          Label Text
-        </SubNavButton>
-        <SubNavButton id="sub-nav-button2" buttonType="text">
-          Label Text
-        </SubNavButton>
-        <SubNavLink id="sub-nav-link1" screenreaderOnlyText="of my account">
-          Label Text
-          <Icon name="search" align="left" size="small" />
-        </SubNavLink>
-        <SubNavLink id="sub-nav-link2" screenreaderOnlyText="of my account">
-          Label Text
-          <Icon name="legacyAccountFilled" align="left" size="small" />
-        </SubNavLink>
-        <SubNavButton id="sub-nav-button3" buttonType="text">
-          Label Text
-          <Icon name="legacyAccountFilled" align="left" size="small" />
-        </SubNavButton>
-        <SubNavButton id="sub-nav-button4" buttonType="text">
-          Label Text
-        </SubNavButton>
-      </>
-    ),
-    secondaryActions: (
-      <>
-        <SubNavButton id="sub-nav-button-1" buttonType="text">
-          Label Text
-        </SubNavButton>
-        <SubNavButton id="sub-nav-button" buttonType="text">
-          Label Text
-        </SubNavButton>
-        <SubNavLink id="sub-nav-button1" isOutlined="true">
-          <Icon name="headset" align="left" size="small" />
-          Label Text
-        </SubNavLink>
-        <SubNavLink id="sub-nav-button" isOutlined="true">
-          <Icon name="headset" align="left" size="small" />
-          Label Text
-        </SubNavLink>
-      </>
-    ),
+    id: "sub-nav-id",
+    selectedItem: undefined,
   },
 
   render: (args: any) => (
-    <SubNav {...args}>
-      <SubNavButton id="sub-nav-button1" buttonType="text">
-        Label Text
+    <SubNav
+     {...args}
+      primaryActions={({ highlightColor, actionBackgroundColor, selectedItem }) => (
+      <>
+        <SubNavButton
+          id="primary-sub-nav-button-1"
+          highlightColor={highlightColor}
+          actionBackgroundColor={actionBackgroundColor}
+          buttonType="text"
+          selectedItem={selectedItem}
+          isOutlined
+          onClick={onClickHandler}
+        >
+          Label Text 1
+        </SubNavButton>
+        
+        <SubNavButton
+          id="primary-sub-nav-button-2"
+          highlightColor={highlightColor}
+          actionBackgroundColor={actionBackgroundColor}
+          buttonType="text"
+          isOutlined
+        >
+          Label Text 2
+        </SubNavButton>
+        <SubNavButton
+          id="primary-sub-nav-button-3"
+          highlightColor={highlightColor}
+          actionBackgroundColor={actionBackgroundColor}
+          buttonType="text"
+        >
+          Label Text 3
+        </SubNavButton>
+        <SubNavLink
+          id="primary-sub-nav-link-1"
+          screenreaderOnlyText="of my account"
+          highlightColor={highlightColor}
+          actionBackgroundColor={actionBackgroundColor}
+        >
+          Label Text 4
+          <Icon name="legacyAccountFilled" size="small" className="right" align="right" />
+        </SubNavLink>
+        <SubNavLink
+          id="primary-sub-nav-link-2"
+          screenreaderOnlyText="of my account"
+          highlightColor={highlightColor}
+          actionBackgroundColor={actionBackgroundColor}
+        >
+          Label Text 5
+          <Icon name="legacyAccountFilled" size="small" className="right" align="right" />
+        </SubNavLink>
+        <SubNavLink
+          id="primary-sub-nav-link-3"
+          screenreaderOnlyText="of my account"
+          highlightColor={highlightColor}
+          actionBackgroundColor={actionBackgroundColor}
+        >
+          Label Text 6
+          <Icon name="legacyAccountFilled" size="small" className="right" align="right" />
+        </SubNavLink>
+      </>
+  )}
+  secondaryActions={ ({ highlightColor, actionBackgroundColor }) => (
+    <>
+      <SubNavButton
+        id="sub-nav-button-3" // Unique ID
+        highlightColor={highlightColor}
+        actionBackgroundColor={actionBackgroundColor}
+        buttonType="text"
+        isOutlined
+      >
+        Label Text 3
       </SubNavButton>
-      <SubNavButton id="sub-nav-button" buttonType="text">
-        Label Text
-      </SubNavButton>
-    </SubNav>
-  ),
-  argTypes: {
-    primaryActions: { control: false },
-    secondaryActions: { control: false },
-  },
+
+      <SubNavLink
+        id="sub-nav-link-1"
+        screenreaderOnlyText="of my account"
+        highlightColor={highlightColor}
+        actionBackgroundColor={actionBackgroundColor}
+        isOutlined
+      >
+        Label Text 1
+        <Icon name="legacyAccountFilled" size="small" className="right" align="right" />
+      </SubNavLink>
+    </>
+  )}
+/>)
 };
 
+const onClickHandler = () => {
+  
+};
 
 export default meta;
 type Story = StoryObj<typeof SubNav>;
