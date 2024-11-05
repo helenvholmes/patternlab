@@ -401,7 +401,6 @@ export const Outline: Story = {
   ),
 };
 
-
 export const HighlightColor: Story = {
   args: {
     className: undefined,
@@ -471,7 +470,6 @@ export const HighlightColor: Story = {
     />
   ),
 };
-
 
 const onClickHandler = () => {};
 

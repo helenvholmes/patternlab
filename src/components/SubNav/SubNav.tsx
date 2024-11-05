@@ -260,7 +260,10 @@ export const SubNav: ChakraComponent<
     return (
       <>
         <Flex alignItems="baseline" className={className} gap="1rem">
-          <HStack sx={{ ...styles.scrollableButtons,  ...styles.primaryActions}} ref={scrollableRef}>
+          <HStack
+            sx={{ ...styles.scrollableButtons, ...styles.primaryActions }}
+            ref={scrollableRef}
+          >
             {primaryActions({
               highlightColor,
               actionBackgroundColor,
