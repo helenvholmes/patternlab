@@ -229,6 +229,7 @@ export const Link: ChakraComponent<
       (type === "standalone" &&
         getStandaloneIcon(children as JSX.Element, sanitizedId)) ||
       children;
+
     const screenReaderOnlyElement = screenreaderOnlyText ? (
       <Box as="span" __css={styles.screenreaderOnly}>
         {screenreaderOnlyText}
