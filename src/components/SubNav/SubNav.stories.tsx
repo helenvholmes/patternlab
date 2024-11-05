@@ -401,6 +401,78 @@ export const Outline: Story = {
   ),
 };
 
+
+export const HighlightColor: Story = {
+  args: {
+    className: undefined,
+    actionBackgroundColor: "brand.primary-05",
+    highlightColor: "brand.primary",
+    id: "sub-nav-id",
+    selectedItem: undefined,
+  },
+
+  render: (args: any) => (
+    <SubNav
+      {...args}
+      primaryActions={({
+        highlightColor,
+        actionBackgroundColor,
+        selectedItem,
+      }) => (
+        <>
+          <SubNavButton
+            id="primary-sub-nav-button-1"
+            highlightColor={highlightColor}
+            actionBackgroundColor={actionBackgroundColor}
+            buttonType="text"
+            selectedItem={selectedItem}
+            onClick={onClickHandler}
+          >
+            Label Text 1
+          </SubNavButton>
+
+          <SubNavButton
+            id="primary-sub-nav-button-2"
+            highlightColor="brand.primary"
+            actionBackgroundColor="brand.primary-05"
+            buttonType="text"
+          >
+            Label Text 2
+          </SubNavButton>
+        </>
+      )}
+      secondaryActions={() => (
+        <>
+          <SubNavButton
+            id="sub-nav-button-3" // Unique ID
+            highlightColor="brand.primary"
+            actionBackgroundColor="brand.primary-05"
+            buttonType="text"
+          >
+            Label Text 3
+          </SubNavButton>
+
+          <SubNavLink
+            id="sub-nav-link-1"
+            screenreaderOnlyText="of my account"
+            highlightColor="brand.primary"
+            actionBackgroundColor="brand.primary-05"
+          >
+            Label Text 1
+            <Icon
+              name="legacyAccountFilled"
+              size="small"
+              className="right"
+              align="right"
+            />
+          </SubNavLink>
+        </>
+      )}
+    />
+  ),
+};
+
+
 const onClickHandler = () => {};
 
 export default meta;

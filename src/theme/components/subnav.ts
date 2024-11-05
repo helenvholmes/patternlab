@@ -10,21 +10,6 @@ interface SubNavStyleProps extends StyleFunctionProps {
   isOutlined: boolean;
 }
 
-const getSvgStyles = (highlightColor, backgroundColor, isPrimary) => ({
-  fill: highlightColor
-    ? `${highlightColor} !important`
-    : isPrimary
-    ? "ui.black !important"
-    : "ui.link.primary !important",
-  _dark: {
-    fill: backgroundColor
-      ? `${backgroundColor} !important`
-      : isPrimary
-      ? "ui.white !important"
-      : "ui.link.primary-05 !important",
-  },
-});
-
 const SubNav = defineMultiStyleConfig({
   baseStyle: definePartsStyle(
     ({ backgroundColor, highlightColor, isOutlined }: SubNavStyleProps) => {
@@ -58,50 +43,79 @@ const SubNav = defineMultiStyleConfig({
           display: "flex",
           whiteSpace: "nowrap",
           position: "relative",
-          svg: getSvgStyles(highlightColor, backgroundColor, false),
-          _hover: {
-            svg: getSvgStyles(highlightColor, backgroundColor, false),
-          },
+          color:
+            highlightColor !== undefined
+              ? `${highlightColor}`
+              : "ui.link.primary",
           button: {
-            color: getSvgStyles(highlightColor, backgroundColor, false).fill,
+            padding: "4px 16px",
+            gap: "4px",
+            marginY: "4px",
+            width: "140px",
+            minWidth: "140px",
+            transition: "background-color 0.2s, color 0.2s",
+            lineHeight: "normal",
+            boxSizing: "border-box",
+            svg: {
+              fill: highlightColor !== undefined
+                ? `${highlightColor} !important`
+                : "ui.link.primary !important",
+              _dark: {
+                fill: backgroundColor
+                  ? `${backgroundColor} !important`
+                  : "ui.link.primary-05 !important",
+              },
+            },
+            _hover: {
+              svg: {
+                fill: highlightColor !== undefined
+                  ? `${highlightColor} !important`
+                  : "ui.link.primary !important",
+                _dark: {
+                  fill: backgroundColor
+                    ? `${backgroundColor} !important`
+                    : "ui.link.primary-05 !important",
+                },
+              },
+            },
+            _active: {
+              svg: {
+                fill: highlightColor !== undefined
+                  ? `${highlightColor} !important`
+                  : "ui.link.primary !important",
+                _dark: {
+                  fill: backgroundColor !== undefined
+                    ? `${backgroundColor} !important`
+                    : "ui.link.primary-05 !important",
+                },
+              },
+              fontWeight: "700",
+              color:
+                highlightColor !== undefined
+                  ? `${highlightColor} !important`
+                  : "ui.link.primary !important",
+              background:
+                backgroundColor !== undefined
+                  ? `${backgroundColor} !important`
+                  : "ui.link.primary-05 !important",
+              bold: "bold",
+              display: "inline-block",
+              textDecoration: "none",
+            },
           },
           a: {
-            color: getSvgStyles(highlightColor, backgroundColor, false).fill,
-          },
-        },
-        button: {
-          color: "ui.typography.body",
-          padding: "4px 16px",
-          gap: "4px",
-          marginY: "4px",
-          width: "140px",
-          minWidth: "140px",
-          transition: "background-color 0.2s, color 0.2s",
-          lineHeight: "normal",
-          boxSizing: "border-box",
-          _hover: {
-            svg: {
-              fill: highlightColor
-                ? `${highlightColor} !important`
-                : "ui.black !important",
-              _dark: {
-                fill: backgroundColor
-                  ? `${backgroundColor} !important`
-                  : "ui.white !important",
-              },
-            },
+            padding: "4px 16px",
+            gap: "4px",
+            marginY: "4px",
+            width: "140px",
+            minWidth: "140px",
             color:
-              highlightColor !== undefined
-                ? `${highlightColor}`
-                : "ui.typography.body",
-            backgroundColor:
-              backgroundColor !== undefined
-                ? backgroundColor
-                : "ui.link.primary-05",
-          },
-          _active: {
+            highlightColor !== undefined
+              ? `${highlightColor} !important`
+              : "ui.link.primary !important",
+            textDecoration: "none !important",
             svg: {
-              fill: highlightColor
+              fill: highlightColor !== undefined
                 ? `${highlightColor} !important`
                 : "ui.link.primary !important",
               _dark: {
@@ -110,77 +124,157 @@ const SubNav = defineMultiStyleConfig({
                   : "ui.link.primary-05 !important",
               },
             },
-            fontWeight: "700",
-            color:
-              highlightColor !== undefined
-                ? `${highlightColor}`
-                : "ui.link.primary",
-            backgroundColor:
-              backgroundColor !== undefined
-                ? `${backgroundColor}`
-                : "ui.link.primary-05",
-            bold: "bold",
-            display: "inline-block",
+            _hover: {
+              svg: {
+                fill: highlightColor !== undefined
+                  ? `${highlightColor} !important`
+                  : "ui.link.primary !important",
+                _dark: {
+                  fill: backgroundColor
+                    ? `${backgroundColor} !important`
+                    : "ui.link.primary-05 !important",
+                },
+              },
+            },
+            _active: {
+              svg: {
+                fill: highlightColor !== undefined
+                  ? `${highlightColor} !important`
+                  : "ui.link.primary !important",
+                _dark: {
+                  fill: backgroundColor
+                    ? `${backgroundColor} !important`
+                    : "ui.link.primary-05 !important",
+                },
+              },
+              fontWeight: "700",
+              color:
+                highlightColor !== undefined
+                  ? `${highlightColor}`
+                  : "ui.link.primary",
+              backgroundColor:
+                backgroundColor !== undefined
+                  ? `${backgroundColor}`
+                  : "ui.link.primary-05",
+              bold: "bold",
+              display: "inline-block",
+            },
           },
         },
-        a: {
-          textDecoration: "none",
-          color: "ui.typography.body !important",
-          padding: "4px 16px",
-          gap: "4px",
-          marginY: "4px",
-          width: "140px",
-          minWidth: "140px",
-          svg: {
-            fill: "ui.black !important",
-            _dark: {
-              fill: "ui.white !important",
+        primaryActions: {
+          button: {
+            color: "ui.typography.body",
+            padding: "4px 16px",
+            gap: "4px",
+            marginY: "4px",
+            width: "140px",
+            minWidth: "140px",
+            transition: "background-color 0.2s, color 0.2s",
+            lineHeight: "normal",
+            boxSizing: "border-box",
+            _hover: {
+              svg: {
+                fill: highlightColor !== undefined
+                  ? `${highlightColor} !important`
+                  : "ui.black !important",
+                _dark: {
+                  fill: backgroundColor !== undefined
+                    ? `${backgroundColor} !important`
+                    : "ui.white !important",
+                },
+              },
+              color:
+                highlightColor !== undefined
+                  ? `${highlightColor}`
+                  : "ui.typography.body",
+              backgroundColor:
+                backgroundColor !== undefined
+                  ? backgroundColor
+                  : "ui.link.primary-05",
+            },
+            _active: {
+              svg: {
+                fill: highlightColor !== undefined
+                  ? `${highlightColor} !important`
+                  : "ui.link.primary !important",
+                _dark: {
+                  fill: backgroundColor
+                    ? `${backgroundColor} !important`
+                    : "ui.link.primary-05 !important",
+                },
+              },
+              fontWeight: "700",
+              color:
+                highlightColor !== undefined
+                  ? `${highlightColor}`
+                  : "ui.link.primary",
+              backgroundColor:
+                backgroundColor !== undefined
+                  ? `${backgroundColor}`
+                  : "ui.link.primary-05",
+              bold: "bold",
+              display: "inline-block",
             },
           },
-          _hover: {
+          a: {
+            textDecoration: "none",
+            color: "ui.typography.body !important",
+            padding: "4px 16px",
+            gap: "4px",
+            marginY: "4px",
+            width: "140px",
+            minWidth: "140px",
             svg: {
-              fill: highlightColor
-                ? `${highlightColor} !important`
-                : "ui.black !important",
+              fill: "ui.black !important",
               _dark: {
-                fill: backgroundColor
-                  ? `${backgroundColor} !important`
-                  : "ui.white !important",
+                fill: "ui.white !important",
               },
             },
-            color:
-              highlightColor !== undefined
-                ? `${highlightColor} !important`
-                : "ui.typography.body",
-            background:
-              backgroundColor !== undefined
-                ? `${backgroundColor} !important`
-                : "ui.link.primary-05",
-            textDecoration: "none",
-          },
-          _active: {
-            svg: {
-              fill: highlightColor
-                ? `${highlightColor} !important`
-                : "ui.link.primary !important",
-              _dark: {
-                fill: backgroundColor
+            _hover: {
+              svg: {
+                fill: highlightColor !== undefined
+                  ? `${highlightColor} !important`
+                  : "ui.black !important",
+                _dark: {
+                  fill: backgroundColor !== undefined
+                    ? `${backgroundColor} !important`
+                    : "ui.white !important",
+                },
+              },
+              color:
+                highlightColor !== undefined
+                  ? `${highlightColor} !important`
+                  : "ui.typography.body",
+              background:
+                backgroundColor !== undefined
+                  ? `${backgroundColor} !important`
+                  : "ui.link.primary-05",
+              textDecoration: "none",
+            },
+            _active: {
+              svg: {
+                fill: highlightColor !== undefined
+                  ? `${highlightColor} !important`
+                  : "ui.link.primary !important",
+                _dark: {
+                  fill: backgroundColor !== undefined
+                    ? `${backgroundColor} !important`
+                    : "ui.link.primary-05 !important",
+                },
+              },
+              fontWeight: "700",
+              color:
+                highlightColor !== undefined
+                  ? `${highlightColor} !important`
+                  : "ui.link.primary !important",
+              background:
+                backgroundColor !== undefined
                   ? `${backgroundColor} !important`
                   : "ui.link.primary-05 !important",
-              },
+              bold: "bold",
+              display: "inline-block",
+              textDecoration: "none",
             },
-            fontWeight: "700",
-            color:
-              highlightColor !== undefined
-                ? `${highlightColor} !important`
-                : "ui.link.primary !important",
-            background:
-              backgroundColor !== undefined
-                ? `${backgroundColor} !important`
-                : "ui.link.primary-05 !important",
-            bold: "bold",
-            display: "inline-block",
-            textDecoration: "none",
           },
         },
         scrollableButtons: {
