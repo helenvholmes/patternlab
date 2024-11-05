@@ -20,7 +20,7 @@ const commonStyles = () => ({
   boxSizing: "border-box !important",
   display: "inline-block !important",
   textDecoration: "none !important",
-})
+});
 
 const SubNav = defineMultiStyleConfig({
   baseStyle: definePartsStyle(
@@ -62,9 +62,10 @@ const SubNav = defineMultiStyleConfig({
           button: {
             ...commonStyles(),
             svg: {
-              fill: highlightColor !== undefined
-                ? `${highlightColor} !important`
-                : "ui.link.primary !important",
+              fill:
+                highlightColor !== undefined
+                  ? `${highlightColor} !important`
+                  : "ui.link.primary !important",
               _dark: {
                 fill: backgroundColor
                   ? `${backgroundColor} !important`
@@ -77,9 +78,10 @@ const SubNav = defineMultiStyleConfig({
                   ? `${backgroundColor} !important`
                   : "ui.link.primary-05 !important",
               svg: {
-                fill: highlightColor !== undefined
-                  ? `${highlightColor} !important`
-                  : "ui.link.primary !important",
+                fill:
+                  highlightColor !== undefined
+                    ? `${highlightColor} !important`
+                    : "ui.link.primary !important",
                 _dark: {
                   fill: backgroundColor
                     ? `${backgroundColor} !important`
@@ -89,13 +91,15 @@ const SubNav = defineMultiStyleConfig({
             },
             _active: {
               svg: {
-                fill: highlightColor !== undefined
-                  ? `${highlightColor} !important`
-                  : "ui.link.primary !important",
+                fill:
+                  highlightColor !== undefined
+                    ? `${highlightColor} !important`
+                    : "ui.link.primary !important",
                 _dark: {
-                  fill: backgroundColor !== undefined
-                    ? `${backgroundColor} !important`
-                    : "ui.link.primary-05 !important",
+                  fill:
+                    backgroundColor !== undefined
+                      ? `${backgroundColor} !important`
+                      : "ui.link.primary-05 !important",
                 },
               },
               fontWeight: "700",
@@ -115,14 +119,15 @@ const SubNav = defineMultiStyleConfig({
           a: {
             ...commonStyles(),
             color:
-            highlightColor !== undefined
-              ? `${highlightColor} !important`
-              : "ui.link.primary !important",
-            textDecoration: "none !important",
-            svg: {
-              fill: highlightColor !== undefined
+              highlightColor !== undefined
                 ? `${highlightColor} !important`
                 : "ui.link.primary !important",
+            textDecoration: "none !important",
+            svg: {
+              fill:
+                highlightColor !== undefined
+                  ? `${highlightColor} !important`
+                  : "ui.link.primary !important",
               _dark: {
                 fill: backgroundColor
                   ? `${backgroundColor} !important`
@@ -135,9 +140,10 @@ const SubNav = defineMultiStyleConfig({
                   ? `${backgroundColor} !important`
                   : "ui.link.primary-05 !important",
               svg: {
-                fill: highlightColor !== undefined
-                  ? `${highlightColor} !important`
-                  : "ui.link.primary !important",
+                fill:
+                  highlightColor !== undefined
+                    ? `${highlightColor} !important`
+                    : "ui.link.primary !important",
                 _dark: {
                   fill: backgroundColor
                     ? `${backgroundColor} !important`
@@ -147,9 +153,10 @@ const SubNav = defineMultiStyleConfig({
             },
             _active: {
               svg: {
-                fill: highlightColor !== undefined
-                  ? `${highlightColor} !important`
-                  : "ui.link.primary !important",
+                fill:
+                  highlightColor !== undefined
+                    ? `${highlightColor} !important`
+                    : "ui.link.primary !important",
                 _dark: {
                   fill: backgroundColor
                     ? `${backgroundColor} !important`
@@ -175,13 +182,15 @@ const SubNav = defineMultiStyleConfig({
             ...commonStyles(),
             _hover: {
               svg: {
-                fill: highlightColor !== undefined
-                  ? `${highlightColor} !important`
-                  : "ui.black !important",
+                fill:
+                  highlightColor !== undefined
+                    ? `${highlightColor} !important`
+                    : "ui.black !important",
                 _dark: {
-                  fill: backgroundColor !== undefined
-                    ? `${backgroundColor} !important`
-                    : "ui.white !important",
+                  fill:
+                    backgroundColor !== undefined
+                      ? `${backgroundColor} !important`
+                      : "ui.white !important",
                 },
               },
               color:
@@ -195,9 +204,10 @@ const SubNav = defineMultiStyleConfig({
             },
             _active: {
               svg: {
-                fill: highlightColor !== undefined
-                  ? `${highlightColor} !important`
-                  : "ui.link.primary !important",
+                fill:
+                  highlightColor !== undefined
+                    ? `${highlightColor} !important`
+                    : "ui.link.primary !important",
                 _dark: {
                   fill: backgroundColor
                     ? `${backgroundColor} !important`
@@ -228,13 +238,15 @@ const SubNav = defineMultiStyleConfig({
             },
             _hover: {
               svg: {
-                fill: highlightColor !== undefined
-                  ? `${highlightColor} !important`
-                  : "ui.black !important",
+                fill:
+                  highlightColor !== undefined
+                    ? `${highlightColor} !important`
+                    : "ui.black !important",
                 _dark: {
-                  fill: backgroundColor !== undefined
-                    ? `${backgroundColor} !important`
-                    : "ui.white !important",
+                  fill:
+                    backgroundColor !== undefined
+                      ? `${backgroundColor} !important`
+                      : "ui.white !important",
                 },
               },
               color:
@@ -249,13 +261,15 @@ const SubNav = defineMultiStyleConfig({
             },
             _active: {
               svg: {
-                fill: highlightColor !== undefined
-                  ? `${highlightColor} !important`
-                  : "ui.link.primary !important",
+                fill:
+                  highlightColor !== undefined
+                    ? `${highlightColor} !important`
+                    : "ui.link.primary !important",
                 _dark: {
-                  fill: backgroundColor !== undefined
-                    ? `${backgroundColor} !important`
-                    : "ui.link.primary-05 !important",
+                  fill:
+                    backgroundColor !== undefined
+                      ? `${backgroundColor} !important`
+                      : "ui.link.primary-05 !important",
                 },
               },
               fontWeight: "700",
