@@ -277,10 +277,10 @@ export const SubNav: ChakraComponent<
           <HStack sx={{ ...styles.secondaryActions }}>
             {secondaryActions
               ? secondaryActions({
-                  highlightColor,
-                  actionBackgroundColor,
-                  selectedItem,
-                })
+                highlightColor,
+                actionBackgroundColor,
+                selectedItem,
+              })
               : null}
           </HStack>
         </Flex>
