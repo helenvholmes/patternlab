@@ -10,12 +10,37 @@ Currently, this repo is in Prerelease. When it is released, this project will ad
 
 ### Adds
 
+- Adds the `"contentFilterRelease"` option to the `Icon` component.
+- Adds the `"socialX"` option to the `Icon` component.
+
+### Updates
+
+- Updates Storybook and related dependencies to version 8.3.6.
+- Updates the `SocialMediaLinks` component to support the `"socialX"` icon.
+
+## Fixes
+
+- Fixes spacing issues and dark mode color styles in the `Table` component.
+
+## 3.4.1 (October 24, 2024)
+
+### Adds
+
 - Adds the `"decorativeBookBroken"` option (for error pages) to the `Icon` component.
+- Adds the `"xxxxlarge"` and `"xxxxxlarge"` size options for the `Icon` component.
+- Adds the `"2xlarge"`, `"3xlarge"`, `"4xlarge"`, and `"5xlarge"` sustainable size options for the `Icon` component.
+- Adds the `heading7` and `heading8` options for the `size` prop in the `Heading` component.
 
 ### Updates
 
 - Updates `Select` in the `SearchBar` component to allow long option titles before truncation.
 - Updates the `ProgressIndicator` component to add the `labelPlacement` prop to allow for custom placement of a label for circular indicators.
+- Updates image props in the `Hero` component to allow custom image components.
+- Updates Vite from `5.2.8` to `5.2.14` to fix a security vulnerability.
+
+### Removes
+
+- Removes unused dependencies, two of which were causing npm vulnerabilities.
 
 ## 3.4.0 (October 2, 2024)
 

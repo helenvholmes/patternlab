@@ -118,11 +118,7 @@ export type {
 export { default as HelperErrorText } from "./components/HelperErrorText/HelperErrorText";
 export type { HelperErrorTextProps } from "./components/HelperErrorText/HelperErrorText";
 export { default as Hero } from "./components/Hero/Hero";
-export type {
-  HeroImageProps,
-  HeroProps,
-  HeroTypes,
-} from "./components/Hero/Hero";
+export type { HeroProps, HeroTypes } from "./components/Hero/Hero";
 export { default as HorizontalRule } from "./components/HorizontalRule/HorizontalRule";
 export type { HorizontalRuleProps } from "./components/HorizontalRule/HorizontalRule";
 export { default as Icon } from "./components/Icons/Icon";

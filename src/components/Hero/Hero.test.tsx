@@ -4,6 +4,7 @@ import * as React from "react";
 import renderer from "react-test-renderer";
 import Heading from "../Heading/Heading";
 import Hero from "./Hero";
+import Image from "../Image/Image";
 import { getLinkColor, getTextColor } from "../../theme/components/hero";
 import { getPlaceholderImage } from "../../utils/utils";
 
@@ -254,6 +255,29 @@ describe("Hero", () => {
 
     expect(warn).toHaveBeenCalledWith(
       `NYPL Reservoir Hero: The "imageProps.src" prop was passed but the "imageProps.alt" props was not. This will make the rendered image inaccessible.`
+    );
+  });
+
+  it("correctly renders custom image component with internal props", () => {
+    render(
+      <Hero
+        heroType="campaign"
+        heading={<Heading level="h1" id="campaign-hero" text="Hero" />}
+        imageProps={{
+          alt: "Should not be the alt text",
+          component: (
+            <Image
+              alt={"Custom Image component example"}
+              src={getPlaceholderImage()}
+            />
+          ),
+        }}
+      />
+    );
+
+    expect(screen.getByRole("img")).toHaveAttribute(
+      "alt",
+      "Custom Image component example"
     );
   });
 

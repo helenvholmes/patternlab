@@ -14,7 +14,18 @@ export const changelogData: ChangelogData[] = [
     version: "Prerelease",
     type: "Update",
     affects: ["Functionality"],
-    notes: ["Added the decorativeBookBroken icon."],
+    notes: ["Added the `contentFilterList` and `socialX` icons."],
+  },
+  {
+    date: "2024-10-24",
+    version: "3.4.1",
+    type: "Update",
+    affects: ["Functionality"],
+    notes: [
+      "Added the `decorativeBookBroken` icon.",
+      "Added the `xxxxlarge` and `xxxxxlarge` sizes.",
+      "Added the `2xlarge`, `3xlarge`, `4xlarge`, and `5xlarge` sustainable size options.",
+    ],
   },
   {
     date: "2024-04-11",

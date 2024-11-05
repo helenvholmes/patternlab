@@ -3,7 +3,7 @@ import { createMultiStyleConfigHelpers } from "@chakra-ui/styled-system";
 import { wrapperStyles } from "./global";
 import { screenreaderOnly } from "./globalMixins";
 
-// This function creates a set of function that helps us
+// This function creates a set of functions that help us
 // create multipart component styles.
 const { defineMultiStyleConfig, definePartsStyle } =
   createMultiStyleConfigHelpers([
