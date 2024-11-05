@@ -9,6 +9,18 @@ interface SubNavStyleProps extends StyleFunctionProps {
   highlightColor: string;
   isOutlined: boolean;
 }
+const commonStyles = () => ({
+  padding: "4px 16px !important",
+  gap: "4px !important",
+  marginY: "4px !important",
+  width: "140px !important",
+  minWidth: "140px !important",
+  transition: "background-color 0.2s, color 0.2s !important",
+  lineHeight: "normal !important",
+  boxSizing: "border-box !important",
+  display: "inline-block !important",
+  textDecoration: "none !important",
+})
 
 const SubNav = defineMultiStyleConfig({
   baseStyle: definePartsStyle(
@@ -48,14 +60,7 @@ const SubNav = defineMultiStyleConfig({
               ? `${highlightColor}`
               : "ui.link.primary",
           button: {
-            padding: "4px 16px",
-            gap: "4px",
-            marginY: "4px",
-            width: "140px",
-            minWidth: "140px",
-            transition: "background-color 0.2s, color 0.2s",
-            lineHeight: "normal",
-            boxSizing: "border-box",
+            ...commonStyles(),
             svg: {
               fill: highlightColor !== undefined
                 ? `${highlightColor} !important`
@@ -67,6 +72,10 @@ const SubNav = defineMultiStyleConfig({
               },
             },
             _hover: {
+              background:
+                backgroundColor !== undefined
+                  ? `${backgroundColor} !important`
+                  : "ui.link.primary-05 !important",
               svg: {
                 fill: highlightColor !== undefined
                   ? `${highlightColor} !important`
@@ -104,11 +113,7 @@ const SubNav = defineMultiStyleConfig({
             },
           },
           a: {
-            padding: "4px 16px",
-            gap: "4px",
-            marginY: "4px",
-            width: "140px",
-            minWidth: "140px",
+            ...commonStyles(),
             color:
             highlightColor !== undefined
               ? `${highlightColor} !important`
@@ -125,6 +130,10 @@ const SubNav = defineMultiStyleConfig({
               },
             },
             _hover: {
+              background:
+                backgroundColor !== undefined
+                  ? `${backgroundColor} !important`
+                  : "ui.link.primary-05 !important",
               svg: {
                 fill: highlightColor !== undefined
                   ? `${highlightColor} !important`
@@ -163,15 +172,7 @@ const SubNav = defineMultiStyleConfig({
         },
         primaryActions: {
           button: {
-            color: "ui.typography.body",
-            padding: "4px 16px",
-            gap: "4px",
-            marginY: "4px",
-            width: "140px",
-            minWidth: "140px",
-            transition: "background-color 0.2s, color 0.2s",
-            lineHeight: "normal",
-            boxSizing: "border-box",
+            ...commonStyles(),
             _hover: {
               svg: {
                 fill: highlightColor !== undefined
@@ -217,13 +218,8 @@ const SubNav = defineMultiStyleConfig({
             },
           },
           a: {
-            textDecoration: "none",
+            ...commonStyles(),
             color: "ui.typography.body !important",
-            padding: "4px 16px",
-            gap: "4px",
-            marginY: "4px",
-            width: "140px",
-            minWidth: "140px",
             svg: {
               fill: "ui.black !important",
               _dark: {
@@ -273,7 +269,6 @@ const SubNav = defineMultiStyleConfig({
                   : "ui.link.primary-05 !important",
               bold: "bold",
               display: "inline-block",
-              textDecoration: "none",
             },
           },
         },

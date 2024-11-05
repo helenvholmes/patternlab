@@ -282,7 +282,7 @@ export const SubNav: ChakraComponent<
             })}
           </HStack>
         </Flex>
-        <Box id="suv-nav-border" />
+        <Box id="suv-nav-border" sx={{ ...styles.borderLine }}/>
       </>
     );
   })
