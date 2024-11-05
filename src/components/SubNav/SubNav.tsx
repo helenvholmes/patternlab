@@ -158,6 +158,7 @@ export const SubNavLink: React.FC<React.PropsWithChildren<any>> = chakra(
     highlightColor,
     actionBackgroundColor,
     selectedItem,
+    href,
   }) => {
     const isSelected = selectedItem === String(id);
     const styles = useMultiStyleConfig("SubNav", {
@@ -170,7 +171,7 @@ export const SubNavLink: React.FC<React.PropsWithChildren<any>> = chakra(
         key={id}
         id={id}
         type={type}
-        href={"#link"}
+        href={href}
         screenreaderOnlyText={id}
         __css={{
           ...styles.a,

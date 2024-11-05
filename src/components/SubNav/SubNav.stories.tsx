@@ -53,7 +53,6 @@ export const WithControls: Story = {
           >
             Label Text 1
           </SubNavButton>
-
           <SubNavButton
             id="primary-sub-nav-button-2"
             highlightColor={highlightColor}
@@ -81,6 +80,7 @@ export const WithControls: Story = {
             screenreaderOnlyText="of my account"
             highlightColor={highlightColor}
             actionBackgroundColor={actionBackgroundColor}
+            href={"#link1"}
           >
             Label Text 4
             <Icon
@@ -95,6 +95,7 @@ export const WithControls: Story = {
             screenreaderOnlyText="of my account"
             highlightColor={highlightColor}
             actionBackgroundColor={actionBackgroundColor}
+            href={"#link2"}
           >
             Label Text 5
             <Icon
@@ -109,6 +110,7 @@ export const WithControls: Story = {
             screenreaderOnlyText="of my account"
             highlightColor={highlightColor}
             actionBackgroundColor={actionBackgroundColor}
+            href={"#link3"}
           >
             Label Text 6
             <Icon
@@ -136,12 +138,12 @@ export const WithControls: Story = {
               align="right"
             />
           </SubNavButton>
-
           <SubNavLink
             id="sub-nav-link-1"
             screenreaderOnlyText="of my account"
             highlightColor={highlightColor}
             actionBackgroundColor={actionBackgroundColor}
+            href={"#link1"}
           >
             Label Text 1
             <Icon
@@ -184,7 +186,6 @@ export const SelectedItem: Story = {
           >
             Label Text 1
           </SubNavButton>
-
           <SubNavButton
             id="primary-sub-nav-button-2"
             highlightColor={highlightColor}
@@ -255,7 +256,6 @@ export const SelectedItem: Story = {
           >
             Label Text 3
           </SubNavButton>
-
           <SubNavLink
             id="sub-nav-link-1"
             screenreaderOnlyText="of my account"
