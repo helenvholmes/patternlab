@@ -461,7 +461,7 @@ export const HighlightColor: Story = {
   ),
 };
 
-const onClickHandler = () => { };
+const onClickHandler = () => {};
 
 export default meta;
 type Story = StoryObj<typeof SubNav>;
