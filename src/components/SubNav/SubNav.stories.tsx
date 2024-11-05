@@ -49,9 +49,8 @@ export const WithControls: Story = {
             highlightColor={highlightColor}
             actionBackgroundColor={actionBackgroundColor}
             buttonType="text"
-            isOutlined
           >
-            Label Text 1
+            Label Text
           </SubNavButton>
           <SubNavButton
             id="primary-sub-nav-button-2"
@@ -59,7 +58,7 @@ export const WithControls: Story = {
             actionBackgroundColor={actionBackgroundColor}
             buttonType="text"
           >
-            Label Text 2
+            Label Text
           </SubNavButton>
           <SubNavButton
             id="primary-sub-nav-button-3"
@@ -67,13 +66,7 @@ export const WithControls: Story = {
             actionBackgroundColor={actionBackgroundColor}
             buttonType="text"
           >
-            Label Text 3
-            <Icon
-              name="legacyAccountFilled"
-              size="small"
-              className="right"
-              align="right"
-            />
+            Label Text
           </SubNavButton>
           <SubNavLink
             id="primary-sub-nav-link-1"
@@ -82,13 +75,7 @@ export const WithControls: Story = {
             actionBackgroundColor={actionBackgroundColor}
             href={"#link1"}
           >
-            Label Text 4
-            <Icon
-              name="legacyAccountFilled"
-              size="small"
-              className="right"
-              align="right"
-            />
+            Label Text
           </SubNavLink>
           <SubNavLink
             id="primary-sub-nav-link-2"
@@ -97,13 +84,7 @@ export const WithControls: Story = {
             actionBackgroundColor={actionBackgroundColor}
             href={"#link2"}
           >
-            Label Text 5
-            <Icon
-              name="legacyAccountFilled"
-              size="small"
-              className="right"
-              align="right"
-            />
+            Label Text
           </SubNavLink>
           <SubNavLink
             id="primary-sub-nav-link-3"
@@ -112,7 +93,7 @@ export const WithControls: Story = {
             actionBackgroundColor={actionBackgroundColor}
             href={"#link3"}
           >
-            Label Text 6
+            Label Text
             <Icon
               name="legacyAccountFilled"
               size="small"
@@ -130,7 +111,7 @@ export const WithControls: Story = {
             actionBackgroundColor={actionBackgroundColor}
             buttonType="text"
           >
-            Label Text 3
+            Label Text
             <Icon
               name="legacyAccountFilled"
               size="small"
@@ -145,7 +126,7 @@ export const WithControls: Story = {
             actionBackgroundColor={actionBackgroundColor}
             href={"#link1"}
           >
-            Label Text 1
+            Label Text
             <Icon
               name="legacyAccountFilled"
               size="small"
@@ -184,7 +165,7 @@ export const SelectedItem: Story = {
             buttonType="text"
             selectedItem={selectedItem}
           >
-            Label Text 1
+            Label Text
           </SubNavButton>
           <SubNavButton
             id="primary-sub-nav-button-2"
@@ -192,7 +173,7 @@ export const SelectedItem: Story = {
             actionBackgroundColor={actionBackgroundColor}
             buttonType="text"
           >
-            Label Text 2
+            Label Text
           </SubNavButton>
           <SubNavButton
             id="primary-sub-nav-button-3"
@@ -200,7 +181,7 @@ export const SelectedItem: Story = {
             actionBackgroundColor={actionBackgroundColor}
             buttonType="text"
           >
-            Label Text 3
+            Label Text
           </SubNavButton>
           <SubNavLink
             id="primary-sub-nav-link-1"
@@ -208,7 +189,7 @@ export const SelectedItem: Story = {
             highlightColor={highlightColor}
             actionBackgroundColor={actionBackgroundColor}
           >
-            Label Text 4
+            Label Text
             <Icon
               name="legacyAccountFilled"
               size="small"
@@ -222,7 +203,7 @@ export const SelectedItem: Story = {
             highlightColor={highlightColor}
             actionBackgroundColor={actionBackgroundColor}
           >
-            Label Text 5
+            Label Text
             <Icon
               name="legacyAccountFilled"
               size="small"
@@ -236,7 +217,7 @@ export const SelectedItem: Story = {
             highlightColor={highlightColor}
             actionBackgroundColor={actionBackgroundColor}
           >
-            Label Text 6
+            Label Text
             <Icon
               name="legacyAccountFilled"
               size="small"
@@ -254,7 +235,7 @@ export const SelectedItem: Story = {
             actionBackgroundColor={actionBackgroundColor}
             buttonType="text"
           >
-            Label Text 3
+            Label Text
           </SubNavButton>
           <SubNavLink
             id="sub-nav-link-1"
@@ -262,7 +243,7 @@ export const SelectedItem: Story = {
             highlightColor={highlightColor}
             actionBackgroundColor={actionBackgroundColor}
           >
-            Label Text 1
+            Label Text
             <Icon
               name="legacyAccountFilled"
               size="small"
@@ -276,7 +257,7 @@ export const SelectedItem: Story = {
             highlightColor={highlightColor}
             actionBackgroundColor={actionBackgroundColor}
           >
-            Label Text 2
+            Label Text
             <Icon
               name="legacyAccountFilled"
               size="small"
@@ -290,7 +271,7 @@ export const SelectedItem: Story = {
             highlightColor={highlightColor}
             actionBackgroundColor={actionBackgroundColor}
           >
-            Label Text 3
+            Label Text
             <Icon
               name="legacyAccountFilled"
               size="small"
@@ -328,10 +309,9 @@ export const Outline: Story = {
             actionBackgroundColor={actionBackgroundColor}
             buttonType="text"
             selectedItem={selectedItem}
-            isOutlined
             onClick={onClickHandler}
           >
-            Label Text 1
+            Label Text
           </SubNavButton>
 
           <SubNavButton
@@ -339,9 +319,8 @@ export const Outline: Story = {
             highlightColor={highlightColor}
             actionBackgroundColor={actionBackgroundColor}
             buttonType="text"
-            isOutlined
           >
-            Label Text 2
+            Label Text
           </SubNavButton>
           <SubNavButton
             id="primary-sub-nav-button-3"
@@ -349,7 +328,7 @@ export const Outline: Story = {
             actionBackgroundColor={actionBackgroundColor}
             buttonType="text"
           >
-            Label Text 3
+            Label Text
           </SubNavButton>
           <SubNavLink
             id="primary-sub-nav-link-1"
@@ -358,7 +337,7 @@ export const Outline: Story = {
             actionBackgroundColor={actionBackgroundColor}
             href="#link"
           >
-            Label Text 4
+            Label Text
             <Icon
               name="legacyAccountFilled"
               size="small"
@@ -377,7 +356,7 @@ export const Outline: Story = {
             buttonType="text"
             isOutlined
           >
-            Label Text 3
+            Label Text
           </SubNavButton>
 
           <SubNavLink
@@ -387,7 +366,7 @@ export const Outline: Story = {
             actionBackgroundColor={actionBackgroundColor}
             isOutlined
           >
-            Label Text 1
+            Label Text
             <Icon
               name="legacyAccountFilled"
               size="small"
@@ -427,7 +406,7 @@ export const HighlightColor: Story = {
             selectedItem={selectedItem}
             onClick={onClickHandler}
           >
-            Label Text 1
+            Label Text
           </SubNavButton>
 
           <SubNavButton
@@ -436,7 +415,7 @@ export const HighlightColor: Story = {
             actionBackgroundColor="brand.primary-05"
             buttonType="text"
           >
-            Label Text 2
+            Label Text
           </SubNavButton>
         </>
       )}
@@ -448,7 +427,7 @@ export const HighlightColor: Story = {
             actionBackgroundColor="brand.primary-05"
             buttonType="text"
           >
-            Label Text 3
+            Label Text
           </SubNavButton>
 
           <SubNavLink
@@ -457,7 +436,7 @@ export const HighlightColor: Story = {
             highlightColor="brand.primary"
             actionBackgroundColor="brand.primary-05"
           >
-            Label Text 1
+            Label Text
             <Icon
               name="legacyAccountFilled"
               size="small"

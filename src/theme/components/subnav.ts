@@ -13,12 +13,8 @@ const commonStyles = () => ({
   padding: "4px 16px !important",
   gap: "4px !important",
   marginY: "4px !important",
-  width: "140px !important",
-  minWidth: "140px !important",
   transition: "background-color 0.2s, color 0.2s !important",
   lineHeight: "normal !important",
-  boxSizing: "border-box !important",
-  display: "inline-block !important",
   textDecoration: "none !important",
 });
 
@@ -52,7 +48,6 @@ const SubNav = defineMultiStyleConfig({
           borderRadius: "6px",
         },
         secondaryActions: {
-          display: "flex",
           whiteSpace: "nowrap",
           position: "relative",
           color:
