@@ -275,13 +275,13 @@ export const SubNav: ChakraComponent<
           </HStack>
           <Spacer />
           <HStack sx={{ ...styles.secondaryActions }}>
-            {secondaryActions ? (
-              secondaryActions({
-                highlightColor,
-                actionBackgroundColor,
-                selectedItem,
-              })
-            ) : null}
+            {secondaryActions
+              ? secondaryActions({
+                  highlightColor,
+                  actionBackgroundColor,
+                  selectedItem,
+                })
+              : null}
           </HStack>
         </Flex>
         <Box id="suv-nav-border" sx={{ ...styles.borderLine }} />
