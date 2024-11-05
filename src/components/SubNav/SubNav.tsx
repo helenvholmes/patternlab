@@ -87,7 +87,7 @@ export interface SubNavProps {
    * Use SubNavButton and SubNavLink components, offering additional
    * contextual options related to the primary content.
    */
-  secondaryActions: ({
+  secondaryActions?: ({
     highlightColor,
     actionBackgroundColor,
     selectedItem,
@@ -275,11 +275,13 @@ export const SubNav: ChakraComponent<
           </HStack>
           <Spacer />
           <HStack sx={{ ...styles.secondaryActions }}>
-            {secondaryActions({
-              highlightColor,
-              actionBackgroundColor,
-              selectedItem,
-            })}
+            {secondaryActions ? (
+              secondaryActions({
+                highlightColor,
+                actionBackgroundColor,
+                selectedItem,
+              })
+            ) : null}
           </HStack>
         </Flex>
         <Box id="suv-nav-border" sx={{ ...styles.borderLine }} />
