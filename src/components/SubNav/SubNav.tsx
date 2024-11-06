@@ -258,8 +258,15 @@ export const SubNav: ChakraComponent<
 
     return (
       <>
-        <Flex alignItems="baseline" className={className} gap="1rem" justify="space-between">
-          <List type="ul" sx={{ ...styles.scrollableButtons, ...styles.primaryActions }}
+        <Flex
+          alignItems="baseline"
+          className={className}
+          gap="1rem"
+          justify="space-between"
+        >
+          <List
+            type="ul"
+            sx={{ ...styles.scrollableButtons, ...styles.primaryActions }}
             ref={scrollableRef}
           >
             <li id="primary-actions">
@@ -277,10 +284,10 @@ export const SubNav: ChakraComponent<
             <li id="secondary-actions">
               {secondaryActions
                 ? secondaryActions({
-                  highlightColor,
-                  actionBackgroundColor,
-                  selectedItem,
-                })
+                    highlightColor,
+                    actionBackgroundColor,
+                    selectedItem,
+                  })
                 : null}
             </li>
           </List>
