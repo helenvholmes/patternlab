@@ -140,7 +140,10 @@ export const SubNavButton: React.FC<React.PropsWithChildren<any>> = chakra(
     // Function to check if a component is the Icon component
     const isIconComponent = (childType: any): boolean => {
       // Check if the component is wrapped in React.forwardRef (i.e., $$typeof symbol exists)
-      return childType.$$typeof === Symbol.for('react.forward_ref') && childType.displayName === 'Icon';
+      return (
+        childType.$$typeof === Symbol.for("react.forward_ref") &&
+        childType.displayName === "Icon"
+      );
     };
 
     // Function to check if there is an Icon component in the children
@@ -214,7 +217,10 @@ export const SubNavLink: React.FC<React.PropsWithChildren<any>> = chakra(
     // Function to check if a component is the Icon component
     const isIconComponent = (childType: any): boolean => {
       // Check if the component is wrapped in React.forwardRef (i.e., $$typeof symbol exists)
-      return childType.$$typeof === Symbol.for('react.forward_ref') && childType.displayName === 'Icon';
+      return (
+        childType.$$typeof === Symbol.for("react.forward_ref") &&
+        childType.displayName === "Icon"
+      );
     };
 
     // Function to check if there is an Icon component in the children
@@ -375,10 +381,10 @@ export const SubNav: ChakraComponent<
             <li id="secondary-actions">
               {secondaryActions
                 ? secondaryActions({
-                  highlightColor,
-                  actionBackgroundColor,
-                  selectedItem,
-                })
+                    highlightColor,
+                    actionBackgroundColor,
+                    selectedItem,
+                  })
                 : null}
             </li>
           </List>
