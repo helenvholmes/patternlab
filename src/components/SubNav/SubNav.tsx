@@ -9,7 +9,7 @@ import {
 } from "@chakra-ui/react";
 import Button from "../Button/Button";
 import Link from "../Link/Link";
-import List from "../List/List"
+import List from "../List/List";
 import useNYPLBreakpoints from "../../hooks/useNYPLBreakpoints";
 
 export const actionBackgroundColorsArray = [
@@ -346,14 +346,20 @@ export const SubNav: ChakraComponent<
               <div style={fadeEffectStyles(styles.fadeEffect)} />
             )}
           </List>
-          <List noStyling inline type="ul" sx={{ ...styles.secondaryActions }} ml="auto">
+          <List
+            noStyling
+            inline
+            type="ul"
+            sx={{ ...styles.secondaryActions }}
+            ml="auto"
+          >
             <li id="secondary-actions">
               {secondaryActions
                 ? secondaryActions({
-                  highlightColor,
-                  actionBackgroundColor,
-                  selectedItem,
-                })
+                    highlightColor,
+                    actionBackgroundColor,
+                    selectedItem,
+                  })
                 : null}
             </li>
           </List>
