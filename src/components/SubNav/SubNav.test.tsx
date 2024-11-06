@@ -115,6 +115,7 @@ describe("SubNav Accessibility", () => {
         )}
       />
     );
+
     expect(await axe(container)).toHaveNoViolations();
   });
 
