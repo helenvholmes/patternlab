@@ -137,10 +137,10 @@ export const SubNavButton: React.FC<React.PropsWithChildren<any>> = chakra(
 
     const { isLargerThanMobile } = useNYPLBreakpoints();
 
-    const hasIcon = React.Children.toArray(children).some(child => {
+    const hasIcon = React.Children.toArray(children).some((child) => {
       if (React.isValidElement(child)) {
         // Check if the displayName of the component is 'Icon'
-        return child.type.displayName === 'Icon';
+        return child.type.displayName === "Icon";
       }
       return false;
     });
@@ -157,15 +157,19 @@ export const SubNavButton: React.FC<React.PropsWithChildren<any>> = chakra(
       >
         {/* On larger screens, render both text and icon */}
         {isLargerThanMobile ? (
-          <>
-            {children}
-          </>
+          <>{children}</>
         ) : (
           <>
             {/* On mobile, if there's an icon, render it alone */}
             {hasIcon ? (
               // If the icon exists, render only the icon
-              <>{children.find(child => React.isValidElement(child) && child.type.displayName === 'Icon')}</>
+              <>
+                {children.find(
+                  (child) =>
+                    React.isValidElement(child) &&
+                    child.type.displayName === "Icon"
+                )}
+              </>
             ) : (
               // If no icon, render text normally
               <>{children}</>
@@ -197,10 +201,10 @@ export const SubNavLink: React.FC<React.PropsWithChildren<any>> = chakra(
 
     const { isLargerThanMobile } = useNYPLBreakpoints();
 
-    const hasIcon = React.Children.toArray(children).some(child => {
+    const hasIcon = React.Children.toArray(children).some((child) => {
       if (React.isValidElement(child)) {
         // Check if the displayName of the component is 'Icon'
-        return child.type.displayName === 'Icon';
+        return child.type.displayName === "Icon";
       }
       return false;
     });
@@ -220,15 +224,19 @@ export const SubNavLink: React.FC<React.PropsWithChildren<any>> = chakra(
       >
         {/* On larger screens, render both text and icon */}
         {isLargerThanMobile ? (
-          <>
-            {children}
-          </>
+          <>{children}</>
         ) : (
           <>
             {/* On mobile, if there's an icon, render it alone */}
             {hasIcon ? (
               // If the icon exists, render only the icon
-              <>{children.find(child => React.isValidElement(child) && child.type.displayName === 'Icon')}</>
+              <>
+                {children.find(
+                  (child) =>
+                    React.isValidElement(child) &&
+                    child.type.displayName === "Icon"
+                )}
+              </>
             ) : (
               // If no icon, render text normally
               <>{children}</>
@@ -340,10 +348,10 @@ export const SubNav: ChakraComponent<
             <li id="secondary-actions">
               {secondaryActions
                 ? secondaryActions({
-                  highlightColor,
-                  actionBackgroundColor,
-                  selectedItem,
-                })
+                    highlightColor,
+                    actionBackgroundColor,
+                    selectedItem,
+                  })
                 : null}
             </li>
           </List>
