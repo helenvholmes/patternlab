@@ -103,6 +103,7 @@ const SubNav = defineMultiStyleConfig({
         outLine: {
           border: isOutlined !== undefined ? "1px solid" : "none",
           borderRadius: "6px",
+          marginRight: "4px",
         },
         secondaryActions: {
           whiteSpace: "nowrap",

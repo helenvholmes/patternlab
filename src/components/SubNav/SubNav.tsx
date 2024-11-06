@@ -6,11 +6,11 @@ import {
   ChakraComponent,
   useMultiStyleConfig,
   Flex,
-  Spacer,
-  HStack,
+  List,
 } from "@chakra-ui/react";
 import Button from "../Button/Button";
 import Link from "../Link/Link";
+import useNYPLBreakpoints from "../../hooks/useNYPLBreakpoints";
 
 export const actionBackgroundColorsArray = [
   "brand.primary-05",
@@ -128,11 +128,23 @@ export const SubNavButton: React.FC<React.PropsWithChildren<any>> = chakra(
     selectedItem,
   }) => {
     const isSelected = selectedItem === String(id);
+
     const styles = useMultiStyleConfig("SubNav", {
       backgroundColor: actionBackgroundColor,
       highlightColor: highlightColor,
       isOutlined: isOutlined,
     });
+
+    const { isLargerThanMobile } = useNYPLBreakpoints();
+
+    const hasIcon = React.Children.toArray(children).some((child) => {
+      if (React.isValidElement(child)) {
+        // Check if the displayName of the component is 'Icon'
+        return child.type.displayName === "Icon";
+      }
+      return false;
+    });
+
     return (
       <Button
         id={id}
@@ -143,7 +155,27 @@ export const SubNavButton: React.FC<React.PropsWithChildren<any>> = chakra(
           ...(isSelected ? styles.selectedItem : null),
         }}
       >
-        {children}
+        {/* On larger screens, render both text and icon */}
+        {isLargerThanMobile ? (
+          <>{children}</>
+        ) : (
+          <>
+            {/* On mobile, if there's an icon, render it alone */}
+            {hasIcon ? (
+              // If the icon exists, render only the icon
+              <>
+                {children.find(
+                  (child) =>
+                    React.isValidElement(child) &&
+                    child.type.displayName === "Icon"
+                )}
+              </>
+            ) : (
+              // If no icon, render text normally
+              <>{children}</>
+            )}
+          </>
+        )}
       </Button>
     );
   }
@@ -166,6 +198,17 @@ export const SubNavLink: React.FC<React.PropsWithChildren<any>> = chakra(
       highlightColor: highlightColor,
       isOutlined: isOutlined,
     });
+
+    const { isLargerThanMobile } = useNYPLBreakpoints();
+
+    const hasIcon = React.Children.toArray(children).some((child) => {
+      if (React.isValidElement(child)) {
+        // Check if the displayName of the component is 'Icon'
+        return child.type.displayName === "Icon";
+      }
+      return false;
+    });
+
     return (
       <Link
         key={id}
@@ -180,7 +223,27 @@ export const SubNavLink: React.FC<React.PropsWithChildren<any>> = chakra(
           ...(isSelected ? styles.selectedItem : null),
         }}
       >
-        {children}
+        {/* On larger screens, render both text and icon */}
+        {isLargerThanMobile ? (
+          <>{children}</>
+        ) : (
+          <>
+            {/* On mobile, if there's an icon, render it alone */}
+            {hasIcon ? (
+              // If the icon exists, render only the icon
+              <>
+                {children.find(
+                  (child) =>
+                    React.isValidElement(child) &&
+                    child.type.displayName === "Icon"
+                )}
+              </>
+            ) : (
+              // If no icon, render text normally
+              <>{children}</>
+            )}
+          </>
+        )}
       </Link>
     );
   }
@@ -260,30 +323,39 @@ export const SubNav: ChakraComponent<
 
     return (
       <>
-        <Flex alignItems="baseline" className={className} gap="1rem">
-          <HStack
+        <Flex
+          alignItems="baseline"
+          className={className}
+          gap="1rem"
+          justify="space-between"
+        >
+          <List
+            type="ul"
             sx={{ ...styles.scrollableButtons, ...styles.primaryActions }}
             ref={scrollableRef}
           >
-            {primaryActions({
-              highlightColor,
-              actionBackgroundColor,
-              selectedItem,
-            })}
+            <li id="primary-actions">
+              {primaryActions({
+                highlightColor,
+                actionBackgroundColor,
+                selectedItem,
+              })}
+            </li>
             {showRightFade && (
               <div style={fadeEffectStyles(styles.fadeEffect)} />
             )}
-          </HStack>
-          <Spacer />
-          <HStack sx={{ ...styles.secondaryActions }}>
-            {secondaryActions
-              ? secondaryActions({
-                  highlightColor,
-                  actionBackgroundColor,
-                  selectedItem,
-                })
-              : null}
-          </HStack>
+          </List>
+          <List type="ul" sx={{ ...styles.secondaryActions }} ml="auto">
+            <li id="secondary-actions">
+              {secondaryActions
+                ? secondaryActions({
+                    highlightColor,
+                    actionBackgroundColor,
+                    selectedItem,
+                  })
+                : null}
+            </li>
+          </List>
         </Flex>
         <Box id="suv-nav-border" sx={{ ...styles.borderLine }} />
       </>
