@@ -1,7 +1,4 @@
-import {
-  render,
-  screen,
-} from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { axe } from "jest-axe";
 import Icon from "../Icons/Icon";
 import SubNav, { SubNavButton, SubNavLink } from "./SubNav";
@@ -116,7 +113,9 @@ describe("SubNav Accessibility", () => {
             </SubNavLink>
           </>
         )}
-      />);
+      />
+    );
+
     expect(await axe(container)).toHaveNoViolations();
   });
 
@@ -194,8 +193,8 @@ describe("SubNav Accessibility", () => {
   });
 });
 
-describe('SubNav Component', () => {
-  it('renders with primary actions', () => {
+describe("SubNav Component", () => {
+  it("renders with primary actions", () => {
     render(
       <SubNav
         primaryActions={() => (
@@ -207,11 +206,11 @@ describe('SubNav Component', () => {
       />
     );
 
-    expect(screen.getByText('Primary Button 1')).toBeInTheDocument();
-    expect(screen.getByText('Primary Button 2')).toBeInTheDocument();
+    expect(screen.getByText("Primary Button 1")).toBeInTheDocument();
+    expect(screen.getByText("Primary Button 2")).toBeInTheDocument();
   });
 
-  it('renders with secondary actions', () => {
+  it("renders with secondary actions", () => {
     render(
       <SubNav
         primaryActions={() => (
@@ -227,28 +226,32 @@ describe('SubNav Component', () => {
       />
     );
 
-    expect(screen.getByText('Primary Button')).toBeInTheDocument();
-    expect(screen.getByText('Secondary Link')).toBeInTheDocument();
+    expect(screen.getByText("Primary Button")).toBeInTheDocument();
+    expect(screen.getByText("Secondary Link")).toBeInTheDocument();
   });
 
-  it('renders with selectedItem highlighted', async () => {
+  it("renders with selectedItem highlighted", async () => {
     render(
       <SubNav
         selectedItem="primary-button-1"
         primaryActions={() => (
           <>
-            <SubNavButton id="primary-button-1" selectedItem="primary-button-1">Primary Button 1</SubNavButton>
+            <SubNavButton id="primary-button-1" selectedItem="primary-button-1">
+              Primary Button 1
+            </SubNavButton>
             <SubNavButton id="primary-button-2">Primary Button 2</SubNavButton>
           </>
         )}
       />
     );
 
-    const selectedButton = await screen.findByRole('button', { name: /Primary Button 1/i });
-    expect(selectedButton).toHaveTextContent('Primary Button 1');
+    const selectedButton = await screen.findByRole("button", {
+      name: /Primary Button 1/i,
+    });
+    expect(selectedButton).toHaveTextContent("Primary Button 1");
   });
 
-  it('passes axe accessibility test with primary actions', async () => {
+  it("passes axe accessibility test with primary actions", async () => {
     const { container } = render(
       <SubNav
         primaryActions={() => (
@@ -262,7 +265,7 @@ describe('SubNav Component', () => {
     expect(await axe(container)).toHaveNoViolations();
   });
 
-  it('passes axe accessibility test with secondary actions', async () => {
+  it("passes axe accessibility test with secondary actions", async () => {
     const { container } = render(
       <SubNav
         primaryActions={() => (
@@ -280,7 +283,7 @@ describe('SubNav Component', () => {
     expect(await axe(container)).toHaveNoViolations();
   });
 
-  it('passes axe accessibility test with props', async () => {
+  it("passes axe accessibility test with props", async () => {
     const { container } = render(
       <SubNav
         actionBackgroundColor="brand.primary-05"

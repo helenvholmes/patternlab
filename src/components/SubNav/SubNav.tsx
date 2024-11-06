@@ -184,7 +184,7 @@ export const SubNavButton: React.FC<React.PropsWithChildren<any>> = chakra(
         __css={{
           ...styles.button,
           ...styles.outLine,
-          ...(isSelected ? styles.selectedItem : {}),
+          ...(isSelected ? styles.selectedItem : null),
         }}
       >
         {renderContent()}
@@ -260,11 +260,12 @@ export const SubNavLink: React.FC<React.PropsWithChildren<any>> = chakra(
         id={id}
         type={type}
         href={href}
+        isUnderlined={false}
         screenreaderOnlyText={screenreaderOnlyText}
         __css={{
           ...styles.a,
           ...styles.outLine,
-          ...(isSelected ? styles.selectedItem : {}),
+          ...(isSelected ? styles.selectedItem : null),
         }}
       >
         {renderContent()}
@@ -346,7 +347,7 @@ export const SubNav: ChakraComponent<
     };
 
     return (
-      <>
+      <Box __css={styles.base}>
         <Flex
           alignItems="baseline"
           className={className}
@@ -355,6 +356,7 @@ export const SubNav: ChakraComponent<
         >
           <List
             type="ul"
+            m="0"
             sx={{ ...styles.scrollableButtons, ...styles.primaryActions }}
             ref={scrollableRef}
             inline
@@ -376,7 +378,8 @@ export const SubNav: ChakraComponent<
             inline
             type="ul"
             sx={{ ...styles.secondaryActions }}
-            ml="auto"
+            m="0"
+            width="fit-content"
           >
             <li id="secondary-actions">
               {secondaryActions
@@ -389,8 +392,7 @@ export const SubNav: ChakraComponent<
             </li>
           </List>
         </Flex>
-        <Box id="suv-nav-border" sx={{ ...styles.borderLine }} />
-      </>
+      </Box>
     );
   })
 );
