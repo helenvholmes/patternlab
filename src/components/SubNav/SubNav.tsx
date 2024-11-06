@@ -6,8 +6,7 @@ import {
   ChakraComponent,
   useMultiStyleConfig,
   Flex,
-  Spacer,
-  HStack,
+  List,
 } from "@chakra-ui/react";
 import Button from "../Button/Button";
 import Link from "../Link/Link";
@@ -259,30 +258,32 @@ export const SubNav: ChakraComponent<
 
     return (
       <>
-        <Flex alignItems="baseline" className={className} gap="1rem">
-          <HStack
-            sx={{ ...styles.scrollableButtons, ...styles.primaryActions }}
+        <Flex alignItems="baseline" className={className} gap="1rem" justify="space-between">
+          <List type="ul" sx={{ ...styles.scrollableButtons, ...styles.primaryActions }}
             ref={scrollableRef}
           >
-            {primaryActions({
-              highlightColor,
-              actionBackgroundColor,
-              selectedItem,
-            })}
-            {showRightFade && (
-              <div style={fadeEffectStyles(styles.fadeEffect)} />
-            )}
-          </HStack>
-          <Spacer />
-          <HStack sx={{ ...styles.secondaryActions }}>
-            {secondaryActions
-              ? secondaryActions({
+            <li id="primary-actions">
+              {primaryActions({
                 highlightColor,
                 actionBackgroundColor,
                 selectedItem,
-              })
-              : null}
-          </HStack>
+              })}
+            </li>
+            {showRightFade && (
+              <div style={fadeEffectStyles(styles.fadeEffect)} />
+            )}
+          </List>
+          <List type="ul" sx={{ ...styles.secondaryActions }} ml="auto">
+            <li id="secondary-actions">
+              {secondaryActions
+                ? secondaryActions({
+                  highlightColor,
+                  actionBackgroundColor,
+                  selectedItem,
+                })
+                : null}
+            </li>
+          </List>
         </Flex>
         <Box id="suv-nav-border" sx={{ ...styles.borderLine }} />
       </>
