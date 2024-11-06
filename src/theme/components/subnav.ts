@@ -17,32 +17,38 @@ interface SubNavStyleProps extends StyleFunctionProps {
   isOutlined: boolean;
 }
 const commonStyles = () => ({
-  padding: "var(--nypl-space-xxs) var(--nypl-space-s) !important",
-  gap: "var(--nypl-space-xxs) !important",
-  marginY: "var(--nypl-space-xxs) !important",
-  transition: "background-color 0.2s, color 0.2s !important",
-  lineHeight: "normal !important",
+  alignItems: "center",
+  display: "inline-flex",
+  fontWeight: "regular",
+  gap: "xs",
+  height: { base: "44px", md: "unset" },
+  lineHeight: "1.5 !important",
+  px: "s",
+  py: "xxs",
   textDecoration: "none !important",
+  transition: "background-color 0.2s, color 0.2s !important",
 });
 
 const SubNav = defineMultiStyleConfig({
   baseStyle: definePartsStyle(
     ({ backgroundColor, highlightColor, isOutlined }: SubNavStyleProps) => {
-      // const highlightOrDefaultColor = highlightColor
-      //   ? `${highlightColor} !important`
-      //   : "ui.typography.body !important";
       const defaultLabelColor = "ui.typography.body";
       const highlightOrLinkColor = highlightColor
         ? `${highlightColor} !important`
         : "ui.link.primary !important";
+      const highlightOrBorderColor = highlightColor
+        ? `${highlightColor} !important`
+        : "ui.border.default !important";
       const finalBackgroundColor = backgroundColor
         ? backgroundColor
         : "ui.link.primary-05";
       const primaryActionsStyles = {
         ...commonStyles(),
         color: defaultLabelColor,
+        marginRight: "xs",
         svg: {
           fill: defaultLabelColor,
+          margin: { base: "0", md: null },
           _dark: {
             fill: "ui.white !important",
           },
@@ -64,8 +70,10 @@ const SubNav = defineMultiStyleConfig({
       const secondaryActionsStyles = {
         ...commonStyles(),
         color: highlightOrLinkColor,
+        marginLeft: "xs",
         svg: {
           fill: highlightOrLinkColor,
+          margin: { base: "0", md: null },
           _dark: {
             fill: backgroundColor
               ? `${backgroundColor} !important`
@@ -85,10 +93,15 @@ const SubNav = defineMultiStyleConfig({
         },
       };
       return {
-        base: {},
+        base: {
+          borderBottom: "1px solid",
+          borderColor: highlightOrBorderColor,
+          px: "s",
+          py: { base: "s", md: "xs" },
+        },
         selectedItem: {
           color: highlightOrLinkColor,
-          fontWeight: "bold",
+          fontWeight: "bold !important",
           backgroundColor: finalBackgroundColor,
         },
         borderLine: {
@@ -103,17 +116,17 @@ const SubNav = defineMultiStyleConfig({
         outLine: {
           border: isOutlined !== undefined ? "1px solid" : "none",
           borderRadius: "6px",
-          marginRight: "4px",
-        },
-        secondaryActions: {
-          whiteSpace: "nowrap",
-          // position: "relative",
-          button: secondaryActionsStyles,
-          a: secondaryActionsStyles,
         },
         primaryActions: {
+          width: "100%",
           button: primaryActionsStyles,
           a: primaryActionsStyles,
+        },
+        secondaryActions: {
+          width: "fit-content",
+          whiteSpace: "nowrap",
+          button: secondaryActionsStyles,
+          a: secondaryActionsStyles,
         },
         scrollableButtons: {
           display: "flex",
@@ -131,6 +144,9 @@ const SubNav = defineMultiStyleConfig({
             "linear-gradient(to left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%)",
           pointerEvents: "none",
           zIndex: 1,
+        },
+        ul: {
+          margin: "0 !important",
         },
       };
     }

@@ -322,7 +322,7 @@ export const SubNav: ChakraComponent<
     };
 
     return (
-      <>
+      <Box __css={styles.base}>
         <Flex
           alignItems="baseline"
           className={className}
@@ -331,6 +331,7 @@ export const SubNav: ChakraComponent<
         >
           <List
             type="ul"
+            m="0"
             sx={{ ...styles.scrollableButtons, ...styles.primaryActions }}
             ref={scrollableRef}
           >
@@ -345,7 +346,12 @@ export const SubNav: ChakraComponent<
               <div style={fadeEffectStyles(styles.fadeEffect)} />
             )}
           </List>
-          <List type="ul" sx={{ ...styles.secondaryActions }} ml="auto">
+          <List
+            type="ul"
+            sx={{ ...styles.secondaryActions }}
+            m="0"
+            width="fit-content"
+          >
             <li id="secondary-actions">
               {secondaryActions
                 ? secondaryActions({
@@ -357,8 +363,7 @@ export const SubNav: ChakraComponent<
             </li>
           </List>
         </Flex>
-        <Box id="suv-nav-border" sx={{ ...styles.borderLine }} />
-      </>
+      </Box>
     );
   })
 );
