@@ -49,6 +49,7 @@ export const WithControls: Story = {
             highlightColor={highlightColor}
             actionBackgroundColor={actionBackgroundColor}
             buttonType="text"
+            isOutlined
           >
             Label Text
           </SubNavButton>
@@ -396,7 +397,7 @@ export const HighlightColor: Story = {
     actionBackgroundColor: "brand.primary-05",
     highlightColor: "brand.primary",
     id: "sub-nav-id",
-    selectedItem: undefined,
+    selectedItem: "primary-sub-nav-button-1",
   },
 
   render: (args: any) => (
@@ -424,9 +425,32 @@ export const HighlightColor: Story = {
             actionBackgroundColor="brand.primary-05"
             buttonType="text"
             onClick={onClickHandler}
+            isOutlined
           >
             Label Text
+            <Icon
+              name="legacyAccountFilled"
+              size="small"
+              className="right"
+              align="right"
+            />
           </SubNavButton>
+          <SubNavLink
+            id="primary-link-1"
+            screenreaderOnlyText="for the NYPL Research Catalog"
+            highlightColor="brand.primary"
+            actionBackgroundColor="brand.primary-05"
+            href="#link"
+            isOutlined
+          >
+            Label Text
+            <Icon
+              name="legacyAccountFilled"
+              size="small"
+              className="right"
+              align="right"
+            />
+          </SubNavLink>
         </>
       )}
       secondaryActions={() => (
@@ -437,6 +461,7 @@ export const HighlightColor: Story = {
             actionBackgroundColor="brand.primary-05"
             buttonType="text"
             onClick={onClickHandler}
+            isOutlined
           >
             Label Text
           </SubNavButton>
@@ -446,6 +471,7 @@ export const HighlightColor: Story = {
             highlightColor="brand.primary"
             actionBackgroundColor="brand.primary-05"
             href="#link"
+            isOutlined
           >
             Label Text
             <Icon
