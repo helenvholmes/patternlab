@@ -6,10 +6,10 @@ import {
   ChakraComponent,
   useMultiStyleConfig,
   Flex,
-  List,
 } from "@chakra-ui/react";
 import Button from "../Button/Button";
 import Link from "../Link/Link";
+import List from "../List/List"
 import useNYPLBreakpoints from "../../hooks/useNYPLBreakpoints";
 
 export const actionBackgroundColorsArray = [
@@ -332,6 +332,8 @@ export const SubNav: ChakraComponent<
             type="ul"
             sx={{ ...styles.scrollableButtons, ...styles.primaryActions }}
             ref={scrollableRef}
+            inline
+            noStyling
           >
             <li id="primary-actions">
               {primaryActions({
@@ -344,14 +346,14 @@ export const SubNav: ChakraComponent<
               <div style={fadeEffectStyles(styles.fadeEffect)} />
             )}
           </List>
-          <List type="ul" sx={{ ...styles.secondaryActions }} ml="auto">
+          <List noStyling inline type="ul" sx={{ ...styles.secondaryActions }} ml="auto">
             <li id="secondary-actions">
               {secondaryActions
                 ? secondaryActions({
-                    highlightColor,
-                    actionBackgroundColor,
-                    selectedItem,
-                  })
+                  highlightColor,
+                  actionBackgroundColor,
+                  selectedItem,
+                })
                 : null}
             </li>
           </List>
