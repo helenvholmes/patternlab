@@ -137,13 +137,42 @@ export const SubNavButton: React.FC<React.PropsWithChildren<any>> = chakra(
 
     const { isLargerThanMobile } = useNYPLBreakpoints();
 
+    // Function to check if a component is the Icon component
+    const isIconComponent = (childType: any): boolean => {
+      // Check if the component is wrapped in React.forwardRef (i.e., $$typeof symbol exists)
+      return childType.$$typeof === Symbol.for('react.forward_ref') && childType.displayName === 'Icon';
+    };
+
+    // Function to check if there is an Icon component in the children
     const hasIcon = React.Children.toArray(children).some((child) => {
       if (React.isValidElement(child)) {
-        // Check if the displayName of the component is 'Icon'
-        return child.type.displayName === "Icon";
+        // Check if the type of child is the Icon component
+        const childType = child.type as React.ComponentType<any>;
+        return isIconComponent(childType);
       }
       return false;
     });
+
+    // Function to render content based on the screen size
+    const renderContent = () => {
+      if (isLargerThanMobile) {
+        // On larger screens, render both the label text and icon (if any)
+        return children;
+      }
+
+      if (hasIcon) {
+        // On mobile, render only the icon (if present)
+        return React.Children.map(children, (child) => {
+          if (React.isValidElement(child) && isIconComponent(child.type)) {
+            return child; // Only render the icon component
+          }
+          return null;
+        });
+      }
+
+      // If no icon is found, show the text as usual
+      return children;
+    };
 
     return (
       <Button
@@ -155,27 +184,7 @@ export const SubNavButton: React.FC<React.PropsWithChildren<any>> = chakra(
           ...(isSelected ? styles.selectedItem : {}),
         }}
       >
-        {/* On larger screens, render both text and icon */}
-        {isLargerThanMobile ? (
-          <>{children}</>
-        ) : (
-          <>
-            {/* On mobile, if there's an icon, render it alone */}
-            {hasIcon ? (
-              // If the icon exists, render only the icon
-              <>
-                {children.find(
-                  (child) =>
-                    React.isValidElement(child) &&
-                    child.type.displayName === "Icon"
-                )}
-              </>
-            ) : (
-              // If no icon, render text normally
-              <>{children}</>
-            )}
-          </>
-        )}
+        {renderContent()}
       </Button>
     );
   }
@@ -191,6 +200,7 @@ export const SubNavLink: React.FC<React.PropsWithChildren<any>> = chakra(
     actionBackgroundColor,
     selectedItem,
     href,
+    screenreaderOnlyText = "", // Default to empty if no screenreader text provided
   }) => {
     const isSelected = selectedItem === String(id);
     const styles = useMultiStyleConfig("SubNav", {
@@ -201,13 +211,42 @@ export const SubNavLink: React.FC<React.PropsWithChildren<any>> = chakra(
 
     const { isLargerThanMobile } = useNYPLBreakpoints();
 
+    // Function to check if a component is the Icon component
+    const isIconComponent = (childType: any): boolean => {
+      // Check if the component is wrapped in React.forwardRef (i.e., $$typeof symbol exists)
+      return childType.$$typeof === Symbol.for('react.forward_ref') && childType.displayName === 'Icon';
+    };
+
+    // Function to check if there is an Icon component in the children
     const hasIcon = React.Children.toArray(children).some((child) => {
       if (React.isValidElement(child)) {
-        // Check if the displayName of the component is 'Icon'
-        return child.type.displayName === "Icon";
+        // Check if the type of child is the Icon component
+        const childType = child.type as React.ComponentType<any>;
+        return isIconComponent(childType);
       }
       return false;
     });
+
+    // Function to render content based on the screen size
+    const renderContent = () => {
+      if (isLargerThanMobile) {
+        // On larger screens, render both the label text and icon (if any)
+        return children;
+      }
+
+      if (hasIcon) {
+        // On mobile, render only the icon (if present)
+        return React.Children.map(children, (child) => {
+          if (React.isValidElement(child) && isIconComponent(child.type)) {
+            return child; // Only render the icon component
+          }
+          return null;
+        });
+      }
+
+      // If no icon is found, show the text as usual
+      return children;
+    };
 
     return (
       <Link
@@ -215,34 +254,14 @@ export const SubNavLink: React.FC<React.PropsWithChildren<any>> = chakra(
         id={id}
         type={type}
         href={href}
-        screenreaderOnlyText={id} // Use provided ARIA text or fallback to id
+        screenreaderOnlyText={screenreaderOnlyText}
         __css={{
           ...styles.a,
           ...styles.outLine,
           ...(isSelected ? styles.selectedItem : {}),
         }}
       >
-        {/* On larger screens, render both text and icon */}
-        {isLargerThanMobile ? (
-          <>{children}</>
-        ) : (
-          <>
-            {/* On mobile, if there's an icon, render it alone */}
-            {hasIcon ? (
-              // If the icon exists, render only the icon
-              <>
-                {children.find(
-                  (child) =>
-                    React.isValidElement(child) &&
-                    child.type.displayName === "Icon"
-                )}
-              </>
-            ) : (
-              // If no icon, render text normally
-              <>{children}</>
-            )}
-          </>
-        )}
+        {renderContent()}
       </Link>
     );
   }
@@ -356,10 +375,10 @@ export const SubNav: ChakraComponent<
             <li id="secondary-actions">
               {secondaryActions
                 ? secondaryActions({
-                    highlightColor,
-                    actionBackgroundColor,
-                    selectedItem,
-                  })
+                  highlightColor,
+                  actionBackgroundColor,
+                  selectedItem,
+                })
                 : null}
             </li>
           </List>
