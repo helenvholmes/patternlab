@@ -33,7 +33,7 @@ const commonStyles = () => ({
 const SubNav = defineMultiStyleConfig({
   baseStyle: definePartsStyle(
     ({ backgroundColor, highlightColor, isOutlined }: SubNavStyleProps) => {
-      const defaultLabelColor = "ui.typography.body !important";
+      const defaultLabelColor = "ui.typography.body";
       const highlightOrLinkColor = highlightColor
         ? `${highlightColor} !important`
         : "ui.link.primary !important";
@@ -45,7 +45,6 @@ const SubNav = defineMultiStyleConfig({
         : "ui.link.primary-05";
       const primaryActionsStyles = {
         ...commonStyles(),
-        color: defaultLabelColor,
         marginRight: "xs",
         svg: {
           fill: defaultLabelColor,
@@ -121,8 +120,21 @@ const SubNav = defineMultiStyleConfig({
         },
         primaryActions: {
           width: "100%",
-          button: primaryActionsStyles,
-          a: primaryActionsStyles,
+          button: {
+            color: defaultLabelColor,
+            ...primaryActionsStyles,
+          },
+          a: {
+            color: `${defaultLabelColor} !important`,
+            ...primaryActionsStyles,
+            svg: {
+              fill: `${defaultLabelColor} !important`,
+              margin: { base: "0", md: null },
+              _dark: {
+                fill: "ui.white !important",
+              },
+            },
+          }
         },
         secondaryActions: {
           width: "fit-content",
