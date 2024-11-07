@@ -25,6 +25,7 @@ const commonStyles = () => ({
   lineHeight: "1.5 !important",
   px: "s",
   py: "xxs",
+  marginY: "4px",
   textDecoration: "none !important",
   transition: "background-color 0.2s, color 0.2s !important",
 });
@@ -32,7 +33,7 @@ const commonStyles = () => ({
 const SubNav = defineMultiStyleConfig({
   baseStyle: definePartsStyle(
     ({ backgroundColor, highlightColor, isOutlined }: SubNavStyleProps) => {
-      const defaultLabelColor = "ui.typography.body";
+      const defaultLabelColor = "ui.typography.body !important";
       const highlightOrLinkColor = highlightColor
         ? `${highlightColor} !important`
         : "ui.link.primary !important";

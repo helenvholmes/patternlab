@@ -117,6 +117,45 @@ export interface SubNavProps {
   selectedItem?: string;
 }
 
+export const isIconComponent = (childType: any): boolean => {
+  return (
+    childType.$$typeof === Symbol.for("react.forward_ref") &&
+    childType.displayName === "Icon"
+  );
+};
+
+// Function to check if any of the children is an Icon component
+export const hasIcon = (children: React.ReactNode): boolean => {
+  return React.Children.toArray(children).some((child) => {
+    if (React.isValidElement(child)) {
+      const childType = child.type as React.ComponentType<any>;
+      return isIconComponent(childType);
+    }
+    return false;
+  });
+};
+
+// Function to render content based on the screen size
+export const renderContent = (
+  children: React.ReactNode,
+  isLargerThanMobile: boolean,
+  hasIconInChildren: boolean
+): React.ReactNode => {
+  if (isLargerThanMobile) {
+    return children; // On larger screens, render everything
+  }
+
+  if (hasIconInChildren) {
+    return React.Children.map(children, (child) => {
+      if (React.isValidElement(child) && isIconComponent(child.type)) {
+        return child; // Only render the icon on smaller screens
+      }
+      return null;
+    });
+  }
+  return children; // If no icon, render text
+};
+
 export const SubNavButton: React.FC<React.PropsWithChildren<any>> = chakra(
   ({
     id,
@@ -137,45 +176,11 @@ export const SubNavButton: React.FC<React.PropsWithChildren<any>> = chakra(
 
     const { isLargerThanMobile } = useNYPLBreakpoints();
 
-    // Function to check if a component is the Icon component
-    const isIconComponent = (childType: any): boolean => {
-      // Check if the component is wrapped in React.forwardRef (i.e., $$typeof symbol exists)
-      return (
-        childType.$$typeof === Symbol.for("react.forward_ref") &&
-        childType.displayName === "Icon"
-      );
-    };
+    // Check if there is an icon in the children
+    const hasIconInChildren = hasIcon(children);
 
-    // Function to check if there is an Icon component in the children
-    const hasIcon = React.Children.toArray(children).some((child) => {
-      if (React.isValidElement(child)) {
-        // Check if the type of child is the Icon component
-        const childType = child.type as React.ComponentType<any>;
-        return isIconComponent(childType);
-      }
-      return false;
-    });
-
-    // Function to render content based on the screen size
-    const renderContent = () => {
-      if (isLargerThanMobile) {
-        // On larger screens, render both the label text and icon (if any)
-        return children;
-      }
-
-      if (hasIcon) {
-        // On mobile, render only the icon (if present)
-        return React.Children.map(children, (child) => {
-          if (React.isValidElement(child) && isIconComponent(child.type)) {
-            return child; // Only render the icon component
-          }
-          return null;
-        });
-      }
-
-      // If no icon is found, show the text as usual
-      return children;
-    };
+    // Render content based on screen size and if there is an icon
+    const content = renderContent(children, isLargerThanMobile, hasIconInChildren);
 
     return (
       <Button
@@ -187,7 +192,7 @@ export const SubNavButton: React.FC<React.PropsWithChildren<any>> = chakra(
           ...(isSelected ? styles.selectedItem : null),
         }}
       >
-        {renderContent()}
+        {content}
       </Button>
     );
   }
@@ -214,45 +219,11 @@ export const SubNavLink: React.FC<React.PropsWithChildren<any>> = chakra(
 
     const { isLargerThanMobile } = useNYPLBreakpoints();
 
-    // Function to check if a component is the Icon component
-    const isIconComponent = (childType: any): boolean => {
-      // Check if the component is wrapped in React.forwardRef (i.e., $$typeof symbol exists)
-      return (
-        childType.$$typeof === Symbol.for("react.forward_ref") &&
-        childType.displayName === "Icon"
-      );
-    };
+    // Check if there is an icon in the children
+    const hasIconInChildren = hasIcon(children);
 
-    // Function to check if there is an Icon component in the children
-    const hasIcon = React.Children.toArray(children).some((child) => {
-      if (React.isValidElement(child)) {
-        // Check if the type of child is the Icon component
-        const childType = child.type as React.ComponentType<any>;
-        return isIconComponent(childType);
-      }
-      return false;
-    });
-
-    // Function to render content based on the screen size
-    const renderContent = () => {
-      if (isLargerThanMobile) {
-        // On larger screens, render both the label text and icon (if any)
-        return children;
-      }
-
-      if (hasIcon) {
-        // On mobile, render only the icon (if present)
-        return React.Children.map(children, (child) => {
-          if (React.isValidElement(child) && isIconComponent(child.type)) {
-            return child; // Only render the icon component
-          }
-          return null;
-        });
-      }
-
-      // If no icon is found, show the text as usual
-      return children;
-    };
+    // Render content based on screen size and if there is an icon
+    const content = renderContent(children, isLargerThanMobile, hasIconInChildren);
 
     return (
       <Link
@@ -268,7 +239,7 @@ export const SubNavLink: React.FC<React.PropsWithChildren<any>> = chakra(
           ...(isSelected ? styles.selectedItem : null),
         }}
       >
-        {renderContent()}
+        {content}
       </Link>
     );
   }
