@@ -134,7 +134,7 @@ const SubNav = defineMultiStyleConfig({
                 fill: "ui.white !important",
               },
             },
-          }
+          },
         },
         secondaryActions: {
           width: "fit-content",
