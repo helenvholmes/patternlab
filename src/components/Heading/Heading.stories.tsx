@@ -143,6 +143,18 @@ export const SizeStyles: Story = {
         size="heading6"
         text="(heading6) Lorem ipsum dolor"
       />
+      <Heading
+        id="heading-heading7"
+        level="h1"
+        size="heading7"
+        text="(heading7) Lorem ipsum dolor"
+      />
+      <Heading
+        id="heading-heading8"
+        level="h1"
+        size="heading8"
+        text="(heading8) Lorem ipsum dolor"
+      />
     </VStack>
   ),
 };
@@ -267,6 +279,22 @@ export const Overline: Story = {
         size="heading6"
         text="Lorem ipsum dolor"
       />
+      <Heading
+        id="heading-heading7"
+        level="h1"
+        noSpace
+        overline="Overline"
+        size="heading7"
+        text="Lorem ipsum dolor"
+      />
+      <Heading
+        id="heading-heading8"
+        level="h1"
+        noSpace
+        overline="Overline"
+        size="heading8"
+        text="Lorem ipsum dolor"
+      />
     </VStack>
   ),
 };
@@ -327,6 +355,22 @@ export const Subtitle: Story = {
         level="h1"
         noSpace
         size="heading6"
+        subtitle="The subtitle text sits below the main heading text."
+        text="Lorem ipsum dolor"
+      />
+      <Heading
+        id="heading-heading7"
+        level="h1"
+        noSpace
+        size="heading7"
+        subtitle="The subtitle text sits below the main heading text."
+        text="Lorem ipsum dolor"
+      />
+      <Heading
+        id="heading-heading8"
+        level="h1"
+        noSpace
+        size="heading8"
         subtitle="The subtitle text sits below the main heading text."
         text="Lorem ipsum dolor"
       />
@@ -391,6 +435,22 @@ export const OverlineAndSubtitle: Story = {
         level="h1"
         overline="Overline"
         size="heading6"
+        subtitle="The subtitle text sits below the main heading text."
+        text="Lorem ipsum dolor"
+      />
+      <Heading
+        id="heading-heading7"
+        level="h1"
+        overline="Overline"
+        size="heading7"
+        subtitle="The subtitle text sits below the main heading text."
+        text="Lorem ipsum dolor"
+      />
+      <Heading
+        id="heading-heading8"
+        level="h1"
+        overline="Overline"
+        size="heading8"
         subtitle="The subtitle text sits below the main heading text."
         text="Lorem ipsum dolor"
       />

@@ -23,6 +23,8 @@ const fontSizeValues = {
     heading4: "1.625rem", // 26px
     heading5: "1.375rem", // 22px
     heading6: "1.25rem", // 20px
+    heading7: "1.125rem", // 18px
+    heading8: "1rem", // 16px
     subtitle1: "1.125rem", // 18px
     subtitle2: "1rem", // 16px
     overline1: "0.75rem", // 12px
@@ -45,6 +47,8 @@ const fontSizeValues = {
     heading4: "1.5rem", // 24px
     heading5: "1.25rem", // 20px
     heading6: "1.125rem", // 18px
+    heading7: "1.0625rem", // 17px
+    heading8: "1rem", // 16px
     subtitle1: "1rem", // 16px
     subtitle2: "0.875rem", // 14px
     overline1: "0.75rem", // 12px
@@ -109,6 +113,8 @@ const typography: Typography = {
         heading4: fontSizeValues.desktop["heading4"],
         heading5: fontSizeValues.desktop["heading5"],
         heading6: fontSizeValues.desktop["heading6"],
+        heading7: fontSizeValues.desktop["heading7"],
+        heading8: fontSizeValues.desktop["heading8"],
       },
       helper: {
         default: fontSizeValues.desktop["caption"],
@@ -149,6 +155,8 @@ const typography: Typography = {
         heading4: fontSizeValues.mobile["heading4"],
         heading5: fontSizeValues.mobile["heading5"],
         heading6: fontSizeValues.mobile["heading6"],
+        heading7: fontSizeValues.mobile["heading7"],
+        heading8: fontSizeValues.mobile["heading8"],
       },
       helper: {
         default: fontSizeValues.mobile["caption"],
@@ -236,6 +244,8 @@ const typography: Typography = {
       heading4: fontWeightValues["regular"],
       heading5: fontWeightValues["medium"],
       heading6: fontWeightValues["medium"],
+      heading7: fontWeightValues["medium"],
+      heading8: fontWeightValues["medium"],
       // deprecated tokens
       primary: fontWeightValues["light"],
       secondary: fontWeightValues["medium"],

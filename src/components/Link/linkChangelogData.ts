@@ -10,6 +10,15 @@ import { ChangelogData } from "../../utils/ComponentChangelogTable";
 
 export const changelogData: ChangelogData[] = [
   {
+    date: "2024-11-07",
+    version: "3.4.2",
+    type: "Update",
+    affects: ["Styles"],
+    notes: [
+      "Updates styles to prevent links with icons breaking onto two lines.",
+    ],
+  },
+  {
     date: "2024-03-14",
     version: "3.0.0",
     type: "Update",

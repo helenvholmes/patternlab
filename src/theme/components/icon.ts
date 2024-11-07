@@ -1,18 +1,25 @@
 import { defineStyleConfig } from "@chakra-ui/react";
 import { defineStyle, StyleFunctionProps } from "@chakra-ui/system";
 
-const svgBase = {
+const svgBase: {
+  display: string;
+  fill: string;
+  width: string;
+  height: string;
+} = {
   display: "inline-block",
   fill: "currentColor",
   width: "auto",
   height: "100%",
 };
-const align = {
+
+const align: Record<string, { marginEnd?: string; marginStart?: string }> = {
   none: {},
   left: { marginEnd: "xxs" },
   right: { marginStart: "xxs" },
 };
-const iconRotation = {
+
+const iconRotation: Record<string, { transform: string }> = {
   rotate180: {
     transform: "rotate(180deg)",
   },
@@ -26,8 +33,9 @@ const iconRotation = {
     transform: "rotate(90deg)",
   },
 };
-const size = {
-  // 96px
+
+const size: Record<string, { height?: string; width?: string }> = {
+  // 96 px
   xxxxxlarge: {
     height: "var(--nypl-space-xxxl)",
     width: "var(--nypl-space-xxxl)",
@@ -110,10 +118,9 @@ const Icon = defineStyleConfig({
       ...iconRotation[props.iconRotation],
       ...size[props.size],
     };
+
     return {
       ...allStyles,
-      // We still want to style any custom SVG element that was
-      // passed to the `Icon` component.
       svg: {
         ...allStyles,
       },

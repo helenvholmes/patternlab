@@ -152,6 +152,30 @@ export const headings = {
       width: "auto",
     },
   }),
+  heading7: definePartsStyle({
+    base: {
+      fontSize: {
+        base: "mobile.heading.heading7",
+        md: "desktop.heading.heading7",
+      },
+      fontWeight: "heading.heading7",
+      letterSpacing: "0",
+      lineHeight: "1.45",
+      width: "auto",
+    },
+  }),
+  heading8: definePartsStyle({
+    base: {
+      fontSize: {
+        base: "mobile.heading.heading8",
+        md: "desktop.heading.heading8",
+      },
+      fontWeight: "heading.heading8",
+      letterSpacing: "0",
+      lineHeight: "1.50",
+      width: "auto",
+    },
+  }),
 };
 
 // Styles for different visual variants
@@ -178,6 +202,8 @@ const variants = {
   heading4: headings.heading4,
   heading5: headings.heading5,
   heading6: headings.heading6,
+  heading7: headings.heading7,
+  heading8: headings.heading8,
   // DEPRECATED options for size variants
   primary: headings.one,
   secondary: headings.two,
