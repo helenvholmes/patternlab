@@ -10,8 +10,8 @@ import { ChangelogData } from "../../utils/ComponentChangelogTable";
 
 export const changelogData: ChangelogData[] = [
   {
-    date: "Prerelease",
-    version: "Prerelease",
+    date: "2024-11-07",
+    version: "3.4.2",
     type: "Update",
     affects: ["Functionality"],
     notes: ["Added support for the `socialX` icon."],
