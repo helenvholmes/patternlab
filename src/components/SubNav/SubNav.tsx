@@ -180,7 +180,11 @@ export const SubNavButton: React.FC<React.PropsWithChildren<any>> = chakra(
     const hasIconInChildren = hasIcon(children);
 
     // Render content based on screen size and if there is an icon
-    const content = renderContent(children, isLargerThanMobile, hasIconInChildren);
+    const content = renderContent(
+      children,
+      isLargerThanMobile,
+      hasIconInChildren
+    );
 
     return (
       <Button
@@ -223,7 +227,11 @@ export const SubNavLink: React.FC<React.PropsWithChildren<any>> = chakra(
     const hasIconInChildren = hasIcon(children);
 
     // Render content based on screen size and if there is an icon
-    const content = renderContent(children, isLargerThanMobile, hasIconInChildren);
+    const content = renderContent(
+      children,
+      isLargerThanMobile,
+      hasIconInChildren
+    );
 
     return (
       <Link
