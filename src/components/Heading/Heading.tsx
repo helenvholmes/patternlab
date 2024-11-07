@@ -19,6 +19,8 @@ export const headingSizesArray = [
   "heading4",
   "heading5",
   "heading6",
+  "heading7",
+  "heading8",
   "primary",
   "secondary",
   "tertiary",

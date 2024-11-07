@@ -10,6 +10,13 @@ import { ChangelogData } from "../../utils/ComponentChangelogTable";
 
 export const changelogData: ChangelogData[] = [
   {
+    date: "2024-11-07",
+    version: "3.4.2",
+    type: "Update",
+    affects: ["Styles"],
+    notes: ["Adds the `heading7` and `heading8` options for the `size` prop."],
+  },
+  {
     date: "2024-06-20",
     version: "3.1.6",
     type: "Update",
