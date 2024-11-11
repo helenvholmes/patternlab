@@ -51,16 +51,10 @@ export const WithControls: Story = {
           >
             Label Text
           </SubNavButton>
-          <SubNavButton
-            id="primary-sub-nav-button-2"
-            buttonType="text"
-          >
+          <SubNavButton id="primary-sub-nav-button-2" buttonType="text">
             Label Text
           </SubNavButton>
-          <SubNavButton
-            id="primary-sub-nav-button-3"
-            buttonType="text"
-          >
+          <SubNavButton id="primary-sub-nav-button-3" buttonType="text">
             Label Text
           </SubNavButton>
           <SubNavLink
@@ -137,9 +131,7 @@ export const SelectedItem: Story = {
   render: (args: any) => (
     <SubNav
       {...args}
-      primaryActions={({
-        selectedItem,
-      }) => (
+      primaryActions={({ selectedItem }) => (
         <>
           <SubNavButton
             id="primary-sub-nav-button-1"
@@ -148,16 +140,10 @@ export const SelectedItem: Story = {
           >
             Label Text
           </SubNavButton>
-          <SubNavButton
-            id="primary-sub-nav-button-2"
-            buttonType="text"
-          >
+          <SubNavButton id="primary-sub-nav-button-2" buttonType="text">
             Label Text
           </SubNavButton>
-          <SubNavButton
-            id="primary-sub-nav-button-3"
-            buttonType="text"
-          >
+          <SubNavButton id="primary-sub-nav-button-3" buttonType="text">
             Label Text
           </SubNavButton>
           <SubNavLink
@@ -266,9 +252,7 @@ export const Outline: Story = {
   render: (args: any) => (
     <SubNav
       {...args}
-      primaryActions={({
-        selectedItem,
-      }) => (
+      primaryActions={({ selectedItem }) => (
         <>
           <SubNavButton
             id="primary-sub-nav-button-1"
@@ -351,9 +335,7 @@ export const HighlightColor: Story = {
   render: (args: any) => (
     <SubNav
       {...args}
-      primaryActions={({
-        selectedItem,
-      }) => (
+      primaryActions={({ selectedItem }) => (
         <>
           <SubNavButton
             id="primary-sub-nav-button-1"

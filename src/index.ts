@@ -167,7 +167,11 @@ export type {
   MenuProps,
 } from "./components/Menu/Menu";
 
-export type { default as SubNav, SubNavButton, SubNavLink } from "./components/SubNav/SubNav";
+export type {
+  default as SubNav,
+  SubNavButton,
+  SubNavLink,
+} from "./components/SubNav/SubNav";
 export { ModalTrigger, useModal } from "./components/Modal/Modal";
 export type {
   BaseModalProps,

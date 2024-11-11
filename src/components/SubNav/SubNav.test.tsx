@@ -9,22 +9,13 @@ describe("SubNav Accessibility", () => {
       <SubNav
         primaryActions={() => (
           <>
-            <SubNavButton
-              id="primary-sub-nav-button-1"
-              buttonType="text"
-            >
+            <SubNavButton id="primary-sub-nav-button-1" buttonType="text">
               Label Text
             </SubNavButton>
-            <SubNavButton
-              id="primary-sub-nav-button-2"
-              buttonType="text"
-            >
+            <SubNavButton id="primary-sub-nav-button-2" buttonType="text">
               Label Text
             </SubNavButton>
-            <SubNavButton
-              id="primary-sub-nav-button-3"
-              buttonType="text"
-            >
+            <SubNavButton id="primary-sub-nav-button-3" buttonType="text">
               Label Text
             </SubNavButton>
           </>
@@ -70,20 +61,14 @@ describe("SubNav Accessibility", () => {
       <SubNav
         primaryActions={() => (
           <>
-            <SubNavButton
-              id="primary-sub-nav-button-1"
-              buttonType="text"
-            >
+            <SubNavButton id="primary-sub-nav-button-1" buttonType="text">
               Label Text
             </SubNavButton>
           </>
         )}
         secondaryActions={() => (
           <>
-            <SubNavButton
-              id="secondary-sub-nav-button-1"
-              buttonType="text"
-            >
+            <SubNavButton id="secondary-sub-nav-button-1" buttonType="text">
               Label Text
             </SubNavButton>
             <SubNavLink
@@ -106,26 +91,17 @@ describe("SubNav Accessibility", () => {
       <SubNav
         primaryActions={() => (
           <>
-            <SubNavButton
-              id="primary-sub-nav-button-1"
-              buttonType="text"
-            >
+            <SubNavButton id="primary-sub-nav-button-1" buttonType="text">
               Label Text
             </SubNavButton>
-            <SubNavButton
-              id="primary-sub-nav-button-2"
-              buttonType="text"
-            >
+            <SubNavButton id="primary-sub-nav-button-2" buttonType="text">
               Label Text
             </SubNavButton>
           </>
         )}
         secondaryActions={() => (
           <>
-            <SubNavButton
-              id="secondary-sub-nav-button-1"
-              buttonType="text"
-            >
+            <SubNavButton id="secondary-sub-nav-button-1" buttonType="text">
               Label Text
             </SubNavButton>
             <SubNavLink
@@ -151,10 +127,7 @@ describe("SubNav Accessibility", () => {
         id="sub-nav-id"
         primaryActions={() => (
           <>
-            <SubNavButton
-              id="primary-sub-nav-button-1"
-              buttonType="text"
-            >
+            <SubNavButton id="primary-sub-nav-button-1" buttonType="text">
               Label Text
             </SubNavButton>
           </>
@@ -264,9 +237,7 @@ describe("SubNav Component", () => {
         id="sub-nav-id"
         primaryActions={() => (
           <>
-            <SubNavButton
-              id="primary-sub-nav-button-1"
-            >
+            <SubNavButton id="primary-sub-nav-button-1">
               Label Text
             </SubNavButton>
           </>

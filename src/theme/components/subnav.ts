@@ -11,8 +11,12 @@ const {
 const {
   defineMultiStyleConfig: subNavDefineMultiStyleConfig,
   definePartsStyle: subNavDefinePartsStyle,
-} = createMultiStyleConfigHelpers(["base", "selectedItem", "secondaryActions", "primaryActions"]);
-
+} = createMultiStyleConfigHelpers([
+  "base",
+  "selectedItem",
+  "secondaryActions",
+  "primaryActions",
+]);
 
 interface SubNavStyleProps extends StyleFunctionProps {
   backgroundColor: string;
@@ -170,7 +174,7 @@ const SubNavChildren = subNavChildrenDefineMultiStyleConfig({
         marginRight: "4px",
       },
     })
-  )
-})
+  ),
+});
 
-export { SubNav, SubNavChildren }
+export { SubNav, SubNavChildren };

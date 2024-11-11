@@ -1,4 +1,10 @@
-import React, { forwardRef, useEffect, useState, useRef, CSSProperties } from "react";
+import React, {
+  forwardRef,
+  useEffect,
+  useState,
+  useRef,
+  CSSProperties,
+} from "react";
 import {
   Box,
   chakra,
@@ -108,13 +114,7 @@ export interface SubNavProps {
 }
 
 export const SubNavButton: React.FC<React.PropsWithChildren<any>> = chakra(
-  ({
-    id,
-    buttonType = "text",
-    children,
-    isOutlined,
-    selectedItem,
-  }) => {
+  ({ id, buttonType = "text", children, isOutlined, selectedItem }) => {
     const isSelected = selectedItem === String(id);
 
     const childrenStyles = useMultiStyleConfig("SubNavChildren", {
@@ -283,8 +283,8 @@ export const SubNav: ChakraComponent<
             <li id="secondary-actions">
               {secondaryActions
                 ? secondaryActions({
-                  selectedItem,
-                })
+                    selectedItem,
+                  })
                 : null}
             </li>
           </List>
