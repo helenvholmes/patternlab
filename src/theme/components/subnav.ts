@@ -46,6 +46,9 @@ const SubNav = subNavDefineMultiStyleConfig({
   baseStyle: subNavDefinePartsStyle(
     ({ backgroundColor, highlightColor }: SubNavStyleProps) => {
       const defaultLabelColor = "ui.typography.body";
+      const highlightOrDefaultColor = highlightColor
+        ? `${highlightColor} !important`
+        : "ui.typography.body !important";
       const highlightOrLinkColor = highlightColor
         ? `${highlightColor} !important`
         : "ui.link.primary !important";
@@ -67,9 +70,9 @@ const SubNav = subNavDefineMultiStyleConfig({
         },
         _hover: {
           backgroundColor: finalBackgroundColor,
-          color: defaultLabelColor,
+          color: highlightOrDefaultColor,
           svg: {
-            fill: defaultLabelColor,
+            fill: highlightOrDefaultColor,
             _dark: {
               fill:
                 backgroundColor !== undefined
