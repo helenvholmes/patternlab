@@ -247,3 +247,46 @@ describe("SubNav Component", () => {
     expect(await axe(container)).toHaveNoViolations();
   });
 });
+
+describe('SubNavButton', () => {
+  it('renders with default props', () => {
+    render(
+      <SubNavButton id="1" selectedItem={undefined}>Default Button</SubNavButton>
+    );
+    const button = screen.getByText('Default Button');
+    expect(button).toBeInTheDocument();
+    expect(button).not.toHaveClass('selectedItem'); // Should not have the "selectedItem" class
+  });
+
+  it('applies selectedItem class when selectedItem matches id', () => {
+    render(
+      <SubNavButton id="sub-nav-button" selectedItem="sub-nav-button">
+        Selected Button
+      </SubNavButton>
+    );
+    const button = screen.getByText('Selected Button');
+    expect(button).toHaveClass('selectedItem'); // Should have "selectedItem" class
+  });
+});
+
+describe('SubNavLink', () => {
+  it('renders with default props', () => {
+    render(
+      <SubNavLink id="sub-nav-link" selectedItem={undefined}>Default Link</SubNavLink>
+    );
+    const button = screen.getByText('Default Link');
+    expect(button).toBeInTheDocument();
+    expect(button).not.toHaveClass('selectedItem'); // Should not have the "selectedItem" class
+  });
+
+  it('applies selectedItem class when selectedItem matches id', () => {
+    render(
+      <SubNavLink id="sub-nav-link" selectedItem="sub-nav-link">
+        Selected Link
+      </SubNavLink>
+    );
+    const button = screen.getByText('Selected Link');
+    expect(button).toHaveClass('selectedItem'); // Should have "selectedItem" class
+  });
+});
+

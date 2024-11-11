@@ -126,9 +126,7 @@ export const SubNavButton: React.FC<React.PropsWithChildren<any>> = chakra(
         id={id}
         buttonType={buttonType}
         className={isSelected ? "selectedItem" : ""}
-        __css={{
-          ...childrenStyles.outLine,
-        }}
+        sx={{ ...childrenStyles.outLine }}
       >
         {children}
       </Button>
@@ -160,9 +158,7 @@ export const SubNavLink: React.FC<React.PropsWithChildren<any>> = chakra(
         isUnderlined={false}
         screenreaderOnlyText={screenreaderOnlyText}
         className={isSelected ? "selectedItem" : ""}
-        __css={{
-          ...childrenStyles.outLine,
-        }}
+        sx={{ ...childrenStyles.outLine }}
       >
         {children}
       </Link>
@@ -283,8 +279,8 @@ export const SubNav: ChakraComponent<
             <li id="secondary-actions">
               {secondaryActions
                 ? secondaryActions({
-                    selectedItem,
-                  })
+                  selectedItem,
+                })
                 : null}
             </li>
           </List>
