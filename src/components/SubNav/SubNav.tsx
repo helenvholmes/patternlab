@@ -279,8 +279,8 @@ export const SubNav: ChakraComponent<
             <li id="secondary-actions">
               {secondaryActions
                 ? secondaryActions({
-                  selectedItem,
-                })
+                    selectedItem,
+                  })
                 : null}
             </li>
           </List>
