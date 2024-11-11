@@ -1,5 +1,4 @@
-import React, { forwardRef, useEffect, useState, useRef } from "react";
-
+import React, { forwardRef, useEffect, useState, useRef, CSSProperties } from "react";
 import {
   Box,
   chakra,
@@ -10,7 +9,6 @@ import {
 import Button from "../Button/Button";
 import Link from "../Link/Link";
 import List from "../List/List";
-import useNYPLBreakpoints from "../../hooks/useNYPLBreakpoints";
 
 export const actionBackgroundColorsArray = [
   "brand.primary-05",
@@ -74,12 +72,8 @@ export interface SubNavProps {
    * the DS Button and Link functionalities, plus the isOutlined prop.
    */
   primaryActions: ({
-    highlightColor,
-    actionBackgroundColor,
     selectedItem,
   }: {
-    highlightColor?: string;
-    actionBackgroundColor?: string;
     selectedItem?: string;
   }) => React.ReactNode;
   /**
@@ -88,12 +82,8 @@ export interface SubNavProps {
    * contextual options related to the primary content.
    */
   secondaryActions?: ({
-    highlightColor,
-    actionBackgroundColor,
     selectedItem,
   }: {
-    highlightColor?: string;
-    actionBackgroundColor?: string;
     selectedItem?: string;
   }) => React.ReactNode;
   /**
@@ -117,86 +107,30 @@ export interface SubNavProps {
   selectedItem?: string;
 }
 
-export const isIconComponent = (childType: any): boolean => {
-  return (
-    childType.$$typeof === Symbol.for("react.forward_ref") &&
-    childType.displayName === "Icon"
-  );
-};
-
-// Function to check if any of the children is an Icon component
-export const hasIcon = (children: React.ReactNode): boolean => {
-  return React.Children.toArray(children).some((child) => {
-    if (React.isValidElement(child)) {
-      const childType = child.type as React.ComponentType<any>;
-      return isIconComponent(childType);
-    }
-    return false;
-  });
-};
-
-// Function to render content based on the screen size
-export const renderContent = (
-  children: React.ReactNode,
-  isLargerThanMobile: boolean,
-  hasIconInChildren: boolean
-): React.ReactNode => {
-  if (isLargerThanMobile) {
-    return children; // On larger screens, render everything
-  }
-
-  if (hasIconInChildren) {
-    return React.Children.map(children, (child) => {
-      if (React.isValidElement(child) && isIconComponent(child.type)) {
-        return child; // Only render the icon on smaller screens
-      }
-      return null;
-    });
-  }
-  return children; // If no icon, render text
-};
-
 export const SubNavButton: React.FC<React.PropsWithChildren<any>> = chakra(
   ({
     id,
     buttonType = "text",
     children,
     isOutlined,
-    highlightColor,
-    actionBackgroundColor,
     selectedItem,
   }) => {
     const isSelected = selectedItem === String(id);
 
-    const styles = useMultiStyleConfig("SubNav", {
-      backgroundColor: actionBackgroundColor,
-      highlightColor: highlightColor,
+    const childrenStyles = useMultiStyleConfig("SubNavChildren", {
       isOutlined: isOutlined,
     });
-
-    const { isLargerThanMobile } = useNYPLBreakpoints();
-
-    // Check if there is an icon in the children
-    const hasIconInChildren = hasIcon(children);
-
-    // Render content based on screen size and if there is an icon
-    const content = renderContent(
-      children,
-      isLargerThanMobile,
-      hasIconInChildren
-    );
 
     return (
       <Button
         id={id}
         buttonType={buttonType}
+        className={isSelected ? "selectedItem" : ""}
         __css={{
-          ...styles.button,
-          ...styles.outLine,
-          ...(isSelected ? styles.selectedItem : null),
+          ...childrenStyles.outLine,
         }}
       >
-        {content}
+        {children}
       </Button>
     );
   }
@@ -208,30 +142,14 @@ export const SubNavLink: React.FC<React.PropsWithChildren<any>> = chakra(
     type = "action",
     children,
     isOutlined,
-    highlightColor,
-    actionBackgroundColor,
     selectedItem,
     href,
     screenreaderOnlyText = "", // Default to empty if no screenreader text provided
   }) => {
     const isSelected = selectedItem === String(id);
-    const styles = useMultiStyleConfig("SubNav", {
-      backgroundColor: actionBackgroundColor,
-      highlightColor: highlightColor,
+    const childrenStyles = useMultiStyleConfig("SubNavChildren", {
       isOutlined: isOutlined,
     });
-
-    const { isLargerThanMobile } = useNYPLBreakpoints();
-
-    // Check if there is an icon in the children
-    const hasIconInChildren = hasIcon(children);
-
-    // Render content based on screen size and if there is an icon
-    const content = renderContent(
-      children,
-      isLargerThanMobile,
-      hasIconInChildren
-    );
 
     return (
       <Link
@@ -241,13 +159,12 @@ export const SubNavLink: React.FC<React.PropsWithChildren<any>> = chakra(
         href={href}
         isUnderlined={false}
         screenreaderOnlyText={screenreaderOnlyText}
+        className={isSelected ? "selectedItem" : ""}
         __css={{
-          ...styles.a,
-          ...styles.outLine,
-          ...(isSelected ? styles.selectedItem : null),
+          ...childrenStyles.outLine,
         }}
       >
-        {content}
+        {children}
       </Link>
     );
   }
@@ -307,23 +224,27 @@ export const SubNav: ChakraComponent<
       const refCurrent = scrollableRef.current;
       if (refCurrent) {
         refCurrent.addEventListener("scroll", handleScroll);
-        // Initial check to set the right fade effect
-        const { scrollWidth, clientWidth } = refCurrent;
-        setShowRightFade(scrollWidth > clientWidth); // Show fade if content is wider than the visible area
+
+        // Initial check to set the right fade effect based on the initial scroll state
+        const { scrollWidth, clientWidth, scrollLeft } = refCurrent;
+        const atRightEdge = scrollLeft + clientWidth >= scrollWidth;
+
+        // Set the right fade effect if content is scrollable and not at the right edge
+        setShowRightFade(!atRightEdge);
+
+        // If the scrollable area is already at the end, hide the right fade initially
+        if (scrollWidth <= clientWidth) {
+          setShowRightFade(false); // If the content fits in the viewport, no need for a fade
+        }
       }
 
+      // Cleanup event listener on component unmount
       return () => {
         if (refCurrent) {
           refCurrent.removeEventListener("scroll", handleScroll);
         }
       };
-    }, []);
-
-    // Function to ensure only valid CSS properties are passed
-    const fadeEffectStyles = (styleObject) => {
-      const { accentColor, ...validStyles } = styleObject; // Exclude non-CSS properties
-      return validStyles;
-    };
+    }, []); // Empty dependency array to run only once after the initial render
 
     return (
       <Box __css={styles.base}>
@@ -343,13 +264,12 @@ export const SubNav: ChakraComponent<
           >
             <li id="primary-actions">
               {primaryActions({
-                highlightColor,
-                actionBackgroundColor,
                 selectedItem,
               })}
             </li>
             {showRightFade && (
-              <div style={fadeEffectStyles(styles.fadeEffect)} />
+              // Explicitly cast styles.fadeEffect to CSSProperties
+              <div style={styles.fadeEffect as CSSProperties} />
             )}
           </List>
           <List
@@ -363,10 +283,8 @@ export const SubNav: ChakraComponent<
             <li id="secondary-actions">
               {secondaryActions
                 ? secondaryActions({
-                    highlightColor,
-                    actionBackgroundColor,
-                    selectedItem,
-                  })
+                  selectedItem,
+                })
                 : null}
             </li>
           </List>

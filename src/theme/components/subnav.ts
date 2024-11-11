@@ -1,21 +1,28 @@
 import { createMultiStyleConfigHelpers } from "@chakra-ui/styled-system";
 import { StyleFunctionProps } from "@chakra-ui/system";
 
-const { defineMultiStyleConfig, definePartsStyle } =
-  createMultiStyleConfigHelpers([
-    "base",
-    "selectedItem",
-    "borderLine",
-    "outLine",
-    "secondaryActions",
-    "primaryActions",
-  ]);
+// This function creates a set of function that helps us
+// create multipart component styles.
+const {
+  defineMultiStyleConfig: subNavChildrenDefineMultiStyleConfig,
+  definePartsStyle: subNavChildrenDefinePartsStyle,
+} = createMultiStyleConfigHelpers(["outLine"]);
+
+const {
+  defineMultiStyleConfig: subNavDefineMultiStyleConfig,
+  definePartsStyle: subNavDefinePartsStyle,
+} = createMultiStyleConfigHelpers(["base", "selectedItem", "secondaryActions", "primaryActions"]);
+
 
 interface SubNavStyleProps extends StyleFunctionProps {
   backgroundColor: string;
   highlightColor: string;
+}
+
+interface SubNavChildrenStyleProps extends StyleFunctionProps {
   isOutlined: boolean;
 }
+
 const commonStyles = () => ({
   alignItems: "center",
   display: "inline-flex",
@@ -26,23 +33,24 @@ const commonStyles = () => ({
   px: "s",
   py: "xxs",
   marginY: "4px",
+  marginLeft: "4px",
   textDecoration: "none !important",
   transition: "background-color 0.2s, color 0.2s !important",
 });
 
-const SubNav = defineMultiStyleConfig({
-  baseStyle: definePartsStyle(
-    ({ backgroundColor, highlightColor, isOutlined }: SubNavStyleProps) => {
+const SubNav = subNavDefineMultiStyleConfig({
+  baseStyle: subNavDefinePartsStyle(
+    ({ backgroundColor, highlightColor }: SubNavStyleProps) => {
       const defaultLabelColor = "ui.typography.body";
       const highlightOrLinkColor = highlightColor
         ? `${highlightColor} !important`
         : "ui.link.primary !important";
       const highlightOrBorderColor = highlightColor
-        ? `${highlightColor} !important`
-        : "ui.border.default !important";
+        ? `${highlightColor} `
+        : "ui.border.default ";
       const finalBackgroundColor = backgroundColor
         ? backgroundColor
-        : "ui.link.primary-05";
+        : "ui.link.primary-05 !important";
       const primaryActionsStyles = {
         ...commonStyles(),
         marginRight: "xs",
@@ -50,7 +58,7 @@ const SubNav = defineMultiStyleConfig({
           fill: defaultLabelColor,
           margin: { base: "0", md: null },
           _dark: {
-            fill: "ui.white !important",
+            fill: "ui.white",
           },
         },
         _hover: {
@@ -61,8 +69,8 @@ const SubNav = defineMultiStyleConfig({
             _dark: {
               fill:
                 backgroundColor !== undefined
-                  ? `${backgroundColor} !important`
-                  : "ui.white !important",
+                  ? `${backgroundColor} `
+                  : "ui.white ",
             },
           },
         },
@@ -77,7 +85,7 @@ const SubNav = defineMultiStyleConfig({
           _dark: {
             fill: backgroundColor
               ? `${backgroundColor} !important`
-              : "ui.link.primary-05 !important",
+              : "dark.ui.link.primary-05 !important",
           },
         },
         _hover: {
@@ -86,37 +94,23 @@ const SubNav = defineMultiStyleConfig({
             fill: highlightOrLinkColor,
             _dark: {
               fill: backgroundColor
-                ? `${backgroundColor} !important`
-                : "ui.link.primary-05 !important",
+                ? `${backgroundColor}`
+                : "dark.ui.link.primary-05",
             },
           },
         },
       };
       return {
         base: {
+          ".selectedItem": {
+            color: highlightColor,
+            fontWeight: "bold ",
+            backgroundColor: finalBackgroundColor,
+          },
           borderBottom: "1px solid",
           borderColor: highlightOrBorderColor,
           px: "s",
           py: { base: "s", md: "xs" },
-        },
-        selectedItem: {
-          color: highlightOrLinkColor,
-          fontWeight: "bold !important",
-          backgroundColor: finalBackgroundColor,
-        },
-        borderLine: {
-          borderTop: "1px solid",
-          width: "100%",
-          marginTop: "3px",
-          color:
-            highlightColor !== undefined
-              ? `${highlightColor}`
-              : "ui.border.default",
-        },
-        outLine: {
-          border: isOutlined !== undefined ? "1px solid" : "none",
-          borderRadius: "6px",
-          marginRight: "4px",
         },
         primaryActions: {
           width: "100%",
@@ -166,4 +160,17 @@ const SubNav = defineMultiStyleConfig({
     }
   ),
 });
-export default SubNav;
+
+const SubNavChildren = subNavChildrenDefineMultiStyleConfig({
+  baseStyle: subNavChildrenDefinePartsStyle(
+    ({ isOutlined }: SubNavChildrenStyleProps) => ({
+      outLine: {
+        border: isOutlined !== undefined ? "1px solid" : "none",
+        borderRadius: "6px",
+        marginRight: "4px",
+      },
+    })
+  )
+})
+
+export { SubNav, SubNavChildren }
