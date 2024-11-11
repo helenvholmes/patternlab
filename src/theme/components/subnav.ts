@@ -48,13 +48,13 @@ const SubNav = subNavDefineMultiStyleConfig({
       const defaultLabelColor = "ui.typography.body";
       const highlightOrDefaultColor = highlightColor
         ? `${highlightColor} !important`
-        : "ui.typography.body !important";
+        : `${defaultLabelColor} !important`;
       const highlightOrLinkColor = highlightColor
         ? `${highlightColor} !important`
         : "ui.link.primary !important";
       const highlightOrBorderColor = highlightColor
-        ? `${highlightColor} `
-        : "ui.border.default ";
+        ? `${highlightColor}`
+        : "ui.border.default";
       const finalBackgroundColor = backgroundColor
         ? backgroundColor
         : "ui.link.primary-05 !important";
@@ -77,7 +77,7 @@ const SubNav = subNavDefineMultiStyleConfig({
               fill:
                 backgroundColor !== undefined
                   ? `${backgroundColor} `
-                  : "ui.white ",
+                  : "ui.white",
             },
           },
         },
