@@ -26,6 +26,7 @@ import building from "../../../icons/svg/building.svg";
 import communicationCall from "../../../icons/svg/communication-call.svg";
 import communicationChatBubble from "../../../icons/svg/communication-chat-bubble.svg";
 import communicationEmail from "../../../icons/svg/communication-email.svg";
+import contentFilterList from "../../../icons/svg/content-filter-list.svg";
 import check from "../../../icons/svg/check.svg";
 import clock from "../../../icons/svg/clock.svg";
 import close from "../../../icons/svg/close.svg";
@@ -67,6 +68,7 @@ import socialTikTok from "../../../icons/svg/social-tiktok.svg";
 import socialTumblr from "../../../icons/svg/social-tumblr.svg";
 import socialTwitter from "../../../icons/svg/social-twitter.svg";
 import socialVimeo from "../../../icons/svg/social-vimeo.svg";
+import socialX from "../../../icons/svg/social-x.svg";
 import socialYoutube from "../../../icons/svg/social-youtube.svg";
 import speakerNotes from "../../../icons/svg/speaker-notes.svg";
 import sunFull from "../../../icons/svg/sun-full.svg";
@@ -106,6 +108,7 @@ export default {
   communicationCall,
   communicationChatBubble,
   communicationEmail,
+  contentFilterList,
   decorativeBookBroken,
   decorativeEnvelope,
   decorativeLibraryCard,
@@ -144,6 +147,7 @@ export default {
   socialTumblr,
   socialTwitter,
   socialVimeo,
+  socialX,
   socialYoutube,
   speakerNotes,
   sunFull,

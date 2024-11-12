@@ -8,9 +8,20 @@ Currently, this repo is in Prerelease. When it is released, this project will ad
 
 ## Prerelease
 
+## 3.4.2 (November 7, 2024)
+
+### Adds
+
+- Adds the `"contentFilterRelease"` option to the `Icon` component.
+- Adds the `"socialX"` option to the `Icon` component.
+- Adds the `heading7` and `heading8` to the font size design tokens.
+- Adds the `heading7` and `heading8` options for the `size` prop in the `Heading` component.
+
 ### Updates
 
 - Updates Storybook and related dependencies to version 8.3.6.
+- Updates the `Link` component to prevent line breaks.
+- Updates the `SocialMediaLinks` component to support the `"socialX"` icon.
 
 ## Fixes
 
@@ -23,7 +34,6 @@ Currently, this repo is in Prerelease. When it is released, this project will ad
 - Adds the `"decorativeBookBroken"` option (for error pages) to the `Icon` component.
 - Adds the `"xxxxlarge"` and `"xxxxxlarge"` size options for the `Icon` component.
 - Adds the `"2xlarge"`, `"3xlarge"`, `"4xlarge"`, and `"5xlarge"` sustainable size options for the `Icon` component.
-- Adds the `heading7` and `heading8` options for the `size` prop in the `Heading` component.
 
 ### Updates
 

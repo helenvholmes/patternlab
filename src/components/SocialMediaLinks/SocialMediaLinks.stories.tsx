@@ -53,6 +53,11 @@ const exampleAllLinkData: SocialMediaLinkDataProps[] = [
     url: "https://twitter.com/nypl",
   },
   {
+    icon: "socialX",
+    labelText: "X",
+    url: "https://x.com/nypl",
+  },
+  {
     icon: "socialYoutube",
     labelText: "YouTube",
     url: "https://youtube.com/newyorkpubliclibrary",
@@ -65,9 +70,9 @@ const exampleLinkData: SocialMediaLinkDataProps[] = [
     url: "https://facebook.com/nypl",
   },
   {
-    icon: "socialTwitter",
-    labelText: "Twitter",
-    url: "https://twitter.com/nypl",
+    icon: "socialX",
+    labelText: "X",
+    url: "https://x.com/nypl",
   },
   {
     icon: "socialInstagram",
@@ -93,9 +98,9 @@ const exampleTwoLinkData: SocialMediaLinkDataProps[] = [
     url: "https://nypl.tumblr.com",
   },
   {
-    icon: "socialTwitter",
-    labelText: "Twitter",
-    url: "https://twitter.com/nypl",
+    icon: "socialX",
+    labelText: "X",
+    url: "https://x.com/nypl",
   },
   {
     icon: "socialYoutube",
