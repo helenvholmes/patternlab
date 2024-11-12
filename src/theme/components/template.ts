@@ -81,7 +81,6 @@ const TemplateContentPrimary = defineStyleConfig({
     },
     right: {
       gridColumn: { base: "1", md: "1" },
-      // paddingX: undefined,
       paddingRight: "l",
       paddingLeft: "s",
     },
@@ -91,9 +90,11 @@ const TemplateContentSidebar = defineStyleConfig({
   variants: {
     left: {
       gridColumn: "1",
+      paddingLeft: "s",
     },
     right: {
       gridColumn: { base: "1", md: "2" },
+      paddingRight: "s",
     },
   },
 });

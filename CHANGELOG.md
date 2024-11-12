@@ -8,6 +8,10 @@ Currently, this repo is in Prerelease. When it is released, this project will ad
 
 ## Prerelease
 
+### Fixes
+
+- Fixes issue where focus indicator was being cut off in places in the `Template` component.
+
 ## 3.4.2 (November 7, 2024)
 
 ### Adds
