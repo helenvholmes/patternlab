@@ -113,7 +113,7 @@ export interface SubNavProps {
   selectedItem?: string;
 }
 
-export const SubNavButton: React.FC<React.PropsWithChildren<any>> = chakra(
+export const SubNavButton: React.FC<React.PropsWithChildren<any>> =
   ({ id, buttonType = "text", children, isOutlined, selectedItem }) => {
     const isSelected = selectedItem === String(id);
 
@@ -132,9 +132,9 @@ export const SubNavButton: React.FC<React.PropsWithChildren<any>> = chakra(
       </Button>
     );
   }
-);
 
-export const SubNavLink: React.FC<React.PropsWithChildren<any>> = chakra(
+
+export const SubNavLink: React.FC<React.PropsWithChildren<any>> =
   ({
     id,
     type = "action",
@@ -164,7 +164,6 @@ export const SubNavLink: React.FC<React.PropsWithChildren<any>> = chakra(
       </Link>
     );
   }
-);
 
 export const SubNav: ChakraComponent<
   React.ForwardRefExoticComponent<
@@ -279,8 +278,8 @@ export const SubNav: ChakraComponent<
             <li id="secondary-actions">
               {secondaryActions
                 ? secondaryActions({
-                    selectedItem,
-                  })
+                  selectedItem,
+                })
                 : null}
             </li>
           </List>
