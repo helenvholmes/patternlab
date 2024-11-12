@@ -253,6 +253,12 @@ export const SubNavLink: React.FC<React.PropsWithChildren<any>> = chakra(
   }
 );
 
+/**
+ * The `SubNav` component is a navigation element that displays a group of
+ * related action items (buttons or links) in a horizontal layout.  The action
+ * items in the `SubNav` component will link to children within or perform
+ * actions related to the current section of a website.
+ */
 export const SubNav: ChakraComponent<
   React.ForwardRefExoticComponent<
     React.PropsWithChildren<SubNavProps> & React.RefAttributes<HTMLDivElement>
@@ -326,7 +332,7 @@ export const SubNav: ChakraComponent<
     };
 
     return (
-      <Box __css={styles.base}>
+      <Box as="nav" aria-label="Sub-navigation menu" __css={styles.base}>
         <Flex
           alignItems="baseline"
           className={className}

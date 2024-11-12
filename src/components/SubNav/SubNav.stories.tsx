@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import Icon from "../Icons/Icon";
+import Text from "../Text/Text";
 
 import SubNav, {
   SubNavButton,
@@ -9,7 +10,7 @@ import SubNav, {
 } from "./SubNav";
 
 const meta: Meta<typeof SubNav> = {
-  title: "Components/Page Layout/SubNav",
+  title: "Components/Navigation/SubNav",
   component: SubNav,
   argTypes: {
     className: { control: false },
@@ -45,94 +46,55 @@ export const WithControls: Story = {
       primaryActions={({ highlightColor, actionBackgroundColor }) => (
         <>
           <SubNavButton
+            actionBackgroundColor={actionBackgroundColor}
+            buttonType="text"
+            highlightColor={highlightColor}
             id="primary-sub-nav-button-1"
-            highlightColor={highlightColor}
-            actionBackgroundColor={actionBackgroundColor}
-            buttonType="text"
-            isOutlined
           >
             Label Text
           </SubNavButton>
           <SubNavButton
+            actionBackgroundColor={actionBackgroundColor}
+            buttonType="text"
+            highlightColor={highlightColor}
             id="primary-sub-nav-button-2"
-            highlightColor={highlightColor}
-            actionBackgroundColor={actionBackgroundColor}
-            buttonType="text"
           >
             Label Text
           </SubNavButton>
           <SubNavButton
-            id="primary-sub-nav-button-3"
-            highlightColor={highlightColor}
             actionBackgroundColor={actionBackgroundColor}
             buttonType="text"
+            highlightColor={highlightColor}
+            id="primary-sub-nav-button-3"
           >
             Label Text
           </SubNavButton>
-          <SubNavLink
-            id="primary-sub-nav-link-1"
-            screenreaderOnlyText="for the NYPL Research Catalog"
-            highlightColor={highlightColor}
-            actionBackgroundColor={actionBackgroundColor}
-            href="#link1"
-          >
-            Label Text
-          </SubNavLink>
-          <SubNavLink
-            id="primary-sub-nav-link-2"
-            screenreaderOnlyText="for the NYPL Research Catalog"
-            highlightColor={highlightColor}
-            actionBackgroundColor={actionBackgroundColor}
-            href="#link2"
-          >
-            Label Text
-          </SubNavLink>
-          <SubNavLink
-            id="primary-sub-nav-link-3"
-            screenreaderOnlyText="for the NYPL Research Catalog"
-            highlightColor={highlightColor}
-            actionBackgroundColor={actionBackgroundColor}
-            href="#link3"
-          >
-            Label Text
-            <Icon
-              name="legacyAccountFilled"
-              size="small"
-              className="right"
-              align="right"
-            />
-          </SubNavLink>
         </>
       )}
       secondaryActions={({ highlightColor, actionBackgroundColor }) => (
         <>
           <SubNavButton
-            id="sub-nav-button-3" // Unique ID
-            highlightColor={highlightColor}
             actionBackgroundColor={actionBackgroundColor}
             buttonType="text"
+            highlightColor={highlightColor}
+            id="sub-nav-button-3" // Unique ID
           >
             Label Text
-            <Icon
-              name="legacyAccountFilled"
-              size="small"
-              className="right"
-              align="right"
-            />
           </SubNavButton>
           <SubNavLink
-            id="sub-nav-link-1"
-            screenreaderOnlyText="for the NYPL Research Catalog"
-            highlightColor={highlightColor}
             actionBackgroundColor={actionBackgroundColor}
+            highlightColor={highlightColor}
             href="#link1"
+            id="sub-nav-link-1"
+            isOutlined
+            screenreaderOnlyText="for the NYPL Research Catalog"
           >
             Label Text
             <Icon
+              align="right"
+              className="right"
               name="legacyAccountFilled"
               size="small"
-              className="right"
-              align="right"
             />
           </SubNavLink>
         </>
@@ -147,7 +109,7 @@ export const SelectedItem: Story = {
     actionBackgroundColor: undefined,
     highlightColor: undefined,
     id: "sub-nav-id",
-    selectedItem: "primary-sub-nav-button-1",
+    selectedItem: "primary-sub-nav-link-1",
   },
 
   render: (args: any) => (
@@ -160,130 +122,58 @@ export const SelectedItem: Story = {
       }) => (
         <>
           <SubNavButton
-            id="primary-sub-nav-button-1"
-            highlightColor={highlightColor}
             actionBackgroundColor={actionBackgroundColor}
             buttonType="text"
+            highlightColor={highlightColor}
+            id="primary-sub-nav-button-1"
+          >
+            Label Text
+          </SubNavButton>
+          <SubNavLink
+            actionBackgroundColor={actionBackgroundColor}
+            highlightColor={highlightColor}
+            href="#link1"
+            id="primary-sub-nav-link-1"
+            screenreaderOnlyText="for the NYPL Research Catalog"
             selectedItem={selectedItem}
           >
             Label Text
-          </SubNavButton>
-          <SubNavButton
-            id="primary-sub-nav-button-2"
-            highlightColor={highlightColor}
-            actionBackgroundColor={actionBackgroundColor}
-            buttonType="text"
-          >
-            Label Text
-          </SubNavButton>
-          <SubNavButton
-            id="primary-sub-nav-button-3"
-            highlightColor={highlightColor}
-            actionBackgroundColor={actionBackgroundColor}
-            buttonType="text"
-          >
-            Label Text
-          </SubNavButton>
-          <SubNavLink
-            id="primary-sub-nav-link-1"
-            screenreaderOnlyText="for the NYPL Research Catalog"
-            highlightColor={highlightColor}
-            actionBackgroundColor={actionBackgroundColor}
-            href="#link1"
-          >
-            Label Text
-            <Icon
-              name="legacyAccountFilled"
-              size="small"
-              className="right"
-              align="right"
-            />
           </SubNavLink>
           <SubNavLink
+            actionBackgroundColor={actionBackgroundColor}
+            highlightColor={highlightColor}
+            href="#link2"
             id="primary-sub-nav-link-2"
             screenreaderOnlyText="for the NYPL Research Catalog"
-            highlightColor={highlightColor}
-            actionBackgroundColor={actionBackgroundColor}
-            href="#link2"
           >
             Label Text
-            <Icon
-              name="legacyAccountFilled"
-              size="small"
-              className="right"
-              align="right"
-            />
-          </SubNavLink>
-          <SubNavLink
-            id="primary-sub-nav-link-3"
-            screenreaderOnlyText="for the NYPL Research Catalog"
-            highlightColor={highlightColor}
-            actionBackgroundColor={actionBackgroundColor}
-            href="#link3"
-          >
-            Label Text
-            <Icon
-              name="legacyAccountFilled"
-              size="small"
-              className="right"
-              align="right"
-            />
           </SubNavLink>
         </>
       )}
       secondaryActions={({ highlightColor, actionBackgroundColor }) => (
         <>
           <SubNavButton
-            id="sub-nav-button-3" // Unique ID
-            highlightColor={highlightColor}
             actionBackgroundColor={actionBackgroundColor}
             buttonType="text"
+            highlightColor={highlightColor}
+            id="sub-nav-button-3" // Unique ID
           >
             Label Text
           </SubNavButton>
           <SubNavLink
-            id="sub-nav-link-1"
-            screenreaderOnlyText="for the NYPL Research Catalog"
-            highlightColor={highlightColor}
             actionBackgroundColor={actionBackgroundColor}
+            highlightColor={highlightColor}
             href="#link1"
-          >
-            Label Text
-            <Icon
-              name="legacyAccountFilled"
-              size="small"
-              className="right"
-              align="right"
-            />
-          </SubNavLink>
-          <SubNavLink
-            id="sub-nav-link-2"
+            id="sub-nav-link-1"
+            isOutlined
             screenreaderOnlyText="for the NYPL Research Catalog"
-            highlightColor={highlightColor}
-            actionBackgroundColor={actionBackgroundColor}
-            href="#link2"
           >
             Label Text
             <Icon
+              align="right"
+              className="right"
               name="legacyAccountFilled"
               size="small"
-              className="right"
-              align="right"
-            />
-          </SubNavLink>
-          <SubNavLink
-            id="sub-nav-link-3"
-            screenreaderOnlyText="for the NYPL Research Catalog"
-            highlightColor={highlightColor}
-            actionBackgroundColor={actionBackgroundColor}
-            href="#link3"
-          >
-            Label Text
-            <Icon
-              name="legacyAccountFilled"
-              size="small"
-              className="right"
-              align="right"
             />
           </SubNavLink>
         </>
@@ -391,7 +281,7 @@ export const Outline: Story = {
   ),
 };
 
-export const HighlightColor: Story = {
+export const CustomColors: Story = {
   args: {
     className: undefined,
     actionBackgroundColor: "brand.primary-05",
@@ -401,89 +291,91 @@ export const HighlightColor: Story = {
   },
 
   render: (args: any) => (
-    <SubNav
-      {...args}
-      primaryActions={({
-        highlightColor,
-        actionBackgroundColor,
-        selectedItem,
-      }) => (
-        <>
-          <SubNavButton
-            id="primary-sub-nav-button-1"
-            highlightColor={highlightColor}
-            actionBackgroundColor={actionBackgroundColor}
-            buttonType="text"
-            selectedItem={selectedItem}
-            onClick={onClickHandler}
-          >
-            Label Text
-          </SubNavButton>
-          <SubNavButton
-            id="primary-sub-nav-button-2"
-            highlightColor="brand.primary"
-            actionBackgroundColor="brand.primary-05"
-            buttonType="text"
-            onClick={onClickHandler}
-            isOutlined
-          >
-            Label Text
-            <Icon
-              name="legacyAccountFilled"
-              size="small"
-              className="right"
-              align="right"
-            />
-          </SubNavButton>
-          <SubNavLink
-            id="primary-link-1"
-            screenreaderOnlyText="for the NYPL Research Catalog"
-            highlightColor="brand.primary"
-            actionBackgroundColor="brand.primary-05"
-            href="#link"
-            isOutlined
-          >
-            Label Text
-            <Icon
-              name="legacyAccountFilled"
-              size="small"
-              className="right"
-              align="right"
-            />
-          </SubNavLink>
-        </>
-      )}
-      secondaryActions={() => (
-        <>
-          <SubNavButton
-            id="sub-nav-button-3" // Unique ID
-            highlightColor="brand.primary"
-            actionBackgroundColor="brand.primary-05"
-            buttonType="text"
-            onClick={onClickHandler}
-            isOutlined
-          >
-            Label Text
-          </SubNavButton>
-          <SubNavLink
-            id="sub-nav-link-1"
-            screenreaderOnlyText="for the NYPL Research Catalog"
-            highlightColor="brand.primary"
-            actionBackgroundColor="brand.primary-05"
-            href="#link"
-            isOutlined
-          >
-            Label Text
-            <Icon
-              name="legacyAccountFilled"
-              size="small"
-              className="right"
-              align="right"
-            />
-          </SubNavLink>
-        </>
-      )}
-    />
+    <>
+      <Text>Blah</Text>
+      <SubNav
+        {...args}
+        primaryActions={({
+          highlightColor,
+          actionBackgroundColor,
+          selectedItem,
+        }) => (
+          <>
+            <SubNavButton
+              actionBackgroundColor={actionBackgroundColor}
+              buttonType="text"
+              highlightColor={highlightColor}
+              id="primary-sub-nav-button-1"
+              isOutlined
+              onClick={onClickHandler}
+              selectedItem={selectedItem}
+            >
+              Label Text
+            </SubNavButton>
+            <SubNavButton
+              actionBackgroundColor="brand.primary-05"
+              buttonType="text"
+              highlightColor="brand.primary"
+              id="primary-sub-nav-button-2"
+              onClick={onClickHandler}
+            >
+              Label Text
+              <Icon
+                name="legacyAccountFilled"
+                size="small"
+                className="right"
+                align="right"
+              />
+            </SubNavButton>
+            <SubNavLink
+              id="primary-link-1"
+              screenreaderOnlyText="for the NYPL Research Catalog"
+              highlightColor="brand.primary"
+              actionBackgroundColor="brand.primary-05"
+              href="#link"
+              isOutlined
+            >
+              Label Text
+              <Icon
+                name="legacyAccountFilled"
+                size="small"
+                className="right"
+                align="right"
+              />
+            </SubNavLink>
+          </>
+        )}
+        secondaryActions={() => (
+          <>
+            <SubNavButton
+              id="sub-nav-button-3" // Unique ID
+              highlightColor="brand.primary"
+              actionBackgroundColor="brand.primary-05"
+              buttonType="text"
+              onClick={onClickHandler}
+            >
+              Label Text
+            </SubNavButton>
+            <SubNavLink
+              id="sub-nav-link-1"
+              screenreaderOnlyText="for the NYPL Research Catalog"
+              highlightColor="brand.primary"
+              actionBackgroundColor="brand.primary-05"
+              href="#link"
+              isOutlined
+            >
+              Label Text
+              <Icon
+                name="legacyAccountFilled"
+                size="small"
+                className="right"
+                align="right"
+              />
+            </SubNavLink>
+          </>
+        )}
+      />
+    </>
   ),
 };
 

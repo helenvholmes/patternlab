@@ -1,24 +1,28 @@
 import { ArgTypes, Canvas, Description, Meta, Source } from "@storybook/blocks";
 
 import * as SubNavStories from "./SubNav.stories";
-
+import ComponentChangelogTable from "../../utils/ComponentChangelogTable";
 import Link from "../Link/Link";
+import { changelogData } from "./subNavChangelogData";
 
 <Meta of={SubNavStories} />
 
 # SubNav
 
-| Component Version | DS Version |
-| ----------------- | ---------- |
+| Component Version | DS Version   |
+| ----------------- | ------------ |
 | Added             | `Prerelease` |
 | Latest            | `Prerelease` |
 
+## Table of Contents
 
 - {<Link href="#overview" target="_self">Overview</Link>}
 - {<Link href="#component-props" target="_self">Component Props</Link>}
+- {<Link href="#accessibility" target="_self">Accessibility</Link>}
 - {<Link href="#selected-item" target="_self">Selected Item</Link>}
 - {<Link href="#outline" target="_self">Outline</Link>}
-- {<Link href="#highlight-color" target="_self">Highlight Color</Link>}
+- {<Link href="#custom-colors" target="_self">Custom Colors</Link>}
+- {<Link href="#changelog" target="_self">Changelog</Link>}
 
 ## Overview
 
@@ -32,12 +36,46 @@ import Link from "../Link/Link";
 
 ## Accessibility
 
+Only one `SubNav` component should be rendered on a page. This is because only
+one HTML `<nav>` element with an `aria-label` attribute value of
+`"Sub-navigation menu"` should be rendered on a page. The DS `SubNav` component
+renders the `<nav>` HTML landmark, so only one component must be rendered on a
+page.
+
+Internally, buttons and links are organized in an unordered list (`<ul>`)
+element. If applicable, the current page link is denoted by an `aria-current`
+attribute value of `"page"`. Separate `<ul>` elements are used to contain the
+buttons and links with the `primaryActions` and `secondaryActions` sections.
+
 ## Selected Item
+
+The `selectedItem` prop can be used to identify and highlight an action item.
+The value should match the `id` value associated with one of the action items.
+
 <Canvas of={SubNavStories.SelectedItem} />
 
 ## Outline
+
+The `isOutlined` prop can be used to apply a border to an action item.
+
 <Canvas of={SubNavStories.Outline} />
 
-## Highlight Color
-<Canvas of={SubNavStories.HighlightColor} />
+## Custom Colors
 
+In cases where custom colors are necessary, values from defined sets of colors
+can be used to set `actionBackgroundColor` and `highlightColor`. 
+
+- The `actionBackgroundColor` prop is used to set the hover state background
+  color for the action items.
+- The `highlightColor` prop is used to set the color of the text, icons, and
+  borders for some instances of the action items.
+
+**IMPORTANT:** Both `actionBackgroundColor` and `highlightColor` must be set in order
+to override the default colors.
+
+
+<Canvas of={SubNavStories.CustomColors} />
+
+## Changelog
+
+<ComponentChangelogTable changelogData={changelogData} />
