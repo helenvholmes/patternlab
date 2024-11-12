@@ -113,57 +113,60 @@ export interface SubNavProps {
   selectedItem?: string;
 }
 
-export const SubNavButton: React.FC<React.PropsWithChildren<any>> =
-  ({ id, buttonType = "text", children, isOutlined, selectedItem }) => {
-    const isSelected = selectedItem === String(id);
+export const SubNavButton: React.FC<React.PropsWithChildren<any>> = ({
+  id,
+  buttonType = "text",
+  children,
+  isOutlined,
+  selectedItem,
+}) => {
+  const isSelected = selectedItem === String(id);
 
-    const childrenStyles = useMultiStyleConfig("SubNavChildren", {
-      isOutlined: isOutlined,
-    });
+  const childrenStyles = useMultiStyleConfig("SubNavChildren", {
+    isOutlined: isOutlined,
+  });
 
-    return (
-      <Button
-        id={id}
-        buttonType={buttonType}
-        className={isSelected ? "selectedItem" : ""}
-        sx={{ ...childrenStyles.outLine }}
-      >
-        {children}
-      </Button>
-    );
-  }
+  return (
+    <Button
+      id={id}
+      buttonType={buttonType}
+      className={isSelected ? "selectedItem" : ""}
+      sx={{ ...childrenStyles.outLine }}
+    >
+      {children}
+    </Button>
+  );
+};
 
+export const SubNavLink: React.FC<React.PropsWithChildren<any>> = ({
+  id,
+  type = "action",
+  children,
+  isOutlined,
+  selectedItem,
+  href,
+  screenreaderOnlyText = "", // Default to empty if no screenreader text provided
+}) => {
+  const isSelected = selectedItem === String(id);
+  const childrenStyles = useMultiStyleConfig("SubNavChildren", {
+    isOutlined: isOutlined,
+  });
 
-export const SubNavLink: React.FC<React.PropsWithChildren<any>> =
-  ({
-    id,
-    type = "action",
-    children,
-    isOutlined,
-    selectedItem,
-    href,
-    screenreaderOnlyText = "", // Default to empty if no screenreader text provided
-  }) => {
-    const isSelected = selectedItem === String(id);
-    const childrenStyles = useMultiStyleConfig("SubNavChildren", {
-      isOutlined: isOutlined,
-    });
-
-    return (
-      <Link
-        key={id}
-        id={id}
-        type={type}
-        href={href}
-        isUnderlined={false}
-        screenreaderOnlyText={screenreaderOnlyText}
-        className={isSelected ? "selectedItem" : ""}
-        sx={{ ...childrenStyles.outLine }}
-      >
-        {children}
-      </Link>
-    );
-  }
+  return (
+    <Link
+      key={id}
+      id={id}
+      type={type}
+      href={href}
+      isUnderlined={false}
+      screenreaderOnlyText={screenreaderOnlyText}
+      className={isSelected ? "selectedItem" : ""}
+      sx={{ ...childrenStyles.outLine }}
+    >
+      {children}
+    </Link>
+  );
+};
 
 export const SubNav: ChakraComponent<
   React.ForwardRefExoticComponent<
@@ -278,8 +281,8 @@ export const SubNav: ChakraComponent<
             <li id="secondary-actions">
               {secondaryActions
                 ? secondaryActions({
-                  selectedItem,
-                })
+                    selectedItem,
+                  })
                 : null}
             </li>
           </List>
