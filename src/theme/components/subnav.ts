@@ -31,7 +31,7 @@ const commonStyles = () => ({
   alignItems: "center",
   display: "inline-flex",
   fontWeight: "regular",
-  fontSize: "desktop.button.default",
+  fontSize: "desktop.button.large",
   gap: "xs",
   height: { base: "44px", md: "unset" },
   lineHeight: "1.5 !important",

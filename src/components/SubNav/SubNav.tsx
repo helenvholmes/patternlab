@@ -4,6 +4,7 @@ import React, {
   useState,
   useRef,
   CSSProperties,
+  useCallback,
 } from "react";
 import {
   Box,
@@ -75,13 +76,13 @@ export interface SubNavProps {
   /**
    * Primary actions displayed on the left side of the SubNav.
    * Use SubNavButton and SubNavLink components, which mirror
-   * the DS Button and Link functionalities, plus the isOutlined prop.
+   * the DS Button and Link.
    */
   primaryActions: React.ReactNode;
   /**
    * Secondary actions displayed on the right side of the SubNav.
-   * Use SubNavButton and SubNavLink components, offering additional
-   * contextual options related to the primary content.
+   * Use SubNavButton and SubNavLink components, which mirror
+   * the DS Button and Link.
    */
   secondaryActions?: React.ReactNode;
   /**
@@ -229,15 +230,14 @@ export const SubNav: ChakraComponent<
         highlightColor: highlightColor,
       });
 
-      const handleScroll = () => {
+      const handleScroll = useCallback(() => {
         if (scrollableRef.current) {
-          const { scrollLeft, scrollWidth, clientWidth } =
-            scrollableRef.current;
-
+          const { scrollLeft, scrollWidth, clientWidth } = scrollableRef.current;
+      
           // Determine if we are scrolling to the left or right
           const isScrollingRight = scrollLeft > lastScrollLeft;
           setLastScrollLeft(scrollLeft); // Update last scroll position
-
+      
           // Show right fade only if scrolling to the left
           if (!isScrollingRight) {
             // Show right fade only if not at the end
@@ -247,34 +247,34 @@ export const SubNav: ChakraComponent<
             setShowRightFade(false); // Hide when scrolling right
           }
         }
-      };
-
+      }, [lastScrollLeft, setLastScrollLeft, setShowRightFade]);
+      
       useEffect(() => {
         const refCurrent = scrollableRef.current;
         if (refCurrent) {
           refCurrent.addEventListener("scroll", handleScroll);
-
+      
           // Initial check to set the right fade effect based on the initial scroll state
           const { scrollWidth, clientWidth, scrollLeft } = refCurrent;
           const atRightEdge = scrollLeft + clientWidth >= scrollWidth;
-
+      
           // Set the right fade effect if content is scrollable and not at the right edge
           setShowRightFade(!atRightEdge);
-
+      
           // If the scrollable area is already at the end, hide the right fade initially
           if (scrollWidth <= clientWidth) {
             setShowRightFade(false); // If the content fits in the viewport, no need for a fade
           }
         }
-
+      
         // Cleanup event listener on component unmount
         return () => {
           if (refCurrent) {
             refCurrent.removeEventListener("scroll", handleScroll);
           }
         };
-      }, []); // Empty dependency array to run only once after the initial render
-
+      }, [handleScroll]);
+      
       return (
         <Box __css={styles.base}>
           <Flex
