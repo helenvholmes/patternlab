@@ -7,41 +7,24 @@ describe("SubNav Accessibility", () => {
   it("passes axe accessibility test with primary actions", async () => {
     const { container } = render(
       <SubNav
-        primaryActions={({ highlightColor, actionBackgroundColor }) => (
+        primaryActions={
           <>
-            <SubNavButton
-              id="primary-sub-nav-button-1"
-              highlightColor={highlightColor}
-              actionBackgroundColor={actionBackgroundColor}
-              buttonType="text"
-            >
+            <SubNavButton id="primary-sub-nav-button-1" buttonType="text">
               Label Text
             </SubNavButton>
-            <SubNavButton
-              id="primary-sub-nav-button-2"
-              highlightColor={highlightColor}
-              actionBackgroundColor={actionBackgroundColor}
-              buttonType="text"
-            >
+            <SubNavButton id="primary-sub-nav-button-2" buttonType="text">
               Label Text
             </SubNavButton>
-            <SubNavButton
-              id="primary-sub-nav-button-3"
-              highlightColor={highlightColor}
-              actionBackgroundColor={actionBackgroundColor}
-              buttonType="text"
-            >
+            <SubNavButton id="primary-sub-nav-button-3" buttonType="text">
               Label Text
             </SubNavButton>
           </>
-        )}
-        secondaryActions={({ highlightColor, actionBackgroundColor }) => (
+        }
+        secondaryActions={
           <>
             <SubNavLink
               id="primary-sub-nav-link-1"
               screenreaderOnlyText="for the NYPL Research Catalog"
-              highlightColor={highlightColor}
-              actionBackgroundColor={actionBackgroundColor}
               href="#link1"
             >
               Label Text
@@ -49,8 +32,6 @@ describe("SubNav Accessibility", () => {
             <SubNavLink
               id="primary-sub-nav-link-2"
               screenreaderOnlyText="for the NYPL Research Catalog"
-              highlightColor={highlightColor}
-              actionBackgroundColor={actionBackgroundColor}
               href="#link2"
             >
               Label Text
@@ -58,8 +39,6 @@ describe("SubNav Accessibility", () => {
             <SubNavLink
               id="primary-sub-nav-link-3"
               screenreaderOnlyText="for the NYPL Research Catalog"
-              highlightColor={highlightColor}
-              actionBackgroundColor={actionBackgroundColor}
               href="#link3"
             >
               Label Text
@@ -71,7 +50,7 @@ describe("SubNav Accessibility", () => {
               />
             </SubNavLink>
           </>
-        )}
+        }
       />
     );
     expect(await axe(container)).toHaveNoViolations();
@@ -80,39 +59,27 @@ describe("SubNav Accessibility", () => {
   it("passes axe accessibility test with secondary actions", async () => {
     const { container } = render(
       <SubNav
-        primaryActions={({ highlightColor, actionBackgroundColor }) => (
+        primaryActions={
           <>
-            <SubNavButton
-              id="primary-sub-nav-button-1"
-              highlightColor={highlightColor}
-              actionBackgroundColor={actionBackgroundColor}
-              buttonType="text"
-            >
+            <SubNavButton id="primary-sub-nav-button-1" buttonType="text">
               Label Text
             </SubNavButton>
           </>
-        )}
-        secondaryActions={({ highlightColor, actionBackgroundColor }) => (
+        }
+        secondaryActions={
           <>
-            <SubNavButton
-              id="secondary-sub-nav-button-1"
-              highlightColor={highlightColor}
-              actionBackgroundColor={actionBackgroundColor}
-              buttonType="text"
-            >
+            <SubNavButton id="secondary-sub-nav-button-1" buttonType="text">
               Label Text
             </SubNavButton>
             <SubNavLink
               id="secondary-sub-nav-link-1"
               screenreaderOnlyText="for the NYPL Research Catalog"
-              highlightColor={highlightColor}
-              actionBackgroundColor={actionBackgroundColor}
               href="#link1"
             >
               Label Text
             </SubNavLink>
           </>
-        )}
+        }
       />
     );
 
@@ -122,47 +89,30 @@ describe("SubNav Accessibility", () => {
   it("passes axe accessibility test with all actions", async () => {
     const { container } = render(
       <SubNav
-        primaryActions={({ highlightColor, actionBackgroundColor }) => (
+        primaryActions={
           <>
-            <SubNavButton
-              id="primary-sub-nav-button-1"
-              highlightColor={highlightColor}
-              actionBackgroundColor={actionBackgroundColor}
-              buttonType="text"
-            >
+            <SubNavButton id="primary-sub-nav-button-1" buttonType="text">
               Label Text
             </SubNavButton>
-            <SubNavButton
-              id="primary-sub-nav-button-2"
-              highlightColor={highlightColor}
-              actionBackgroundColor={actionBackgroundColor}
-              buttonType="text"
-            >
+            <SubNavButton id="primary-sub-nav-button-2" buttonType="text">
               Label Text
             </SubNavButton>
           </>
-        )}
-        secondaryActions={({ highlightColor, actionBackgroundColor }) => (
+        }
+        secondaryActions={
           <>
-            <SubNavButton
-              id="secondary-sub-nav-button-1"
-              highlightColor={highlightColor}
-              actionBackgroundColor={actionBackgroundColor}
-              buttonType="text"
-            >
+            <SubNavButton id="secondary-sub-nav-button-1" buttonType="text">
               Label Text
             </SubNavButton>
             <SubNavLink
               id="secondary-sub-nav-link-1"
               screenreaderOnlyText="for the NYPL Research Catalog"
-              highlightColor={highlightColor}
-              actionBackgroundColor={actionBackgroundColor}
               href="#link1"
             >
               Label Text
             </SubNavLink>
           </>
-        )}
+        }
       />
     );
     expect(await axe(container)).toHaveNoViolations();
@@ -175,18 +125,13 @@ describe("SubNav Accessibility", () => {
         highlightColor="brand.primary"
         selectedItem="primary-sub-nav-button-1"
         id="sub-nav-id"
-        primaryActions={({ highlightColor, actionBackgroundColor }) => (
+        primaryActions={
           <>
-            <SubNavButton
-              id="primary-sub-nav-button-1"
-              highlightColor={highlightColor}
-              actionBackgroundColor={actionBackgroundColor}
-              buttonType="text"
-            >
+            <SubNavButton id="primary-sub-nav-button-1" buttonType="text">
               Label Text
             </SubNavButton>
           </>
-        )}
+        }
       />
     );
     expect(await axe(container)).toHaveNoViolations();
@@ -197,12 +142,12 @@ describe("SubNav Component", () => {
   it("renders with primary actions", () => {
     render(
       <SubNav
-        primaryActions={() => (
+        primaryActions={
           <>
             <SubNavButton id="primary-button-1">Primary Button 1</SubNavButton>
             <SubNavButton id="primary-button-2">Primary Button 2</SubNavButton>
           </>
-        )}
+        }
       />
     );
 
@@ -213,16 +158,16 @@ describe("SubNav Component", () => {
   it("renders with secondary actions", () => {
     render(
       <SubNav
-        primaryActions={() => (
+        primaryActions={
           <>
             <SubNavButton id="primary-button-1">Primary Button</SubNavButton>
           </>
-        )}
-        secondaryActions={() => (
+        }
+        secondaryActions={
           <>
             <SubNavLink href="#secondary-link">Secondary Link</SubNavLink>
           </>
-        )}
+        }
       />
     );
 
@@ -234,14 +179,14 @@ describe("SubNav Component", () => {
     render(
       <SubNav
         selectedItem="primary-button-1"
-        primaryActions={() => (
+        primaryActions={
           <>
             <SubNavButton id="primary-button-1" selectedItem="primary-button-1">
               Primary Button 1
             </SubNavButton>
             <SubNavButton id="primary-button-2">Primary Button 2</SubNavButton>
           </>
-        )}
+        }
       />
     );
 
@@ -254,12 +199,12 @@ describe("SubNav Component", () => {
   it("passes axe accessibility test with primary actions", async () => {
     const { container } = render(
       <SubNav
-        primaryActions={() => (
+        primaryActions={
           <>
             <SubNavButton id="primary-button-1">Primary Button 1</SubNavButton>
             <SubNavButton id="primary-button-2">Primary Button 2</SubNavButton>
           </>
-        )}
+        }
       />
     );
     expect(await axe(container)).toHaveNoViolations();
@@ -268,16 +213,16 @@ describe("SubNav Component", () => {
   it("passes axe accessibility test with secondary actions", async () => {
     const { container } = render(
       <SubNav
-        primaryActions={() => (
+        primaryActions={
           <>
             <SubNavButton id="primary-button-1">Primary Button</SubNavButton>
           </>
-        )}
-        secondaryActions={() => (
+        }
+        secondaryActions={
           <>
             <SubNavLink href="#secondary-link">Secondary Link</SubNavLink>
           </>
-        )}
+        }
       />
     );
     expect(await axe(container)).toHaveNoViolations();
@@ -290,19 +235,61 @@ describe("SubNav Component", () => {
         highlightColor="brand.primary"
         selectedItem="primary-sub-nav-button-1"
         id="sub-nav-id"
-        primaryActions={({ highlightColor, actionBackgroundColor }) => (
+        primaryActions={
           <>
-            <SubNavButton
-              id="primary-sub-nav-button-1"
-              highlightColor={highlightColor}
-              actionBackgroundColor={actionBackgroundColor}
-            >
+            <SubNavButton id="primary-sub-nav-button-1">
               Label Text
             </SubNavButton>
           </>
-        )}
+        }
       />
     );
     expect(await axe(container)).toHaveNoViolations();
+  });
+});
+
+describe("SubNavButton", () => {
+  it("renders with default props", () => {
+    render(
+      <SubNavButton id="1" selectedItem={undefined}>
+        Default Button
+      </SubNavButton>
+    );
+    const button = screen.getByText("Default Button");
+    expect(button).toBeInTheDocument();
+    expect(button).not.toHaveClass("selectedItem"); // Should not have the "selectedItem" class
+  });
+
+  it("applies selectedItem class when selectedItem matches id", () => {
+    render(
+      <SubNavButton id="sub-nav-button" selectedItem="sub-nav-button">
+        Selected Button
+      </SubNavButton>
+    );
+    const button = screen.getByText("Selected Button");
+    expect(button).toHaveClass("selectedItem"); // Should have "selectedItem" class
+  });
+});
+
+describe("SubNavLink", () => {
+  it("renders with default props", () => {
+    render(
+      <SubNavLink id="sub-nav-link" selectedItem={undefined}>
+        Default Link
+      </SubNavLink>
+    );
+    const button = screen.getByText("Default Link");
+    expect(button).toBeInTheDocument();
+    expect(button).not.toHaveClass("selectedItem"); // Should not have the "selectedItem" class
+  });
+
+  it("applies selectedItem class when selectedItem matches id", () => {
+    render(
+      <SubNavLink id="sub-nav-link" selectedItem="sub-nav-link">
+        Selected Link
+      </SubNavLink>
+    );
+    const button = screen.getByText("Selected Link");
+    expect(button).toHaveClass("selectedItem"); // Should have "selectedItem" class
   });
 });

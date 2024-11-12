@@ -31,6 +31,10 @@ const meta: Meta<typeof SubNav> = {
   },
 };
 
+const subNavButtonOnClick = (msg: string = "the button was clicked") => {
+  console.log(`SubNav button click message: ${msg}`);
+};
+
 export const WithControls: Story = {
   args: {
     className: undefined,
@@ -43,47 +47,47 @@ export const WithControls: Story = {
   render: (args: any) => (
     <SubNav
       {...args}
-      primaryActions={({ highlightColor, actionBackgroundColor }) => (
+      primaryActions={
         <>
           <SubNavButton
-            actionBackgroundColor={actionBackgroundColor}
             buttonType="text"
-            highlightColor={highlightColor}
             id="primary-sub-nav-button-1"
+            onClick={() => subNavButtonOnClick("from primary-sub-nav-button-1")}
           >
             Label Text
           </SubNavButton>
           <SubNavButton
-            actionBackgroundColor={actionBackgroundColor}
             buttonType="text"
-            highlightColor={highlightColor}
             id="primary-sub-nav-button-2"
-          >
-            Label Text
-          </SubNavButton>
-          <SubNavButton
-            actionBackgroundColor={actionBackgroundColor}
-            buttonType="text"
-            highlightColor={highlightColor}
-            id="primary-sub-nav-button-3"
-          >
-            Label Text
-          </SubNavButton>
-        </>
-      )}
-      secondaryActions={({ highlightColor, actionBackgroundColor }) => (
-        <>
-          <SubNavButton
-            actionBackgroundColor={actionBackgroundColor}
-            buttonType="text"
-            highlightColor={highlightColor}
-            id="sub-nav-button-3" // Unique ID
+            onClick={() => subNavButtonOnClick("from primary-sub-nav-button-2")}
           >
             Label Text
           </SubNavButton>
           <SubNavLink
-            actionBackgroundColor={actionBackgroundColor}
-            highlightColor={highlightColor}
+            id="primary-sub-nav-link-3"
+            screenreaderOnlyText="for the NYPL Research Catalog"
+            href="#link3"
+          >
+            Label Text
+            <Icon
+              name="legacyAccountFilled"
+              size="small"
+              className="right"
+              align="right"
+            />
+          </SubNavLink>
+        </>
+      }
+      secondaryActions={
+        <>
+          <SubNavButton
+            buttonType="text"
+            id="sub-nav-button-3"
+            onClick={() => subNavButtonOnClick("from sub-nav-button-3")}
+          >
+            Label Text
+          </SubNavButton>
+          <SubNavLink
             href="#link1"
             id="sub-nav-link-1"
             isOutlined
@@ -98,7 +102,7 @@ export const WithControls: Story = {
             />
           </SubNavLink>
         </>
-      )}
+      }
     />
   ),
 };
@@ -115,33 +119,23 @@ export const SelectedItem: Story = {
   render: (args: any) => (
     <SubNav
       {...args}
-      primaryActions={({
-        highlightColor,
-        actionBackgroundColor,
-        selectedItem,
-      }) => (
+      primaryActions={
         <>
           <SubNavButton
-            actionBackgroundColor={actionBackgroundColor}
             buttonType="text"
-            highlightColor={highlightColor}
             id="primary-sub-nav-button-1"
+            onClick={() => subNavButtonOnClick("from primary-sub-nav-button-1")}
           >
             Label Text
           </SubNavButton>
           <SubNavLink
-            actionBackgroundColor={actionBackgroundColor}
-            highlightColor={highlightColor}
             href="#link1"
             id="primary-sub-nav-link-1"
             screenreaderOnlyText="for the NYPL Research Catalog"
-            selectedItem={selectedItem}
           >
             Label Text
           </SubNavLink>
           <SubNavLink
-            actionBackgroundColor={actionBackgroundColor}
-            highlightColor={highlightColor}
             href="#link2"
             id="primary-sub-nav-link-2"
             screenreaderOnlyText="for the NYPL Research Catalog"
@@ -149,20 +143,17 @@ export const SelectedItem: Story = {
             Label Text
           </SubNavLink>
         </>
-      )}
-      secondaryActions={({ highlightColor, actionBackgroundColor }) => (
+      }
+      secondaryActions={
         <>
           <SubNavButton
-            actionBackgroundColor={actionBackgroundColor}
             buttonType="text"
-            highlightColor={highlightColor}
-            id="sub-nav-button-3" // Unique ID
+            id="sub-nav-button-3"
+            onClick={() => subNavButtonOnClick("from sub-nav-button-3")}
           >
             Label Text
           </SubNavButton>
           <SubNavLink
-            actionBackgroundColor={actionBackgroundColor}
-            highlightColor={highlightColor}
             href="#link1"
             id="sub-nav-link-1"
             isOutlined
@@ -177,7 +168,7 @@ export const SelectedItem: Story = {
             />
           </SubNavLink>
         </>
-      )}
+      }
     />
   ),
 };
@@ -194,48 +185,34 @@ export const Outline: Story = {
   render: (args: any) => (
     <SubNav
       {...args}
-      primaryActions={({
-        highlightColor,
-        actionBackgroundColor,
-        selectedItem,
-      }) => (
+      primaryActions={
         <>
           <SubNavButton
             id="primary-sub-nav-button-1"
-            highlightColor={highlightColor}
-            actionBackgroundColor={actionBackgroundColor}
             buttonType="text"
-            selectedItem={selectedItem}
-            onClick={onClickHandler}
+            onClick={() => subNavButtonOnClick("from primary-sub-nav-button-1")}
           >
             Label Text
           </SubNavButton>
 
           <SubNavButton
             id="primary-sub-nav-button-2"
-            highlightColor={highlightColor}
-            actionBackgroundColor={actionBackgroundColor}
             buttonType="text"
-            onClick={onClickHandler}
+            onClick={() => subNavButtonOnClick("from primary-sub-nav-button-2")}
           >
             Label Text
           </SubNavButton>
           <SubNavButton
             id="primary-sub-nav-button-3"
-            highlightColor={highlightColor}
-            actionBackgroundColor={actionBackgroundColor}
             buttonType="text"
-            onClick={onClickHandler}
+            onClick={() => subNavButtonOnClick("from primary-sub-nav-button-3")}
           >
             Label Text
           </SubNavButton>
           <SubNavLink
             id="primary-sub-nav-link-1"
             screenreaderOnlyText="for the NYPL Research Catalog"
-            highlightColor={highlightColor}
-            actionBackgroundColor={actionBackgroundColor}
             href="#link1"
-            onClick={onClickHandler}
           >
             Label Text
             <Icon
@@ -246,15 +223,13 @@ export const Outline: Story = {
             />
           </SubNavLink>
         </>
-      )}
-      secondaryActions={({ highlightColor, actionBackgroundColor }) => (
+      }
+      secondaryActions={
         <>
           <SubNavButton
             id="sub-nav-button-3" // Unique ID
-            highlightColor={highlightColor}
-            actionBackgroundColor={actionBackgroundColor}
             buttonType="text"
-            onClick={onClickHandler}
+            onClick={() => subNavButtonOnClick("from sub-nav-button-3")}
             isOutlined
           >
             Label Text
@@ -263,8 +238,6 @@ export const Outline: Story = {
           <SubNavLink
             id="sub-nav-link-1"
             screenreaderOnlyText="for the NYPL Research Catalog"
-            highlightColor={highlightColor}
-            actionBackgroundColor={actionBackgroundColor}
             isOutlined
           >
             Label Text
@@ -276,7 +249,7 @@ export const Outline: Story = {
             />
           </SubNavLink>
         </>
-      )}
+      }
     />
   ),
 };
@@ -295,29 +268,24 @@ export const CustomColors: Story = {
       <Text>Blah</Text>
       <SubNav
         {...args}
-        primaryActions={({
-          highlightColor,
-          actionBackgroundColor,
-          selectedItem,
-        }) => (
+        primaryActions={
           <>
             <SubNavButton
-              actionBackgroundColor={actionBackgroundColor}
               buttonType="text"
-              highlightColor={highlightColor}
               id="primary-sub-nav-button-1"
               isOutlined
-              onClick={onClickHandler}
-              selectedItem={selectedItem}
+              onClick={() =>
+                subNavButtonOnClick("from primary-sub-nav-button-1")
+              }
             >
               Label Text
             </SubNavButton>
             <SubNavButton
-              actionBackgroundColor="brand.primary-05"
               buttonType="text"
-              highlightColor="brand.primary"
               id="primary-sub-nav-button-2"
-              onClick={onClickHandler}
+              onClick={() =>
+                subNavButtonOnClick("from primary-sub-nav-button-2")
+              }
             >
               Label Text
               <Icon
@@ -328,12 +296,10 @@ export const CustomColors: Story = {
               />
             </SubNavButton>
             <SubNavLink
-              id="primary-link-1"
-              screenreaderOnlyText="for the NYPL Research Catalog"
-              highlightColor="brand.primary"
-              actionBackgroundColor="brand.primary-05"
               href="#link"
+              id="primary-link-1"
               isOutlined
+              screenreaderOnlyText="for the NYPL Research Catalog"
             >
               Label Text
               <Icon
@@ -344,25 +310,21 @@ export const CustomColors: Story = {
               />
             </SubNavLink>
           </>
-        )}
-        secondaryActions={() => (
+        }
+        secondaryActions={
           <>
             <SubNavButton
-              id="sub-nav-button-3" // Unique ID
-              highlightColor="brand.primary"
-              actionBackgroundColor="brand.primary-05"
               buttonType="text"
-              onClick={onClickHandler}
+              id="sub-nav-button-3"
+              onClick={() => subNavButtonOnClick("from sub-nav-button-3")}
             >
               Label Text
             </SubNavButton>
             <SubNavLink
-              id="sub-nav-link-1"
-              screenreaderOnlyText="for the NYPL Research Catalog"
-              highlightColor="brand.primary"
-              actionBackgroundColor="brand.primary-05"
               href="#link"
+              id="sub-nav-link-1"
               isOutlined
+              screenreaderOnlyText="for the NYPL Research Catalog"
             >
               Label Text
               <Icon
@@ -373,13 +335,11 @@ export const CustomColors: Story = {
               />
             </SubNavLink>
           </>
-        )}
+        }
       />
     </>
   ),
 };
-
-const onClickHandler = () => {};
 
 export default meta;
 type Story = StoryObj<typeof SubNav>;
