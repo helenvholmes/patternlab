@@ -122,6 +122,13 @@ export const SubNavButton: React.FC<React.PropsWithChildren<any>> = ({
 }) => {
   const isSelected = selectedItem === String(id);
 
+  // Log a warning if selectedItem does not match any id
+  if (selectedItem && !isSelected) {
+    console.warn(
+      "NYPL Reservoir SubNav: The `selectedItem` prop does not match any of the action items."
+    );
+  }
+
   const childrenStyles = useMultiStyleConfig("SubNavChildren", {
     isOutlined: isOutlined,
   });
@@ -131,7 +138,7 @@ export const SubNavButton: React.FC<React.PropsWithChildren<any>> = ({
       id={id}
       buttonType={buttonType}
       className={isSelected ? "selectedItem" : ""}
-      sx={{ ...childrenStyles.outLine }}
+      style={{ ...childrenStyles.outLine }}
     >
       {children}
     </Button>
@@ -148,6 +155,14 @@ export const SubNavLink: React.FC<React.PropsWithChildren<any>> = ({
   screenreaderOnlyText = "", // Default to empty if no screenreader text provided
 }) => {
   const isSelected = selectedItem === String(id);
+
+  // Log a warning if selectedItem does not match any id
+  if (selectedItem && !isSelected) {
+    console.warn(
+      "NYPL Reservoir SubNav: The `selectedItem` prop does not match any of the action items."
+    );
+  }
+
   const childrenStyles = useMultiStyleConfig("SubNavChildren", {
     isOutlined: isOutlined,
   });
@@ -161,7 +176,7 @@ export const SubNavLink: React.FC<React.PropsWithChildren<any>> = ({
       isUnderlined={false}
       screenreaderOnlyText={screenreaderOnlyText}
       className={isSelected ? "selectedItem" : ""}
-      sx={{ ...childrenStyles.outLine }}
+      style={{ ...childrenStyles.outLine }}
     >
       {children}
     </Link>
@@ -188,16 +203,18 @@ export const SubNav: ChakraComponent<
     const [lastScrollLeft, setLastScrollLeft] = useState(0);
     const scrollableRef = useRef(null);
 
-    const styles = useMultiStyleConfig("SubNav", {
-      backgroundColor: actionBackgroundColor,
-      highlightColor: highlightColor,
-    });
-
     if (actionBackgroundColor !== undefined && highlightColor === undefined) {
       console.warn(
         "NYPL Reservoir SubNav: The `actionBackgroundColor` prop has been passed, but the `highlightColor` prop has not been passed. Because of this, the `actionBackgroundColor` prop will be ignored."
       );
     }
+    const backgroundColor = highlightColor !== undefined ? actionBackgroundColor : undefined;
+
+    const styles = useMultiStyleConfig("SubNav", {
+      backgroundColor: backgroundColor,
+      highlightColor: highlightColor,
+    });
+
 
     const handleScroll = () => {
       if (scrollableRef.current) {
@@ -281,8 +298,8 @@ export const SubNav: ChakraComponent<
             <li id="secondary-actions">
               {secondaryActions
                 ? secondaryActions({
-                    selectedItem,
-                  })
+                  selectedItem,
+                })
                 : null}
             </li>
           </List>
