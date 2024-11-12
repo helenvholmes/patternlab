@@ -42,7 +42,7 @@ export const WithControls: Story = {
   render: (args: any) => (
     <SubNav
       {...args}
-      primaryActions={() => (
+      primaryActions={
         <>
           <SubNavButton
             id="primary-sub-nav-button-1"
@@ -85,8 +85,8 @@ export const WithControls: Story = {
             />
           </SubNavLink>
         </>
-      )}
-      secondaryActions={() => (
+      }
+      secondaryActions={
         <>
           <SubNavButton
             id="sub-nav-button-3" // Unique ID
@@ -114,7 +114,7 @@ export const WithControls: Story = {
             />
           </SubNavLink>
         </>
-      )}
+      }
     />
   ),
 };
