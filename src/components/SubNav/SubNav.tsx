@@ -77,21 +77,13 @@ export interface SubNavProps {
    * Use SubNavButton and SubNavLink components, which mirror
    * the DS Button and Link functionalities, plus the isOutlined prop.
    */
-  primaryActions: ({
-    selectedItem,
-  }: {
-    selectedItem?: string;
-  }) => React.ReactNode;
+  primaryActions: React.ReactNode;
   /**
    * Secondary actions displayed on the right side of the SubNav.
    * Use SubNavButton and SubNavLink components, offering additional
    * contextual options related to the primary content.
    */
-  secondaryActions?: ({
-    selectedItem,
-  }: {
-    selectedItem?: string;
-  }) => React.ReactNode;
+  secondaryActions?: React.ReactNode;
   /**
    * The background color to be applied to the hover and active states
    * of the SubNavLink and SubNavButton components.
@@ -138,7 +130,7 @@ export const SubNavButton: React.FC<React.PropsWithChildren<any>> = ({
       id={id}
       buttonType={buttonType}
       className={isSelected ? "selectedItem" : ""}
-      style={{ ...childrenStyles.outLine }}
+      sx={{ ...childrenStyles.outLine }}
     >
       {children}
     </Button>
@@ -176,7 +168,7 @@ export const SubNavLink: React.FC<React.PropsWithChildren<any>> = ({
       isUnderlined={false}
       screenreaderOnlyText={screenreaderOnlyText}
       className={isSelected ? "selectedItem" : ""}
-      style={{ ...childrenStyles.outLine }}
+      sx={{ ...childrenStyles.outLine }}
     >
       {children}
     </Link>
@@ -194,7 +186,6 @@ export const SubNav: ChakraComponent<
       className,
       actionBackgroundColor,
       highlightColor,
-      selectedItem,
       primaryActions,
       secondaryActions,
     } = props;
@@ -208,13 +199,13 @@ export const SubNav: ChakraComponent<
         "NYPL Reservoir SubNav: The `actionBackgroundColor` prop has been passed, but the `highlightColor` prop has not been passed. Because of this, the `actionBackgroundColor` prop will be ignored."
       );
     }
-    const backgroundColor = highlightColor !== undefined ? actionBackgroundColor : undefined;
+    const backgroundColor =
+      highlightColor !== undefined ? actionBackgroundColor : undefined;
 
     const styles = useMultiStyleConfig("SubNav", {
       backgroundColor: backgroundColor,
       highlightColor: highlightColor,
     });
-
 
     const handleScroll = () => {
       if (scrollableRef.current) {
@@ -278,9 +269,7 @@ export const SubNav: ChakraComponent<
             noStyling
           >
             <li id="primary-actions">
-              {primaryActions({
-                selectedItem,
-              })}
+              {primaryActions}
             </li>
             {showRightFade && (
               // Explicitly cast styles.fadeEffect to CSSProperties
@@ -297,9 +286,7 @@ export const SubNav: ChakraComponent<
           >
             <li id="secondary-actions">
               {secondaryActions
-                ? secondaryActions({
-                  selectedItem,
-                })
+                ? secondaryActions
                 : null}
             </li>
           </List>

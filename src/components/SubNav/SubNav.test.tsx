@@ -7,7 +7,7 @@ describe("SubNav Accessibility", () => {
   it("passes axe accessibility test with primary actions", async () => {
     const { container } = render(
       <SubNav
-        primaryActions={() => (
+        primaryActions={
           <>
             <SubNavButton id="primary-sub-nav-button-1" buttonType="text">
               Label Text
@@ -19,8 +19,8 @@ describe("SubNav Accessibility", () => {
               Label Text
             </SubNavButton>
           </>
-        )}
-        secondaryActions={() => (
+        }
+        secondaryActions={
           <>
             <SubNavLink
               id="primary-sub-nav-link-1"
@@ -50,7 +50,7 @@ describe("SubNav Accessibility", () => {
               />
             </SubNavLink>
           </>
-        )}
+        }
       />
     );
     expect(await axe(container)).toHaveNoViolations();
@@ -59,14 +59,14 @@ describe("SubNav Accessibility", () => {
   it("passes axe accessibility test with secondary actions", async () => {
     const { container } = render(
       <SubNav
-        primaryActions={() => (
+        primaryActions={
           <>
             <SubNavButton id="primary-sub-nav-button-1" buttonType="text">
               Label Text
             </SubNavButton>
           </>
-        )}
-        secondaryActions={() => (
+        }
+        secondaryActions={
           <>
             <SubNavButton id="secondary-sub-nav-button-1" buttonType="text">
               Label Text
@@ -79,7 +79,7 @@ describe("SubNav Accessibility", () => {
               Label Text
             </SubNavLink>
           </>
-        )}
+        }
       />
     );
 
@@ -89,7 +89,7 @@ describe("SubNav Accessibility", () => {
   it("passes axe accessibility test with all actions", async () => {
     const { container } = render(
       <SubNav
-        primaryActions={() => (
+        primaryActions={
           <>
             <SubNavButton id="primary-sub-nav-button-1" buttonType="text">
               Label Text
@@ -98,8 +98,8 @@ describe("SubNav Accessibility", () => {
               Label Text
             </SubNavButton>
           </>
-        )}
-        secondaryActions={() => (
+        }
+        secondaryActions={
           <>
             <SubNavButton id="secondary-sub-nav-button-1" buttonType="text">
               Label Text
@@ -112,7 +112,7 @@ describe("SubNav Accessibility", () => {
               Label Text
             </SubNavLink>
           </>
-        )}
+        }
       />
     );
     expect(await axe(container)).toHaveNoViolations();
@@ -125,13 +125,13 @@ describe("SubNav Accessibility", () => {
         highlightColor="brand.primary"
         selectedItem="primary-sub-nav-button-1"
         id="sub-nav-id"
-        primaryActions={() => (
+        primaryActions={
           <>
             <SubNavButton id="primary-sub-nav-button-1" buttonType="text">
               Label Text
             </SubNavButton>
           </>
-        )}
+        }
       />
     );
     expect(await axe(container)).toHaveNoViolations();
@@ -142,12 +142,12 @@ describe("SubNav Component", () => {
   it("renders with primary actions", () => {
     render(
       <SubNav
-        primaryActions={() => (
+        primaryActions={
           <>
             <SubNavButton id="primary-button-1">Primary Button 1</SubNavButton>
             <SubNavButton id="primary-button-2">Primary Button 2</SubNavButton>
           </>
-        )}
+        }
       />
     );
 
@@ -158,16 +158,16 @@ describe("SubNav Component", () => {
   it("renders with secondary actions", () => {
     render(
       <SubNav
-        primaryActions={() => (
+        primaryActions={
           <>
             <SubNavButton id="primary-button-1">Primary Button</SubNavButton>
           </>
-        )}
-        secondaryActions={() => (
+        }
+        secondaryActions={
           <>
             <SubNavLink href="#secondary-link">Secondary Link</SubNavLink>
           </>
-        )}
+        }
       />
     );
 
@@ -179,14 +179,14 @@ describe("SubNav Component", () => {
     render(
       <SubNav
         selectedItem="primary-button-1"
-        primaryActions={() => (
+        primaryActions={
           <>
             <SubNavButton id="primary-button-1" selectedItem="primary-button-1">
               Primary Button 1
             </SubNavButton>
             <SubNavButton id="primary-button-2">Primary Button 2</SubNavButton>
           </>
-        )}
+        }
       />
     );
 
@@ -199,12 +199,12 @@ describe("SubNav Component", () => {
   it("passes axe accessibility test with primary actions", async () => {
     const { container } = render(
       <SubNav
-        primaryActions={() => (
+        primaryActions={
           <>
             <SubNavButton id="primary-button-1">Primary Button 1</SubNavButton>
             <SubNavButton id="primary-button-2">Primary Button 2</SubNavButton>
           </>
-        )}
+        }
       />
     );
     expect(await axe(container)).toHaveNoViolations();
@@ -213,16 +213,16 @@ describe("SubNav Component", () => {
   it("passes axe accessibility test with secondary actions", async () => {
     const { container } = render(
       <SubNav
-        primaryActions={() => (
+        primaryActions={
           <>
             <SubNavButton id="primary-button-1">Primary Button</SubNavButton>
           </>
-        )}
-        secondaryActions={() => (
+        }
+        secondaryActions={
           <>
             <SubNavLink href="#secondary-link">Secondary Link</SubNavLink>
           </>
-        )}
+        }
       />
     );
     expect(await axe(container)).toHaveNoViolations();
@@ -235,13 +235,13 @@ describe("SubNav Component", () => {
         highlightColor="brand.primary"
         selectedItem="primary-sub-nav-button-1"
         id="sub-nav-id"
-        primaryActions={() => (
+        primaryActions={
           <>
             <SubNavButton id="primary-sub-nav-button-1">
               Label Text
             </SubNavButton>
           </>
-        )}
+        }
       />
     );
     expect(await axe(container)).toHaveNoViolations();

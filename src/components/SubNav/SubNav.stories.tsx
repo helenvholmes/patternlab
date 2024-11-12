@@ -131,12 +131,12 @@ export const SelectedItem: Story = {
   render: (args: any) => (
     <SubNav
       {...args}
-      primaryActions={({ selectedItem }) => (
+      primaryActions={
         <>
           <SubNavButton
             id="primary-sub-nav-button-1"
             buttonType="text"
-            selectedItem={selectedItem}
+            selectedItem="primary-sub-nav-button-1"
           >
             Label Text
           </SubNavButton>
@@ -186,8 +186,8 @@ export const SelectedItem: Story = {
             />
           </SubNavLink>
         </>
-      )}
-      secondaryActions={() => (
+      }
+      secondaryActions={
         <>
           <SubNavButton
             id="sub-nav-button-3" // Unique ID
@@ -235,7 +235,7 @@ export const SelectedItem: Story = {
             />
           </SubNavLink>
         </>
-      )}
+      }
     />
   ),
 };
@@ -252,12 +252,11 @@ export const Outline: Story = {
   render: (args: any) => (
     <SubNav
       {...args}
-      primaryActions={({ selectedItem }) => (
+      primaryActions={
         <>
           <SubNavButton
             id="primary-sub-nav-button-1"
             buttonType="text"
-            selectedItem={selectedItem}
             onClick={onClickHandler}
           >
             Label Text
@@ -292,8 +291,8 @@ export const Outline: Story = {
             />
           </SubNavLink>
         </>
-      )}
-      secondaryActions={() => (
+      }
+      secondaryActions={
         <>
           <SubNavButton
             id="sub-nav-button-3" // Unique ID
@@ -318,7 +317,7 @@ export const Outline: Story = {
             />
           </SubNavLink>
         </>
-      )}
+      }
     />
   ),
 };
@@ -335,12 +334,12 @@ export const HighlightColor: Story = {
   render: (args: any) => (
     <SubNav
       {...args}
-      primaryActions={({ selectedItem }) => (
+      primaryActions={
         <>
           <SubNavButton
             id="primary-sub-nav-button-1"
             buttonType="text"
-            selectedItem={selectedItem}
+            selectedItem="primary-sub-nav-button-1"
             onClick={onClickHandler}
           >
             Label Text
@@ -378,8 +377,8 @@ export const HighlightColor: Story = {
             />
           </SubNavLink>
         </>
-      )}
-      secondaryActions={() => (
+      }
+      secondaryActions={
         <>
           <SubNavButton
             id="sub-nav-button-3" // Unique ID
@@ -408,7 +407,7 @@ export const HighlightColor: Story = {
             />
           </SubNavLink>
         </>
-      )}
+      }
     />
   ),
 };
