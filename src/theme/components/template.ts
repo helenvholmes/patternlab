@@ -41,8 +41,7 @@ const TemplateContent = defineStyleConfig({
     flexDirection: { base: "column", md: null },
     gridTemplateColumns: "1fr",
     paddingY: 0,
-    paddingX: "s",
-    gap: "grid.l",
+    rowGap: "grid.l",
   }),
   // With left or right sidebars, we need to set two grid columns and
   // the column for the sidebar is max 255px width.
@@ -60,6 +59,7 @@ const TemplateContentTopBottom = defineStyleConfig({
   baseStyle: defineStyle({
     gridColumn: { base: "1", md: "1 / span 2" },
     height: "100%",
+    paddingX: "s",
   }),
 });
 
@@ -68,17 +68,22 @@ const TemplateContentTopBottom = defineStyleConfig({
 const TemplateContentPrimary = defineStyleConfig({
   baseStyle: defineStyle({
     gridColumn: { base: "1", md: "1 / span 2" },
+    overflow: { base: "unset", md: "hidden" },
+    paddingX: "s",
   }),
   variants: {
     left: {
       gridColumn: { base: "1", md: "2" },
       marginEnd: { md: 0 },
       minWidth: { md: 0 },
-      overflow: { base: "unset", md: "hidden" },
+      paddingRight: "s",
+      paddingLeft: "l",
     },
     right: {
       gridColumn: { base: "1", md: "1" },
-      overflow: { base: "unset", md: "hidden" },
+      // paddingX: undefined,
+      paddingRight: "l",
+      paddingLeft: "s",
     },
   },
 });
