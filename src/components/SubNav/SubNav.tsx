@@ -108,7 +108,6 @@ export interface SubNavProps {
 
 export const SubNavButton: React.FC<React.PropsWithChildren<any>> = ({
   id,
-  buttonType = "text",
   children,
   isOutlined,
   selectedItem,
@@ -129,7 +128,7 @@ export const SubNavButton: React.FC<React.PropsWithChildren<any>> = ({
   return (
     <Button
       id={id}
-      buttonType={buttonType}
+      buttonType="text"
       className={isSelected ? "selectedItem" : ""}
       sx={{ ...childrenStyles.outLine }}
     >
@@ -140,7 +139,6 @@ export const SubNavButton: React.FC<React.PropsWithChildren<any>> = ({
 
 export const SubNavLink: React.FC<React.PropsWithChildren<any>> = ({
   id,
-  type = "action",
   children,
   isOutlined,
   selectedItem,
@@ -164,7 +162,7 @@ export const SubNavLink: React.FC<React.PropsWithChildren<any>> = ({
     <Link
       key={id}
       id={id}
-      type={type}
+      type="action"
       href={href}
       isUnderlined={false}
       screenreaderOnlyText={screenreaderOnlyText}
