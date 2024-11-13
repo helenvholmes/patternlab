@@ -277,9 +277,9 @@ export const SubNav: ChakraComponent<
                 type="ul"
                 m="0"
                 sx={{
-                  ...styles.scrollableButtons,
-                  ...styles.primaryActions,
                   ...styles.listCleanup,
+                  ...styles.scrollableList,
+                  ...styles.primaryActions,
                 }}
                 ref={scrollableRef}
                 inline

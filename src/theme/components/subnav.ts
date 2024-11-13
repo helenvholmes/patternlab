@@ -31,11 +31,12 @@ interface SubNavChildrenStyleProps extends StyleFunctionProps {
 const commonStyles = () => ({
   alignItems: "center",
   display: "inline-flex",
-  fontWeight: "regular",
   fontSize: "desktop.button.large",
+  fontWeight: "regular",
   gap: "xs",
   height: { base: "44px", md: "unset" },
   lineHeight: "1.5 !important",
+  position: "relative",
   px: "s",
   py: "xxs",
   textDecoration: "none !important",
@@ -119,12 +120,27 @@ const SubNav = subNavDefineMultiStyleConfig({
           borderColor: highlightOrBorderColor,
           display: "flex",
           justifyContent: "center",
-          py: { base: "s", md: "xs" },
         },
         container: {
           maxWidth: "1280px",
-          px: "s",
+          // px: "s",
+          px: { base: "0", md: "xs" },
           width: "100%",
+        },
+        listCleanup: {
+          // p: "xs",
+          p: { base: "s", md: "xs" },
+          gap: "xs",
+          li: {
+            marginEnd: "unset",
+          },
+        },
+        scrollableList: {
+          display: "flex",
+          overflowX: "auto",
+          whiteSpace: "nowrap",
+          position: "relative",
+          scrollbarWidth: "none",
         },
         primaryActions: {
           width: "100%",
@@ -149,19 +165,6 @@ const SubNav = subNavDefineMultiStyleConfig({
           whiteSpace: "nowrap",
           button: secondaryActionsStyles,
           a: secondaryActionsStyles,
-        },
-        scrollableButtons: {
-          display: "flex",
-          overflowX: "auto",
-          whiteSpace: "nowrap",
-          position: "relative",
-          scrollbarWidth: "none",
-        },
-        listCleanup: {
-          gap: "xs",
-          li: {
-            marginEnd: "unset",
-          },
         },
         fadeEffect: {
           position: "absolute",

@@ -117,13 +117,14 @@ export const SelectedItem: Story = {
             onClick={() =>
               subNavButtonOnClick("from subnav-selected-babies-toddlers")
             }
+            screenreaderOnlyText="Education for babies and toddlers"
           >
             Babies &amp; Toddlers
           </SubNavButton>
           <SubNavLink
             href="#link1"
             id="subnav-selected-kids"
-            screenreaderOnlyText="for the NYPL Research Catalog"
+            screenreaderOnlyText="Education for kids"
             isSelected
           >
             Kids
@@ -131,11 +132,15 @@ export const SelectedItem: Story = {
           <SubNavLink
             href="#link2"
             id="subnav-selected-teens"
-            screenreaderOnlyText="for the NYPL Research Catalog"
+            screenreaderOnlyText="Education for teens"
           >
             Teens
           </SubNavLink>
-          <SubNavLink href="#link2" id="subnav-selected-adults">
+          <SubNavLink
+            href="#link2"
+            id="subnav-selected-adults"
+            screenreaderOnlyText="Education for adults"
+          >
             Adults
           </SubNavLink>
         </>
@@ -175,24 +180,29 @@ export const OutlinedItem: Story = {
             onClick={() =>
               subNavButtonOnClick("from subnav-outlined-babies-toddlers")
             }
+            screenreaderOnlyText="Education for babies and toddlers"
           >
             Babies &amp; Toddlers
           </SubNavButton>
           <SubNavLink
             href="#link1"
             id="subnav-outlined-kids"
-            screenreaderOnlyText="for the NYPL Research Catalog"
+            screenreaderOnlyText="Education for kids"
           >
             Kids
           </SubNavLink>
           <SubNavLink
             href="#link2"
             id="subnav-outlined-teens"
-            screenreaderOnlyText="for the NYPL Research Catalog"
+            screenreaderOnlyText="Education for teens"
           >
             Teens
           </SubNavLink>
-          <SubNavLink href="#link2" id="subnav-outlined-adults">
+          <SubNavLink
+            href="#link2"
+            id="subnav-outlined-adults"
+            screenreaderOnlyText="Education for adults"
+          >
             Adults
           </SubNavLink>
         </>
@@ -230,6 +240,7 @@ export const UsingIcons: Story = {
             buttonType="text"
             id="subnav-icons-search"
             onClick={() => subNavButtonOnClick("from subnav-icons-search")}
+            screenreaderOnlyText="the NYPL Research Catalog"
           >
             <Icon name="utilitySearch" size="medium" />
             Search
@@ -258,7 +269,7 @@ export const UsingIcons: Story = {
             href="#link1"
             id="subnav-icons-account"
             isOutlined
-            screenreaderOnlyText="of the NYPL website"
+            screenreaderOnlyText="for NYPL.org"
           >
             <Icon name="actionIdentityFilled" size="medium" />
             My account
@@ -342,6 +353,7 @@ export const CustomColors: Story = {
               onClick={() =>
                 subNavButtonOnClick("from subnav-colors-babies-toddlers")
               }
+              screenreaderOnlyText="Education for babies and toddlers"
             >
               Babies &amp; Toddlers
             </SubNavButton>
@@ -349,18 +361,22 @@ export const CustomColors: Story = {
               href="#link1"
               id="subnav-colors-kids"
               isSelected
-              screenreaderOnlyText="for the NYPL Research Catalog"
+              screenreaderOnlyText="Education for kids"
             >
               Kids
             </SubNavLink>
             <SubNavLink
               href="#link2"
               id="subnav-colors-teens"
-              screenreaderOnlyText="for the NYPL Research Catalog"
+              screenreaderOnlyText="Education for teens"
             >
               Teens
             </SubNavLink>
-            <SubNavLink href="#link2" id="subnav-colors-adults">
+            <SubNavLink
+              href="#link2"
+              id="subnav-colors-adults"
+              screenreaderOnlyText="Education for adults"
+            >
               Adults
             </SubNavLink>
           </>
@@ -420,7 +436,7 @@ export const Placement: Story = {
               Search the catalog
             </SubNavButton>
             <SubNavLink href="#browse" id="subnav-placement-browse">
-              Browse the Catalog
+              Browse the catalog
             </SubNavLink>
           </>
         }
