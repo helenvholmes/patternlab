@@ -180,12 +180,14 @@ const SubNav = subNavDefineMultiStyleConfig({
 
 const SubNavChildren = subNavChildrenDefineMultiStyleConfig({
   baseStyle: subNavChildrenDefinePartsStyle(
-    ({ isOutlined }: SubNavChildrenStyleProps) => ({
-      outLine: {
-        border: isOutlined !== undefined ? "1px solid" : "none",
-        borderRadius: "6px",
-      },
-    })
+    ({ isOutlined }: SubNavChildrenStyleProps) => {
+      return {
+        outLine: {
+          border: isOutlined !== undefined ? "1px solid" : "none",
+          borderRadius: "6px",
+        },
+      };
+    }
   ),
 });
 
