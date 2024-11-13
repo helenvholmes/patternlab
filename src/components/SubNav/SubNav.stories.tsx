@@ -420,7 +420,7 @@ export const Placement: Story = {
               Search the catalog
             </SubNavButton>
             <SubNavLink href="#browse" id="subnav-placement-browse">
-              Browse the Catalog
+              Browse the catalog
             </SubNavLink>
           </>
         }
