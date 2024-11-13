@@ -109,8 +109,11 @@ const SubNav = subNavDefineMultiStyleConfig({
         base: {
           ".selectedItem": {
             color: highlightOrLinkColor,
-            fontWeight: "bold ",
+            fontWeight: "bold",
             backgroundColor: finalBackgroundColor,
+            "&:hover": {
+              color: highlightOrLinkColor,
+            },
           },
           borderBottom: "1px solid",
           borderColor: highlightOrBorderColor,

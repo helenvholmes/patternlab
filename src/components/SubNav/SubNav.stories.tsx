@@ -146,6 +146,7 @@ export const SelectedItem: Story = {
             href="#link1"
             id="subnav-selected-account"
             screenreaderOnlyText="for NYPL.org"
+            isSelected
           >
             My account
           </SubNavLink>
