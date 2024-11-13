@@ -51,6 +51,7 @@ export const WithControls: Story = {
           <SubNavButton
             buttonType="text"
             id="subnav-with-controls-primary-action-1"
+            screenreaderOnlyText="for the NYPL Research Catalog"
             onClick={() => subNavButtonOnClick("from primary-subnav-button-1")}
           >
             Action
@@ -58,6 +59,7 @@ export const WithControls: Story = {
           <SubNavButton
             buttonType="text"
             id="subnav-with-controls-primary-action-2"
+            screenreaderOnlyText="for the NYPL Research Catalog"
             onClick={() => subNavButtonOnClick("from primary-subnav-button-2")}
           >
             Action
@@ -76,6 +78,7 @@ export const WithControls: Story = {
           <SubNavButton
             buttonType="text"
             id="subnav-with-controls-secondary-action-1"
+            screenreaderOnlyText="for the NYPL Research Catalog"
             onClick={() => subNavButtonOnClick("from subnav-button-3")}
           >
             Action

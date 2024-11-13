@@ -108,7 +108,7 @@ const SubNav = subNavDefineMultiStyleConfig({
       return {
         base: {
           ".selectedItem": {
-            color: highlightColor,
+            color: highlightOrLinkColor,
             fontWeight: "bold ",
             backgroundColor: finalBackgroundColor,
           },
