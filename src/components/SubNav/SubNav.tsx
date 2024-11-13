@@ -100,26 +100,14 @@ export interface SubNavProps {
    * the DS Button and Link.
    */
   secondaryActions?: React.ReactNode;
-  /** Optional string used to identify and highlight an item. The value should
-   * match the id associated with one of the action items.
-   */
-  selectedItem?: string;
 }
 
 export const SubNavButton: React.FC<React.PropsWithChildren<any>> = ({
   id,
   children,
   isOutlined,
-  selectedItem,
+  isSelected,
 }) => {
-  const isSelected = selectedItem === String(id);
-
-  // Log a warning if selectedItem does not match any id
-  if (selectedItem && !isSelected) {
-    console.warn(
-      "NYPL Reservoir SubNav: The `selectedItem` prop does not match any of the action items."
-    );
-  }
 
   const childrenStyles = useMultiStyleConfig("SubNavChildren", {
     isOutlined: isOutlined,
@@ -143,18 +131,10 @@ export const SubNavLink: React.FC<React.PropsWithChildren<any>> = ({
   id,
   children,
   isOutlined,
-  selectedItem,
+  isSelected,
   href,
   screenreaderOnlyText = "", // Default to empty if no screenreader text provided
 }) => {
-  const isSelected = selectedItem === String(id);
-
-  // Log a warning if selectedItem does not match any id
-  if (selectedItem && !isSelected) {
-    console.warn(
-      "NYPL Reservoir SubNav: The `selectedItem` prop does not match any of the action items."
-    );
-  }
 
   const childrenStyles = useMultiStyleConfig("SubNavChildren", {
     isOutlined: isOutlined,
