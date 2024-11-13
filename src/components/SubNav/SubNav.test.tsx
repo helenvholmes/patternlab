@@ -247,11 +247,7 @@ describe("SubNav Component", () => {
 
 describe("SubNavButton", () => {
   it("renders with default props", () => {
-    render(
-      <SubNavButton id="1">
-        Default Button
-      </SubNavButton>
-    );
+    render(<SubNavButton id="1">Default Button</SubNavButton>);
     const button = screen.getByText("Default Button");
     expect(button).toBeInTheDocument();
     expect(button).not.toHaveClass("selectedItem"); // Should not have the "selectedItem" class
@@ -270,11 +266,7 @@ describe("SubNavButton", () => {
 
 describe("SubNavLink", () => {
   it("renders with default props", () => {
-    render(
-      <SubNavLink id="sub-nav-link">
-        Default Link
-      </SubNavLink>
-    );
+    render(<SubNavLink id="sub-nav-link">Default Link</SubNavLink>);
     const button = screen.getByText("Default Link");
     expect(button).toBeInTheDocument();
     expect(button).not.toHaveClass("selectedItem"); // Should not have the "selectedItem" class
