@@ -26,7 +26,6 @@ const meta: Meta<typeof SubNav> = {
       defaultValue: { summary: "blogs" },
     },
     id: { control: false },
-    selectedItem: { description: "Set item id to be selected." },
     secondaryActions: {},
     primaryActions: {},
   },
@@ -103,7 +102,6 @@ export const SelectedItem: Story = {
     actionBackgroundColor: undefined,
     highlightColor: undefined,
     id: "subnav-selected",
-    selectedItem: "primary-subnav-link-1",
   },
 
   render: (args: any) => (
