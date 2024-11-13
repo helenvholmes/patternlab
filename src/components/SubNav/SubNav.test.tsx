@@ -123,7 +123,6 @@ describe("SubNav Accessibility", () => {
       <SubNav
         actionBackgroundColor="brand.primary-05"
         highlightColor="brand.primary"
-        selectedItem="primary-sub-nav-button-1"
         id="sub-nav-id"
         primaryActions={
           <>
@@ -178,10 +177,9 @@ describe("SubNav Component", () => {
   it("renders with selectedItem highlighted", async () => {
     render(
       <SubNav
-        selectedItem="primary-button-1"
         primaryActions={
           <>
-            <SubNavButton id="primary-button-1" selectedItem="primary-button-1">
+            <SubNavButton id="primary-button-1" isSelected>
               Primary Button 1
             </SubNavButton>
             <SubNavButton id="primary-button-2">Primary Button 2</SubNavButton>
@@ -233,7 +231,6 @@ describe("SubNav Component", () => {
       <SubNav
         actionBackgroundColor="brand.primary-05"
         highlightColor="brand.primary"
-        selectedItem="primary-sub-nav-button-1"
         id="sub-nav-id"
         primaryActions={
           <>
@@ -250,19 +247,15 @@ describe("SubNav Component", () => {
 
 describe("SubNavButton", () => {
   it("renders with default props", () => {
-    render(
-      <SubNavButton id="1" selectedItem={undefined}>
-        Default Button
-      </SubNavButton>
-    );
+    render(<SubNavButton id="1">Default Button</SubNavButton>);
     const button = screen.getByText("Default Button");
     expect(button).toBeInTheDocument();
     expect(button).not.toHaveClass("selectedItem"); // Should not have the "selectedItem" class
   });
 
-  it("applies selectedItem class when selectedItem matches id", () => {
+  it("applies selectedItem class when isSelected is true", () => {
     render(
-      <SubNavButton id="sub-nav-button" selectedItem="sub-nav-button">
+      <SubNavButton id="sub-nav-button" isSelected>
         Selected Button
       </SubNavButton>
     );
@@ -273,19 +266,15 @@ describe("SubNavButton", () => {
 
 describe("SubNavLink", () => {
   it("renders with default props", () => {
-    render(
-      <SubNavLink id="sub-nav-link" selectedItem={undefined}>
-        Default Link
-      </SubNavLink>
-    );
+    render(<SubNavLink id="sub-nav-link">Default Link</SubNavLink>);
     const button = screen.getByText("Default Link");
     expect(button).toBeInTheDocument();
     expect(button).not.toHaveClass("selectedItem"); // Should not have the "selectedItem" class
   });
 
-  it("applies selectedItem class when selectedItem matches id", () => {
+  it("applies selectedItem class when isSelected is true", () => {
     render(
-      <SubNavLink id="sub-nav-link" selectedItem="sub-nav-link">
+      <SubNavLink id="sub-nav-link" isSelected>
         Selected Link
       </SubNavLink>
     );

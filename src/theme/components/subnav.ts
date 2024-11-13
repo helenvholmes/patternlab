@@ -146,10 +146,10 @@ const SubNav = subNavDefineMultiStyleConfig({
             ...primaryActionsStyles,
           },
           a: {
-            color: `${defaultLabelColor} !important`,
+            color: `${highlightOrDefaultColor} !important`,
             ...primaryActionsStyles,
             svg: {
-              fill: `${defaultLabelColor} !important`,
+              fill: `${highlightOrDefaultColor} !important`,
               margin: { base: "0", md: null },
               _dark: {
                 fill: "ui.white !important",
@@ -183,12 +183,14 @@ const SubNav = subNavDefineMultiStyleConfig({
 
 const SubNavChildren = subNavChildrenDefineMultiStyleConfig({
   baseStyle: subNavChildrenDefinePartsStyle(
-    ({ isOutlined }: SubNavChildrenStyleProps) => ({
-      outLine: {
-        border: isOutlined !== undefined ? "1px solid" : "none",
-        borderRadius: "6px",
-      },
-    })
+    ({ isOutlined }: SubNavChildrenStyleProps) => {
+      return {
+        outLine: {
+          border: isOutlined !== undefined ? "1px solid" : "none",
+          borderRadius: "6px",
+        },
+      };
+    }
   ),
 });
 

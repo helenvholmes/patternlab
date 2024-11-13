@@ -41,7 +41,6 @@ export const WithControls: Story = {
     actionBackgroundColor: undefined,
     highlightColor: undefined,
     id: "subnav-with-controls",
-    selectedItem: undefined,
   },
 
   render: (args: any) => (
@@ -122,7 +121,7 @@ export const SelectedItem: Story = {
             href="#link1"
             id="subnav-selected-kids"
             screenreaderOnlyText="for the NYPL Research Catalog"
-            selectedItem="subnav-selected-kids"
+            isSelected
           >
             Kids
           </SubNavLink>
@@ -159,7 +158,6 @@ export const OutlinedItem: Story = {
     actionBackgroundColor: undefined,
     highlightColor: undefined,
     id: "subnav-outlined",
-    selectedItem: undefined,
   },
 
   render: (args: any) => (
@@ -217,7 +215,6 @@ export const UsingIcons: Story = {
     actionBackgroundColor: undefined,
     highlightColor: undefined,
     id: "subnav-icons",
-    selectedItem: undefined,
   },
 
   render: (args: any) => (
@@ -274,7 +271,6 @@ export const UsingIconsMobile: Story = {
     actionBackgroundColor: undefined,
     highlightColor: undefined,
     id: "subnav-icons-only",
-    selectedItem: undefined,
   },
 
   render: (args: any) => (
@@ -348,7 +344,7 @@ export const CustomColors: Story = {
             <SubNavLink
               href="#link1"
               id="subnav-colors-kids"
-              selectedItem="subnav-colors-kids"
+              isSelected
               screenreaderOnlyText="for the NYPL Research Catalog"
             >
               Kids
@@ -415,7 +411,7 @@ export const Placement: Story = {
               onClick={() =>
                 subNavButtonOnClick("from subnav-placement-search")
               }
-              selectedItem="subnav-placement-search"
+              isSelected
             >
               Search the catalog
             </SubNavButton>
