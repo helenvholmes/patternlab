@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import Icon from "../Icons/Icon";
-import Text from "../Text/Text";
 
 import SubNav, {
   SubNavButton,
@@ -40,7 +39,7 @@ export const WithControls: Story = {
     className: undefined,
     actionBackgroundColor: undefined,
     highlightColor: undefined,
-    id: "sub-nav-id",
+    id: "subnav-with-controls",
     selectedItem: undefined,
   },
 
@@ -51,30 +50,24 @@ export const WithControls: Story = {
         <>
           <SubNavButton
             buttonType="text"
-            id="primary-sub-nav-button-1"
-            onClick={() => subNavButtonOnClick("from primary-sub-nav-button-1")}
+            id="subnav-with-controls-primary-action-1"
+            onClick={() => subNavButtonOnClick("from primary-subnav-button-1")}
           >
-            Label Text
+            Action
           </SubNavButton>
           <SubNavButton
             buttonType="text"
-            id="primary-sub-nav-button-2"
-            onClick={() => subNavButtonOnClick("from primary-sub-nav-button-2")}
+            id="subnav-with-controls-primary-action-2"
+            onClick={() => subNavButtonOnClick("from primary-subnav-button-2")}
           >
-            Label Text
+            Action
           </SubNavButton>
           <SubNavLink
-            id="primary-sub-nav-link-3"
+            id="subnav-with-controls-primary-action-3"
             screenreaderOnlyText="for the NYPL Research Catalog"
             href="#link3"
           >
-            Label Text
-            <Icon
-              name="legacyAccountFilled"
-              size="small"
-              className="right"
-              align="right"
-            />
+            Action
           </SubNavLink>
         </>
       }
@@ -82,24 +75,19 @@ export const WithControls: Story = {
         <>
           <SubNavButton
             buttonType="text"
-            id="sub-nav-button-3"
-            onClick={() => subNavButtonOnClick("from sub-nav-button-3")}
+            id="subnav-with-controls-secondary-action-1"
+            onClick={() => subNavButtonOnClick("from subnav-button-3")}
           >
-            Label Text
+            Action
           </SubNavButton>
           <SubNavLink
             href="#link1"
-            id="sub-nav-link-1"
+            id="subnav-with-controls-secondary-action-2"
             isOutlined
             screenreaderOnlyText="for the NYPL Research Catalog"
           >
-            Label Text
-            <Icon
-              align="right"
-              className="right"
-              name="legacyAccountFilled"
-              size="small"
-            />
+            <Icon name="actionIdentityFilled" size="medium" />
+            Action
           </SubNavLink>
         </>
       }
@@ -112,8 +100,8 @@ export const SelectedItem: Story = {
     className: undefined,
     actionBackgroundColor: undefined,
     highlightColor: undefined,
-    id: "sub-nav-id",
-    selectedItem: "primary-sub-nav-link-1",
+    id: "subnav-selected",
+    selectedItem: "primary-subnav-link-1",
   },
 
   render: (args: any) => (
@@ -123,49 +111,41 @@ export const SelectedItem: Story = {
         <>
           <SubNavButton
             buttonType="text"
-            id="primary-sub-nav-button-1"
-            onClick={() => subNavButtonOnClick("from primary-sub-nav-button-1")}
+            id="subnav-selected-babies-toddlers"
+            onClick={() =>
+              subNavButtonOnClick("from subnav-selected-babies-toddlers")
+            }
           >
-            Label Text
+            Babies &amp; Toddlers
           </SubNavButton>
           <SubNavLink
             href="#link1"
-            id="primary-sub-nav-link-1"
+            id="subnav-selected-kids"
             screenreaderOnlyText="for the NYPL Research Catalog"
+            selectedItem="subnav-selected-kids"
           >
-            Label Text
+            Kids
           </SubNavLink>
           <SubNavLink
             href="#link2"
-            id="primary-sub-nav-link-2"
+            id="subnav-selected-teens"
             screenreaderOnlyText="for the NYPL Research Catalog"
           >
-            Label Text
+            Teens
+          </SubNavLink>
+          <SubNavLink href="#link2" id="subnav-selected-adults">
+            Adults
           </SubNavLink>
         </>
       }
       secondaryActions={
         <>
-          <SubNavButton
-            buttonType="text"
-            id="sub-nav-button-3"
-            onClick={() => subNavButtonOnClick("from sub-nav-button-3")}
-          >
-            Label Text
-          </SubNavButton>
           <SubNavLink
             href="#link1"
-            id="sub-nav-link-1"
-            isOutlined
-            screenreaderOnlyText="for the NYPL Research Catalog"
+            id="subnav-selected-account"
+            screenreaderOnlyText="for NYPL.org"
           >
-            Label Text
-            <Icon
-              align="right"
-              className="right"
-              name="legacyAccountFilled"
-              size="small"
-            />
+            My account
           </SubNavLink>
         </>
       }
@@ -173,12 +153,12 @@ export const SelectedItem: Story = {
   ),
 };
 
-export const Outline: Story = {
+export const OutlinedItem: Story = {
   args: {
     className: undefined,
     actionBackgroundColor: undefined,
     highlightColor: undefined,
-    id: "sub-nav-id",
+    id: "subnav-outlined",
     selectedItem: undefined,
   },
 
@@ -188,65 +168,153 @@ export const Outline: Story = {
       primaryActions={
         <>
           <SubNavButton
-            id="primary-sub-nav-button-1"
             buttonType="text"
-            onClick={() => subNavButtonOnClick("from primary-sub-nav-button-1")}
+            id="subnav-outlined-babies-toddlers"
+            onClick={() =>
+              subNavButtonOnClick("from subnav-outlined-babies-toddlers")
+            }
           >
-            Label Text
-          </SubNavButton>
-
-          <SubNavButton
-            id="primary-sub-nav-button-2"
-            buttonType="text"
-            onClick={() => subNavButtonOnClick("from primary-sub-nav-button-2")}
-          >
-            Label Text
-          </SubNavButton>
-          <SubNavButton
-            id="primary-sub-nav-button-3"
-            buttonType="text"
-            onClick={() => subNavButtonOnClick("from primary-sub-nav-button-3")}
-          >
-            Label Text
+            Babies &amp; Toddlers
           </SubNavButton>
           <SubNavLink
-            id="primary-sub-nav-link-1"
-            screenreaderOnlyText="for the NYPL Research Catalog"
             href="#link1"
+            id="subnav-outlined-kids"
+            screenreaderOnlyText="for the NYPL Research Catalog"
           >
-            Label Text
-            <Icon
-              name="legacyAccountFilled"
-              size="small"
-              className="right"
-              align="right"
-            />
+            Kids
+          </SubNavLink>
+          <SubNavLink
+            href="#link2"
+            id="subnav-outlined-teens"
+            screenreaderOnlyText="for the NYPL Research Catalog"
+          >
+            Teens
+          </SubNavLink>
+          <SubNavLink href="#link2" id="subnav-outlined-adults">
+            Adults
           </SubNavLink>
         </>
       }
       secondaryActions={
         <>
-          <SubNavButton
-            id="sub-nav-button-3" // Unique ID
-            buttonType="text"
-            onClick={() => subNavButtonOnClick("from sub-nav-button-3")}
-            isOutlined
-          >
-            Label Text
-          </SubNavButton>
-
           <SubNavLink
-            id="sub-nav-link-1"
-            screenreaderOnlyText="for the NYPL Research Catalog"
+            href="#link1"
+            id="subnav-outlined-logout"
             isOutlined
+            screenreaderOnlyText="for NYPL.org"
           >
-            Label Text
-            <Icon
-              name="legacyAccountFilled"
-              size="small"
-              className="right"
-              align="right"
-            />
+            My account
+          </SubNavLink>
+        </>
+      }
+    />
+  ),
+};
+
+export const UsingIcons: Story = {
+  args: {
+    className: undefined,
+    actionBackgroundColor: undefined,
+    highlightColor: undefined,
+    id: "subnav-icons",
+    selectedItem: undefined,
+  },
+
+  render: (args: any) => (
+    <SubNav
+      {...args}
+      primaryActions={
+        <>
+          <SubNavButton
+            buttonType="text"
+            id="subnav-icons-search"
+            onClick={() => subNavButtonOnClick("from subnav-icons-search")}
+          >
+            <Icon name="utilitySearch" size="medium" />
+            Search
+          </SubNavButton>
+          <SubNavLink
+            href="#link1"
+            id="subnav-icons-help"
+            screenreaderOnlyText="for the NYPL Research Catalog"
+          >
+            <Icon name="actionHelpDefault" size="medium" />
+            Help desk
+          </SubNavLink>
+          <SubNavLink
+            href="#link2"
+            id="subnav-icons-settings"
+            screenreaderOnlyText="for the NYPL Research Catalog"
+          >
+            <Icon name="actionSettings" size="medium" />
+            Settings
+          </SubNavLink>
+        </>
+      }
+      secondaryActions={
+        <>
+          <SubNavLink
+            href="#link1"
+            id="subnav-icons-account"
+            isOutlined
+            screenreaderOnlyText="of the NYPL website"
+          >
+            <Icon name="actionIdentityFilled" size="medium" />
+            My account
+          </SubNavLink>
+        </>
+      }
+    />
+  ),
+};
+
+export const UsingIconsMobile: Story = {
+  args: {
+    className: undefined,
+    actionBackgroundColor: undefined,
+    highlightColor: undefined,
+    id: "subnav-icons-only",
+    selectedItem: undefined,
+  },
+
+  render: (args: any) => (
+    <SubNav
+      {...args}
+      primaryActions={
+        <>
+          <SubNavButton
+            buttonType="text"
+            id="subnav-icons-only-search"
+            onClick={() => subNavButtonOnClick("from subnav-icons-only-search")}
+            screenreaderOnlyText="Search for books"
+          >
+            <Icon name="utilitySearch" size="medium" />
+          </SubNavButton>
+          <SubNavLink
+            href="#link1"
+            id="subnav-icons-only-help"
+            screenreaderOnlyText="Get help from the NYPL Help Desk"
+          >
+            <Icon name="actionHelpDefault" size="medium" />
+          </SubNavLink>
+          <SubNavLink
+            href="#link2"
+            id="subnav-icons-only-settings"
+            screenreaderOnlyText="Settings for your account"
+          >
+            <Icon name="actionSettings" size="medium" />
+          </SubNavLink>
+        </>
+      }
+      secondaryActions={
+        <>
+          <SubNavLink
+            href="#link1"
+            id="subnav-icons-only-account"
+            isOutlined
+            screenreaderOnlyText="My account for NYPL.org"
+          >
+            <Icon name="actionIdentityFilled" size="medium" />
           </SubNavLink>
         </>
       }
@@ -259,80 +327,54 @@ export const CustomColors: Story = {
     className: undefined,
     actionBackgroundColor: "brand.primary-05",
     highlightColor: "brand.primary",
-    id: "sub-nav-id",
-    selectedItem: "primary-sub-nav-button-1",
+    id: "subnav-colors",
   },
 
   render: (args: any) => (
     <>
-      <Text>Blah</Text>
       <SubNav
         {...args}
         primaryActions={
           <>
             <SubNavButton
               buttonType="text"
-              id="primary-sub-nav-button-1"
-              isOutlined
+              id="subnav-colors-babies-toddlers"
               onClick={() =>
-                subNavButtonOnClick("from primary-sub-nav-button-1")
+                subNavButtonOnClick("from subnav-colors-babies-toddlers")
               }
             >
-              Label Text
-            </SubNavButton>
-            <SubNavButton
-              buttonType="text"
-              id="primary-sub-nav-button-2"
-              onClick={() =>
-                subNavButtonOnClick("from primary-sub-nav-button-2")
-              }
-            >
-              Label Text
-              <Icon
-                name="legacyAccountFilled"
-                size="small"
-                className="right"
-                align="right"
-              />
+              Babies &amp; Toddlers
             </SubNavButton>
             <SubNavLink
-              href="#link"
-              id="primary-link-1"
-              isOutlined
+              href="#link1"
+              id="subnav-colors-kids"
+              selectedItem="subnav-colors-kids"
               screenreaderOnlyText="for the NYPL Research Catalog"
             >
-              Label Text
-              <Icon
-                name="legacyAccountFilled"
-                size="small"
-                className="right"
-                align="right"
-              />
+              Kids
+            </SubNavLink>
+            <SubNavLink
+              href="#link2"
+              id="subnav-colors-teens"
+              screenreaderOnlyText="for the NYPL Research Catalog"
+            >
+              Teens
+            </SubNavLink>
+            <SubNavLink href="#link2" id="subnav-colors-adults">
+              Adults
             </SubNavLink>
           </>
         }
         secondaryActions={
           <>
-            <SubNavButton
-              buttonType="text"
-              id="sub-nav-button-3"
-              onClick={() => subNavButtonOnClick("from sub-nav-button-3")}
-            >
-              Label Text
-            </SubNavButton>
             <SubNavLink
-              href="#link"
-              id="sub-nav-link-1"
+              href="#link1"
+              id="subnav-colors-account"
               isOutlined
-              screenreaderOnlyText="for the NYPL Research Catalog"
+              screenreaderOnlyText="for NYPL.org"
             >
-              Label Text
-              <Icon
-                name="legacyAccountFilled"
-                size="small"
-                className="right"
-                align="right"
-              />
+              <Icon name="actionIdentityFilled" size="medium" />
+              My account
             </SubNavLink>
           </>
         }

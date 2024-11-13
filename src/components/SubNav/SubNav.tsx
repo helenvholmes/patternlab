@@ -71,8 +71,23 @@ export const highlightColorsArray = [
 export type highlightColors = typeof highlightColorsArray[number];
 
 export interface SubNavProps {
+  /**
+   * The background color to be applied to the hover and active states
+   * of the SubNavLink and SubNavButton components.
+   * This allows for customization of the action items.
+   */
+  actionBackgroundColor?: actionBackgroundColors;
   /** Additional class name for the `SubNav` component. */
   className?: string;
+  /**
+   * Custom color for SubNavLink, SubNavButton, and icons.
+   */
+  highlightColor?: highlightColors;
+  /**
+   * Optional unique ID for accessibility, allowing other components
+   * to reference this element.
+   */
+  id?: string;
   /**
    * Primary actions displayed on the left side of the SubNav.
    * Use SubNavButton and SubNavLink components, which mirror
@@ -85,23 +100,8 @@ export interface SubNavProps {
    * the DS Button and Link.
    */
   secondaryActions?: React.ReactNode;
-  /**
-   * The background color to be applied to the hover and active states
-   * of the SubNavLink and SubNavButton components.
-   * This allows for customization of the action items.
-   */
-  actionBackgroundColor?: actionBackgroundColors;
-  /**
-   * Custom color for SubNavLink, SubNavButton, and icons.
-   */
-  highlightColor?: highlightColors;
-  /**
-   * Optional unique ID for accessibility, allowing other components
-   * to reference this element.
-   */
-  id?: string;
   /** Optional string used to identify and highlight an item. The value should
-   * match the id associated with one of the items.
+   * match the id associated with one of the action items.
    */
   selectedItem?: string;
 }
