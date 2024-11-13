@@ -296,7 +296,11 @@ export const SubNav: ChakraComponent<
               <List
                 type="ul"
                 m="0"
-                sx={{ ...styles.scrollableButtons, ...styles.primaryActions }}
+                sx={{
+                  ...styles.scrollableButtons,
+                  ...styles.primaryActions,
+                  ...styles.listCleanup,
+                }}
                 ref={scrollableRef}
                 inline
                 noStyling
@@ -311,7 +315,7 @@ export const SubNav: ChakraComponent<
                 noStyling
                 inline
                 type="ul"
-                sx={{ ...styles.secondaryActions }}
+                sx={{ ...styles.secondaryActions, ...styles.listCleanup }}
                 m="0"
                 width="fit-content"
               >
