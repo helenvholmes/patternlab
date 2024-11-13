@@ -107,6 +107,7 @@ export const SubNavButton: React.FC<React.PropsWithChildren<any>> = ({
   children,
   isOutlined,
   isSelected,
+  screenreaderOnlyText = "",
 }) => {
   const childrenStyles = useMultiStyleConfig("SubNavChildren", {
     isOutlined: isOutlined,
@@ -119,6 +120,7 @@ export const SubNavButton: React.FC<React.PropsWithChildren<any>> = ({
         buttonType="text"
         className={isSelected ? "selectedItem" : ""}
         sx={{ ...childrenStyles.outLine }}
+        screenreaderOnlyText={screenreaderOnlyText}
       >
         {children}
       </Button>
@@ -132,7 +134,7 @@ export const SubNavLink: React.FC<React.PropsWithChildren<any>> = ({
   isOutlined,
   isSelected,
   href,
-  screenreaderOnlyText = "", // Default to empty if no screenreader text provided
+  screenreaderOnlyText = "",
 }) => {
   const childrenStyles = useMultiStyleConfig("SubNavChildren", {
     isOutlined: isOutlined,
