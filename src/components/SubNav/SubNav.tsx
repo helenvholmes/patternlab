@@ -286,37 +286,39 @@ export const SubNav: ChakraComponent<
 
       return (
         <Box as="nav" aria-label="Sub-navigation menu" __css={styles.base}>
-          <Flex
-            alignItems="baseline"
-            className={className}
-            gap="1rem"
-            justify="space-between"
-          >
-            <List
-              type="ul"
-              m="0"
-              sx={{ ...styles.scrollableButtons, ...styles.primaryActions }}
-              ref={scrollableRef}
-              inline
-              noStyling
+          <Box __css={styles.container}>
+            <Flex
+              alignItems="center"
+              className={className}
+              gap="1rem"
+              justify="space-between"
             >
-              {primaryActions}
-              {showRightFade && (
-                // Explicitly cast styles.fadeEffect to CSSProperties
-                <div style={styles.fadeEffect as CSSProperties} />
-              )}
-            </List>
-            <List
-              noStyling
-              inline
-              type="ul"
-              sx={{ ...styles.secondaryActions }}
-              m="0"
-              width="fit-content"
-            >
-              {secondaryActions ? secondaryActions : null}
-            </List>
-          </Flex>
+              <List
+                type="ul"
+                m="0"
+                sx={{ ...styles.scrollableButtons, ...styles.primaryActions }}
+                ref={scrollableRef}
+                inline
+                noStyling
+              >
+                {primaryActions}
+                {showRightFade && (
+                  // Explicitly cast styles.fadeEffect to CSSProperties
+                  <div style={styles.fadeEffect as CSSProperties} />
+                )}
+              </List>
+              <List
+                noStyling
+                inline
+                type="ul"
+                sx={{ ...styles.secondaryActions }}
+                m="0"
+                width="fit-content"
+              >
+                {secondaryActions ? secondaryActions : null}
+              </List>
+            </Flex>
+          </Box>
         </Box>
       );
     }

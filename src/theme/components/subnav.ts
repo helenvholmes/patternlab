@@ -13,9 +13,10 @@ const {
   definePartsStyle: subNavDefinePartsStyle,
 } = createMultiStyleConfigHelpers([
   "base",
+  "container",
+  "primaryActions",
   "selectedItem",
   "secondaryActions",
-  "primaryActions",
 ]);
 
 interface SubNavStyleProps extends StyleFunctionProps {
@@ -37,8 +38,6 @@ const commonStyles = () => ({
   lineHeight: "1.5 !important",
   px: "s",
   py: "xxs",
-  marginY: "4px",
-  marginLeft: "4px",
   textDecoration: "none !important",
   transition: "background-color 0.2s, color 0.2s !important",
 });
@@ -61,7 +60,6 @@ const SubNav = subNavDefineMultiStyleConfig({
         : "ui.link.primary-05 !important";
       const primaryActionsStyles = {
         ...commonStyles(),
-        marginRight: "xs",
         svg: {
           fill: defaultLabelColor,
           margin: { base: "0", md: null },
@@ -86,7 +84,6 @@ const SubNav = subNavDefineMultiStyleConfig({
       const secondaryActionsStyles = {
         ...commonStyles(),
         color: highlightOrLinkColor,
-        marginLeft: "xs",
         svg: {
           fill: highlightOrLinkColor,
           margin: { base: "0", md: null },
@@ -117,8 +114,14 @@ const SubNav = subNavDefineMultiStyleConfig({
           },
           borderBottom: "1px solid",
           borderColor: highlightOrBorderColor,
-          px: "s",
+          display: "flex",
+          justifyContent: "center",
           py: { base: "s", md: "xs" },
+        },
+        container: {
+          maxWidth: "1280px",
+          px: "s",
+          width: "100%",
         },
         primaryActions: {
           width: "100%",
@@ -175,7 +178,6 @@ const SubNavChildren = subNavChildrenDefineMultiStyleConfig({
       outLine: {
         border: isOutlined !== undefined ? "1px solid" : "none",
         borderRadius: "6px",
-        marginRight: "4px",
       },
     })
   ),
