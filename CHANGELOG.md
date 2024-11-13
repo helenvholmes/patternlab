@@ -8,6 +8,10 @@ Currently, this repo is in Prerelease. When it is released, this project will ad
 
 ## Prerelease
 
+### Updates
+
+- Updates the `MultiSelect` component to add `itemCount` as a data property to the `items` prop to render the item count for an option.
+
 ## 3.4.2 (November 7, 2024)
 
 ### Adds
