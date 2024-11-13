@@ -1,4 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
+import Heading from "../Heading/Heading";
+import Hero from "../Hero/Hero";
 import Icon from "../Icons/Icon";
 
 import SubNav, {
@@ -370,6 +372,72 @@ export const CustomColors: Story = {
             <SubNavLink
               href="#link1"
               id="subnav-colors-account"
+              isOutlined
+              screenreaderOnlyText="for NYPL.org"
+            >
+              <Icon name="actionIdentityFilled" size="medium" />
+              My account
+            </SubNavLink>
+          </>
+        }
+      />
+    </>
+  ),
+};
+
+export const Placement: Story = {
+  args: {
+    className: undefined,
+    actionBackgroundColor: "section.research.primary-05",
+    highlightColor: "section.research.primary",
+    id: "subnav-placement",
+  },
+
+  render: (args: any) => (
+    <>
+      <Hero
+        backgroundColor="section.research.primary"
+        heading={
+          <Heading
+            level="h1"
+            id="tertiary-hero-rc"
+            size="heading2"
+            text="Research Catalog"
+          />
+        }
+        heroType="tertiary"
+      />
+      <SubNav
+        {...args}
+        primaryActions={
+          <>
+            <SubNavButton
+              buttonType="text"
+              id="subnav-placement-search"
+              onClick={() =>
+                subNavButtonOnClick("from subnav-placement-search")
+              }
+              selectedItem="subnav-placement-search"
+            >
+              Search the catalog
+            </SubNavButton>
+            <SubNavLink href="#browse" id="subnav-placement-browse">
+              Browse the Catalog
+            </SubNavLink>
+          </>
+        }
+        secondaryActions={
+          <>
+            <SubNavLink
+              href="#logout"
+              id="subnav-placement-logout"
+              screenreaderOnlyText="of NYPL.org"
+            >
+              Log out
+            </SubNavLink>
+            <SubNavLink
+              href="#account"
+              id="subnav-placement-account"
               isOutlined
               screenreaderOnlyText="for NYPL.org"
             >
