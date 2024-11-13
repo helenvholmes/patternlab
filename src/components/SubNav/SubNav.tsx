@@ -126,14 +126,16 @@ export const SubNavButton: React.FC<React.PropsWithChildren<any>> = ({
   });
 
   return (
-    <Button
-      id={id}
-      buttonType="text"
-      className={isSelected ? "selectedItem" : ""}
-      sx={{ ...childrenStyles.outLine }}
-    >
-      {children}
-    </Button>
+    <li>
+      <Button
+        id={id}
+        buttonType="text"
+        className={isSelected ? "selectedItem" : ""}
+        sx={{ ...childrenStyles.outLine }}
+      >
+        {children}
+      </Button>
+    </li>
   );
 };
 
@@ -159,18 +161,20 @@ export const SubNavLink: React.FC<React.PropsWithChildren<any>> = ({
   });
 
   return (
-    <Link
-      key={id}
-      id={id}
-      type="action"
-      href={href}
-      isUnderlined={false}
-      screenreaderOnlyText={screenreaderOnlyText}
-      className={isSelected ? "selectedItem" : ""}
-      sx={{ ...childrenStyles.outLine }}
-    >
-      {children}
-    </Link>
+    <li>
+      <Link
+        key={id}
+        id={id}
+        type="action"
+        href={href}
+        isUnderlined={false}
+        screenreaderOnlyText={screenreaderOnlyText}
+        className={isSelected ? "selectedItem" : ""}
+        sx={{ ...childrenStyles.outLine }}
+      >
+        {children}
+      </Link>
+    </li>
   );
 };
 
@@ -296,7 +300,7 @@ export const SubNav: ChakraComponent<
               inline
               noStyling
             >
-              <li id="primary-actions">{primaryActions}</li>
+              {primaryActions}
               {showRightFade && (
                 // Explicitly cast styles.fadeEffect to CSSProperties
                 <div style={styles.fadeEffect as CSSProperties} />
@@ -310,9 +314,7 @@ export const SubNav: ChakraComponent<
               m="0"
               width="fit-content"
             >
-              <li id="secondary-actions">
-                {secondaryActions ? secondaryActions : null}
-              </li>
+              {secondaryActions ? secondaryActions : null}
             </List>
           </Flex>
         </Box>
