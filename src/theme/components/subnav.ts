@@ -154,6 +154,12 @@ const SubNav = subNavDefineMultiStyleConfig({
           position: "relative",
           scrollbarWidth: "none",
         },
+        listCleanup: {
+          gap: "xs",
+          li: {
+            marginEnd: "unset",
+          },
+        },
         fadeEffect: {
           position: "absolute",
           right: 0,
