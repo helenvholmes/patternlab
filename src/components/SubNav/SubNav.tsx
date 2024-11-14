@@ -114,6 +114,7 @@ export const SubNavButton: React.FC<React.PropsWithChildren<any>> = ({
         buttonType="text"
         className={isSelected ? "selectedItem" : ""}
         sx={childrenStyles.outLine}
+        aria-current={isSelected ? "page" : null}
         screenreaderOnlyText={screenreaderOnlyText}
       >
         {children}
