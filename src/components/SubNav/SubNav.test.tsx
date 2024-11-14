@@ -2,6 +2,16 @@ import { render, screen } from "@testing-library/react";
 import { axe } from "jest-axe";
 import SubNav, { SubNavButton, SubNavLink } from "./SubNav";
 
+jest.mock('@chakra-ui/react', () => ({
+  ...jest.requireActual('@chakra-ui/react'),
+  useMultiStyleConfig: () => ({
+    outLine: {
+      border: '1px solid', // Mocking the border style to be 1px solid
+      borderRadius: '6px',
+    },
+  }),
+}));
+
 describe("SubNav Accessibility", () => {
   it("passes axe accessibility test with primary actions", async () => {
     const { container } = render(
@@ -148,5 +158,14 @@ describe("SubNavLink", () => {
     );
     const button = screen.getByText("Selected Link");
     expect(button).toHaveClass("selectedItem"); // Should have "selectedItem" class
+  });
+
+  it("applies outlined styles when isOutlined is true", () => {
+    render(<SubNavButton isOutlined > Outline Subnav Button </SubNavButton>);
+
+    const button = screen.getByText("Outline Subnav Button");
+    // Check if the outline style is applied
+    // Adjust the expected style based on how 'childrenStyles.outLine' is defined
+    expect(button).toHaveStyle({ border: "1px solid" });
   });
 });
