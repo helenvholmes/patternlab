@@ -165,7 +165,9 @@ describe("EncoreCatalogLogOutTimer", () => {
       );
 
       // Start the timer on a valid domain.
-      encoreCatalogLogOutTimer.setEncoreLoggedInTimer(validResearchCatalogDomain);
+      encoreCatalogLogOutTimer.setEncoreLoggedInTimer(
+        validResearchCatalogDomain
+      );
     });
 
     afterEach(() => {

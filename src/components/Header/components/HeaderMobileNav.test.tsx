@@ -5,7 +5,6 @@ import * as renderer from "react-test-renderer";
 
 import HeaderMobileNav from "./HeaderMobileNav";
 
-
 describe("HeaderMobileNav Accessibility", () => {
   it("passes axe accessibility test", async () => {
     const { container } = render(<HeaderMobileNav />);
