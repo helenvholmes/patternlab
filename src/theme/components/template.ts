@@ -47,10 +47,10 @@ const TemplateContent = defineStyleConfig({
   // the column for the sidebar is max 255px width.
   variants: {
     left: {
-      gridTemplateColumns: { md: "255px 1fr" },
+      gridTemplateColumns: { md: "271px 1fr" },
     },
     right: {
-      gridTemplateColumns: { md: "1fr 255px" },
+      gridTemplateColumns: { md: "1fr 271px" },
     },
   },
 });
@@ -77,11 +77,11 @@ const TemplateContentPrimary = defineStyleConfig({
       marginEnd: { md: 0 },
       minWidth: { md: 0 },
       paddingRight: "s",
-      paddingLeft: "l",
+      paddingLeft: { base: "s", md: "l" },
     },
     right: {
-      gridColumn: { base: "1", md: "1" },
-      paddingRight: "l",
+      gridColumn: "1",
+      paddingRight: { base: "s", md: "l" },
       paddingLeft: "s",
     },
   },
@@ -91,9 +91,11 @@ const TemplateContentSidebar = defineStyleConfig({
     left: {
       gridColumn: "1",
       paddingLeft: "s",
+      paddingRight: { base: "s", md: undefined },
     },
     right: {
       gridColumn: { base: "1", md: "2" },
+      paddingLeft: { base: "s", md: undefined },
       paddingRight: "s",
     },
   },
