@@ -3,6 +3,7 @@ import { ArgTypes, Canvas, Description, Meta, Source } from "@storybook/blocks";
 import Banner from "../Banner/Banner";
 import Heading from "../Heading/Heading";
 import Link from "../Link/Link";
+import List from "../List/List";
 import * as SubNavStories from "./SubNav.stories";
 import ComponentChangelogTable from "../../utils/ComponentChangelogTable";
 import { changelogData } from "./subNavChangelogData";
@@ -26,6 +27,7 @@ import { changelogData } from "./subNavChangelogData";
 - {<Link href="#outlined-item" target="_self">Outlined Item</Link>}
 - {<Link href="#using-icons" target="_self">Using Icons</Link>}
 - {<Link href="#custom-colors" target="_self">Custom Colors</Link>}
+- {<Link href="#horizontal-scrolling" target="_self">Horizontal Scrolling</Link>}
 - {<Link href="#placement" target="_self">Placement</Link>}
 - {<Link href="#changelog" target="_self">Changelog</Link>}
 
@@ -289,6 +291,27 @@ highlight color and `section.education.primary-05` for the background color.
 />
 
 <Canvas of={SubNavStories.CustomColors} />
+
+## Horizontal Scrolling
+
+Horizontal scrolling is used when the width of the primary actions is greater
+than the space available. The secondary actions will never scroll.
+
+<Banner
+  content={
+    <>
+      <strong>RECOMMENDATION:</strong> To reduce the need for horizontal
+      scrolling...
+      <List mb="0" paddingStart="s">
+        <li>limit the primary actions to five or fewer elements</li>
+        <li>limit the secondary actions to two or fewer elements</li>
+      </List>
+    </>
+  }
+  type="recommendation"
+/>
+
+<Canvas of={SubNavStories.HorizontalScrolling} />
 
 ## Placement
 

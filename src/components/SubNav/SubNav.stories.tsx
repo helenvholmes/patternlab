@@ -151,7 +151,6 @@ export const SelectedItem: Story = {
             href="#link1"
             id="subnav-selected-account"
             screenreaderOnlyText="for NYPL.org"
-            isSelected
           >
             My account
           </SubNavLink>
@@ -386,6 +385,107 @@ export const CustomColors: Story = {
             <SubNavLink
               href="#link1"
               id="subnav-colors-account"
+              isOutlined
+              screenreaderOnlyText="for NYPL.org"
+            >
+              <Icon name="actionIdentityFilled" size="medium" />
+              My account
+            </SubNavLink>
+          </>
+        }
+      />
+    </>
+  ),
+};
+
+export const HorizontalScrolling: Story = {
+  args: {
+    id: "subnav-scrolling",
+  },
+
+  render: (args: any) => (
+    <>
+      <SubNav
+        {...args}
+        primaryActions={
+          <>
+            <SubNavButton
+              buttonType="text"
+              id="subnav-scrolling-infants"
+              onClick={() =>
+                subNavButtonOnClick("from subnav-scrolling-infants")
+              }
+              screenreaderOnlyText="Education for infants"
+            >
+              Infants
+            </SubNavButton>
+            <SubNavLink
+              href="#toddlers"
+              id="subnav-scrolling-toddlers"
+              screenreaderOnlyText="Education for toddlers"
+            >
+              Toddlers
+            </SubNavLink>
+            <SubNavLink
+              href="#kids"
+              id="subnav-scrolling-kids"
+              isSelected
+              screenreaderOnlyText="Education for kids"
+            >
+              Kids
+            </SubNavLink>
+            <SubNavLink
+              href="#tweens"
+              id="subnav-scrolling-tweens"
+              screenreaderOnlyText="Education for tweens"
+            >
+              Tweens
+            </SubNavLink>
+            <SubNavLink
+              href="#teens"
+              id="subnav-scrolling-teens"
+              screenreaderOnlyText="Education for teens"
+            >
+              Teens
+            </SubNavLink>
+            <SubNavLink
+              href="#young-adults"
+              id="subnav-scrolling-young-adults"
+              screenreaderOnlyText="Education for adults"
+            >
+              Young Adults
+            </SubNavLink>
+            <SubNavLink
+              href="#adults"
+              id="subnav-scrolling-adults"
+              screenreaderOnlyText="Education for adults"
+            >
+              Adults
+            </SubNavLink>
+            <SubNavLink
+              href="#seniors"
+              id="subnav-scrolling-seniors"
+              screenreaderOnlyText="Education for seniors"
+            >
+              Seniors
+            </SubNavLink>
+          </>
+        }
+        secondaryActions={
+          <>
+            <SubNavButton
+              buttonType="text"
+              id="subnav-scrolling-logout"
+              onClick={() =>
+                subNavButtonOnClick("from subnav-colors-babies-toddlers")
+              }
+              screenreaderOnlyText="of NYPL.org"
+            >
+              Log out
+            </SubNavButton>
+            <SubNavLink
+              href="#link1"
+              id="subnav-scrolling-account"
               isOutlined
               screenreaderOnlyText="for NYPL.org"
             >
