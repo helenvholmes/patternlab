@@ -1,11 +1,6 @@
-import React, {
-  useEffect,
-  useState,
-  useRef,
-} from "react";
+import React, { useEffect, useState, useRef } from "react";
 
 export default function useScrollFadeStyles() {
-
   const [showRightFade, setShowRightFade] = useState(false);
   const [lastScrollLeft, setLastScrollLeft] = useState(0);
   const scrollableRef = useRef(null);
@@ -32,7 +27,7 @@ export default function useScrollFadeStyles() {
 
     const refCurrent = scrollableRef.current;
     if (refCurrent) {
-      refCurrent.addEventListener('scroll', handleScroll);
+      refCurrent.addEventListener("scroll", handleScroll);
 
       // Initial check to set the right fade effect based on the initial scroll state
       const { scrollWidth, clientWidth, scrollLeft } = refCurrent;
@@ -50,12 +45,13 @@ export default function useScrollFadeStyles() {
     // Cleanup event listener on component unmount
     return () => {
       if (refCurrent) {
-        refCurrent.removeEventListener('scroll', handleScroll);
+        refCurrent.removeEventListener("scroll", handleScroll);
       }
     };
   }, [lastScrollLeft]); // Only depend on `lastScrollLeft`
 
   return {
-    scrollableRef, showRightFade
+    scrollableRef,
+    showRightFade,
   };
 }

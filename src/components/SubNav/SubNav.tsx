@@ -1,7 +1,4 @@
-import React, {
-  forwardRef,
-  CSSProperties,
-} from "react";
+import React, { forwardRef, CSSProperties } from "react";
 import {
   Box,
   chakra,
@@ -13,7 +10,6 @@ import Button from "../Button/Button";
 import Link from "../Link/Link";
 import List from "../List/List";
 import useScrollFadeStyles from "../../hooks/useScrollFadeStyles";
-
 
 export const actionBackgroundColorsArray = [
   "brand.primary-05",
