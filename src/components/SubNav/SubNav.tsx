@@ -1,4 +1,4 @@
-import React, { forwardRef, CSSProperties } from "react";
+import React, { forwardRef } from "react";
 import {
   Box,
   chakra,
@@ -113,7 +113,7 @@ export const SubNavButton: React.FC<React.PropsWithChildren<any>> = ({
         id={id}
         buttonType="text"
         className={isSelected ? "selectedItem" : ""}
-        sx={{ ...childrenStyles.outLine }}
+        sx={childrenStyles.outLine}
         screenreaderOnlyText={screenreaderOnlyText}
       >
         {children}
@@ -143,8 +143,9 @@ export const SubNavLink: React.FC<React.PropsWithChildren<any>> = ({
         href={href}
         isUnderlined={false}
         screenreaderOnlyText={screenreaderOnlyText}
+        aria-current={isSelected ? "page" : null}
         className={isSelected ? "selectedItem" : ""}
-        sx={{ ...childrenStyles.outLine }}
+        sx={childrenStyles.outLine}
       >
         {children}
       </Link>
@@ -212,7 +213,7 @@ export const SubNav: ChakraComponent<
 
       return (
         <Box as="nav" aria-label="Sub-navigation menu" __css={styles.base}>
-          <Box __css={{ ...styles.container }}>
+          <Box __css={styles.container}>
             <Flex
               alignItems="center"
               className={className}
@@ -233,8 +234,9 @@ export const SubNav: ChakraComponent<
               >
                 {primaryActions}
                 {showRightFade && (
-                  // Explicitly cast styles.fadeEffect to CSSProperties
-                  <div style={styles.fadeEffect as CSSProperties} />
+                  <li>
+                    <Box sx={styles.fadeEffect} />
+                  </li>
                 )}
               </List>
               {secondaryActions ? (
