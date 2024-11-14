@@ -2,12 +2,12 @@ import { render, screen } from "@testing-library/react";
 import { axe } from "jest-axe";
 import SubNav, { SubNavButton, SubNavLink } from "./SubNav";
 
-jest.mock('@chakra-ui/react', () => ({
-  ...jest.requireActual('@chakra-ui/react'),
+jest.mock("@chakra-ui/react", () => ({
+  ...jest.requireActual("@chakra-ui/react"),
   useMultiStyleConfig: () => ({
     outLine: {
-      border: '1px solid', // Mocking the border style to be 1px solid
-      borderRadius: '6px',
+      border: "1px solid", // Mocking the border style to be 1px solid
+      borderRadius: "6px",
     },
   }),
 }));
@@ -161,7 +161,7 @@ describe("SubNavLink", () => {
   });
 
   it("applies outlined styles when isOutlined is true", () => {
-    render(<SubNavButton isOutlined > Outline Subnav Button </SubNavButton>);
+    render(<SubNavButton isOutlined> Outline Subnav Button </SubNavButton>);
 
     const button = screen.getByText("Outline Subnav Button");
     // Check if the outline style is applied
