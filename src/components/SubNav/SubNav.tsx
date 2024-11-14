@@ -1,10 +1,6 @@
 import React, {
   forwardRef,
-  useEffect,
-  useState,
-  useRef,
   CSSProperties,
-  useCallback,
 } from "react";
 import {
   Box,
@@ -16,6 +12,8 @@ import {
 import Button from "../Button/Button";
 import Link from "../Link/Link";
 import List from "../List/List";
+import useScrollFadeStyles from "../../hooks/useScrollFadeStyles";
+
 
 export const actionBackgroundColorsArray = [
   "brand.primary-05",
@@ -180,9 +178,7 @@ export const SubNav: ChakraComponent<
         secondaryActions,
       } = props;
 
-      const [showRightFade, setShowRightFade] = useState(false);
-      const [lastScrollLeft, setLastScrollLeft] = useState(0);
-      const scrollableRef = useRef(null);
+      const { scrollableRef, showRightFade } = useScrollFadeStyles();
 
       if (actionBackgroundColor !== undefined && highlightColor === undefined) {
         console.warn(
@@ -197,7 +193,7 @@ export const SubNav: ChakraComponent<
             (child: React.ReactElement) => {
               if (child.type !== SubNavButton && child.type !== SubNavLink) {
                 console.warn(
-                  `NYPL Reservoir SubNav: An element that is not a SubNavButton or SubNavLink component has been passed in the \`${propName}\` prop. That element will be ignored.`
+                  `NYPL Reservoir SubNav: An element that is not a SubNavButton or SubNavLink component has been passed in the \`${propName}\` prop. That element may not work properly.`
                 );
                 return null;
               }
@@ -218,55 +214,9 @@ export const SubNav: ChakraComponent<
         highlightColor: highlightColor,
       });
 
-      const handleScroll = useCallback(() => {
-        if (scrollableRef.current) {
-          const { scrollLeft, scrollWidth, clientWidth } =
-            scrollableRef.current;
-
-          // Determine if we are scrolling to the left or right
-          const isScrollingRight = scrollLeft > lastScrollLeft;
-          setLastScrollLeft(scrollLeft); // Update last scroll position
-
-          // Show right fade only if scrolling to the left
-          if (!isScrollingRight) {
-            // Show right fade only if not at the end
-            const atRightEdge = scrollLeft + clientWidth >= scrollWidth;
-            setShowRightFade(!atRightEdge);
-          } else {
-            setShowRightFade(false); // Hide when scrolling right
-          }
-        }
-      }, [lastScrollLeft, setLastScrollLeft, setShowRightFade]);
-
-      useEffect(() => {
-        const refCurrent = scrollableRef.current;
-        if (refCurrent) {
-          refCurrent.addEventListener("scroll", handleScroll);
-
-          // Initial check to set the right fade effect based on the initial scroll state
-          const { scrollWidth, clientWidth, scrollLeft } = refCurrent;
-          const atRightEdge = scrollLeft + clientWidth >= scrollWidth;
-
-          // Set the right fade effect if content is scrollable and not at the right edge
-          setShowRightFade(!atRightEdge);
-
-          // If the scrollable area is already at the end, hide the right fade initially
-          if (scrollWidth <= clientWidth) {
-            setShowRightFade(false); // If the content fits in the viewport, no need for a fade
-          }
-        }
-
-        // Cleanup event listener on component unmount
-        return () => {
-          if (refCurrent) {
-            refCurrent.removeEventListener("scroll", handleScroll);
-          }
-        };
-      }, [handleScroll]);
-
       return (
         <Box as="nav" aria-label="Sub-navigation menu" __css={styles.base}>
-          <Box __css={styles.container}>
+          <Box __css={{ ...styles.container }}>
             <Flex
               alignItems="center"
               className={className}
@@ -291,16 +241,18 @@ export const SubNav: ChakraComponent<
                   <div style={styles.fadeEffect as CSSProperties} />
                 )}
               </List>
-              <List
-                noStyling
-                inline
-                type="ul"
-                sx={{ ...styles.secondaryActions, ...styles.listCleanup }}
-                m="0"
-                width="fit-content"
-              >
-                {secondaryActions ? secondaryActions : null}
-              </List>
+              {secondaryActions ? (
+                <List
+                  noStyling
+                  inline
+                  type="ul"
+                  sx={{ ...styles.secondaryActions, ...styles.listCleanup }}
+                  m="0"
+                  width="fit-content"
+                >
+                  {secondaryActions}
+                </List>
+              ) : null}
             </Flex>
           </Box>
         </Box>
