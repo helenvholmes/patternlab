@@ -309,7 +309,7 @@ export const MultiSelect: ChakraComponent<
         item: MultiSelectItem
       ): string | JSX.Element => {
         return item.itemCount ? (
-          <Flex justify="space-between">
+          <Flex gap="s" justify="space-between">
             <Box>{item.name}</Box>
             <Box>{item.itemCount}</Box>
           </Flex>
