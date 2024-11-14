@@ -50,11 +50,6 @@ describe.skip("Header", () => {
       removeListener: () => {},
       matches: true,
     })) as jest.Mock;
-
-    await waitFor(() => {
-      const utils = render(<Header isProduction={false} />);
-      container = utils.container;
-    });
   });
 
   afterAll(() => {
