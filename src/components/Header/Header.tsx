@@ -105,8 +105,8 @@ export const Header = chakra(
                 {!isLoaded ? (
                   <Logo
                     aria-label="NYPL Header Logo"
-                    name={useColorModeValue("nyplLionBlack", "nyplLionWhite")}
-                    size={"large"}
+                    name={useColorModeValue("nyplFullBlack", "nyplFullWhite")}
+                    size="small"
                     title="NYPL Header Logo"
                   />
                 ) : (
