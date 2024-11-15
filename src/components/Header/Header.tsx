@@ -100,16 +100,16 @@ export const Header = chakra(
                 <Logo
                   aria-label="NYPL Header Logo"
                   name={
-                    !isLargerThanLarge
+                    isLargerThanLarge
                       ? useColorModeValue("nyplLionBlack", "nyplLionWhite")
                       : useColorModeValue("nyplFullBlack", "nyplFullWhite")
                   }
-                  size={!isLargerThanMobile ? "small" : "large"}
+                  size={isLargerThanMobile ? "small" : "large"}
                   title="NYPL Header Logo"
                 />
               </Link>
               <Spacer />
-              {!isLargerThanMobile ? (
+              {isLargerThanMobile ? (
                 <HeaderMobileIconNav />
               ) : (
                 <VStack alignItems="end" sx={styles.navContainer}>
