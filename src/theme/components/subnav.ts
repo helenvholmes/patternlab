@@ -181,11 +181,11 @@ const SubNav = subNavDefineMultiStyleConfig({
           margin: "0 !important",
         },
         primaryList: {
-          position: 'relative',
-          display: 'flex',
-          width: '100%',
-          overflowX: 'auto'
-        }
+          position: "relative",
+          display: "flex",
+          width: "100%",
+          overflowX: "auto",
+        },
       };
     }
   ),

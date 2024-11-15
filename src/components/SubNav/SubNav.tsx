@@ -221,25 +221,23 @@ export const SubNav: ChakraComponent<
               gap="1rem"
               justify="space-between"
             >
-            <div style={styles.primaryList}>
-              <List
-                type="ul"
-                m="0"
-                sx={{
-                  ...styles.listCleanup,
-                  ...styles.scrollableList,
-                  ...styles.primaryActions,
-                }}
-                ref={scrollableRef}
-                inline
-                noStyling
-              >
-                {primaryActions}
-              </List>
-              {showRightFade && (
-                <Box sx={styles.fadeEffect} />
-              )}
-            </div>
+              <div style={styles.primaryList}>
+                <List
+                  type="ul"
+                  m="0"
+                  sx={{
+                    ...styles.listCleanup,
+                    ...styles.scrollableList,
+                    ...styles.primaryActions,
+                  }}
+                  ref={scrollableRef}
+                  inline
+                  noStyling
+                >
+                  {primaryActions}
+                </List>
+                {showRightFade && <Box sx={styles.fadeEffect} />}
+              </div>
               {secondaryActions ? (
                 <List
                   noStyling
