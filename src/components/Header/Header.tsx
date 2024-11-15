@@ -3,7 +3,6 @@ import {
   Box,
   HStack,
   Spacer,
-  useColorModeValue,
   useMediaQuery,
   useMultiStyleConfig,
   VStack,
@@ -19,7 +18,7 @@ import HeaderUpperNav from "./components/HeaderUpperNav";
 import { HeaderProvider } from "./context/headerContext";
 import EncoreCatalogLogOutTimer from "./utils/encoreCatalogLogOutTimer";
 
-import useNYPLBreakpoints from "../../hooks/useNYPLBreakpoints";
+// import useNYPLBreakpoints from "../../hooks/useNYPLBreakpoints";
 import SkipNavigation from "../SkipNavigation/SkipNavigation";
 import Link from "../Link/Link";
 import Logo from "../Logo/Logo";
@@ -41,7 +40,7 @@ export interface HeaderProps {
 export const Header = chakra(
   ({ fetchSitewideAlerts = true, isProduction = true }: HeaderProps) => {
     // isLargerThanLarge is greater than 960px
-    const { isLargerThanLarge } = useNYPLBreakpoints();
+    // const { isLargerThanLarge } = useNYPLBreakpoints();
     // The Header's "mobile" is 832px and below.
     const [isLargerThanMobile] = useMediaQuery([
       `(min-width: ${headerBreakpoints.mh})`,
@@ -104,20 +103,18 @@ export const Header = chakra(
               >
                 {!isLoaded ? (
                   <Logo
+                    key="logo-1"
                     aria-label="NYPL Header Logo"
-                    name={useColorModeValue("nyplFullBlack", "nyplFullWhite")}
-                    size="small"
+                    name={"nyplFullBlack"}
                     title="NYPL Header Logo"
                   />
                 ) : (
                   <Logo
+                    key="logo-2"
                     aria-label="NYPL Header Logo"
                     name={
-                      isLargerThanLarge
-                        ? useColorModeValue("nyplFullBlack", "nyplFullWhite")
-                        : useColorModeValue("nyplLionBlack", "nyplLionWhite")
+                      isLargerThanMobile ? "nyplFullBlack" : "nyplLionBlack"
                     }
-                    size={isLargerThanMobile ? "small" : "large"}
                     title="NYPL Header Logo"
                   />
                 )}
