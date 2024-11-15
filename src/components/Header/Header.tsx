@@ -8,7 +8,7 @@ import {
   useMultiStyleConfig,
   VStack,
 } from "@chakra-ui/react";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 /** Internal Header-only components */
 import HeaderLowerNav from "./components/HeaderLowerNav";
@@ -46,6 +46,7 @@ export const Header = chakra(
     const [isLargerThanMobile] = useMediaQuery([
       `(min-width: ${headerBreakpoints.mh})`,
     ]);
+    const [isLoaded, setIsLoaded] = useState(false);
 
     const styles = useMultiStyleConfig("Header", {});
     // Create a new instance of the EncoreCatalogLogOutTimer. The timer will
@@ -72,6 +73,10 @@ export const Header = chakra(
       return () => clearInterval(interval);
     });
 
+    useEffect(() => {
+      setIsLoaded(true);
+    }, []);
+
     return (
       <HeaderProvider isProduction={isProduction}>
         <Box
@@ -97,25 +102,39 @@ export const Header = chakra(
                 href="https://nypl.org"
                 __css={styles.logo}
               >
-                <Logo
-                  aria-label="NYPL Header Logo"
-                  name={
-                    isLargerThanLarge
-                      ? useColorModeValue("nyplLionBlack", "nyplLionWhite")
-                      : useColorModeValue("nyplFullBlack", "nyplFullWhite")
-                  }
-                  size={isLargerThanMobile ? "small" : "large"}
-                  title="NYPL Header Logo"
-                />
+                {!isLoaded ? (
+                  <Logo
+                    aria-label="NYPL Header Logo"
+                    name={useColorModeValue("nyplLionBlack", "nyplLionWhite")}
+                    size={"large"}
+                    title="NYPL Header Logo"
+                  />
+                ) : (
+                  <Logo
+                    aria-label="NYPL Header Logo"
+                    name={
+                      isLargerThanLarge
+                        ? useColorModeValue("nyplFullBlack", "nyplFullWhite")
+                        : useColorModeValue("nyplLionBlack", "nyplLionWhite")
+                    }
+                    size={isLargerThanMobile ? "small" : "large"}
+                    title="NYPL Header Logo"
+                  />
+                )}
               </Link>
               <Spacer />
-              {isLargerThanMobile ? (
-                <HeaderMobileIconNav />
-              ) : (
+              {!isLoaded ? (
                 <VStack alignItems="end" sx={styles.navContainer}>
                   <HeaderUpperNav />
                   <HeaderLowerNav />
                 </VStack>
+              ) : isLargerThanMobile ? (
+                <VStack alignItems="end" sx={styles.navContainer}>
+                  <HeaderUpperNav />
+                  <HeaderLowerNav />
+                </VStack>
+              ) : (
+                <HeaderMobileIconNav />
               )}
             </HStack>
             <HorizontalRule __css={styles.horizontalRule} />
