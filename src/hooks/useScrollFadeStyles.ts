@@ -16,17 +16,22 @@ export default function useScrollFadeStyles() {
       if (scrollableRef.current) {
         const { scrollLeft, scrollWidth, clientWidth } = scrollableRef.current;
 
+        // If content fits exactly or only has a small amount of extra space, hide the fade
+        if (scrollWidth <= clientWidth || scrollLeft + clientWidth >= scrollWidth) {
+          setShowRightFade(false);
+          return;
+        }
+
         // Determine if we are scrolling to the left or right
         const isScrollingRight = scrollLeft > lastScrollLeft;
         setLastScrollLeft(scrollLeft); // Update last scroll position
 
-        // Show right fade only if scrolling to the left
-        if (!isScrollingRight) {
-          // Show right fade only if not at the end
-          const atRightEdge = scrollLeft + clientWidth >= scrollWidth;
-          setShowRightFade(!atRightEdge);
+        // Show right fade only if scrolling to the left and not at the end
+        const atRightEdge = scrollLeft + clientWidth >= scrollWidth - 1; // Buffer to prevent flickering
+        if (!isScrollingRight && !atRightEdge) {
+          setShowRightFade(true);
         } else {
-          setShowRightFade(false); // Hide when scrolling right
+          setShowRightFade(false); // Hide when scrolling right or when near the right edge
         }
       }
     };
@@ -37,14 +42,13 @@ export default function useScrollFadeStyles() {
 
       // Initial check to set the right fade effect based on the initial scroll state
       const { scrollWidth, clientWidth, scrollLeft } = refCurrent;
-      const atRightEdge = scrollLeft + clientWidth >= scrollWidth;
+      const atRightEdge = scrollLeft + clientWidth >= scrollWidth - 1; // Buffer to prevent flickering
 
       // Set the right fade effect if content is scrollable and not at the right edge
-      setShowRightFade(!atRightEdge);
-
-      // If the scrollable area is already at the end, hide the right fade initially
-      if (scrollWidth <= clientWidth) {
-        setShowRightFade(false); // If the content fits in the viewport, no need for a fade
+      if (scrollWidth > clientWidth && !atRightEdge) {
+        setShowRightFade(true);
+      } else {
+        setShowRightFade(false);
       }
     }
 
