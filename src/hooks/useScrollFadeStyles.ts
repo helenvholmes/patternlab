@@ -17,7 +17,10 @@ export default function useScrollFadeStyles() {
         const { scrollLeft, scrollWidth, clientWidth } = scrollableRef.current;
 
         // If content fits exactly or only has a small amount of extra space, hide the fade
-        if (scrollWidth <= clientWidth || scrollLeft + clientWidth >= scrollWidth) {
+        if (
+          scrollWidth <= clientWidth ||
+          scrollLeft + clientWidth >= scrollWidth
+        ) {
           setShowRightFade(false);
           return;
         }
