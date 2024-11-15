@@ -10,7 +10,40 @@ import { Meta, Source } from "@storybook/blocks";
 | Latest       | `Prerelease`   |
 
 
- The `useScrollFadeStyles` hook manages the visibility of a right-side fade effect
- based on horizontal scrolling. It tracks scroll events and shows the fade effect 
- when scrolling to the left and more content is available to the right, hiding it 
- when scrolling right or when at the right edge of the scrollable container.
+ The `useScrollFadeStyles` hook provides a way to manage the visibility of a fade effect on the right edge of a horizontally scrollable element.
+ It monitors the scroll position and determines whether the fade effect should be shown or hidden based on the scroll state.
+
+## Usage
+
+The hook useScrollFadeStyles returns an object with both the scrollableRef and showRightFade boolean value.
+
+<Source
+  code={`
+const {
+  scrollableRef,
+  showRightFade,
+} = useScrollFadeStyles();
+`}
+  language="jsx"
+/>
+
+<Source
+  code={`
+// ...
+<Box>
+  <div>
+    <List
+      type="ul"
+      m="0"
+      ref={scrollableRef}
+      inline
+      noStyling
+    >
+      {primaryActions}
+    </List>
+    {showRightFade && <Box sx={styles.fadeEffect} />}
+  </div>
+</Box>
+`}
+  language="jsx"
+/>
