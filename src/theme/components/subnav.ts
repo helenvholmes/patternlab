@@ -168,6 +168,7 @@ const SubNav = subNavDefineMultiStyleConfig({
         },
         fadeEffect: {
           position: "absolute",
+          top: 0,
           right: 0,
           height: "100%",
           width: "50px",
@@ -179,6 +180,12 @@ const SubNav = subNavDefineMultiStyleConfig({
         ul: {
           margin: "0 !important",
         },
+        primaryList: {
+          position: 'relative',
+          display: 'flex',
+          width: '100%',
+          overflowX: 'auto'
+        }
       };
     }
   ),

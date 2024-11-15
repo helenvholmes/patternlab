@@ -221,6 +221,7 @@ export const SubNav: ChakraComponent<
               gap="1rem"
               justify="space-between"
             >
+            <div style={styles.primaryList}>
               <List
                 type="ul"
                 m="0"
@@ -234,12 +235,11 @@ export const SubNav: ChakraComponent<
                 noStyling
               >
                 {primaryActions}
-                {showRightFade && (
-                  <li>
-                    <Box sx={styles.fadeEffect} />
-                  </li>
-                )}
               </List>
+              {showRightFade && (
+                <Box sx={styles.fadeEffect} />
+              )}
+            </div>
               {secondaryActions ? (
                 <List
                   noStyling
