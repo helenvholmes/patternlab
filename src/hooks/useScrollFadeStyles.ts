@@ -48,7 +48,7 @@ export default function useScrollFadeStyles() {
       const atRightEdge = scrollLeft + clientWidth >= scrollWidth - 1; // Buffer to prevent flickering
 
       // Set the right fade effect if content is scrollable and not at the right edge
-      if (scrollWidth > clientWidth && !atRightEdge) {
+      if (scrollWidth > clientWidth && !atRightEdge && scrollLeft === 0) {
         setShowRightFade(true);
       } else {
         setShowRightFade(false);
