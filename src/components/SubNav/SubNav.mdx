@@ -137,11 +137,12 @@ current state of the page or the current page.
 <Banner
   content={
     <>
-      <strong>RECOMMENDATION:</strong> Only one child action item should be
-      highlighted at any given time.
+      <strong>IMPORTANT:</strong> Only one action item should be marked as
+      "selected" at any given time. Marking more than one action item as
+      "selected" will cause accessibility problems.
     </>
   }
-  type="recommendation"
+  type="warning"
 />
 
 <Source
