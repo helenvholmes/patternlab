@@ -8,6 +8,10 @@ Currently, this repo is in Prerelease. When it is released, this project will ad
 
 ## Prerelease
 
+### Adds
+
+- Adds the NYPL Header as a DS component as a temporary solution for a specific application. It's only meant to be used internally and teams are still encouraged to use the `nypl-header-app`.
+
 ## 3.4.2 (November 7, 2024)
 
 ### Adds
