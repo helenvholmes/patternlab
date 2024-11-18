@@ -44,7 +44,7 @@ const TemplateContent = defineStyleConfig({
     rowGap: "grid.l",
   }),
   // With left or right sidebars, we need to set two grid columns and
-  // the column for the sidebar is max 271px width (255px for the sidebar,
+  // the column for the sidebar is max 271px width (255px for the sidebar
   // + 16px for padding).
   variants: {
     left: {
