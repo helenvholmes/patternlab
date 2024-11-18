@@ -92,11 +92,11 @@ const TemplateContentSidebar = defineStyleConfig({
     left: {
       gridColumn: "1",
       paddingLeft: "s",
-      paddingRight: { base: "s", md: undefined },
+      paddingRight: { base: "s", md: 0 },
     },
     right: {
       gridColumn: { base: "1", md: "2" },
-      paddingLeft: { base: "s", md: undefined },
+      paddingLeft: { base: "s", md: 0 },
       paddingRight: "s",
     },
   },

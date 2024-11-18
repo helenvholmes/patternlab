@@ -15,7 +15,7 @@ export const changelogData: ChangelogData[] = [
     type: "Bug Fix",
     affects: ["Styles"],
     notes: [
-      "Fixes an issue where focus indicator was being cut off in places.",
+      "Adjusts padding to fix an issue where focus indicators were being cut off in the primary content section.",
     ],
   },
   {
