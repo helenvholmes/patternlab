@@ -43,6 +43,17 @@ const commonStyles = () => ({
   transition: "background-color 0.2s, color 0.2s !important",
 });
 
+const ulStyles = () => ({
+  gap: "xs",
+  p: {
+    base: "s",
+    md: "xs",
+  },
+  li: {
+    marginEnd: "unset",
+  },
+});
+
 const SubNav = subNavDefineMultiStyleConfig({
   baseStyle: subNavDefinePartsStyle(
     ({ backgroundColor, highlightColor }: SubNavStyleProps) => {
@@ -123,17 +134,8 @@ const SubNav = subNavDefineMultiStyleConfig({
         },
         container: {
           maxWidth: "1280px",
-          // px: "s",
           px: { base: "0", md: "xs" },
           width: "100%",
-        },
-        listCleanup: {
-          // p: "xs",
-          p: { base: "s", md: "xs" },
-          gap: "xs",
-          li: {
-            marginEnd: "unset",
-          },
         },
         scrollableList: {
           display: "flex",
@@ -143,6 +145,7 @@ const SubNav = subNavDefineMultiStyleConfig({
           scrollbarWidth: "none",
         },
         primaryActions: {
+          ...ulStyles,
           width: "100%",
           button: {
             color: defaultLabelColor,
@@ -161,6 +164,7 @@ const SubNav = subNavDefineMultiStyleConfig({
           },
         },
         secondaryActions: {
+          ...ulStyles,
           width: "fit-content",
           whiteSpace: "nowrap",
           button: secondaryActionsStyles,

@@ -112,14 +112,9 @@ interface SubNavButtonProps extends SubNavItemProps {
   onClick: (event: React.MouseEvent | React.KeyboardEvent) => void;
 }
 
-export const SubNavButton: React.FC<React.PropsWithChildren<SubNavButtonProps>> = ({
-  id,
-  children,
-  isOutlined,
-  isSelected,
-  screenreaderOnlyText = "",
-}) => {
-
+export const SubNavButton: React.FC<
+  React.PropsWithChildren<SubNavButtonProps>
+> = ({ id, children, isOutlined, isSelected, screenreaderOnlyText = "" }) => {
   const childrenStyles = useMultiStyleConfig("SubNavChildren", {
     isOutlined: isOutlined,
   });
@@ -230,19 +225,19 @@ export const SubNav: ChakraComponent<
       });
 
       return (
-        <Box as="nav" aria-label="Sub-navigation menu" className={className} __css={styles.base}>
+        <Box
+          as="nav"
+          aria-label="Sub-navigation menu"
+          className={className}
+          __css={styles.base}
+        >
           <Box __css={styles.container}>
-            <Flex
-              alignItems="center"
-              gap="s"
-              justify="space-between"
-            >
+            <Flex alignItems="center" gap="s" justify="space-between">
               <div style={styles.primaryList}>
                 <List
                   type="ul"
                   m="0"
                   sx={{
-                    ...styles.listCleanup,
                     ...styles.scrollableList,
                     ...styles.primaryActions,
                   }}
@@ -259,7 +254,7 @@ export const SubNav: ChakraComponent<
                   noStyling
                   inline
                   type="ul"
-                  sx={{ ...styles.secondaryActions, ...styles.listCleanup }}
+                  sx={styles.secondaryActions}
                   m="0"
                   width="fit-content"
                 >
