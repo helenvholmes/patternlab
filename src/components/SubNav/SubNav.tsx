@@ -96,13 +96,30 @@ export interface SubNavProps {
   secondaryActions?: React.ReactNode;
 }
 
-export const SubNavButton: React.FC<React.PropsWithChildren<any>> = ({
+interface SubNavItemProps {
+  id: string;
+  children: React.ReactNode;
+  isOutlined?: boolean;
+  isSelected?: boolean;
+  screenreaderOnlyText?: string;
+}
+
+interface SubNavLinkProps extends SubNavItemProps {
+  href: string;
+}
+
+interface SubNavButtonProps extends SubNavItemProps {
+  onClick: (event: React.MouseEvent | React.KeyboardEvent) => void;
+}
+
+export const SubNavButton: React.FC<React.PropsWithChildren<SubNavButtonProps>> = ({
   id,
   children,
   isOutlined,
   isSelected,
   screenreaderOnlyText = "",
 }) => {
+
   const childrenStyles = useMultiStyleConfig("SubNavChildren", {
     isOutlined: isOutlined,
   });
@@ -123,7 +140,7 @@ export const SubNavButton: React.FC<React.PropsWithChildren<any>> = ({
   );
 };
 
-export const SubNavLink: React.FC<React.PropsWithChildren<any>> = ({
+export const SubNavLink: React.FC<React.PropsWithChildren<SubNavLinkProps>> = ({
   id,
   children,
   isOutlined,
@@ -213,12 +230,11 @@ export const SubNav: ChakraComponent<
       });
 
       return (
-        <Box as="nav" aria-label="Sub-navigation menu" __css={styles.base}>
+        <Box as="nav" aria-label="Sub-navigation menu" className={className} __css={styles.base}>
           <Box __css={styles.container}>
             <Flex
               alignItems="center"
-              className={className}
-              gap="1rem"
+              gap="s"
               justify="space-between"
             >
               <div style={styles.primaryList}>

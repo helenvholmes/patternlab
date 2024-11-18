@@ -160,7 +160,7 @@ export const OutlinedItem: Story = {
             }
             screenreaderOnlyText="Education for babies and toddlers"
           >
-            Babies &amp; Toddlers
+            Babies &amp; toddlers
           </SubNavButton>
           <SubNavLink
             href="#link1"
@@ -294,9 +294,17 @@ export const UsingIconsMobile: Story = {
 };
 
 export const CustomColors: Story = {
-  render: () => (
+  args: {
+    className: undefined,
+    actionBackgroundColor: "brand.primary-05",
+    highlightColor: "brand.primary",
+    id: "subnav-colors",
+  },
+
+  render: (args: any) => (
     <>
       <SubNav
+        {...args}
         primaryActions={
           <>
             <SubNavButton
@@ -306,7 +314,7 @@ export const CustomColors: Story = {
               }
               screenreaderOnlyText="Education for babies and toddlers"
             >
-              Babies &amp; Toddlers
+              Babies &amp; toddlers
             </SubNavButton>
             <SubNavLink
               href="#link1"
@@ -445,7 +453,14 @@ export const HorizontalScrolling: Story = {
 };
 
 export const Placement: Story = {
-  render: () => (
+  args: {
+    className: undefined,
+    actionBackgroundColor: "section.research.primary-05",
+    highlightColor: "section.research.primary",
+    id: "subnav-placement",
+  },
+
+  render: (args: any) => (
     <>
       <Hero
         backgroundColor="section.research.primary"
@@ -460,6 +475,7 @@ export const Placement: Story = {
         heroType="tertiary"
       />
       <SubNav
+        {...args}
         primaryActions={
           <>
             <SubNavButton

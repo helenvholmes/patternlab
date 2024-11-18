@@ -149,10 +149,10 @@ const SubNav = subNavDefineMultiStyleConfig({
             ...primaryActionsStyles,
           },
           a: {
-            color: `${highlightOrDefaultColor} !important`,
+            color: `${highlightOrDefaultColor}`,
             ...primaryActionsStyles,
             svg: {
-              fill: `${highlightOrDefaultColor} !important`,
+              fill: `${highlightOrDefaultColor}`,
               margin: { base: "0", md: null },
               _dark: {
                 fill: "ui.white !important",
