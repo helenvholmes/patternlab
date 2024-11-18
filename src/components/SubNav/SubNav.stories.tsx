@@ -294,17 +294,12 @@ export const UsingIconsMobile: Story = {
 };
 
 export const CustomColors: Story = {
-  args: {
-    className: undefined,
-    actionBackgroundColor: "brand.primary-05",
-    highlightColor: "brand.primary",
-    id: "subnav-colors",
-  },
-
-  render: (args: any) => (
+  render: () => (
     <>
       <SubNav
-        {...args}
+        actionBackgroundColor="brand.primary-05"
+        highlightColor="brand.primary"
+        id="subnav-colors"
         primaryActions={
           <>
             <SubNavButton
