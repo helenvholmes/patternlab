@@ -18,13 +18,13 @@ describe("SubNav Accessibility", () => {
       <SubNav
         primaryActions={
           <>
-            <SubNavButton id="primary-sub-nav-button-1" buttonType="text">
+            <SubNavButton id="primary-sub-nav-button-1">
               Label Text
             </SubNavButton>
-            <SubNavButton id="primary-sub-nav-button-2" buttonType="text">
+            <SubNavButton id="primary-sub-nav-button-2">
               Label Text
             </SubNavButton>
-            <SubNavButton id="primary-sub-nav-button-3" buttonType="text">
+            <SubNavButton id="primary-sub-nav-button-3">
               Label Text
             </SubNavButton>
           </>
@@ -39,17 +39,17 @@ describe("SubNav Accessibility", () => {
       <SubNav
         primaryActions={
           <>
-            <SubNavButton id="primary-sub-nav-button-1" buttonType="text">
+            <SubNavButton id="primary-sub-nav-button-1">
               Label Text
             </SubNavButton>
-            <SubNavButton id="primary-sub-nav-button-2" buttonType="text">
+            <SubNavButton id="primary-sub-nav-button-2">
               Label Text
             </SubNavButton>
           </>
         }
         secondaryActions={
           <>
-            <SubNavButton id="secondary-sub-nav-button-1" buttonType="text">
+            <SubNavButton id="secondary-sub-nav-button-1">
               Label Text
             </SubNavButton>
             <SubNavLink
@@ -74,7 +74,7 @@ describe("SubNav Accessibility", () => {
         id="sub-nav-id"
         primaryActions={
           <>
-            <SubNavButton id="primary-sub-nav-button-1" buttonType="text">
+            <SubNavButton id="primary-sub-nav-button-1">
               Label Text
             </SubNavButton>
           </>
@@ -112,7 +112,7 @@ describe("SubNav Component", () => {
         }
         secondaryActions={
           <>
-            <SubNavLink href="#secondary-link">Secondary Link</SubNavLink>
+            <SubNavLink id="primary-link-1" href="#secondary-link">Secondary Link</SubNavLink>
           </>
         }
       />
@@ -144,7 +144,7 @@ describe("SubNavButton", () => {
 
 describe("SubNavLink", () => {
   it("renders with default props", () => {
-    render(<SubNavLink id="sub-nav-link">Default Link</SubNavLink>);
+    render(<SubNavLink id="sub-nav-link" href="#link">Default Link</SubNavLink>);
     const button = screen.getByText("Default Link");
     expect(button).toBeInTheDocument();
     expect(button).not.toHaveClass("selectedItem"); // Should not have the "selectedItem" class
@@ -152,7 +152,7 @@ describe("SubNavLink", () => {
 
   it("applies selectedItem class when isSelected is true", () => {
     render(
-      <SubNavLink id="sub-nav-link" isSelected>
+      <SubNavLink id="sub-nav-link" href="#link" isSelected>
         Selected Link
       </SubNavLink>
     );
@@ -161,7 +161,7 @@ describe("SubNavLink", () => {
   });
 
   it("applies outlined styles when isOutlined is true", () => {
-    render(<SubNavButton isOutlined> Outline Subnav Button </SubNavButton>);
+    render(<SubNavButton id="sub-nav-button" isOutlined> Outline Subnav Button </SubNavButton>);
 
     const button = screen.getByText("Outline Subnav Button");
     // Check if the outline style is applied

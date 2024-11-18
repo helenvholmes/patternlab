@@ -109,7 +109,7 @@ interface SubNavLinkProps extends SubNavItemProps {
 }
 
 interface SubNavButtonProps extends SubNavItemProps {
-  onClick: (event: React.MouseEvent | React.KeyboardEvent) => void;
+  onClick?: (event: React.MouseEvent | React.KeyboardEvent) => void;
 }
 
 export const SubNavButton: React.FC<
@@ -233,7 +233,7 @@ export const SubNav: ChakraComponent<
         >
           <Box __css={styles.container}>
             <Flex alignItems="center" gap="s" justify="space-between">
-              <div style={styles.primaryList}>
+              <Box sx={styles.primaryList}>
                 <List
                   type="ul"
                   m="0"
@@ -248,7 +248,7 @@ export const SubNav: ChakraComponent<
                   {primaryActions}
                 </List>
                 {showRightFade && <Box sx={styles.fadeEffect} />}
-              </div>
+              </Box>
               {secondaryActions ? (
                 <List
                   noStyling
