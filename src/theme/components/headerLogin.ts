@@ -22,11 +22,11 @@ const HeaderLogin = {
     padding: { base: "0", mh: "10px 20px" },
     zIndex: "9999",
     ul: {
-      display: { base: "grid", mh: "block" },
+      display: { base: "grid", mh: "block !important" },
       marginBottom: "0",
       marginTop: {
         base: !patronName ? "60px" : "0",
-        mh: "0px",
+        mh: "0px !important",
       },
       width: "100%",
       li: {
