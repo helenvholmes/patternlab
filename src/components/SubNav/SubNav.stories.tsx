@@ -49,7 +49,6 @@ export const WithControls: Story = {
       primaryActions={
         <>
           <SubNavButton
-            buttonType="text"
             id="subnav-with-controls-primary-action-1"
             screenreaderOnlyText="for the NYPL Research Catalog"
             onClick={() => subNavButtonOnClick("from primary-subnav-button-1")}
@@ -57,7 +56,6 @@ export const WithControls: Story = {
             Action
           </SubNavButton>
           <SubNavButton
-            buttonType="text"
             id="subnav-with-controls-primary-action-2"
             screenreaderOnlyText="for the NYPL Research Catalog"
             onClick={() => subNavButtonOnClick("from primary-subnav-button-2")}
@@ -69,14 +67,13 @@ export const WithControls: Story = {
             screenreaderOnlyText="for the NYPL Research Catalog"
             href="#link3"
           >
-            Action
+            Link
           </SubNavLink>
         </>
       }
       secondaryActions={
         <>
           <SubNavButton
-            buttonType="text"
             id="subnav-with-controls-secondary-action-1"
             screenreaderOnlyText="for the NYPL Research Catalog"
             onClick={() => subNavButtonOnClick("from subnav-button-3")}
@@ -90,7 +87,7 @@ export const WithControls: Story = {
             screenreaderOnlyText="for the NYPL Research Catalog"
           >
             <Icon name="actionIdentityFilled" size="medium" />
-            Action
+            Link
           </SubNavLink>
         </>
       }
@@ -99,27 +96,18 @@ export const WithControls: Story = {
 };
 
 export const SelectedItem: Story = {
-  args: {
-    className: undefined,
-    actionBackgroundColor: undefined,
-    highlightColor: undefined,
-    id: "subnav-selected",
-  },
-
-  render: (args: any) => (
+  render: () => (
     <SubNav
-      {...args}
       primaryActions={
         <>
           <SubNavButton
-            buttonType="text"
             id="subnav-selected-babies-toddlers"
             onClick={() =>
               subNavButtonOnClick("from subnav-selected-babies-toddlers")
             }
             screenreaderOnlyText="Education for babies and toddlers"
           >
-            Babies &amp; Toddlers
+            Babies &amp; toddlers
           </SubNavButton>
           <SubNavLink
             href="#link1"
@@ -161,20 +149,11 @@ export const SelectedItem: Story = {
 };
 
 export const OutlinedItem: Story = {
-  args: {
-    className: undefined,
-    actionBackgroundColor: undefined,
-    highlightColor: undefined,
-    id: "subnav-outlined",
-  },
-
-  render: (args: any) => (
+  render: () => (
     <SubNav
-      {...args}
       primaryActions={
         <>
           <SubNavButton
-            buttonType="text"
             id="subnav-outlined-babies-toddlers"
             onClick={() =>
               subNavButtonOnClick("from subnav-outlined-babies-toddlers")
@@ -223,20 +202,11 @@ export const OutlinedItem: Story = {
 };
 
 export const UsingIcons: Story = {
-  args: {
-    className: undefined,
-    actionBackgroundColor: undefined,
-    highlightColor: undefined,
-    id: "subnav-icons",
-  },
-
-  render: (args: any) => (
+  render: () => (
     <SubNav
-      {...args}
       primaryActions={
         <>
           <SubNavButton
-            buttonType="text"
             id="subnav-icons-search"
             onClick={() => subNavButtonOnClick("from subnav-icons-search")}
             screenreaderOnlyText="the NYPL Research Catalog"
@@ -280,20 +250,11 @@ export const UsingIcons: Story = {
 };
 
 export const UsingIconsMobile: Story = {
-  args: {
-    className: undefined,
-    actionBackgroundColor: undefined,
-    highlightColor: undefined,
-    id: "subnav-icons-only",
-  },
-
-  render: (args: any) => (
+  render: () => (
     <SubNav
-      {...args}
       primaryActions={
         <>
           <SubNavButton
-            buttonType="text"
             id="subnav-icons-only-search"
             onClick={() => subNavButtonOnClick("from subnav-icons-only-search")}
             screenreaderOnlyText="Search for books"
@@ -333,21 +294,12 @@ export const UsingIconsMobile: Story = {
 };
 
 export const CustomColors: Story = {
-  args: {
-    className: undefined,
-    actionBackgroundColor: "brand.primary-05",
-    highlightColor: "brand.primary",
-    id: "subnav-colors",
-  },
-
-  render: (args: any) => (
+  render: () => (
     <>
       <SubNav
-        {...args}
         primaryActions={
           <>
             <SubNavButton
-              buttonType="text"
               id="subnav-colors-babies-toddlers"
               onClick={() =>
                 subNavButtonOnClick("from subnav-colors-babies-toddlers")
@@ -399,18 +351,12 @@ export const CustomColors: Story = {
 };
 
 export const HorizontalScrolling: Story = {
-  args: {
-    id: "subnav-scrolling",
-  },
-
-  render: (args: any) => (
+  render: () => (
     <>
       <SubNav
-        {...args}
         primaryActions={
           <>
             <SubNavButton
-              buttonType="text"
               id="subnav-scrolling-infants"
               onClick={() =>
                 subNavButtonOnClick("from subnav-scrolling-infants")
@@ -474,7 +420,6 @@ export const HorizontalScrolling: Story = {
         secondaryActions={
           <>
             <SubNavButton
-              buttonType="text"
               id="subnav-scrolling-logout"
               onClick={() =>
                 subNavButtonOnClick("from subnav-colors-babies-toddlers")
@@ -500,14 +445,7 @@ export const HorizontalScrolling: Story = {
 };
 
 export const Placement: Story = {
-  args: {
-    className: undefined,
-    actionBackgroundColor: "section.research.primary-05",
-    highlightColor: "section.research.primary",
-    id: "subnav-placement",
-  },
-
-  render: (args: any) => (
+  render: () => (
     <>
       <Hero
         backgroundColor="section.research.primary"
@@ -522,11 +460,9 @@ export const Placement: Story = {
         heroType="tertiary"
       />
       <SubNav
-        {...args}
         primaryActions={
           <>
             <SubNavButton
-              buttonType="text"
               id="subnav-placement-search"
               onClick={() =>
                 subNavButtonOnClick("from subnav-placement-search")
