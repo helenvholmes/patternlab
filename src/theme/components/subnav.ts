@@ -43,16 +43,14 @@ const commonStyles = () => ({
   transition: "background-color 0.2s, color 0.2s !important",
 });
 
-const ulStyles = () => ({
+const ulStyles = {
+  p: { base: "s", md: "xs" },
   gap: "xs",
-  p: {
-    base: "s",
-    md: "xs",
-  },
   li: {
     marginEnd: "unset",
   },
-});
+  margin: "0 !important",
+};
 
 const SubNav = subNavDefineMultiStyleConfig({
   baseStyle: subNavDefinePartsStyle(
