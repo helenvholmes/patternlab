@@ -112,7 +112,9 @@ describe("SubNav Component", () => {
         }
         secondaryActions={
           <>
-            <SubNavLink id="primary-link-1" href="#secondary-link">Secondary Link</SubNavLink>
+            <SubNavLink id="primary-link-1" href="#secondary-link">
+              Secondary Link
+            </SubNavLink>
           </>
         }
       />
@@ -144,7 +146,11 @@ describe("SubNavButton", () => {
 
 describe("SubNavLink", () => {
   it("renders with default props", () => {
-    render(<SubNavLink id="sub-nav-link" href="#link">Default Link</SubNavLink>);
+    render(
+      <SubNavLink id="sub-nav-link" href="#link">
+        Default Link
+      </SubNavLink>
+    );
     const button = screen.getByText("Default Link");
     expect(button).toBeInTheDocument();
     expect(button).not.toHaveClass("selectedItem"); // Should not have the "selectedItem" class
@@ -161,7 +167,12 @@ describe("SubNavLink", () => {
   });
 
   it("applies outlined styles when isOutlined is true", () => {
-    render(<SubNavButton id="sub-nav-button" isOutlined> Outline Subnav Button </SubNavButton>);
+    render(
+      <SubNavButton id="sub-nav-button" isOutlined>
+        {" "}
+        Outline Subnav Button{" "}
+      </SubNavButton>
+    );
 
     const button = screen.getByText("Outline Subnav Button");
     // Check if the outline style is applied
