@@ -225,13 +225,14 @@ export const SubNav: ChakraComponent<
       });
 
       return (
-        <Box as="nav" aria-label="Sub-navigation menu" className={className} __css={styles.base}>
+        <Box
+          as="nav"
+          aria-label="Sub-navigation menu"
+          className={className}
+          __css={styles.base}
+        >
           <Box __css={styles.container}>
-            <Flex
-              alignItems="center"
-              gap="s"
-              justify="space-between"
-            >
+            <Flex alignItems="center" gap="s" justify="space-between">
               <Box sx={styles.primaryList}>
                 <List
                   type="ul"
