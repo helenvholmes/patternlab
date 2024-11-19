@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HeaderMobileNavButton renders the UI snapshot correctly 1`] = `
+<div
+  className="css-0"
+>
+  <div
+    data-focus-guard={true}
+    style={
+      {
+        "height": "0px",
+        "left": "1px",
+        "overflow": "hidden",
+        "padding": 0,
+        "position": "fixed",
+        "top": "1px",
+        "width": "1px",
+      }
+    }
+    tabIndex={-1}
+  />
+  <div
+    data-focus-lock-disabled="disabled"
+    onBlur={[Function]}
+    onFocus={[Function]}
+  >
+    <button
+      aria-expanded={null}
+      aria-haspopup="true"
+      aria-label="Open Navigation"
+      className="chakra-button css-l47gnk"
+      id="mobileNav-btn"
+      onClick={[Function]}
+      type="button"
+    >
+      <svg
+        aria-hidden={true}
+        className="chakra-icon css-1grhd2q"
+        focusable={false}
+        role="img"
+        title="utilityHamburger icon"
+        viewBox="0 0 24 24"
+      >
+        <g
+          stroke="currentColor"
+          strokeWidth="1.5"
+        >
+          <path
+            d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
+            fill="none"
+            strokeLinecap="round"
+          />
+          <path
+            d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
+            fill="currentColor"
+            strokeLinecap="round"
+          />
+          <circle
+            cx="12"
+            cy="12"
+            fill="none"
+            r="11.25"
+            strokeMiterlimit="10"
+          />
+        </g>
+      </svg>
+    </button>
+  </div>
+  <div
+    data-focus-guard={true}
+    style={
+      {
+        "height": "0px",
+        "left": "1px",
+        "overflow": "hidden",
+        "padding": 0,
+        "position": "fixed",
+        "top": "1px",
+        "width": "1px",
+      }
+    }
+    tabIndex={-1}
+  />
+</div>
+`;

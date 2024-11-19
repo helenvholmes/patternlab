@@ -12,6 +12,12 @@ Currently, this repo is in Prerelease. When it is released, this project will ad
 
 - Fixes issue where focus indicator was being cut off in places in the `Template` component.
 
+## 3.4.3 (November 18, 2024)
+
+### Adds
+
+- Adds the NYPL Header as a DS component as a temporary solution for a specific application. It's only meant to be used internally and teams are still encouraged to use the `nypl-header-app`.
+
 ## 3.4.2 (November 7, 2024)
 
 ### Adds
