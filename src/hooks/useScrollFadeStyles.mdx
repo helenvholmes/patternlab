@@ -39,7 +39,18 @@ const {
       inline
       noStyling
     >
-      {primaryActions}
+      <>
+        <li>
+          <SubNavButton id="subnav-action">
+            Action
+          </SubNavButton>
+        </li>
+        <li>
+          <SubNavLink id="subnav-link">
+            Link
+          </SubNavLink>
+        </li>
+      </>
     </List>
     {showRightFade && <Box sx={styles.fadeEffect} />}
   </div>

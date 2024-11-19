@@ -448,14 +448,7 @@ export const HorizontalScrolling: Story = {
 };
 
 export const Placement: Story = {
-  args: {
-    className: undefined,
-    actionBackgroundColor: "section.research.primary-05",
-    highlightColor: "section.research.primary",
-    id: "subnav-placement",
-  },
-
-  render: (args: any) => (
+  render: () => (
     <>
       <Hero
         backgroundColor="section.research.primary"
@@ -470,7 +463,9 @@ export const Placement: Story = {
         heroType="tertiary"
       />
       <SubNav
-        {...args}
+        actionBackgroundColor="section.research.primary-05"
+        highlightColor="section.research.primary"
+        id="subnav-placement"
         primaryActions={
           <>
             <SubNavButton
