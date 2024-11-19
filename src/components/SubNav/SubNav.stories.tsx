@@ -484,7 +484,7 @@ export const Placement: Story = {
       />
       <SubNav
         actionBackgroundColor="section.research.primary-05"
-        highlightColor="section.research.primary"
+        highlightColor="section.research.secondary"
         id="subnav-placement"
         primaryActions={
           <>
