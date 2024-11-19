@@ -105,6 +105,7 @@ const SubNav = subNavDefineMultiStyleConfig({
         },
         _hover: {
           background: finalBackgroundColor,
+          color: highlightOrLinkColor,
           svg: {
             fill: highlightOrLinkColor,
             _dark: {

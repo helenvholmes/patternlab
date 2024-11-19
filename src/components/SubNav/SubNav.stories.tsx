@@ -350,6 +350,13 @@ export const CustomColors: Story = {
         }
         secondaryActions={
           <>
+            <SubNavButton
+              id="subnav-colors-logout"
+              onClick={() => subNavButtonOnClick("from subnav-colors-logout")}
+              screenreaderOnlyText="of NYPL.org"
+            >
+              Log out
+            </SubNavButton>
             <SubNavLink
               href="#link1"
               id="subnav-colors-account"
