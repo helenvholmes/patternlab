@@ -13,15 +13,15 @@ const linkFocusHoverStyles = {
 const HeaderLowerNav = {
   baseStyle: {
     ul: {
-      alignItems: "center",
-      marginBottom: "0",
-      marginLeft: "auto",
-      whiteSpace: "nowrap",
-    },
-    li: {
-      marginEnd: { mh: "s", xl: "m" },
-      _last: {
-        marginRight: "0",
+      alignItems: "center !important",
+      marginBottom: "0 !important",
+      marginLeft: "auto !important",
+      whiteSpace: "nowrap !important",
+      li: {
+        marginEnd: { mh: "s !important", xl: "m !important" },
+        _last: {
+          marginRight: "0 !important",
+        },
       },
     },
     "li > a": {
