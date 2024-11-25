@@ -5,17 +5,17 @@ const HeaderUpperNav = {
   baseStyle: {
     height: "37px",
     ul: {
-      alignItems: "center",
-      display: "flex",
-      margin: "0",
-      whiteSpace: "nowrap",
-    },
-    li: {
-      fontSize: "var(--nypl-fontSizes-desktop-body-body2) !important",
-      fontWeight: "medium",
-      marginRight: "s",
-      _last: {
-        marginRight: "0",
+      alignItems: "center !important",
+      display: "flex !important",
+      margin: "0 !important",
+      whiteSpace: "nowrap !important",
+      li: {
+        fontSize: "var(--nypl-fontSizes-desktop-body-body2) !important",
+        fontWeight: "medium !important",
+        marginRight: "s !important",
+        _last: {
+          marginRight: "0 !important",
+        },
       },
     },
     a: {

@@ -8,6 +8,20 @@ Currently, this repo is in Prerelease. When it is released, this project will ad
 
 ## Prerelease
 
+### Adds
+
+- Adds the `"SubNav"`component.
+
+### Updates
+
+- Updates the `MultiSelect` component to add `itemCount` as a data property to the `items` prop to render the item count for an option.
+
+## 3.4.4 (November 20, 2024)
+
+### Adds
+
+- Fixes a styling issue in the `Header`'s list to make it stricter.
+
 ## 3.4.3 (November 18, 2024)
 
 ### Adds
@@ -20,7 +34,6 @@ Currently, this repo is in Prerelease. When it is released, this project will ad
 
 - Adds the `"contentFilterRelease"` option to the `Icon` component.
 - Adds the `"socialX"` option to the `Icon` component.
-- Adds the `"Subnav"`component.
 - Adds the `heading7` and `heading8` to the font size design tokens.
 - Adds the `heading7` and `heading8` options for the `size` prop in the `Heading` component.
 
