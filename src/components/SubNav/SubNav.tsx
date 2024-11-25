@@ -114,7 +114,14 @@ interface SubNavButtonProps extends SubNavItemProps {
 
 export const SubNavButton: React.FC<
   React.PropsWithChildren<SubNavButtonProps>
-> = ({ id, children, isOutlined, isSelected, screenreaderOnlyText = "" }) => {
+> = ({
+  id,
+  children,
+  isOutlined,
+  isSelected,
+  onClick,
+  screenreaderOnlyText = "",
+}) => {
   const childrenStyles = useMultiStyleConfig("SubNavChildren", {
     isOutlined: isOutlined,
   });
@@ -122,12 +129,13 @@ export const SubNavButton: React.FC<
   return (
     <li>
       <Button
-        id={id}
+        aria-current={isSelected ? "page" : null}
         buttonType="text"
         className={isSelected ? "selectedItem" : ""}
-        sx={childrenStyles.outLine}
-        aria-current={isSelected ? "page" : null}
+        id={id}
+        onClick={onClick}
         screenreaderOnlyText={screenreaderOnlyText}
+        sx={childrenStyles.outLine}
       >
         {children}
       </Button>
@@ -150,14 +158,14 @@ export const SubNavLink: React.FC<React.PropsWithChildren<SubNavLinkProps>> = ({
   return (
     <li>
       <Link
-        key={id}
-        id={id}
-        type="action"
-        href={href}
-        isUnderlined={false}
-        screenreaderOnlyText={screenreaderOnlyText}
         aria-current={isSelected ? "page" : null}
         className={isSelected ? "selectedItem" : ""}
+        href={href}
+        id={id}
+        isUnderlined={false}
+        key={id}
+        screenreaderOnlyText={screenreaderOnlyText}
+        type="action"
         sx={childrenStyles.outLine}
       >
         {children}
