@@ -29,30 +29,41 @@ const {
 
 <Source
   code={`
-// ...
-<Box>
-  <div>
-    <List
-      type="ul"
-      m="0"
-      ref={scrollableRef}
-      inline
-      noStyling
-    >
-      <li>
-        <SubNavButton id="subnav-action">
-          Action
-        </SubNavButton>
-      </li>
-      <li>
-        <SubNavLink id="subnav-link">
-          Link
-        </SubNavLink>
-      </li>
-    </List>
-    {showRightFade && <Box sx={styles.fadeEffect} />}
-  </div>
-</Box>
-`}
+  // ...
+  const fadeEffect = () => ({
+    position: "absolute",
+    top: 0,
+    right: 0,
+    height: "100%",
+    width: "50px",
+    background: "linear-gradient(to left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%)",
+    pointerEvents: "none",
+    zIndex: 1,
+  });
+
+  <Box>
+    <div>
+      <List
+        type="ul"
+        m="0"
+        ref={scrollableRef}
+        inline
+        noStyling
+      >
+        <li>
+          <SubNavButton id="subnav-action">
+            Action
+          </SubNavButton>
+        </li>
+        <li>
+          <SubNavLink id="subnav-link">
+            Link
+          </SubNavLink>
+        </li>
+      </List>
+      {showRightFade && <Box sx={fadeEffect()} />}
+    </div>
+  </Box>
+  `}
   language="jsx"
 />
