@@ -2,6 +2,7 @@ import {
   Box,
   chakra,
   ChakraComponent,
+  Flex,
   useMultiStyleConfig,
 } from "@chakra-ui/react";
 import React, { forwardRef, useEffect, useRef, useState } from "react";
@@ -18,6 +19,7 @@ export interface MultiSelectItem {
   name: string;
   isDisabled?: boolean;
   children?: MultiSelectItem[];
+  itemCount?: number;
 }
 export const multiSelectWidthsArray = ["fitContent", "full"] as const;
 export type MultiSelectWidths = typeof multiSelectWidthsArray[number];
@@ -303,6 +305,19 @@ export const MultiSelect: ChakraComponent<
         );
       };
 
+      const getItemLabelText = (
+        item: MultiSelectItem
+      ): string | JSX.Element => {
+        return item.itemCount ? (
+          <Flex gap="s" justify="space-between">
+            <Box>{item.name}</Box>
+            <Box>{item.itemCount}</Box>
+          </Flex>
+        ) : (
+          item.name
+        );
+      };
+
       /** Generate Checkbox components based on the provided MultiSelectItem. */
       const getMultiSelectCheckboxItem = (
         item: MultiSelectItem
@@ -312,7 +327,7 @@ export const MultiSelect: ChakraComponent<
             <Checkbox
               id={item.id}
               key={item.id}
-              labelText={item.name}
+              labelText={getItemLabelText(item)}
               name={item.name}
               {...(onMixedStateChange !== undefined
                 ? {
@@ -327,25 +342,27 @@ export const MultiSelect: ChakraComponent<
                     onChange: onChange,
                   })}
             />,
-            ...item.children.map((childItem) => (
-              <Checkbox
-                key={childItem.id}
-                marginInlineStart="0"
-                id={childItem.id}
-                labelText={childItem.name}
-                name={childItem.name}
-                isDisabled={childItem.isDisabled}
-                isChecked={isChecked(id, childItem.id)}
-                onChange={onChange}
-                __css={styles.menuChildren}
-              />
-            )),
+            ...item.children.map((childItem) => {
+              return (
+                <Checkbox
+                  key={childItem.id}
+                  marginInlineStart="0"
+                  id={childItem.id}
+                  labelText={getItemLabelText(childItem)}
+                  name={childItem.name}
+                  isDisabled={childItem.isDisabled}
+                  isChecked={isChecked(id, childItem.id)}
+                  onChange={onChange}
+                  __css={styles.menuChildren}
+                />
+              );
+            }),
           ];
         } else {
           return [
             <Checkbox
               id={item.id}
-              labelText={item.name}
+              labelText={getItemLabelText(item)}
               name={item.name}
               isDisabled={item.isDisabled}
               isChecked={isChecked(id, item.id)}

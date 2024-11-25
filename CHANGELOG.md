@@ -12,6 +12,20 @@ Currently, this repo is in Prerelease. When it is released, this project will ad
 
 - Fixes issue where focus indicator was being cut off in places in the `Template` component.
 
+### Adds
+
+- Adds the `"SubNav"`component.
+
+### Updates
+
+- Updates the `MultiSelect` component to add `itemCount` as a data property to the `items` prop to render the item count for an option.
+
+## 3.4.4 (November 20, 2024)
+
+### Adds
+
+- Fixes a styling issue in the `Header`'s list to make it stricter.
+
 ## 3.4.3 (November 18, 2024)
 
 ### Adds

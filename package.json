@@ -1,6 +1,6 @@
 {
   "name": "@nypl/design-system-react-components",
-  "version": "3.4.4-template-overflow-fix-rc",
+  "version": "3.5.0-rc2",
   "description": "NYPL Reservoir Design System React Components",
   "repository": {
     "type": "git",

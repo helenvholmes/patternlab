@@ -67,6 +67,7 @@ import StatusBadge from "./components/statusBadge";
 import StructuredContent from "./components/structuredContent";
 import StyledList from "./components/styledList";
 import SocialMediaLinks from "./components/socialmedialinks";
+import { SubNav, SubNavChildren } from "./components/subnav";
 import Tabs from "./components/tabs";
 import TagSetStyles from "./components/tagSet";
 import TemplateStyles from "./components/template";
@@ -168,6 +169,8 @@ const theme: any = {
     StructuredContent,
     StyledList,
     SocialMediaLinks,
+    SubNav,
+    SubNavChildren,
     Tabs,
     CustomTable,
     ...TagSetStyles,
