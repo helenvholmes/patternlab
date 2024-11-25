@@ -167,6 +167,12 @@ export type {
   ListItemsData,
   MenuProps,
 } from "./components/Menu/Menu";
+
+export type {
+  default as SubNav,
+  SubNavButton,
+  SubNavLink,
+} from "./components/SubNav/SubNav";
 export { ModalTrigger, useModal } from "./components/Modal/Modal";
 export type {
   BaseModalProps,
@@ -304,6 +310,7 @@ export { default as useMultiSelect } from "./hooks/useMultiSelect";
 export { default as useNYPLBreakpoints } from "./hooks/useNYPLBreakpoints";
 export { default as useNYPLTheme } from "./hooks/useNYPLTheme";
 export { default as useWindowSize } from "./hooks/useWindowSize";
+export { default as useScrollFadeStyles } from "./hooks/useScrollFadeStyles";
 export { default as VideoPlayer } from "./components/VideoPlayer/VideoPlayer";
 export type {
   VideoPlayerAspectRatios,

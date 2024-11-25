@@ -1,0 +1,326 @@
+import { ArgTypes, Canvas, Description, Meta, Source } from "@storybook/blocks";
+
+import Banner from "../Banner/Banner";
+import Heading from "../Heading/Heading";
+import Link from "../Link/Link";
+import List from "../List/List";
+import * as SubNavStories from "./SubNav.stories";
+import ComponentChangelogTable from "../../utils/ComponentChangelogTable";
+import { changelogData } from "./subNavChangelogData";
+
+<Meta of={SubNavStories} />
+
+# SubNav
+
+| Component Version | DS Version   |
+| ----------------- | ------------ |
+| Added             | `Prerelease` |
+| Latest            | `Prerelease` |
+
+## Table of Contents
+
+- {<Link href="#overview" target="_self">Overview</Link>}
+- {<Link href="#component-props" target="_self">Component Props</Link>}
+- {<Link href="#accessibility" target="_self">Accessibility</Link>}
+- {<Link href="#composing-the-subnav" target="_self">Composing the SubNav</Link>}
+- {<Link href="#selected-item" target="_self">Selected Item</Link>}
+- {<Link href="#outlined-item" target="_self">Outlined Item</Link>}
+- {<Link href="#using-icons" target="_self">Using Icons</Link>}
+- {<Link href="#custom-colors" target="_self">Custom Colors</Link>}
+- {<Link href="#horizontal-scrolling" target="_self">Horizontal Scrolling</Link>}
+- {<Link href="#placement" target="_self">Placement</Link>}
+- {<Link href="#changelog" target="_self">Changelog</Link>}
+
+## Overview
+
+<Description of={SubNavStories} />
+
+## Component Props
+
+<Canvas of={SubNavStories.WithControls} />
+
+<ArgTypes of={SubNavStories.WithControls} />
+
+## Accessibility
+
+Only one `SubNav` component should be rendered on a page. This is because only
+one HTML `<nav>` element with an `aria-label` attribute value of
+`"Sub-navigation menu"` should be rendered on a page. The DS `SubNav` component
+renders the `<nav>` HTML landmark, so only one component must be rendered on a
+page.
+
+Internally, buttons and links are organized in an unordered list (`<ul>`)
+element. If applicable, the current page link is denoted by an `aria-current`
+attribute value of `"page"`. Separate `<ul>` elements are used to contain the
+buttons and links with the `primaryActions` and `secondaryActions` sections.
+
+## Composing the SubNav
+
+The clickable action items that compose the `SubNav` component are populated by
+`SubNavButton` and `SubNavLink` components to the `primaryActions` and
+`secondaryActions` props. The `SubNavButton` and `SubNavLink` components mirror
+the DS `Button` and `Link` components, respectively, with the addition of the
+`isSelected` and `isOutlined` props for formatting.
+
+### SubNavButton
+
+<Source
+  code={`
+<SubNavButton
+  buttonType="text"
+  id="subnav-button"
+  onClick={onClickHandler}
+  screenreaderOnlyText="for NYPL.org"
+>
+  Button label
+</SubNavButton>
+`}
+  language="jsx"
+/>
+
+### SubNavLink
+
+<Source
+  code={`
+<SubNavLink
+  href="https://www.nypl.org"
+  id="subnav-link"
+>
+  Link text
+</SubNavLink>
+`}
+  language="jsx"
+/>
+
+### Full example
+
+<Source
+  code={`
+import {
+  SubNav,
+  SubNavButton,
+  SubNavLink,
+} from "@nypl/design-system-react-components";
+
+<SubNav
+  id="subnav-example"
+  primaryActions={
+    <>
+      <SubNavButton
+        buttonType="text"
+        id="subnav-button"
+        onClick={onClickHandler}
+        screenreaderOnlyText="for NYPL.org"
+      >
+        Button label
+      </SubNavButton>
+    </>
+  }
+  secondaryActions={
+    <>
+      <SubNavLink href="https://www.nypl.org" id="subnav-link">
+        Link text
+      </SubNavLink>
+    </>
+  }
+/>
+`} language="jsx" />
+
+## Selected Item
+
+The `isSelected` prop can be used to highlight an action item. The prop should
+be passed directly to a child action item.
+
+This prop should be used to highlight the button or link that corresponds to the
+current state of the page or the current page.
+
+<Banner
+  content={
+    <>
+      <strong>IMPORTANT:</strong> Only one action item should be marked as
+      "selected" at any given time. Marking more than one action item as
+      "selected" will cause accessibility problems.
+    </>
+  }
+  type="warning"
+/>
+
+<Source
+  code={`
+<SubNavLink
+  href="https://nypl.org/education/kids"
+  id="subnav-link-education-kids"
+  isSelected
+>
+  Kids
+</SubNavLink>
+`}
+  language="jsx"
+/>
+
+<Canvas of={SubNavStories.SelectedItem} />
+
+## Outlined Item
+
+The `isOutlined` prop can be used to apply a border to an action item. The prop
+should be passed directly to a child action item.
+
+<Source
+  code={`
+<SubNavLink
+  href="#link1"
+  id="subnav-link-account"
+  isOutlined
+  screenreaderOnlyText="for NYPL.org"
+>
+  My account
+</SubNavLink>
+`}
+  language="jsx"
+/>
+
+<Canvas of={SubNavStories.OutlinedItem} />
+
+## Using Icons
+
+Like the DS `Button` and `Link` components, the `SubNavButton` and `SubNavLink`
+components can be rendered with icons by passing a DS `Icon` component with the
+button label or link text.
+
+<Banner
+  content={
+    <>
+      <strong>RECOMMENDATION:</strong> Use icons only where necessary and only
+      when they have a strong association with the label.
+    </>
+  }
+  type="recommendation"
+/>
+
+### SubNavButton
+
+<Source
+  code={`
+<SubNavButton
+  buttonType="text"
+  id="subnav-button-account"
+  onClick={onClickHandler}
+  screenreaderOnlyText="for NYPL.org"
+>
+  <Icon
+    name="actionIdentityFilled"
+    size="medium"
+  />
+  My account
+</SubNavLink>
+`}
+  language="jsx"
+/>
+
+### SubNavLink
+
+<Source
+  code={`
+<SubNavLink
+  href="#link1"
+  id="subnav-link-settings"
+  isOutlined
+  screenreaderOnlyText="of the NYPL website"
+>
+  <Icon
+    name="actionSettings"
+    size="medium"
+  />
+  Settings
+</SubNavLink>
+`}
+  language="jsx"
+/>
+
+<Canvas of={SubNavStories.UsingIcons} />
+
+### Mobile
+
+When an icon is used in a link or button element, consider displaying only the
+icon for the mobile viewport. If an icon-only version of a link or button
+element is used, make sure to include appropriate ARIA or screen reader only
+text.
+
+<Source
+  code={`
+<SubNavLink
+  href="#link1"
+  id="subnav-link-settings"
+  isOutlined
+  screenreaderOnlyText="Settings for your account"
+>
+  <Icon
+    name="actionSettings"
+    size="medium"
+  />
+</SubNavLink>
+`}
+  language="jsx"
+/>
+
+<Canvas of={SubNavStories.UsingIconsMobile} />
+
+## Custom Colors
+
+The default color styles for the `SubNav` component are based on the standard NYPL
+link colors, but the default color styles can be manually overridden using
+`actionBackgroundColor` and `highlightColor`.
+
+- The `actionBackgroundColor` prop is used to set the hover state background
+  color for the action items.
+- The `highlightColor` prop is used to set the color of the text, icons, and
+  borders for some instances of the action items.
+
+It is recommended that the values for the highlight and background colors are
+from the same color family. For example, `section.education.primary` for the
+highlight color and `section.education.primary-05` for the background color.
+
+<Banner
+  content={
+    <>
+      <strong>IMPORTANT:</strong> Both <strong>actionBackgroundColor</strong>{" "}
+      and <strong>highlightColor</strong> must be set in order to override the
+      default colors.
+    </>
+  }
+  type="warning"
+/>
+
+<Canvas of={SubNavStories.CustomColors} />
+
+## Horizontal Scrolling
+
+Horizontal scrolling is used when the width of the primary actions is greater
+than the space available. The secondary actions will never scroll.
+
+<Banner
+  content={
+    <>
+      <strong>RECOMMENDATION:</strong> To reduce the need for horizontal
+      scrolling...
+      <List my="0" mt="xs" paddingStart="s">
+        <li>limit the primary actions to five or fewer elements</li>
+        <li>limit the secondary actions to two or fewer elements</li>
+      </List>
+    </>
+  }
+  type="recommendation"
+/>
+
+<Canvas of={SubNavStories.HorizontalScrolling} />
+
+## Placement
+
+The `SubNav` component is intended to sit below the global header and `Hero`
+components and above the main content area.
+
+<Canvas of={SubNavStories.Placement} />
+
+## Changelog
+
+<ComponentChangelogTable changelogData={changelogData} />
