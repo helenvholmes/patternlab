@@ -168,11 +168,6 @@ export type {
   MenuProps,
 } from "./components/Menu/Menu";
 
-export type {
-  default as SubNav,
-  SubNavButton,
-  SubNavLink,
-} from "./components/SubNav/SubNav";
 export { ModalTrigger, useModal } from "./components/Modal/Modal";
 export type {
   BaseModalProps,
@@ -251,6 +246,11 @@ export type {
   StyledListProps,
   StyledListTextSizes,
 } from "./components/StyledList/StyledList";
+export {
+  default as SubNav,
+  SubNavButton,
+  SubNavLink,
+} from "./components/SubNav/SubNav";
 export { default as Table } from "./components/Table/Table";
 export type { TableBodyTextSizes, TableProps } from "./components/Table/Table";
 export {
