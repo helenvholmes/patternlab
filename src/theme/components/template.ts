@@ -69,7 +69,6 @@ const TemplateContentTopBottom = defineStyleConfig({
 const TemplateContentPrimary = defineStyleConfig({
   baseStyle: defineStyle({
     gridColumn: { base: "1", md: "1 / span 2" },
-    overflow: { base: "unset", md: "hidden" },
     paddingX: "s",
   }),
   variants: {
@@ -79,11 +78,13 @@ const TemplateContentPrimary = defineStyleConfig({
       minWidth: { md: 0 },
       paddingRight: "s",
       paddingLeft: { base: "s", md: "l" },
+      overflow: { base: "unset", md: "hidden" },
     },
     right: {
       gridColumn: "1",
       paddingRight: { base: "s", md: "l" },
       paddingLeft: "s",
+      overflow: { base: "unset", md: "hidden" },
     },
   },
 });
