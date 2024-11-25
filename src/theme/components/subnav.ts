@@ -35,12 +35,12 @@ const commonStyles = () => ({
   fontWeight: "regular",
   gap: "xs",
   height: { base: "44px", md: "unset" },
-  lineHeight: "1.5 !important",
+  lineHeight: "1.5",
   position: "relative",
   px: "s",
   py: "xxs",
   textDecoration: "none !important",
-  transition: "background-color 0.2s, color 0.2s !important",
+  transition: "background-color 0.2s, color 0.2s",
 });
 
 const ulStyles = {
@@ -49,7 +49,7 @@ const ulStyles = {
   li: {
     marginEnd: "unset",
   },
-  margin: "0 !important",
+  margin: "0",
 };
 
 const SubNav = subNavDefineMultiStyleConfig({
@@ -57,17 +57,17 @@ const SubNav = subNavDefineMultiStyleConfig({
     ({ backgroundColor, highlightColor }: SubNavStyleProps) => {
       const defaultLabelColor = "ui.typography.body";
       const highlightOrDefaultColor = highlightColor
-        ? `${highlightColor} !important`
-        : `${defaultLabelColor} !important`;
+        ? highlightColor
+        : `${defaultLabelColor}`;
       const highlightOrLinkColor = highlightColor
-        ? `${highlightColor} !important`
-        : "ui.link.primary !important";
+        ? highlightColor
+        : "ui.link.primary";
       const highlightOrBorderColor = highlightColor
-        ? `${highlightColor}`
+        ? highlightColor
         : "ui.border.default";
       const finalBackgroundColor = backgroundColor
         ? backgroundColor
-        : "ui.link.primary-05 !important";
+        : "ui.link.primary-05";
       const primaryActionsStyles = {
         ...commonStyles(),
         svg: {
@@ -105,6 +105,7 @@ const SubNav = subNavDefineMultiStyleConfig({
         },
         _hover: {
           background: finalBackgroundColor,
+          color: highlightOrLinkColor,
           svg: {
             fill: highlightOrLinkColor,
             _dark: {
@@ -146,7 +147,7 @@ const SubNav = subNavDefineMultiStyleConfig({
           ...ulStyles,
           width: "100%",
           button: {
-            color: defaultLabelColor,
+            color: highlightOrDefaultColor,
             ...primaryActionsStyles,
           },
           a: {
@@ -178,9 +179,6 @@ const SubNav = subNavDefineMultiStyleConfig({
             "linear-gradient(to left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%)",
           pointerEvents: "none",
           zIndex: 1,
-        },
-        ul: {
-          margin: "0 !important",
         },
         primaryList: {
           position: "relative",

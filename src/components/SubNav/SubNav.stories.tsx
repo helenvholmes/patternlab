@@ -1,7 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
+import { VStack } from "@chakra-ui/react";
 import Heading from "../Heading/Heading";
 import Hero from "../Hero/Hero";
 import Icon from "../Icons/Icon";
+import SkeletonLoader from "../SkeletonLoader/SkeletonLoader";
 
 import SubNav, {
   SubNavButton,
@@ -51,19 +53,30 @@ export const WithControls: Story = {
           <SubNavButton
             id="subnav-with-controls-primary-action-1"
             screenreaderOnlyText="for the NYPL Research Catalog"
-            onClick={() => subNavButtonOnClick("from primary-subnav-button-1")}
-          >
-            Action
-          </SubNavButton>
-          <SubNavButton
-            id="subnav-with-controls-primary-action-2"
-            screenreaderOnlyText="for the NYPL Research Catalog"
-            onClick={() => subNavButtonOnClick("from primary-subnav-button-2")}
+            onClick={() =>
+              subNavButtonOnClick("from subnav-with-controls-primary-action-1")
+            }
           >
             Action
           </SubNavButton>
           <SubNavLink
+            id="subnav-with-controls-primary-action-2"
+            screenreaderOnlyText="for the NYPL Research Catalog"
+            href="#link3"
+          >
+            Link
+          </SubNavLink>
+          <SubNavButton
             id="subnav-with-controls-primary-action-3"
+            screenreaderOnlyText="for the NYPL Research Catalog"
+            onClick={() =>
+              subNavButtonOnClick("from subnav-with-controls-primary-action-3")
+            }
+          >
+            Action
+          </SubNavButton>
+          <SubNavLink
+            id="subnav-with-controls-primary-action-4"
             screenreaderOnlyText="for the NYPL Research Catalog"
             href="#link3"
           >
@@ -337,6 +350,13 @@ export const CustomColors: Story = {
         }
         secondaryActions={
           <>
+            <SubNavButton
+              id="subnav-colors-logout"
+              onClick={() => subNavButtonOnClick("from subnav-colors-logout")}
+              screenreaderOnlyText="of NYPL.org"
+            >
+              Log out
+            </SubNavButton>
             <SubNavLink
               href="#link1"
               id="subnav-colors-account"
@@ -456,7 +476,7 @@ export const Placement: Story = {
           <Heading
             level="h1"
             id="tertiary-hero-rc"
-            size="heading2"
+            size="heading1"
             text="Research Catalog"
           />
         }
@@ -464,7 +484,7 @@ export const Placement: Story = {
       />
       <SubNav
         actionBackgroundColor="section.research.primary-05"
-        highlightColor="section.research.primary"
+        highlightColor="section.research.secondary"
         id="subnav-placement"
         primaryActions={
           <>
@@ -503,6 +523,16 @@ export const Placement: Story = {
           </>
         }
       />
+      <VStack align="left" mx="auto" my="l" px="s" gap="s" maxWidth="1280px">
+        <Heading
+          id="placement-page-heading"
+          noSpace
+          size="heading3"
+          subtitle="Vestibulum id ligula porta felis euismod semper praesent vel scelerisque nisl consectetur et commodo"
+          text="Search the catalog"
+        />
+        <SkeletonLoader showImage={false} />
+      </VStack>
     </>
   ),
 };
