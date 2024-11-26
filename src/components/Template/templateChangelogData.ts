@@ -10,6 +10,15 @@ import { ChangelogData } from "../../utils/ComponentChangelogTable";
 
 export const changelogData: ChangelogData[] = [
   {
+    date: "Prerelease",
+    version: "Prerelease",
+    type: "Bug Fix",
+    affects: ["Styles"],
+    notes: [
+      "Adjusts padding to fix an issue where focus indicators were being cut off in the primary content section.",
+    ],
+  },
+  {
     date: "2024-10-02",
     version: "3.4.0",
     type: "Update",
