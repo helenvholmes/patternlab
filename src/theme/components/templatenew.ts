@@ -8,9 +8,10 @@ const TemplateNew = defineStyleConfig({
   baseStyle: defineStyle({
     boxSizing: "border-box",
     color: "ui.typography.body",
-    maxWidth: "1280px",
+    maxWidth: "min(100vw, 1280px)",
     m: "0 auto",
     display: "grid",
+    p: "s",
     gap: responsiveGap,
     gridTemplateColumns: "repeat(1, minmax(100px, 1fr))",
     gridTemplateRows: "auto",
@@ -19,6 +20,7 @@ const TemplateNew = defineStyleConfig({
   variants: {
     left: {
       gridTemplateColumns: {
+        base: "repeat(1, minmax(100px, 1fr))",
         md: "repeat(2, minmax(100px, 1fr))",
         lg: "minmax(100px, 1fr) minmax(200px, 2fr)",
         xl: "minmax(100px, 1fr) minmax(300px, 3fr)",
@@ -30,9 +32,10 @@ const TemplateNew = defineStyleConfig({
     },
     right: {
       gridTemplateColumns: {
+        base: "repeat(1, minmax(100px, 1fr))",
         md: "repeat(2, minmax(100px, 1fr))",
-        lg: "2fr 1fr",
-        xl: "3fr 1fr",
+        lg: "minmax(200px, 2fr) minmax(100px, 1fr)",
+        xl: "minmax(300px, 3fr) minmax(100px, 1fr)",
       },
       gridTemplateAreas: {
         base: `"breakout" "top" "main" "sidebar" "bottom"`,
@@ -45,7 +48,9 @@ const TemplateNew = defineStyleConfig({
 const TemplateNewBreakout = defineStyleConfig({
   baseStyle: defineStyle({
     gridArea: "breakout",
-    mx: { xl: "calc(-100vw / 2 + 1200px / 2)" },
+    width: "100vw",
+    ml: "calc(-50vw + 50%)",
+    px: "s",
   }),
 });
 
