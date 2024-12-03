@@ -291,6 +291,14 @@ export type {
   TemplateHeaderProps,
   TemplateSidebarProps,
 } from "./components/Template/Template";
+export {
+  TemplateNew,
+  TemplateNewBreakout,
+  TemplateNewTop,
+  TemplateNewMain,
+  TemplateNewSidebar,
+  TemplateNewBottom,
+} from "./components/Template/TemplateNew";
 export { default as Text } from "./components/Text/Text";
 export type { TextProps, TextSizes } from "./components/Text/Text";
 export { default as TextInput } from "./components/TextInput/TextInput";
