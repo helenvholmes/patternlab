@@ -1,0 +1,31 @@
+import { Meta, Source } from "@storybook/blocks";
+
+import Link from "../Link/Link";
+
+<Meta title="Style Guide/Filtering/JavaScript disabled" />
+
+# Filtering when JavaScript is disabled
+
+Our engineering implementation goal is to reach parity of outcomes instead of
+parity of interaction. Live or real-time filtering is not achievable when a
+browser does not have JavaScript enabled. This means that selecting filtering
+options will not automatically render the new set of results, but rather there
+needs to be a way for the user to submit the selected filters. While this
+increases the risk of encountering no results with all the selected filters, it
+still provides the ability to filter and reach the same outcome as real-time
+filtering with JavaScript.
+
+At a base default level, the filter UIs should include “apply” or “submit”
+buttons that get removed once JavaScript loads. Developers need to keep in mind
+that the HTML form implementation and individual input elements need to be
+either uncontrolled or controlled for their specific application-needs and
+architecture.
+
+Additionally, text should be updated to reflect the number of results available
+in all applicable locations. This is most apparent in the mobile “Show results”
+button where, with real-time filtering available, would instead render “Show X
+results” where X is the number of results returned from the server.
+
+When JS is disabled, it is generally in desktop browsers and rarely in mobile
+browsers. Still, in order to support a sensible default for the mobile filter
+component, the popup should work without javascript.

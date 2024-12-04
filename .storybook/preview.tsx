@@ -107,6 +107,7 @@ const parameters = {
             "Page Composition",
             "Applying & Clearing Filters",
             "Accessibility",
+            "JS-disabled"
           ],
           "*",
         ],
