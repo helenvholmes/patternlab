@@ -1,0 +1,94 @@
+import { Meta, Source } from "@storybook/blocks";
+
+import Link from "../Link/Link";
+
+<Meta title="Style Guide/Filtering/Applying & Clearing Filters" />
+
+# Applying and Clearing Filters
+
+## Table of Contents
+
+- {<Link href="#applying-filters" target="_self">Applying filters</Link>}
+- {<Link href="#clearing-filters" target="_self">Clearing filters</Link>}
+- {<Link href="#populating-results" target="_self">Populating results</Link>}
+
+## Applying filters
+
+Filters should be applied to using one of two methods: live filtering or batch filtering.
+
+### Live filtering
+
+- Data is updated in real-time as the user selects filtering options.
+- This is the recommended method for applying filters because:
+  - Users tend to expect and are familiar with real-time filtering due to its
+    prevalence in e-commerce and elsewhere.
+  - We have observed in previous research that users tend to miss `Apply`
+    buttons, particularly when they sit out of sight on the page.
+  - Batch filtering comes at the risk of returning zero results after which
+    users have to engage in a trial-and-error process to get useful results.
+
+### Batch filtering
+
+- The user selects multiple filtering options and the data is updated after the
+  user takes the additional action of clicking the "Apply filters" button
+  included in the `filter bar`.
+- This method is recommended for:
+  - very heavy data sets
+  - low performing apps
+
+## Clearing filters
+
+Filters can be cleared using various methods within the page structure,
+including global methods as well as methods for clearing individual filters.
+
+When filters are cleared, the following should be addressed:
+
+- remove filters (tags) from `active filters` list (`TagSet` component)
+- update the `results` list to reflect the `active filters`
+- update the `total results` heading to reflect the updated `results` list
+- if a global "clear filters" button is clicked, reset all the form input
+  elements within the `filter bar`
+
+### Filter bar
+
+- Click the "Clear all filters" button in the `filter bar` (if available) to
+  remove all filters that have been applied
+
+### Active filters list
+
+- Click an "active filter" tag rendered in the `active filters` list to remove a
+  specific filter that has been applied
+- Click the "Clear filters" button in the `active filters` list to remove all
+  filters that have been applied
+
+### Form input components
+
+Many form input components can be reset manually. Examples include, but may not
+be limited to, the following methods:
+
+- **DatePicker component**
+  - Deleting a date that has been entered into the input field
+  - Clicking the clear X
+- **MultiSelect component**
+  - Unchecking a checkbox to remove that single selected option (or set of
+    options in case of nested filters)
+  - Clicking the "total options selected" pill button next to the heading to
+    remove all selected options
+- **TextInput component**
+  - Deleting text that has been entered into the input field
+  - Clicking the clear X
+- **Toggle component**
+  - Clicking the component to return the toggle to its initial state
+
+## Populating results
+
+`OR` logic should be used within a filtering facet.
+
+- Ex: selecting `English (5)` and `Spanish (2)` from a `Languages` filter should
+  yield 7 results in total
+
+`AND` logic should be used between categories.
+
+- Ex: selecting `Spanish (2)` from a `Languages` filter should cause other
+  filters to update their options, adjusting the number of associated items for
+  each option and disabling options with 0 associated items
