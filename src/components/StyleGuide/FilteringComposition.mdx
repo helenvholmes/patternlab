@@ -22,13 +22,13 @@ import Link from "../Link/Link";
 
 The UX for searching and filtering should incorporate the following UI elements:
 
-- Text search field (SearchBar or TextInput component)
-- Filter bar (FilterBarInline and FilterBarPopup components)
-- Active filters list (`TagSet` component)
-- Sorting menu (Menu component)
-- Total results heading (Heading component)
+- Text search field ([SearchBar](./?path=/docs/components-form-elements-searchbar--docs) or [TextInput](./?path=/docs/components-form-elements-textinput--docs) component)
+- Filter bar ([FilterBarInline](./?path=/docs/components-form-elements-filterbarinline--docs) and [FilterBarPopup](./?path=/docs/components-form-elements-filterbarpopup--docs) components)
+- Active filters list ([TagSet](./?path=/docs/components-content-display-tagset--docs) component)
+- Sorting menu ([Menu](./?path=/docs/components-navigation-menu--docs) component)
+- Total results heading ([Heading](./?path=/docs/components-typography-styles-heading--docs) component)
 - Results list
-- Pagination menu (Pagination component)
+- Pagination menu ([Pagination](./?path=/docs/components-navigation-pagination--docs) component)
 
 ## Text search field
 
@@ -45,7 +45,8 @@ The `text search` field should be rendered using the DS `SearchBar` or
 
 The `text search` field should be positioned above the `filter bar` and `active filters` list.
 
-The `text search` field should not be considered when using <Link href="/?path=/docs/style-guide-filtering-applying-filters--docs">live filtering</Link>.
+The `text search` field should not be considered when using [live
+filtering](./?path=/docs/style-guide-filtering-applying-clearing-filters--docs#applying-filters).
 Rather, a text search term should be applied using a submit button.
 
 ## Filter bar
@@ -152,8 +153,12 @@ criteria.
 For desktop and tablet viewports, the `filter bar` can display optional "Apply
 filters" and "Clear all filters" buttons.
 
-The "Apply filters" button must be rendered when the <Link href="/?path=/docs/style-guide-filtering-applying-filters--docs">batch filtering</Link> method is
-being used. The "Apply filters" button should never be rendered when the <Link href="/?path=/docs/style-guide-filtering-applying-filters--docs">live filtering</Link> method is being used.
+The "Apply filters" button must be rendered when the [batch
+filtering](./?path=/docs/style-guide-filtering-applying-clearing-filters--docs#batch-filtering)
+method is being used. The "Apply filters" button should never be rendered when
+the [live
+filtering](./?path=/docs/style-guide-filtering-applying-clearing-filters--docs#live-filtering)
+method is being used.
 
 Clicking the "Apply filters" button should:
 
@@ -299,4 +304,3 @@ consuming apps. For more information, refer to the [Results list](#results-list)
 
 - {<Link href="https://www.mylibrarynyc.org/teacher_set_data?keyword=dogs" target="_blank" type="external">MyLibraryNYC</Link>}
 - {<Link href="https://www.nypl.org/research/research-catalog/bib/b21148115" target="_blank" type="external">Research Catalog</Link>}
-- {<Link href="https://nypl-ds-test-app.vercel.app/fullPages/search-and-filter#above-header-notification" target="_blank" type="external">Turbine example</Link>} (still in development)
