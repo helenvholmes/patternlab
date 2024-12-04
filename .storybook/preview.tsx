@@ -100,7 +100,16 @@ const parameters = {
         "Chakra UI",
         "Development Guide",
         "Style Guide",
-        ["*", ["General", "Page Composition", "Applying Filters"], "*"],
+        [
+          "*",
+          [
+            "General",
+            "Page Composition",
+            "Applying & Clearing Filters",
+            "Accessibility",
+          ],
+          "*",
+        ],
         "Accessibility Guide",
         "Components",
         "Hooks",

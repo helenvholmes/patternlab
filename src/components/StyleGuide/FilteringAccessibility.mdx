@@ -1,0 +1,81 @@
+import { Meta, Source } from "@storybook/blocks";
+
+import Link from "../Link/Link";
+
+<Meta title="Style Guide/Filtering/Accessibility" />
+
+# Filtering Accessibility
+
+## Table of Contents
+
+- {<Link href="#overview" target="_self">Overview</Link>}
+- {<Link href="#aria-live" target="_self">Using aria-live</Link>}
+- {<Link href="#focus-management" target="_self">Focus management</Link>}
+  - {<Link href="#applying-search-terms" target="_self">Applying search terms</Link>}
+  - {<Link href="#applying-filters" target="_self">Applying filters</Link>}
+  - {<Link href="#clearing-filters" target="_self">Clearing filters</Link>}
+  - {<Link href="#pagination" target="_self">Pagination</Link>}
+  - {<Link href="#sorting" target="_self">Sorting</Link>}
+  - {<Link href="#modal-overlay" target="_self">Modal overlay</Link>}
+
+## Overview
+
+The following accessibility recommendations are applicable for real-time UI
+updates resulting from user actions. If UI updates will be applied after a full
+page refresh, then no additional accommodations need to be applied.
+
+## Using aria-live
+
+The parent element housing the `total results` heading should include the
+`aria-live="polite"` attribute. This will ensure that real-time updates made to
+the heading text are announced to screen reader users.
+
+## Focus management
+
+### Applying search terms
+
+When a search term is applied using the `text search` field, focus should be moved
+to the `total results` heading.
+
+### Applying filters
+
+#### Live filtering
+
+For live filtering, as a user makes changes to filtering options, focus should
+be maintained on the filter the user is interacting with.
+
+#### Batch filtering
+
+For batch filtering, focus should be moved to the `total results` heading after
+the "Apply filters" button has been clicked.
+
+### Clearing filters
+
+When filters are cleared using the methods available in the `active filters`
+list or by clicking the "Clear all filters" button in the `filter bar`, focus
+should be moved to the `total results` heading.
+
+When clearing a filter by manually resetting an individual form input element,
+focus should be maintained on the filter the user is interacting with.
+
+### Pagination
+
+When using the `pagination` menu to update the `results` list, focus should be moved
+to the `total results` heading.
+
+### Sorting
+
+After selecting an option in the `sorting` menu, focus should be maintained on
+the `sorting` menu.
+
+### Modal overlay
+
+When the modal overlay that is generated as part of the `FilterBarPopup`
+component is closed by clicking the close X in the UI, by clicking outside the
+modal overlay, or by pressing ESC on the keyboard, focus should be moved to the
+button that was initially clicked to launch the modal overlay. This is the
+default behavior of the modal overlay.
+
+When the modal overlay that is generated as part of the `FilterBarPopup`
+component is closed by clicking the "Show results" button in the UI, focus
+should be moved to the `total results` heading
