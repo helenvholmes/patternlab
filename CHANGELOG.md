@@ -8,9 +8,7 @@ Currently, this repo is in Prerelease. When it is released, this project will ad
 
 ## Prerelease
 
-### Fixes
-
-- Fixes issue where focus indicator was being cut off in places in the `Template` component.
+## 3.5.0 (December 5, 2024)
 
 ### Adds
 
@@ -19,6 +17,10 @@ Currently, this repo is in Prerelease. When it is released, this project will ad
 ### Updates
 
 - Updates the `MultiSelect` component to add `itemCount` as a data property to the `items` prop to render the item count for an option.
+
+### Fixes
+
+- Fixes issue where focus indicator was being cut off in places in the `Template` component.
 
 ## 3.4.4 (November 20, 2024)
 
