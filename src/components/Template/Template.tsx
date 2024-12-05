@@ -30,9 +30,9 @@ const Template: ChakraComponent<
 };
 
 /**
- * This optional component renders its children from edge-to-edge.
- * It is most useful for `Breadcrumbs`, `Hero`, or other banner-like
- * components.
+ * This optional component renders its children above the main content
+ * and spans edge-to-edge. It is most useful for `Breadcrumbs`, `Hero`,
+ * or other banner-like components.
  */
 const TemplateBreakout: React.FC<any> = (
   props: React.PropsWithChildren<TemplateProps>
@@ -48,7 +48,8 @@ const TemplateBreakout: React.FC<any> = (
 
 /**
  * This optional component renders content at a max width of 1280px and
- * will always render above the main content and sidebar (if one exists).
+ * will render below `TemplateBreakout` (if being used) and above the
+ * main content and sidebar (if one exists).
  */
 const TemplateTop: React.FC<any> = (
   props: React.PropsWithChildren<TemplateProps>
@@ -57,7 +58,8 @@ const TemplateTop: React.FC<any> = (
 /**
  * This component renders an HTML `<main>` element with an id of "mainContent".
  * The "mainContent" id should be used as the consuming application's skip
- * navigation link.
+ * navigation link. The component should not be used in conjunction with
+ * `TemplateMainNarrow`.
  */
 const TemplateMain: React.FC<any> = (
   props: React.PropsWithChildren<TemplateMainProps>
@@ -76,7 +78,8 @@ const TemplateMain: React.FC<any> = (
  * The "mainContent" id should be used as the consuming application's skip
  * navigation link. It provides a narrower container for better readability if
  * the main content includes long text. This component is meant to be used in
- * lieu of `TemplateMain`, and should not be used in conjunction with `TemplateSidebar`.
+ * lieu of `TemplateMain`, and should not be used in conjunction with
+ * `TemplateSidebar`.
  */
 const TemplateMainNarrow: React.FC<any> = (
   props: React.PropsWithChildren<TemplateMainProps>
