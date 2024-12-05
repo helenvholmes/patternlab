@@ -40,6 +40,23 @@ const disabledItems = [
   { id: "furniture", name: "Furniture", isDisabled: false },
 ];
 
+const itemsWithCount = [
+  { id: "dogs", name: "Dogs", itemCount: 5 },
+  { id: "cats", name: "Cats", itemCount: 11 },
+  { id: "cars", name: "Cars", itemCount: 7 },
+  {
+    id: "colors",
+    name: "Colors",
+    itemCount: 9,
+    children: [
+      { id: "red", name: "Red", itemCount: 8 },
+      { id: "blue", name: "Blue", itemCount: 1 },
+    ],
+  },
+  { id: "plants", name: "Plants", itemCount: 4 },
+  { id: "furniture", name: "Furniture", itemCount: 6 },
+];
+
 const defaultItemsVisible = 5;
 
 const MultiSelectTestComponent = ({
@@ -216,6 +233,31 @@ describe("MultiSelect", () => {
     expect(screen.getByLabelText("Cars")).toBeDisabled();
     expect(screen.getByLabelText("Red")).toBeDisabled();
     expect(screen.getByLabelText("Blue")).toBeDisabled();
+  });
+
+  it("should initially render with open menu and items with item count", () => {
+    render(
+      <MultiSelect
+        id="multiselect-test-id"
+        buttonText="Multiselect button text"
+        isDefaultOpen={true}
+        isSearchable={false}
+        isBlockElement={false}
+        defaultItemsVisible={defaultItemsVisible}
+        items={itemsWithCount}
+        selectedItems={selectedTestItems}
+        onChange={() => null}
+        onClear={() => null}
+      />
+    );
+    expect(screen.getByRole("button").getAttribute("aria-expanded")).toEqual(
+      "true"
+    );
+    expect(screen.getAllByRole("checkbox")).toHaveLength(8);
+    expect(screen.getByLabelText("Dogs5")).toBeInTheDocument();
+    expect(screen.getByLabelText("Cats11")).toBeInTheDocument();
+    expect(screen.getByLabelText("Cars7")).toBeInTheDocument();
+    expect(screen.getByLabelText("Red8")).toBeInTheDocument();
   });
 
   it("should initially render with open menu if isDefaultOpen prop is true", () => {
