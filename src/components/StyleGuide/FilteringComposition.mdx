@@ -3,9 +3,25 @@ import { Meta } from "@storybook/blocks";
 import { Box } from "@chakra-ui/react";
 import Image from "../Image/Image";
 import Link from "../Link/Link";
+import Heading from "../Heading/Heading";
 import SearchBar from "../SearchBar/SearchBar";
-import imageFilteringSearchBar from "../../../static/filteringSearchBar.png";
-import imageFilteringFilterBarInline from "../../../static/filteringFilterBarInline.png";
+import TagSet from "../TagSet/TagSet";
+
+import imageFilteringTextSearchField from "../../../static/filteringTextSearchField.png";
+import imageFilteringFilterBar from "../../../static/filteringFilterBar.png";
+import imageFilteringActiveFiltersList from "../../../static/filteringActiveFiltersList.png";
+import imageFilteringTotalResultsHeading from "../../../static/filteringTotalResultsHeading.png";
+import imageFilteringSortingMenu from "../../../static/filteringSortingMenu.png";
+import imageFilteringPaginationMenu from "../../../static/filteringPaginationMenu.png";
+
+export const exampleWrapperStyles = {
+  bgColor: "ui.gray.xx-light-cool",
+  borderRadius: ".5rem",
+  display: "flex",
+  justifyContent: "center",
+  overflow: "hidden",
+  width: "100%",
+};
 
 <Meta title="Style Guide/Filtering/Page Composition" />
 
@@ -37,7 +53,11 @@ The UX for searching and filtering should incorporate the following UI elements:
 
 ## Text search field
 
-<Image alt="Reservoir SearchBar component" src={imageFilteringSearchBar} />
+<Image
+  alt="Text search field example"
+  src={imageFilteringTextSearchField}
+  {...exampleWrapperStyles}
+/>
 
 The `text search` field provides a way for users to enter a text string to
 search and retrieve related information from a defined data set. It is not
@@ -59,8 +79,10 @@ Rather, a text search term should be applied using a submit button.
 ## Filter bar
 
 <Image
-  alt="Reservoir FilterBarInline component"
-  src={imageFilteringFilterBarInline}
+  alt="Filter bar example"
+  borderRadius=".5rem"
+  src={imageFilteringFilterBar}
+  {...exampleWrapperStyles}
 />
 
 The `filter bar` is a wrapper for individual form input elements, including the
@@ -218,6 +240,13 @@ buttons. Clicking the "Clear all filters" button should:
 
 ## Active filters list
 
+<Image
+  alt="Active filters list example"
+  borderRadius=".5rem"
+  src={imageFilteringActiveFiltersList}
+  {...exampleWrapperStyles}
+/>
+
 The `active filters` list should be rendered using the DS `TagSet` component.
 
 The `active filters` list should be positioned directly above the `results` list.
@@ -244,6 +273,13 @@ term should be incorporated into the `total results` heading.
 
 ## Total results heading
 
+<Image
+  alt="Total results heading example"
+  borderRadius=".5rem"
+  src={imageFilteringTotalResultsHeading}
+  {...exampleWrapperStyles}
+/>
+
 The `total results` heading should be rendered using the DS `Heading` component.
 
 The `total results` heading should be positioned below the `active filters` list and
@@ -264,6 +300,13 @@ format:
 `Displaying 1-24 of 567 results for "{search_term}"`
 
 ## Sorting menu
+
+<Image
+  alt="Sorting menu example"
+  borderRadius=".5rem"
+  src={imageFilteringSortingMenu}
+  {...exampleWrapperStyles}
+/>
 
 The `sorting menu` should be rendered using the DS `Menu` component.
 
@@ -299,6 +342,12 @@ limitations imposed by the data architecture and infrastructure of a consuming
 app.
 
 ## Pagination menu
+
+<Image
+  alt="Pagination menu example"
+  src={imageFilteringPaginationMenu}
+  {...exampleWrapperStyles}
+/>
 
 The `pagination` menu should be rendered using the DS `Pagination` component.
 
