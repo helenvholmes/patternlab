@@ -139,7 +139,7 @@ count. The format is as follows:
     {
       id: "architecture",
       name: "Architecture",
-      isDisabled: true,,
+      isDisabled: true,
       itemCount: 7
     },
     {
@@ -157,7 +157,7 @@ count. The format is as follows:
           name: 'User Experience'
         },
         {
-          id: 'tecture',
+          id: 'architecture',
           isDisabled: false,
           name: 'Architecture'
         },
@@ -329,7 +329,7 @@ child checkbox will not be clickable and its state will not change.
           name: 'User Experience'
         },
         {
-          id: 'tecture',
+          id: 'architecture_design',
           isDisabled: false,
           name: 'Architecture'
         },
@@ -382,7 +382,7 @@ child checkbox will not be clickable and its state will not change.
           name: 'User Experience'
         },
         {
-          id: 'tecture',
+          id: 'architecture_design',
           isDisabled: true,
           name: 'Architecture'
         },
@@ -446,9 +446,9 @@ the component to allow users to search the available checkbox items.
 
 ## Show Item Count
 
-The recommended UX patterns for filtering is to include an item count associated
-with each option in a `MultiSelect` component. The item counts can be rendered by
-passing the `itemCount` data property to the `items` prop.
+The recommended UX pattern for filtering is to include an item count associated
+with each option in a `MultiSelect` component. The item counts can be rendered
+by passing the `itemCount` data property to the `items` prop.
 
 <Source
   code={`
@@ -482,7 +482,7 @@ passing the `itemCount` data property to the `items` prop.
               itemCount: 5,
             },
             {
-              id: "tecture",
+              id: "architecture_design",
               name: "Architecture",
               itemCount: 3,
             },

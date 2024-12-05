@@ -12,7 +12,8 @@ Currently, this repo is in Prerelease. When it is released, this project will ad
 
 ### Adds
 
-- Adds the `"SubNav"`component.
+- Adds the `SubNav` component.
+- Adds the `useScrollFadeStyles` hook.
 
 ### Updates
 
