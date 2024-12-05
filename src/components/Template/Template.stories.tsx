@@ -171,9 +171,11 @@ const otherSubHeaderText =
  */
 export const WithControls = {
   args: {
+    id: "template",
     sidebar: "left",
   },
   argTypes: {
+    id: { control: false },
     sidebar: {
       table: { defaultValue: { summary: "none" } },
     },
