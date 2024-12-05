@@ -2,341 +2,58 @@
 
 exports[`Template components renders the UI snapshot correctly 1`] = `
 <div
-  className="css-1xdhyk6"
+  className="css-0"
 >
   <div
-    className="css-0"
+    className="css-fd96ed"
   >
     <div
       className="placeholder placeholder--short"
     >
-      Above Header
+      Breakout
     </div>
   </div>
-  <header
-    className="css-0"
+  <div
+    className="css-1q0thn5"
   >
     <div
-      className="placeholder placeholder--short"
+      className="placeholder placeholder--undefined"
     >
-      NYPL Header
+      Content Top
     </div>
+  </div>
+  <div
+    className="css-s7bsmx"
+  >
     <div
-      className="css-0"
+      className="placeholder placeholder--undefined"
     >
-      <div
-        className="placeholder placeholder--short"
-      >
-        Breadcrumbs
-      </div>
-      <div
-        className="placeholder placeholder--short"
-      >
-        Hero
-      </div>
+      Left Sidebar
     </div>
-  </header>
+  </div>
   <main
-    className="css-0"
+    className="css-n7iznt"
     id="mainContent"
   >
     <div
-      className="css-0"
+      className="placeholder placeholder--undefined"
     >
-      <div
-        className="placeholder placeholder--undefined"
-      >
-        Content Top
-      </div>
+      Main Content
     </div>
-    <div
-      className="css-0"
-    >
-      <div
-        className="placeholder placeholder--undefined"
-      >
-        Left Sidebar
-      </div>
-    </div>
-    <div
-      className="css-0"
-    >
-      <div
-        className="placeholder placeholder--undefined"
-      >
-        Main Content
-      </div>
-      <div
-        className="placeholder placeholder--short"
-      >
-        More Content
-      </div>
-    </div>
-  </main>
-  <footer
-    className="css-0"
-  >
     <div
       className="placeholder placeholder--short"
     >
-      Footer
+      More Content
     </div>
-  </footer>
-</div>
-`;
-
-exports[`Template components renders the UI snapshot correctly 2`] = `
-<div
-  className="css-1u8qly9"
->
+  </main>
   <div
-    className="css-0"
-  >
-    <div
-      className="css-0"
-    >
-      <div
-        className="placeholder placeholder--short"
-      >
-        Above Header
-      </div>
-    </div>
-    <header
-      className="css-0"
-    >
-      <div
-        className="placeholder placeholder--short"
-      >
-        NYPL Header
-      </div>
-      <div
-        className="placeholder placeholder--short"
-      >
-        Breadcrumbs
-      </div>
-      <div
-        className="placeholder placeholder--short"
-      >
-        Hero
-      </div>
-    </header>
-  </div>
-  <main
-    className="css-0"
-    id="mainContent"
-  >
-    <div
-      className="css-0"
-    >
-      <div
-        className="placeholder placeholder--undefined"
-      >
-        Content Top
-      </div>
-    </div>
-    <div
-      className="css-0"
-    >
-      <div
-        className="placeholder placeholder--undefined"
-      >
-        Left Sidebar
-      </div>
-    </div>
-    <div
-      className="css-0"
-    >
-      <div
-        className="placeholder placeholder--undefined"
-      >
-        Main Content
-      </div>
-      <div
-        className="placeholder placeholder--short"
-      >
-        More Content
-      </div>
-    </div>
-  </main>
-  <footer
-    className="css-0"
+    className="css-1yhc1wu"
   >
     <div
       className="placeholder placeholder--short"
     >
-      Footer
+      Content Bottom
     </div>
-  </footer>
-</div>
-`;
-
-exports[`Template components renders the UI snapshot correctly 3`] = `
-<div
-  className="css-1y4kn3e"
->
-  <div
-    className="css-0"
-  >
-    <div
-      className="css-0"
-    >
-      <div
-        className="placeholder placeholder--short"
-      >
-        Above Header
-      </div>
-    </div>
-    <header
-      className="css-0"
-    >
-      <div
-        className="placeholder placeholder--short"
-      >
-        NYPL Header
-      </div>
-      <div
-        className="placeholder placeholder--short"
-      >
-        Breadcrumbs
-      </div>
-      <div
-        className="placeholder placeholder--short"
-      >
-        Hero
-      </div>
-    </header>
   </div>
-  <main
-    className="css-0"
-    id="mainContent"
-  >
-    <div
-      className="css-0"
-    >
-      <div
-        className="placeholder placeholder--undefined"
-      >
-        Content Top
-      </div>
-    </div>
-    <div
-      className="css-0"
-    >
-      <div
-        className="placeholder placeholder--undefined"
-      >
-        Left Sidebar
-      </div>
-    </div>
-    <div
-      className="css-0"
-    >
-      <div
-        className="placeholder placeholder--undefined"
-      >
-        Main Content
-      </div>
-      <div
-        className="placeholder placeholder--short"
-      >
-        More Content
-      </div>
-    </div>
-  </main>
-  <footer
-    className="css-0"
-  >
-    <div
-      className="placeholder placeholder--short"
-    >
-      Footer
-    </div>
-  </footer>
-</div>
-`;
-
-exports[`Template components renders the UI snapshot correctly 4`] = `
-<div
-  className="css-1u8qly9"
-  data-testid="props"
->
-  <div
-    className="css-0"
-  >
-    <div
-      className="css-0"
-    >
-      <div
-        className="placeholder placeholder--short"
-      >
-        Above Header
-      </div>
-    </div>
-    <header
-      className="css-0"
-    >
-      <div
-        className="placeholder placeholder--short"
-      >
-        NYPL Header
-      </div>
-      <div
-        className="placeholder placeholder--short"
-      >
-        Breadcrumbs
-      </div>
-      <div
-        className="placeholder placeholder--short"
-      >
-        Hero
-      </div>
-    </header>
-  </div>
-  <main
-    className="css-0"
-    id="mainContent"
-  >
-    <div
-      className="css-0"
-    >
-      <div
-        className="placeholder placeholder--undefined"
-      >
-        Content Top
-      </div>
-    </div>
-    <div
-      className="css-0"
-    >
-      <div
-        className="placeholder placeholder--undefined"
-      >
-        Left Sidebar
-      </div>
-    </div>
-    <div
-      className="css-0"
-    >
-      <div
-        className="placeholder placeholder--undefined"
-      >
-        Main Content
-      </div>
-      <div
-        className="placeholder placeholder--short"
-      >
-        More Content
-      </div>
-    </div>
-  </main>
-  <footer
-    className="css-0"
-  >
-    <div
-      className="placeholder placeholder--short"
-    >
-      Footer
-    </div>
-  </footer>
 </div>
 `;
