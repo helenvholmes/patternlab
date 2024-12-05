@@ -1,6 +1,11 @@
 import { Meta } from "@storybook/blocks";
 
+import { Box } from "@chakra-ui/react";
+import Image from "../Image/Image";
 import Link from "../Link/Link";
+import SearchBar from "../SearchBar/SearchBar";
+import imageFilteringSearchBar from "../../../static/filteringSearchBar.png";
+import imageFilteringFilterBarInline from "../../../static/filteringFilterBarInline.png";
 
 <Meta title="Style Guide/Filtering/Page Composition" />
 
@@ -32,6 +37,8 @@ The UX for searching and filtering should incorporate the following UI elements:
 
 ## Text search field
 
+<Image alt="Reservoir SearchBar component" src={imageFilteringSearchBar} />
+
 The `text search` field provides a way for users to enter a text string to
 search and retrieve related information from a defined data set. It is not
 considered a filter.
@@ -50,6 +57,11 @@ filtering](./?path=/docs/style-guide-filtering-applying-clearing-filters--docs#a
 Rather, a text search term should be applied using a submit button.
 
 ## Filter bar
+
+<Image
+  alt="Reservoir FilterBarInline component"
+  src={imageFilteringFilterBarInline}
+/>
 
 The `filter bar` is a wrapper for individual form input elements, including the
 following DS components: `CheckboxGroup`, `MultiSelectGroup`, `RadioGroup`,
