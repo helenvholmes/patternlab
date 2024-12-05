@@ -6,12 +6,11 @@ import { Meta, Source } from "@storybook/blocks";
 
 | Hook Version | DS Version |
 | ------------ | ---------- |
-| Added        | `Prerelease`   |
-| Latest       | `Prerelease`   |
+| Added        | `3.5.0`    |
+| Latest       | `3.5.0`    |
 
-
- The `useScrollFadeStyles` hook provides a way to manage the visibility of a fade effect on the right edge of a horizontally scrollable element.
- It monitors the scroll position and determines whether the fade effect should be shown or hidden based on the scroll state.
+The `useScrollFadeStyles` hook provides a way to manage the visibility of a fade effect on the right edge of a horizontally scrollable element.
+It monitors the scroll position and determines whether the fade effect should be shown or hidden based on the scroll state.
 
 ## Usage
 
@@ -41,29 +40,18 @@ const {
     zIndex: 1,
   });
 
-  <Box>
-    <div>
-      <List
-        type="ul"
-        m="0"
-        ref={scrollableRef}
-        inline
-        noStyling
-      >
-        <li>
-          <SubNavButton id="subnav-action">
-            Action
-          </SubNavButton>
-        </li>
-        <li>
-          <SubNavLink id="subnav-link">
-            Link
-          </SubNavLink>
-        </li>
-      </List>
-      {showRightFade && <Box sx={fadeEffect()} />}
-    </div>
-  </Box>
-  `}
-  language="jsx"
-/>
+{" "}
+<Box>
+  <div>
+    <List type="ul" m="0" ref={scrollableRef} inline noStyling>
+      <li>
+        <SubNavButton id="subnav-action">Action</SubNavButton>
+      </li>
+      <li>
+        <SubNavLink id="subnav-link">Link</SubNavLink>
+      </li>
+    </List>
+    {showRightFade && <Box sx={fadeEffect()} />}
+  </div>
+</Box>
+`} language="jsx" />
