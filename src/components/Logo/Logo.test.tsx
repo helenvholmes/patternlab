@@ -56,6 +56,10 @@ describe("Logo", () => {
       "title",
       "nyplFullBlack logo"
     );
+    expect(container.querySelector("svg")).toHaveAttribute(
+      "data-file-name",
+      "SvgLogoNyplFullBlack"
+    );
   });
 
   it("renders a title element", () => {
@@ -85,6 +89,9 @@ describe("Logo", () => {
       </Logo>
     );
     expect(container.querySelector("svg")).toBeInTheDocument();
+    expect(container.querySelector("svg")).not.toHaveAttribute(
+      "data-file-name"
+    );
   });
 
   it("renders the UI snapshot correctly", () => {
