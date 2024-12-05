@@ -1,47 +1,35 @@
-import type { Meta, StoryObj } from "@storybook/react";
-
+import type { Meta } from "@storybook/react";
+import { getPlaceholderImage } from "../../utils/utils";
 import Accordion, { AccordionDataProps } from "../Accordion/Accordion";
 import Banner from "../Banner/Banner";
 import Breadcrumbs from "../Breadcrumbs/Breadcrumbs";
 import Button from "../Button/Button";
-import Card, { CardHeading, CardContent, CardActions } from "../Card/Card";
+import Card, { CardHeading, CardContent } from "../Card/Card";
 import FeaturedContent from "../FeaturedContent/FeaturedContent";
-import Form, { FormRow, FormField } from "../Form/Form";
+import Form, { FormField, FormRow } from "../Form/Form";
 import Heading from "../Heading/Heading";
 import Hero from "../Hero/Hero";
-import HorizontalRule from "../HorizontalRule/HorizontalRule";
-import Link from "../Link/Link";
-import Notification from "../Notification/Notification";
+import { HorizontalRule } from "../HorizontalRule/HorizontalRule";
 import Placeholder from "../Placeholder/Placeholder";
-import SkipNavigation from "../SkipNavigation/SkipNavigation";
 import Table from "../Table/Table";
+import TextInput from "../TextInput/TextInput";
 import {
   Template,
-  TemplateAboveHeader,
-  TemplateAppContainer,
   TemplateBreakout,
-  TemplateContent,
-  TemplateContentBottom,
-  TemplateContentPrimary,
-  TemplateContentSidebar,
-  TemplateContentTop,
-  TemplateFooter,
-  TemplateHeader,
+  TemplateTop,
+  TemplateMain,
+  TemplateMainNarrow,
+  TemplateSidebar,
+  TemplateBottom,
 } from "./Template";
-import TextInput from "../TextInput/TextInput";
-import { argsBooleanType } from "../../helpers/storybookUtils";
-import { getPlaceholderImage } from "../../utils/utils";
 
-const meta: Meta<typeof TemplateAppContainer> = {
+const meta: Meta = {
   title: "Components/Page Layout/Template",
-  component: TemplateAppContainer,
+  component: Template,
 };
 
 export default meta;
-type Story = StoryObj<typeof TemplateAppContainer>;
 
-const otherSubHeaderText =
-  "With 92 locations across the Bronx, Manhattan, and Staten Island, The New York Public Library is an essential part of neighborhoods across the city. Visit us today.";
 const accordionData: AccordionDataProps[] = [
   {
     accordionType: "default",
@@ -174,54 +162,40 @@ const columnStylesComplex = [
   { minWidth: "160px", width: "15%", textAlign: "right" },
 ];
 
+const otherSubHeaderText =
+  "With 92 locations across the Bronx, Manhattan, and Staten Island, The New York Public Library is an essential part of neighborhoods across the city. Visit us today.";
+
 /**
  * Main Story for the Template component. This must contains the `args`
  * and `parameters` properties in this object.
  */
-export const WithControls: Story = {
+export const WithControls = {
   args: {
-    aboveHeader: <Placeholder variant="short">Above Header</Placeholder>,
-    breakout: (
-      <>
-        <Placeholder variant="short">Breadcrumbs</Placeholder>
-        <Placeholder>Hero</Placeholder>
-      </>
-    ),
-    contentBottom: <Placeholder variant="short">Content Bottom</Placeholder>,
-    contentId: "mainContent",
-    contentPrimary: (
-      <>
-        <Placeholder>Main Content</Placeholder>
-        <Placeholder variant="short">More Content</Placeholder>
-      </>
-    ),
-    contentTop: <Placeholder variant="short">Content Top</Placeholder>,
-    footer: <Placeholder>Footer</Placeholder>,
-    header: <Placeholder variant="short">Header</Placeholder>,
-    renderFooterElement: true,
-    renderHeaderElement: true,
-    renderSkipNavigation: false,
     sidebar: "left",
   },
   argTypes: {
-    aboveHeader: { control: false },
-    breakout: { control: false },
-    contentBottom: { control: false },
-    contentPrimary: { control: false },
-    contentSidebar: { control: false },
-    contentTop: { control: false },
-    footer: { control: false },
-    header: { control: false },
-    renderSkipNavigation: argsBooleanType("true"),
     sidebar: {
       table: { defaultValue: { summary: "none" } },
     },
   },
   render: (args) => (
-    <TemplateAppContainer
-      {...args}
-      contentSidebar={<Placeholder>Sidebar ({args.sidebar})</Placeholder>}
-    />
+    <Template {...args}>
+      <TemplateBreakout>
+        <Placeholder variant="short">Breakout</Placeholder>
+      </TemplateBreakout>
+      <TemplateTop>
+        <Placeholder variant="short">Content Top</Placeholder>
+      </TemplateTop>
+      <TemplateSidebar>
+        <Placeholder>Left Sidebar</Placeholder>
+      </TemplateSidebar>
+      <TemplateMain>
+        <Placeholder>Main Content</Placeholder>
+      </TemplateMain>
+      <TemplateBottom>
+        <Placeholder variant="short">Content Bottom</Placeholder>
+      </TemplateBottom>
+    </Template>
   ),
   parameters: {
     design: {
@@ -230,257 +204,344 @@ export const WithControls: Story = {
     },
   },
 };
-// The following are additional Template example Stories.
-export const ChildrenComponentProps: Story = {
+
+export const TemplateFullExample = {
   args: {
     sidebar: "left",
   },
-  argTypes: {
-    aboveHeader: { table: { disable: true } },
-    breakout: { table: { disable: true } },
-    contentBottom: { table: { disable: true } },
-    contentId: { table: { disable: true } },
-    contentPrimary: { table: { disable: true } },
-    contentSidebar: { table: { disable: true } },
-    contentTop: { table: { disable: true } },
-    footer: { table: { disable: true } },
-    header: { table: { disable: true } },
-    sidebar: { description: "Only used in Storybook." },
-  },
   render: (args) => (
     <>
-      <SkipNavigation />
-      <Template>
+      <Template sidebar={args.sidebar}>
         <TemplateBreakout>
-          <TemplateAboveHeader>
-            <Placeholder variant="short">Above Header</Placeholder>
-          </TemplateAboveHeader>
-          <TemplateHeader>
-            <Placeholder variant="short">Header</Placeholder>
-            <Placeholder variant="short">Breadcrumbs</Placeholder>
-            <Placeholder>Hero</Placeholder>
-          </TemplateHeader>
+          <Breadcrumbs
+            breadcrumbsData={[
+              { url: "#", text: "Home" },
+              { url: "#", text: "Research" },
+              {
+                url: "#",
+                text: "Catalog",
+              },
+            ]}
+          />
+          <Hero
+            backgroundImageSrc={getPlaceholderImage()}
+            heroType="campaign"
+            heading={<Heading level="h1" id="1" text="Hero Campaign" />}
+            imageProps={{
+              alt: "Image example",
+              src: getPlaceholderImage("smaller"),
+            }}
+            isDarkBackgroundImage
+            subHeaderText={otherSubHeaderText}
+          />
         </TemplateBreakout>
-        <TemplateContent sidebar={args.sidebar}>
-          <TemplateContentTop>
-            <Placeholder variant="short">Content Top</Placeholder>
-          </TemplateContentTop>
-          {args.sidebar === "left" && (
-            <TemplateContentSidebar>
-              <Placeholder>Left Sidebar</Placeholder>
-            </TemplateContentSidebar>
-          )}
-          <TemplateContentPrimary>
-            <Placeholder>Main Content</Placeholder>
-            <Placeholder variant="short">More Content</Placeholder>
-          </TemplateContentPrimary>
-          {args.sidebar === "right" && (
-            <TemplateContentSidebar>
-              <Placeholder>Right Sidebar</Placeholder>
-            </TemplateContentSidebar>
-          )}
-          <TemplateContentBottom>
-            <Placeholder variant="short">Content Bottom</Placeholder>
-          </TemplateContentBottom>
-        </TemplateContent>
-        <TemplateFooter>
-          <Placeholder>Footer</Placeholder>
-        </TemplateFooter>
+        <TemplateTop>
+          <Banner
+            content="This is an the top content area!"
+            heading="Content Top"
+            type="informative"
+          />
+        </TemplateTop>
+        <TemplateSidebar>
+          <p>Sidebar information in a `Card` component.</p>
+          <Card
+            imageProps={{
+              alt: "Alt text",
+              aspectRatio: "square",
+              size: "default",
+              src: getPlaceholderImage("smaller"),
+            }}
+            isCentered
+          >
+            <CardHeading size="heading4" subtitle="Animal info" id="heading1">
+              Library Image
+            </CardHeading>
+            <CardContent>
+              Vestibulum id ligula porta felis euismod semper. Nulla vitae elit
+              libero, a pharetra augue.
+            </CardContent>
+          </Card>
+        </TemplateSidebar>
+        <TemplateMain>
+          <p>This is the main content!</p>
+          <Accordion accordionData={faqContentData} />
+          <HorizontalRule />
+          <p>Fill out the form!</p>
+          <Form action="/end/point" id="form1">
+            <FormField>
+              <TextInput
+                helperText="Make sure to complete this field."
+                id="username"
+                labelText="Username"
+                isRequired
+              />
+            </FormField>
+            <FormField>
+              <TextInput
+                helperText="Make sure to complete this field."
+                id="password"
+                labelText="Password"
+                isRequired
+              />
+            </FormField>
+            <FormRow>
+              <FormField>
+                <TextInput
+                  id="phone-field"
+                  labelText="Phone Field"
+                  type="tel"
+                />
+              </FormField>
+              <FormField>
+                <TextInput id="url-field" labelText="URL Field" type="url" />
+              </FormField>
+              <FormField>
+                <TextInput id="age-field" labelText="Age" type="number" />
+              </FormField>
+            </FormRow>
+            <FormField>
+              <Button id="submit">Submit</Button>
+            </FormField>
+          </Form>
+          <Table
+            columnHeaders={columnHeadersAlt}
+            columnStyles={columnStylesComplex}
+            id="table-horizontal-scrolling-wo-row-headers"
+            isScrollable
+            showRowDividers
+            showTitleText={false}
+            tableData={tableDataAlt}
+            titleText="Table with horizontal scrolling and no row headers"
+            useRowHeaders
+          />
+        </TemplateMain>
+        <TemplateBottom>
+          <Banner
+            content="This is an the bottom content area!"
+            heading="Content Bottom"
+            type="informative"
+          />
+        </TemplateBottom>
       </Template>
     </>
   ),
 };
 
-export const FullExampleWithTemplateChildrenComponents: Story = {
+export const TemplateFullExampleNarrow = {
   render: () => (
     <>
-      <SkipNavigation />
       <Template>
         <TemplateBreakout>
-          <TemplateAboveHeader>
-            <Notification
-              noMargin
-              notificationHeading="Standard Notification"
-              notificationContent={
-                <>
-                  This is an "announcement" Notification with a heading. Cras
-                  mattis consectetur purus sit amet fermentum. Maecenas faucibus
-                  mollis interdum. Morbi leo risus, porta ac consectetur ac,
-                  vestibulum at eros. Cum sociis natoque penatibus et magnis dis
-                  parturient montes, nascetur ridiculus mus. Vivamus sagittis
-                  lacus vel augue laoreet rutrum faucibus dolor auctor.
-                </>
-              }
-              showIcon={false}
-            />
-          </TemplateAboveHeader>
-          <TemplateHeader>
-            <Breadcrumbs
-              breadcrumbsData={[
-                { url: "#", text: "Home" },
-                { url: "#", text: "Research" },
-                {
-                  url: "#",
-                  text: "Catalog",
-                },
-              ]}
-            />
-            <Hero
-              backgroundImageSrc={getPlaceholderImage()}
-              heroType="campaign"
-              heading={<Heading level="h1" id="1" text="Hero Campaign" />}
-              imageProps={{
-                alt: "Image example",
-                src: getPlaceholderImage("smaller"),
-              }}
-              isDarkBackgroundImage
-              subHeaderText={otherSubHeaderText}
-            />
-          </TemplateHeader>
-        </TemplateBreakout>
-        <TemplateContent sidebar="right">
-          <TemplateContentTop>
-            <Banner
-              content="This is an the top content area!"
-              heading="Content Top"
-              type="informative"
-            />
-          </TemplateContentTop>
-          <TemplateContentPrimary>
-            <p>This is the main content!</p>
-            <Accordion accordionData={faqContentData} />
-            <HorizontalRule />
-            <p>Fill out the form!</p>
-            <Form action="/end/point" id="form1">
-              <FormField>
-                <TextInput
-                  helperText="Make sure to complete this field."
-                  id="username"
-                  labelText="Username"
-                  isRequired
-                />
-              </FormField>
-              <FormField>
-                <TextInput
-                  helperText="Make sure to complete this field."
-                  id="password"
-                  labelText="Password"
-                  isRequired
-                />
-              </FormField>
-              <FormRow>
-                <FormField>
-                  <TextInput
-                    id="phone-field"
-                    labelText="Phone Field"
-                    type="tel"
-                  />
-                </FormField>
-                <FormField>
-                  <TextInput id="url-field" labelText="URL Field" type="url" />
-                </FormField>
-                <FormField>
-                  <TextInput id="age-field" labelText="Age" type="number" />
-                </FormField>
-              </FormRow>
-              <FormField>
-                <Button id="submit">Submit</Button>
-              </FormField>
-            </Form>
-            <FeaturedContent
-              imageProps={{
-                alt: "",
-                src: getPlaceholderImage("smaller"),
-                position: "end",
-                width: "",
-              }}
-              isFullWidth
-              my="l"
-              textContent={
-                <>
-                  <Heading size="heading5">Sit Dapibus Elit</Heading>
-                  Donec id elit non mi porta gravida at eget metus. Nulla vitae
-                  elit libero, a pharetra augue. Cum sociis natoque penatibus et
-                  magnis dis parturient montes, nascetur ridiculus mus. Cras
-                  mattis consectetur purus sit amet fermentum.
-                </>
-              }
-            />
-            <Table
-              columnHeaders={columnHeadersAlt}
-              columnStyles={columnStylesComplex}
-              id="table-horizontal-scrolling-wo-row-headers"
-              isScrollable
-              showRowDividers
-              showTitleText={false}
-              tableData={tableDataAlt}
-              titleText="Table with horizontal scrolling and no row headers"
-              useRowHeaders
-            />
-          </TemplateContentPrimary>
-          <TemplateContentSidebar>
-            <p>Sidebar information in a `Card` component.</p>
-            <Card
-              imageProps={{
-                alt: "Alt text",
-                aspectRatio: "square",
-                size: "default",
-                src: getPlaceholderImage("smaller"),
-              }}
-              isCentered
-            >
-              <CardHeading size="heading4" subtitle="Animal info" id="heading1">
-                Library Image
-              </CardHeading>
-              <CardContent>
-                Vestibulum id ligula porta felis euismod semper. Nulla vitae
-                elit libero, a pharetra augue.
-              </CardContent>
-            </Card>
-          </TemplateContentSidebar>
-          <TemplateContentBottom>
-            <Banner
-              content="This is an the bottom content area!"
-              heading="Content Bottom"
-              type="informative"
-            />
-          </TemplateContentBottom>
-        </TemplateContent>
-        <TemplateFooter>
-          <Card
-            id="custom-card"
+          <Breadcrumbs
+            breadcrumbsData={[
+              { url: "#", text: "Home" },
+              { url: "#", text: "Research" },
+              {
+                url: "#",
+                text: "Catalog",
+              },
+            ]}
+          />
+          <Hero
+            backgroundImageSrc={getPlaceholderImage()}
+            heroType="campaign"
+            heading={<Heading level="h1" id="1" text="Hero Campaign" />}
             imageProps={{
-              alt: "Alt text",
-              aspectRatio: "sixteenByNine",
-              src: "https://cdn-d8.nypl.org/s3fs-public/2020-05/NYPL_MainFacadeRev2Cam2.png",
+              alt: "Image example",
+              src: getPlaceholderImage("smaller"),
             }}
-            layout="row"
-            backgroundColor="#616161"
-            foregroundColor="#FFF"
-          >
-            <CardHeading id="heading1-footer">Footer</CardHeading>
-            <CardContent>
-              <p>This is an example footer using the `Card` component.</p>
-              <p>
-                © The New York Public Library, 2021 The New York Public Library
-                is a 501(c)(3) | EIN 13-1887440
-              </p>
-            </CardContent>
-            <CardActions>
-              <Link color="#FFF" href="#" textDecoration="underline">
-                Facebook
-              </Link>
-              ,
-              <Link color="#FFF" href="#" textDecoration="underline">
-                Instagram
-              </Link>
-              ,
-              <Link color="#FFF" href="#" textDecoration="underline">
-                Twitter
-              </Link>
-            </CardActions>
-          </Card>
-        </TemplateFooter>
+            isDarkBackgroundImage
+            subHeaderText={otherSubHeaderText}
+          />
+        </TemplateBreakout>
+        <TemplateTop>
+          <Banner
+            content="This is an the top content area!"
+            heading="Content Top"
+            type="informative"
+          />
+        </TemplateTop>
+        <TemplateMainNarrow>
+          <p>This is the main content!</p>
+          <p>
+            Discover millions of items from The New York Public Library's
+            Stephen A. Schwarzman Building, Schomburg Center for Research in
+            Black Culture, and The New York Public Library for the Performing
+            Arts. Plus, access materials from library collections at Columbia
+            University, Harvard University, and Princeton University. Learn
+            more. Please note that the Research Catalog does not include
+            circulating materials. For books and more that you can check out to
+            take home please visit our circulating branch catalog. The legacy
+            research catalog is still available, but does not include all of our
+            Scan & Deliver options or the Columbia University, Harvard
+            University, and Princeton University material from the Shared
+            Collection.
+          </p>
+          <Accordion accordionData={faqContentData} />
+          <HorizontalRule />
+          <p>Fill out the form!</p>
+          <Form action="/end/point" id="form1">
+            <FormField>
+              <TextInput
+                helperText="Make sure to complete this field."
+                id="username"
+                labelText="Username"
+                isRequired
+              />
+            </FormField>
+            <FormField>
+              <TextInput
+                helperText="Make sure to complete this field."
+                id="password"
+                labelText="Password"
+                isRequired
+              />
+            </FormField>
+            <FormRow>
+              <FormField>
+                <TextInput
+                  id="phone-field"
+                  labelText="Phone Field"
+                  type="tel"
+                />
+              </FormField>
+              <FormField>
+                <TextInput id="url-field" labelText="URL Field" type="url" />
+              </FormField>
+              <FormField>
+                <TextInput id="age-field" labelText="Age" type="number" />
+              </FormField>
+            </FormRow>
+            <FormField>
+              <Button id="submit">Submit</Button>
+            </FormField>
+          </Form>
+          <Table
+            columnHeaders={columnHeadersAlt}
+            columnStyles={columnStylesComplex}
+            id="table-horizontal-scrolling-wo-row-headers"
+            isScrollable
+            showRowDividers
+            showTitleText={false}
+            tableData={tableDataAlt}
+            titleText="Table with horizontal scrolling and no row headers"
+            useRowHeaders
+          />
+        </TemplateMainNarrow>
+        <TemplateBottom>
+          <Banner
+            content="This is an the bottom content area!"
+            heading="Content Bottom"
+            type="informative"
+          />
+        </TemplateBottom>
+      </Template>
+    </>
+  ),
+};
+
+export const TemplateFullExampleWithFeaturedContent = {
+  render: () => (
+    <>
+      <Template>
+        <TemplateBreakout>
+          <Breadcrumbs
+            breadcrumbsData={[
+              { url: "#", text: "Home" },
+              { url: "#", text: "Research" },
+              {
+                url: "#",
+                text: "Catalog",
+              },
+            ]}
+          />
+          <Hero
+            backgroundImageSrc={getPlaceholderImage()}
+            heroType="campaign"
+            heading={<Heading level="h1" id="1" text="Hero Campaign" />}
+            imageProps={{
+              alt: "Image example",
+              src: getPlaceholderImage("smaller"),
+            }}
+            isDarkBackgroundImage
+            subHeaderText={otherSubHeaderText}
+          />
+        </TemplateBreakout>
+        <TemplateTop>
+          <Banner
+            content="This is an the top content area!"
+            heading="Content Top"
+            type="informative"
+          />
+        </TemplateTop>
+        <TemplateMain>
+          <p>This is the main content!</p>
+          <Accordion accordionData={faqContentData} />
+          <HorizontalRule />
+          <p>Fill out the form!</p>
+          <Form action="/end/point" id="form1">
+            <FormField>
+              <TextInput
+                helperText="Make sure to complete this field."
+                id="username"
+                labelText="Username"
+                isRequired
+              />
+            </FormField>
+            <FormField>
+              <TextInput
+                helperText="Make sure to complete this field."
+                id="password"
+                labelText="Password"
+                isRequired
+              />
+            </FormField>
+            <FormRow>
+              <FormField>
+                <TextInput
+                  id="phone-field"
+                  labelText="Phone Field"
+                  type="tel"
+                />
+              </FormField>
+              <FormField>
+                <TextInput id="url-field" labelText="URL Field" type="url" />
+              </FormField>
+              <FormField>
+                <TextInput id="age-field" labelText="Age" type="number" />
+              </FormField>
+            </FormRow>
+            <FormField>
+              <Button id="submit">Submit</Button>
+            </FormField>
+          </Form>
+          <FeaturedContent
+            imageProps={{
+              alt: "",
+              src: getPlaceholderImage("smaller"),
+              position: "end",
+              width: "",
+            }}
+            isFullWidth
+            my="l"
+            textContent={
+              <>
+                <Heading size="heading5">Sit Dapibus Elit</Heading>
+                Donec id elit non mi porta gravida at eget metus. Nulla vitae
+                elit libero, a pharetra augue. Cum sociis natoque penatibus et
+                magnis dis parturient montes, nascetur ridiculus mus. Cras
+                mattis consectetur purus sit amet fermentum.
+              </>
+            }
+          />
+        </TemplateMain>
+        <TemplateBottom>
+          <Banner
+            content="This is an the bottom content area!"
+            heading="Content Bottom"
+            type="informative"
+          />
+        </TemplateBottom>
       </Template>
     </>
   ),

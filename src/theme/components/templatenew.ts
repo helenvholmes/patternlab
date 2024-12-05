@@ -12,10 +12,11 @@ const TemplateNew = defineStyleConfig({
     maxWidth: "1280px",
     m: "0 auto",
     p: "s",
-    gap: responsiveGap,
     gridTemplateAreas: `"breakout" "top" "main" "bottom"`,
     gridTemplateColumns: "repeat(1, minmax(100px, 1fr))",
     gridTemplateRows: "auto",
+    columnGap: responsiveGap,
+    "& > *:not(:last-child)": { mb: responsiveGap },
   }),
   variants: {
     left: {
@@ -47,52 +48,21 @@ const TemplateNew = defineStyleConfig({
 
 const TemplateNewBreakout = defineStyleConfig({
   baseStyle: defineStyle({
-    gridArea: "breakout",
     width: "100vw",
     ml: "calc(-50vw + 50%)",
     px: "s",
   }),
 });
 
-const TemplateNewTop = defineStyleConfig({
+const TemplateNewMainNarrow = defineStyleConfig({
   baseStyle: defineStyle({
-    gridArea: "top",
-  }),
-});
-
-const TemplateNewMain = defineStyleConfig({
-  baseStyle: defineStyle({
-    gridArea: "main",
-  }),
-  variants: {
-    featuredContent: {
-      width: "100vw",
-      ml: "calc(-50vw + 50%)",
-      px: "s",
-    },
-    text: {
-      maxWidth: "600px",
-    },
-  },
-});
-
-const TemplateNewSidebar = defineStyleConfig({
-  baseStyle: defineStyle({
-    gridArea: "sidebar",
-  }),
-});
-
-const TemplateNewBottom = defineStyleConfig({
-  baseStyle: defineStyle({
-    gridArea: "bottom",
+    maxWidth: { lg: "720px" },
+    m: { lg: "0 auto" },
   }),
 });
 
 export default {
   TemplateNew,
   TemplateNewBreakout,
-  TemplateNewTop,
-  TemplateNewMain,
-  TemplateNewSidebar,
-  TemplateNewBottom,
+  TemplateNewMainNarrow,
 };
