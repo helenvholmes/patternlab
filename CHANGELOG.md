@@ -8,13 +8,24 @@ Currently, this repo is in Prerelease. When it is released, this project will ad
 
 ## Prerelease
 
+### Updates
+
+- Updates `Template` component(s) and styles per [TAD](https://docs.google.com/document/d/1vZJX7Y-DnEM44-iWw5qoXGdxqavHEN6prhr-YDTNr0o/edit?pli=1&tab=t.0).
+
+## 3.5.0 (December 5, 2024)
+
 ### Adds
 
-- Adds the `"SubNav"`component.
+- Adds the `SubNav` component.
+- Adds the `useScrollFadeStyles` hook.
 
 ### Updates
 
 - Updates the `MultiSelect` component to add `itemCount` as a data property to the `items` prop to render the item count for an option.
+
+### Fixes
+
+- Fixes issue where focus indicator was being cut off in places in the `Template` component.
 
 ## 3.4.4 (November 20, 2024)
 
