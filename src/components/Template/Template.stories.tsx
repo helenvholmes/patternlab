@@ -239,7 +239,7 @@ export const TemplateFullExample = {
         </TemplateBreakout>
         <TemplateTop>
           <Banner
-            content="This is an the top content area!"
+            content="This is the top content area!"
             heading="Content Top"
             type="informative"
           />
@@ -319,7 +319,7 @@ export const TemplateFullExample = {
         </TemplateMain>
         <TemplateBottom>
           <Banner
-            content="This is an the bottom content area!"
+            content="This is the bottom content area!"
             heading="Content Bottom"
             type="informative"
           />
@@ -358,7 +358,7 @@ export const TemplateFullExampleNarrow = {
         </TemplateBreakout>
         <TemplateTop>
           <Banner
-            content="This is an the top content area!"
+            content="This is the top content area!"
             heading="Content Top"
             type="informative"
           />
@@ -380,59 +380,10 @@ export const TemplateFullExampleNarrow = {
             Collection.
           </p>
           <Accordion accordionData={faqContentData} />
-          <HorizontalRule />
-          <p>Fill out the form!</p>
-          <Form action="/end/point" id="form1">
-            <FormField>
-              <TextInput
-                helperText="Make sure to complete this field."
-                id="username"
-                labelText="Username"
-                isRequired
-              />
-            </FormField>
-            <FormField>
-              <TextInput
-                helperText="Make sure to complete this field."
-                id="password"
-                labelText="Password"
-                isRequired
-              />
-            </FormField>
-            <FormRow>
-              <FormField>
-                <TextInput
-                  id="phone-field"
-                  labelText="Phone Field"
-                  type="tel"
-                />
-              </FormField>
-              <FormField>
-                <TextInput id="url-field" labelText="URL Field" type="url" />
-              </FormField>
-              <FormField>
-                <TextInput id="age-field" labelText="Age" type="number" />
-              </FormField>
-            </FormRow>
-            <FormField>
-              <Button id="submit">Submit</Button>
-            </FormField>
-          </Form>
-          <Table
-            columnHeaders={columnHeadersAlt}
-            columnStyles={columnStylesComplex}
-            id="table-horizontal-scrolling-wo-row-headers"
-            isScrollable
-            showRowDividers
-            showTitleText={false}
-            tableData={tableDataAlt}
-            titleText="Table with horizontal scrolling and no row headers"
-            useRowHeaders
-          />
         </TemplateMainNarrow>
         <TemplateBottom>
           <Banner
-            content="This is an the bottom content area!"
+            content="This is the bottom content area!"
             heading="Content Bottom"
             type="informative"
           />
@@ -471,7 +422,7 @@ export const TemplateFullExampleWithFeaturedContent = {
         </TemplateBreakout>
         <TemplateTop>
           <Banner
-            content="This is an the top content area!"
+            content="This is the top content area!"
             heading="Content Top"
             type="informative"
           />
@@ -480,43 +431,6 @@ export const TemplateFullExampleWithFeaturedContent = {
           <p>This is the main content!</p>
           <Accordion accordionData={faqContentData} />
           <HorizontalRule />
-          <p>Fill out the form!</p>
-          <Form action="/end/point" id="form1">
-            <FormField>
-              <TextInput
-                helperText="Make sure to complete this field."
-                id="username"
-                labelText="Username"
-                isRequired
-              />
-            </FormField>
-            <FormField>
-              <TextInput
-                helperText="Make sure to complete this field."
-                id="password"
-                labelText="Password"
-                isRequired
-              />
-            </FormField>
-            <FormRow>
-              <FormField>
-                <TextInput
-                  id="phone-field"
-                  labelText="Phone Field"
-                  type="tel"
-                />
-              </FormField>
-              <FormField>
-                <TextInput id="url-field" labelText="URL Field" type="url" />
-              </FormField>
-              <FormField>
-                <TextInput id="age-field" labelText="Age" type="number" />
-              </FormField>
-            </FormRow>
-            <FormField>
-              <Button id="submit">Submit</Button>
-            </FormField>
-          </Form>
           <FeaturedContent
             imageProps={{
               alt: "",
@@ -539,7 +453,7 @@ export const TemplateFullExampleWithFeaturedContent = {
         </TemplateMain>
         <TemplateBottom>
           <Banner
-            content="This is an the bottom content area!"
+            content="This is the bottom content area!"
             heading="Content Bottom"
             type="informative"
           />
