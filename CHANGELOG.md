@@ -8,18 +8,24 @@ Currently, this repo is in Prerelease. When it is released, this project will ad
 
 ## Prerelease
 
-### Fixes
+### Adds
 
-- Fixes issue where focus indicator was being cut off in places in the `Template` component.
+- Adds `jest-transformer-svg` to mock SVGs more accurately in our tests
+
+## 3.5.0 (December 5, 2024)
 
 ### Adds
 
 - Adds the `"SubNav"`component.
-- Adds `jest-transformer-svg` to mock SVGs more accurately in our tests
+- Adds the `useScrollFadeStyles` hook.
 
 ### Updates
 
 - Updates the `MultiSelect` component to add `itemCount` as a data property to the `items` prop to render the item count for an option.
+
+### Fixes
+
+- Fixes issue where focus indicator was being cut off in places in the `Template` component.
 
 ## 3.4.4 (November 20, 2024)
 

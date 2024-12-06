@@ -87,7 +87,7 @@ const withChildrenItems = [
         name: "User Experience",
       },
       {
-        id: "tecture",
+        id: "architecture_design",
         name: "Architecture",
       },
       {
@@ -139,7 +139,7 @@ const withDisabledItems = [
         isDisabled: true,
       },
       {
-        id: "tecture",
+        id: "architecture_design",
         name: "Architecture",
         isDisabled: false,
       },
@@ -185,7 +185,7 @@ const withDisabledAllChildrenItems = [
         isDisabled: true,
       },
       {
-        id: "tecture",
+        id: "architecture_design",
         name: "Architecture",
         isDisabled: true,
       },
@@ -228,7 +228,7 @@ const withItemCountItems = [
         itemCount: 5,
       },
       {
-        id: "tecture",
+        id: "architecture_design",
         name: "Architecture",
         itemCount: 3,
       },
