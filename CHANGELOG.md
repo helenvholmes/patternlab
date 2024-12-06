@@ -15,6 +15,7 @@ Currently, this repo is in Prerelease. When it is released, this project will ad
 ### Adds
 
 - Adds the `"SubNav"`component.
+- Adds `jest-transformer-svg` to mock SVGs more accurately in our tests
 
 ### Updates
 
