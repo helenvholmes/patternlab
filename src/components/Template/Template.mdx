@@ -34,7 +34,7 @@ import Link from "../Link/Link";
 
 ## Template Overview
 
-TBD
+### Using the `Template` with the `Header` and `Footer`
 
 <Source
   code={`
@@ -46,14 +46,18 @@ import {
   TemplateMain,
   TemplateBottom
 } from "@nypl/design-system-react-components";
+//...
 
-<Template sidebar="...">
-  <TemplateBreakout>// ...</TemplateBreakout>
-  <TemplateTop>// ...</TemplateTop>
-  <TemplateSidebar>// ...</TemplateSidebar>
-  <TemplateMain>// ...</TemplateMain>
-  <TemplateBottom>// ...</TemplateBottom>
-</Template>
+<>
+  <SkipNavigation />
+  <Template sidebar="...">
+    <TemplateBreakout>...</TemplateBreakout>
+    <TemplateTop>...</TemplateTop>
+    <TemplateSidebar>...</TemplateSidebar>
+    <TemplateMain>...</TemplateMain>
+    <TemplateBottom>...</TemplateBottom>
+  </Template>
+</>
 `} language="jsx" />
 
 ## Template Props
@@ -81,6 +85,9 @@ breaking a reader's rhythm. The `TemplateMain` component has a max width of 1280
 which is too wide for text. If your content includes long chunks of text, you
 should use the `TemplateMainNarrow` component instead.
 
+This means you may use `TemplateMain` or `TemplateMainNarrow` depending on your needs,
+but the two should not be used in conjunction.
+
 The `TemplateMain` and `TemplateMainNarrow` components render the content as a
 `<main>` element with a default "id" of `"mainContent"`. This should be used as
 the anchor element that the skip navigation link points to. If your application
@@ -100,7 +107,7 @@ Pass the location of the sidebar to the `sidebar` prop as either "left" or "righ
 <Source
   code={`
 <Template sidebar="left">
-  // ...
+  //...
 </Template>
 `}
   language="jsx"

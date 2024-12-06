@@ -14,9 +14,7 @@ export const changelogData: ChangelogData[] = [
     version: "Prerelease",
     type: "Update",
     affects: ["Functionality", "Styles"],
-    notes: [
-      "Major update to component and styles based on the [Template TAD](https://docs.google.com/document/d/1vZJX7Y-DnEM44-iWw5qoXGdxqavHEN6prhr-YDTNr0o/edit?pli=1&tab=t.0).",
-    ],
+    notes: ["Major update to component and styles based on the Template TAD."],
   },
   {
     date: "2024-12-05",

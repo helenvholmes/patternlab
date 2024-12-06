@@ -71,7 +71,6 @@ import { SubNav, SubNavChildren } from "./components/subnav";
 import Tabs from "./components/tabs";
 import TagSetStyles from "./components/tagSet";
 import TemplateStyles from "./components/template";
-import TemplateNewStyles from "./components/templatenew";
 import Text from "./components/text";
 import TextInput from "./components/textInput";
 import Toggle from "./components/toggle";
@@ -176,7 +175,6 @@ const theme: any = {
     CustomTable,
     ...TagSetStyles,
     ...TemplateStyles,
-    ...TemplateNewStyles,
     Text,
     TextInput,
     ...Toggle,

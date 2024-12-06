@@ -1,4 +1,4 @@
-import type { Meta } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import { getPlaceholderImage } from "../../utils/utils";
 import Accordion, { AccordionDataProps } from "../Accordion/Accordion";
 import Banner from "../Banner/Banner";
@@ -9,7 +9,7 @@ import FeaturedContent from "../FeaturedContent/FeaturedContent";
 import Form, { FormField, FormRow } from "../Form/Form";
 import Heading from "../Heading/Heading";
 import Hero from "../Hero/Hero";
-import { HorizontalRule } from "../HorizontalRule/HorizontalRule";
+import HorizontalRule from "../HorizontalRule/HorizontalRule";
 import Placeholder from "../Placeholder/Placeholder";
 import Table from "../Table/Table";
 import TextInput from "../TextInput/TextInput";
@@ -21,14 +21,25 @@ import {
   TemplateMainNarrow,
   TemplateSidebar,
   TemplateBottom,
+  sidebarPlacementArray,
+  SidebarPlacement,
 } from "./Template";
 
-const meta: Meta = {
+const meta: Meta<typeof Template> = {
   title: "Components/Page Layout/Template",
   component: Template,
+  argTypes: {
+    id: { control: false },
+    sidebar: {
+      control: { type: "radio" },
+      options: sidebarPlacementArray,
+      table: { defaultValue: { summary: "none" } },
+    },
+  },
 };
 
 export default meta;
+type Story = StoryObj<typeof Template>;
 
 const accordionData: AccordionDataProps[] = [
   {
@@ -169,7 +180,11 @@ const otherSubHeaderText =
  * Main Story for the Template component. This must contains the `args`
  * and `parameters` properties in this object.
  */
-export const WithControls = {
+
+export const sidebarLabel = (sidebar: SidebarPlacement) => {
+  return `${sidebar[0].toUpperCase()}${sidebar.slice(1)} Sidebar`;
+};
+export const WithControls: Story = {
   args: {
     id: "template",
     sidebar: "left",
@@ -180,25 +195,31 @@ export const WithControls = {
       table: { defaultValue: { summary: "none" } },
     },
   },
-  render: (args) => (
-    <Template {...args}>
-      <TemplateBreakout>
-        <Placeholder variant="short">Breakout</Placeholder>
-      </TemplateBreakout>
-      <TemplateTop>
-        <Placeholder variant="short">Content Top</Placeholder>
-      </TemplateTop>
-      <TemplateSidebar>
-        <Placeholder>Left Sidebar</Placeholder>
-      </TemplateSidebar>
-      <TemplateMain>
-        <Placeholder>Main Content</Placeholder>
-      </TemplateMain>
-      <TemplateBottom>
-        <Placeholder variant="short">Content Bottom</Placeholder>
-      </TemplateBottom>
-    </Template>
-  ),
+  render: (args) => {
+    const { sidebar } = args;
+
+    return (
+      <Template {...args}>
+        <TemplateBreakout>
+          <Placeholder variant="short">Breakout</Placeholder>
+        </TemplateBreakout>
+        <TemplateTop>
+          <Placeholder variant="short">Content Top</Placeholder>
+        </TemplateTop>
+        {sidebar !== "none" && (
+          <TemplateSidebar>
+            <Placeholder>{sidebarLabel(sidebar)}</Placeholder>
+          </TemplateSidebar>
+        )}
+        <TemplateMain>
+          <Placeholder>Main Content</Placeholder>
+        </TemplateMain>
+        <TemplateBottom>
+          <Placeholder variant="short">Content Bottom</Placeholder>
+        </TemplateBottom>
+      </Template>
+    );
+  },
   parameters: {
     design: {
       type: "figma",
@@ -207,7 +228,7 @@ export const WithControls = {
   },
 };
 
-export const TemplateFullExample = {
+export const TemplateFullExample: Story = {
   args: {
     sidebar: "left",
   },
@@ -333,36 +354,6 @@ export const TemplateFullExampleNarrow = {
   render: () => (
     <>
       <Template>
-        <TemplateBreakout>
-          <Breadcrumbs
-            breadcrumbsData={[
-              { url: "#", text: "Home" },
-              { url: "#", text: "Research" },
-              {
-                url: "#",
-                text: "Catalog",
-              },
-            ]}
-          />
-          <Hero
-            backgroundImageSrc={getPlaceholderImage()}
-            heroType="campaign"
-            heading={<Heading level="h1" id="1" text="Hero Campaign" />}
-            imageProps={{
-              alt: "Image example",
-              src: getPlaceholderImage("smaller"),
-            }}
-            isDarkBackgroundImage
-            subHeaderText={otherSubHeaderText}
-          />
-        </TemplateBreakout>
-        <TemplateTop>
-          <Banner
-            content="This is the top content area!"
-            heading="Content Top"
-            type="informative"
-          />
-        </TemplateTop>
         <TemplateMainNarrow>
           <p>This is the main content!</p>
           <p>
@@ -381,13 +372,6 @@ export const TemplateFullExampleNarrow = {
           </p>
           <Accordion accordionData={faqContentData} />
         </TemplateMainNarrow>
-        <TemplateBottom>
-          <Banner
-            content="This is the bottom content area!"
-            heading="Content Bottom"
-            type="informative"
-          />
-        </TemplateBottom>
       </Template>
     </>
   ),

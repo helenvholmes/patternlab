@@ -10,7 +10,7 @@ Currently, this repo is in Prerelease. When it is released, this project will ad
 
 ### Updates
 
-- Updates `Template` component(s) and styles per [TAD](https://docs.google.com/document/d/1vZJX7Y-DnEM44-iWw5qoXGdxqavHEN6prhr-YDTNr0o/edit?pli=1&tab=t.0).
+- [Updates `Template` component(s)](<(https://newyorkpubliclibrary.atlassian.net/browse/DSD-1884)>) and styles per TAD.
 
 ## 3.5.0 (December 5, 2024)
 
