@@ -14,7 +14,9 @@ export const changelogData: ChangelogData[] = [
     version: "Prerelease",
     type: "Update",
     affects: ["Functionality", "Styles"],
-    notes: ["Major update to component and styles based on the Template TAD."],
+    notes: [
+      "Major update to component and styles based on the Template TAD. Updates include simplified code and exported components, responsive sidebar and spacing, and accomodations for content needing a narrower container.",
+    ],
   },
   {
     date: "2024-12-05",

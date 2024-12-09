@@ -104,6 +104,10 @@ Resources
 In order to render a sidebar, the `Template` component needs to be aware of it.
 Pass the location of the sidebar to the `sidebar` prop as either "left" or "right".
 
+For accessibility purposes, you should also structure the DOM logically. This means
+if you are using `sidebar="left"`, place the `TemplateSidebar` before `TemplateMain`.
+If you are using `sidebar="right"`, place the `TemplateSidebar` after.
+
 <Source
   code={`
 <Template sidebar="left">

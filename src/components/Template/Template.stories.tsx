@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { getPlaceholderImage } from "../../utils/utils";
+import { getPlaceholderImage, sidebarLabel } from "../../utils/utils";
 import Accordion, { AccordionDataProps } from "../Accordion/Accordion";
 import Banner from "../Banner/Banner";
 import Breadcrumbs from "../Breadcrumbs/Breadcrumbs";
@@ -22,7 +22,6 @@ import {
   TemplateSidebar,
   TemplateBottom,
   sidebarPlacementArray,
-  SidebarPlacement,
 } from "./Template";
 
 const meta: Meta<typeof Template> = {
@@ -180,10 +179,6 @@ const otherSubHeaderText =
  * Main Story for the Template component. This must contains the `args`
  * and `parameters` properties in this object.
  */
-
-export const sidebarLabel = (sidebar: SidebarPlacement) => {
-  return `${sidebar[0].toUpperCase()}${sidebar.slice(1)} Sidebar`;
-};
 export const WithControls: Story = {
   args: {
     id: "template",
@@ -197,7 +192,6 @@ export const WithControls: Story = {
   },
   render: (args) => {
     const { sidebar } = args;
-
     return (
       <Template {...args}>
         <TemplateBreakout>
@@ -232,9 +226,10 @@ export const TemplateFullExample: Story = {
   args: {
     sidebar: "left",
   },
-  render: (args) => (
-    <>
-      <Template sidebar={args.sidebar}>
+  render: (args) => {
+    const { sidebar } = args;
+    return (
+      <Template sidebar={sidebar}>
         <TemplateBreakout>
           <Breadcrumbs
             breadcrumbsData={[
@@ -265,26 +260,28 @@ export const TemplateFullExample: Story = {
             type="informative"
           />
         </TemplateTop>
-        <TemplateSidebar>
-          <p>Sidebar information in a `Card` component.</p>
-          <Card
-            imageProps={{
-              alt: "Alt text",
-              aspectRatio: "square",
-              size: "default",
-              src: getPlaceholderImage("smaller"),
-            }}
-            isCentered
-          >
-            <CardHeading size="heading4" subtitle="Animal info" id="heading1">
-              Library Image
-            </CardHeading>
-            <CardContent>
-              Vestibulum id ligula porta felis euismod semper. Nulla vitae elit
-              libero, a pharetra augue.
-            </CardContent>
-          </Card>
-        </TemplateSidebar>
+        {sidebar === "left" && (
+          <TemplateSidebar>
+            <p>Sidebar information in a `Card` component.</p>
+            <Card
+              imageProps={{
+                alt: "Alt text",
+                aspectRatio: "square",
+                size: "default",
+                src: getPlaceholderImage("smaller"),
+              }}
+              isCentered
+            >
+              <CardHeading size="heading4" subtitle="Animal info" id="heading1">
+                Library Image
+              </CardHeading>
+              <CardContent>
+                Vestibulum id ligula porta felis euismod semper. Nulla vitae
+                elit libero, a pharetra augue.
+              </CardContent>
+            </Card>
+          </TemplateSidebar>
+        )}
         <TemplateMain>
           <p>This is the main content!</p>
           <Accordion accordionData={faqContentData} />
@@ -338,6 +335,28 @@ export const TemplateFullExample: Story = {
             useRowHeaders
           />
         </TemplateMain>
+        {sidebar === "right" && (
+          <TemplateSidebar>
+            <p>Sidebar information in a `Card` component.</p>
+            <Card
+              imageProps={{
+                alt: "Alt text",
+                aspectRatio: "square",
+                size: "default",
+                src: getPlaceholderImage("smaller"),
+              }}
+              isCentered
+            >
+              <CardHeading size="heading4" subtitle="Animal info" id="heading1">
+                Library Image
+              </CardHeading>
+              <CardContent>
+                Vestibulum id ligula porta felis euismod semper. Nulla vitae
+                elit libero, a pharetra augue.
+              </CardContent>
+            </Card>
+          </TemplateSidebar>
+        )}
         <TemplateBottom>
           <Banner
             content="This is the bottom content area!"
@@ -346,8 +365,8 @@ export const TemplateFullExample: Story = {
           />
         </TemplateBottom>
       </Template>
-    </>
-  ),
+    );
+  },
 };
 
 export const TemplateFullExampleNarrow = {

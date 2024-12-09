@@ -14,7 +14,7 @@ import {
   TemplateMainNarrow,
 } from "./Template";
 import Placeholder from "../Placeholder/Placeholder";
-import { sidebarLabel } from "./Template.stories";
+import { sidebarLabel } from "../../utils/utils";
 
 const breakout = <Placeholder variant="short">Breakout</Placeholder>;
 const contentTop = <Placeholder>Content Top</Placeholder>;
@@ -49,7 +49,22 @@ const templateComponents = (
 
 describe("Template components accessibility", () => {
   it("passes axe accessibility test", async () => {
+    const { container } = render(templateComponents());
+    expect(await axe(container)).toHaveNoViolations();
+  });
+
+  it("passes axe accessibility test", async () => {
     const { container } = render(templateComponents("left"));
+    expect(await axe(container)).toHaveNoViolations();
+  });
+
+  it("passes axe accessibility test", async () => {
+    const { container } = render(templateComponents("right"));
+    expect(await axe(container)).toHaveNoViolations();
+  });
+
+  it("passes axe accessibility test", async () => {
+    const { container } = render(templateComponents("none", true));
     expect(await axe(container)).toHaveNoViolations();
   });
 });
@@ -66,7 +81,7 @@ describe("Template components", () => {
     expect(screen.getByText("Content Bottom")).toBeInTheDocument();
   });
 
-  it("renders each section with left sidebar", () => {
+  it("renders each section with right sidebar", () => {
     render(templateComponents("right"));
 
     expect(screen.getByText("Breakout")).toBeInTheDocument();
