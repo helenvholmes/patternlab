@@ -8,6 +8,10 @@ Currently, this repo is in Prerelease. When it is released, this project will ad
 
 ## Prerelease
 
+### Adds
+
+- Adds the `Filtering` page to the `Style Guide`.
+
 ## 3.5.0 (December 5, 2024)
 
 ### Adds
