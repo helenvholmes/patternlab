@@ -1,0 +1,47 @@
+import { Meta } from "@storybook/blocks";
+
+import Image from "../Image/Image";
+import Link from "../Link/Link";
+
+import imageFilteringTextSearchField from "../../../static/filteringStyleGuide/filteringTextSearchField.png";
+import { exampleWrapperStyles } from "./FilteringOverview.mdx";
+
+<Meta title="Style Guide/Filtering/Page Composition/Text search field" />
+
+# Text search field
+
+The `text search` field provides a way for users to enter a text string to
+search and retrieve related information from a defined data set. It is not
+considered a filter.
+
+While the `text search` field is not required in a filtering scenario, more
+often than not, filtering is used to narrow a results set that was initially
+produced with a text search.
+
+<Image
+  alt="Example of text search field"
+  src={imageFilteringTextSearchField}
+  {...exampleWrapperStyles}
+/>
+
+## Table of contents
+
+- {<Link href="#rendering" target="_self">Rendering</Link>}
+- {<Link href="#positioning" target="_self">Positioning</Link>}
+- {<Link href="#anti-patterns" target="_self">Anti-patterns</Link>}
+
+## Rendering
+
+The `text search` field should be rendered using the DS
+[SearchBar](./?path=/docs/components-form-elements-searchbar--docs) or
+[TextInput](./?path=/docs/components-form-elements-textinput--docs) component.
+
+## Positioning
+
+The `text search` field should be positioned above the `filter bar` and `active filters` list.
+
+## Anti-patterns
+
+The `text search` field should not be considered when using [live
+filtering](./?path=/docs/style-guide-filtering-applying-clearing-filters--docs#applying-filters).
+Rather, a text search term should be applied using a submit button.

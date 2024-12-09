@@ -1,0 +1,65 @@
+import { Meta } from "@storybook/blocks";
+
+import Image from "../Image/Image";
+import Link from "../Link/Link";
+
+import imageFilteringActiveFiltersList from "../../../static/filteringStyleGuide/filteringActiveFiltersList.png";
+import { exampleWrapperStyles } from "./FilteringOverview.mdx";
+
+<Meta title="Style Guide/Filtering/Page Composition/Active filters list" />
+
+# Active filters list
+
+The `active filters` list is used to display filters that have been applied.
+
+<Image
+  alt="Example of active filters list"
+  src={imageFilteringActiveFiltersList}
+  {...exampleWrapperStyles}
+/>
+
+## Table of Contents
+
+- {<Link href="#rendering" target="_self">Rendering</Link>}
+- {<Link href="#positioning" target="_self">Positioning</Link>}
+- {<Link href="#visibility" target="_self">Visibility</Link>}
+- {<Link href="#labeling" target="_self">Labeling</Link>}
+- {<Link href="#adding-filters" target="_self">Adding filters</Link>}
+- {<Link href="#clearing-filters" target="_self">Clearing filters</Link>}
+
+## Rendering
+
+The `active filters` list should be rendered using the DS
+[TagSet](./?path=/docs/components-content-display-tagset--docs) component.
+
+## Positioning
+
+The `active filters` list should be positioned directly above the `results` list.
+
+## Visibility
+
+The `active filters` list should only be visible after at least one filter option
+has been applied.
+
+## Labeling
+
+The `active filters` list should include an "Active filters" label.
+
+## Adding filters
+
+A new tag should be added to the `TagSet` as each new filter option is applied.
+The tags in the `TagSet` should be listed in the order they were selected.
+
+In use cases where a text search term has been applied to the search results,
+the `active filters` list should not include the search term. Rather, the search
+term should be incorporated into the `total results` heading.
+
+## Clearing filters
+
+The `TagSet` component will render a "Clear filters" button when more than one
+filter option has been applied. Clicking the "Clear filters" button should:
+
+- reset all form input elements within the `filter bar`
+- remove all tags from the `TagSet` component
+- update the `results` list to an unfiltered state
+- update the `total results` heading to reflect the updated `results` list

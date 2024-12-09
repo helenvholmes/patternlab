@@ -1,0 +1,54 @@
+import { Meta } from "@storybook/blocks";
+
+import Image from "../Image/Image";
+import Link from "../Link/Link";
+
+import imageFilteringTotalResultsHeading from "../../../static/filteringStyleGuide/filteringTotalResultsHeading.png";
+import { exampleWrapperStyles } from "./FilteringOverview.mdx";
+
+<Meta title="Style Guide/Filtering/Page Composition/Total results heading" />
+
+# Total results heading
+
+The `total results` heading reflects the current state of a results set,
+displaying the number of records in a results set, the current position within a
+results set, and, if applicable, the search term used to generate a results set.
+
+<Image
+  alt="Example of total results heading"
+  src={imageFilteringTotalResultsHeading}
+  {...exampleWrapperStyles}
+/>
+
+## Table of Contents
+
+- {<Link href="#rendering" target="_self">Rendering</Link>}
+- {<Link href="#positioning" target="_self">Positioning</Link>}
+- {<Link href="#updating" target="_self">Updating</Link>}
+- {<Link href="#formatting" target="_self">Formatting</Link>}
+
+## Rendering
+
+The `total results` heading should be rendered using the DS
+[Heading](./?path=/docs/components-typography-styles-heading--docs) component.
+
+## Positioning
+
+The `total results` heading should be positioned below the `active filters` list and
+aligned to the left.
+
+## Updating
+
+The `total results` heading should be updated whenever filters are applied.
+
+## Formatting
+
+The `total results` heading should use the following format:
+
+`Displaying 1-24 of 1,234 results`
+
+In use cases where a text search term has been applied to the search results
+using the `text search` field, the `total results` heading should use the following
+format:
+
+`Displaying 1-24 of 567 results for "{search_term}"`

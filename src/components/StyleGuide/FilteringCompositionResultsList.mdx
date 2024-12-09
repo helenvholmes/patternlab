@@ -1,0 +1,45 @@
+import { Meta } from "@storybook/blocks";
+
+import Image from "../Image/Image";
+import Link from "../Link/Link";
+
+import imageFilteringResultsList from "../../../static/filteringStyleGuide/filteringResultsList.png";
+import { exampleWrapperStyles } from "./FilteringOverview.mdx";
+
+<Meta title="Style Guide/Filtering/Page Composition/Results list" />
+
+# Results list
+
+The `results list` represents the items that are being filtered.
+
+<Image
+  alt="Example of results list"
+  src={imageFilteringResultsList}
+  {...exampleWrapperStyles}
+/>
+
+## Table of Contents
+
+- {<Link href="#rendering" target="_self">Rendering</Link>}
+- {<Link href="#presentation" target="_self">Presentation</Link>}
+
+## Rendering
+
+The `results list` will most commonly be rendered using the DS `Card` component
+presented in a list or grid format, but ultimately the items in the `results list`
+should be composed as needed by consuming apps.
+
+## Presentation
+
+For results that are presented in either a list or grid format, it is
+recommended to show 12, 24, 36, or 48 results on each page in a set of results,
+depending on the size and complexity of the individual result items. For
+example, simple result items that contain a book title and a short description
+should show 36 or 48 items per page, while complex result items that include a
+photo, a book title, a long description, an availability indicator, and CTA
+buttons might be best limited to 12 or 24 items per page.
+
+The number of items per page should initially be set by the product designer and
+the product owner, but the final number should also take into account
+limitations imposed by the data architecture and infrastructure of a consuming
+app.

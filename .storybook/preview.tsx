@@ -103,8 +103,18 @@ const parameters = {
         [
           "*",
           [
-            "General",
+            "Overview",
             "Page Composition",
+            [
+              "Outline",
+              "Text search field",
+              "Filter bar",
+              "Active filters list",
+              "Total results heading",
+              "Sorting menu",
+              "Results list",
+              "Pagination menu",
+            ],
             "Applying & Clearing Filters",
             "Accessibility",
             "JS-disabled",

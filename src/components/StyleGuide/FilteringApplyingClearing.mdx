@@ -4,17 +4,18 @@ import Link from "../Link/Link";
 
 <Meta title="Style Guide/Filtering/Applying & Clearing Filters" />
 
-# Applying and Clearing Filters
+# Applying and clearing filters
 
-## Table of Contents
+## Table of contents
 
+- {<Link href="#methods" target="_self">Methods</Link>}
 - {<Link href="#applying-filters" target="_self">Applying filters</Link>}
 - {<Link href="#clearing-filters" target="_self">Clearing filters</Link>}
 - {<Link href="#populating-results" target="_self">Populating results</Link>}
 
-## Applying filters
+## Methods
 
-Filters should be applied to using one of two methods: live filtering or batch filtering.
+Filters should be applied and cleared using one of two methods: live filtering or batch filtering.
 
 ### Live filtering
 
@@ -36,6 +37,16 @@ Filters should be applied to using one of two methods: live filtering or batch f
   - very heavy data sets
   - low performing apps
 
+## Applying filters
+
+When filters are applied, the following should be addressed:
+
+- update the `active filters` list based on the filter options that have been
+  selected
+- update the `results` list based on the filter options that have been selected
+- update the `total results` heading to reflect the number of items in the
+  updated `results` list
+
 ## Clearing filters
 
 Filters can be cleared using various methods within the page structure,
@@ -43,11 +54,12 @@ including global methods as well as methods for clearing individual filters.
 
 When filters are cleared, the following should be addressed:
 
-- remove filters (tags) from `active filters` list (`TagSet` component)
-- update the `results` list to reflect the `active filters`
-- update the `total results` heading to reflect the updated `results` list
 - if a global "clear filters" button is clicked, reset all the form input
   elements within the `filter bar`
+- update the `active filters` list to remove all filter options
+- update the `results` list to an unfiltered state
+- update the `total results` heading to reflect the number of items in the
+  updated `results` list
 
 ### Filter bar
 

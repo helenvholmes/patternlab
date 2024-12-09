@@ -1,0 +1,46 @@
+import { Meta } from "@storybook/blocks";
+
+import Image from "../Image/Image";
+import Link from "../Link/Link";
+
+import imageFilteringSortingMenu from "../../../static/filteringStyleGuide/filteringSortingMenu.png";
+import { exampleWrapperStyles } from "./FilteringOverview.mdx";
+
+<Meta title="Style Guide/Filtering/Page Composition/Sorting menu" />
+
+# Sorting menu
+
+The `sorting` menu updates how records a ordered in a results set.
+
+<Image
+  alt="Example of sorting menu"
+  src={imageFilteringSortingMenu}
+  {...exampleWrapperStyles}
+/>
+
+## Table of Contents
+
+- {<Link href="#rendering" target="_self">Rendering</Link>}
+- {<Link href="#positioning" target="_self">Positioning</Link>}
+- {<Link href="#labeling" target="_self">Labeling</Link>}
+
+## Rendering
+
+The `sorting menu` should be rendered using the DS
+[Menu](./?path=/docs/components-navigation-menu--docs) component.
+
+## Positioning
+
+The `sorting menu` should be positioned below the `active filters` list and aligned
+to the right.
+
+## Labeling
+
+The initial text label and `aria-label` value for the sorting menu should be set
+to "Sort by." If a sorting option is selected, the `aria-label` value should
+remain as "Sort by," but the text label for the sorting menu should be updated
+to include the label of the option that was selected.
+
+Label example:
+
+`Sort by: Title A-Z`

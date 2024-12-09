@@ -1,0 +1,37 @@
+import { Meta } from "@storybook/blocks";
+
+import Image from "../Image/Image";
+import Link from "../Link/Link";
+
+import imageFilteringPaginationMenu from "../../../static/filteringStyleGuide/filteringPaginationMenu.png";
+import { exampleWrapperStyles } from "./FilteringOverview.mdx";
+
+<Meta title="Style Guide/Filtering/Page Composition/Pagination menu" />
+
+# Pagination menu
+
+The `pagination` menu allows users to navigate a large `results` list in
+multiple pages.
+
+<Image
+  alt="Example of pagination menu"
+  src={imageFilteringPaginationMenu}
+  {...exampleWrapperStyles}
+/>
+
+## Table of Contents
+
+- {<Link href="#rendering" target="_self">Rendering</Link>}
+- {<Link href="#display" target="_self">Display</Link>}
+
+## Rendering
+
+The `pagination` menu should be rendered using the DS
+[Pagination](./?path=/docs/components-navigation-pagination--docs) component.
+
+## Display
+
+The number of result items displayed per page should be determined as needed by
+consuming apps. For more information, refer to the [Results
+list](?path=/docs/style-guide-filtering-page-composition-results-list--docs)
+section.
