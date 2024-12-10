@@ -80,15 +80,6 @@ exports[`Template components renders the UI snapshot correctly 2`] = `
       Content Top
     </div>
   </div>
-  <div
-    className="css-s7bsmx"
-  >
-    <div
-      className="placeholder placeholder--undefined"
-    >
-      Right Sidebar
-    </div>
-  </div>
   <main
     className="css-n7iznt"
     id="mainContent"
@@ -104,6 +95,15 @@ exports[`Template components renders the UI snapshot correctly 2`] = `
       More Content
     </div>
   </main>
+  <div
+    className="css-s7bsmx"
+  >
+    <div
+      className="placeholder placeholder--undefined"
+    >
+      Right Sidebar
+    </div>
+  </div>
   <div
     className="css-1yhc1wu"
   >
