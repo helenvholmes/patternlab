@@ -2,7 +2,7 @@ import { ArgTypes, Canvas, Description, Meta, Source } from "@storybook/blocks";
 import ComponentChangelogTable from "../../utils/ComponentChangelogTable";
 import { changelogData } from "./templateChangelogData";
 
-import * as TemplateNewStories from "./Template.stories";
+import * as TemplateStories from "./Template.stories";
 import {
   Template,
   TemplateBreakout,
@@ -14,7 +14,7 @@ import {
 } from "./Template";
 import Link from "../Link/Link";
 
-<Meta of={TemplateNewStories} />
+<Meta of={TemplateStories} />
 
 # Template
 
@@ -62,9 +62,9 @@ import {
 
 ## Template Props
 
-<Canvas of={TemplateNewStories.WithControls} />
+<Canvas of={TemplateStories.WithControls} />
 
-<ArgTypes of={TemplateNewStories.WithControls} />
+<ArgTypes of={TemplateStories.WithControls} />
 
 ## Template Components
 

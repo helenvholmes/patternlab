@@ -33,7 +33,7 @@ const templateComponents = (
   <Template sidebar={sidebar}>
     <TemplateBreakout>{breakout}</TemplateBreakout>
     <TemplateTop>{contentTop}</TemplateTop>
-    {sidebar !== "none" && !useMainNarrow && (
+    {sidebar === "left" && !useMainNarrow && (
       <TemplateSidebar>
         <Placeholder>{sidebarLabel(sidebar)}</Placeholder>
       </TemplateSidebar>
@@ -43,27 +43,32 @@ const templateComponents = (
     ) : (
       <TemplateMain>{contentMain}</TemplateMain>
     )}
+    {sidebar === "right" && !useMainNarrow && (
+      <TemplateSidebar>
+        <Placeholder>{sidebarLabel(sidebar)}</Placeholder>
+      </TemplateSidebar>
+    )}
     <TemplateBottom>{contentBottom}</TemplateBottom>
   </Template>
 );
 
 describe("Template components accessibility", () => {
-  it("passes axe accessibility test", async () => {
+  it("passes axe accessibility test with no sidebar", async () => {
     const { container } = render(templateComponents());
     expect(await axe(container)).toHaveNoViolations();
   });
 
-  it("passes axe accessibility test", async () => {
+  it("passes axe accessibility test with a sidebar on the left", async () => {
     const { container } = render(templateComponents("left"));
     expect(await axe(container)).toHaveNoViolations();
   });
 
-  it("passes axe accessibility test", async () => {
+  it("passes axe accessibility test with a sidebar on the right", async () => {
     const { container } = render(templateComponents("right"));
     expect(await axe(container)).toHaveNoViolations();
   });
 
-  it("passes axe accessibility test", async () => {
+  it("passes axe accessibility test with the narrow container", async () => {
     const { container } = render(templateComponents("none", true));
     expect(await axe(container)).toHaveNoViolations();
   });
