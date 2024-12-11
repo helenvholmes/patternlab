@@ -1,6 +1,6 @@
 import { defineStyleConfig } from "@chakra-ui/react";
 import { defineStyle } from "@chakra-ui/system";
-import { responsiveGap } from "./global";
+import { responsiveGap, responsivePadding } from "./global";
 
 const Template = defineStyleConfig({
   baseStyle: defineStyle({
@@ -11,7 +11,7 @@ const Template = defineStyleConfig({
     // 320px screen width - 32px padding = 288px
     minWidth: "288px",
     m: "0 auto",
-    p: "s",
+    p: responsivePadding,
     gridTemplateAreas: `"breakout" "top" "main" "bottom"`,
     gridTemplateColumns: "100%",
     gridTemplateRows: "auto",
@@ -50,13 +50,14 @@ const TemplateBreakout = defineStyleConfig({
   baseStyle: defineStyle({
     width: "100vw",
     ml: "calc(-50vw + 50%)",
-    px: "s",
+    px: responsivePadding,
   }),
 });
 
 const TemplateMainNarrow = defineStyleConfig({
   baseStyle: defineStyle({
     maxWidth: "720px",
+    m: "0 auto",
   }),
 });
 
