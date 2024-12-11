@@ -1,8 +1,6 @@
 import { defineStyleConfig } from "@chakra-ui/react";
 import { defineStyle } from "@chakra-ui/system";
-
-export const responsiveGap = { base: "1rem", md: "1.5rem", xl: "1rem" };
-export const responsivePadding = { base: "1rem", md: "1.5rem", xl: "2rem" };
+import { responsiveGap } from "./global";
 
 const Template = defineStyleConfig({
   baseStyle: defineStyle({
@@ -10,10 +8,12 @@ const Template = defineStyleConfig({
     color: "ui.typography.body",
     display: "grid",
     maxWidth: "1280px",
+    // 320px screen width - 32px padding = 288px
+    minWidth: "288px",
     m: "0 auto",
     p: "s",
     gridTemplateAreas: `"breakout" "top" "main" "bottom"`,
-    gridTemplateColumns: "repeat(1, minmax(100px, 1fr))",
+    gridTemplateColumns: "100%",
     gridTemplateRows: "auto",
     columnGap: responsiveGap,
     "& > *:not(:last-child)": { mb: responsiveGap },
@@ -25,7 +25,7 @@ const Template = defineStyleConfig({
         md: `"breakout breakout" "top top" "sidebar main" "bottom bottom"`,
       },
       gridTemplateColumns: {
-        base: "repeat(1, minmax(100px, 1fr))",
+        base: "100%",
         md: "repeat(2, minmax(100px, 1fr))",
         lg: "minmax(100px, 1fr) minmax(200px, 2fr)",
         xl: "minmax(100px, 1fr) minmax(300px, 3fr)",
@@ -37,7 +37,7 @@ const Template = defineStyleConfig({
         md: `"breakout breakout" "top top" "main sidebar" "bottom bottom"`,
       },
       gridTemplateColumns: {
-        base: "repeat(1, minmax(100px, 1fr))",
+        base: "100%",
         md: "repeat(2, minmax(100px, 1fr))",
         lg: "minmax(200px, 2fr) minmax(100px, 1fr)",
         xl: "minmax(300px, 3fr) minmax(100px, 1fr)",
@@ -56,8 +56,7 @@ const TemplateBreakout = defineStyleConfig({
 
 const TemplateMainNarrow = defineStyleConfig({
   baseStyle: defineStyle({
-    maxWidth: { lg: "720px" },
-    m: { lg: "0 auto" },
+    maxWidth: "720px",
   }),
 });
 
