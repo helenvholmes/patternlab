@@ -8,6 +8,10 @@ Currently, this repo is in Prerelease. When it is released, this project will ad
 
 ## Prerelease
 
+### Fixes
+
+- Fixes `TextInput`'s conflicting internal and external ref values for the clearable button focus management.
+
 ## 3.5.0 (December 5, 2024)
 
 ### Adds
