@@ -54,8 +54,9 @@ aria-labels are used to make these children components accessible.
 The `SearchBar` component is implemented with Reservoir `Select`, `TextInput`,
 and `Button` accessible components. This a "complete" component that renders an
 HTML `<form>` element that is submitted with a `<button>` element of `type="submit"`.
-The `<form>` element also has a `role="search"` attribute that allows
-screenreaders to pick up this entire search form.
+
+The `Searchbar`, along with any other search/filter functionality, must be wrapped in `<search>` tags for a screenreader to recognize it correctly, or in a container with `role="search"`.
+See [search element in "ARIA Landmarks"](../?path=/docs/accessibility-guide-aria-landmarks--docs#search) for details.
 
 Resources:
 
@@ -63,6 +64,7 @@ Resources:
 - [Reservoir TextInput](../?path=/docs/components-form-elements-textinput--docs)
 - [a11ymatters Accessible Search Form](https://www.a11ymatters.com/pattern/accessible-search/)
 - [MDN ARIA: search role](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/search_role)
+- [MDN ARIA: search element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/search)
 
 ## With Custom Heading
 

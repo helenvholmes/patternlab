@@ -1,0 +1,34 @@
+import { ArgTypes, Canvas, Description, Meta, Source } from "@storybook/blocks";
+
+import * as SearchBarStories from "../SearchBar/SearchBar.stories";
+import Link from "../Link/Link";
+
+<Meta title="Accessibility Guide/ARIA Landmarks" />
+
+# ARIA Landmarks
+
+## Overview
+
+ARIA landmarks denote important sections of a page that a user might want to navigate to directly. Adding landmark roles essentially creates "skip links"
+for assistive technologies to find content quickly.
+
+Each landmark role has a corresponding semantic element:
+
+| Landmark role | HTML element        |
+| ------------- | ------------------- |
+| banner        | document `<header>` |
+| complementary | `<aside>`           |
+| contentinfo   | document `<footer>` |
+| form          | `<form>`            |
+| main          | `<main>`            |
+| navigation    | `<nav>`             |
+| region        | `<section>`         |
+| search        | `<search>`          |
+
+### `<search>`
+
+The `<search>` HTML element is a container for the search/filter functionality, and defines a search landmark.
+
+Inspect the below Story to see `<search>` in the DOM– notice that it wraps the `Heading`, the `Searchbar`, and the `Checkbox`:
+
+<Canvas of={SearchBarStories.WithSearchElement} />

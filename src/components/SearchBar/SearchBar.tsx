@@ -238,7 +238,6 @@ export const SearchBar: ChakraComponent<
           as="form"
           id={`searchbar-form-${id}`}
           className={className}
-          role="search"
           aria-label={finalAriaLabel}
           onSubmit={onSubmit}
           method={method}
