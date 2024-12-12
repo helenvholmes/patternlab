@@ -101,8 +101,8 @@ describe("SearchBar", () => {
         textInputProps={textInputProps}
       />
     );
-    expect(screen.getByRole("search")).toBeInTheDocument();
-    expect(screen.getByRole("search")).toHaveAttribute(
+    expect(screen.getByRole("form")).toBeInTheDocument();
+    expect(screen.getByRole("form")).toHaveAttribute(
       "aria-label",
       `${labelText} - ${helperText}`
     );

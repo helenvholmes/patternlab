@@ -10,7 +10,6 @@ exports[`SearchBar renders the UI snapshot correctly 1`] = `
     className="css-1xdhyk6"
     id="searchbar-form-basic"
     onSubmit={[MockFunction]}
-    role="search"
   >
     <div
       className="css-1ik4laa"
@@ -113,7 +112,6 @@ exports[`SearchBar renders the UI snapshot correctly 2`] = `
     className="css-1xdhyk6"
     id="searchbar-form-withSelect"
     onSubmit={[MockFunction]}
-    role="search"
   >
     <div
       className="css-1u8qly9"
@@ -335,7 +333,6 @@ exports[`SearchBar renders the UI snapshot correctly 3`] = `
     className="css-1xdhyk6"
     id="searchbar-form-withoutHelperText"
     onSubmit={[MockFunction]}
-    role="search"
   >
     <div
       className="css-1ik4laa"
@@ -421,7 +418,6 @@ exports[`SearchBar renders the UI snapshot correctly 4`] = `
     className="css-1xdhyk6"
     id="searchbar-form-withClearButton"
     onSubmit={[MockFunction]}
-    role="search"
   >
     <div
       className="css-1ik4laa"
@@ -524,7 +520,6 @@ exports[`SearchBar renders the UI snapshot correctly 5`] = `
     className="css-1xdhyk6"
     id="searchbar-form-invalidState"
     onSubmit={[MockFunction]}
-    role="search"
   >
     <div
       className="css-1ik4laa"
@@ -619,7 +614,6 @@ exports[`SearchBar renders the UI snapshot correctly 6`] = `
     className="css-1xdhyk6"
     id="searchbar-form-disabledState"
     onSubmit={[MockFunction]}
-    role="search"
   >
     <div
       className="css-1ik4laa"
@@ -706,7 +700,6 @@ exports[`SearchBar renders the UI snapshot correctly 7`] = `
     className="css-1xdhyk6"
     id="searchbar-form-requiredState"
     onSubmit={[MockFunction]}
-    role="search"
   >
     <div
       className="css-1ik4laa"
@@ -794,7 +787,6 @@ exports[`SearchBar renders the UI snapshot correctly 8`] = `
     className="css-1xdhyk6"
     id="searchbar-form-noBrandButtonType"
     onSubmit={[MockFunction]}
-    role="search"
   >
     <div
       className="css-1ik4laa"
@@ -888,7 +880,6 @@ exports[`SearchBar renders the UI snapshot correctly 9`] = `
     className="css-1xdhyk6"
     id="searchbar-form-withHeading"
     onSubmit={[MockFunction]}
-    role="search"
   >
     <div
       className="css-1ik4laa"
@@ -955,7 +946,6 @@ exports[`SearchBar renders the UI snapshot correctly 10`] = `
     className="css-1xdhyk6"
     id="searchbar-form-withDescription"
     onSubmit={[MockFunction]}
-    role="search"
   >
     <div
       className="css-1ik4laa"
@@ -1028,7 +1018,6 @@ exports[`SearchBar renders the UI snapshot correctly 11`] = `
     className="css-1xdhyk6"
     id="searchbar-form-withHeadingAndDescription"
     onSubmit={[MockFunction]}
-    role="search"
   >
     <div
       className="css-1ik4laa"
@@ -1090,7 +1079,6 @@ exports[`SearchBar renders the UI snapshot correctly 12`] = `
     className="css-kle7zy"
     id="searchbar-form-chakra"
     onSubmit={[MockFunction]}
-    role="search"
   >
     <div
       className="css-1ik4laa"
@@ -1194,7 +1182,6 @@ exports[`SearchBar renders the UI snapshot correctly 13`] = `
     className="css-1xdhyk6"
     id="searchbar-form-props"
     onSubmit={[MockFunction]}
-    role="search"
   >
     <div
       className="css-1ik4laa"
