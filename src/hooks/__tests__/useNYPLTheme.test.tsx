@@ -17,7 +17,7 @@ describe("useNYPLTheme", () => {
 
   it("returns an object with NYPL styles", () => {
     const { result } = renderHook(() => useNYPLTheme(), {
-      wrapper: ({ children }) => <DSProvider>{children}</DSProvider>,
+      wrapper: ({ children }): any => <DSProvider>{children}</DSProvider>,
     });
     const allKeys = Object.keys(result.current);
     const colorsKeys = Object.keys((result.current as any).colors);
