@@ -8,11 +8,21 @@ Currently, this repo is in Prerelease. When it is released, this project will ad
 
 ## Prerelease
 
+## 3.5.1 (December 19, 2024)
+
+### Adds
+
+- Adds `jest-transformer-svg` to mock SVGs more accurately in our tests
+
+### Fixes
+
+- Fixes `TextInput`'s conflicting internal and external ref values for the clearable button focus management.
+
 ## 3.5.0 (December 5, 2024)
 
 ### Adds
 
-- Adds the `SubNav` component.
+- Adds the `"SubNav"`component.
 - Adds the `useScrollFadeStyles` hook.
 
 ### Updates

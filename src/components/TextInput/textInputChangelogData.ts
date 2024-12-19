@@ -10,6 +10,15 @@ import { ChangelogData } from "../../utils/ComponentChangelogTable";
 
 export const changelogData: ChangelogData[] = [
   {
+    date: "2024-12-19",
+    version: "3.5.1",
+    type: "Bug Fix",
+    affects: ["Functionality", "Accessibility"],
+    notes: [
+      "Fixes conflicting internal and external ref props and values for the clearable button focus management.",
+    ],
+  },
+  {
     date: "2024-09-19",
     version: "3.3.2",
     type: "Update",

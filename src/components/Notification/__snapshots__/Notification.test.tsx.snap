@@ -14,36 +14,13 @@ exports[`Notification renders the UI snapshot correctly 1`] = `
     >
       <svg
         aria-hidden={true}
-        className="chakra-icon notification-icon css-q3eg3a"
+        className="chakra-icon notification-icon css-1nreziu"
+        data-file-name="SvgAlertNotificationImportant"
         focusable={false}
         id="notificationID1-notification-icon"
         role="img"
         title="Notification standard icon"
-        viewBox="0 0 24 24"
-      >
-        <g
-          stroke="currentColor"
-          strokeWidth="1.5"
-        >
-          <path
-            d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-            fill="none"
-            strokeLinecap="round"
-          />
-          <path
-            d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-            fill="currentColor"
-            strokeLinecap="round"
-          />
-          <circle
-            cx="12"
-            cy="12"
-            fill="none"
-            r="11.25"
-            strokeMiterlimit="10"
-          />
-        </g>
-      </svg>
+      />
       <h4
         className="chakra-heading css-1xdhyk6"
         id="notificationID1-heading"
@@ -78,36 +55,13 @@ exports[`Notification renders the UI snapshot correctly 2`] = `
     >
       <svg
         aria-hidden={true}
-        className="chakra-icon notification-icon css-u7u798"
+        className="chakra-icon notification-icon css-nfdupq"
+        data-file-name="SvgSpeakerNotes"
         focusable={false}
         id="notificationID2-notification-icon"
         role="img"
         title="Notification announcement icon"
-        viewBox="0 0 24 24"
-      >
-        <g
-          stroke="currentColor"
-          strokeWidth="1.5"
-        >
-          <path
-            d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-            fill="none"
-            strokeLinecap="round"
-          />
-          <path
-            d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-            fill="currentColor"
-            strokeLinecap="round"
-          />
-          <circle
-            cx="12"
-            cy="12"
-            fill="none"
-            r="11.25"
-            strokeMiterlimit="10"
-          />
-        </g>
-      </svg>
+      />
       <h4
         className="chakra-heading css-1xdhyk6"
         id="notificationID2-heading"
@@ -142,36 +96,13 @@ exports[`Notification renders the UI snapshot correctly 3`] = `
     >
       <svg
         aria-hidden={true}
-        className="chakra-icon notification-icon css-zzgjc6"
+        className="chakra-icon notification-icon css-1n65kn3"
+        data-file-name="SvgErrorFilled"
         focusable={false}
         id="notificationID3-notification-icon"
         role="img"
         title="Notification warning icon"
-        viewBox="0 0 24 24"
-      >
-        <g
-          stroke="currentColor"
-          strokeWidth="1.5"
-        >
-          <path
-            d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-            fill="none"
-            strokeLinecap="round"
-          />
-          <path
-            d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-            fill="currentColor"
-            strokeLinecap="round"
-          />
-          <circle
-            cx="12"
-            cy="12"
-            fill="none"
-            r="11.25"
-            strokeMiterlimit="10"
-          />
-        </g>
-      </svg>
+      />
       <h4
         className="chakra-heading css-1xdhyk6"
         id="notificationID3-heading"
@@ -206,36 +137,13 @@ exports[`Notification renders the UI snapshot correctly 4`] = `
     >
       <svg
         aria-hidden={true}
-        className="chakra-icon notification-icon css-q3eg3a"
+        className="chakra-icon notification-icon css-1nreziu"
+        data-file-name="SvgAlertNotificationImportant"
         focusable={false}
         id="notificationID4-notification-icon"
         role="img"
         title="Notification standard icon"
-        viewBox="0 0 24 24"
-      >
-        <g
-          stroke="currentColor"
-          strokeWidth="1.5"
-        >
-          <path
-            d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-            fill="none"
-            strokeLinecap="round"
-          />
-          <path
-            d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-            fill="currentColor"
-            strokeLinecap="round"
-          />
-          <circle
-            cx="12"
-            cy="12"
-            fill="none"
-            r="11.25"
-            strokeMiterlimit="10"
-          />
-        </g>
-      </svg>
+      />
     </header>
     <div
       className="css-1xdhyk6"
@@ -318,36 +226,13 @@ exports[`Notification renders the UI snapshot correctly 7`] = `
     >
       <svg
         aria-hidden={true}
-        className="chakra-icon notification-icon css-q3eg3a"
+        className="chakra-icon notification-icon css-1nreziu"
+        data-file-name="SvgAlertNotificationImportant"
         focusable={false}
         id="notificationID7-notification-icon"
         role="img"
         title="Notification standard icon"
-        viewBox="0 0 24 24"
-      >
-        <g
-          stroke="currentColor"
-          strokeWidth="1.5"
-        >
-          <path
-            d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-            fill="none"
-            strokeLinecap="round"
-          />
-          <path
-            d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-            fill="currentColor"
-            strokeLinecap="round"
-          />
-          <circle
-            cx="12"
-            cy="12"
-            fill="none"
-            r="11.25"
-            strokeMiterlimit="10"
-          />
-        </g>
-      </svg>
+      />
     </header>
     <div
       className="css-1xdhyk6"
@@ -368,36 +253,13 @@ exports[`Notification renders the UI snapshot correctly 7`] = `
   >
     <svg
       aria-hidden={true}
-      className="chakra-icon css-13thq4x"
+      className="chakra-icon css-vj9769"
+      data-file-name="SvgClose"
       focusable={false}
       id="notificationID7-dismissible-notification-icon"
       role="img"
       title="Notification close icon"
-      viewBox="0 0 24 24"
-    >
-      <g
-        stroke="currentColor"
-        strokeWidth="1.5"
-      >
-        <path
-          d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-          fill="none"
-          strokeLinecap="round"
-        />
-        <path
-          d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-          fill="currentColor"
-          strokeLinecap="round"
-        />
-        <circle
-          cx="12"
-          cy="12"
-          fill="none"
-          r="11.25"
-          strokeMiterlimit="10"
-        />
-      </g>
-    </svg>
+    />
   </button>
 </aside>
 `;
@@ -416,36 +278,13 @@ exports[`Notification renders the UI snapshot correctly 8`] = `
     >
       <svg
         aria-hidden={true}
-        className="chakra-icon notification-icon css-q3eg3a"
+        className="chakra-icon notification-icon css-1nreziu"
+        data-file-name="SvgAlertNotificationImportant"
         focusable={false}
         id="chakra-notification-icon"
         role="img"
         title="Notification standard icon"
-        viewBox="0 0 24 24"
-      >
-        <g
-          stroke="currentColor"
-          strokeWidth="1.5"
-        >
-          <path
-            d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-            fill="none"
-            strokeLinecap="round"
-          />
-          <path
-            d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-            fill="currentColor"
-            strokeLinecap="round"
-          />
-          <circle
-            cx="12"
-            cy="12"
-            fill="none"
-            r="11.25"
-            strokeMiterlimit="10"
-          />
-        </g>
-      </svg>
+      />
       <h4
         className="chakra-heading css-1xdhyk6"
         id="chakra-heading"
@@ -481,36 +320,13 @@ exports[`Notification renders the UI snapshot correctly 9`] = `
     >
       <svg
         aria-hidden={true}
-        className="chakra-icon notification-icon css-q3eg3a"
+        className="chakra-icon notification-icon css-1nreziu"
+        data-file-name="SvgAlertNotificationImportant"
         focusable={false}
         id="props-notification-icon"
         role="img"
         title="Notification standard icon"
-        viewBox="0 0 24 24"
-      >
-        <g
-          stroke="currentColor"
-          strokeWidth="1.5"
-        >
-          <path
-            d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-            fill="none"
-            strokeLinecap="round"
-          />
-          <path
-            d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-            fill="currentColor"
-            strokeLinecap="round"
-          />
-          <circle
-            cx="12"
-            cy="12"
-            fill="none"
-            r="11.25"
-            strokeMiterlimit="10"
-          />
-        </g>
-      </svg>
+      />
       <h4
         className="chakra-heading css-1xdhyk6"
         id="props-heading"
