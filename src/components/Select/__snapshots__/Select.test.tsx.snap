@@ -52,7 +52,8 @@ exports[`Select Renders the UI snapshot correctly 1`] = `
       >
         <svg
           aria-hidden={true}
-          className="chakra-icon chakra-select__icon css-q3eg3a"
+          className="chakra-icon chakra-select__icon css-1nreziu"
+          data-file-name="SvgArrow"
           focusable={false}
           id="select-icon"
           role="presentation"
@@ -64,31 +65,7 @@ exports[`Select Renders the UI snapshot correctly 1`] = `
             }
           }
           title="arrow icon"
-          viewBox="0 0 24 24"
-        >
-          <g
-            stroke="currentColor"
-            strokeWidth="1.5"
-          >
-            <path
-              d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-              fill="none"
-              strokeLinecap="round"
-            />
-            <path
-              d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-              fill="currentColor"
-              strokeLinecap="round"
-            />
-            <circle
-              cx="12"
-              cy="12"
-              fill="none"
-              r="11.25"
-              strokeMiterlimit="10"
-            />
-          </g>
-        </svg>
+        />
       </div>
     </div>
   </div>
@@ -148,7 +125,8 @@ exports[`Select Renders the UI snapshot correctly 2`] = `
       >
         <svg
           aria-hidden={true}
-          className="chakra-icon chakra-select__icon css-q3eg3a"
+          className="chakra-icon chakra-select__icon css-1nreziu"
+          data-file-name="SvgArrow"
           focusable={false}
           id="select-icon"
           role="presentation"
@@ -160,31 +138,7 @@ exports[`Select Renders the UI snapshot correctly 2`] = `
             }
           }
           title="arrow icon"
-          viewBox="0 0 24 24"
-        >
-          <g
-            stroke="currentColor"
-            strokeWidth="1.5"
-          >
-            <path
-              d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-              fill="none"
-              strokeLinecap="round"
-            />
-            <path
-              d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-              fill="currentColor"
-              strokeLinecap="round"
-            />
-            <circle
-              cx="12"
-              cy="12"
-              fill="none"
-              r="11.25"
-              strokeMiterlimit="10"
-            />
-          </g>
-        </svg>
+        />
       </div>
     </div>
   </div>
@@ -245,7 +199,8 @@ exports[`Select Renders the UI snapshot correctly 3`] = `
       >
         <svg
           aria-hidden={true}
-          className="chakra-icon chakra-select__icon css-cr4d1u"
+          className="chakra-icon chakra-select__icon css-3u73el"
+          data-file-name="SvgArrow"
           focusable={false}
           id="select-icon"
           role="presentation"
@@ -257,31 +212,7 @@ exports[`Select Renders the UI snapshot correctly 3`] = `
             }
           }
           title="arrow icon"
-          viewBox="0 0 24 24"
-        >
-          <g
-            stroke="currentColor"
-            strokeWidth="1.5"
-          >
-            <path
-              d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-              fill="none"
-              strokeLinecap="round"
-            />
-            <path
-              d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-              fill="currentColor"
-              strokeLinecap="round"
-            />
-            <circle
-              cx="12"
-              cy="12"
-              fill="none"
-              r="11.25"
-              strokeMiterlimit="10"
-            />
-          </g>
-        </svg>
+        />
       </div>
     </div>
   </div>
@@ -357,7 +288,8 @@ exports[`Select Renders the UI snapshot correctly 4`] = `
       >
         <svg
           aria-hidden={true}
-          className="chakra-icon chakra-select__icon css-q3eg3a"
+          className="chakra-icon chakra-select__icon css-1nreziu"
+          data-file-name="SvgArrow"
           focusable={false}
           id="select-icon"
           role="presentation"
@@ -369,31 +301,7 @@ exports[`Select Renders the UI snapshot correctly 4`] = `
             }
           }
           title="arrow icon"
-          viewBox="0 0 24 24"
-        >
-          <g
-            stroke="currentColor"
-            strokeWidth="1.5"
-          >
-            <path
-              d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-              fill="none"
-              strokeLinecap="round"
-            />
-            <path
-              d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-              fill="currentColor"
-              strokeLinecap="round"
-            />
-            <circle
-              cx="12"
-              cy="12"
-              fill="none"
-              r="11.25"
-              strokeMiterlimit="10"
-            />
-          </g>
-        </svg>
+        />
       </div>
     </div>
   </div>
@@ -472,7 +380,8 @@ exports[`Select Renders the UI snapshot correctly 5`] = `
       >
         <svg
           aria-hidden={true}
-          className="chakra-icon chakra-select__icon css-q3eg3a"
+          className="chakra-icon chakra-select__icon css-1nreziu"
+          data-file-name="SvgArrow"
           focusable={false}
           id="select-icon"
           role="presentation"
@@ -484,31 +393,7 @@ exports[`Select Renders the UI snapshot correctly 5`] = `
             }
           }
           title="arrow icon"
-          viewBox="0 0 24 24"
-        >
-          <g
-            stroke="currentColor"
-            strokeWidth="1.5"
-          >
-            <path
-              d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-              fill="none"
-              strokeLinecap="round"
-            />
-            <path
-              d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-              fill="currentColor"
-              strokeLinecap="round"
-            />
-            <circle
-              cx="12"
-              cy="12"
-              fill="none"
-              r="11.25"
-              strokeMiterlimit="10"
-            />
-          </g>
-        </svg>
+        />
       </div>
     </div>
   </div>
@@ -571,7 +456,8 @@ exports[`Select Renders the UI snapshot correctly 6`] = `
       >
         <svg
           aria-hidden={true}
-          className="chakra-icon chakra-select__icon css-q3eg3a"
+          className="chakra-icon chakra-select__icon css-1nreziu"
+          data-file-name="SvgArrow"
           focusable={false}
           id="select-icon"
           role="presentation"
@@ -583,31 +469,7 @@ exports[`Select Renders the UI snapshot correctly 6`] = `
             }
           }
           title="arrow icon"
-          viewBox="0 0 24 24"
-        >
-          <g
-            stroke="currentColor"
-            strokeWidth="1.5"
-          >
-            <path
-              d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-              fill="none"
-              strokeLinecap="round"
-            />
-            <path
-              d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-              fill="currentColor"
-              strokeLinecap="round"
-            />
-            <circle
-              cx="12"
-              cy="12"
-              fill="none"
-              r="11.25"
-              strokeMiterlimit="10"
-            />
-          </g>
-        </svg>
+        />
       </div>
     </div>
   </div>
@@ -668,7 +530,8 @@ exports[`Select Renders the UI snapshot correctly 7`] = `
       >
         <svg
           aria-hidden={true}
-          className="chakra-icon chakra-select__icon css-q3eg3a"
+          className="chakra-icon chakra-select__icon css-1nreziu"
+          data-file-name="SvgArrow"
           focusable={false}
           id="select-icon"
           role="presentation"
@@ -680,31 +543,7 @@ exports[`Select Renders the UI snapshot correctly 7`] = `
             }
           }
           title="arrow icon"
-          viewBox="0 0 24 24"
-        >
-          <g
-            stroke="currentColor"
-            strokeWidth="1.5"
-          >
-            <path
-              d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-              fill="none"
-              strokeLinecap="round"
-            />
-            <path
-              d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-              fill="currentColor"
-              strokeLinecap="round"
-            />
-            <circle
-              cx="12"
-              cy="12"
-              fill="none"
-              r="11.25"
-              strokeMiterlimit="10"
-            />
-          </g>
-        </svg>
+        />
       </div>
     </div>
   </div>
@@ -763,7 +602,8 @@ exports[`Select Renders the UI snapshot correctly 8`] = `
       >
         <svg
           aria-hidden={true}
-          className="chakra-icon chakra-select__icon css-q3eg3a"
+          className="chakra-icon chakra-select__icon css-1nreziu"
+          data-file-name="SvgArrow"
           focusable={false}
           id="chakra-icon"
           role="presentation"
@@ -775,31 +615,7 @@ exports[`Select Renders the UI snapshot correctly 8`] = `
             }
           }
           title="arrow icon"
-          viewBox="0 0 24 24"
-        >
-          <g
-            stroke="currentColor"
-            strokeWidth="1.5"
-          >
-            <path
-              d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-              fill="none"
-              strokeLinecap="round"
-            />
-            <path
-              d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-              fill="currentColor"
-              strokeLinecap="round"
-            />
-            <circle
-              cx="12"
-              cy="12"
-              fill="none"
-              r="11.25"
-              strokeMiterlimit="10"
-            />
-          </g>
-        </svg>
+        />
       </div>
     </div>
   </div>
@@ -859,7 +675,8 @@ exports[`Select Renders the UI snapshot correctly 9`] = `
       >
         <svg
           aria-hidden={true}
-          className="chakra-icon chakra-select__icon css-q3eg3a"
+          className="chakra-icon chakra-select__icon css-1nreziu"
+          data-file-name="SvgArrow"
           focusable={false}
           id="props-icon"
           role="presentation"
@@ -871,31 +688,7 @@ exports[`Select Renders the UI snapshot correctly 9`] = `
             }
           }
           title="arrow icon"
-          viewBox="0 0 24 24"
-        >
-          <g
-            stroke="currentColor"
-            strokeWidth="1.5"
-          >
-            <path
-              d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-              fill="none"
-              strokeLinecap="round"
-            />
-            <path
-              d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-              fill="currentColor"
-              strokeLinecap="round"
-            />
-            <circle
-              cx="12"
-              cy="12"
-              fill="none"
-              r="11.25"
-              strokeMiterlimit="10"
-            />
-          </g>
-        </svg>
+        />
       </div>
     </div>
   </div>

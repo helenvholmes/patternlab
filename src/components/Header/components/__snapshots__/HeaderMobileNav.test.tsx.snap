@@ -13,35 +13,12 @@ exports[`HeaderMobileNav renders the UI snapshot correctly 1`] = `
       <svg
         aria-hidden={false}
         aria-label="NYPL Header Logo"
-        className="chakra-icon css-1grhd2q"
+        className="chakra-icon css-1vgifmd"
+        data-file-name="SvgLogoNyplTextWhite"
         focusable={false}
         role="img"
         title="NYPL Header Logo"
-        viewBox="0 0 24 24"
-      >
-        <g
-          stroke="currentColor"
-          strokeWidth="1.5"
-        >
-          <path
-            d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-            fill="none"
-            strokeLinecap="round"
-          />
-          <path
-            d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-            fill="currentColor"
-            strokeLinecap="round"
-          />
-          <circle
-            cx="12"
-            cy="12"
-            fill="none"
-            r="11.25"
-            strokeMiterlimit="10"
-          />
-        </g>
-      </svg>
+      />
     </div>
     <div
       className="css-17xejub"
@@ -138,35 +115,12 @@ exports[`HeaderMobileNav renders the UI snapshot correctly 1`] = `
     >
       <svg
         aria-hidden={true}
-        className="chakra-icon css-1g9tbrc"
+        className="chakra-icon css-1k5hm9w"
+        data-file-name="SvgDecorativeLibraryCard"
         focusable={false}
         role="img"
         title="decorativeLibraryCard icon"
-        viewBox="0 0 24 24"
-      >
-        <g
-          stroke="currentColor"
-          strokeWidth="1.5"
-        >
-          <path
-            d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-            fill="none"
-            strokeLinecap="round"
-          />
-          <path
-            d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-            fill="currentColor"
-            strokeLinecap="round"
-          />
-          <circle
-            cx="12"
-            cy="12"
-            fill="none"
-            r="11.25"
-            strokeMiterlimit="10"
-          />
-        </g>
-      </svg>
+      />
       Get A Library Card
     </a>
     <a
@@ -177,35 +131,12 @@ exports[`HeaderMobileNav renders the UI snapshot correctly 1`] = `
     >
       <svg
         aria-hidden={true}
-        className="chakra-icon css-1g9tbrc"
+        className="chakra-icon css-1k5hm9w"
+        data-file-name="SvgDecorativeEnvelope"
         focusable={false}
         role="img"
         title="decorativeEnvelope icon"
-        viewBox="0 0 24 24"
-      >
-        <g
-          stroke="currentColor"
-          strokeWidth="1.5"
-        >
-          <path
-            d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-            fill="none"
-            strokeLinecap="round"
-          />
-          <path
-            d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-            fill="currentColor"
-            strokeLinecap="round"
-          />
-          <circle
-            cx="12"
-            cy="12"
-            fill="none"
-            r="11.25"
-            strokeMiterlimit="10"
-          />
-        </g>
-      </svg>
+      />
       Get Email Updates
     </a>
     <a
@@ -216,35 +147,12 @@ exports[`HeaderMobileNav renders the UI snapshot correctly 1`] = `
     >
       <svg
         aria-hidden={true}
-        className="chakra-icon css-1g9tbrc"
+        className="chakra-icon css-1k5hm9w"
+        data-file-name="SvgDecorativeShoppingBag"
         focusable={false}
         role="img"
         title="decorativeShoppingBag icon"
-        viewBox="0 0 24 24"
-      >
-        <g
-          stroke="currentColor"
-          strokeWidth="1.5"
-        >
-          <path
-            d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-            fill="none"
-            strokeLinecap="round"
-          />
-          <path
-            d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-            fill="currentColor"
-            strokeLinecap="round"
-          />
-          <circle
-            cx="12"
-            cy="12"
-            fill="none"
-            r="11.25"
-            strokeMiterlimit="10"
-          />
-        </g>
-      </svg>
+      />
       Shop
        NYPL
     </a>
