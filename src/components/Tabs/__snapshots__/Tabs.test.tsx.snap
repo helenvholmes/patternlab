@@ -17,36 +17,13 @@ exports[`Tabs renders the UI snapshot correctly 1`] = `
     >
       <svg
         aria-hidden={true}
-        className="chakra-icon css-1grhd2q"
+        className="chakra-icon css-1vgifmd"
+        data-file-name="SvgArrow"
         focusable={false}
         id="tabs-previous-icon-basic"
         role="img"
         title="previous arrow"
-        viewBox="0 0 24 24"
-      >
-        <g
-          stroke="currentColor"
-          strokeWidth="1.5"
-        >
-          <path
-            d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-            fill="none"
-            strokeLinecap="round"
-          />
-          <path
-            d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-            fill="currentColor"
-            strokeLinecap="round"
-          />
-          <circle
-            cx="12"
-            cy="12"
-            fill="none"
-            r="11.25"
-            strokeMiterlimit="10"
-          />
-        </g>
-      </svg>
+      />
     </button>
     <div
       className="css-0"
@@ -113,36 +90,13 @@ exports[`Tabs renders the UI snapshot correctly 1`] = `
     >
       <svg
         aria-hidden={true}
-        className="chakra-icon css-1grhd2q"
+        className="chakra-icon css-1vgifmd"
+        data-file-name="SvgArrow"
         focusable={false}
         id="tabs-next-icon-basic"
         role="img"
         title="next arrow"
-        viewBox="0 0 24 24"
-      >
-        <g
-          stroke="currentColor"
-          strokeWidth="1.5"
-        >
-          <path
-            d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-            fill="none"
-            strokeLinecap="round"
-          />
-          <path
-            d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-            fill="currentColor"
-            strokeLinecap="round"
-          />
-          <circle
-            cx="12"
-            cy="12"
-            fill="none"
-            r="11.25"
-            strokeMiterlimit="10"
-          />
-        </g>
-      </svg>
+      />
     </button>
   </div>
   <div
@@ -211,36 +165,13 @@ exports[`Tabs renders the UI snapshot correctly 2`] = `
     >
       <svg
         aria-hidden={true}
-        className="chakra-icon css-1grhd2q"
+        className="chakra-icon css-1vgifmd"
+        data-file-name="SvgArrow"
         focusable={false}
         id="tabs-previous-icon-chakra"
         role="img"
         title="previous arrow"
-        viewBox="0 0 24 24"
-      >
-        <g
-          stroke="currentColor"
-          strokeWidth="1.5"
-        >
-          <path
-            d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-            fill="none"
-            strokeLinecap="round"
-          />
-          <path
-            d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-            fill="currentColor"
-            strokeLinecap="round"
-          />
-          <circle
-            cx="12"
-            cy="12"
-            fill="none"
-            r="11.25"
-            strokeMiterlimit="10"
-          />
-        </g>
-      </svg>
+      />
     </button>
     <div
       className="css-0"
@@ -307,36 +238,13 @@ exports[`Tabs renders the UI snapshot correctly 2`] = `
     >
       <svg
         aria-hidden={true}
-        className="chakra-icon css-1grhd2q"
+        className="chakra-icon css-1vgifmd"
+        data-file-name="SvgArrow"
         focusable={false}
         id="tabs-next-icon-chakra"
         role="img"
         title="next arrow"
-        viewBox="0 0 24 24"
-      >
-        <g
-          stroke="currentColor"
-          strokeWidth="1.5"
-        >
-          <path
-            d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-            fill="none"
-            strokeLinecap="round"
-          />
-          <path
-            d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-            fill="currentColor"
-            strokeLinecap="round"
-          />
-          <circle
-            cx="12"
-            cy="12"
-            fill="none"
-            r="11.25"
-            strokeMiterlimit="10"
-          />
-        </g>
-      </svg>
+      />
     </button>
   </div>
   <div
@@ -406,36 +314,13 @@ exports[`Tabs renders the UI snapshot correctly 3`] = `
     >
       <svg
         aria-hidden={true}
-        className="chakra-icon css-1grhd2q"
+        className="chakra-icon css-1vgifmd"
+        data-file-name="SvgArrow"
         focusable={false}
         id="tabs-previous-icon-props"
         role="img"
         title="previous arrow"
-        viewBox="0 0 24 24"
-      >
-        <g
-          stroke="currentColor"
-          strokeWidth="1.5"
-        >
-          <path
-            d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-            fill="none"
-            strokeLinecap="round"
-          />
-          <path
-            d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-            fill="currentColor"
-            strokeLinecap="round"
-          />
-          <circle
-            cx="12"
-            cy="12"
-            fill="none"
-            r="11.25"
-            strokeMiterlimit="10"
-          />
-        </g>
-      </svg>
+      />
     </button>
     <div
       className="css-0"
@@ -502,36 +387,13 @@ exports[`Tabs renders the UI snapshot correctly 3`] = `
     >
       <svg
         aria-hidden={true}
-        className="chakra-icon css-1grhd2q"
+        className="chakra-icon css-1vgifmd"
+        data-file-name="SvgArrow"
         focusable={false}
         id="tabs-next-icon-props"
         role="img"
         title="next arrow"
-        viewBox="0 0 24 24"
-      >
-        <g
-          stroke="currentColor"
-          strokeWidth="1.5"
-        >
-          <path
-            d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-            fill="none"
-            strokeLinecap="round"
-          />
-          <path
-            d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-            fill="currentColor"
-            strokeLinecap="round"
-          />
-          <circle
-            cx="12"
-            cy="12"
-            fill="none"
-            r="11.25"
-            strokeMiterlimit="10"
-          />
-        </g>
-      </svg>
+      />
     </button>
   </div>
   <div
