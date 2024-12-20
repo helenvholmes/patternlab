@@ -1,330 +1,161 @@
+import React from "react";
 import { render, screen } from "@testing-library/react";
 import { axe } from "jest-axe";
-import * as React from "react";
 import renderer from "react-test-renderer";
 
 import {
   Template,
-  TemplateAboveHeader,
-  TemplateHeader,
   TemplateBreakout,
-  TemplateContent,
-  TemplateContentTop,
-  TemplateContentPrimary,
-  TemplateContentSidebar,
-  TemplateFooter,
-  TemplateAppContainer,
+  TemplateTop,
+  TemplateMain,
+  TemplateSidebar,
+  TemplateBottom,
+  SidebarPlacement,
+  TemplateMainNarrow,
 } from "./Template";
 import Placeholder from "../Placeholder/Placeholder";
+import { sidebarLabel } from "../../utils/utils";
 
-const aboveHeader = <Placeholder variant="short">Above Header</Placeholder>;
-const header = <Placeholder variant="short">NYPL Header</Placeholder>;
-const breakout = (
-  <>
-    <Placeholder variant="short">Breadcrumbs</Placeholder>
-    <Placeholder variant="short">Hero</Placeholder>
-  </>
-);
-const sidebar = "left";
+const breakout = <Placeholder variant="short">Breakout</Placeholder>;
 const contentTop = <Placeholder>Content Top</Placeholder>;
-const contentSidebar = <Placeholder>Left Sidebar</Placeholder>;
-const contentPrimary = (
+const contentMain = (
   <>
     <Placeholder>Main Content</Placeholder>
     <Placeholder variant="short">More Content</Placeholder>
   </>
 );
-const footer = <Placeholder variant="short">Footer</Placeholder>;
+const contentBottom = <Placeholder variant="short">Content Bottom</Placeholder>;
 
-describe("TemplateAppContainer accessibility", () => {
-  it("passes axe accessibility test", async () => {
-    const { container } = render(
-      <TemplateAppContainer
-        aboveHeader={aboveHeader}
-        header={header}
-        breakout={breakout}
-        sidebar={sidebar}
-        contentTop={contentTop}
-        contentSidebar={contentSidebar}
-        contentPrimary={contentPrimary}
-        footer={footer}
-      />
-    );
-    expect(await axe(container)).toHaveNoViolations();
-  });
-});
+const templateComponents = (
+  sidebar: SidebarPlacement = "none",
+  useMainNarrow: boolean = false
+) => (
+  <Template sidebar={sidebar}>
+    <TemplateBreakout>{breakout}</TemplateBreakout>
+    <TemplateTop>{contentTop}</TemplateTop>
+    {sidebar === "left" && !useMainNarrow && (
+      <TemplateSidebar>
+        <Placeholder>{sidebarLabel(sidebar)}</Placeholder>
+      </TemplateSidebar>
+    )}
+    {useMainNarrow ? (
+      <TemplateMainNarrow>{contentMain}</TemplateMainNarrow>
+    ) : (
+      <TemplateMain>{contentMain}</TemplateMain>
+    )}
+    {sidebar === "right" && !useMainNarrow && (
+      <TemplateSidebar>
+        <Placeholder>{sidebarLabel(sidebar)}</Placeholder>
+      </TemplateSidebar>
+    )}
+    <TemplateBottom>{contentBottom}</TemplateBottom>
+  </Template>
+);
 
 describe("Template components accessibility", () => {
-  it("passes axe accessibility test", async () => {
-    const { container } = render(
-      <Template>
-        <TemplateAboveHeader>{aboveHeader}</TemplateAboveHeader>
-        <TemplateHeader>
-          {header}
-          <TemplateBreakout>{breakout}</TemplateBreakout>
-        </TemplateHeader>
-        <TemplateContent sidebar={sidebar}>
-          <TemplateContentTop>{contentTop}</TemplateContentTop>
-          <TemplateContentSidebar>{contentSidebar}</TemplateContentSidebar>
-          <TemplateContentPrimary>{contentPrimary}</TemplateContentPrimary>
-        </TemplateContent>
-        <TemplateFooter>{footer}</TemplateFooter>
-      </Template>
-    );
+  it("passes axe accessibility test with no sidebar", async () => {
+    const { container } = render(templateComponents());
     expect(await axe(container)).toHaveNoViolations();
   });
-});
 
-describe("TemplateAppContainer component", () => {
-  it("renders each section", () => {
-    render(
-      <TemplateAppContainer
-        aboveHeader={aboveHeader}
-        header={header}
-        breakout={breakout}
-        sidebar={sidebar}
-        contentTop={contentTop}
-        contentSidebar={contentSidebar}
-        contentPrimary={contentPrimary}
-        footer={footer}
-      />
-    );
-    expect(screen.getByText("Above Header")).toBeInTheDocument();
-    expect(screen.getByText("NYPL Header")).toBeInTheDocument();
-    expect(screen.getByText("Breadcrumbs")).toBeInTheDocument();
-    expect(screen.getByText("Hero")).toBeInTheDocument();
-    expect(screen.getByText("Content Top")).toBeInTheDocument();
-    expect(screen.getByText("Left Sidebar")).toBeInTheDocument();
-    expect(screen.getByText("Main Content")).toBeInTheDocument();
-    expect(screen.getByText("More Content")).toBeInTheDocument();
-    expect(screen.getByText("Footer")).toBeInTheDocument();
+  it("passes axe accessibility test with a sidebar on the left", async () => {
+    const { container } = render(templateComponents("left"));
+    expect(await axe(container)).toHaveNoViolations();
   });
 
-  it("renders a #mainContent id in the `main` DOM element", () => {
-    const { container } = render(
-      <TemplateAppContainer
-        aboveHeader={aboveHeader}
-        header={header}
-        id="template-id"
-        breakout={breakout}
-        sidebar={sidebar}
-        contentTop={contentTop}
-        contentSidebar={contentSidebar}
-        contentPrimary={contentPrimary}
-        footer={footer}
-      />
-    );
-    expect(container.querySelector("#mainContent")).toBeInTheDocument();
-    expect(container.querySelector("#template-id")).toBeInTheDocument();
-    expect(screen.getByRole("main")).toHaveAttribute("id", "mainContent");
+  it("passes axe accessibility test with a sidebar on the right", async () => {
+    const { container } = render(templateComponents("right"));
+    expect(await axe(container)).toHaveNoViolations();
   });
 
-  it("renders only one header in a custom header component", () => {
-    const customHeader = <header>Custom header</header>;
-    render(
-      <TemplateAppContainer
-        header={customHeader}
-        renderHeaderElement={false}
-        breakout={breakout}
-        sidebar={sidebar}
-        contentTop={contentTop}
-        contentSidebar={contentSidebar}
-        contentPrimary={contentPrimary}
-        footer={footer}
-      />
-    );
-
-    // The `<header>` HTML element has the same meaning as `role="banner"`.
-    expect(screen.getAllByRole("banner")).toHaveLength(1);
-  });
-
-  it("consoles a warning when a header element was passed without setting `renderHeaderElement` to false", () => {
-    const warn = jest.spyOn(console, "warn");
-    const customHeader = <header>Custom header</header>;
-    render(
-      <TemplateAppContainer
-        header={customHeader}
-        breakout={breakout}
-        sidebar={sidebar}
-        contentTop={contentTop}
-        contentSidebar={contentSidebar}
-        contentPrimary={contentPrimary}
-        footer={footer}
-      />
-    );
-    expect(warn).toHaveBeenCalledWith(
-      "NYPL Reservoir TemplateHeader: An HTML `header` element was passed " +
-        "in. Set `renderHeaderElement` to `false` to avoid nested HTML " +
-        "`header` elements."
-    );
-  });
-
-  it("renders only one footer in a custom footer component", () => {
-    const customFooter = <footer>Custom Footer</footer>;
-    render(
-      <TemplateAppContainer
-        header={header}
-        breakout={breakout}
-        sidebar={sidebar}
-        contentTop={contentTop}
-        contentSidebar={contentSidebar}
-        contentPrimary={contentPrimary}
-        footer={customFooter}
-        renderFooterElement={false}
-      />
-    );
-
-    expect(screen.getAllByRole("contentinfo")).toHaveLength(1);
-  });
-
-  it("consoles a warning when a footer element was passed without setting `renderFooterElement` to false", () => {
-    const warn = jest.spyOn(console, "warn");
-    const customFooter = <footer>Custom Footer</footer>;
-    render(
-      <TemplateAppContainer
-        header={header}
-        breakout={breakout}
-        sidebar={sidebar}
-        contentTop={contentTop}
-        contentSidebar={contentSidebar}
-        contentPrimary={contentPrimary}
-        footer={customFooter}
-      />
-    );
-    expect(warn).toHaveBeenCalledWith(
-      "NYPL Reservoir TemplateFooter: An HTML `footer` element was passed " +
-        "in. Set `renderFooterElement` to `false` to avoid nested HTML " +
-        "`footer` elements."
-    );
+  it("passes axe accessibility test with the narrow container", async () => {
+    const { container } = render(templateComponents("none", true));
+    expect(await axe(container)).toHaveNoViolations();
   });
 });
 
 describe("Template components", () => {
-  it("renders each section", () => {
-    render(
-      <Template>
-        <TemplateAboveHeader>{aboveHeader}</TemplateAboveHeader>
-        <TemplateHeader>
-          {header}
-          <TemplateBreakout>{breakout}</TemplateBreakout>
-        </TemplateHeader>
-        <TemplateContent sidebar={sidebar}>
-          <TemplateContentTop>{contentTop}</TemplateContentTop>
-          <TemplateContentSidebar>{contentSidebar}</TemplateContentSidebar>
-          <TemplateContentPrimary>{contentPrimary}</TemplateContentPrimary>
-        </TemplateContent>
-        <TemplateFooter>{footer}</TemplateFooter>
-      </Template>
-    );
+  it("renders each section with left sidebar", () => {
+    render(templateComponents("left"));
 
-    expect(screen.getByText("Above Header")).toBeInTheDocument();
-    expect(screen.getByText("NYPL Header")).toBeInTheDocument();
-    expect(screen.getByText("Breadcrumbs")).toBeInTheDocument();
-    expect(screen.getByText("Hero")).toBeInTheDocument();
+    expect(screen.getByText("Breakout")).toBeInTheDocument();
     expect(screen.getByText("Content Top")).toBeInTheDocument();
     expect(screen.getByText("Left Sidebar")).toBeInTheDocument();
     expect(screen.getByText("Main Content")).toBeInTheDocument();
     expect(screen.getByText("More Content")).toBeInTheDocument();
-    expect(screen.getByText("Footer")).toBeInTheDocument();
+    expect(screen.getByText("Content Bottom")).toBeInTheDocument();
   });
 
-  it("renders a #mainContent id in the TemplateContent component", () => {
-    const { container } = render(
-      <TemplateContent>
-        <TemplateContentPrimary>{contentPrimary}</TemplateContentPrimary>
-      </TemplateContent>
-    );
+  it("renders each section with right sidebar", () => {
+    render(templateComponents("right"));
+
+    expect(screen.getByText("Breakout")).toBeInTheDocument();
+    expect(screen.getByText("Content Top")).toBeInTheDocument();
+    expect(screen.getByText("Right Sidebar")).toBeInTheDocument();
+    expect(screen.getByText("Main Content")).toBeInTheDocument();
+    expect(screen.getByText("More Content")).toBeInTheDocument();
+    expect(screen.getByText("Content Bottom")).toBeInTheDocument();
+  });
+
+  it("renders a #mainContent id when using TemplateMain", () => {
+    const { container } = render(templateComponents("left"));
 
     expect(container.querySelector("#mainContent")).toBeInTheDocument();
     expect(screen.getByRole("main")).toHaveAttribute("id", "mainContent");
   });
 
-  it("renders the UI snapshot correctly", () => {
-    const templateComponents = renderer
-      .create(
-        <Template>
-          <TemplateAboveHeader>{aboveHeader}</TemplateAboveHeader>
-          <TemplateHeader>
-            {header}
-            <TemplateBreakout>{breakout}</TemplateBreakout>
-          </TemplateHeader>
-          <TemplateContent sidebar={sidebar}>
-            <TemplateContentTop>{contentTop}</TemplateContentTop>
-            <TemplateContentSidebar>{contentSidebar}</TemplateContentSidebar>
-            <TemplateContentPrimary>{contentPrimary}</TemplateContentPrimary>
-          </TemplateContent>
-          <TemplateFooter>{footer}</TemplateFooter>
-        </Template>
-      )
-      .toJSON();
-    const singleComponent = renderer
-      .create(
-        <TemplateAppContainer
-          aboveHeader={aboveHeader}
-          header={header}
-          breakout={breakout}
-          sidebar={sidebar}
-          contentTop={contentTop}
-          contentSidebar={contentSidebar}
-          contentPrimary={contentPrimary}
-          footer={footer}
-        />
-      )
-      .toJSON();
-    const withChakraProps = renderer
-      .create(
-        <TemplateAppContainer
-          aboveHeader={aboveHeader}
-          header={header}
-          breakout={breakout}
-          sidebar={sidebar}
-          contentTop={contentTop}
-          contentSidebar={contentSidebar}
-          contentPrimary={contentPrimary}
-          footer={footer}
-          p="20px"
-          color="ui.error.primary"
-        />
-      )
-      .toJSON();
-    const withOtherProps = renderer
-      .create(
-        <TemplateAppContainer
-          aboveHeader={aboveHeader}
-          header={header}
-          breakout={breakout}
-          sidebar={sidebar}
-          contentTop={contentTop}
-          contentSidebar={contentSidebar}
-          contentPrimary={contentPrimary}
-          footer={footer}
-          data-testid="props"
-        />
-      )
-      .toJSON();
+  it("renders a #mainContent id when using TemplateMainNarrow", () => {
+    const { container } = render(templateComponents("none", true));
 
-    expect(templateComponents).toMatchSnapshot();
-    expect(singleComponent).toMatchSnapshot();
-    expect(withChakraProps).toMatchSnapshot();
-    expect(withOtherProps).toMatchSnapshot();
+    expect(container.querySelector("#mainContent")).toBeInTheDocument();
+    expect(screen.getByRole("main")).toHaveAttribute("id", "mainContent");
   });
 
   it("passes a ref to the div wrapper element", () => {
     const ref = React.createRef<HTMLDivElement>();
     const { container } = render(
-      <TemplateAppContainer
-        aboveHeader={aboveHeader}
-        header={header}
-        breakout={breakout}
-        sidebar={sidebar}
-        contentTop={contentTop}
-        contentSidebar={contentSidebar}
-        contentPrimary={contentPrimary}
-        footer={footer}
-        ref={ref}
-      />
+      <Template ref={ref}>
+        <TemplateMain>{contentMain}</TemplateMain>
+      </Template>
     );
 
     expect(container.querySelectorAll("div")[0]).toBe(ref.current);
+  });
+
+  it("renders the UI snapshot correctly", () => {
+    const templateComponentsLeftSidebar = renderer
+      .create(templateComponents("left"))
+      .toJSON();
+
+    const templateComponentsRightSidebar = renderer
+      .create(templateComponents("right"))
+      .toJSON();
+
+    const templateComponentsNoSidebar = renderer
+      .create(templateComponents("none"))
+      .toJSON();
+
+    const templateComponentsMainNarrow = renderer
+      .create(templateComponents("none", true))
+      .toJSON();
+
+    const templateWithChakraProps = renderer.create(
+      <Template p="20px" color="ui.error.primary">
+        <TemplateMain>{contentMain}</TemplateMain>
+      </Template>
+    );
+
+    const templateWithOtherProps = renderer.create(
+      <Template data-testid="props">
+        <TemplateMain>{contentMain}</TemplateMain>
+      </Template>
+    );
+
+    expect(templateComponentsLeftSidebar).toMatchSnapshot();
+    expect(templateComponentsRightSidebar).toMatchSnapshot();
+    expect(templateComponentsNoSidebar).toMatchSnapshot();
+    expect(templateComponentsMainNarrow).toMatchSnapshot();
+    expect(templateWithChakraProps).toMatchSnapshot();
+    expect(templateWithOtherProps).toMatchSnapshot();
   });
 });
