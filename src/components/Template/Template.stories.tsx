@@ -373,8 +373,32 @@ export const TemplateFullExampleNarrow = {
   render: () => (
     <>
       <Template>
+        <TemplateBreakout>
+          <Breadcrumbs
+            breadcrumbsData={[
+              { url: "#", text: "Home" },
+              { url: "#", text: "Research" },
+              {
+                url: "#",
+                text: "Catalog",
+              },
+            ]}
+            breadcrumbsType="research"
+          />
+          <Hero
+            backgroundColor="section.research.primary"
+            foregroundColor="ui.white"
+            heroType="tertiary"
+            heading={<Heading level="h1" id="1" text="Tertiary Hero" />}
+          />
+        </TemplateBreakout>
         <TemplateMainNarrow>
-          <p>This is the main content!</p>
+          <Heading
+            level="h2"
+            size="heading3"
+            id="main-heading"
+            text="Main Narrow"
+          />
           <p>
             Discover millions of items from The New York Public Library's
             Stephen A. Schwarzman Building, Schomburg Center for Research in
