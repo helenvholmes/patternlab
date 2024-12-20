@@ -18,10 +18,11 @@ import Link from "../Link/Link";
 The Reservoir Design System (DS) adheres to four global breakpoints for
 responsive layouts and typography.
 
-- Mobile: 320px
-- Tablet Portrait: 600px
-- Tablet Landscape: 960px
-- Desktop: 1280px
+- Small Mobile: less than 480px
+- Large Mobile: less than 768px
+- Small Tablet: less than 1024px
+- Large Tablet: less than 1280px
+- Desktop: greater than or equal to 1280px
 
 ## CSS Variables
 
@@ -29,12 +30,19 @@ The following CSS variables are available through the DS.
 
 <Source
   code={`
---nypl-breakpoint-small: 320px;
---nypl-breakpoint-medium: 600px;
---nypl-breakpoint-large: 960px;
+// Chakra Syntax
+--nypl-breakpoint-small: 480px;
+--nypl-breakpoint-medium: 768px;
+--nypl-breakpoint-large: 1024px;
 --nypl-breakpoint-xl: 1280px;
+
+// NYPL Semantic Syntax
+--nypl-breakpoint-smallMobile: 480px;
+--nypl-breakpoint-largeMobile: 768px;
+--nypl-breakpoint-smallTablet: 1024px;
+--nypl-breakpoint-largeTablet: 1280px;
 `}
-  language="css"
+language="css"
 />
 
 ## SCSS Variables
@@ -45,9 +53,9 @@ function (if used).
 
 <Source
   code={`
-$nypl-breakpoint-small: 320px;
-$nypl-breakpoint-medium: 600px;
-$nypl-breakpoint-large: 960px;
+$nypl-breakpoint-small: 480px;
+$nypl-breakpoint-medium: 768px;
+$nypl-breakpoint-large: 1024px;
 $nypl-breakpoint-xl: 1280px;
 $nypl-max-width: $nypl-breakpoint-xl;
 `}
@@ -58,4 +66,4 @@ $nypl-max-width: $nypl-breakpoint-xl;
 
 For additional spacing information, please refer to the Figma Main file.
 
-- https://www.figma.com/file/qShodlfNCJHb8n03IFyApM/Master?node-id=17983%3A60146
+- https://www.figma.com/file/qShodlfNCJHb8n03IFyApM/Main?type=design&node-id=36835-26738&mode=design&t=w3RXt8BBaOjtXvvh-11
