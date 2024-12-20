@@ -17,16 +17,16 @@ const meta: Meta<typeof CheckboxGroup> = {
     defaultValue: { control: false },
     id: { control: false },
     isDisabled: {
-      table: { defaultValue: { summary: false } },
+      table: { defaultValue: { summary: "false" } },
     },
     isFullWidth: {
-      table: { defaultValue: { summary: true } },
+      table: { defaultValue: { summary: "true" } },
     },
     isInvalid: {
-      table: { defaultValue: { summary: false } },
+      table: { defaultValue: { summary: "false" } },
     },
     isRequired: {
-      table: { defaultValue: { summary: false } },
+      table: { defaultValue: { summary: "false" } },
     },
     key: { table: { disable: true } },
     layout: {
@@ -37,13 +37,13 @@ const meta: Meta<typeof CheckboxGroup> = {
     onChange: { control: false },
     ref: { table: { disable: true } },
     showHelperInvalidText: {
-      table: { defaultValue: { summary: true } },
+      table: { defaultValue: { summary: "true" } },
     },
     showLabel: {
-      table: { defaultValue: { summary: true } },
+      table: { defaultValue: { summary: "true" } },
     },
     showRequiredLabel: {
-      table: { defaultValue: { summary: true } },
+      table: { defaultValue: { summary: "true" } },
     },
     value: { control: false },
   },

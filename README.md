@@ -10,8 +10,8 @@ Storybook documentation
 
 - [V3 Production - deployed to Github Pages](https://nypl.github.io/nypl-design-system/reservoir/v3/?path=/docs/welcome--docs)
 - [Development/QA - deployed to Vercel](https://nypl-design-system.vercel.app/?path=/docs/welcome--docs)
-- [V2 Production - deployed to Vercel](TODO)
-- [V1 Production - deployed to Vercel](https://nypl-design-system-git-reservoir-v173-nypl.vercel.app/)
+- [V2 Production - deployed to Github Pages](https://nypl.github.io/nypl-design-system/reservoir/v2)
+- [V1 Production - deployed to Github Pages](https://nypl.github.io/nypl-design-system/reservoir/v1)
 
 | Table of Contents |                                                                                     |
 | ----------------- | ----------------------------------------------------------------------------------- |
@@ -73,7 +73,6 @@ import {
   DSProvider,
   TemplateAppContainer,
 } from "@nypl/design-system-react-components";
-...
 ```
 
 Otherwise, it can be imported in the app's main SCSS file:
@@ -83,15 +82,8 @@ Otherwise, it can be imported in the app's main SCSS file:
 @import "@nypl/design-system-react-components/dist/styles.css";
 
 body {
-  ....
+  // ...
 }
-```
-
-Note: Using tilde to import scss/css is no longer a best practice for apps using _recent_ versions of webpack or parcel.
-
-```scss
-// No longer a best practice:
-@import "~@nypl/design-system-react-components/dist/styles.css";
 ```
 
 For apps using parcel, prepend the string import with `npm:` such as :
@@ -114,17 +106,17 @@ function NewComponent(props) {
 }
 ```
 
-Sometimes you may have conflicts, perhaps with `React-Router`. In that case, you can alias your imports:
+Sometimes you may have conflicts, perhaps with Next.js' `Link` router component. In that case, you can alias your imports:
 
 ```jsx
-import * as DS from "@nypl/design-system-react-components";
-import { Link } from "react-router";
+import { Link as DSLink } from "@nypl/design-system-react-components";
+import { Link } from "next/link";
 
 function NewComponent(props) {
   return (
-    <DS.Link>
-      <Link to="/license">public domain</Link>
-    </DS.Link>
+    <DSLink as={Link} type="action" href="#">
+      Next Page
+    </DSLink>
   );
 }
 ```
@@ -139,7 +131,7 @@ The list of re-exported Chakra components can be found in the main [index.ts](/s
 
 Find more information about the Design System's internal use of Chakra to create and refactor components in the Storybook documentation page. The following two links have the same information but in different formats for your reading preference:
 
-- [MDX format](/src/docs/Chakra.stories.mdx)
+- [MDX format](/src/docs/Chakra.mdx)
 - [Storybook page](https://nypl.github.io/nypl-design-system/reservoir/v3/?path=/docs/chakra-ui--docs)
 
 Chakra was integrated into the Design System in version `0.25.0`. For those looking to update to a version greater than or equal `0.25.0`, check out our [Chakra Migration Guide](/CHAKRA_MIGRATION_GUIDE.md).
@@ -164,11 +156,11 @@ The development Storybook documentation is deployed to [Vercel](https://nypl-des
 
 **Version 2.x**
 
-The Storybook documentation for DS version 2.x is deployed to [Vercel](TODO). If you are using a DS version less than 3.0, this is the Storybook documentation you should be referencing. While the DS team will continue to support version 2.x, we will not be adding new features or components to this version. We highly recommend updating to version 3.x for design update and bug fixes.
+The Storybook documentation for DS version 2.x is deployed to [Vercel](https://nypl.github.io/nypl-design-system/reservoir/v2). If you are using a DS version less than 3.0, this is the Storybook documentation you should be referencing. While the DS team will continue to support version 2.x, we will not be adding new features or components to this version. We highly recommend updating to version 3.x for design update and bug fixes.
 
 **Version 1.x**
 
-The Storybook documentation for DS version 1.x is deployed to [Vercel](https://nypl-design-system-git-reservoir-v173-nypl.vercel.app/). If you are using a DS version less than 2.0, this is the Storybook documentation you should be referencing. We highly recommend updating to version 3.x for design update and bug fixes.
+The Storybook documentation for DS version 1.x is deployed to [Vercel](https://nypl.github.io/nypl-design-system/reservoir/v1). If you are using a DS version less than 2.0, this is the Storybook documentation you should be referencing. We highly recommend updating to version 3.x for design update and bug fixes.
 
 **Preview Sites**
 
@@ -176,12 +168,12 @@ Preview Storybook documentation sites are deployed to Vercel on every commit pus
 
 ### React Component Documentation
 
-When actively developing components or fixing bugs, make sure that the related stories are created or updated. This means updating the respective `[component-name].stories.mdx` file. For information on how to write stories, check out the [Anatomy of a Story](https://github.com/NYPL/nypl-design-system/wiki/Anatomy-of-a-Story) wiki page.
+When actively developing components or fixing bugs, make sure that the related stories are created or updated. This means updating the respective `[component-name].mdx` file. For information on how to write stories, check out the [Anatomy of a Story](https://github.com/NYPL/nypl-design-system/wiki/Anatomy-of-a-Story) wiki page.
 
 For stand-alone document pages in Storybook, you need to:
 
-1. create the `[page-name].stories.mdx` file in `src/docs/`
-2. add the file reference to the `.storybook/main.cjs` file in the `stories` array
+1. create the `[page-name].mdx` file in `src/docs/`
+2. add the file reference to the `.storybook/main.ts` file in the `stories` array
 
 ### React Component Versions
 
@@ -221,7 +213,7 @@ We make use of:
 - `jest-axe` for running [`axe-core`](https://github.com/dequelabs/axe-core) on _every_ component's unit test file. This is part of the automated tests that run in Github Actions through the `npm test` command.
 - `@storybook/addon-a11y` for real-time accessibility testing in the browser through Storybook. _Every_ component has a tab that displays violations, passes, and incomplete checks performed by `axe-core`.
 
-If applicable, DS components have section(s) on accessibility in their Storybook documentation. For example, in the `Slider`'s [Storybook file](/src/components/Slider/Slider.stories.mdx), there are two "Accessibility" sections for each of the two `Slider` types, "single" and "range". This gives an explanation on additional changes we made to make the combination of elements in the `Slider` component accessible.
+If applicable, DS components have section(s) on accessibility in their Storybook documentation. For example, in the `Slider`'s [Storybook file](/src/components/Slider/Slider.mdx), there are two "Accessibility" sections for each of the two `Slider` types, "single" and "range". This gives an explanation on additional changes we made to make the combination of elements in the `Slider` component accessible.
 
 ### Product Requirements
 
@@ -259,7 +251,7 @@ Follow the [contribution document](/.github/CONTRIBUTING.md) to follow git branc
 
 ### Node Version
 
-We recommend using Node version 18.x. The Github Actions for linting, automated testing, deploying to Github Pages, and releasing to npm are all running on Node 18.x.
+The DS uses Node version 18.x and we do not support any Node versions below 18.x. The Github Actions for linting, automated testing, deploying to Github Pages, and releasing to npm are all running on Node 18.x.
 
 If you are using `nvm`, the local `.nvmrc` file (using `18.x`) can be use to set your local Node version with the `nvm use` command. Make sure your machine has Node version 18.x installed through `nvm` already.
 
@@ -268,7 +260,8 @@ If you are using `nvm`, the local `.nvmrc` file (using `18.x`) can be use to set
 There are currently two main branches for the DS:
 
 - `development` is the main and default branch for the DS. All new feature and bug fix pull requests should be made against this branch.
-- `release` is the branch used to deploy the static Storybook instance to Github Pages, the DS' production Storybook instance.
+- `release` is the production branch used to create Github releases, tags, and npm releases.
+- `gh-pages` is the branch used to deploy the static Storybook instance to Github Pages, the DS' production Storybook instance.
 
 When a new version of the DS is ready for release, the `development` branch is merged into the `release` branch through a pull request. Once merged, Github Actions will run to deploy the static Storybook as well as publish the new version to npm. Here is a [pull request](https://github.com/NYPL/nypl-design-system/pull/1532) that follows the convention outlined in [How to Run a Release](https://github.com/NYPL/nypl-design-system/wiki/How-to-Run-a-Release).
 
@@ -305,63 +298,6 @@ The release candidate version passed QA and is ready for production! What do we 
 5. Run `npm install` to install all the dependencies and create a new `package-lock.json` file with the updated version.
 6. Push the changes to Github and create a new pull request from `development` that points to the `release` branch.
 7. Once approved and merged, a Github Action will run that will automatically deploy the static Storybook to Github Pages and publish the new version to npm.
-
-## Local App Development
-
-Sometimes, you may want to test out a new feature or bug fix in a local app rather than publishing a release candidate version to npm. While this is possible, it is not always straightforward.
-
-_Please note that the following instructions depend on the node version for both the Design System and the local app. If the node versions are different, the instructions may not work. This is a limitation of npm._
-
-### Developing with npm install
-
-To develop with a local version of the Design System:
-
-1. In the root of the consuming application directory, run:
-
-```sh
-$ npm install --no-save [../path/to/design-system]
-```
-
-### Developing with npm link
-
-To develop with a local version of the Design System:
-
-1. In the Design System directory, run:
-
-```sh
-$ npm link
-```
-
-2. Go to the consuming application directory and run:
-
-```sh
-$ npm link @nypl/design-system-react-components
-```
-
-3. Go back to the Design System directory and run the following command. It allows the local Design System to be rebuilt and exported automatically:
-
-```sh
-$ npm start
-```
-
-#### Error Troubleshooting
-
-It's possible when running `npm link` that you'll get an `Invalid Hook` issue. If this occurs, it's most likely caused by having two versions of React when trying to run the application while the NYPL DS package is linked. This [Duplicate React](https://reactjs.org/warnings/invalid-hook-call-warning.html#duplicate-react) issue is covered by the React team.
-
-To be more specific, you should run the following in your local DS directory, where `[../path/to/application]` is the local directory of the consuming application.
-
-```sh
-$ npm link [../path/to/application]/node_modules/react
-```
-
-Now you should be able to run `npm start` in the DS directory and `npm run dev` (or whatever your application uses) in the application directory and not get an `Invalid Hook` error.
-
-#### npm Unlink
-
-To unlink the DS codebase:
-
-1. Run `npm unlink` in the Design System directory.
-2. Run `npm unlink --no-save @nypl/design-system-react-components` in the consuming application.
 
 ## Typescript Usage
 
@@ -443,9 +379,9 @@ $ npm test -- --updateSnapshot
 
 Each snapshot file also includes a link to its [Jest Snapshot documentation](https://jestjs.io/docs/snapshot-testing) which is recommended to read!
 
-### Storybook Jest Addon
+### Storybook Test Addon
 
-Through the [`@storybook/addon-jest`](https://www.npmjs.com/package/@storybook/addon-jest) plugin, we can see a component's suite of unit tests right Storybook. In the "Addons" panel, a "Test" tab will display all the tests for the current component and whether they pass or fail.
+Through the [`@storybook/test`](https://www.npmjs.com/package/@storybook/test) plugin, we can see a component's suite of unit tests right Storybook. In the "Addons" panel, a "Test" tab will display all the tests for the current component and whether they pass or fail.
 
 After writing new tests, run `npm run test:generate-output` to create a new JSON file that is used by Storybook. This JSON file contains all the test suites for all the components and Storybook picks this up and automatically combines a component with its relevant unit tests. Make sure to commit this file although new builds on Github Pages will recreate this file for the production Storybook instance.
 
@@ -457,28 +393,6 @@ You can also use the Design System styles in your project through the `unpkg` CD
 <link
   href="https://unpkg.com/@nypl/design-system-react-components/dist/styles.css"
 />
-<script src="https://unpkg.com/@nypl/design-system-react-components/dist/design-system-react-components.umd.cjs" />
+<script src="https://unpkg.com/@nypl/design-system-react-components/dist/design-system-react-components.cjs" />
 <script src="https://unpkg.com/@nypl/design-system-react-components/dist/design-system-react-components.js" />
-```
-
-If you need to reference a particular version you can do do by including the version number in the URL.
-
-For version < 2.1.0:
-
-```html
-<link
-  href="https://unpkg.com/@nypl/design-system-react-components@2.0.0/dist/styles.css"
-/>
-<script src="https://unpkg.com/@nypl/design-system-react-components@2.0.0/dist/design-system-react-components.cjs.production.min.js" />
-<script src="https://unpkg.com/@nypl/design-system-react-components@2.0.0/dist/design-system-react-components.esm.js" />
-```
-
-For version >= 2.1.0:
-
-```html
-<link
-  href="https://unpkg.com/@nypl/design-system-react-components@2.1.1/dist/styles.css"
-/>
-<script src="https://unpkg.com/@nypl/design-system-react-components@2.1.1/dist/design-system-react-components.umd.cjs" />
-<script src="https://unpkg.com/@nypl/design-system-react-components@2.1.1/dist/design-system-react-components.js" />
 ```

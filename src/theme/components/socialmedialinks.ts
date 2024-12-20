@@ -44,12 +44,12 @@ function getColor(color) {
 const SocialMediaLinks = defineStyleConfig({
   // The base styles for each part
   baseStyle: defineStyle((props: StyleFunctionProps) => {
-    const { labelsOn, layout } = props;
+    const { showLabels, layout } = props;
     return {
       // ul styles should not specifically be identified as ul:
       display: "flex",
       alignItems: "flex-start",
-      flexDirection: { base: labelsOn ? "column" : "row", md: layout },
+      flexDirection: { base: showLabels ? "column" : "row", md: layout },
       justifyContent: { base: "center", md: "unset" },
       flexWrap: "wrap",
       gap: { base: "0", md: "s" },
@@ -57,7 +57,7 @@ const SocialMediaLinks = defineStyleConfig({
       li: {
         marginInlineEnd: "0",
         marginTop: "0",
-        width: { base: labelsOn ? "100%" : "unset", md: "unset" },
+        width: { base: showLabels ? "100%" : "unset", md: "unset" },
         _notFirst: {
           marginTop: "0",
         },
@@ -111,7 +111,7 @@ const SocialMediaLinks = defineStyleConfig({
   variants: {
     // Each variant is a function that returns an object with styles for that variant.
     straight(props: StyleFunctionProps) {
-      const { color, labelsOn } = props;
+      const { color, showLabels } = props;
       let theseColors = getColor(color);
       return {
         gap: "xs", // Borders require the gap to reduce from 1rem to .5rem / 8px.
@@ -150,7 +150,7 @@ const SocialMediaLinks = defineStyleConfig({
           borderWidth: "1px",
           borderStyle: "solid",
           borderColor: theseColors.ltColor,
-          width: labelsOn ? "100%" : "unset",
+          width: showLabels ? "100%" : "unset",
           _dark: {
             borderColor: theseColors.dkColor,
           },

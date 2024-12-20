@@ -61,9 +61,20 @@ export const ComponentChangelogTable = (
         textTransform: "uppercase",
       },
     },
+    tbody: {
+      th: {
+        _first: {
+          bgColor: "transparent",
+          fontSize: "desktop.caption",
+        },
+      },
+    },
     th: {
       borderColor: borderColor,
       fontSize: "desktop.caption",
+      _first: {
+        borderRight: 0,
+      },
       _last: {
         borderColor: borderColor,
       },

@@ -396,3 +396,14 @@ export const Dismissible: Story = {
     />
   ),
 };
+export const StringContentWithHTML: Story = {
+  render: () => (
+    <Banner
+      content={
+        "<p>Cras mattis consectetur purus sit amet fermentum. Maecenas faucibus mollis interdum.</p><p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. <b>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus</b>. <a href='#'>This is a link</a>.</p>"
+      }
+      heading="String content with HTML"
+      type="neutral"
+    />
+  ),
+};

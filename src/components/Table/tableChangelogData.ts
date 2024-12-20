@@ -10,6 +10,25 @@ import { ChangelogData } from "../../utils/ComponentChangelogTable";
 
 export const changelogData: ChangelogData[] = [
   {
+    date: "2024-11-07",
+    version: "3.4.2",
+    type: "Bug Fix",
+    affects: ["Styles"],
+    notes: ["Fixes spacing issues and dark mode color styles."],
+  },
+  {
+    date: "2024-10-02",
+    version: "3.4.0",
+    type: "Update",
+    affects: ["Accessibility", "Documentation", "Functionality", "Styles"],
+    notes: [
+      "Added the `isScrollable` prop to enable horizontal scrolling.",
+      "Added the `columnStyles` prop to allow for custom column styles (i.e. width, text alignment, etc.).",
+      "Added the `tableTextSize` prop to set the size of the text within the table.",
+      "Added the `titleText` and `showTitleText` props to control the <caption> element and arial-label attribute.",
+    ],
+  },
+  {
     date: "2024-05-09",
     version: "3.1.2",
     type: "Update",

@@ -13,6 +13,13 @@ describe("Image Accessibility", () => {
     expect(await axe(container)).toHaveNoViolations();
   });
 
+  it("passes axe accessibility with an aspect ratio and id", async () => {
+    const { container } = render(
+      <Image alt="" src="test.png" aspectRatio="oneByTwo" id="test-id" />
+    );
+    expect(await axe(container)).toHaveNoViolations();
+  });
+
   it("passes axe accessibility for regular lazy loading img element", async () => {
     const { container } = render(<Image alt="" isLazy src="test.png" />);
 

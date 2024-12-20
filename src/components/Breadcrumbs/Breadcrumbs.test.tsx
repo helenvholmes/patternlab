@@ -2,6 +2,7 @@ import { render, screen } from "@testing-library/react";
 import { axe } from "jest-axe";
 import { createRef } from "react";
 import renderer from "react-test-renderer";
+import Link from "../Link/Link";
 
 import Breadcrumbs from "./Breadcrumbs";
 
@@ -10,6 +11,13 @@ const breadcrumbsData = [
   { url: "#string2", text: "string2" },
   { url: "#string3", text: "string3" },
 ];
+
+const breadcrumbsDataLinkProps = [
+  { url: "#string1", text: "string1", linkProps: { target: "_top" } },
+  { url: "#string2", text: "string2" },
+  { url: "#string3", text: "string3" },
+];
+
 const breadcrumbsDataLongText = [
   { url: "#string1", text: "Parent with a Long Name" },
   {
@@ -86,6 +94,34 @@ describe("Breadcrumbs", () => {
     );
     expect(screen.getAllByRole("link")[2]).toHaveTextContent(
       /Great-Grandchild with the Longest Name.../
+    );
+  });
+
+  it("replaces BreadcrumbsLink when customLinkComponent is passed", () => {
+    render(
+      <Breadcrumbs
+        customLinkComponent={Link}
+        breadcrumbsData={breadcrumbsDataLinkProps}
+      />
+    );
+    expect(screen.getByText("string1").closest("a")).toHaveClass("chakra-link");
+  });
+
+  it("does not replace BreadcrumbsLink when no custom link is passed", () => {
+    render(<Breadcrumbs breadcrumbsData={breadcrumbsDataLinkProps} />);
+    expect(screen.getByText("string1").closest("a")).toHaveClass(
+      "chakra-breadcrumb__link"
+    );
+    expect(screen.getByText("string1").closest("a")).not.toHaveClass(
+      "chakra-link"
+    );
+  });
+
+  it("passes linkProps to specified breadcrumbs", () => {
+    render(<Breadcrumbs breadcrumbsData={breadcrumbsDataLinkProps} />);
+    expect(screen.getByText("string1").closest("a")).toHaveAttribute(
+      "target",
+      "_top"
     );
   });
 

@@ -1,3109 +1,3563 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Table renders the UI snapshot correctly 1`] = `
-<table
-  className="chakra-table css-1xdhyk6"
-  id="basic"
+<div
+  className="chakra-table__container css-zipzvv"
 >
-  <thead
-    className="css-0"
+  <table
+    className="chakra-table css-1xdhyk6"
+    id="basic"
   >
-    <tr
+    <thead
       className="css-0"
     >
-      <th
-        className="css-0"
-        scope="col"
-      >
-        First Name
-      </th>
-      <th
-        className="css-0"
-        scope="col"
-      >
-        Last Name
-      </th>
-      <th
-        className="css-0"
-        scope="col"
-      >
-        Nick Name
-      </th>
-      <th
-        className="css-0"
-        scope="col"
-      >
-        Address1
-      </th>
-      <th
-        className="css-0"
-        scope="col"
-      >
-        City
-      </th>
-      <th
-        className="css-0"
-        scope="col"
-      >
-        Zipcode
-      </th>
-      <th
-        className="css-0"
-        scope="col"
-      >
-        State
-      </th>
-    </tr>
-  </thead>
-  <tbody
-    className="css-0"
-  >
-    <tr
-      className="css-0"
-    >
-      <td
+      <tr
         className="css-0"
       >
-        <span
-          className="css-dsyim5"
+        <th
+          className="css-0"
+          scope="col"
         >
           First Name
-        </span>
-        <span>
-          Tom
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
+        </th>
+        <th
+          className="css-0"
+          scope="col"
         >
           Last Name
-        </span>
-        <span>
-          Nook
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
+        </th>
+        <th
+          className="css-0"
+          scope="col"
         >
           Nick Name
-        </span>
-        <span>
-          Tanukichi
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
+        </th>
+        <th
+          className="css-0"
+          scope="col"
         >
           Address1
-        </span>
-        <span>
-          Main Street
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
+        </th>
+        <th
+          className="css-0"
+          scope="col"
         >
           City
-        </span>
-        <span>
-          New York
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
+        </th>
+        <th
+          className="css-0"
+          scope="col"
         >
           Zipcode
-        </span>
-        <span>
-          23458
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
+        </th>
+        <th
+          className="css-0"
+          scope="col"
         >
           State
-        </span>
-        <span>
-          NY
-        </span>
-      </td>
-    </tr>
-    <tr
+        </th>
+      </tr>
+    </thead>
+    <tbody
       className="css-0"
     >
-      <td
+      <tr
         className="css-0"
       >
-        <span
-          className="css-dsyim5"
+        <td
+          className="css-0"
         >
-          First Name
-        </span>
-        <span>
-          Isabelle
-        </span>
-      </td>
-      <td
+          <span
+            className="css-dsyim5"
+          >
+            First Name
+          </span>
+          <span>
+            Tom
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Last Name
+          </span>
+          <span>
+            Nook
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Nick Name
+          </span>
+          <span>
+            Tanukichi
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Address1
+          </span>
+          <span>
+            Main Street
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            City
+          </span>
+          <span>
+            New York
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Zipcode
+          </span>
+          <span>
+            23458
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            State
+          </span>
+          <span>
+            NY
+          </span>
+        </td>
+      </tr>
+      <tr
         className="css-0"
       >
-        <span
-          className="css-dsyim5"
+        <td
+          className="css-0"
         >
-          Last Name
-        </span>
-        <span>
-          -
-        </span>
-      </td>
-      <td
+          <span
+            className="css-dsyim5"
+          >
+            First Name
+          </span>
+          <span>
+            Isabelle
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Last Name
+          </span>
+          <span>
+            -
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Nick Name
+          </span>
+          <span>
+            Shizue
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Address1
+          </span>
+          <span>
+            Walnut Street
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            City
+          </span>
+          <span>
+            New York
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Zipcode
+          </span>
+          <span>
+            23458
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            State
+          </span>
+          <span>
+            NY
+          </span>
+        </td>
+      </tr>
+      <tr
         className="css-0"
       >
-        <span
-          className="css-dsyim5"
+        <td
+          className="css-0"
         >
-          Nick Name
-        </span>
-        <span>
-          Shizue
-        </span>
-      </td>
-      <td
+          <span
+            className="css-dsyim5"
+          >
+            First Name
+          </span>
+          <span>
+            K.K.
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Last Name
+          </span>
+          <span>
+            Slider
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Nick Name
+          </span>
+          <span>
+            Totakeke
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Address1
+          </span>
+          <span>
+            Niper Place
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            City
+          </span>
+          <span>
+            New York
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Zipcode
+          </span>
+          <span>
+            98765
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            State
+          </span>
+          <span>
+            NY
+          </span>
+        </td>
+      </tr>
+      <tr
         className="css-0"
       >
-        <span
-          className="css-dsyim5"
+        <td
+          className="css-0"
         >
-          Address1
-        </span>
-        <span>
-          Walnut Street
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
+          <span
+            className="css-dsyim5"
+          >
+            First Name
+          </span>
+          <span>
+            Sonny
+          </span>
+        </td>
+        <td
+          className="css-0"
         >
-          City
-        </span>
-        <span>
-          New York
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
+          <span
+            className="css-dsyim5"
+          >
+            Last Name
+          </span>
+          <span>
+            Resetti
+          </span>
+        </td>
+        <td
+          className="css-0"
         >
-          Zipcode
-        </span>
-        <span>
-          23458
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
+          <span
+            className="css-dsyim5"
+          >
+            Nick Name
+          </span>
+          <span>
+            Risetto san
+          </span>
+        </td>
+        <td
+          className="css-0"
         >
-          State
-        </span>
-        <span>
-          NY
-        </span>
-      </td>
-    </tr>
-    <tr
-      className="css-0"
-    >
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
+          <span
+            className="css-dsyim5"
+          >
+            Address1
+          </span>
+          <span>
+            Village Road
+          </span>
+        </td>
+        <td
+          className="css-0"
         >
-          First Name
-        </span>
-        <span>
-          K.K.
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
+          <span
+            className="css-dsyim5"
+          >
+            City
+          </span>
+          <span>
+            New York
+          </span>
+        </td>
+        <td
+          className="css-0"
         >
-          Last Name
-        </span>
-        <span>
-          Slider
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
+          <span
+            className="css-dsyim5"
+          >
+            Zipcode
+          </span>
+          <span>
+            09873
+          </span>
+        </td>
+        <td
+          className="css-0"
         >
-          Nick Name
-        </span>
-        <span>
-          Totakeke
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
-        >
-          Address1
-        </span>
-        <span>
-          Niper Place
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
-        >
-          City
-        </span>
-        <span>
-          New York
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
-        >
-          Zipcode
-        </span>
-        <span>
-          98765
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
-        >
-          State
-        </span>
-        <span>
-          NY
-        </span>
-      </td>
-    </tr>
-    <tr
-      className="css-0"
-    >
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
-        >
-          First Name
-        </span>
-        <span>
-          Sonny
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
-        >
-          Last Name
-        </span>
-        <span>
-          Resetti
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
-        >
-          Nick Name
-        </span>
-        <span>
-          Risetto san
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
-        >
-          Address1
-        </span>
-        <span>
-          Village Road
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
-        >
-          City
-        </span>
-        <span>
-          New York
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
-        >
-          Zipcode
-        </span>
-        <span>
-          09873
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
-        >
-          State
-        </span>
-        <span>
-          NY
-        </span>
-      </td>
-    </tr>
-  </tbody>
-</table>
+          <span
+            className="css-dsyim5"
+          >
+            State
+          </span>
+          <span>
+            NY
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 `;
 
 exports[`Table renders the UI snapshot correctly 2`] = `
-<table
-  className="chakra-table css-1xdhyk6"
-  id="withCaption"
+<div
+  className="chakra-table__container css-zipzvv"
 >
-  <caption
-    className="css-18i7bby"
+  <table
+    className="chakra-table css-1xdhyk6"
+    id="withCaption"
   >
-    this is the caption
-  </caption>
-  <thead
-    className="css-0"
-  >
-    <tr
+    <caption
+      className="css-18i7bby"
+    >
+      this is the caption
+    </caption>
+    <thead
       className="css-0"
     >
-      <th
-        className="css-0"
-        scope="col"
-      >
-        First Name
-      </th>
-      <th
-        className="css-0"
-        scope="col"
-      >
-        Last Name
-      </th>
-      <th
-        className="css-0"
-        scope="col"
-      >
-        Nick Name
-      </th>
-      <th
-        className="css-0"
-        scope="col"
-      >
-        Address1
-      </th>
-      <th
-        className="css-0"
-        scope="col"
-      >
-        City
-      </th>
-      <th
-        className="css-0"
-        scope="col"
-      >
-        Zipcode
-      </th>
-      <th
-        className="css-0"
-        scope="col"
-      >
-        State
-      </th>
-    </tr>
-  </thead>
-  <tbody
-    className="css-0"
-  >
-    <tr
-      className="css-0"
-    >
-      <td
+      <tr
         className="css-0"
       >
-        <span
-          className="css-dsyim5"
+        <th
+          className="css-0"
+          scope="col"
         >
           First Name
-        </span>
-        <span>
-          Tom
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
+        </th>
+        <th
+          className="css-0"
+          scope="col"
         >
           Last Name
-        </span>
-        <span>
-          Nook
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
+        </th>
+        <th
+          className="css-0"
+          scope="col"
         >
           Nick Name
-        </span>
-        <span>
-          Tanukichi
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
+        </th>
+        <th
+          className="css-0"
+          scope="col"
         >
           Address1
-        </span>
-        <span>
-          Main Street
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
+        </th>
+        <th
+          className="css-0"
+          scope="col"
         >
           City
-        </span>
-        <span>
-          New York
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
+        </th>
+        <th
+          className="css-0"
+          scope="col"
         >
           Zipcode
-        </span>
-        <span>
-          23458
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
+        </th>
+        <th
+          className="css-0"
+          scope="col"
         >
           State
-        </span>
-        <span>
-          NY
-        </span>
-      </td>
-    </tr>
-    <tr
+        </th>
+      </tr>
+    </thead>
+    <tbody
       className="css-0"
     >
-      <td
+      <tr
         className="css-0"
       >
-        <span
-          className="css-dsyim5"
+        <td
+          className="css-0"
         >
-          First Name
-        </span>
-        <span>
-          Isabelle
-        </span>
-      </td>
-      <td
+          <span
+            className="css-dsyim5"
+          >
+            First Name
+          </span>
+          <span>
+            Tom
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Last Name
+          </span>
+          <span>
+            Nook
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Nick Name
+          </span>
+          <span>
+            Tanukichi
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Address1
+          </span>
+          <span>
+            Main Street
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            City
+          </span>
+          <span>
+            New York
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Zipcode
+          </span>
+          <span>
+            23458
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            State
+          </span>
+          <span>
+            NY
+          </span>
+        </td>
+      </tr>
+      <tr
         className="css-0"
       >
-        <span
-          className="css-dsyim5"
+        <td
+          className="css-0"
         >
-          Last Name
-        </span>
-        <span>
-          -
-        </span>
-      </td>
-      <td
+          <span
+            className="css-dsyim5"
+          >
+            First Name
+          </span>
+          <span>
+            Isabelle
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Last Name
+          </span>
+          <span>
+            -
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Nick Name
+          </span>
+          <span>
+            Shizue
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Address1
+          </span>
+          <span>
+            Walnut Street
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            City
+          </span>
+          <span>
+            New York
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Zipcode
+          </span>
+          <span>
+            23458
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            State
+          </span>
+          <span>
+            NY
+          </span>
+        </td>
+      </tr>
+      <tr
         className="css-0"
       >
-        <span
-          className="css-dsyim5"
+        <td
+          className="css-0"
         >
-          Nick Name
-        </span>
-        <span>
-          Shizue
-        </span>
-      </td>
-      <td
+          <span
+            className="css-dsyim5"
+          >
+            First Name
+          </span>
+          <span>
+            K.K.
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Last Name
+          </span>
+          <span>
+            Slider
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Nick Name
+          </span>
+          <span>
+            Totakeke
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Address1
+          </span>
+          <span>
+            Niper Place
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            City
+          </span>
+          <span>
+            New York
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Zipcode
+          </span>
+          <span>
+            98765
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            State
+          </span>
+          <span>
+            NY
+          </span>
+        </td>
+      </tr>
+      <tr
         className="css-0"
       >
-        <span
-          className="css-dsyim5"
+        <td
+          className="css-0"
         >
-          Address1
-        </span>
-        <span>
-          Walnut Street
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
+          <span
+            className="css-dsyim5"
+          >
+            First Name
+          </span>
+          <span>
+            Sonny
+          </span>
+        </td>
+        <td
+          className="css-0"
         >
-          City
-        </span>
-        <span>
-          New York
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
+          <span
+            className="css-dsyim5"
+          >
+            Last Name
+          </span>
+          <span>
+            Resetti
+          </span>
+        </td>
+        <td
+          className="css-0"
         >
-          Zipcode
-        </span>
-        <span>
-          23458
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
+          <span
+            className="css-dsyim5"
+          >
+            Nick Name
+          </span>
+          <span>
+            Risetto san
+          </span>
+        </td>
+        <td
+          className="css-0"
         >
-          State
-        </span>
-        <span>
-          NY
-        </span>
-      </td>
-    </tr>
-    <tr
-      className="css-0"
-    >
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
+          <span
+            className="css-dsyim5"
+          >
+            Address1
+          </span>
+          <span>
+            Village Road
+          </span>
+        </td>
+        <td
+          className="css-0"
         >
-          First Name
-        </span>
-        <span>
-          K.K.
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
+          <span
+            className="css-dsyim5"
+          >
+            City
+          </span>
+          <span>
+            New York
+          </span>
+        </td>
+        <td
+          className="css-0"
         >
-          Last Name
-        </span>
-        <span>
-          Slider
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
+          <span
+            className="css-dsyim5"
+          >
+            Zipcode
+          </span>
+          <span>
+            09873
+          </span>
+        </td>
+        <td
+          className="css-0"
         >
-          Nick Name
-        </span>
-        <span>
-          Totakeke
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
-        >
-          Address1
-        </span>
-        <span>
-          Niper Place
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
-        >
-          City
-        </span>
-        <span>
-          New York
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
-        >
-          Zipcode
-        </span>
-        <span>
-          98765
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
-        >
-          State
-        </span>
-        <span>
-          NY
-        </span>
-      </td>
-    </tr>
-    <tr
-      className="css-0"
-    >
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
-        >
-          First Name
-        </span>
-        <span>
-          Sonny
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
-        >
-          Last Name
-        </span>
-        <span>
-          Resetti
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
-        >
-          Nick Name
-        </span>
-        <span>
-          Risetto san
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
-        >
-          Address1
-        </span>
-        <span>
-          Village Road
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
-        >
-          City
-        </span>
-        <span>
-          New York
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
-        >
-          Zipcode
-        </span>
-        <span>
-          09873
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
-        >
-          State
-        </span>
-        <span>
-          NY
-        </span>
-      </td>
-    </tr>
-  </tbody>
-</table>
+          <span
+            className="css-dsyim5"
+          >
+            State
+          </span>
+          <span>
+            NY
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 `;
 
 exports[`Table renders the UI snapshot correctly 3`] = `
-<table
-  className="chakra-table css-1xdhyk6"
-  id="withHeaders"
+<div
+  className="chakra-table__container css-zipzvv"
 >
-  <caption
-    className="css-18i7bby"
+  <table
+    aria-label="this is the caption"
+    className="chakra-table css-1xdhyk6"
+    id="withCaption"
   >
-    this is the caption
-  </caption>
-  <thead
-    className="css-0"
-  >
-    <tr
+    <thead
       className="css-0"
     >
-      <th
-        className="css-0"
-        scope="col"
-      >
-        First Name
-      </th>
-      <th
-        className="css-0"
-        scope="col"
-      >
-        Last Name
-      </th>
-      <th
-        className="css-0"
-        scope="col"
-      >
-        Nick Name
-      </th>
-      <th
-        className="css-0"
-        scope="col"
-      >
-        Address1
-      </th>
-      <th
-        className="css-0"
-        scope="col"
-      >
-        City
-      </th>
-      <th
-        className="css-0"
-        scope="col"
-      >
-        Zipcode
-      </th>
-      <th
-        className="css-0"
-        scope="col"
-      >
-        State
-      </th>
-    </tr>
-  </thead>
-  <tbody
-    className="css-0"
-  >
-    <tr
-      className="css-0"
-    >
-      <td
+      <tr
         className="css-0"
       >
-        <span
-          className="css-dsyim5"
+        <th
+          className="css-0"
+          scope="col"
         >
           First Name
-        </span>
-        <span>
-          Tom
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
+        </th>
+        <th
+          className="css-0"
+          scope="col"
         >
           Last Name
-        </span>
-        <span>
-          Nook
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
+        </th>
+        <th
+          className="css-0"
+          scope="col"
         >
           Nick Name
-        </span>
-        <span>
-          Tanukichi
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
+        </th>
+        <th
+          className="css-0"
+          scope="col"
         >
           Address1
-        </span>
-        <span>
-          Main Street
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
+        </th>
+        <th
+          className="css-0"
+          scope="col"
         >
           City
-        </span>
-        <span>
-          New York
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
+        </th>
+        <th
+          className="css-0"
+          scope="col"
         >
           Zipcode
-        </span>
-        <span>
-          23458
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
+        </th>
+        <th
+          className="css-0"
+          scope="col"
         >
           State
-        </span>
-        <span>
-          NY
-        </span>
-      </td>
-    </tr>
-    <tr
+        </th>
+      </tr>
+    </thead>
+    <tbody
       className="css-0"
     >
-      <td
+      <tr
         className="css-0"
       >
-        <span
-          className="css-dsyim5"
+        <td
+          className="css-0"
         >
-          First Name
-        </span>
-        <span>
-          Isabelle
-        </span>
-      </td>
-      <td
+          <span
+            className="css-dsyim5"
+          >
+            First Name
+          </span>
+          <span>
+            Tom
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Last Name
+          </span>
+          <span>
+            Nook
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Nick Name
+          </span>
+          <span>
+            Tanukichi
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Address1
+          </span>
+          <span>
+            Main Street
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            City
+          </span>
+          <span>
+            New York
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Zipcode
+          </span>
+          <span>
+            23458
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            State
+          </span>
+          <span>
+            NY
+          </span>
+        </td>
+      </tr>
+      <tr
         className="css-0"
       >
-        <span
-          className="css-dsyim5"
+        <td
+          className="css-0"
         >
-          Last Name
-        </span>
-        <span>
-          -
-        </span>
-      </td>
-      <td
+          <span
+            className="css-dsyim5"
+          >
+            First Name
+          </span>
+          <span>
+            Isabelle
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Last Name
+          </span>
+          <span>
+            -
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Nick Name
+          </span>
+          <span>
+            Shizue
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Address1
+          </span>
+          <span>
+            Walnut Street
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            City
+          </span>
+          <span>
+            New York
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Zipcode
+          </span>
+          <span>
+            23458
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            State
+          </span>
+          <span>
+            NY
+          </span>
+        </td>
+      </tr>
+      <tr
         className="css-0"
       >
-        <span
-          className="css-dsyim5"
+        <td
+          className="css-0"
         >
-          Nick Name
-        </span>
-        <span>
-          Shizue
-        </span>
-      </td>
-      <td
+          <span
+            className="css-dsyim5"
+          >
+            First Name
+          </span>
+          <span>
+            K.K.
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Last Name
+          </span>
+          <span>
+            Slider
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Nick Name
+          </span>
+          <span>
+            Totakeke
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Address1
+          </span>
+          <span>
+            Niper Place
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            City
+          </span>
+          <span>
+            New York
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Zipcode
+          </span>
+          <span>
+            98765
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            State
+          </span>
+          <span>
+            NY
+          </span>
+        </td>
+      </tr>
+      <tr
         className="css-0"
       >
-        <span
-          className="css-dsyim5"
+        <td
+          className="css-0"
         >
-          Address1
-        </span>
-        <span>
-          Walnut Street
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
+          <span
+            className="css-dsyim5"
+          >
+            First Name
+          </span>
+          <span>
+            Sonny
+          </span>
+        </td>
+        <td
+          className="css-0"
         >
-          City
-        </span>
-        <span>
-          New York
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
+          <span
+            className="css-dsyim5"
+          >
+            Last Name
+          </span>
+          <span>
+            Resetti
+          </span>
+        </td>
+        <td
+          className="css-0"
         >
-          Zipcode
-        </span>
-        <span>
-          23458
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
+          <span
+            className="css-dsyim5"
+          >
+            Nick Name
+          </span>
+          <span>
+            Risetto san
+          </span>
+        </td>
+        <td
+          className="css-0"
         >
-          State
-        </span>
-        <span>
-          NY
-        </span>
-      </td>
-    </tr>
-    <tr
-      className="css-0"
-    >
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
+          <span
+            className="css-dsyim5"
+          >
+            Address1
+          </span>
+          <span>
+            Village Road
+          </span>
+        </td>
+        <td
+          className="css-0"
         >
-          First Name
-        </span>
-        <span>
-          K.K.
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
+          <span
+            className="css-dsyim5"
+          >
+            City
+          </span>
+          <span>
+            New York
+          </span>
+        </td>
+        <td
+          className="css-0"
         >
-          Last Name
-        </span>
-        <span>
-          Slider
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
+          <span
+            className="css-dsyim5"
+          >
+            Zipcode
+          </span>
+          <span>
+            09873
+          </span>
+        </td>
+        <td
+          className="css-0"
         >
-          Nick Name
-        </span>
-        <span>
-          Totakeke
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
-        >
-          Address1
-        </span>
-        <span>
-          Niper Place
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
-        >
-          City
-        </span>
-        <span>
-          New York
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
-        >
-          Zipcode
-        </span>
-        <span>
-          98765
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
-        >
-          State
-        </span>
-        <span>
-          NY
-        </span>
-      </td>
-    </tr>
-    <tr
-      className="css-0"
-    >
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
-        >
-          First Name
-        </span>
-        <span>
-          Sonny
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
-        >
-          Last Name
-        </span>
-        <span>
-          Resetti
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
-        >
-          Nick Name
-        </span>
-        <span>
-          Risetto san
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
-        >
-          Address1
-        </span>
-        <span>
-          Village Road
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
-        >
-          City
-        </span>
-        <span>
-          New York
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
-        >
-          Zipcode
-        </span>
-        <span>
-          09873
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
-        >
-          State
-        </span>
-        <span>
-          NY
-        </span>
-      </td>
-    </tr>
-  </tbody>
-</table>
+          <span
+            className="css-dsyim5"
+          >
+            State
+          </span>
+          <span>
+            NY
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 `;
 
 exports[`Table renders the UI snapshot correctly 4`] = `
-<table
-  className="chakra-table css-1xdhyk6"
-  id="withHeaders"
+<div
+  className="chakra-table__container css-zipzvv"
 >
-  <caption
-    className="css-18i7bby"
+  <table
+    className="chakra-table css-1xdhyk6"
+    id="withHeaders"
   >
-    this is the caption
-  </caption>
-  <thead
-    className="css-0"
-  >
-    <tr
+    <caption
+      className="css-18i7bby"
+    >
+      this is the caption
+    </caption>
+    <thead
       className="css-0"
     >
-      <th
+      <tr
         className="css-0"
-        scope="col"
       >
-        First Name
-      </th>
-      <th
-        className="css-0"
-        scope="col"
-      >
-        Last Name
-      </th>
-      <th
-        className="css-0"
-        scope="col"
-      >
-        Nick Name
-      </th>
-      <th
-        className="css-0"
-        scope="col"
-      >
-        Address1
-      </th>
-      <th
-        className="css-0"
-        scope="col"
-      >
-        City
-      </th>
-      <th
-        className="css-0"
-        scope="col"
-      >
-        Zipcode
-      </th>
-      <th
-        className="css-0"
-        scope="col"
-      >
-        State
-      </th>
-    </tr>
-  </thead>
-  <tbody
-    className="css-0"
-  >
-    <tr
-      className="css-0"
-    >
-      <th
-        className="css-0"
-        scope="row"
-      >
-        <span
-          className="css-dsyim5"
+        <th
+          className="css-0"
+          scope="col"
         >
           First Name
-        </span>
-        <span>
-          Tom
-        </span>
-      </th>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
+        </th>
+        <th
+          className="css-0"
+          scope="col"
         >
           Last Name
-        </span>
-        <span>
-          Nook
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
+        </th>
+        <th
+          className="css-0"
+          scope="col"
         >
           Nick Name
-        </span>
-        <span>
-          Tanukichi
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
+        </th>
+        <th
+          className="css-0"
+          scope="col"
         >
           Address1
-        </span>
-        <span>
-          Main Street
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
+        </th>
+        <th
+          className="css-0"
+          scope="col"
         >
           City
-        </span>
-        <span>
-          New York
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
+        </th>
+        <th
+          className="css-0"
+          scope="col"
         >
           Zipcode
-        </span>
-        <span>
-          23458
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
+        </th>
+        <th
+          className="css-0"
+          scope="col"
         >
           State
-        </span>
-        <span>
-          NY
-        </span>
-      </td>
-    </tr>
-    <tr
+        </th>
+      </tr>
+    </thead>
+    <tbody
       className="css-0"
     >
-      <th
-        className="css-0"
-        scope="row"
-      >
-        <span
-          className="css-dsyim5"
-        >
-          First Name
-        </span>
-        <span>
-          Isabelle
-        </span>
-      </th>
-      <td
+      <tr
         className="css-0"
       >
-        <span
-          className="css-dsyim5"
+        <td
+          className="css-0"
         >
-          Last Name
-        </span>
-        <span>
-          -
-        </span>
-      </td>
-      <td
+          <span
+            className="css-dsyim5"
+          >
+            First Name
+          </span>
+          <span>
+            Tom
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Last Name
+          </span>
+          <span>
+            Nook
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Nick Name
+          </span>
+          <span>
+            Tanukichi
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Address1
+          </span>
+          <span>
+            Main Street
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            City
+          </span>
+          <span>
+            New York
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Zipcode
+          </span>
+          <span>
+            23458
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            State
+          </span>
+          <span>
+            NY
+          </span>
+        </td>
+      </tr>
+      <tr
         className="css-0"
       >
-        <span
-          className="css-dsyim5"
+        <td
+          className="css-0"
         >
-          Nick Name
-        </span>
-        <span>
-          Shizue
-        </span>
-      </td>
-      <td
+          <span
+            className="css-dsyim5"
+          >
+            First Name
+          </span>
+          <span>
+            Isabelle
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Last Name
+          </span>
+          <span>
+            -
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Nick Name
+          </span>
+          <span>
+            Shizue
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Address1
+          </span>
+          <span>
+            Walnut Street
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            City
+          </span>
+          <span>
+            New York
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Zipcode
+          </span>
+          <span>
+            23458
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            State
+          </span>
+          <span>
+            NY
+          </span>
+        </td>
+      </tr>
+      <tr
         className="css-0"
       >
-        <span
-          className="css-dsyim5"
+        <td
+          className="css-0"
         >
-          Address1
-        </span>
-        <span>
-          Walnut Street
-        </span>
-      </td>
-      <td
+          <span
+            className="css-dsyim5"
+          >
+            First Name
+          </span>
+          <span>
+            K.K.
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Last Name
+          </span>
+          <span>
+            Slider
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Nick Name
+          </span>
+          <span>
+            Totakeke
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Address1
+          </span>
+          <span>
+            Niper Place
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            City
+          </span>
+          <span>
+            New York
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Zipcode
+          </span>
+          <span>
+            98765
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            State
+          </span>
+          <span>
+            NY
+          </span>
+        </td>
+      </tr>
+      <tr
         className="css-0"
       >
-        <span
-          className="css-dsyim5"
+        <td
+          className="css-0"
         >
-          City
-        </span>
-        <span>
-          New York
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
+          <span
+            className="css-dsyim5"
+          >
+            First Name
+          </span>
+          <span>
+            Sonny
+          </span>
+        </td>
+        <td
+          className="css-0"
         >
-          Zipcode
-        </span>
-        <span>
-          23458
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
+          <span
+            className="css-dsyim5"
+          >
+            Last Name
+          </span>
+          <span>
+            Resetti
+          </span>
+        </td>
+        <td
+          className="css-0"
         >
-          State
-        </span>
-        <span>
-          NY
-        </span>
-      </td>
-    </tr>
-    <tr
-      className="css-0"
-    >
-      <th
-        className="css-0"
-        scope="row"
-      >
-        <span
-          className="css-dsyim5"
+          <span
+            className="css-dsyim5"
+          >
+            Nick Name
+          </span>
+          <span>
+            Risetto san
+          </span>
+        </td>
+        <td
+          className="css-0"
         >
-          First Name
-        </span>
-        <span>
-          K.K.
-        </span>
-      </th>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
+          <span
+            className="css-dsyim5"
+          >
+            Address1
+          </span>
+          <span>
+            Village Road
+          </span>
+        </td>
+        <td
+          className="css-0"
         >
-          Last Name
-        </span>
-        <span>
-          Slider
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
+          <span
+            className="css-dsyim5"
+          >
+            City
+          </span>
+          <span>
+            New York
+          </span>
+        </td>
+        <td
+          className="css-0"
         >
-          Nick Name
-        </span>
-        <span>
-          Totakeke
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
+          <span
+            className="css-dsyim5"
+          >
+            Zipcode
+          </span>
+          <span>
+            09873
+          </span>
+        </td>
+        <td
+          className="css-0"
         >
-          Address1
-        </span>
-        <span>
-          Niper Place
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
-        >
-          City
-        </span>
-        <span>
-          New York
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
-        >
-          Zipcode
-        </span>
-        <span>
-          98765
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
-        >
-          State
-        </span>
-        <span>
-          NY
-        </span>
-      </td>
-    </tr>
-    <tr
-      className="css-0"
-    >
-      <th
-        className="css-0"
-        scope="row"
-      >
-        <span
-          className="css-dsyim5"
-        >
-          First Name
-        </span>
-        <span>
-          Sonny
-        </span>
-      </th>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
-        >
-          Last Name
-        </span>
-        <span>
-          Resetti
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
-        >
-          Nick Name
-        </span>
-        <span>
-          Risetto san
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
-        >
-          Address1
-        </span>
-        <span>
-          Village Road
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
-        >
-          City
-        </span>
-        <span>
-          New York
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
-        >
-          Zipcode
-        </span>
-        <span>
-          09873
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
-        >
-          State
-        </span>
-        <span>
-          NY
-        </span>
-      </td>
-    </tr>
-  </tbody>
-</table>
+          <span
+            className="css-dsyim5"
+          >
+            State
+          </span>
+          <span>
+            NY
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 `;
 
 exports[`Table renders the UI snapshot correctly 5`] = `
-<table
-  className="chakra-table css-1xdhyk6"
-  id="withHeaders"
+<div
+  className="chakra-table__container css-zipzvv"
 >
-  <caption
-    className="css-18i7bby"
+  <table
+    className="chakra-table css-1xdhyk6"
+    id="withHeaders"
   >
-    this is the caption
-  </caption>
-  <thead
-    className="css-0"
-  >
-    <tr
+    <caption
+      className="css-18i7bby"
+    >
+      this is the caption
+    </caption>
+    <thead
       className="css-0"
     >
-      <th
-        className="css-1adspbs"
-        scope="col"
-      >
-        First Name
-      </th>
-      <th
-        className="css-1adspbs"
-        scope="col"
-      >
-        Last Name
-      </th>
-      <th
-        className="css-1adspbs"
-        scope="col"
-      >
-        Nick Name
-      </th>
-      <th
-        className="css-1adspbs"
-        scope="col"
-      >
-        Address1
-      </th>
-      <th
-        className="css-1adspbs"
-        scope="col"
-      >
-        City
-      </th>
-      <th
-        className="css-1adspbs"
-        scope="col"
-      >
-        Zipcode
-      </th>
-      <th
-        className="css-1adspbs"
-        scope="col"
-      >
-        State
-      </th>
-    </tr>
-  </thead>
-  <tbody
-    className="css-0"
-  >
-    <tr
-      className="css-0"
-    >
-      <th
+      <tr
         className="css-0"
-        scope="row"
       >
-        <span
-          className="css-dsyim5"
+        <th
+          className="css-0"
+          scope="col"
         >
           First Name
-        </span>
-        <span>
-          Tom
-        </span>
-      </th>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
+        </th>
+        <th
+          className="css-0"
+          scope="col"
         >
           Last Name
-        </span>
-        <span>
-          Nook
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
+        </th>
+        <th
+          className="css-0"
+          scope="col"
         >
           Nick Name
-        </span>
-        <span>
-          Tanukichi
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
+        </th>
+        <th
+          className="css-0"
+          scope="col"
         >
           Address1
-        </span>
-        <span>
-          Main Street
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
+        </th>
+        <th
+          className="css-0"
+          scope="col"
         >
           City
-        </span>
-        <span>
-          New York
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
+        </th>
+        <th
+          className="css-0"
+          scope="col"
         >
           Zipcode
-        </span>
-        <span>
-          23458
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
+        </th>
+        <th
+          className="css-0"
+          scope="col"
         >
           State
-        </span>
-        <span>
-          NY
-        </span>
-      </td>
-    </tr>
-    <tr
+        </th>
+      </tr>
+    </thead>
+    <tbody
       className="css-0"
     >
-      <th
-        className="css-0"
-        scope="row"
-      >
-        <span
-          className="css-dsyim5"
-        >
-          First Name
-        </span>
-        <span>
-          Isabelle
-        </span>
-      </th>
-      <td
+      <tr
         className="css-0"
       >
-        <span
-          className="css-dsyim5"
+        <th
+          className="css-0"
+          scope="row"
         >
-          Last Name
-        </span>
-        <span>
-          -
-        </span>
-      </td>
-      <td
+          <span
+            className="css-dsyim5"
+          >
+            First Name
+          </span>
+          <span>
+            Tom
+          </span>
+        </th>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Last Name
+          </span>
+          <span>
+            Nook
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Nick Name
+          </span>
+          <span>
+            Tanukichi
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Address1
+          </span>
+          <span>
+            Main Street
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            City
+          </span>
+          <span>
+            New York
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Zipcode
+          </span>
+          <span>
+            23458
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            State
+          </span>
+          <span>
+            NY
+          </span>
+        </td>
+      </tr>
+      <tr
         className="css-0"
       >
-        <span
-          className="css-dsyim5"
+        <th
+          className="css-0"
+          scope="row"
         >
-          Nick Name
-        </span>
-        <span>
-          Shizue
-        </span>
-      </td>
-      <td
+          <span
+            className="css-dsyim5"
+          >
+            First Name
+          </span>
+          <span>
+            Isabelle
+          </span>
+        </th>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Last Name
+          </span>
+          <span>
+            -
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Nick Name
+          </span>
+          <span>
+            Shizue
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Address1
+          </span>
+          <span>
+            Walnut Street
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            City
+          </span>
+          <span>
+            New York
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Zipcode
+          </span>
+          <span>
+            23458
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            State
+          </span>
+          <span>
+            NY
+          </span>
+        </td>
+      </tr>
+      <tr
         className="css-0"
       >
-        <span
-          className="css-dsyim5"
+        <th
+          className="css-0"
+          scope="row"
         >
-          Address1
-        </span>
-        <span>
-          Walnut Street
-        </span>
-      </td>
-      <td
+          <span
+            className="css-dsyim5"
+          >
+            First Name
+          </span>
+          <span>
+            K.K.
+          </span>
+        </th>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Last Name
+          </span>
+          <span>
+            Slider
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Nick Name
+          </span>
+          <span>
+            Totakeke
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Address1
+          </span>
+          <span>
+            Niper Place
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            City
+          </span>
+          <span>
+            New York
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Zipcode
+          </span>
+          <span>
+            98765
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            State
+          </span>
+          <span>
+            NY
+          </span>
+        </td>
+      </tr>
+      <tr
         className="css-0"
       >
-        <span
-          className="css-dsyim5"
+        <th
+          className="css-0"
+          scope="row"
         >
-          City
-        </span>
-        <span>
-          New York
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
+          <span
+            className="css-dsyim5"
+          >
+            First Name
+          </span>
+          <span>
+            Sonny
+          </span>
+        </th>
+        <td
+          className="css-0"
         >
-          Zipcode
-        </span>
-        <span>
-          23458
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
+          <span
+            className="css-dsyim5"
+          >
+            Last Name
+          </span>
+          <span>
+            Resetti
+          </span>
+        </td>
+        <td
+          className="css-0"
         >
-          State
-        </span>
-        <span>
-          NY
-        </span>
-      </td>
-    </tr>
-    <tr
-      className="css-0"
-    >
-      <th
-        className="css-0"
-        scope="row"
-      >
-        <span
-          className="css-dsyim5"
+          <span
+            className="css-dsyim5"
+          >
+            Nick Name
+          </span>
+          <span>
+            Risetto san
+          </span>
+        </td>
+        <td
+          className="css-0"
         >
-          First Name
-        </span>
-        <span>
-          K.K.
-        </span>
-      </th>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
+          <span
+            className="css-dsyim5"
+          >
+            Address1
+          </span>
+          <span>
+            Village Road
+          </span>
+        </td>
+        <td
+          className="css-0"
         >
-          Last Name
-        </span>
-        <span>
-          Slider
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
+          <span
+            className="css-dsyim5"
+          >
+            City
+          </span>
+          <span>
+            New York
+          </span>
+        </td>
+        <td
+          className="css-0"
         >
-          Nick Name
-        </span>
-        <span>
-          Totakeke
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
+          <span
+            className="css-dsyim5"
+          >
+            Zipcode
+          </span>
+          <span>
+            09873
+          </span>
+        </td>
+        <td
+          className="css-0"
         >
-          Address1
-        </span>
-        <span>
-          Niper Place
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
-        >
-          City
-        </span>
-        <span>
-          New York
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
-        >
-          Zipcode
-        </span>
-        <span>
-          98765
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
-        >
-          State
-        </span>
-        <span>
-          NY
-        </span>
-      </td>
-    </tr>
-    <tr
-      className="css-0"
-    >
-      <th
-        className="css-0"
-        scope="row"
-      >
-        <span
-          className="css-dsyim5"
-        >
-          First Name
-        </span>
-        <span>
-          Sonny
-        </span>
-      </th>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
-        >
-          Last Name
-        </span>
-        <span>
-          Resetti
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
-        >
-          Nick Name
-        </span>
-        <span>
-          Risetto san
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
-        >
-          Address1
-        </span>
-        <span>
-          Village Road
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
-        >
-          City
-        </span>
-        <span>
-          New York
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
-        >
-          Zipcode
-        </span>
-        <span>
-          09873
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
-        >
-          State
-        </span>
-        <span>
-          NY
-        </span>
-      </td>
-    </tr>
-  </tbody>
-</table>
+          <span
+            className="css-dsyim5"
+          >
+            State
+          </span>
+          <span>
+            NY
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 `;
 
 exports[`Table renders the UI snapshot correctly 6`] = `
-<table
-  className="chakra-table css-kle7zy"
-  id="chakra"
+<div
+  className="chakra-table__container css-zipzvv"
 >
-  <thead
-    className="css-0"
+  <table
+    className="chakra-table css-1xdhyk6"
+    id="withHeaders"
   >
-    <tr
+    <caption
+      className="css-18i7bby"
+    >
+      this is the caption
+    </caption>
+    <thead
       className="css-0"
     >
-      <th
-        className="css-0"
-        scope="col"
-      >
-        First Name
-      </th>
-      <th
-        className="css-0"
-        scope="col"
-      >
-        Last Name
-      </th>
-      <th
-        className="css-0"
-        scope="col"
-      >
-        Nick Name
-      </th>
-      <th
-        className="css-0"
-        scope="col"
-      >
-        Address1
-      </th>
-      <th
-        className="css-0"
-        scope="col"
-      >
-        City
-      </th>
-      <th
-        className="css-0"
-        scope="col"
-      >
-        Zipcode
-      </th>
-      <th
-        className="css-0"
-        scope="col"
-      >
-        State
-      </th>
-    </tr>
-  </thead>
-  <tbody
-    className="css-0"
-  >
-    <tr
-      className="css-0"
-    >
-      <td
+      <tr
         className="css-0"
       >
-        <span
-          className="css-dsyim5"
+        <th
+          className="css-1adspbs"
+          scope="col"
         >
           First Name
-        </span>
-        <span>
-          Tom
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
+        </th>
+        <th
+          className="css-1adspbs"
+          scope="col"
         >
           Last Name
-        </span>
-        <span>
-          Nook
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
+        </th>
+        <th
+          className="css-1adspbs"
+          scope="col"
         >
           Nick Name
-        </span>
-        <span>
-          Tanukichi
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
+        </th>
+        <th
+          className="css-1adspbs"
+          scope="col"
         >
           Address1
-        </span>
-        <span>
-          Main Street
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
+        </th>
+        <th
+          className="css-1adspbs"
+          scope="col"
         >
           City
-        </span>
-        <span>
-          New York
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
+        </th>
+        <th
+          className="css-1adspbs"
+          scope="col"
         >
           Zipcode
-        </span>
-        <span>
-          23458
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
+        </th>
+        <th
+          className="css-1adspbs"
+          scope="col"
         >
           State
-        </span>
-        <span>
-          NY
-        </span>
-      </td>
-    </tr>
-    <tr
+        </th>
+      </tr>
+    </thead>
+    <tbody
       className="css-0"
     >
-      <td
+      <tr
         className="css-0"
       >
-        <span
-          className="css-dsyim5"
+        <th
+          className="css-0"
+          scope="row"
         >
-          First Name
-        </span>
-        <span>
-          Isabelle
-        </span>
-      </td>
-      <td
+          <span
+            className="css-dsyim5"
+          >
+            First Name
+          </span>
+          <span>
+            Tom
+          </span>
+        </th>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Last Name
+          </span>
+          <span>
+            Nook
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Nick Name
+          </span>
+          <span>
+            Tanukichi
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Address1
+          </span>
+          <span>
+            Main Street
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            City
+          </span>
+          <span>
+            New York
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Zipcode
+          </span>
+          <span>
+            23458
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            State
+          </span>
+          <span>
+            NY
+          </span>
+        </td>
+      </tr>
+      <tr
         className="css-0"
       >
-        <span
-          className="css-dsyim5"
+        <th
+          className="css-0"
+          scope="row"
         >
-          Last Name
-        </span>
-        <span>
-          -
-        </span>
-      </td>
-      <td
+          <span
+            className="css-dsyim5"
+          >
+            First Name
+          </span>
+          <span>
+            Isabelle
+          </span>
+        </th>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Last Name
+          </span>
+          <span>
+            -
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Nick Name
+          </span>
+          <span>
+            Shizue
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Address1
+          </span>
+          <span>
+            Walnut Street
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            City
+          </span>
+          <span>
+            New York
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Zipcode
+          </span>
+          <span>
+            23458
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            State
+          </span>
+          <span>
+            NY
+          </span>
+        </td>
+      </tr>
+      <tr
         className="css-0"
       >
-        <span
-          className="css-dsyim5"
+        <th
+          className="css-0"
+          scope="row"
         >
-          Nick Name
-        </span>
-        <span>
-          Shizue
-        </span>
-      </td>
-      <td
+          <span
+            className="css-dsyim5"
+          >
+            First Name
+          </span>
+          <span>
+            K.K.
+          </span>
+        </th>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Last Name
+          </span>
+          <span>
+            Slider
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Nick Name
+          </span>
+          <span>
+            Totakeke
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Address1
+          </span>
+          <span>
+            Niper Place
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            City
+          </span>
+          <span>
+            New York
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Zipcode
+          </span>
+          <span>
+            98765
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            State
+          </span>
+          <span>
+            NY
+          </span>
+        </td>
+      </tr>
+      <tr
         className="css-0"
       >
-        <span
-          className="css-dsyim5"
+        <th
+          className="css-0"
+          scope="row"
         >
-          Address1
-        </span>
-        <span>
-          Walnut Street
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
+          <span
+            className="css-dsyim5"
+          >
+            First Name
+          </span>
+          <span>
+            Sonny
+          </span>
+        </th>
+        <td
+          className="css-0"
         >
-          City
-        </span>
-        <span>
-          New York
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
+          <span
+            className="css-dsyim5"
+          >
+            Last Name
+          </span>
+          <span>
+            Resetti
+          </span>
+        </td>
+        <td
+          className="css-0"
         >
-          Zipcode
-        </span>
-        <span>
-          23458
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
+          <span
+            className="css-dsyim5"
+          >
+            Nick Name
+          </span>
+          <span>
+            Risetto san
+          </span>
+        </td>
+        <td
+          className="css-0"
         >
-          State
-        </span>
-        <span>
-          NY
-        </span>
-      </td>
-    </tr>
-    <tr
-      className="css-0"
-    >
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
+          <span
+            className="css-dsyim5"
+          >
+            Address1
+          </span>
+          <span>
+            Village Road
+          </span>
+        </td>
+        <td
+          className="css-0"
         >
-          First Name
-        </span>
-        <span>
-          K.K.
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
+          <span
+            className="css-dsyim5"
+          >
+            City
+          </span>
+          <span>
+            New York
+          </span>
+        </td>
+        <td
+          className="css-0"
         >
-          Last Name
-        </span>
-        <span>
-          Slider
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
+          <span
+            className="css-dsyim5"
+          >
+            Zipcode
+          </span>
+          <span>
+            09873
+          </span>
+        </td>
+        <td
+          className="css-0"
         >
-          Nick Name
-        </span>
-        <span>
-          Totakeke
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
-        >
-          Address1
-        </span>
-        <span>
-          Niper Place
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
-        >
-          City
-        </span>
-        <span>
-          New York
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
-        >
-          Zipcode
-        </span>
-        <span>
-          98765
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
-        >
-          State
-        </span>
-        <span>
-          NY
-        </span>
-      </td>
-    </tr>
-    <tr
-      className="css-0"
-    >
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
-        >
-          First Name
-        </span>
-        <span>
-          Sonny
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
-        >
-          Last Name
-        </span>
-        <span>
-          Resetti
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
-        >
-          Nick Name
-        </span>
-        <span>
-          Risetto san
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
-        >
-          Address1
-        </span>
-        <span>
-          Village Road
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
-        >
-          City
-        </span>
-        <span>
-          New York
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
-        >
-          Zipcode
-        </span>
-        <span>
-          09873
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
-        >
-          State
-        </span>
-        <span>
-          NY
-        </span>
-      </td>
-    </tr>
-  </tbody>
-</table>
+          <span
+            className="css-dsyim5"
+          >
+            State
+          </span>
+          <span>
+            NY
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 `;
 
 exports[`Table renders the UI snapshot correctly 7`] = `
-<table
-  className="chakra-table css-1xdhyk6"
-  data-testid="props"
-  id="props"
+<div
+  className="chakra-table__container css-zipzvv"
 >
-  <thead
-    className="css-0"
+  <table
+    className="chakra-table css-kle7zy"
+    id="chakra"
   >
-    <tr
+    <thead
       className="css-0"
     >
-      <th
-        className="css-0"
-        scope="col"
-      >
-        First Name
-      </th>
-      <th
-        className="css-0"
-        scope="col"
-      >
-        Last Name
-      </th>
-      <th
-        className="css-0"
-        scope="col"
-      >
-        Nick Name
-      </th>
-      <th
-        className="css-0"
-        scope="col"
-      >
-        Address1
-      </th>
-      <th
-        className="css-0"
-        scope="col"
-      >
-        City
-      </th>
-      <th
-        className="css-0"
-        scope="col"
-      >
-        Zipcode
-      </th>
-      <th
-        className="css-0"
-        scope="col"
-      >
-        State
-      </th>
-    </tr>
-  </thead>
-  <tbody
-    className="css-0"
-  >
-    <tr
-      className="css-0"
-    >
-      <td
+      <tr
         className="css-0"
       >
-        <span
-          className="css-dsyim5"
+        <th
+          className="css-0"
+          scope="col"
         >
           First Name
-        </span>
-        <span>
-          Tom
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
+        </th>
+        <th
+          className="css-0"
+          scope="col"
         >
           Last Name
-        </span>
-        <span>
-          Nook
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
+        </th>
+        <th
+          className="css-0"
+          scope="col"
         >
           Nick Name
-        </span>
-        <span>
-          Tanukichi
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
+        </th>
+        <th
+          className="css-0"
+          scope="col"
         >
           Address1
-        </span>
-        <span>
-          Main Street
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
+        </th>
+        <th
+          className="css-0"
+          scope="col"
         >
           City
-        </span>
-        <span>
-          New York
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
+        </th>
+        <th
+          className="css-0"
+          scope="col"
         >
           Zipcode
-        </span>
-        <span>
-          23458
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
+        </th>
+        <th
+          className="css-0"
+          scope="col"
         >
           State
-        </span>
-        <span>
-          NY
-        </span>
-      </td>
-    </tr>
-    <tr
+        </th>
+      </tr>
+    </thead>
+    <tbody
       className="css-0"
     >
-      <td
+      <tr
         className="css-0"
       >
-        <span
-          className="css-dsyim5"
+        <td
+          className="css-0"
         >
-          First Name
-        </span>
-        <span>
-          Isabelle
-        </span>
-      </td>
-      <td
+          <span
+            className="css-dsyim5"
+          >
+            First Name
+          </span>
+          <span>
+            Tom
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Last Name
+          </span>
+          <span>
+            Nook
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Nick Name
+          </span>
+          <span>
+            Tanukichi
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Address1
+          </span>
+          <span>
+            Main Street
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            City
+          </span>
+          <span>
+            New York
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Zipcode
+          </span>
+          <span>
+            23458
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            State
+          </span>
+          <span>
+            NY
+          </span>
+        </td>
+      </tr>
+      <tr
         className="css-0"
       >
-        <span
-          className="css-dsyim5"
+        <td
+          className="css-0"
         >
-          Last Name
-        </span>
-        <span>
-          -
-        </span>
-      </td>
-      <td
+          <span
+            className="css-dsyim5"
+          >
+            First Name
+          </span>
+          <span>
+            Isabelle
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Last Name
+          </span>
+          <span>
+            -
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Nick Name
+          </span>
+          <span>
+            Shizue
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Address1
+          </span>
+          <span>
+            Walnut Street
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            City
+          </span>
+          <span>
+            New York
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Zipcode
+          </span>
+          <span>
+            23458
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            State
+          </span>
+          <span>
+            NY
+          </span>
+        </td>
+      </tr>
+      <tr
         className="css-0"
       >
-        <span
-          className="css-dsyim5"
+        <td
+          className="css-0"
         >
-          Nick Name
-        </span>
-        <span>
-          Shizue
-        </span>
-      </td>
-      <td
+          <span
+            className="css-dsyim5"
+          >
+            First Name
+          </span>
+          <span>
+            K.K.
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Last Name
+          </span>
+          <span>
+            Slider
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Nick Name
+          </span>
+          <span>
+            Totakeke
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Address1
+          </span>
+          <span>
+            Niper Place
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            City
+          </span>
+          <span>
+            New York
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Zipcode
+          </span>
+          <span>
+            98765
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            State
+          </span>
+          <span>
+            NY
+          </span>
+        </td>
+      </tr>
+      <tr
         className="css-0"
       >
-        <span
-          className="css-dsyim5"
+        <td
+          className="css-0"
         >
-          Address1
-        </span>
-        <span>
-          Walnut Street
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
+          <span
+            className="css-dsyim5"
+          >
+            First Name
+          </span>
+          <span>
+            Sonny
+          </span>
+        </td>
+        <td
+          className="css-0"
         >
-          City
-        </span>
-        <span>
-          New York
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
+          <span
+            className="css-dsyim5"
+          >
+            Last Name
+          </span>
+          <span>
+            Resetti
+          </span>
+        </td>
+        <td
+          className="css-0"
         >
-          Zipcode
-        </span>
-        <span>
-          23458
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
+          <span
+            className="css-dsyim5"
+          >
+            Nick Name
+          </span>
+          <span>
+            Risetto san
+          </span>
+        </td>
+        <td
+          className="css-0"
         >
-          State
-        </span>
-        <span>
-          NY
-        </span>
-      </td>
-    </tr>
-    <tr
-      className="css-0"
-    >
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
+          <span
+            className="css-dsyim5"
+          >
+            Address1
+          </span>
+          <span>
+            Village Road
+          </span>
+        </td>
+        <td
+          className="css-0"
         >
-          First Name
-        </span>
-        <span>
-          K.K.
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
+          <span
+            className="css-dsyim5"
+          >
+            City
+          </span>
+          <span>
+            New York
+          </span>
+        </td>
+        <td
+          className="css-0"
         >
-          Last Name
-        </span>
-        <span>
-          Slider
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
+          <span
+            className="css-dsyim5"
+          >
+            Zipcode
+          </span>
+          <span>
+            09873
+          </span>
+        </td>
+        <td
+          className="css-0"
         >
-          Nick Name
-        </span>
-        <span>
-          Totakeke
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
-        >
-          Address1
-        </span>
-        <span>
-          Niper Place
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
-        >
-          City
-        </span>
-        <span>
-          New York
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
-        >
-          Zipcode
-        </span>
-        <span>
-          98765
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
-        >
-          State
-        </span>
-        <span>
-          NY
-        </span>
-      </td>
-    </tr>
-    <tr
-      className="css-0"
-    >
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
-        >
-          First Name
-        </span>
-        <span>
-          Sonny
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
-        >
-          Last Name
-        </span>
-        <span>
-          Resetti
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
-        >
-          Nick Name
-        </span>
-        <span>
-          Risetto san
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
-        >
-          Address1
-        </span>
-        <span>
-          Village Road
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
-        >
-          City
-        </span>
-        <span>
-          New York
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
-        >
-          Zipcode
-        </span>
-        <span>
-          09873
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
-        >
-          State
-        </span>
-        <span>
-          NY
-        </span>
-      </td>
-    </tr>
-  </tbody>
-</table>
+          <span
+            className="css-dsyim5"
+          >
+            State
+          </span>
+          <span>
+            NY
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 `;
 
 exports[`Table renders the UI snapshot correctly 8`] = `
-<table
-  className="chakra-table css-1xdhyk6"
-  id="jsx-example"
+<div
+  className="chakra-table__container css-zipzvv"
 >
-  <thead
-    className="css-0"
+  <table
+    className="chakra-table css-1xdhyk6"
+    data-testid="props"
+    id="props"
   >
-    <tr
+    <thead
       className="css-0"
     >
-      <th
-        className="css-0"
-        scope="col"
-      >
-        First Name
-      </th>
-      <th
-        className="css-0"
-        scope="col"
-      >
-        Last Name
-      </th>
-      <th
-        className="css-0"
-        scope="col"
-      >
-        Avatar
-      </th>
-    </tr>
-  </thead>
-  <tbody
-    className="css-0"
-  >
-    <tr
-      className="css-0"
-    >
-      <td
+      <tr
         className="css-0"
       >
-        <span
-          className="css-dsyim5"
+        <th
+          className="css-0"
+          scope="col"
         >
           First Name
-        </span>
-        <span>
-          Tom
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
+        </th>
+        <th
+          className="css-0"
+          scope="col"
         >
           Last Name
-        </span>
-        <span>
-          Nook
-        </span>
-      </td>
-      <td
+        </th>
+        <th
+          className="css-0"
+          scope="col"
+        >
+          Nick Name
+        </th>
+        <th
+          className="css-0"
+          scope="col"
+        >
+          Address1
+        </th>
+        <th
+          className="css-0"
+          scope="col"
+        >
+          City
+        </th>
+        <th
+          className="css-0"
+          scope="col"
+        >
+          Zipcode
+        </th>
+        <th
+          className="css-0"
+          scope="col"
+        >
+          State
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      className="css-0"
+    >
+      <tr
         className="css-0"
       >
-        <span
-          className="css-dsyim5"
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            First Name
+          </span>
+          <span>
+            Tom
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Last Name
+          </span>
+          <span>
+            Nook
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Nick Name
+          </span>
+          <span>
+            Tanukichi
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Address1
+          </span>
+          <span>
+            Main Street
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            City
+          </span>
+          <span>
+            New York
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Zipcode
+          </span>
+          <span>
+            23458
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            State
+          </span>
+          <span>
+            NY
+          </span>
+        </td>
+      </tr>
+      <tr
+        className="css-0"
+      >
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            First Name
+          </span>
+          <span>
+            Isabelle
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Last Name
+          </span>
+          <span>
+            -
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Nick Name
+          </span>
+          <span>
+            Shizue
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Address1
+          </span>
+          <span>
+            Walnut Street
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            City
+          </span>
+          <span>
+            New York
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Zipcode
+          </span>
+          <span>
+            23458
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            State
+          </span>
+          <span>
+            NY
+          </span>
+        </td>
+      </tr>
+      <tr
+        className="css-0"
+      >
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            First Name
+          </span>
+          <span>
+            K.K.
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Last Name
+          </span>
+          <span>
+            Slider
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Nick Name
+          </span>
+          <span>
+            Totakeke
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Address1
+          </span>
+          <span>
+            Niper Place
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            City
+          </span>
+          <span>
+            New York
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Zipcode
+          </span>
+          <span>
+            98765
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            State
+          </span>
+          <span>
+            NY
+          </span>
+        </td>
+      </tr>
+      <tr
+        className="css-0"
+      >
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            First Name
+          </span>
+          <span>
+            Sonny
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Last Name
+          </span>
+          <span>
+            Resetti
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Nick Name
+          </span>
+          <span>
+            Risetto san
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Address1
+          </span>
+          <span>
+            Village Road
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            City
+          </span>
+          <span>
+            New York
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Zipcode
+          </span>
+          <span>
+            09873
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            State
+          </span>
+          <span>
+            NY
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`Table renders the UI snapshot correctly 9`] = `
+<div
+  className="chakra-table__container css-zipzvv"
+>
+  <table
+    className="chakra-table css-1xdhyk6"
+    id="jsx-example"
+  >
+    <thead
+      className="css-0"
+    >
+      <tr
+        className="css-0"
+      >
+        <th
+          className="css-0"
+          scope="col"
+        >
+          First Name
+        </th>
+        <th
+          className="css-0"
+          scope="col"
+        >
+          Last Name
+        </th>
+        <th
+          className="css-0"
+          scope="col"
         >
           Avatar
-        </span>
-        <span>
-          <div
-            className="css-0"
-          >
-            <img
-              alt="Tom Nook"
-              className="css-0"
-              onError={[Function]}
-              src="https://play.nintendo.com/images/AC_Tom_FRYtwIN.17345b1513ac044897cfc243542899dce541e8dc.9afde10b.png"
-            />
-          </div>
-        </span>
-      </td>
-    </tr>
-    <tr
+        </th>
+      </tr>
+    </thead>
+    <tbody
       className="css-0"
     >
-      <td
+      <tr
         className="css-0"
       >
-        <span
-          className="css-dsyim5"
+        <td
+          className="css-0"
         >
-          First Name
-        </span>
-        <span>
-          Isabelle
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
-        >
-          Last Name
-        </span>
-        <span>
-          -
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
-        />
-        <span>
-          <div
-            className="css-0"
+          <span
+            className="css-dsyim5"
           >
-            <img
-              alt="Isabelle"
-              className="css-0"
-              onError={[Function]}
-              src="https://play.nintendo.com/images/AC_Isabelle_7XU6aGu.17345b1513ac044897cfc243542899dce541e8dc.9afde10b.png"
-            />
-          </div>
-        </span>
-      </td>
-    </tr>
-    <tr
-      className="css-0"
-    >
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
+            First Name
+          </span>
+          <span>
+            Tom
+          </span>
+        </td>
+        <td
+          className="css-0"
         >
-          First Name
-        </span>
-        <span>
-          K.K.
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
-        >
-          Last Name
-        </span>
-        <span>
-          Slider
-        </span>
-      </td>
-      <td
-        className="css-0"
-      >
-        <span
-          className="css-dsyim5"
-        />
-        <span>
-          <div
-            className="css-0"
+          <span
+            className="css-dsyim5"
           >
-            <img
-              alt="K.K Slider"
+            Last Name
+          </span>
+          <span>
+            Nook
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Avatar
+          </span>
+          <span>
+            <div
               className="css-0"
-              onError={[Function]}
-              src="https://play.nintendo.com/images/AC_KK_jh4yj5t.17345b1513ac044897cfc243542899dce541e8dc.9afde10b.png"
-            />
-          </div>
-        </span>
-      </td>
-    </tr>
-  </tbody>
-</table>
+            >
+              <img
+                alt="Tom Nook"
+                className="css-0"
+                id={null}
+                onError={[Function]}
+                src="https://play.nintendo.com/images/AC_Tom_FRYtwIN.17345b1513ac044897cfc243542899dce541e8dc.9afde10b.png"
+              />
+            </div>
+          </span>
+        </td>
+      </tr>
+      <tr
+        className="css-0"
+      >
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            First Name
+          </span>
+          <span>
+            Isabelle
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Last Name
+          </span>
+          <span>
+            -
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          />
+          <span>
+            <div
+              className="css-0"
+            >
+              <img
+                alt="Isabelle"
+                className="css-0"
+                id={null}
+                onError={[Function]}
+                src="https://play.nintendo.com/images/AC_Isabelle_7XU6aGu.17345b1513ac044897cfc243542899dce541e8dc.9afde10b.png"
+              />
+            </div>
+          </span>
+        </td>
+      </tr>
+      <tr
+        className="css-0"
+      >
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            First Name
+          </span>
+          <span>
+            K.K.
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          >
+            Last Name
+          </span>
+          <span>
+            Slider
+          </span>
+        </td>
+        <td
+          className="css-0"
+        >
+          <span
+            className="css-dsyim5"
+          />
+          <span>
+            <div
+              className="css-0"
+            >
+              <img
+                alt="K.K Slider"
+                className="css-0"
+                id={null}
+                onError={[Function]}
+                src="https://play.nintendo.com/images/AC_KK_jh4yj5t.17345b1513ac044897cfc243542899dce541e8dc.9afde10b.png"
+              />
+            </div>
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 `;

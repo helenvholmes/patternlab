@@ -86,21 +86,21 @@ describe("Select", () => {
     ).toHaveAttribute("aria-describedby", `${id}-helperText`);
   });
 
-  it("renders '(Required)' text in the label", () => {
+  it("renders '(required)' text in the label", () => {
     const { rerender } = render(
       <Select {...baseProps} isRequired>
         {baseOptions}
       </Select>
     );
 
-    expect(screen.getByText(/Required/i)).toBeInTheDocument();
+    expect(screen.getByText(/required/i)).toBeInTheDocument();
 
     rerender(
       <Select {...baseProps} isRequired showRequiredLabel={false}>
         {baseOptions}
       </Select>
     );
-    expect(screen.queryByText(/Required/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/required/i)).not.toBeInTheDocument();
   });
 
   it("renders required and aria-required attributes when 'showLabel' is false", () => {
@@ -124,7 +124,7 @@ describe("Select", () => {
         {baseOptions}
       </Select>
     );
-    expect(screen.queryByText(/Required/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/required/i)).not.toBeInTheDocument();
     expect(
       screen.getByLabelText(/What is your favorite color/i)
     ).toBeInTheDocument();
@@ -231,6 +231,22 @@ describe("Select", () => {
     );
     expect(warn).toHaveBeenCalledWith(
       "NYPL Reservoir Select: This component's required `id` prop was not passed."
+    );
+  });
+
+  it("logs a warning when both `onChange` and `defaultValue` are passed", () => {
+    const warn = jest.spyOn(console, "warn");
+    let value = "defaultValue";
+    const changeCallback = (e: React.FormEvent) => {
+      value = (e.target as HTMLInputElement).value;
+    };
+    render(
+      <Select {...baseProps} onChange={changeCallback} defaultValue={value}>
+        {baseOptions}
+      </Select>
+    );
+    expect(warn).toHaveBeenCalledWith(
+      "NYPL Reservoir Select: Both an `onChange` prop (used for controlled components) and a `defaultValue` prop (used for uncontrolled components) were passed. `defaultValue` will be ignored."
     );
   });
 

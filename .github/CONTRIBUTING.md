@@ -24,16 +24,16 @@ There are currently two main branches named `development` and `release`.
 
 ### `development` Branch
 
-All feature, bug, and task updates MUST first branch off the `development` branch. Make sure to include the JIRA ticket number in the branch name. For example: If there is a bug fix for JIRA ticket `DSD-101`, then the branch name can be `DSD-101/bug-fix` or `DSD-101-bug-fix`. The prefix can be either convention as long as the ticket number is a part of the branch name.
+All feature, bug, and task updates MUST first branch off the `development` branch. Make sure to include the JIRA ticket number in the branch name. For example: If there is a bug fix for JIRA ticket `DSD-101`, then the branch name should be `DSD-101/bug-fix`. If there is no JIRA ticket reference, prefix the branch with `no_ref/` such as `no_ref/typo-fix`.
 
-Once the feature branch pull request is approved, it can be merged into the `development` branch.
+Once the feature branch pull request is approved, it should be merged into the `development` branch.
 
 End-to-end steps:
 
 - Branch off `development` for your feature branch such as
 
 ```sh
-$ git checkout -b DSD-101-bug-fix
+$ git checkout -b DSD-101/bug-fix
 ```
 
 - Implement your changes or bug fixes, commit, and push.
@@ -41,7 +41,7 @@ $ git checkout -b DSD-101-bug-fix
 ```sh
 $ git add [name-of-files]
 $ git commit -m "Fixing the bug"
-$ git push -u origin DSD-101-bug-fix
+$ git push -u origin DSD-101/bug-fix
 ```
 
 - Create a PR pointing to `development` in Github.

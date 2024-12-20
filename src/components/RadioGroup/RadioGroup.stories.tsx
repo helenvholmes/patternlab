@@ -29,9 +29,9 @@ const meta: Meta<typeof RadioGroup> = {
     key: { table: { disable: true } },
     onChange: { control: false },
     ref: { table: { disable: true } },
-    showHelperInvalidText: argsBooleanType(true),
-    showLabel: argsBooleanType(true),
-    showRequiredLabel: argsBooleanType(true),
+    showHelperInvalidText: argsBooleanType("true"),
+    showLabel: argsBooleanType("true"),
+    showRequiredLabel: argsBooleanType("true"),
   },
 };
 

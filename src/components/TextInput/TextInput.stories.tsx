@@ -1,13 +1,15 @@
-import { Box, VStack } from "@chakra-ui/react";
+import { Box, HStack, VStack } from "@chakra-ui/react";
 import type { Meta, StoryObj } from "@storybook/react";
 import { expect, userEvent, waitFor, within } from "@storybook/test";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
+import Button from "../Button/Button";
 import Heading from "../Heading/Heading";
 import TextInput, {
   autoCompleteValuesArray,
   textInputTypesArray,
 } from "./TextInput";
+import type { TextInputRefType } from "./TextInput";
 import { argsBooleanType } from "../../helpers/storybookUtils";
 
 const meta: Meta<typeof TextInput> = {
@@ -40,11 +42,11 @@ const meta: Meta<typeof TextInput> = {
     pattern: { control: "text" },
     placeholder: { control: "text" },
     ref: { table: { disable: true } },
-    requiredLabelText: argsBooleanType(true),
-    showHelperInvalidText: argsBooleanType(true),
-    showLabel: argsBooleanType(true),
-    showRequiredLabel: argsBooleanType(true),
-    step: { table: { defaultValue: { summary: 1 } } },
+    requiredLabelText: argsBooleanType("true"),
+    showHelperInvalidText: argsBooleanType("true"),
+    showLabel: argsBooleanType("true"),
+    showRequiredLabel: argsBooleanType("true"),
+    step: { table: { defaultValue: { summary: "1" } } },
     textInputType: {
       control: false,
       table: { defaultValue: { summary: "default" } },
@@ -221,6 +223,54 @@ const ControlledExampleComponent = () => {
       value={value}
     />
   );
+};
+
+const FocusManagementComponent = () => {
+  const [isEdit, setIsEdit] = useState(false);
+  const [value, setValue] = useState("");
+  const inputRef = useRef<TextInputRefType | null>(null);
+  const editBtnRef = useRef<HTMLButtonElement>(null);
+
+  return !isEdit ? (
+    <Button
+      id="edit"
+      ref={editBtnRef}
+      onClick={() => {
+        setIsEdit(true);
+        setTimeout(() => inputRef.current?.focus(), 0);
+      }}
+    >
+      Edit
+    </Button>
+  ) : (
+    <HStack alignItems="end">
+      <TextInput
+        ref={inputRef}
+        id="focus-management"
+        labelText="What is your favorite color?"
+        onFocus={() => setIsEdit(true)}
+        placeholder="i.e. blue, green, etc."
+        isClearable
+        isClearableCallback={() => setValue("")}
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
+      />
+      <Button
+        id="cancel"
+        onClick={() => {
+          setIsEdit(false);
+          setTimeout(() => editBtnRef.current?.focus(), 0);
+        }}
+      >
+        Cancel
+      </Button>
+    </HStack>
+  );
+};
+
+export const FocusRefManagement: Story = {
+  render: () => <FocusManagementComponent />,
+  name: "Focus Ref Management",
 };
 
 export const ControlledExample: Story = {

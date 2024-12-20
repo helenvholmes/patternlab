@@ -10,6 +10,13 @@ import { ChangelogData } from "../../utils/ComponentChangelogTable";
 
 export const changelogData: ChangelogData[] = [
   {
+    date: "2024-08-29",
+    version: "3.3.0",
+    type: "Update",
+    affects: ["Functionality", "Styles"],
+    notes: ["Adds new `showSelectionAsLabel` prop, updates `aria-label`s."],
+  },
+  {
     date: "2024-03-14",
     version: "3.0.0",
     type: "Update",

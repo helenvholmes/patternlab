@@ -1,22 +1,28 @@
 import {
   Box,
   chakra,
+  ChakraComponent,
   Table as ChakraTable,
   TableCaption as ChakraTableCaption,
+  TableContainer,
   Tbody as ChakraTbody,
   Thead as ChakraTHead,
   Td as ChakraTd,
   Th as ChakraTh,
   Tr as ChakraTr,
   useMultiStyleConfig,
-  ChakraComponent,
 } from "@chakra-ui/react";
 import React, { forwardRef } from "react";
+import useNYPLBreakpoints from "../../hooks/useNYPLBreakpoints";
 
 interface CustomColors {
   backgroundColor?: string;
   color?: string;
 }
+
+export const tableBodyTextSizesArray = ["body1", "body2"] as const;
+export type TableBodyTextSizes = typeof tableBodyTextSizesArray[number];
+
 export interface TableProps {
   /** Additional class name for the `Table` component. */
   className?: string;
@@ -27,11 +33,22 @@ export interface TableProps {
   columnHeadersBackgroundColor?: string;
   /** Hex value to set the text color of the column headers. */
   columnHeadersTextColor?: string;
+  /** Array of style objects used to set custom styles for the table columns.
+   * Any style can be passed, but the most common use would be to pass "width"
+   * and "maxWidth" to set custom column widths. */
+  columnStyles?: object[];
+  /** The size of the table body text. */
+  tableTextSize?: TableBodyTextSizes;
   /** ID that other components can cross reference for accessibility purposes. */
   id?: string;
+  /** If true, horizontal scrolling will be enabled for the table content.  */
+  isScrollable?: boolean;
   /** If true, a border will be displayed between each row in the `Table`
    * component. The default value is false. */
   showRowDividers?: boolean;
+  /** If true, the heading text will be rendered above the table. The default
+   * value is true. */
+  showTitleText?: boolean;
   /** Two-dimensional array used to populate the table rows. */
   tableData: (string | JSX.Element)[][];
   /** Displays `Table` title element. */
@@ -58,8 +75,12 @@ export const Table: ChakraComponent<
         columnHeaders = [],
         columnHeadersBackgroundColor,
         columnHeadersTextColor,
+        columnStyles = [],
+        tableTextSize = "body1",
         id,
+        isScrollable = false,
         showRowDividers = false,
+        showTitleText = true,
         tableData,
         titleText,
         useRowHeaders = false,
@@ -72,9 +93,13 @@ export const Table: ChakraComponent<
       columnHeadersTextColor &&
         (customColors["color"] = columnHeadersTextColor);
 
+      const { isLargerThanMobile } = useNYPLBreakpoints();
+
       const styles = useMultiStyleConfig("CustomTable", {
         columnHeadersBackgroundColor,
         columnHeadersTextColor,
+        tableTextSize,
+        isScrollable,
         showRowDividers,
         useRowHeaders,
       });
@@ -88,7 +113,11 @@ export const Table: ChakraComponent<
           <ChakraTHead>
             <ChakraTr>
               {columnHeaders.map((child, key) => (
-                <ChakraTh key={key} scope="col" sx={customColors}>
+                <ChakraTh
+                  key={key}
+                  scope="col"
+                  sx={{ ...customColors, ...columnStyles[key] }}
+                >
                   {child}
                 </ChakraTh>
               ))}
@@ -130,7 +159,10 @@ export const Table: ChakraComponent<
 
         const cellContent = (key: number, column: string | JSX.Element) => (
           <>
-            <Box as="span" display={{ base: "block", md: "none" }}>
+            <Box
+              as="span"
+              display={isScrollable ? "none" : { base: "block", md: "none" }}
+            >
               {columnHeaders[key]}
             </Box>
             <span>{column}</span>
@@ -143,11 +175,34 @@ export const Table: ChakraComponent<
               <ChakraTr key={index}>
                 {row.map((column, key) =>
                   key === 0 && useRowHeaders ? (
-                    <ChakraTh scope="row" key={key}>
+                    // row header cell
+                    <ChakraTh
+                      scope="row"
+                      key={key}
+                      sx={
+                        isScrollable
+                          ? columnStyles[key]
+                          : isLargerThanMobile
+                          ? columnStyles[key]
+                          : undefined
+                      }
+                    >
                       {cellContent(key, column)}
                     </ChakraTh>
                   ) : (
-                    <ChakraTd key={key}>{cellContent(key, column)}</ChakraTd>
+                    // standard cell
+                    <ChakraTd
+                      key={key}
+                      sx={
+                        isScrollable
+                          ? columnStyles[key]
+                          : isLargerThanMobile
+                          ? columnStyles[key]
+                          : undefined
+                      }
+                    >
+                      {cellContent(key, column)}
+                    </ChakraTd>
                   )
                 )}
               </ChakraTr>
@@ -170,20 +225,31 @@ export const Table: ChakraComponent<
         }
       }
 
+      /* Special props for better a11y when the table is scrollable */
+      const containerProps = isScrollable
+        ? {
+            role: "region",
+            tabIndex: 0,
+          }
+        : undefined;
+
       return (
-        <ChakraTable
-          className={className}
-          id={id}
-          ref={ref}
-          sx={styles}
-          {...rest}
-        >
-          <>
-            {tableCaption}
-            {columnHeadersElems}
-            {tableBodyElems()}
-          </>
-        </ChakraTable>
+        <TableContainer {...containerProps} sx={styles.base}>
+          <ChakraTable
+            aria-label={titleText && !showTitleText ? titleText : undefined}
+            className={className}
+            id={id}
+            ref={ref}
+            sx={styles.innerTable}
+            {...rest}
+          >
+            <>
+              {showTitleText && tableCaption}
+              {columnHeadersElems}
+              {tableBodyElems()}
+            </>
+          </ChakraTable>
+        </TableContainer>
       );
     }
   )

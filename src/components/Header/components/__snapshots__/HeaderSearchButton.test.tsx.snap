@@ -1,0 +1,128 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HeaderSearchButton renders the UI snapshot correctly 1`] = `
+<div
+  className="css-0"
+>
+  <div
+    data-focus-guard={true}
+    style={
+      {
+        "height": "0px",
+        "left": "1px",
+        "overflow": "hidden",
+        "padding": 0,
+        "position": "fixed",
+        "top": "1px",
+        "width": "1px",
+      }
+    }
+    tabIndex={-1}
+  />
+  <div
+    data-focus-lock-disabled="disabled"
+    onBlur={[Function]}
+    onFocus={[Function]}
+  >
+    <button
+      aria-expanded={null}
+      aria-haspopup="true"
+      aria-label="Open Search"
+      className="chakra-button css-hhw5ar"
+      id="searchButton"
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        Search
+        <svg
+          aria-hidden={true}
+          className="chakra-icon css-1vgifmd"
+          data-file-name="SvgActionSearch"
+          focusable={false}
+          role="img"
+          title="Open Search"
+        />
+      </span>
+    </button>
+  </div>
+  <div
+    data-focus-guard={true}
+    style={
+      {
+        "height": "0px",
+        "left": "1px",
+        "overflow": "hidden",
+        "padding": 0,
+        "position": "fixed",
+        "top": "1px",
+        "width": "1px",
+      }
+    }
+    tabIndex={-1}
+  />
+</div>
+`;
+
+exports[`HeaderSearchButton renders the UI snapshot correctly 2`] = `
+<div
+  className="css-0"
+>
+  <div
+    data-focus-guard={true}
+    style={
+      {
+        "height": "0px",
+        "left": "1px",
+        "overflow": "hidden",
+        "padding": 0,
+        "position": "fixed",
+        "top": "1px",
+        "width": "1px",
+      }
+    }
+    tabIndex={-1}
+  />
+  <div
+    data-focus-lock-disabled="disabled"
+    onBlur={[Function]}
+    onFocus={[Function]}
+  >
+    <button
+      aria-expanded={null}
+      aria-haspopup="true"
+      aria-label="Open Search"
+      className="chakra-button css-hhw5ar"
+      id="searchButton"
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        <svg
+          aria-hidden={true}
+          className="chakra-icon css-1vgifmd"
+          data-file-name="SvgActionSearch"
+          focusable={false}
+          role="img"
+          title="Open Search"
+        />
+      </span>
+    </button>
+  </div>
+  <div
+    data-focus-guard={true}
+    style={
+      {
+        "height": "0px",
+        "left": "1px",
+        "overflow": "hidden",
+        "padding": 0,
+        "position": "fixed",
+        "top": "1px",
+        "width": "1px",
+      }
+    }
+    tabIndex={-1}
+  />
+</div>
+`;

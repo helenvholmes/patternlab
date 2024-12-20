@@ -72,8 +72,11 @@ const FeedbackBox = defineMultiStyleConfig({
       borderRadius: "0",
       bottom: "0",
       right: "0",
-      zIndex: "5",
-      _focus: { boxShadow: "0 0 0 6px var(--nypl-colors-ui-white) !important" },
+      zIndex: "10000",
+      _focus: {
+        boxShadow: "0 0 0 6px var(--nypl-colors-ui-white) !important",
+        zIndex: "10000 !important",
+      },
     },
   }),
 });

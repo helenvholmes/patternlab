@@ -59,9 +59,24 @@ const config: StorybookConfig = {
       // accept Chakra props but this makes it so that the Chakra props
       // are just hidden in Storybook.
       propFilter: (prop) => {
-        // This is a bit of a "hack" but it tells Storybook that the prop
-        // is defined in a DS component. If we define it, then display it
-        // in the `ArgTypes` table in a component Storybook document page.
+        /** @Info: The following code would allow for typescript `type`
+         * declarations to also show up in the  argTypes table of storybook
+         * (The manual workaround in the argTypl like on MultiSelect `with` or
+         * SocilaMediaLinks `borders` would be redundant)
+         */
+        // if (
+        //   !prop.parent &&
+        //   prop.declarations &&
+        //   prop.declarations[0].name === "TypeLiteral" &&
+        //   !/node_modules/.test(prop.declarations[0].fileName)
+        // ) {
+        //   return true;
+        // }
+
+        /** This is a bit of a "hack" but it tells Storybook that the prop
+         * is defined in a DS component. If we define it, then display it
+         * in the `ArgTypes` table in a component Storybook document page.
+         */
         return prop.parent ? !/node_modules/.test(prop.parent.fileName) : false;
       },
     },

@@ -2,9 +2,10 @@ import * as React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import { Box, VStack } from "@chakra-ui/react";
 import { action } from "@storybook/addon-actions";
-
-import NewsletterSignup, { NewsletterSignupViewType } from "./NewsletterSignup";
-import { sectionTypeArray } from "../../helpers/types";
+import NewsletterSignup, {
+  NewsletterSignupViewType,
+  highlightColorTypesArray,
+} from "./NewsletterSignup";
 import Heading from "../Heading/Heading";
 import Link from "../Link/Link";
 import Text from "../Text/Text";
@@ -25,21 +26,9 @@ const meta: Meta<typeof NewsletterSignup> = {
     },
     descriptionText: {
       control: "text",
-      table: {
-        defaultValue: {
-          summary:
-            "Stay connected with the latest research news from NYPL, including information about our events, programs, " +
-            "exhibitions, and collections.",
-        },
-      },
     },
     errorHeading: {
       control: "text",
-      table: {
-        defaultValue: {
-          summary: "Oops! Something went wrong.",
-        },
-      },
     },
     errorText: {
       control: "text",
@@ -48,12 +37,21 @@ const meta: Meta<typeof NewsletterSignup> = {
       control: "text",
     },
     id: { control: false },
-    newsletterSignupType: {
+    highlightColor: {
       control: "select",
-      options: sectionTypeArray,
+      options: highlightColorTypesArray,
       table: {
+        type: {
+          /** Overrides the imported type from the component file */
+          summary: "HighlightColorTypes",
+          /**  Makes the type in the description column
+           a cute dropdown list of all options */
+          detail: `${highlightColorTypesArray
+            .map((color) => `${color}\n`)
+            .join("")}`,
+        },
         defaultValue: {
-          summary: "whatsOn",
+          summary: "ui.gray.medium",
         },
       },
     },
@@ -70,18 +68,6 @@ const meta: Meta<typeof NewsletterSignup> = {
     },
     title: {
       control: false,
-      mapping: {
-        default: (
-          <Heading noSpace size="heading3" text="Sign Up for Our Newsletter" />
-        ),
-      },
-      table: {
-        control: "text",
-        defaultValue: {
-          summary:
-            '<Heading noSpace size="heading3" text="Sign Up for Our Newsletter" />',
-        },
-      },
     },
     valueEmail: { control: false },
     view: {
@@ -99,26 +85,26 @@ const meta: Meta<typeof NewsletterSignup> = {
 export default meta;
 type Story = StoryObj<typeof NewsletterSignup>;
 
-const defaultConfirmationHeading = "Thank you for signing up!";
-const defaultConfirmationText =
-  "You can update your email subscription preferences at any time using the links at the bottom of the email.";
+// Declare required props to be used in all stories
+const title = "Sign Up for Our Newsletter";
+const descriptionText =
+  "Stay connected with the latest research news from NYPL, including information about our events, programs, " +
+  "exhibitions, and collections.";
+const confirmationHeading = "Thank you for signing up!";
+const errorHeading = "Oops! Something went wrong.";
 
-/**
- * Main Story for the NewsletterSignup component. This must contains the `args`
- * and `parameters` properties in this object.
- */
 export const WithControls: Story = {
   args: {
     className: undefined,
-    confirmationHeading: defaultConfirmationHeading,
-    confirmationText: defaultConfirmationText,
-    descriptionText: undefined,
-    errorHeading: undefined,
+    confirmationHeading,
+    confirmationText: undefined,
+    descriptionText,
+    errorHeading,
     errorText: undefined,
     formHelperText: undefined,
     id: undefined,
     isInvalidEmail: false,
-    newsletterSignupType: undefined,
+    highlightColor: undefined,
     onChange: (event) => {
       action("onChange")(event.target.value);
     },
@@ -127,7 +113,7 @@ export const WithControls: Story = {
       action("onSubmit")(event.target[0].value);
     },
     privacyPolicyLink: undefined,
-    title: undefined,
+    title: title,
     valueEmail: undefined,
     view: undefined,
   },
@@ -182,8 +168,10 @@ function NewsletterSignupOnSubmitExampleComponent() {
       valueEmail={inputVal}
       onChange={handleChange}
       onSubmit={handleSubmit}
-      confirmationHeading={defaultConfirmationHeading}
-      confirmationText={defaultConfirmationText}
+      confirmationHeading={confirmationHeading}
+      descriptionText={descriptionText}
+      errorHeading={errorHeading}
+      title={title}
     />
   );
 }
@@ -198,6 +186,8 @@ export const DescriptionUsingJSXElements: Story = {
     <NewsletterSignup
       id="jsx-description-text"
       view="form"
+      title={title}
+      errorHeading={errorHeading}
       onChange={() => {}}
       onSubmit={() => {}}
       descriptionText={
@@ -206,8 +196,7 @@ export const DescriptionUsingJSXElements: Story = {
           to have a <Link href="https://corgiorgy.com/">nested link</Link>
         </Text>
       }
-      confirmationHeading={defaultConfirmationHeading}
-      confirmationText={defaultConfirmationText}
+      confirmationHeading={confirmationHeading}
     />
   ),
 };
@@ -220,18 +209,20 @@ export const CustomHeadings: Story = {
         view="form"
         onChange={() => {}}
         onSubmit={() => {}}
-        title="Custom string heading"
-        confirmationHeading={defaultConfirmationHeading}
-        confirmationText={defaultConfirmationText}
+        title="String heading"
+        confirmationHeading={confirmationHeading}
+        errorHeading={errorHeading}
+        descriptionText={descriptionText}
       />
       <NewsletterSignup
-        id="custom-heading"
+        id="custom-element-heading"
         view="form"
+        confirmationHeading={confirmationHeading}
+        errorHeading={errorHeading}
         onChange={() => {}}
         onSubmit={() => {}}
         title={<Heading level="h4" text="Custom h4 DS Heading" />}
-        confirmationHeading={defaultConfirmationHeading}
-        confirmationText={defaultConfirmationText}
+        descriptionText={descriptionText}
       />
     </VStack>
   ),
@@ -242,7 +233,22 @@ export const ComponentStates: Story = {
     <VStack align="stretch" spacing="l">
       <Box>
         <Heading level="h3" size="heading6">
-          Invalid Email
+          Form View (default)
+        </Heading>
+        <NewsletterSignup
+          id="form-view"
+          view="form"
+          onChange={() => {}}
+          onSubmit={() => {}}
+          confirmationHeading={confirmationHeading}
+          title={title}
+          descriptionText={descriptionText}
+          errorHeading={errorHeading}
+        />
+      </Box>
+      <Box>
+        <Heading level="h3" size="heading6">
+          Form View with Invalid Email
         </Heading>
         <NewsletterSignup
           id="invalid-email"
@@ -250,21 +256,25 @@ export const ComponentStates: Story = {
           view="form"
           onChange={() => {}}
           onSubmit={() => {}}
-          confirmationHeading={defaultConfirmationHeading}
-          confirmationText={defaultConfirmationText}
+          confirmationHeading={confirmationHeading}
+          title={title}
+          descriptionText={descriptionText}
+          errorHeading={errorHeading}
         />
       </Box>
       <Box>
         <Heading level="h3" size="heading6">
-          Submitting View / Disabled
+          Submitting View (disabled inputs)
         </Heading>
         <NewsletterSignup
           id="submitting-view"
           view="submitting"
           onChange={() => {}}
           onSubmit={() => {}}
-          confirmationHeading={defaultConfirmationHeading}
-          confirmationText={defaultConfirmationText}
+          confirmationHeading={confirmationHeading}
+          title={title}
+          descriptionText={descriptionText}
+          errorHeading={errorHeading}
         />
       </Box>
       <Box>
@@ -276,34 +286,65 @@ export const ComponentStates: Story = {
           view="confirmation"
           onChange={() => {}}
           onSubmit={() => {}}
-          confirmationHeading={defaultConfirmationHeading}
-          confirmationText={defaultConfirmationText}
+          confirmationHeading={confirmationHeading}
+          confirmationText="You can update your email subscription preferences at any time using the links at the bottom of the email."
+          title={title}
+          descriptionText={descriptionText}
+          errorHeading={errorHeading}
         />
       </Box>
       <Box>
         <Heading level="h3" size="heading6">
-          Default Error View
+          Confirmation View with Custom Element Confirmation Message
+        </Heading>
+        <NewsletterSignup
+          id="confirmation-view"
+          view="confirmation"
+          onChange={() => {}}
+          onSubmit={() => {}}
+          confirmationHeading={confirmationHeading}
+          confirmationText={
+            <Text noSpace size="body2">
+              You are now receiving our Newsletter. Find out more about
+              <Link href="https://www.nypl.org/spotlight/live">
+                upcoming Live from NYPL events
+              </Link>
+              .
+            </Text>
+          }
+          descriptionText={descriptionText}
+          title={title}
+          errorHeading={errorHeading}
+        />
+      </Box>
+      <Box>
+        <Heading level="h3" size="heading6">
+          Error View
         </Heading>
         <NewsletterSignup
           id="error-view"
           view="error"
           onChange={() => {}}
           onSubmit={() => {}}
-          confirmationHeading={defaultConfirmationHeading}
-          confirmationText={defaultConfirmationText}
+          confirmationHeading={confirmationHeading}
+          title={title}
+          descriptionText={descriptionText}
+          errorHeading={errorHeading}
+          errorText="Please refresh this page and try again."
         />
       </Box>
       <Box>
         <Heading level="h3" size="heading6">
-          Error View with Custom Error Message
+          Error View with Custom Element Error Message
         </Heading>
         <NewsletterSignup
           id="error-view"
           view="error"
           onChange={() => {}}
           onSubmit={() => {}}
-          confirmationHeading={defaultConfirmationHeading}
-          confirmationText={defaultConfirmationText}
+          confirmationHeading={confirmationHeading}
+          descriptionText={descriptionText}
+          title={title}
           errorHeading="An error has occurred."
           errorText={
             <Text noSpace size="body2">
@@ -317,6 +358,22 @@ export const ComponentStates: Story = {
         />
       </Box>
     </VStack>
+  ),
+};
+
+export const HightlightColors: Story = {
+  render: () => (
+    <NewsletterSignup
+      id="highlight-color-education"
+      view="form"
+      onChange={() => {}}
+      onSubmit={() => {}}
+      title="Education Newsletter Color"
+      highlightColor="section.education.primary"
+      confirmationHeading={confirmationHeading}
+      errorHeading={errorHeading}
+      descriptionText={descriptionText}
+    />
   ),
 };
 

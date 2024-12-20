@@ -4,12 +4,17 @@ import { axe } from "jest-axe";
 import renderer from "react-test-renderer";
 
 import NewsletterSignup from "./NewsletterSignup";
-import { sectionColorsDataMap } from "../../helpers/types";
 
 // If you want to see what's happening, insert below render()
 // screen.debug();
 
-describe.skip("NewsletterSignup Accessibility", () => {
+const titleString = "Sign Up for Our Newsletter";
+const confirmationHeading = "Thank you for signing up!";
+const confirmationText =
+  "You can update your email subscription preferences at any time using the links at the bottom of the email.";
+const errorHeading = "Oops! Something went wrong.";
+
+describe("NewsletterSignup Accessibility", () => {
   const onSubmit = jest.fn();
   const onChange = jest.fn();
   const valueEmail = "";
@@ -22,8 +27,10 @@ describe.skip("NewsletterSignup Accessibility", () => {
         onSubmit={onSubmit}
         onChange={onChange}
         valueEmail={valueEmail}
-        confirmationHeading="Thank you for signing up!"
-        confirmationText="You can update your email subscription preferences at any time using the links at the bottom of the email."
+        title={titleString}
+        errorHeading={errorHeading}
+        confirmationHeading={confirmationHeading}
+        confirmationText={confirmationText}
       />
     );
     expect(await axe(container)).toHaveNoViolations();
@@ -39,8 +46,10 @@ describe.skip("NewsletterSignup Accessibility", () => {
         onChange={onChange}
         valueEmail={valueEmail}
         view="submitting"
-        confirmationHeading="Thank you for signing up!"
-        confirmationText="You can update your email subscription preferences at any time using the links at the bottom of the email."
+        title={titleString}
+        errorHeading={errorHeading}
+        confirmationHeading={confirmationHeading}
+        confirmationText={confirmationText}
       />
     );
     expect(await axe(container)).toHaveNoViolations();
@@ -56,8 +65,10 @@ describe.skip("NewsletterSignup Accessibility", () => {
         onChange={onChange}
         valueEmail={valueEmail}
         view="error"
-        confirmationHeading="Thank you for signing up!"
-        confirmationText="You can update your email subscription preferences at any time using the links at the bottom of the email."
+        title={titleString}
+        errorHeading={errorHeading}
+        confirmationHeading={confirmationHeading}
+        confirmationText={confirmationText}
       />
     );
     expect(await axe(container)).toHaveNoViolations();
@@ -73,8 +84,10 @@ describe.skip("NewsletterSignup Accessibility", () => {
         onChange={onChange}
         valueEmail={valueEmail}
         view="confirmation"
-        confirmationHeading="Thank you for signing up!"
-        confirmationText="You can update your email subscription preferences at any time using the links at the bottom of the email."
+        title={titleString}
+        errorHeading={errorHeading}
+        confirmationHeading={confirmationHeading}
+        confirmationText={confirmationText}
       />
     );
     expect(await axe(container)).toHaveNoViolations();
@@ -91,19 +104,17 @@ describe.skip("NewsletterSignup Accessibility", () => {
         valueEmail={valueEmail}
         view="form"
         isInvalidEmail={true}
-        confirmationHeading="Thank you for signing up!"
-        confirmationText="You can update your email subscription preferences at any time using the links at the bottom of the email."
+        title={titleString}
+        errorHeading={errorHeading}
+        confirmationHeading={confirmationHeading}
+        confirmationText={confirmationText}
       />
     );
     expect(await axe(container)).toHaveNoViolations();
   });
 });
 
-describe.skip("NewsletterSignup Unit Tests", () => {
-  /** Notes
-   * The newsletterSignupType tests are covered in the snapshot tests below.
-   */
-
+describe("NewsletterSignup Unit Tests", () => {
   const onSubmit = jest.fn();
   const onChange = jest.fn();
   const valueEmail = "";
@@ -112,8 +123,10 @@ describe.skip("NewsletterSignup Unit Tests", () => {
       <NewsletterSignup
         onSubmit={onSubmit}
         onChange={onChange}
-        confirmationHeading="Thank you for signing up!"
-        confirmationText="You can update your email subscription preferences at any time using the links at the bottom of the email."
+        title={titleString}
+        errorHeading={errorHeading}
+        confirmationHeading={confirmationHeading}
+        confirmationText={confirmationText}
       />
     );
     expect(screen.getByRole("form")).toBeInTheDocument();
@@ -131,8 +144,10 @@ describe.skip("NewsletterSignup Unit Tests", () => {
         onSubmit={onSubmit}
         onChange={onChange}
         valueEmail={valueEmail}
-        confirmationHeading="Thank you for signing up!"
-        confirmationText="You can update your email subscription preferences at any time using the links at the bottom of the email."
+        title={titleString}
+        errorHeading={errorHeading}
+        confirmationHeading={confirmationHeading}
+        confirmationText={confirmationText}
       />
     );
     render(testNewsletterSignup);
@@ -157,8 +172,10 @@ describe.skip("NewsletterSignup Unit Tests", () => {
         onSubmit={onSubmit}
         onChange={onChange}
         valueEmail={valueEmail}
-        confirmationHeading="Thank you for signing up!"
-        confirmationText="You can update your email subscription preferences at any time using the links at the bottom of the email."
+        title={titleString}
+        errorHeading={errorHeading}
+        confirmationHeading={confirmationHeading}
+        confirmationText={confirmationText}
       />
     );
     render(testNewsletterSignup);
@@ -173,8 +190,10 @@ describe.skip("NewsletterSignup Unit Tests", () => {
       <NewsletterSignup
         onSubmit={onSubmit}
         onChange={onChange}
-        confirmationHeading="Thank you for signing up!"
-        confirmationText="You can update your email subscription preferences at any time using the links at the bottom of the email."
+        title={titleString}
+        errorHeading={errorHeading}
+        confirmationHeading={confirmationHeading}
+        confirmationText={confirmationText}
       />
     );
 
@@ -196,8 +215,10 @@ describe.skip("NewsletterSignup Unit Tests", () => {
         onSubmit={onSubmit}
         onChange={onChange}
         view={componentView}
-        confirmationHeading="Thank you for signing up!"
-        confirmationText="You can update your email subscription preferences at any time using the links at the bottom of the email."
+        title={titleString}
+        errorHeading={errorHeading}
+        confirmationHeading={confirmationHeading}
+        confirmationText={confirmationText}
       />
     );
 
@@ -210,8 +231,10 @@ describe.skip("NewsletterSignup Unit Tests", () => {
         onSubmit={onSubmit}
         onChange={onChange}
         view={componentView}
-        confirmationHeading="Thank you for signing up!"
-        confirmationText="You can update your email subscription preferences at any time using the links at the bottom of the email."
+        title={titleString}
+        errorHeading={errorHeading}
+        confirmationHeading={confirmationHeading}
+        confirmationText={confirmationText}
       />
     );
     expect(screen.getByText("Thank you for signing up!")).toBeInTheDocument();
@@ -225,8 +248,10 @@ describe.skip("NewsletterSignup Unit Tests", () => {
           onSubmit={onSubmit}
           onChange={onChange}
           valueEmail={valueEmail}
-          confirmationHeading="Thank you for signing up!"
-          confirmationText="You can update your email subscription preferences at any time using the links at the bottom of the email."
+          title={titleString}
+          errorHeading={errorHeading}
+          confirmationHeading={confirmationHeading}
+          confirmationText={confirmationText}
         />
       );
       expect(
@@ -242,8 +267,10 @@ describe.skip("NewsletterSignup Unit Tests", () => {
           onSubmit={onSubmit}
           onChange={onChange}
           valueEmail={valueEmail}
-          confirmationHeading="Thank you for signing up!"
-          confirmationText="You can update your email subscription preferences at any time using the links at the bottom of the email."
+          title={titleString}
+          errorHeading={errorHeading}
+          confirmationHeading={confirmationHeading}
+          confirmationText={confirmationText}
         />
       );
       expect(
@@ -262,8 +289,10 @@ describe.skip("NewsletterSignup Unit Tests", () => {
           onSubmit={onSubmit}
           onChange={onChange}
           valueEmail={valueEmail}
-          confirmationHeading="Thank you for signing up!"
-          confirmationText="You can update your email subscription preferences at any time using the links at the bottom of the email."
+          title={titleString}
+          errorHeading={errorHeading}
+          confirmationHeading={confirmationHeading}
+          confirmationText={confirmationText}
         />
       );
       expect(
@@ -276,7 +305,7 @@ describe.skip("NewsletterSignup Unit Tests", () => {
   }); // Close feedback tests
 }); // Close unit tests.
 
-describe.skip("NewsletterSignup Snapshots", () => {
+describe("NewsletterSignup Snapshots", () => {
   const onSubmit = jest.fn();
   const onChange = jest.fn();
   const valueEmail = "";
@@ -287,8 +316,10 @@ describe.skip("NewsletterSignup Snapshots", () => {
           onSubmit={onSubmit}
           onChange={onChange}
           valueEmail={valueEmail}
-          confirmationHeading="Thank you for signing up!"
-          confirmationText="You can update your email subscription preferences at any time using the links at the bottom of the email."
+          title={titleString}
+          errorHeading={errorHeading}
+          confirmationHeading={confirmationHeading}
+          confirmationText={confirmationText}
         />
       )
       .toJSON();
@@ -303,8 +334,10 @@ describe.skip("NewsletterSignup Snapshots", () => {
           onChange={onChange}
           valueEmail={valueEmail}
           formHelperText="You need help."
-          confirmationHeading="Thank you for signing up!"
-          confirmationText="You can update your email subscription preferences at any time using the links at the bottom of the email."
+          title={titleString}
+          errorHeading={errorHeading}
+          confirmationHeading={confirmationHeading}
+          confirmationText={confirmationText}
         />
       )
       .toJSON();
@@ -319,8 +352,10 @@ describe.skip("NewsletterSignup Snapshots", () => {
           onChange={onChange}
           valueEmail={valueEmail}
           descriptionText="Why not?"
-          confirmationHeading="Thank you for signing up!"
-          confirmationText="You can update your email subscription preferences at any time using the links at the bottom of the email."
+          title={titleString}
+          errorHeading={errorHeading}
+          confirmationHeading={confirmationHeading}
+          confirmationText={confirmationText}
         />
       )
       .toJSON();
@@ -335,8 +370,10 @@ describe.skip("NewsletterSignup Snapshots", () => {
           onChange={onChange}
           valueEmail={valueEmail}
           isInvalidEmail={true}
-          confirmationHeading="Thank you for signing up!"
-          confirmationText="You can update your email subscription preferences at any time using the links at the bottom of the email."
+          title={titleString}
+          errorHeading={errorHeading}
+          confirmationHeading={confirmationHeading}
+          confirmationText={confirmationText}
         />
       )
       .toJSON();
@@ -351,8 +388,10 @@ describe.skip("NewsletterSignup Snapshots", () => {
           onChange={onChange}
           valueEmail={valueEmail}
           view="submitting"
-          confirmationHeading="Thank you for signing up!"
-          confirmationText="You can update your email subscription preferences at any time using the links at the bottom of the email."
+          title={titleString}
+          errorHeading={errorHeading}
+          confirmationHeading={confirmationHeading}
+          confirmationText={confirmationText}
         />
       )
       .toJSON();
@@ -367,8 +406,10 @@ describe.skip("NewsletterSignup Snapshots", () => {
           onChange={onChange}
           valueEmail={valueEmail}
           view="error"
-          confirmationHeading="Thank you for signing up!"
-          confirmationText="You can update your email subscription preferences at any time using the links at the bottom of the email."
+          title={titleString}
+          errorHeading={errorHeading}
+          confirmationHeading={confirmationHeading}
+          confirmationText={confirmationText}
         />
       )
       .toJSON();
@@ -383,9 +424,10 @@ describe.skip("NewsletterSignup Snapshots", () => {
           onChange={onChange}
           valueEmail={valueEmail}
           view="error"
-          confirmationHeading="Thank you for signing up!"
-          confirmationText="You can update your email subscription preferences at any time using the links at the bottom of the email."
-          errorHeading="Oh no! Something went wrong."
+          title={titleString}
+          errorHeading={errorHeading}
+          confirmationHeading={confirmationHeading}
+          confirmationText={confirmationText}
           errorText={
             <div>
               If the error persists,
@@ -408,55 +450,13 @@ describe.skip("NewsletterSignup Snapshots", () => {
           onChange={onChange}
           valueEmail={valueEmail}
           view="confirmation"
-          confirmationHeading="Thank you for signing up!"
-          confirmationText="You can update your email subscription preferences at any time using the links at the bottom of the email."
+          title={titleString}
+          errorHeading={errorHeading}
+          confirmationHeading={confirmationHeading}
+          confirmationText={confirmationText}
         />
       )
       .toJSON();
     expect(view).toMatchSnapshot();
   });
-
-  it("Renders the confirmation UI with confirmationText snapshot correctly", () => {
-    const view = renderer
-      .create(
-        <NewsletterSignup
-          onSubmit={onSubmit}
-          onChange={onChange}
-          valueEmail={valueEmail}
-          view="confirmation"
-          confirmationHeading="Thank you for signing up!"
-          confirmationText="You can update your email subscription preferences at any time using the links at the bottom of the email."
-        />
-      )
-      .toJSON();
-    expect(view).toMatchSnapshot();
-  });
-
-  describe("Renders each color for each newsletterSignupType correctly", () => {
-    // The newsletterSignupType values are determined by the types contained in
-    // the sectionColorsDataMap. So it is safe to use the map directly.
-    Object.keys(sectionColorsDataMap).map((section) => {
-      it(
-        "Renders " +
-          section +
-          " color band with " +
-          sectionColorsDataMap[section].primary,
-        () => {
-          const view = renderer
-            .create(
-              <NewsletterSignup
-                onSubmit={onSubmit}
-                onChange={onChange}
-                valueEmail={valueEmail}
-                newsletterSignupType={section}
-                confirmationHeading="Thank you for signing up!"
-                confirmationText="You can update your email subscription preferences at any time using the links at the bottom of the email."
-              />
-            )
-            .toJSON();
-          expect(view).toMatchSnapshot();
-        }
-      );
-    });
-  }); // Close colors snapshots
 }); // Close snapshots

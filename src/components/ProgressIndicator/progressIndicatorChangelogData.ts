@@ -10,6 +10,15 @@ import { ChangelogData } from "../../utils/ComponentChangelogTable";
 
 export const changelogData: ChangelogData[] = [
   {
+    date: "2024-10-24",
+    version: "3.4.1",
+    type: "Update",
+    affects: ["Documentation", "Functionality"],
+    notes: [
+      "Adds `labelPlacement` prop to allow for custom placement of a label for circular indicators.",
+    ],
+  },
+  {
     date: "2024-03-14",
     version: "3.0.0",
     type: "Update",

@@ -1,9 +1,11 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
 import Accordion, { AccordionDataProps } from "../Accordion/Accordion";
+import Banner from "../Banner/Banner";
 import Breadcrumbs from "../Breadcrumbs/Breadcrumbs";
 import Button from "../Button/Button";
 import Card, { CardHeading, CardContent, CardActions } from "../Card/Card";
+import FeaturedContent from "../FeaturedContent/FeaturedContent";
 import Form, { FormRow, FormField } from "../Form/Form";
 import Heading from "../Heading/Heading";
 import Hero from "../Hero/Hero";
@@ -12,6 +14,7 @@ import Link from "../Link/Link";
 import Notification from "../Notification/Notification";
 import Placeholder from "../Placeholder/Placeholder";
 import SkipNavigation from "../SkipNavigation/SkipNavigation";
+import Table from "../Table/Table";
 import {
   Template,
   TemplateAboveHeader,
@@ -120,6 +123,57 @@ const faqContentData: AccordionDataProps[] = [
   },
 ];
 
+const columnHeadersAlt = [
+  "Name",
+  "Nick Name",
+  "Species",
+  "Description",
+  "Bio",
+  "Salary (USD)",
+];
+const tableDataAlt = [
+  [
+    "Tom Nook",
+    "Tanukichi",
+    "Raccoon",
+    "A businessman who manages the town shop and the player's home loan.",
+    "Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Maecenas faucibus mollis interdum. Donec id elit non mi porta gravida at eget metus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Nulla vitae elit libero, a pharetra augue.",
+    "$225,000",
+  ],
+  [
+    "Isabelle",
+    "Shizue",
+    "Dog",
+    "A secretary and assistant to the player. Twin sister to Digby.",
+    "Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla. Sed posuere consectetur est at lobortis. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Integer posuere erat a ante luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Sed posuere consectetur est at lobortis. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.",
+    "$228,500",
+  ],
+  [
+    "K.K. Slider",
+    "Totakeke",
+    "Dog",
+    "A traveling musician and DJ. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.",
+    "Cras mattis consectetur purus sit amet fermentum. Nulla vitae elit libero, a pharetra augue. Etiam porta sem malesuada magna mollis euismod. Donec ullamcorper nulla non metus auctor fringilla. Donec sed odio dui. Donec id elit non mi porta gravida at eget metus.",
+    "$157,000",
+  ],
+  [
+    "Sonny Resetti",
+    "Risetto san",
+    "Mole",
+    "Lectures the player if they reset their game. Brother to Don Resetti.",
+    "Pellentesque ornare sem lacinia quam venenatis vestibulum. Etiam porta sem malesuada magna mollis euismod. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.",
+    "$89,000",
+  ],
+];
+const columnStylesComplex = [
+  { minWidth: "200px", width: "15%" },
+  { minWidth: "200px", width: "15%" },
+  { minWidth: "200px", width: "15%" },
+  { minWidth: "500px", width: "auto" },
+  { minWidth: "500px", width: "auto" },
+  { minWidth: "160px", width: "15%", textAlign: "right" },
+];
+
 /**
  * Main Story for the Template component. This must contains the `args`
  * and `parameters` properties in this object.
@@ -141,7 +195,6 @@ export const WithControls: Story = {
         <Placeholder variant="short">More Content</Placeholder>
       </>
     ),
-    contentSidebar: <Placeholder>Left Sidebar</Placeholder>,
     contentTop: <Placeholder variant="short">Content Top</Placeholder>,
     footer: <Placeholder>Footer</Placeholder>,
     header: <Placeholder variant="short">Header</Placeholder>,
@@ -159,12 +212,17 @@ export const WithControls: Story = {
     contentTop: { control: false },
     footer: { control: false },
     header: { control: false },
-    renderSkipNavigation: argsBooleanType(),
+    renderSkipNavigation: argsBooleanType("true"),
     sidebar: {
       table: { defaultValue: { summary: "none" } },
     },
   },
-  render: (args) => <TemplateAppContainer {...args} />,
+  render: (args) => (
+    <TemplateAppContainer
+      {...args}
+      contentSidebar={<Placeholder>Sidebar ({args.sidebar})</Placeholder>}
+    />
+  ),
   parameters: {
     design: {
       type: "figma",
@@ -282,19 +340,10 @@ export const FullExampleWithTemplateChildrenComponents: Story = {
         </TemplateBreakout>
         <TemplateContent sidebar="right">
           <TemplateContentTop>
-            <Notification
-              notificationType="announcement"
-              notificationHeading="Announcement Notification"
-              notificationContent={
-                <>
-                  This is an "announcement" Notification with a heading. Cras
-                  mattis consectetur purus sit amet fermentum. Maecenas faucibus
-                  mollis interdum. Morbi leo risus, porta ac consectetur ac,
-                  vestibulum at eros. Cum sociis natoque penatibus et magnis dis
-                  parturient montes, nascetur ridiculus mus. Vivamus sagittis
-                  lacus vel augue laoreet rutrum faucibus dolor auctor.
-                </>
-              }
+            <Banner
+              content="This is an the top content area!"
+              heading="Content Top"
+              type="informative"
             />
           </TemplateContentTop>
           <TemplateContentPrimary>
@@ -338,6 +387,36 @@ export const FullExampleWithTemplateChildrenComponents: Story = {
                 <Button id="submit">Submit</Button>
               </FormField>
             </Form>
+            <FeaturedContent
+              imageProps={{
+                alt: "",
+                src: getPlaceholderImage("smaller"),
+                position: "end",
+                width: "",
+              }}
+              isFullWidth
+              my="l"
+              textContent={
+                <>
+                  <Heading size="heading5">Sit Dapibus Elit</Heading>
+                  Donec id elit non mi porta gravida at eget metus. Nulla vitae
+                  elit libero, a pharetra augue. Cum sociis natoque penatibus et
+                  magnis dis parturient montes, nascetur ridiculus mus. Cras
+                  mattis consectetur purus sit amet fermentum.
+                </>
+              }
+            />
+            <Table
+              columnHeaders={columnHeadersAlt}
+              columnStyles={columnStylesComplex}
+              id="table-horizontal-scrolling-wo-row-headers"
+              isScrollable
+              showRowDividers
+              showTitleText={false}
+              tableData={tableDataAlt}
+              titleText="Table with horizontal scrolling and no row headers"
+              useRowHeaders
+            />
           </TemplateContentPrimary>
           <TemplateContentSidebar>
             <p>Sidebar information in a `Card` component.</p>
@@ -360,11 +439,10 @@ export const FullExampleWithTemplateChildrenComponents: Story = {
             </Card>
           </TemplateContentSidebar>
           <TemplateContentBottom>
-            <Notification
-              noMargin
-              notificationHeading="Standard Notification"
-              notificationContent={<>This is an the bottom content area!</>}
-              showIcon={false}
+            <Banner
+              content="This is an the bottom content area!"
+              heading="Content Bottom"
+              type="informative"
             />
           </TemplateContentBottom>
         </TemplateContent>

@@ -79,6 +79,12 @@ const digitalCollections = defineStyle({
       },
     },
   },
+  svg: {
+    fill: "ui.black",
+    _dark: {
+      fill: "ui.white",
+    },
+  },
 });
 const education = defineStyle({
   bg: "section.education.secondary",
@@ -126,6 +132,7 @@ const Breadcrumb = defineStyleConfig({
       paddingEnd: "s",
     },
     a: {
+      _visited: { color: "unset" },
       _hover: {
         color: "ui.gray.light-cool",
         textDecoration: "none",

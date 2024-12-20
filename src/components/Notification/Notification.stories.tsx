@@ -12,15 +12,15 @@ const meta: Meta<typeof Notification> = {
   argTypes: {
     className: { control: false },
     dismissible: {
-      table: { defaultValue: { summary: false } },
+      table: { defaultValue: { summary: "false" } },
     },
     icon: { control: false },
     id: { control: false },
     isCentered: {
-      table: { defaultValue: { summary: false } },
+      table: { defaultValue: { summary: "false" } },
     },
     noMargin: {
-      table: { defaultValue: { summary: false } },
+      table: { defaultValue: { summary: "false" } },
     },
     notificationContent: { control: false },
     notificationType: {

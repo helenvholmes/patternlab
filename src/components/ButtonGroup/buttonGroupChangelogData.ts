@@ -10,6 +10,13 @@ import { ChangelogData } from "../../utils/ComponentChangelogTable";
 
 export const changelogData: ChangelogData[] = [
   {
+    date: "2024-07-25",
+    version: "3.2.0",
+    type: "Update",
+    affects: ["Functionality"],
+    notes: ["Exports the `ButtonGroupProps` interface."],
+  },
+  {
     date: "2024-05-15",
     version: "3.1.3",
     type: "Update",

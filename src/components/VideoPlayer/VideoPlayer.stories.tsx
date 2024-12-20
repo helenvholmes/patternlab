@@ -26,7 +26,7 @@ const meta: Meta<typeof VideoPlayer> = {
     helperText: { control: "text" },
     id: { control: false },
     iframeTitle: { control: "text" },
-    showHelperInvalidText: argsBooleanType(true),
+    showHelperInvalidText: argsBooleanType("true"),
     videoId: { control: "text" },
     videoType: {
       controls: { type: "radio" },

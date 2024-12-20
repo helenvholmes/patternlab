@@ -22,6 +22,8 @@ export type LabelPositions = typeof labelPositionsArray[number];
 export interface SelectProps {
   /** A class name for the `div` parent element. */
   className?: string;
+  /** The initial value of an uncontrolled component */
+  defaultValue?: string;
   /** Optional string to populate the `HelperErrorText` for the standard state. */
   helperText?: HelperErrorTextType;
   /** ID that other components can cross reference for accessibility purposes */
@@ -57,7 +59,7 @@ export interface SelectProps {
   /** Offers the ability to show the select's label onscreen or hide it. Refer
    * to the `labelText` property for more information. */
   showLabel?: boolean;
-  /** Whether or not to display the "(Required)" text in the label text.
+  /** Whether or not to display the "(required)" text in the label text.
    * True by default. */
   showRequiredLabel?: boolean;
   /** The value of the selected option.
@@ -81,6 +83,7 @@ export const Select: ChakraComponent<
       const {
         children,
         className,
+        defaultValue,
         helperText,
         id,
         invalidText,
@@ -118,7 +121,11 @@ export const Select: ChakraComponent<
       });
       // To control the `Select` component, both `onChange` and `value`
       // must be passed.
-      const controlledProps = onChange ? { onChange, value } : {};
+      const controlledOrUncontrolledProps = onChange
+        ? { onChange, value }
+        : defaultValue
+        ? { defaultValue }
+        : {};
 
       // The number of pixels between the label and select elements
       // when the labelPosition is inline (equivalent to --nypl-space-xs).
@@ -129,6 +136,12 @@ export const Select: ChakraComponent<
         isInvalid ? "ui.error.primary" : "ui.black",
         isInvalid ? "dark.ui.error.primary" : "dark.ui.typography.body"
       );
+
+      if (onChange && defaultValue) {
+        console.warn(
+          "NYPL Reservoir Select: Both an `onChange` prop (used for controlled components) and a `defaultValue` prop (used for uncontrolled components) were passed. `defaultValue` will be ignored."
+        );
+      }
 
       if (!id) {
         console.warn(
@@ -183,7 +196,7 @@ export const Select: ChakraComponent<
               name={name}
               placeholder={placeholder}
               ref={ref}
-              {...controlledProps}
+              {...controlledOrUncontrolledProps}
               {...ariaAttributes}
               icon={
                 <Icon

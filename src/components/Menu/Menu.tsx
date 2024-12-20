@@ -24,6 +24,8 @@ export interface MenuProps {
   /** Optional string used to identify and highlight an item when the menu opens. The value should
    * match the id associated with one of the items. */
   selectedItem?: string;
+  /** Optional boolean value, toggles whether the label of the menu will display the text of the selected item. labelText is required for the aria-label either way. */
+  showSelectionAsLabel?: boolean;
   /** Used to set the highlight color for the current item.  The values correspond with the NYPL section colors */
   highlightColor?: SectionTypes;
   /** Required string used to set the label text for the button element. If showLabel is false,
@@ -88,6 +90,7 @@ export const Menu: ChakraComponent<
         labelText,
         listAlignment = "left",
         selectedItem,
+        showSelectionAsLabel,
         highlightColor = "blogs",
         showBorder = true,
         showLabel = true,
@@ -103,12 +106,20 @@ export const Menu: ChakraComponent<
       });
 
       /**  Handle selection alongside custom onClick behavior. */
-      const [selected, setSelected] = useState(selectedItem);
+      const initialItem = listItemsData?.find(
+        (item) => item.id === selectedItem
+      ) as ActionItem | GroupItem;
+      const [selected, setSelected] = useState<ActionItem | GroupItem | null>(
+        initialItem || null
+      );
       const handleSelect = (id, customHandler) => {
         if (customHandler) {
           customHandler(id);
         }
-        setSelected(id);
+        const selectedItem = listItemsData?.find((item) => item.id === id) as
+          | ActionItem
+          | GroupItem;
+        setSelected(selectedItem);
       };
 
       /**  Check props. */
@@ -118,7 +129,7 @@ export const Menu: ChakraComponent<
         );
       } else if (
         selectedItem &&
-        !listItemsData.map((item) => item.id).includes(selected)
+        !listItemsData.map((item) => item.id).includes(selected?.id)
       ) {
         console.warn(
           "NYPL Reservoir Menu: The `selectedItem` prop does not match any of the menu items."
@@ -199,13 +210,17 @@ export const Menu: ChakraComponent<
       const getButton = (isOpen) => (
         <MenuButton
           sx={styles.menuButton}
-          aria-label={showLabel ? "" : labelText}
+          aria-label={selected ? `${labelText}: ${selected.label}` : labelText}
           backgroundColor={isOpen ? "ui.link.primary-05 !important" : "unset"}
         >
           {showLabel && (
             <>
               <Box as="span" sx={{ paddingRight: "xs" }}>
-                {labelText}
+                {showSelectionAsLabel
+                  ? selected
+                    ? selected.label
+                    : labelText
+                  : labelText}
               </Box>
               <Icon
                 name="arrow"
@@ -242,7 +257,7 @@ export const Menu: ChakraComponent<
             ];
           }
           // If item is an action item
-          const isSelected = selected === item.id;
+          const isSelected = selected ? selected.id === item.id : false;
           const menuItem = (
             <MenuItem
               key={item.id}

@@ -1,3 +1,8 @@
+export const headerBreakpoints = {
+  mh: "52em", // "832px",
+  lh: "64em", // "1024px
+};
+
 /**
  * How to use Chakra responsive styles: https://chakra-ui.com/docs/features/responsive-styles
  *
@@ -19,10 +24,13 @@
  * largeTablet  | --nypl-breakpoint-xlargeTablet  | 80em / 1280px  | large tablet
  */
 export default {
-  // Chakra default keys
   sm: "30em",
   md: "48em",
+  // Temporary and just for the header
+  mh: headerBreakpoints.mh,
   lg: "64em",
+  // Temporary and just for the header
+  lh: headerBreakpoints.lh,
   xl: "80em",
   "2xl": "96em",
 

@@ -10,8 +10,33 @@ import { ChangelogData } from "../../utils/ComponentChangelogTable";
 
 export const changelogData: ChangelogData[] = [
   {
-    date: "Prerelease",
-    version: "Prerelease",
+    date: "2024-12-05",
+    version: "3.5.0",
+    type: "Update",
+    affects: ["Documentation", "Functionality"],
+    notes: [
+      "Updates the `items` prop to include `itemCount` as a data property to render the item count for an option.",
+    ],
+  },
+  {
+    date: "2024-10-02",
+    version: "3.4.0",
+    type: "Update",
+    affects: ["Documentation"],
+    notes: ["Adds interaction tests for the Controls story."],
+  },
+  {
+    date: "2024-08-29",
+    version: "3.3.0",
+    type: "New Feature",
+    affects: ["Accessibility"],
+    notes: [
+      "Renders the `buttonText` prop as the `CheckboxGroup`'s legend for more meaningful context.",
+    ],
+  },
+  {
+    date: "2024-07-03",
+    version: "3.1.7",
     type: "New Feature",
     affects: ["Functionality"],
     notes: [

@@ -60,14 +60,14 @@ interface DatePickerWrapperProps extends DateRangeRowProps {
   labelText: string;
   /** Offers the ability to show the label onscreen or hide it. */
   showLabel?: boolean;
-  /** Whether or not to display the "(Required)" text in the label text.
+  /** Whether or not to display the "(required)" text in the label text.
    * True by default. */
   showRequiredLabel?: boolean;
 }
 
 // Interface used by the internal DS `TextInput` component as a custom
 // component for the ReactDatePicker plugin component. Internal use only.
-interface CustomTextInputProps extends Partial<InputProps> {
+export interface CustomTextInputProps extends Partial<InputProps> {
   /** The ReactDatePicker plugin manipulates the ref value so we declare our
    * own for some cases. */
   dsRef?: React.Ref<TextInputRefType>;
@@ -357,7 +357,7 @@ export const DatePicker: ChakraComponent<
     // Both custom `TextInput` components share some props.
     let baseCustomTextInputAttrs = {
       isRequired,
-      // In the date range type, don't display the "(Required)" text in
+      // In the date range type, don't display the "(required)" text in
       // individual input labels. It'll display in the legend element.
       showRequiredLabel: isDateRange ? false : showRequiredLabel,
       // Always display the labels for the input fields when

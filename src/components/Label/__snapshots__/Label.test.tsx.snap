@@ -18,7 +18,7 @@ exports[`Label Renders the UI snapshot correctly 2`] = `
 >
   Cupcakes
   <span>
-     (Required)
+     (required)
   </span>
 </label>
 `;

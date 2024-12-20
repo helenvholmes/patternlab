@@ -70,7 +70,7 @@ export const bannerHighlightColorsArray = [
 ] as const;
 export type BannerHighlightColors = typeof bannerHighlightColorsArray[number];
 
-interface BannerProps {
+export interface BannerProps {
   /** Label used to describe the `Banner`'s aside HTML element. */
   ariaLabel?: string;
   /** Used to set the color of the background for the full component.
@@ -243,7 +243,13 @@ export const Banner: ChakraComponent<
         {finalIcon}
         <Box maxWidth="800px">
           {heading && finalHeading}
-          {content}
+          {/* Render string content as div with dangerouslySetInnerHTML prop in case HTML is passed in as string
+            (e.g. notification HTML stored in an environment variable. */}
+          {typeof content === "string" ? (
+            <Box dangerouslySetInnerHTML={{ __html: content }} />
+          ) : (
+            <>{content}</>
+          )}
         </Box>
         {isDismissible && dismissibleButton}
       </Box>

@@ -1,5 +1,6 @@
 import { action } from "@storybook/addon-actions";
 import type { Meta, StoryObj } from "@storybook/react";
+import { useEffect, useRef, useState } from "react";
 
 import Button from "../Button/Button";
 import Card, { CardHeading, CardContent, CardActions } from "./Card";
@@ -9,6 +10,10 @@ import Link from "../Link/Link";
 import SimpleGrid from "../Grid/SimpleGrid";
 import { layoutTypesArray } from "../../helpers/types";
 import { getPlaceholderImage } from "../../utils/utils";
+import Tooltip from "../Tooltip/Tooltip";
+// The image file is in the repo but ts doesn't pick it up as a module.
+// @ts-ignore
+import imageFile from "../../../static/noImage.png";
 
 const meta: Meta<typeof Card> = {
   title: "Components/Basic Elements/Card",
@@ -29,12 +34,14 @@ const meta: Meta<typeof Card> = {
     "imageProps.caption": { control: false },
     "imageProps.component": { control: false },
     "imageProps.credit": { control: false },
+    "imageProps.fallbackSrc": { control: false },
     "imageProps.isAtEnd": {
-      table: { defaultValue: { summary: false } },
+      table: { defaultValue: { summary: "false" } },
     },
     "imageProps.isLazy": {
-      table: { defaultValue: { summary: false } },
+      table: { defaultValue: { summary: "false" } },
     },
+    "imageProps.onError": { control: false },
     "imageProps.size": {
       table: { defaultValue: { summary: "default" } },
     },
@@ -42,13 +49,13 @@ const meta: Meta<typeof Card> = {
       table: { defaultValue: { summary: "" } },
     },
     isAlignedRightActions: {
-      table: { defaultValue: { summary: false } },
+      table: { defaultValue: { summary: "false" } },
     },
     isBordered: {
-      table: { defaultValue: { summary: false } },
+      table: { defaultValue: { summary: "false" } },
     },
     isCentered: {
-      table: { defaultValue: { summary: false } },
+      table: { defaultValue: { summary: "false" } },
     },
     layout: {
       control: { type: "select" },
@@ -98,6 +105,7 @@ export const WithControls: Story = {
         alt: args["imageProps.alt"],
         aspectRatio: args["imageProps.aspectRatio"],
         component: args["imageProps.component"],
+        id: "card-image-id",
         isAtEnd: args["imageProps.isAtEnd"],
         isLazy: args["imageProps.isLazy"],
         size: args["imageProps.size"],
@@ -555,6 +563,35 @@ export const CustomImageComponent: Story = {
         odio, dapibus ac facilisis in, egestas eget quam. Sed posuere
         consectetur est at lobortis.
       </CardContent>
+    </Card>
+  ),
+};
+
+export const FallbackImage: Story = {
+  render: () => (
+    <Card
+      imageProps={{
+        alt: "Alt text",
+        fallbackSrc: imageFile,
+        onError: (_event) => console.log("Card fallback image loaded"),
+        src: "foobar.jpg",
+      }}
+    >
+      <CardHeading
+        level="h3"
+        id="img1-heading1"
+        size="heading5"
+        subtitle="Subtitle on the card"
+      >
+        Card component displaying a fallback image
+      </CardHeading>
+      <CardContent>
+        Nulla vitae elit libero, a pharetra augue. Lorem ipsum dolor sit amet,
+        consectetur adipiscing elit. Aenean lacinia bibendum nulla sed
+        consectetur. Vestibulum id ligula porta felis euismod semper. Cras justo
+        odio, dapibus ac facilisis in, egestas eget quam. Sed posuere
+        consectetur est at lobortis.
+      </CardContent>
       <CardActions>
         <Link type="button" href="#">
           Reserve
@@ -566,6 +603,7 @@ export const CustomImageComponent: Story = {
     </Card>
   ),
 };
+
 export const HeadingAsLink: Story = {
   render: () => (
     <Card
@@ -727,6 +765,70 @@ export const CardFullClickTurbineExample: Story = {
   ),
   name: "Full-Click Turbine Example",
 };
+
+function FullClickWithTooltipExample() {
+  const [offset, setOffset] = useState<[number, number]>([0, 0]);
+  const cardRef = useRef<HTMLDivElement>(null);
+  const getOffset = () => {
+    if (cardRef.current) {
+      const image = cardRef.current.children[0] as HTMLElement;
+      const percentageHeightOffset = image.offsetHeight * 1.01;
+      const percentageWidthOffset = image.offsetWidth * 0.4;
+      setOffset([-percentageWidthOffset, -percentageHeightOffset]);
+    }
+  };
+  useEffect(() => {
+    setTimeout(getOffset, 0);
+    window.addEventListener("resize", getOffset);
+
+    return () => {
+      window.removeEventListener("resize", getOffset);
+    };
+  }, []);
+
+  return (
+    <Tooltip offset={offset} content={"Tooltip text"}>
+      <Card
+        ref={cardRef}
+        imageProps={{
+          alt: "Alt text",
+          aspectRatio: "twoByOne",
+          src: "https://images.nypl.org/index.php?id=swope_243025&t=r",
+        }}
+        mainActionLink="http://nypl.org"
+      >
+        <CardHeading
+          level="h3"
+          id="fullclick1-heading1"
+          size="heading5"
+          subtitle="Some other subtitle."
+        >
+          Tooltip displays over me
+        </CardHeading>
+        <CardContent>
+          This entire `Card` component is clickable, but the links below are
+          still accessible by tabbing through the `Card` and pressing `enter` or
+          clicking with a mouse.
+          <br />
+          <Tooltip content={"Tooltippable"}>Tooltippable text</Tooltip>
+        </CardContent>
+        <CardActions>
+          <Link href="#" type="buttonPrimary">
+            Link Button
+          </Link>
+          <Link href="#" type="buttonSecondary">
+            Other Link
+          </Link>
+        </CardActions>
+      </Card>
+    </Tooltip>
+  );
+}
+export const FullClickWithTooltip: Story = {
+  name: "Full-Click With Tooltip",
+  render: () => <FullClickWithTooltipExample />,
+};
+
 export const CardWithRightSideCardActions: Story = {
   render: () => (
     <Card

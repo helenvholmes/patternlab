@@ -52,6 +52,7 @@ const moreLink = definePartsStyle(
     base: {
       alignItems: "center",
       display: "inline-flex",
+      whiteSpace: "nowrap",
       svg: {
         height: "s",
         width: "s",

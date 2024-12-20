@@ -12,7 +12,7 @@ import Link from "../Link/Link";
 | Component Version | DS Version |
 | ----------------- | ---------- |
 | Added             | `1.1.0`    |
-| Latest            | `3.0.0`    |
+| Latest            | `3.3.1`    |
 
 ## Table of Contents
 
@@ -95,6 +95,24 @@ By default, the `Tooltip` is not shown for a disabled `Button`. To show the `Too
 on a disabled `Button`, pass the `shouldWrapChildren` prop.
 
 <Canvas of={TooltipStories.DisablingTooltipButton} />
+
+### Placement
+
+The `placement` prop adjusts where the tooltip is displayed relative to its children: "top", "bottom", "left", or "right".
+While it is possible to set the placement of the tooltip, it is
+recommended to use the default "top" placement.
+
+<Canvas of={TooltipStories.TooltipPlacement} />
+
+### Offset
+
+The `offset` prop sets the distance along the main and cross axis between the tooltip and its reference element.
+`offset` is just static pixel values, such as [100, 100], so be careful to check where your tooltip displays on all breakpoints.
+
+While it is possible to set the offset of the tooltip, it is recommended to not set custom offset values unless there
+are extenuating circumstances.
+
+<Canvas of={TooltipStories.TooltipOffset} />
 
 ## Changelog
 

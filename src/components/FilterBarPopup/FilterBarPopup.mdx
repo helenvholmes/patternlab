@@ -1,0 +1,398 @@
+import { ArgTypes, Canvas, Description, Meta, Source } from "@storybook/blocks";
+import { changelogData } from "./filterBarPopupChangelogData";
+import ComponentChangelogTable from "../../utils/ComponentChangelogTable";
+import * as FilterBarPopupStories from "./FilterBarPopup.stories";
+import Link from "../Link/Link";
+
+<Meta of={FilterBarPopupStories} />
+
+# FilterBarPopup
+
+| Component Version | DS Version |
+| ----------------- | ---------- |
+| Added             | `3.3.0`    |
+| Latest            | `3.3.0`    |
+
+## Table of Contents
+
+- {<Link href="#overview" target="_self">Overview</Link>}
+- {<Link href="#component-props" target="_self">Component Props</Link>}
+- {<Link href="#accessibility" target="_self">Accessibility</Link>}
+- {<Link href="#filterbarpopup-heading" target="_self">FilterBarPopup Heading</Link>}
+- {<Link href="#controlling-state-using-selecteditems-onclear-and-onsubmit-props" target="_self">Controlling State Using selectedItems, onClear, and onSubmit Props</Link>}
+- {<Link href="#totalresults-example" target="_self">totalResults example</Link>}
+- {<Link href="#usefilterbarpopup-hook" target="_self">useFilterBarPopup hook</Link>}
+- {<Link href="#changelog" target="_self">Changelog</Link>}
+
+## Overview
+
+<Description of={FilterBarPopupStories} />
+
+`FilterBarPopup` is a wrapper component for filter components and individual form
+input components. The DS considers the following components as filter components:
+`CheckboxGroup`, `MultiSelectGroup`,`RadioGroup`, `Checkbox`, `DatePicker`,
+`MultiSelect`, `Radio`, `Select`, `Slider`, `TextInput`, and `Toggle`.
+
+The wrapped components/component groups will always be displayed in a column layout.
+
+It is recommended to use real-time filtering in conjunction with the `totalResults`
+prop to update the `Show X results` button with X being the total number of results
+associated to the results list.
+
+If the consuming app is not using the above, then `FilterBarPopup` will render the
+`Show results` button and can render an _optional_ `Clear all filters`
+button which is controlled by the `onClear` prop. The `Show results` button will
+call the `onSubmit` function if passed and close the modal.
+
+Related component: [FilterBarInline](../?path=/docs/components-form-elements-FilterBarInline--docs)
+
+## Component Props
+
+<Canvas of={FilterBarPopupStories.WithControls} />
+
+<ArgTypes of={FilterBarPopupStories.WithControls} />
+
+## Accessibility
+
+The `FilterBarPopup` component is a wrapper component for components with filter
+functionality. The accessibility of `FilterBarPopup` depends on the passed child
+components accessibility. See the accessibility details of valid FilterBarPopup child
+components:
+
+- [CheckboxGroup](../?path=/docs/components-form-elements-checkboxgroup--docs#accessibility)
+- [MultiSelectGroup](../?path=/docs/components-form-elements-multiselectgroup--docs#accessibility)
+- [RadioGroup](../?path=/docs/components-form-elements-radiogroup--docs#accessibility)
+- [Checkbox](../?path=/docs/components-form-elements-checkbox--docs#accessibility)
+- [DatePicker](../?path=/docs/components-form-elements-datepicker--docs#accessibility)
+- [MultiSelect](../?path=/docs/components-form-elements-multiselect--docs#accessibility)
+- [Radio](../?path=/docs/components-form-elements-radio--docs#accessibility)
+- [Select](../?path=/docs/components-form-elements-select--docs#accessibility)
+- [Slider](../?path=/docs/components-form-elements-slider--docs#accessibility)
+- [TextInput](../?path=/docs/components-form-elements-textinput--docs#accessibility)
+- [Toggle](../?path=/docs/components-form-elements-toggle--docs#accessibility)
+
+## FilterBarPopup Heading
+
+The `FilterBarPopup` component will always render a heading using the default
+"Filters" label value. The default label value can be overridden using the
+`heading` prop. By default, when a string is passed to the `heading` prop, the
+`FilterBarPopup` component will render an `h2` element sized as an `heading5`
+heading. If this causes accessibility issues in your app, you can set a
+custom heading by passing in a DS `Heading` component.
+
+In the following examples, the `FilterBarPopup` component will render custom `h3`
+and `h5` elements. Note that no matter what heading level is set, the size will
+always be set to `heading5` internally by the `FilterBarPopup` component.
+
+<Source
+  code={`
+const customH3 = <Heading level="h3">Custom H3 Heading</Heading>;
+const customH5 = <Heading level="h5">Custom H5 Heading</Heading>;
+<FilterBarPopup heading={customH3} {...props} />
+<FilterBarPopup heading={customH5} {...props} />
+`}
+  language="tsx"
+/>
+
+<Canvas of={FilterBarPopupStories.FilterBarPopupHeading} />
+
+## Passing Children
+
+<Canvas of={FilterBarPopupStories.MultipleChildren} />
+
+In order to control the styling and props passed to children form elements,
+the `FilterBarPopup` component accepts `CheckboxGroup`, `MultiSelectGroup`,
+`RadioGroup`, `Checkbox`, `DatePicker`, `MultiSelect`, `Radio`, `Select`,
+`Slider`, `TextInput`, and `Toggle` children through its `renderChildren` render
+prop function.
+
+This callback prop function returns an object argument with three properties:
+`isBlockElement`, `layout`, and `width`.
+
+- The `isBlockElement` argument value should be passed to the `isBlockElement`
+  prop of `MultiSelect` children.
+- The `layout` argument value should be passed to the `layout` prop of
+  `CheckboxGroup`, `MultiSelectGroup`, and `RadioGroup` children.
+- The `width` argument value should be passed to the `multiSelectWidth` prop of
+  `MultiSelectGroup` children and the `width` prop of `MultiSelect` children.
+
+Here is an example of the shape of `FilterBarPopup`:
+
+<Source
+  code={`
+<FilterBarPopup
+  id="..."
+  heading="..."
+  renderChildren={({ isBlockElement, layout, width }) => {
+    return (...)
+  }}
+/>
+`}
+  language="jsx"
+/>
+
+## Controlling State Using selectedItems, onClear, and onSubmit Props
+
+### selectedItems
+
+The `FilterBarPopup` component does not store its state internally. It expects
+a `selectedItems` prop whose value is an array of selected values of the filter
+children.
+
+To control each of the child form elements, you must pass the appropriate
+`onChange` and `value` props to them. Find documentation on how to do this on each
+individual component page.
+
+`useMultiSelect` is an optional but recommended hook for cases where managing
+the state of the component in the consuming app is less of a concern and general
+ease of use is prefered. Find the full documentation under
+[useMultiSelect](../?path=/docs/hooks-usemultiselect--docs)
+
+<Source
+  code={`
+const { onChange, onMixedStateChange, selectedItems, onClear, onClearAll } = useMultiSelect();
+const [selectedCheckbox, setSelectedCheckbox] = useState([]);
+const [textValue, setTextValue] = useState("");
+const [selectedFilterItems, setSelectedFilterItems] = useState([
+  selectedItems,
+  selectedCheckbox,
+  textValue,
+]);
+useEffect(() => {
+  setSelectedFilterItems([selectedItems, selectedCheckbox, textValue]);
+}, [selectedItems, selectedCheckbox, textValue]);
+`}
+  language="jsx"
+/>
+
+### onClear
+
+The `Clear all filters` button will only be visible when the `onClear` prop is passed.
+
+The `onClear` handler will be called when the `Clear all filters` button is clicked.
+
+It is expected that the `onClear` handler will clear all of the current values from the
+child form elements and restore the associated search results list to an unfiltered
+state. Consuming apps are responsible for handling the logic and subsequent UI
+updates expected when the `onClear` handler is called.
+
+<Source
+  code={`
+const onClearFilterBar = () => {
+  onClearAll();
+  setSelectedCheckbox([]);
+  setTextValue("");
+};`}
+  language="jsx"
+/>
+
+### onSubmit
+
+The `onSubmit` handler will be called when the `Show results` button is clicked.
+
+It is expected that the `onSubmit` handler will read the current values from the
+child form elements (the filters) and update the associated search results list
+based on those values. Consuming apps are responsible for handling the logic
+and subsequent UI updates expected when the `onSubmit` handler is called.
+
+To have better readability of the code it is recommended to separate nested render
+prop functions:
+
+<Source
+  code={`
+// function for renderMultiSelect prop of MultiSelectGroup 
+const renderMultiSelect = ({ isBlockElement, multiSelectWidth }) => {
+  return (
+    shortMultiSelectItems &&
+    shortMultiSelectItems.map((multiSelect) => (
+      <MultiSelect
+        buttonText={multiSelect.name}
+        key={multiSelect.id}
+        id={multiSelect.id}
+        items={multiSelect.items}
+        selectedItems={selectedItems}
+        isBlockElement={isBlockElement}
+        onChange={(e) => onChange(e.target.id, multiSelect.id)}
+        onMixedStateChange={(e) => {
+          return onMixedStateChange(e.target.id, multiSelect.id, multiSelect.items);
+        }}
+        onClear={() => onClear(multiSelect.id)}
+        width={multiSelectWidth}
+      />
+    )) 
+  ); 
+};`}
+  language="jsx"
+/>
+
+<Source
+  code={`
+// function for renderChildren prop of FilterBar 
+const renderFilterComponents = ({ layout, width }) => {
+  return (
+    <>
+      <MultiSelectGroup
+        id="multiselect-group"
+        labelText="MultiSelect Group"
+        layout={layout}
+        multiSelectWidth={width}
+        renderMultiSelect={renderMultiSelect}
+      />
+      <CheckboxGroup
+        id="checkbox-example"
+        labelText="Checkbox Group"
+        name="checkboxExample"
+        layout={layout}
+        value={selectedCheckbox}
+        onChange={(e) => {
+          setSelectedCheckbox(e);
+        }}
+      >
+        <Checkbox id="checkbox-1" value="1" labelText="Checkbox 1" />
+        <Checkbox id="checkbox-2" value="2" labelText="Checkbox 2" />
+      </CheckboxGroup>
+      <TextInput
+        id="textinput-example"
+        isClearable
+        isClearableCallback={() => setTextValue("")}
+        labelText="What is your favorite color?"
+        onChange={(e) => setTextValue(e.target.value)}
+        placeholder="i.e. blue, green, etc."
+        value={textValue}
+      />
+    </>
+  ); 
+};
+`}
+  language="jsx"
+/>
+
+<Source
+  code={`
+return (
+  <FilterBarPopup
+    id={args.id}
+    heading={args.heading}
+    onClear={onClearFilterBar}
+    onSubmit={() => console.log(selectedFilterItems)}
+    selectedItems={selectedFilterItems}
+    renderChildren={renderFilterComponents}
+  />
+); `}
+  language="jsx"
+/>
+
+## totalResults example
+
+The `totalResults` prop should be used if the consuming app is utilizing real-time
+filtering. If the `totalResults` prop is passed, its value will be used as part of
+the label text for the `Show results` button (ex. "Show 72 results" where 72 is the
+value of the totalResults prop). This value should be updated as filter options are
+selected or changed.
+
+The example below is not fully functioning and is meant to show how the `totalResults`
+prop is shown to users in the `Show results` button.
+
+<Canvas of={FilterBarPopupStories.TotalResultsExample} />
+
+<Source
+  code={`
+const [selectedCheckbox, setSelectedCheckbox] = useState([]);
+const [textValue, setTextValue] = useState("");
+const [totalResults, setTotalResults] = useState(100);
+const [selectedFilterItems, setSelectedFilterItems] = useState([
+  selectedCheckbox,
+  textValue,
+]);
+
+const updateTotalResults = () => {
+// function to update totalResults value on filter change
+};
+
+...
+
+<FilterBarPopup
+  id="..."
+  heading="..."
+  onClear={...}
+  renderChildren={({ isBlockElement, layout, width }) => {
+    return (...)
+  }}
+  totalResults={totalResults}
+/>
+`}
+  language="jsx"
+/>
+
+## useFilterBarPopup hook
+
+The `useFilterBarPopup` hook provides programmatic control for the `FilterBarPopup` component
+and allows consuming apps to open the modal overlay using a custom button or methods other than
+a standard button click. Instead of importing the `FilterBarPopup` component directly, use
+the `useFilterBarPopup` hook to get the `FilterBarPopup` component and helper functions.
+
+<Source
+  code={`
+import { useFilterBarPopup } from "@nypl/design-system-react-components";
+`}
+  language="jsx"
+/>
+
+This hook will return an object with the `FilterBarPopup` component, a boolean value, and two functions.
+
+<Source
+  code={`
+const { FilterBarPopup, isOpen, onClose, onOpen } = useFilterBarPopup();
+`}
+  language="jsx"
+/>
+
+The `FilterBarPopup` component is the same as the one imported directly, the `isOpen` value, and `onClose`
+and `onOpen` functions are exposed and available to the consuming application. The only function that will
+be used directly is the `onOpen` function. Pass `isOpen` and `onClose` to the `FilterBarPopup`.
+
+<Source
+  code={`
+const { onOpen, isOpen, onClose, FilterBarPopup } = useFilterBarPopup();
+// ...
+<FilterBarPopup
+  isOpen={isOpen}
+  onClose={onClose}
+  onOpen={onOpen}
+  {...otherProps}
+/>
+`}
+  language="jsx"
+/>
+
+The `onOpen` function can be used to programmatically open the `FilterBarPopup` component through another
+element or behavior in the consuming app. See the example below that uses a custom `Button` to open the `Modal`.
+The existing button that is rendered by the `FilterBarPopup` component will still work as expected.
+
+<Source
+  code={`
+import { useFilterBarPopup } from "@nypl/design-system-react-components";
+// ...
+const MyComponent = () => {
+  const { onOpen, isOpen, onClose, FilterBarPopup } = useFilterBarPopup();
+  // ...
+  return (
+    <>
+      <Button id="open-filter-bar-popup" onClick={onOpen}>
+        Manually Open FilterBarPopup
+      </Button>
+      <FilterBarPopup
+        isOpen={isOpen}
+        onClose={onClose}
+        onOpen={onOpen}
+        {...otherProps}
+      />
+    </>
+  );
+}; `}
+  language="jsx"
+/>
+
+## Changelog
+
+<ComponentChangelogTable changelogData={changelogData} />

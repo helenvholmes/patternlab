@@ -11,7 +11,7 @@ export const textSizesArray = [
   "tag",
   "mini",
 ] as const;
-export type TextSizes = typeof textSizesArray[number];
+export type StyledListTextSizes = typeof textSizesArray[number];
 
 export interface StyledListProps {
   /** Any child node passed to the component. */
@@ -27,7 +27,7 @@ export interface StyledListProps {
    * there is only one variant style which is the default, "capped". */
   style?: "capped";
   /** The font size of the `li` elements. */
-  textSize?: TextSizes;
+  textSize?: StyledListTextSizes;
 }
 
 /**

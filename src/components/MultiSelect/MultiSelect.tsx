@@ -2,6 +2,7 @@ import {
   Box,
   chakra,
   ChakraComponent,
+  Flex,
   useMultiStyleConfig,
 } from "@chakra-ui/react";
 import React, { forwardRef, useEffect, useRef, useState } from "react";
@@ -18,6 +19,7 @@ export interface MultiSelectItem {
   name: string;
   isDisabled?: boolean;
   children?: MultiSelectItem[];
+  itemCount?: number;
 }
 export const multiSelectWidthsArray = ["fitContent", "full"] as const;
 export type MultiSelectWidths = typeof multiSelectWidthsArray[number];
@@ -112,10 +114,8 @@ export const MultiSelect: ChakraComponent<
       // Tells `Accordion` to close if open when user clicks outside of the container
       const handleClickOutside = (e) => {
         if (e.type === "mousedown") {
-          if (
-            containerRef.current &&
-            !containerRef.current.contains(e.target)
-          ) {
+          const multiSelect = containerRef.current;
+          if (multiSelect && !multiSelect.contains(e.target)) {
             setUserClickedOutside(true);
           } else {
             setUserClickedOutside(false);
@@ -125,21 +125,28 @@ export const MultiSelect: ChakraComponent<
 
       // Tells `Accordion` to close if open when user tabs outside of the container
       const handleTabOutside = (e) => {
-        if (e.type === "blur") {
-          if (!e.currentTarget.contains(e.relatedTarget)) {
-            setUserClickedOutside(true);
-          } else {
-            setUserClickedOutside(false);
-          }
+        if (e.key === "Tab") {
+          const multiSelect = containerRef.current;
+
+          // setTimeout delays the check until after the focus change has occurred
+          setTimeout(() => {
+            if (multiSelect && !multiSelect.contains(document.activeElement)) {
+              setUserClickedOutside(true);
+            } else {
+              setUserClickedOutside(false);
+            }
+          }, 0);
         }
       };
 
       useEffect(() => {
         if (closeOnBlur) {
           document.addEventListener("mousedown", handleClickOutside);
+          document.addEventListener("keydown", handleTabOutside);
 
           return () => {
             document.removeEventListener("mousedown", handleClickOutside);
+            document.removeEventListener("keydown", handleTabOutside);
           };
         }
       }, [closeOnBlur]);
@@ -298,6 +305,19 @@ export const MultiSelect: ChakraComponent<
         );
       };
 
+      const getItemLabelText = (
+        item: MultiSelectItem
+      ): string | JSX.Element => {
+        return item.itemCount ? (
+          <Flex gap="s" justify="space-between">
+            <Box>{item.name}</Box>
+            <Box>{item.itemCount}</Box>
+          </Flex>
+        ) : (
+          item.name
+        );
+      };
+
       /** Generate Checkbox components based on the provided MultiSelectItem. */
       const getMultiSelectCheckboxItem = (
         item: MultiSelectItem
@@ -307,7 +327,7 @@ export const MultiSelect: ChakraComponent<
             <Checkbox
               id={item.id}
               key={item.id}
-              labelText={item.name}
+              labelText={getItemLabelText(item)}
               name={item.name}
               {...(onMixedStateChange !== undefined
                 ? {
@@ -322,25 +342,27 @@ export const MultiSelect: ChakraComponent<
                     onChange: onChange,
                   })}
             />,
-            ...item.children.map((childItem) => (
-              <Checkbox
-                key={childItem.id}
-                marginInlineStart="0"
-                id={childItem.id}
-                labelText={childItem.name}
-                name={childItem.name}
-                isDisabled={childItem.isDisabled}
-                isChecked={isChecked(id, childItem.id)}
-                onChange={onChange}
-                __css={styles.menuChildren}
-              />
-            )),
+            ...item.children.map((childItem) => {
+              return (
+                <Checkbox
+                  key={childItem.id}
+                  marginInlineStart="0"
+                  id={childItem.id}
+                  labelText={getItemLabelText(childItem)}
+                  name={childItem.name}
+                  isDisabled={childItem.isDisabled}
+                  isChecked={isChecked(id, childItem.id)}
+                  onChange={onChange}
+                  __css={styles.menuChildren}
+                />
+              );
+            }),
           ];
         } else {
           return [
             <Checkbox
               id={item.id}
-              labelText={item.name}
+              labelText={getItemLabelText(item)}
               name={item.name}
               isDisabled={item.isDisabled}
               isChecked={isChecked(id, item.id)}
@@ -354,6 +376,7 @@ export const MultiSelect: ChakraComponent<
       /** Components for accordionData */
       const accordionLabel = (
         <Box
+          as="span"
           title={buttonText}
           __css={selectedItemsCount > 0 ? styles.buttonTextLabel : null}
         >
@@ -387,7 +410,7 @@ export const MultiSelect: ChakraComponent<
                 layout="column"
                 isFullWidth
                 isRequired={false}
-                labelText="Multi select checkbox group label"
+                labelText={buttonText}
                 showLabel={false}
                 name="multi-select-checkbox-group"
               >
@@ -407,7 +430,6 @@ export const MultiSelect: ChakraComponent<
           __css={styles.base}
           {...rest}
           ref={containerRef}
-          onBlur={closeOnBlur && handleTabOutside}
           onClick={() => setUserClickedOutside(false)}
         >
           <Accordion

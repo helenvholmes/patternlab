@@ -10,6 +10,17 @@ import { ChangelogData } from "../../utils/ComponentChangelogTable";
 
 export const changelogData: ChangelogData[] = [
   {
+    date: "2024-07-25",
+    version: "3.2.0",
+    type: "Update",
+    affects: ["Functionality"],
+    notes: [
+      "Removes default text values.",
+      "Replaces `sectionTypes` with `HighlightColorTypes` and renames the related component prop.",
+      "Updates component prop requirement.",
+    ],
+  },
+  {
     date: "2024-03-14",
     version: "3.0.0",
     type: "Update",

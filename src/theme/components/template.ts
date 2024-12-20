@@ -35,21 +35,23 @@ const TemplateContent = defineStyleConfig({
   baseStyle: defineStyle({
     // Set this element to start on the second 1280px grid column.
     gridColumn: "2",
-    // But this element also contains its own grid system within.
-    display: "grid",
+    // This element also contains its own grid system within, but we use "flex"
+    // for mobile to deal with overflow issues related to the Table component.
+    display: { base: "flex", md: "grid" },
+    flexDirection: { base: "column", md: null },
     gridTemplateColumns: "1fr",
     paddingY: 0,
-    paddingX: "s",
-    gap: "grid.l",
+    rowGap: "grid.l",
   }),
   // With left or right sidebars, we need to set two grid columns and
-  // the column for the sidebar is max 255px width.
+  // the column for the sidebar is max 271px width (255px for the sidebar
+  // + 16px for padding).
   variants: {
     left: {
-      gridTemplateColumns: { md: "255px 1fr" },
+      gridTemplateColumns: { md: "271px 1fr" },
     },
     right: {
-      gridTemplateColumns: { md: "1fr 255px" },
+      gridTemplateColumns: { md: "1fr 271px" },
     },
   },
 });
@@ -58,21 +60,31 @@ const TemplateContentTopBottom = defineStyleConfig({
   baseStyle: defineStyle({
     gridColumn: { base: "1", md: "1 / span 2" },
     height: "100%",
+    paddingX: "s",
   }),
 });
 
+/** The overflow styles were added to deal with overflow issues related to the
+ * Table component. */
 const TemplateContentPrimary = defineStyleConfig({
   baseStyle: defineStyle({
     gridColumn: { base: "1", md: "1 / span 2" },
+    paddingX: "s",
   }),
   variants: {
     left: {
       gridColumn: { base: "1", md: "2" },
       marginEnd: { md: 0 },
       minWidth: { md: 0 },
+      paddingRight: "s",
+      paddingLeft: { base: "s", md: "l" },
+      overflow: { base: "unset", md: "hidden" },
     },
     right: {
-      gridColumn: { base: "1", md: "1" },
+      gridColumn: "1",
+      paddingRight: { base: "s", md: "l" },
+      paddingLeft: "s",
+      overflow: { base: "unset", md: "hidden" },
     },
   },
 });
@@ -80,9 +92,13 @@ const TemplateContentSidebar = defineStyleConfig({
   variants: {
     left: {
       gridColumn: "1",
+      paddingLeft: "s",
+      paddingRight: { base: "s", md: 0 },
     },
     right: {
       gridColumn: { base: "1", md: "2" },
+      paddingLeft: { base: "s", md: 0 },
+      paddingRight: "s",
     },
   },
 });

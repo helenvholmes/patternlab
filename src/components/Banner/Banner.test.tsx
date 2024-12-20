@@ -77,6 +77,11 @@ describe("Banner", () => {
     // by its "img" role.
     const icon = screen.getByTestId("bannerID-banner-icon");
     expect(icon).toBeInTheDocument();
+
+    expect(screen.getByTitle("Banner neutral icon")).toHaveAttribute(
+      "data-file-name",
+      "SvgErrorOutline"
+    );
   });
 
   it("renders a custom Icon component", () => {
@@ -100,6 +105,11 @@ describe("Banner", () => {
 
     const customIcon = screen.getByTestId("custom-icon");
     expect(customIcon).toBeInTheDocument();
+
+    expect(screen.getByTitle("check icon")).toHaveAttribute(
+      "data-file-name",
+      "SvgCheck"
+    );
   });
 
   it("renders with an aria-label attribute", () => {
@@ -121,6 +131,10 @@ describe("Banner", () => {
 
     expect(screen.getByTestId("bannerID-dismissible-icon")).toBeInTheDocument();
     expect(screen.getByTitle("Banner close icon")).toBeInTheDocument();
+    expect(screen.getByTitle("Banner close icon")).toHaveAttribute(
+      "data-file-name",
+      "SvgClose"
+    );
   });
 
   it("renders the informative Banner type", () => {
@@ -352,5 +366,16 @@ describe("Banner", () => {
     );
 
     expect(container.querySelector("aside")).toBe(ref.current);
+  });
+
+  it("renders string content as div with dangerouslySetInnerHTML", () => {
+    utils.rerender(
+      <Banner
+        id="bannerID"
+        content="<p data-testid='dangerous'>Dangerous HTML</p>"
+      />
+    );
+
+    expect(screen.getByTestId("dangerous")).toHaveTextContent("Dangerous HTML");
   });
 });

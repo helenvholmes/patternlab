@@ -158,7 +158,7 @@ export interface InputProps
   pattern?: string;
   /** Populates the placeholder for the input/textarea elements */
   placeholder?: string;
-  /** Allows the '(Required)' text to be changed for language purposes
+  /** Allows the '(required)' text to be changed for language purposes
    * Note: Parenthesis will be added automatically by the component */
   requiredLabelText?: string;
   /** Offers the ability to hide the helper/invalid text. */
@@ -166,7 +166,7 @@ export interface InputProps
   /** Offers the ability to show the label onscreen or hide it. Refer to the
    * `labelText` property for more information. */
   showLabel?: boolean;
-  /** Whether or not to display the "(Required)" text in the label text.
+  /** Whether or not to display the "(required)" text in the label text.
    * True by default. */
   showRequiredLabel?: boolean;
   /** The amount to increase or decrease when using the number type. */
@@ -291,7 +291,7 @@ export const TextInput: ChakraComponent<
         setFinalValue("");
         isClearableCallback && isClearableCallback();
         // Set focus back to the input element.
-        (finalRef as any).current.focus();
+        closedRef.current?.focus();
       };
       let finalIsInvalid = isInvalid;
       let fieldOutput;

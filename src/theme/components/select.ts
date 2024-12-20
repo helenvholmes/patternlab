@@ -24,7 +24,7 @@ const select = (labelPosition: string) => ({
   fontSize: "desktop.body.body2",
   minHeight: { base: defaultElementSizes.mobileFieldHeight, md: "auto" },
   paddingTop: "inset.narrow",
-  paddingEnd: "inset.extrawide",
+  paddingEnd: "2.5rem",
   paddingBottom: "inset.narrow",
   paddingStart: "inset.default",
   flex: labelPosition === "inline" ? { md: "1" } : null,

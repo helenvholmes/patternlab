@@ -12,7 +12,7 @@ import Link from "../Link/Link";
 | Component Version | DS Version |
 | ----------------- | ---------- |
 | Added             | `0.0.10`   |
-| Latest            | `3.0.0`    |
+| Latest            | `3.3.2`    |
 
 ## Table of Contents
 
@@ -97,7 +97,9 @@ Resources:
 ## HTML and JSX Children
 
 The `HelperErrorText` component can render any HTML element or React component
-through the `text` prop.
+through the `text` prop. Note that the `text` value is always wrapped in a `Box` with
+margin top, so if the elements you pass have margin or padding on top, the text may appear
+to have too much space.
 
 <Canvas of={HelperErrorTextStories.HTMLChildren} />
 

@@ -10,8 +10,17 @@ import { ChangelogData } from "../../utils/ComponentChangelogTable";
 
 export const changelogData: ChangelogData[] = [
   {
-    date: "Prerelease",
-    version: "Prerelease",
+    date: "2024-08-29",
+    version: "3.3.0",
+    type: "Update",
+    affects: ["Functionality"],
+    notes: [
+      "Adds `customLinkComponent` and `linkProps` props to allow clientside routing.",
+    ],
+  },
+  {
+    date: "2024-07-03",
+    version: "3.1.7",
     type: "Update",
     affects: ["Styles"],
     notes: ["Adds `digitalCollections` color variant."],

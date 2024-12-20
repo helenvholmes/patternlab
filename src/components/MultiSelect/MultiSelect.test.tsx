@@ -40,6 +40,23 @@ const disabledItems = [
   { id: "furniture", name: "Furniture", isDisabled: false },
 ];
 
+const itemsWithCount = [
+  { id: "dogs", name: "Dogs", itemCount: 5 },
+  { id: "cats", name: "Cats", itemCount: 11 },
+  { id: "cars", name: "Cars", itemCount: 7 },
+  {
+    id: "colors",
+    name: "Colors",
+    itemCount: 9,
+    children: [
+      { id: "red", name: "Red", itemCount: 8 },
+      { id: "blue", name: "Blue", itemCount: 1 },
+    ],
+  },
+  { id: "plants", name: "Plants", itemCount: 4 },
+  { id: "furniture", name: "Furniture", itemCount: 6 },
+];
+
 const defaultItemsVisible = 5;
 
 const MultiSelectTestComponent = ({
@@ -78,7 +95,7 @@ const MultiSelectTestComponent = ({
   );
 };
 
-describe.skip("MultiSelect Accessibility", () => {
+describe("MultiSelect Accessibility", () => {
   let selectedTestItems;
   beforeEach(() => (selectedTestItems = {}));
 
@@ -101,7 +118,7 @@ describe.skip("MultiSelect Accessibility", () => {
   });
 });
 
-describe.skip("MultiSelect", () => {
+describe("MultiSelect", () => {
   beforeAll(() => {
     window.resizeTo = function resizeTo(width, height) {
       Object.assign(this, {
@@ -134,7 +151,7 @@ describe.skip("MultiSelect", () => {
     expect(container.querySelector("#multiselect-test-id")).toBeInTheDocument();
   });
 
-  it("should initially render with a given button text ", () => {
+  it("should initially render with a given button text", () => {
     render(
       <MultiSelect
         id="multiselect-test-id"
@@ -149,8 +166,29 @@ describe.skip("MultiSelect", () => {
         onClear={() => null}
       />
     );
-    expect(screen.getByText("Multiselect button text").textContent);
-    expect(screen.getByRole("button")).toBeInTheDocument();
+    expect(
+      screen.getByRole("button", { name: /Multiselect button text/ })
+    ).toBeInTheDocument();
+  });
+
+  it("the CheckboxGroup legend should have the same button text", () => {
+    const { container } = render(
+      <MultiSelect
+        id="multiselect-test-id"
+        buttonText="Multiselect button text"
+        isDefaultOpen={false}
+        isSearchable={false}
+        isBlockElement={false}
+        defaultItemsVisible={defaultItemsVisible}
+        items={items}
+        selectedItems={selectedTestItems}
+        onChange={() => null}
+        onClear={() => null}
+      />
+    );
+    expect(container.querySelector("legend")).toHaveTextContent(
+      "Multiselect button text"
+    );
   });
 
   it("should initially render with a closed menu when the isDefaultOpen is omitted or set to false", () => {
@@ -195,6 +233,31 @@ describe.skip("MultiSelect", () => {
     expect(screen.getByLabelText("Cars")).toBeDisabled();
     expect(screen.getByLabelText("Red")).toBeDisabled();
     expect(screen.getByLabelText("Blue")).toBeDisabled();
+  });
+
+  it("should initially render with open menu and items with item count", () => {
+    render(
+      <MultiSelect
+        id="multiselect-test-id"
+        buttonText="Multiselect button text"
+        isDefaultOpen={true}
+        isSearchable={false}
+        isBlockElement={false}
+        defaultItemsVisible={defaultItemsVisible}
+        items={itemsWithCount}
+        selectedItems={selectedTestItems}
+        onChange={() => null}
+        onClear={() => null}
+      />
+    );
+    expect(screen.getByRole("button").getAttribute("aria-expanded")).toEqual(
+      "true"
+    );
+    expect(screen.getAllByRole("checkbox")).toHaveLength(8);
+    expect(screen.getByLabelText("Dogs5")).toBeInTheDocument();
+    expect(screen.getByLabelText("Cats11")).toBeInTheDocument();
+    expect(screen.getByLabelText("Cars7")).toBeInTheDocument();
+    expect(screen.getByLabelText("Red8")).toBeInTheDocument();
   });
 
   it("should initially render with open menu if isDefaultOpen prop is true", () => {

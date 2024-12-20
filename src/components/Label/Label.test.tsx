@@ -44,13 +44,13 @@ describe("Label", () => {
     expect(screen.getByText("Cupcakes")).toBeInTheDocument();
   });
 
-  it("renders the '(Required)' helper text", () => {
+  it("renders the '(required)' helper text", () => {
     const { rerender } = render(
       <Label id="label" htmlFor="some-input-id">
         <span>Cupcakes</span>
       </Label>
     );
-    expect(screen.queryByText(/Required/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/required/i)).not.toBeInTheDocument();
 
     rerender(
       <Label id="label" htmlFor="some-input-id" isRequired>
@@ -58,17 +58,17 @@ describe("Label", () => {
       </Label>
     );
 
-    expect(screen.queryByText(/Required/i)).toBeInTheDocument();
+    expect(screen.queryByText(/required/i)).toBeInTheDocument();
   });
 
-  it("renders a custom '(Required)' helper text when provided", () => {
+  it("renders a custom '(required)' helper text when provided", () => {
     const { rerender } = render(
       <Label id="label" htmlFor="some-input-id" requiredLabelText="Obligatoire">
         <span>Cupcakes</span>
       </Label>
     );
 
-    expect(screen.queryByText(/Required/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/required/i)).not.toBeInTheDocument();
     expect(screen.queryByText(/Obligatoire/i)).not.toBeInTheDocument();
 
     rerender(
@@ -82,7 +82,7 @@ describe("Label", () => {
       </Label>
     );
 
-    expect(screen.queryByText(/Required/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/required/i)).not.toBeInTheDocument();
     expect(screen.queryByText(/Obligatoire/i)).toBeInTheDocument();
   });
 

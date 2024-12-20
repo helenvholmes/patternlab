@@ -1,14 +1,21 @@
 import { Box, VStack } from "@chakra-ui/react";
 import type { Meta, StoryObj } from "@storybook/react";
-
 import Breadcrumbs, { breadcrumbTypeArray } from "./Breadcrumbs";
 import Heading from "../Heading/Heading";
+import Link from "../Link/Link";
 
 const breadcrumbsData = [
   { url: "#", text: "Parent" },
   { url: "#", text: "Child" },
   { url: "#", text: "Grandchild" },
 ];
+
+const linkPropsBreadcrumbsData = [
+  { url: "#", text: "Parent", linkProps: { target: "_top" } },
+  { url: "#", text: "Child", linkProps: { target: "_top" } },
+  { url: "#", text: "Grandchild", linkProps: { target: "_top" } },
+];
+
 const breadcrumbsLongTextData = [
   { url: "#", text: "Parent with a Long Name" },
   { url: "#", text: "Child with an Even Longer Name" },
@@ -27,6 +34,7 @@ const meta: Meta<typeof Breadcrumbs> = {
   component: Breadcrumbs,
   argTypes: {
     breadcrumbsData: { control: false },
+    customLinkComponent: { control: false },
     breadcrumbsType: {
       table: { defaultValue: { summary: "whatsOn" } },
       control: {
@@ -51,6 +59,7 @@ export const WithControls: Story = {
     breadcrumbsData,
     breadcrumbsType: "whatsOn",
     className: undefined,
+    customLinkComponent: undefined,
     id: "breadcrumbs-id",
   },
   parameters: {
@@ -66,6 +75,14 @@ export const WithControls: Story = {
 export const LongText: Story = {
   render: () => <Breadcrumbs breadcrumbsData={breadcrumbsLongTextData} />,
 };
+export const CustomLinkComponent: Story = {
+  render: () => (
+    <Breadcrumbs
+      customLinkComponent={Link}
+      breadcrumbsData={linkPropsBreadcrumbsData}
+    />
+  ),
+};
 export const ColorVariations: Story = {
   render: () => (
     <VStack align="stretch" spacing="l">
@@ -76,6 +93,7 @@ export const ColorVariations: Story = {
         <Breadcrumbs
           breadcrumbsData={breadcrumbsData}
           breadcrumbsType="blogs"
+          customLinkComponent={Link}
         />
       </Box>
       <Box>

@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FilterBarPopup renders the UI snapshots correctly 1`] = `
+<div
+  className="css-1xdhyk6"
+  id="filter-bar-defaultFilterBarNoButtons"
+>
+  <button
+    className="chakra-button css-1llumfr"
+    id="filter-bar-defaultFilterBarNoButtons-show-filters"
+    onClick={[Function]}
+    type="button"
+  >
+    Show filters
+  </button>
+</div>
+`;
+
+exports[`FilterBarPopup renders the UI snapshots correctly 2`] = `
+<div
+  className="css-1xdhyk6"
+  id="filter-bar-filterBarWithClearAllButton"
+>
+  <button
+    className="chakra-button css-1llumfr"
+    id="filter-bar-filterBarWithClearAllButton-show-filters"
+    onClick={[Function]}
+    type="button"
+  >
+    Show filters
+  </button>
+</div>
+`;
+
+exports[`FilterBarPopup renders the UI snapshots correctly 3`] = `
+<div
+  className="css-1xdhyk6"
+  id="filter-bar-filterBarWithSubmitAllButton"
+>
+  <button
+    className="chakra-button css-1llumfr"
+    id="filter-bar-filterBarWithSubmitAllButton-show-filters"
+    onClick={[Function]}
+    type="button"
+  >
+    Show filters
+  </button>
+</div>
+`;
+
+exports[`FilterBarPopup renders the UI snapshots correctly 4`] = `
+<div
+  className="css-1xdhyk6"
+  id="filter-bar-filterBarWithButtons"
+>
+  <button
+    className="chakra-button css-1llumfr"
+    id="filter-bar-filterBarWithButtons-show-filters"
+    onClick={[Function]}
+    type="button"
+  >
+    Show filters
+  </button>
+</div>
+`;

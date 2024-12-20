@@ -4,7 +4,7 @@ import React, { forwardRef } from "react";
 import Link from "../Link/Link";
 import List from "../List/List";
 
-interface SkipNavigationProps {
+export interface SkipNavigationProps {
   /** Additional CSS class name to render in the `nav` element. */
   className?: string;
   /** ID that other components can cross reference for accessibility purposes */

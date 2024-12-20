@@ -12,19 +12,21 @@ import { changelogData } from "./tableChangelogData";
 | Component Version | DS Version |
 | ----------------- | ---------- |
 | Added             | `0.25.9`   |
-| Latest            | `3.1.2`    |
+| Latest            | `3.4.2`    |
 
 ## Table of Contents
 
 - {<Link href="#overview" target="_self">Overview</Link>}
 - {<Link href="#component-props" target="_self">Component Props</Link>}
 - {<Link href="#accessibility" target="_self">Accessibility</Link>}
-- {<Link href="#title" target="_self">Title</Link>}
+- {<Link href="#title-text" target="_self">Title Text</Link>}
 - {<Link href="#row-dividers" target="_self">Row Dividers</Link>}
 - {<Link href="#row-headers" target="_self">Row Headers</Link>}
 - {<Link href="#custom-header-colors" target="_self">Custom Header Colors</Link>}
-- {<Link href="#jsx-elements" target="_self">JSX Elements</Link>}
+- {<Link href="#custom-column-styles" target="_self">Custom Column Styles</Link>}
+- {<Link href="#horizontal-scrolling" target="_self">Horizontal Scrolling</Link>}
 - {<Link href="#responsive-mobile-layout" target="_self">Responsive Mobile Layout</Link>}
+- {<Link href="#jsx-elements" target="_self">JSX Elements</Link>}
 - {<Link href="#changelog" target="_self">Changelog</Link>}
 
 ## Overview
@@ -61,6 +63,10 @@ Header cells are visually different from the standard table data. Use the
 table has two levels of headers (such as two levels of horizontal headers), break
 the data into two separate tables.
 
+When horizontal scrolling is enabled for the `Table` component, the scrolling
+element (the `table` container) should have a proper role defined using
+`role="region"` and it should be set as focusable using `tabindex="0"`.
+
 Resources:
 
 - [W3C Tables Tutorial](https://www.w3.org/WAI/tutorials/tables/)
@@ -68,11 +74,43 @@ Resources:
 - [MDN HTML table advance features and accessibility](https://developer.mozilla.org/en-US/docs/Learn/HTML/Tables/Advanced)
 - [Chakra UI Table](https://chakra-ui.com/docs/components/data-display/table)
 
-## Title
+## Title Text
 
-Use the `titleText` prop to add a title to the table.
+The `titleText` prop can be used to add a visible title above the table or to
+add an `aria-label` attribute. If the `titleText` prop is passed, by default a
+visibel header will be rendered.
 
-<Canvas of={TableStories.Title} />
+**IMPORTANT:** While the `titleText` prop is not required, it is recommended to
+always use this prop for better accessibility.
+
+<Source
+  code={`<Table
+  columnHeaders={columnHeaders}
+  id="table-title-text"
+  tableData={tableData}
+  titleText="Table with visible title"
+/>`}
+  language="jsx"
+/>
+
+<Canvas of={TableStories.ShowTitleText} />
+
+Use the `showTitleText` prop to control the visibility of the title. When
+`showTitleText` is set to `false`, the `aria-label` attribute will be applied
+instead of rendering the visisble header.
+
+<Source
+  code={`<Table
+  columnHeaders={columnHeaders}
+  id="table-aria-label"
+  showTitleText={false}
+  tableData={tableData}
+  titleText="Table with aria-label"
+/>`}
+  language="jsx"
+/>
+
+<Canvas of={TableStories.HideTitleText} />
 
 ## Row Dividers
 
@@ -83,7 +121,7 @@ Use the `showRowDividers` prop to render a divider between each row.
 ## Row Headers
 
 Use the `useRowHeaders` prop to render the first cell in every row as a header.
-Notice that they turn bold.
+Notice that they are now bold and have a background color.
 
 <Canvas of={TableStories.RowHeaders} />
 
@@ -94,6 +132,97 @@ and `columnHeadersTextColor` props. Note that the colors need to have sufficient
 color contrast.
 
 <Canvas of={TableStories.CustomHeaderColors} />
+
+## Custom Column Styles
+
+The `columnStyles` prop can be used to apply custom styles to to each column.
+The most column use case for this is to control the column widths and/or text
+alignment for each column. Any style prop can be passed using the `columnStyles`
+prop, but it is recommended to use the default styles of the `Table` component
+as much as possible and to avoid excessive style overrides.
+
+### Native Column Widths
+
+Column widths in HTML `<table>` elements can be a bit confusing and
+unpredictable when relying on the default styles. Default table styles allow
+column widths to resize enough to let a table fit fully within a given width.
+With that treatment, all of the table content will be visible, but often the
+resizing is unbalanced and text content within the columns becomes unreadable.
+
+<Canvas of={TableStories.NativeColumnStyles} />
+
+### Custom Column Widths
+
+Using the `columnStyles` prop, specific `width` and `min-width` values can be
+set for each column in a table. Additional styles may also be set to format
+table content as needed. Using custom styles will allow consuming apps to format
+tables for better UX.
+
+For improved UX, it is recommended to apply a `min-width` value of at least
+`"200px"` to each column in a table.
+
+<Source
+  code={`const columnStyles = [
+  { minWidth: "200px", width: "15%" },
+  { minWidth: "400px", width: "auto" },
+  { minWidth: "200px", width: "15%", textAlign: "right" },
+];`}
+  language="jsx"
+/>
+
+**IMPORTANT:** The length of the array that makes up the `columnStyles` prop
+must match the length of the arrays that make up the `tableData` and
+`columnHeaders` props. If a column does not require custom styles, an empty
+object must be included in the `columnStyles` array. See the `With Empty Style Object` example below.
+
+<Source
+  code={`const columnStyles = [
+  { minWidth: "200px", width: "15%" },
+  { },
+  { minWidth: "200px", width: "15%", textAlign: "right" },
+];`}
+  language="jsx"
+/>
+
+<Canvas of={TableStories.CustomColumnStyles} />
+
+## Horizontal Scrolling
+
+When using `columnStyles`, if the `min-width` values cause a table to exceed the
+width of its parent element, the `isScrollable` prop can be used to enable
+horizontal scrolling. Additionally, if `useRowHeaders` is true in that same
+situation, the first column will remain fixed as the subsequent columns scroll
+beneath it.
+
+<Source
+  code={`const columnStyles = [
+  { minWidth: "200px", width: "15%" },
+  { minWidth: "200px", width: "15%" },
+  { minWidth: "200px", width: "15%" },
+  { minWidth: "500px", width: "auto" },
+  { minWidth: "500px", width: "auto" },
+  { minWidth: "200px", width: "15%", textAlign: "right" },
+];`}
+  language="jsx"
+/>
+
+<Canvas of={TableStories.HorizontalScrolling} />
+
+## Responsive Mobile Layout
+
+If the `isScrollable` prop is true, the layout of the `Table` component is the
+same for all viewports and horizontal scrolling will always be enabled. The only
+difference between desktop and mobile views is that the row headers column will
+not be locked in place for mobile viewports.
+
+If the `isScrollable` prop is false (or omitted), the `Table` component layout
+will be responsive and the standard horizontal layout of an HTML table will be
+converted to a stacked vertical layout, with each "row" visually separated by a
+prominent horizontal rule. Despite the significant visual changes in the
+responsive layout, all component props are still functional.
+
+To view and test this in Storybook, go to the [With Controls](../?path=/story/components-page-layout-table--with-controls)
+Story and change the viewport in the Storybook toolbar at the top of the page.
 
 ## JSX Elements
 
@@ -135,17 +264,6 @@ export const charactersData = [
 />
 
 <Canvas of={TableStories.JSXElements} />
-
-## Responsive Mobile Layout
-
-The `Table` component is responsive. Please note that for a mobile viewport the
-standard horizontal layout of an HTML table is converted to a stacked vertical
-layout, with each "row" visually separated by a prominent horizontal rule. Despite
-the significant visual changes in the responsive layout, all component props are
-still functional.
-
-To view and test this in Storybook, go to the [With Controls](../?path=/story/components-page-layout-table--with-controls)
-Story and change the viewport in the Storybook toolbar at the top of the page.
 
 ## Changelog
 

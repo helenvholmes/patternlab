@@ -17,7 +17,7 @@ const meta: Meta<typeof FeaturedContent> = {
     className: { control: false },
     id: { control: false },
     isFullWidth: {
-      table: { defaultValue: { summary: false } },
+      table: { defaultValue: { summary: "false" } },
     },
     imageProps: { disable: true },
     "imageProps.alt": {

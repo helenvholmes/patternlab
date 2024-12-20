@@ -12,7 +12,7 @@ import { changelogData } from "./menuChangelogData";
 | Component Version | DS Version |
 | ----------------- | ---------- |
 | Added             | `3.0.0`    |
-| Latest            | `3.0.0`    |
+| Latest            | `3.3.0`    |
 
 ## Table of Contents
 
@@ -20,6 +20,7 @@ import { changelogData } from "./menuChangelogData";
 - {<Link href="#component-props" target="_self">Component Props</Link>}
 - {<Link href="#accessibility" target="_self">Accessibility</Link>}
 - {<Link href="#menu-types" target="_self">Menu Types</Link>}
+- {<Link href="#menu-label" target="_self">Menu Label</Link>}
 - {<Link href="#menu-content" target="_self">Menu Content</Link>}
 - {<Link href="#menu-highlight-colors" target="_self">Menu Highlight Colors</Link>}
 - {<Link href="#changelog" target="_self">Changelog</Link>}
@@ -58,6 +59,17 @@ There are four types: button, text button, icon (with container), and icon (with
 Use the icon type when there is limited space such as a table or on mobile.
 
 <Canvas of={MenuStories.MenuTypes} />
+
+## Menu Label
+
+The default label of the menu will be `labelText`. With `showSelectionAsLabel` enabled, the selected item will then display as the menu's label. This is useful when the choice
+should be displayed after selection, like choosing sort/filter criteria, or if an option needs to be selected and displayed when the page first loads.
+
+`labelText` is still required even if `showSelectionAsLabel` is true, because it is used for the `aria-label`.
+
+**IMPORTANT:** A Menu with `showSelectionAsLabel` enabled should be accompanied by nearby directions ("Sort By", "Select theme", etc.) so that the function of the menu is clear.
+
+<Canvas of={MenuStories.MenuLabel} />
 
 ## Menu Content
 

@@ -133,7 +133,11 @@ exports[`Radio Button renders the UI snapshot correctly 1`] = `
     className="css-1xdhyk6"
     data-isinvalid={false}
     id="column-helperErrorText"
-  />
+  >
+    <div
+      className="css-0"
+    />
+  </div>
 </fieldset>
 `;
 
@@ -270,7 +274,11 @@ exports[`Radio Button renders the UI snapshot correctly 2`] = `
     className="css-1xdhyk6"
     data-isinvalid={false}
     id="row-helperErrorText"
-  />
+  >
+    <div
+      className="css-0"
+    />
+  </div>
 </fieldset>
 `;
 
@@ -407,7 +415,11 @@ exports[`Radio Button renders the UI snapshot correctly 3`] = `
     className="css-1xdhyk6"
     data-isinvalid={false}
     id="noLabel-helperErrorText"
-  />
+  >
+    <div
+      className="css-0"
+    />
+  </div>
 </fieldset>
 `;
 
@@ -690,7 +702,11 @@ exports[`Radio Button renders the UI snapshot correctly 5`] = `
     className="css-1xdhyk6"
     data-isinvalid={false}
     id="invalidText-helperErrorText"
-  />
+  >
+    <div
+      className="css-0"
+    />
+  </div>
 </fieldset>
 `;
 
@@ -829,7 +845,11 @@ exports[`Radio Button renders the UI snapshot correctly 6`] = `
     className="css-1xdhyk6"
     data-isinvalid={false}
     id="noRequiredLabel-helperErrorText"
-  />
+  >
+    <div
+      className="css-0"
+    />
+  </div>
 </fieldset>
 `;
 
@@ -841,7 +861,7 @@ exports[`Radio Button renders the UI snapshot correctly 7`] = `
   <legend>
     required
     <span>
-       (Required)
+       (required)
     </span>
   </legend>
   <div
@@ -971,7 +991,11 @@ exports[`Radio Button renders the UI snapshot correctly 7`] = `
     className="css-1xdhyk6"
     data-isinvalid={false}
     id="required-helperErrorText"
-  />
+  >
+    <div
+      className="css-0"
+    />
+  </div>
 </fieldset>
 `;
 
@@ -1116,7 +1140,11 @@ exports[`Radio Button renders the UI snapshot correctly 8`] = `
     className="css-1xdhyk6"
     data-isinvalid={true}
     id="invalid-helperErrorText"
-  />
+  >
+    <div
+      className="css-0"
+    />
+  </div>
 </fieldset>
 `;
 
@@ -1261,7 +1289,11 @@ exports[`Radio Button renders the UI snapshot correctly 9`] = `
     className="css-1xdhyk6"
     data-isinvalid={false}
     id="disabled-helperErrorText"
-  />
+  >
+    <div
+      className="css-0"
+    />
+  </div>
 </fieldset>
 `;
 
@@ -1422,7 +1454,11 @@ exports[`Radio Button renders the UI snapshot correctly 10`] = `
     className="css-1xdhyk6"
     data-isinvalid={false}
     id="jsxLabels-helperErrorText"
-  />
+  >
+    <div
+      className="css-0"
+    />
+  </div>
 </fieldset>
 `;
 
@@ -1559,7 +1595,11 @@ exports[`Radio Button renders the UI snapshot correctly 11`] = `
     className="css-1xdhyk6"
     data-isinvalid={false}
     id="chakra-helperErrorText"
-  />
+  >
+    <div
+      className="css-0"
+    />
+  </div>
 </fieldset>
 `;
 
@@ -1697,6 +1737,10 @@ exports[`Radio Button renders the UI snapshot correctly 12`] = `
     className="css-1xdhyk6"
     data-isinvalid={false}
     id="props-helperErrorText"
-  />
+  >
+    <div
+      className="css-0"
+    />
+  </div>
 </fieldset>
 `;

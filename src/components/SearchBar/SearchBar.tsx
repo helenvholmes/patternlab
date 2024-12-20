@@ -14,6 +14,7 @@ import Select, { SelectProps as InitialSelectProps } from "../Select/Select";
 import TextInput, {
   InputProps as InitialInputProps,
 } from "../TextInput/TextInput";
+import useNYPLBreakpoints from "../../hooks/useNYPLBreakpoints";
 
 interface SelectOptionsProps {
   text: string;
@@ -138,16 +139,11 @@ export const SearchBar: ChakraComponent<
     const finalAriaLabel = footnote ? `${labelText} - ${footnote}` : labelText;
     const inputPlaceholder = textInputProps?.placeholder || "Search terms";
     const textInputPlaceholder = `${inputPlaceholder} ${
-      isRequired ? "(Required)" : ""
+      isRequired ? "(required)" : ""
     }`;
     const buttonType = noBrandButtonType ? "noBrand" : "primary";
-    const searchBarButtonStyles = {
-      borderLeftRadius: "none",
-      borderRightRadius: { base: "none", md: "sm" },
-      lineHeight: "1.70",
-      marginBottom: "auto",
-      maxWidth: { base: "unset", md: "80px" },
-    };
+    const { isLargerThanMobile } = useNYPLBreakpoints();
+    const iconSize = isLargerThanMobile ? "small" : "medium";
 
     if (!id) {
       console.warn(
@@ -193,26 +189,32 @@ export const SearchBar: ChakraComponent<
         textInputType={selectElem ? "searchBarSelect" : "searchBar"}
         type="text"
         value={textInputProps?.value}
+        sx={{
+          "div > input": {
+            borderLeftRadius: isLargerThanMobile && selectElem ? 0 : "sm",
+          },
+        }}
         {...stateProps}
       />
     );
     // Render the `Button` component.
     const buttonElem = (
       <Button
+        className="searchButton"
         buttonType={buttonType}
         id={`searchbar-button-${id}`}
         isDisabled={isDisabled}
         onClick={buttonOnClick}
         type="submit"
-        sx={searchBarButtonStyles}
+        aria-label={isLargerThanMobile ? "" : "Search"}
       >
         <Icon
           align="left"
           id={`searchbar-icon-${id}`}
           name="search"
-          size="small"
+          size={iconSize}
         />
-        Search
+        <span>Search</span>
       </Button>
     );
     // If a custom input element was passed, use that element
@@ -225,7 +227,9 @@ export const SearchBar: ChakraComponent<
         headingText={headingText}
         helperText={helperText}
         id={id}
-        invalidText={invalidText}
+        invalidText={
+          invalidText ? `There was a problem. ${invalidText}` : undefined
+        }
         isInvalid={isInvalid}
         ref={ref}
         {...rest}
@@ -242,8 +246,10 @@ export const SearchBar: ChakraComponent<
           __css={styles}
         >
           {selectElem}
-          {textInputElem}
-          {buttonElem}
+          <Box sx={{ display: "flex", flexDirection: "row", width: "100%" }}>
+            {textInputElem}
+            {buttonElem}
+          </Box>
         </Box>
       </ComponentWrapper>
     );

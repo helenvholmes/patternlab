@@ -3,11 +3,7 @@ import Heading from "../Heading/Heading";
 import type { Meta, StoryObj } from "@storybook/react";
 
 import Checkbox from "./Checkbox";
-
-const argsBooleanType = (defaultValue = false) => ({
-  control: { type: "boolean" },
-  table: { defaultValue: { summary: defaultValue } },
-});
+import { argsBooleanType } from "../../helpers/storybookUtils";
 
 const meta: Meta<typeof Checkbox> = {
   title: "Components/Form Elements/Checkbox",
@@ -25,8 +21,8 @@ const meta: Meta<typeof Checkbox> = {
     labelText: { control: { type: "text" } },
     name: { control: { type: "text" } },
     onChange: { control: false },
-    showHelperInvalidText: argsBooleanType(true),
-    showLabel: argsBooleanType(true),
+    showHelperInvalidText: argsBooleanType("true"),
+    showLabel: argsBooleanType("true"),
     value: { control: { type: "text" } },
   },
 };

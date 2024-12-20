@@ -134,7 +134,7 @@ describe("Slider", () => {
       expect(slider).toHaveAttribute("aria-label", "Label - slider handle");
     });
 
-    it("renders the '(Required)' text in the label or hides it", () => {
+    it("renders the '(required)' text in the label or hides it", () => {
       const { rerender } = render(
         <Slider
           id="slider"
@@ -145,7 +145,7 @@ describe("Slider", () => {
           isRequired
         />
       );
-      expect(screen.getByText(/Required/i)).toBeInTheDocument();
+      expect(screen.getByText(/required/i)).toBeInTheDocument();
 
       rerender(
         <Slider
@@ -158,7 +158,7 @@ describe("Slider", () => {
           showRequiredLabel={false}
         />
       );
-      expect(screen.queryByText(/Required/i)).not.toBeInTheDocument();
+      expect(screen.queryByText(/required/i)).not.toBeInTheDocument();
     });
 
     it("hides the label but adds it as an aria-label attribute", () => {

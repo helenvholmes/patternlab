@@ -11,7 +11,7 @@ import { changelogData } from "./selectChangelogData";
 | Component Version | DS Version |
 | ----------------- | ---------- |
 | Added             | `0.7.0`    |
-| Latest            | `3.1.6`    |
+| Latest            | `3.3.2`    |
 
 ## Table of Contents
 
@@ -90,7 +90,7 @@ it can be displayed above (the default) or inline with the select input using th
 width exceeds the `--nypl-breakpoint-medium` breakpoint, or 768px. When `showLabel`
 is set to `false`, an `aria-label` attribute is added to the select input to maintain
 accessibility. If the component needs to be required, the `showRequiredLabel` prop
-can be used to show or hide the "Required" text within the `label` element.
+can be used to show or hide the "required" text within the `label` element.
 
 <Canvas of={SelectStories.LabellingVariations} />
 
@@ -151,7 +151,8 @@ export function SelectControlledExample() {
 If your application uses uncontrolled components, you can pass a React `ref`
 prop to the DS Select component to get the selected value from the DOM. Note
 that this example uses a `Form` and a `Button` to submit the form, only then
-will the value be available.
+will the value be available. Additionally, you may pass a `defaultValue` prop
+to set the component's initial value.
 
 Try it out: open up the browser's console to see new values being logged on
 each change.
@@ -168,6 +169,7 @@ export function SelectUncontrolledExample() {
     <Form id="form">
       <FormField>
         <Select
+          defaultValue="white"
           helperText="This is the helper text."
           id="example-2"
           labelText="What is your favorite color?"

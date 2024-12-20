@@ -17,7 +17,7 @@ const meta: Meta<typeof Slider> = {
     className: { control: false },
     defaultValue: {
       control: false,
-      table: { defaultValue: { summary: 0 } },
+      table: { defaultValue: { summary: "0" } },
     },
     helperText: { control: "text" },
     id: { control: false },
@@ -27,17 +27,17 @@ const meta: Meta<typeof Slider> = {
     isRangeSlider: argsBooleanType(),
     isRequired: argsBooleanType(),
     labelText: { control: "text" },
-    max: { control: "number", table: { defaultValue: { summary: 100 } } },
-    min: { control: "number", table: { defaultValue: { summary: 0 } } },
+    max: { control: "number", table: { defaultValue: { summary: "100" } } },
+    min: { control: "number", table: { defaultValue: { summary: "0" } } },
     name: { control: false },
     onChange: { control: false },
     onChangeEnd: { control: false },
-    showBoxes: argsBooleanType(true),
-    showHelperInvalidText: argsBooleanType(true),
-    showLabel: argsBooleanType(true),
-    showRequiredLabel: argsBooleanType(true),
-    showValues: argsBooleanType(true),
-    step: { control: "number", table: { defaultValue: { summary: 1 } } },
+    showBoxes: argsBooleanType("true"),
+    showHelperInvalidText: argsBooleanType("true"),
+    showLabel: argsBooleanType("true"),
+    showRequiredLabel: argsBooleanType("true"),
+    showValues: argsBooleanType("true"),
+    step: { control: "number", table: { defaultValue: { summary: "1" } } },
     value: { control: false },
   },
 };
@@ -78,7 +78,7 @@ export const WithControls: Story = {
     isRangeSlider: {
       control: false,
       table: {
-        defaultValue: { summary: false },
+        defaultValue: { summary: "false" },
       },
     },
   },
@@ -140,7 +140,7 @@ export const RangeSliderWithControls: Story = {
     isRangeSlider: {
       control: false,
       table: {
-        defaultValue: { summary: false },
+        defaultValue: { summary: "false" },
       },
     },
   },

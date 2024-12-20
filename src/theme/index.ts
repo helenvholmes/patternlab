@@ -25,7 +25,19 @@ import FeedbackBox from "./components/feedbackBox";
 import FeaturedContent from "./components/featuredContent";
 import Fieldset from "./components/fieldset";
 import FilterBar from "./components/filterBar";
+import FilterBarPopup from "./components/filterBarPopup";
 import Heading from "./components/heading";
+import Header from "./components/header";
+import HeaderLogin from "./components/headerLogin";
+import HeaderLoginButton from "./components/headerLoginButton";
+import HeaderLowerNav from "./components/headerLowerNav";
+import HeaderMobileIconNav from "./components/headerMobileIconNav";
+import HeaderMobileNav from "./components/headerMobileNav";
+import HeaderMobileNavButton from "./components/headerMobileNavButton";
+import HeaderSearchButton from "./components/headerSearchButton";
+import HeaderSearchForm from "./components/headerSearchForm";
+import HeaderSitewideAlerts from "./components/headerSitewideAlerts";
+import HeaderUpperNav from "./components/headerUpperNav";
 import HelperErrorText from "./components/helperErrorText";
 import Hero from "./components/hero";
 import HorizontalRule from "./components/horizontalRule";
@@ -55,6 +67,7 @@ import StatusBadge from "./components/statusBadge";
 import StructuredContent from "./components/structuredContent";
 import StyledList from "./components/styledList";
 import SocialMediaLinks from "./components/socialmedialinks";
+import { SubNav, SubNavChildren } from "./components/subnav";
 import Tabs from "./components/tabs";
 import TagSetStyles from "./components/tagSet";
 import TemplateStyles from "./components/template";
@@ -111,7 +124,19 @@ const theme: any = {
     FeaturedContent,
     Fieldset,
     FilterBar,
+    FilterBarPopup,
     Heading,
+    Header,
+    HeaderLogin,
+    HeaderLoginButton,
+    HeaderLowerNav,
+    HeaderMobileIconNav,
+    HeaderMobileNav,
+    HeaderMobileNavButton,
+    HeaderSearchButton,
+    HeaderSearchForm,
+    HeaderSitewideAlerts,
+    HeaderUpperNav,
     HelperErrorText,
     Hero,
     HorizontalRule,
@@ -144,6 +169,8 @@ const theme: any = {
     StructuredContent,
     StyledList,
     SocialMediaLinks,
+    SubNav,
+    SubNavChildren,
     Tabs,
     CustomTable,
     ...TagSetStyles,

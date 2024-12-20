@@ -408,7 +408,7 @@ exports[`Slider Range Slider renders the UI snapshot correctly 3`] = `
   >
     Label
     <span>
-       (Required)
+       (required)
     </span>
   </label>
   <div
@@ -1497,7 +1497,7 @@ exports[`Slider Single Slider renders the UI snapshot correctly 3`] = `
   >
     Label
     <span>
-       (Required)
+       (required)
     </span>
   </label>
   <div

@@ -12,7 +12,7 @@ import { changelogData } from "./bannerChangelogData";
 | Component Version | DS Version |
 | ----------------- | ---------- |
 | Added             | `3.1.0`    |
-| Latest            | `3.1.1`    |
+| Latest            | `3.3.0`    |
 
 ## Table of Contents
 
@@ -25,6 +25,7 @@ import { changelogData } from "./bannerChangelogData";
 - {<Link href="#with-html-content" target="_self">With HTML Content</Link>}
 - {<Link href="#custom-color" target="_self">Custom Color</Link>}
 - {<Link href="#dismissible" target="_self">Dismissible</Link>}
+- {<Link href="#with-html-content-passed-as-string" target="_self">With HTML content passed as string</Link>}
 - {<Link href="#changelog" target="_self">Changelog</Link>}
 
 ## Overview
@@ -233,6 +234,22 @@ clicked, the `Banner` will be removed from the DOM, therefore it only
 renders once.
 
 <Canvas of={BannerStories.Dismissible} />
+
+## With HTML content passed as string
+
+HTML content passed as a string is rendered as HTML, useful in cases where HTML content is stored in an environment variable or from other sources where the content is stored as strings.
+
+<Source
+  code={`
+<Banner
+  heading="Standard Banner with HTML content passed as string"
+  content="<p>Cras mattis consectetur purus sit amet fermentum. Maecenas faucibus mollis interdum.</p><p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. <b>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus</b>. <a href='#'>This is a link</a>.</p>"
+/>
+`}
+  language="tsx"
+/>
+
+<Canvas of={BannerStories.StringContentWithHTML} />
 
 ## Changelog
 

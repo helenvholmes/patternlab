@@ -26,6 +26,7 @@ exports[`StructuredContent renders the UI snapshot 1`] = `
       <img
         alt="Image alt text"
         className="css-0"
+        id={null}
         onError={[Function]}
         src="https://images.nypl.org/index.php?id=swope_243048&t=r"
       />
@@ -100,6 +101,7 @@ exports[`StructuredContent renders the UI snapshot 2`] = `
       <img
         alt="Image alt text"
         className="css-0"
+        id={null}
         onError={[Function]}
         src="https://images.nypl.org/index.php?id=swope_243048&t=r"
       />
@@ -233,6 +235,7 @@ exports[`StructuredContent renders the UI snapshot 4`] = `
     <img
       alt="Image alt text"
       className="css-0"
+      id={null}
       onError={[Function]}
       src="https://images.nypl.org/index.php?id=swope_243048&t=r"
     />
@@ -268,6 +271,7 @@ exports[`StructuredContent renders the UI snapshot 5`] = `
       <img
         alt="Image alt text"
         className="css-0"
+        id={null}
         onError={[Function]}
         src="https://images.nypl.org/index.php?id=swope_243048&t=r"
       />
@@ -364,6 +368,7 @@ exports[`StructuredContent renders the UI snapshot 7`] = `
       <img
         alt="Image alt text"
         className="css-0"
+        id={null}
         onError={[Function]}
         src="https://images.nypl.org/index.php?id=swope_243048&t=r"
       />
@@ -439,6 +444,7 @@ exports[`StructuredContent renders the UI snapshot 8`] = `
       <img
         alt="Image alt text"
         className="css-0"
+        id={null}
         onError={[Function]}
         src="https://images.nypl.org/index.php?id=swope_243048&t=r"
       />

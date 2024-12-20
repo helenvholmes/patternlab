@@ -16,7 +16,7 @@ const meta: Meta<typeof Pagination> = {
     currentPage: { control: false },
     getPageHref: { control: false },
     id: { control: false },
-    initialPage: { control: false, table: { defaultValue: { summary: 1 } } },
+    initialPage: { control: false, table: { defaultValue: { summary: "1" } } },
     onPageChange: { control: false },
   },
 };

@@ -6,27 +6,43 @@ Fixes JIRA ticket xxx
 
 ## How has this been tested?
 
-<!--- Please describe in detail how you tested your changes. -->
+<!-- Please describe in detail how you tested your changes. -->
+
+-
 
 ## Accessibility concerns or updates
 
-<!--- Describe any accessibility concerns or updates that were made that should be known. -->
+<!-- Describe any accessibility concerns or updates that were made that should be known. -->
+
+-
+
+### Accessibility Checklist
+
+- [ ] Checked Storybook's "Accessibility" tab for color contrast and other issues.
+- [ ] The feature works with keyboard inputs including tabbing back and forward and pressing space, enter, arrow, and esc keys.
+- [ ] For hidden text or when `aria-live` is used, a screenreader was used to verify the text is read.
+- [ ] For features that involve UI updates and focusing on DOM `ref`s, focus management was reviewed.
+- [ ] The feature works when the page is zoomed in to 200% and 400%.
+
+## Open Questions
+
+<!-- Any questions you want to ask the reviewer? -->
 
 -
 
 ### Checklist:
 
-<!--- Go over all the following points, and put an `x` in all the boxes that apply. -->
-<!--- If you're unsure about any of these, don't hesitate to ask. We're here to help! -->
+<!-- Go over all the following points, and put an `x` in all the boxes that apply. -->
+<!-- If you're unsure about any of these, don't hesitate to ask. We're here to help! -->
 
-- [ ] I have updated the Storybook documentation accordingly.
+- [ ] I have updated the Storybook documentation and changelog accordingly.
 - [ ] I have added relevant accessibility documentation for this pull request.
 - [ ] All new and existing tests passed.
 
 ### Front End Review:
 
-<!--- This step is done AFTER creating a PR. -->
-<!--- Vercel creates a static Storybook preview URL once the PR is created. -->
-<!--- That preview URL is added by Vercel as a comment. -->
+<!-- This step is done AFTER creating a PR. -->
+<!-- Vercel creates a static Storybook preview URL once the PR is created. -->
+<!-- That preview URL is added by Vercel as a comment. -->
 
 - [ ] Review the Vercel preview deployment once it is ready.

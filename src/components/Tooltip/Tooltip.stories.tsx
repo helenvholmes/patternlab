@@ -1,6 +1,5 @@
-import { VStack } from "@chakra-ui/react";
 import type { Meta, StoryObj } from "@storybook/react";
-
+import { VStack } from "@chakra-ui/react";
 import Button from "../Button/Button";
 import Icon from "../Icons/Icon";
 import Image from "../Image/Image";
@@ -13,6 +12,7 @@ import Toggle from "../Toggle/Toggle";
 import Tooltip from "./Tooltip";
 import { argsBooleanType } from "../../helpers/storybookUtils";
 import { getPlaceholderImage } from "../../utils/utils";
+import Card, { CardContent, CardHeading } from "../Card/Card";
 
 const meta: Meta<typeof Tooltip> = {
   title: "Components/Overlays & Switchers/Tooltip",
@@ -22,6 +22,12 @@ const meta: Meta<typeof Tooltip> = {
     className: { control: false },
     id: { control: false },
     isDisabled: argsBooleanType(),
+    offset: { control: false },
+    placement: {
+      control: "select",
+      options: ["top", "bottom", "left", "right", "auto"],
+      table: { defaultValue: { summary: "top" } },
+    },
     shouldWrapChildren: argsBooleanType(),
   },
 };
@@ -41,6 +47,8 @@ export const WithControls: Story = {
       "This is a tooltip with information describing the hovered object.",
     id: "tooltip-id",
     isDisabled: false,
+    offset: undefined,
+    placement: undefined,
     shouldWrapChildren: false,
   },
   render: (args) => (
@@ -172,6 +180,80 @@ export const UsingImageContent: Story = {
     <Tooltip content={<Image alt="" src={getPlaceholderImage("smaller")} />}>
       Hover to see image
     </Tooltip>
+  ),
+};
+
+export const TooltipPlacement: Story = {
+  render: () => (
+    <VStack align="stretch" spacing="l">
+      <Tooltip placement="top" content="This is the tooltip text">
+        <Text width="150px"> Top tooltip (default) </Text>
+      </Tooltip>
+      <Tooltip placement="bottom" content="This is the tooltip text">
+        <Text width="150px">Bottom tooltip </Text>
+      </Tooltip>
+      <Tooltip placement="left" content="This is the tooltip text">
+        <Text width="150px">Left tooltip </Text>
+      </Tooltip>
+      <Tooltip placement="right" content="This is the tooltip text">
+        <Text width="150px"> Right tooltip </Text>
+      </Tooltip>
+    </VStack>
+  ),
+};
+
+export const TooltipOffset: Story = {
+  render: () => (
+    <SimpleGrid>
+      <Tooltip content="This is the tooltip text">
+        <Card
+          imageProps={{
+            alt: "Alt text",
+            aspectRatio: "twoByOne",
+            isAtEnd: true,
+            src: getPlaceholderImage("smaller"),
+          }}
+          mainActionLink="http://nypl.org"
+        >
+          <CardHeading level="h3" id="fullclick2-heading1" size="heading5">
+            Tooltip default offset
+          </CardHeading>
+          <CardContent>I'm a card</CardContent>
+        </Card>
+      </Tooltip>
+      <Tooltip offset={[100, 0]} content="This is the tooltip text">
+        <Card
+          imageProps={{
+            alt: "Alt text",
+            aspectRatio: "twoByOne",
+            isAtEnd: true,
+            src: getPlaceholderImage("smaller"),
+          }}
+          mainActionLink="http://nypl.org"
+        >
+          <CardHeading level="h3" id="fullclick2-heading1" size="heading5">
+            Tooltip offset [100, 0]
+          </CardHeading>
+          <CardContent>I'm a card</CardContent>
+        </Card>
+      </Tooltip>
+      <Tooltip offset={[0, -100]} content="This is the tooltip text">
+        <Card
+          imageProps={{
+            alt: "Alt text",
+            aspectRatio: "twoByOne",
+            isAtEnd: true,
+            src: getPlaceholderImage("smaller"),
+          }}
+          mainActionLink="http://nypl.org"
+        >
+          <CardHeading level="h3" id="fullclick2-heading1" size="heading5">
+            Tooltip offset [0, -100]
+          </CardHeading>
+          <CardContent>I'm a card</CardContent>
+        </Card>
+      </Tooltip>
+    </SimpleGrid>
   ),
 };
 

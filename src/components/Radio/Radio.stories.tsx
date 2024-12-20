@@ -18,8 +18,8 @@ const meta: Meta<typeof Radio> = {
     key: { table: { disable: true } },
     onChange: { control: false },
     ref: { table: { disable: true } },
-    showHelperInvalidText: argsBooleanType(true),
-    showLabel: argsBooleanType(true),
+    showHelperInvalidText: argsBooleanType("true"),
+    showLabel: argsBooleanType("true"),
   },
 };
 

@@ -150,7 +150,9 @@ describe("SearchBar", () => {
         textInputProps={textInputProps}
       />
     );
-    expect(screen.getByText(invalidText)).toBeInTheDocument();
+    expect(
+      screen.getByText(`There was a problem. ${invalidText}`)
+    ).toBeInTheDocument();
     expect(screen.queryByText(helperText)).not.toBeInTheDocument();
   });
 
@@ -381,7 +383,7 @@ describe("SearchBar", () => {
     );
 
     expect(
-      screen.queryByPlaceholderText("Item Search (Required)")
+      screen.queryByPlaceholderText("Item Search (required)")
     ).not.toBeInTheDocument();
 
     rerender(
@@ -395,7 +397,7 @@ describe("SearchBar", () => {
       />
     );
     expect(
-      screen.getByPlaceholderText("Item Search (Required)")
+      screen.getByPlaceholderText("Item Search (required)")
     ).toBeInTheDocument();
   });
 

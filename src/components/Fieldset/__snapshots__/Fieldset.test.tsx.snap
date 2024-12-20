@@ -22,7 +22,7 @@ exports[`Fieldset renders the UI snapshot correctly 2`] = `
   <legend>
     Legend Text
     <span>
-       (Required)
+       (required)
     </span>
   </legend>
   <p>

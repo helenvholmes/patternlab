@@ -353,14 +353,14 @@ describe("DatePicker", () => {
       expect(screen.getByText(/required/i)).toBeInTheDocument();
     });
 
-    it("should hide the (Required) text in the label with `showRequiredLabel`", () => {
+    it("should hide the (required) text in the label with `showRequiredLabel`", () => {
       const { rerender } = render(
         <DatePicker
           id="datePicker"
           labelText="Select the date you want to visit NYPL"
         />
       );
-      expect(screen.queryByText(/Required/i)).not.toBeInTheDocument();
+      expect(screen.queryByText(/required/i)).not.toBeInTheDocument();
 
       rerender(
         <DatePicker
@@ -379,7 +379,7 @@ describe("DatePicker", () => {
           isRequired
         />
       );
-      expect(screen.queryByText(/Required/i)).not.toBeInTheDocument();
+      expect(screen.queryByText(/required/i)).not.toBeInTheDocument();
     });
 
     it("should pass the value to the `onChange` function", () => {
@@ -709,8 +709,8 @@ describe("DatePicker", () => {
       inputTo = screen.getByRole("textbox", {
         name: "To, Press tab to access the calendar.",
       }); // Both input fields are required.
-      // The "Required" text is only displayed once in the `legend`.
-      expect(screen.getAllByText(/Required/i)).toHaveLength(1);
+      // The "required" text is only displayed once in the `legend`.
+      expect(screen.getAllByText(/required/i)).toHaveLength(1);
       expect(inputFrom).toHaveAttribute("required");
       expect(inputTo).toHaveAttribute("required");
     });

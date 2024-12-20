@@ -335,7 +335,7 @@ const meta: Meta<typeof MultiSelectGroup> = {
       table: { defaultValue: { summary: "default" } },
     },
     showLabel: {
-      table: { defaultValue: { summary: true } },
+      table: { defaultValue: { summary: "true" } },
     },
   },
 };

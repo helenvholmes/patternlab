@@ -9,10 +9,10 @@ import Link from "../Link/Link";
 
 # Breadcrumbs
 
-| Component Version | DS Version   |
-| ----------------- | ------------ |
-| Added             | `0.0.3`      |
-| Latest            | `Prerelease` |
+| Component Version | DS Version |
+| ----------------- | ---------- |
+| Added             | `0.0.3`    |
+| Latest            | `3.3.0`    |
 
 ## Table of Contents
 
@@ -20,6 +20,7 @@ import Link from "../Link/Link";
 - {<Link href="#component-props" target="_self">Component Props</Link>}
 - {<Link href="#accessibility" target="_self">Accessibility</Link>}
 - {<Link href="#long-titles" target="_self">Long Titles</Link>}
+- {<Link href="#custom-link-and-link-props" target="_self">Custom Link and Link Props</Link>}
 - {<Link href="#color-variations" target="_self">Color Variations</Link>}
 - {<Link href="#changelog" target="_self">Changelog</Link>}
 
@@ -68,6 +69,36 @@ text. The full title will be shown in a `Tooltip` component when hovering over
 the truncated page title.
 
 <Canvas of={BreadcrumbsStories.LongText} />
+
+## Custom Link Component and Link Props
+
+The `customLinkComponent` prop allows apps with internal routers (Next.js, for example) to pass their custom link component
+into the `Breadcrumbs` component. This allows the `Breadcrumbs` links to use client-side routing, so users can navigate between pages without reloading the full page.
+
+Additionally, the `linkProps` prop on `breadcrumbsData` allows any of the framework's [custom props](https://nextjs.org/docs/app/api-reference/components/link) to be applied on a link-by-link basis.
+
+Note: assigning a value for `href` in `linkProps` will override the `url` prop, so we recommend against this.
+
+<Source
+  code={`
+  // Example with Next.js Link and its associated custom props (scroll, replace, prefetch)
+import Link from "next/link";
+
+const breadcrumbsDataWithLinkProps = [
+{ url: "#", text: "Parent", linkProps: { replace: true, scroll: false }}
+{ url: "#", text: "Child", linkProps: { replace: true }}
+{ url: "#", text: "Grandchild" },
+];
+
+<Breadcrumbs
+  customLinkComponent={Link}
+  breadcrumbsData={breadcrumbsDataWithLinkProps}
+/>
+`} language="tsx" />
+
+Below story uses the DS `Link` component.
+
+<Canvas of={BreadcrumbsStories.CustomLinkComponent} />
 
 ## Color Variations
 

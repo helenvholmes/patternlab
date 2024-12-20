@@ -39,24 +39,24 @@ describe("Fieldset", () => {
     expect(screen.getByText("Some other fields")).toBeInTheDocument();
   });
 
-  it("renders '(Required)' text in the legend when `isRequired` is true", () => {
+  it("renders '(required)' text in the legend when `isRequired` is true", () => {
     render(
       <Fieldset id="fieldset" legendText="Legend Text" isRequired>
         <p>Some other fields</p>
       </Fieldset>
     );
 
-    expect(screen.getByText(/Required/i)).toBeInTheDocument();
+    expect(screen.getByText(/required/i)).toBeInTheDocument();
   });
 
-  it("can hide the '(Required)' text in the legend but still show the main text", () => {
+  it("can hide the '(required)' text in the legend but still show the main text", () => {
     const { rerender } = render(
       <Fieldset id="fieldset" legendText="Legend Text" isRequired>
         <p>Some other fields</p>
       </Fieldset>
     );
 
-    expect(screen.getByText(/Required/i)).toBeInTheDocument();
+    expect(screen.getByText(/required/i)).toBeInTheDocument();
 
     rerender(
       <Fieldset
@@ -70,7 +70,7 @@ describe("Fieldset", () => {
     );
 
     expect(screen.getByText(/Legend Text/i)).toBeInTheDocument();
-    expect(screen.queryByText(/Required/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/required/i)).not.toBeInTheDocument();
   });
 
   it("logs a warning when there is no `id` passed", () => {

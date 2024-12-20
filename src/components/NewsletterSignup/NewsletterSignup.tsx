@@ -1,5 +1,4 @@
 import {
-  Box,
   chakra,
   Stack,
   useColorModeValue,
@@ -11,26 +10,24 @@ import React, { forwardRef } from "react";
 
 import Button from "../Button/Button";
 import Form, { FormField } from "../Form/Form";
-import Icon from "../Icons/Icon";
 import Link from "../Link/Link";
+import { NewsletterSignupResponse } from "./NewsletterSignupResponse";
 import Text from "../Text/Text";
 import TextInput from "../TextInput/TextInput";
-import Heading from "../Heading/Heading";
 import useDSHeading from "../../hooks/useDSHeading";
 import useNYPLBreakpoints from "../../hooks/useNYPLBreakpoints";
-import { SectionTypes } from "../../helpers/types";
 
-interface NewsletterSignupProps {
+export interface NewsletterSignupProps {
   /** Additional class name to add. */
   className?: string;
   /** Text displayed next to the confirmation icon after a successful email submission */
   confirmationHeading: string;
   /** Detail text for the confirmation view */
-  confirmationText: string;
+  confirmationText?: string | JSX.Element;
   /** Appears below the title to provide details about the newsletter. Accepts a string or an element. */
   descriptionText?: string | JSX.Element;
   /** Text displayed next to the error icon in case of an error in the email submission process*/
-  errorHeading?: string;
+  errorHeading: string;
   /** Appears below the title to provide details about next steps in case of an error. Accepts a string or an element. */
   errorText?: string | JSX.Element;
   /** Appears below the input field's example text to provide any additional instructions. Accepts a string or
@@ -40,38 +37,50 @@ interface NewsletterSignupProps {
   id?: string;
   /** Toggles the invalid state for the email field. */
   isInvalidEmail?: boolean;
-  /** Value to determine the section color highlight. The default is set to "blogs" as it uses the
-   * "ui.border.deafult" color.
+  /** Value to determine the section color highlight.
    */
-  newsletterSignupType?: SectionTypes;
+  highlightColor?: HighlightColorTypes;
   /** A handler function that will be called when the form is submitted. */
   onSubmit: (event: React.FormEvent<any>) => void;
   /** A handler function that will be called when the text input changes. */
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  /** Gives option to remove the default Privacy Link if a custom one is provided
+   * NOTE: A Privacy Policy link should always be included.
+   */
+  showPrivacyLink?: boolean;
   /** Link to the relevant privacy policy page. */
   privacyPolicyLink?: string;
-  /** Optional string value used to set the text for a `Heading` component, or
+  /** Sets the text for a `Heading` component, or
    * a DS Heading component that can be passed in.
    */
-  title?: JSX.Element | string;
+  title: JSX.Element | string;
   /** The value of the email text input field. */
   valueEmail?: string;
   /** Used to specify what is displayed in the component form/feedback area. */
   view?: NewsletterSignupViewType;
 }
 
+export const highlightColorTypesArray = [
+  "ui.gray.medium",
+  "section.blogs.secondary",
+  "section.books-and-more.primary",
+  "brand.primary",
+  "section.connect.primary",
+  "section.education.primary",
+  "section.locations.primary",
+  "section.research.primary",
+  "section.research-library.lpa",
+  "section.research-library.schomburg",
+  "section.research-library.schwartzman",
+  "section.whats-on.primary",
+] as const;
+export type HighlightColorTypes = typeof highlightColorTypesArray[number];
+
 export type NewsletterSignupViewType =
   | "form"
   | "submitting"
   | "confirmation"
   | "error";
-
-const defaultDescriptionText =
-  "Stay connected with the latest research news from NYPL, including information about our events, programs, " +
-  "exhibitions, and collections.";
-const defaultTitle = (
-  <Heading noSpace size="heading3" text="Sign Up for Our Newsletter" />
-);
 
 /**
  * The NewsletterSignup component provides a way for patrons to register for an
@@ -90,15 +99,16 @@ export const NewsletterSignup: ChakraComponent<
         className,
         confirmationHeading,
         confirmationText,
-        descriptionText = defaultDescriptionText,
-        errorHeading = "Oops! Something went wrong.",
+        descriptionText,
+        errorHeading,
         errorText,
         formHelperText,
         id,
         isInvalidEmail = false,
-        newsletterSignupType = "blogs",
+        highlightColor = "ui.gray.medium",
         onChange,
         onSubmit,
+        showPrivacyLink = true,
         privacyPolicyLink = "https://www.nypl.org/help/about-nypl/legal-notices/privacy-policy",
         valueEmail,
         title,
@@ -109,7 +119,7 @@ export const NewsletterSignup: ChakraComponent<
     ) => {
       const { isLargerThanMobile } = useNYPLBreakpoints();
       const styles = useMultiStyleConfig("NewsletterSignup", {
-        newsletterSignupType,
+        highlightColor,
       });
       const iconColor = useColorModeValue(null, "dark.ui.typography.body");
       const errorColor = useColorModeValue(
@@ -120,7 +130,10 @@ export const NewsletterSignup: ChakraComponent<
       const finalTitle = useDSHeading({
         title,
         id,
-        customDefaultHeading: defaultTitle,
+        headingSize: "heading3",
+        additionalStyles: {
+          marginBottom: 0,
+        },
       });
 
       // Manage focus to ensure accessibility when confirmation or error message is rendered.
@@ -129,6 +142,7 @@ export const NewsletterSignup: ChakraComponent<
       React.useEffect(() => {
         focusRef.current?.focus();
       }, [view]);
+
       return (
         <Stack
           direction={isLargerThanMobile ? "row" : "column"}
@@ -136,7 +150,11 @@ export const NewsletterSignup: ChakraComponent<
           __css={styles}
           {...rest}
         >
-          <VStack __css={styles.pitch} alignItems="flex-start">
+          <VStack
+            __css={styles.pitch}
+            className="newsletter-signup-appeal"
+            alignItems="flex-start"
+          >
             {finalTitle}
             {descriptionText ? (
               typeof descriptionText === "string" ? (
@@ -147,17 +165,18 @@ export const NewsletterSignup: ChakraComponent<
                 descriptionText
               )
             ) : null}
-
-            <Link
-              href={privacyPolicyLink}
-              type="external"
-              isUnderlined={false}
-              __css={styles.privacy}
-            >
-              Privacy Policy
-            </Link>
+            {showPrivacyLink && (
+              <Link
+                href={privacyPolicyLink}
+                type="external"
+                isUnderlined={false}
+                __css={styles.privacy}
+              >
+                Privacy Policy
+              </Link>
+            )}
           </VStack>
-          <VStack __css={styles.action}>
+          <VStack __css={styles.action} className="newsletter-signup-form">
             {isFormView && (
               <Form id="newsletter-form" onSubmit={onSubmit}>
                 <FormField key="formfield-input">
@@ -188,71 +207,23 @@ export const NewsletterSignup: ChakraComponent<
               </Form>
             )}
             {view === "confirmation" && (
-              <Box
-                className="feedback-body response"
-                margin="auto"
-                ref={focusRef}
-                tabIndex={-1}
-                width="100%"
-              >
-                <Box
-                  display="flex"
-                  marginBottom="xs"
-                  alignItems={{ md: "center" }}
-                >
-                  <Icon
-                    color={iconColor}
-                    name="actionCheckCircleFilled"
-                    size="large"
-                  />
-                  <Text
-                    size="subtitle1"
-                    marginStart="xs"
-                    marginBottom="unset"
-                    fontWeight="medium"
-                  >
-                    {confirmationHeading}
-                  </Text>
-                </Box>
-                <Text noSpace size="body2">
-                  {confirmationText}
-                </Text>
-              </Box>
+              <NewsletterSignupResponse
+                focusRef={focusRef}
+                heading={confirmationHeading}
+                iconName="actionCheckCircleFilled"
+                iconColor={iconColor}
+                text={confirmationText}
+              />
             )}
             {view === "error" && (
-              <Box
-                className="feedback-body response"
-                margin="auto"
-                ref={focusRef}
-                tabIndex={-1}
-                width="100%"
-              >
-                <Box
-                  display="flex"
-                  marginBottom="xs"
-                  alignItems={{ md: "center" }}
-                >
-                  <Icon color={errorColor} name="errorFilled" size="large" />
-                  <Text
-                    color={errorColor}
-                    size="subtitle1"
-                    marginStart="xs"
-                    marginBottom="unset"
-                    fontWeight="medium"
-                  >
-                    {errorHeading}
-                  </Text>
-                </Box>
-                {errorText ? (
-                  typeof errorText === "string" ? (
-                    <Text noSpace size="body2">
-                      {errorText}
-                    </Text>
-                  ) : (
-                    errorText
-                  )
-                ) : null}
-              </Box>
+              <NewsletterSignupResponse
+                focusRef={focusRef}
+                heading={errorHeading}
+                headingColor={errorColor}
+                iconName="errorFilled"
+                iconColor={errorColor}
+                text={errorText}
+              />
             )}
           </VStack>
         </Stack>

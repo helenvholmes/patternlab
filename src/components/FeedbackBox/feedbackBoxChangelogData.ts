@@ -10,8 +10,31 @@ import { ChangelogData } from "../../utils/ComponentChangelogTable";
 
 export const changelogData: ChangelogData[] = [
   {
-    date: "Prerelease",
-    version: "Prerelease",
+    date: "2024-10-02",
+    version: "3.4.0",
+    type: "Update",
+    affects: ["Styles"],
+    notes: [
+      "Increases the z-index of the `Drawer` component so it displays above all other elements on a page.",
+    ],
+  },
+  {
+    date: "2024-09-19",
+    version: "3.3.2",
+    type: "Update",
+    affects: ["Styles"],
+    notes: ["Changes 'r' in '(required)' label from upper- to lowercase"],
+  },
+  {
+    date: "2024-07-25",
+    version: "3.2.0",
+    type: "Update",
+    affects: ["Functionality"],
+    notes: ["Exports the `FeedbackBoxProps` interface."],
+  },
+  {
+    date: "2024-07-03",
+    version: "3.1.7",
     type: "Update",
     affects: ["Styles"],
     notes: ["Adds interaction tests for the Controls story."],

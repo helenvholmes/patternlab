@@ -10,19 +10,37 @@ const SearchBar = defineMultiStyleConfig({
       base: "xs",
       md: "auto",
     },
-    flexFlow: {
-      base: "column nowrap",
-      md: "row nowrap",
-    },
     ".textInput": {
-      flexGrow: "1",
+      flexGrow: 1,
+      "div > input": {
+        borderRightRadius: 0,
+      },
+    },
+    flexFlow: { base: "column nowrap", md: "row" },
+    ".searchButton": {
+      minWidth: "44px",
+      borderLeftRadius: "none",
+      lineHeight: "1.70",
+      marginBottom: "auto",
+      paddingTop: { base: "xs", md: "xs" },
+      paddingLeft: { base: "xs", md: "s" },
+      paddingBottom: { base: "xs", md: "xs" },
+      paddingRight: { base: "xs", md: "s" },
+      gap: "xxs",
+      borderRightRadius: "sm",
+      " > span": {
+        display: { base: "none", md: "block" },
+      },
+      " > svg": {
+        margin: 0,
+      },
     },
     select: {
+      paddingBottom: { base: "xs", md: "unset" },
       flexShrink: "0",
       marginBottom: { base: "-1px", md: "0" },
       maxWidth: { base: undefined, md: "255px" },
       textOverflow: "ellipsis",
-      marginRight: { base: undefined, md: "-1px" },
       _hover: {
         zIndex: "10",
         "+ .chakra-select__icon-wrapper": {

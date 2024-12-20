@@ -9,10 +9,10 @@ import { changelogData } from "./newsletterSignupChangelogData";
 
 # NewsletterSignup
 
-| Component Version | DS Version   |
-| ----------------- | ------------ |
-| Added             | `2.1.0`      |
-| Latest            | `3.0.0` |
+| Component Version | DS Version |
+| ----------------- | ---------- |
+| Added             | `2.1.0`    |
+| Latest            | `3.2.0`    |
 
 ## Table of Contents
 
@@ -24,6 +24,7 @@ import { changelogData } from "./newsletterSignupChangelogData";
 - {<Link href="#form-submission-data" target="_self">Form Submission Data</Link>}
 - {<Link href="#interactive-example-with-onchange-and-onsubmit" target="_self">Interactive Example with onChange and onSubmit</Link>}
 - {<Link href="#component-states" target="_self">Component States</Link>}
+- {<Link href="#component-color-styles-using-highlight-color" target="_self">Component color styles using Highlight Color</Link>}
 - {<Link href="#changelog" target="_self">Changelog</Link>}
 
 ## Overview
@@ -41,11 +42,10 @@ import { changelogData } from "./newsletterSignupChangelogData";
 The `NewsletterSignup` component is a complex component built from various
 Reservoir DS and Chakra components.
 
-The `title` prop of the `NewsletterSignup` component expects a `HTML Element` or
-a `React Component`. By default it renders a `h2` tag with text of
-`"Sign Up for Our Newsletter"` but it is the responsibility of the consuming app
-to pass the heading tag (`h*`) that aligns with the page structure and ensures
-accessibility.
+The `title` prop of the `NewsletterSignup` component accepts a `string`, a `HTML Element` or
+a `React Component`. When passing a string, it will render as a `h2` tag but it is the
+responsibility of the consuming app to pass the heading tag (`h*`) that aligns with the page
+structure and ensures accessibility.
 
 Within the `NewsletterSignup` component, the DS `form` component wraps around
 two DS `FormField` components. Those`FormField` components hold a DS `TextInput`
@@ -80,19 +80,17 @@ _NOTE: This is applicable for all component props accepting HTML/JSX elements._
 
 ## Custom Title Heading
 
-The optional `title` prop will render the `Newsletter`'s heading as an `h2`
-element (sized as an `h3`) by default with text `"Sign Up for Our Newsletter"`.
-When the `title` value is a string, the default heading will be an `h2` but not
-sized as an `h3`. It's possible that the `h2` element will not fit in an app's
-heading hierarchy. If this is the case,`title` can also take a `JSX.Element`
-type value.
+The `title` prop accepts either a `string` or a `Element`. If a `string` is passed
+it will render the `Newsletter`'s heading as an `h2` with the size set to `heading3`.
+If the `h2` does not fit into the page's heading hierarchy or the heading size needs
+to be customized, a custom `Heading` element can be passed instead.
 
 In the following example, the heading is an `h4` defined as:
 
 <Source
   code={`
 // String Heading Example
-const stringHeading = "Custom string heading";
+const stringHeading = "String heading";
 // ...
 
 <NewsletterSignup title={stringHeading} {...otherArgs} />
@@ -204,7 +202,35 @@ function NewsletterSignupOnSubmitExampleComponent() {
 
 ## Component States
 
+The display state can be controlled by setting the `view` prop to one of the following values:
+
+- `form` (default)
+- `submitting`
+- `confirmation`
+- `error`
+
 <Canvas of={NewsletterSignupStories.ComponentStates} />
+
+## Component color styles using Highlight Color
+
+The `highlightColor` prop accepts a `string` value of a color defined in the `HighlightColorTypes`.
+`HighlightColorTypes` is a selection of Design System's `NYPL Section Colors` and offers a way to
+integrate the section color of a particular page into the `NewsletterSignup` component.
+
+<Source
+  code={`
+function NewsletterSignupHighlightColorExampleComponent() {
+  return (
+    <NewsletterSignup
+      highlightColor="section.education.primary"
+      {...other Args}
+    />
+  );
+} `}
+  language="jsx"
+/>
+
+<Canvas of={NewsletterSignupStories.HightlightColors} />
 
 ## Changelog
 

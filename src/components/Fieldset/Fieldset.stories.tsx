@@ -18,10 +18,10 @@ const meta: Meta<typeof Fieldset> = {
   argTypes: {
     id: { control: false },
     className: { control: false },
-    isLegendHidden: { table: { defaultValue: { summary: false } } },
-    isRequired: { table: { defaultValue: { summary: false } } },
+    isLegendHidden: { table: { defaultValue: { summary: "false" } } },
+    isRequired: { table: { defaultValue: { summary: "false" } } },
     legendText: { control: { type: "text" } },
-    showRequiredLabel: { table: { defaultValue: { summary: false } } },
+    showRequiredLabel: { table: { defaultValue: { summary: "false" } } },
   },
 };
 

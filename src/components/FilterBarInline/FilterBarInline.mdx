@@ -1,0 +1,465 @@
+import { ArgTypes, Canvas, Description, Meta, Source } from "@storybook/blocks";
+import { changelogData } from "./filterBarInlineChangelogData";
+import ComponentChangelogTable from "../../utils/ComponentChangelogTable";
+import * as FilterBarInlineStories from "./FilterBarInline.stories";
+import Link from "../Link/Link";
+
+<Meta of={FilterBarInlineStories} />
+
+# FilterBarInline
+
+| Component Version | DS Version |
+| ----------------- | ---------- |
+| Added             | `3.2.0`    |
+| Latest            | `3.3.0`    |
+
+## Table of Contents
+
+- {<Link href="#overview" target="_self">Overview</Link>}
+- {<Link href="#component-props" target="_self">Component Props</Link>}
+- {<Link href="#accessibility" target="_self">Accessibility</Link>}
+- {<Link href="#filterbarinline-heading" target="_self">FilterBarInline Heading</Link>}
+- {<Link href="#layout-patterns" target="_self">Layout Patterns</Link>}
+- {<Link href="#ui-containers" target="_self">UI Containers</Link>}
+- {<Link href="#passing-children" target="_self">Passing Children</Link>}
+- {<Link href="#controlling-state-using-selecteditems-onclear-and-onsubmit-props" target="_self">Controlling State Using selectedItems, onClear, and onSubmit Props</Link>}
+- {<Link href="#tagset-example" target="_self">TagSet Example</Link>}
+- {<Link href="#changelog" target="_self">Changelog</Link>}
+
+## Overview
+
+<Description of={FilterBarInlineStories} />
+
+`FilterBarInline` is a wrapper component for filter components and individual form
+input components. The DS considers the following components as filter components:
+`CheckboxGroup`, `MultiSelectGroup`,`RadioGroup`, `Checkbox`, `DatePicker`,
+`MultiSelect`, `Radio`, `Select`, `Slider`, `TextInput`, and `Toggle`.
+
+The wrapped components/component groups can be displayed in a column or in a row
+layout.
+
+It is recommended to use real-time filtering in conjunction with the `TagSet` component.
+If the consuming app is not using the above, then `FilterBarInline` can render
+additional `Clear All` and a `Apply Filters` buttons. The two _optional_ buttons are
+controlled by the `onClear` or `onSubmit` props respectively.
+
+## Component Props
+
+<Canvas of={FilterBarInlineStories.WithControls} />
+
+<ArgTypes of={FilterBarInlineStories.WithControls} />
+
+## Accessibility
+
+The `FilterBarInline` component is a wrapper component for components with filter
+functionality. The accessibility of `FilterBarInline` depends on the passed child
+components accessibility. See the accessibility details of valid FilterBarInline child
+components:
+
+- [CheckboxGroup](../?path=/docs/components-form-elements-checkboxgroup--docs#accessibility)
+- [MultiSelectGroup](../?path=/docs/components-form-elements-multiselectgroup--docs#accessibility)
+- [RadioGroup](../?path=/docs/components-form-elements-radiogroup--docs#accessibility)
+- [Checkbox](../?path=/docs/components-form-elements-checkbox--docs#accessibility)
+- [DatePicker](../?path=/docs/components-form-elements-datepicker--docs#accessibility)
+- [MultiSelect](../?path=/docs/components-form-elements-multiselect--docs#accessibility)
+- [Radio](../?path=/docs/components-form-elements-radio--docs#accessibility)
+- [Select](../?path=/docs/components-form-elements-select--docs#accessibility)
+- [Slider](../?path=/docs/components-form-elements-slider--docs#accessibility)
+- [TextInput](../?path=/docs/components-form-elements-textinput--docs#accessibility)
+- [Toggle](../?path=/docs/components-form-elements-toggle--docs#accessibility)
+
+## FilterBarInline Heading
+
+The `FilterBarInline` component can be rendered with and without a heading. By
+default, when a string is passed to the `heading` prop, the
+`FilterBarInline` component will render an `h2` element sized as a `heading5`
+heading. If this causes accessibility issues in your app, you can set a custom
+heading by passing in a DS `Heading` component.
+
+In the following examples, the `FilterBarInline` component will render custom `h3`
+and `h5` elements. Note that no matter what heading level is set, the size will
+always be set to `heading5` internally by the `FilterBarInline` component.
+
+<Source
+  code={`
+
+const customH3 = <Heading level="h3">Custom H3 Heading</Heading>;
+const customH5 = <Heading level="h5">Custom H5 Heading</Heading>;
+
+<FilterBarInline heading={customH3} {...props} />
+<FilterBarInline heading={customH5} {...props} />
+`} language="tsx" />
+
+<Canvas of={FilterBarInlineStories.FilterBarInlineHeading} />
+
+## Layout Patterns
+
+The display of the `FilterBarInline` child components can be set to a `"row"` or a
+`"column"` layout. On screen width under 600px width the `layout` is
+automatically set to `"column"`.
+
+**Note:** when `layout = "row"` is passed, `MultiSelect` components will have
+`closeOnBlur` set to `true` by default and when `layout = "column"` is passed,
+the `closeOnBlur` prop will be set to `false`.
+
+**Note:** when `layout = "column"` is passed, `MultiSelect` components will have
+`isBlockElement` set to `true` by default and the child components `width`
+will be set to `"full"`.
+
+**Note:** `CheckboxGroup`, `MultiSelectGroup`, and `RadioGroup` `layout` prop will
+match the value of the `layout` set for the `FilterBarInline` component.
+
+Refer to the <Link href="#passing-children" target="_self">Passing Children</Link>
+section for more information on how these prop value are passed in the
+`renderChildren` prop.
+
+<Canvas of={FilterBarInlineStories.LayoutPatterns} />
+
+## UI Containers
+
+The `FilterBarInline` component will often be rendered within a UI container with
+`background-color` and `padding` styles applied. This treatment can easily be
+accomplished using the `Box` component with inline styles.
+
+If a consuming app supports dark mode, styles for both light and dark mode will
+be required for the UI container element.
+
+**Note:** Future DS updates may provide a standalone component to implement a
+UI container similar to what is used in these example.
+
+### Row Layout
+
+<Source
+  code={`
+/* LIGHT MODE ONLY */
+// Add container for row layout
+<Box bg="ui.bg.default" p="inset.wide">
+  <FilterBarInline
+    layout="row"
+    renderChildren={() => {
+      // Filter components...
+    }}
+    // ...
+  />
+</Box>
+`}
+  language="jsx"
+/>
+
+<Source
+  code={`
+/* DARK MODE SUPPORT */
+// Import useColorModeValue hook
+import { useColorModeValue } from "@nypl/design-system-react-components";
+// ...
+// Use hook to set values for light and dark mode
+const containerBgColor = useColorModeValue(
+  "ui.bg.default",
+  "dark.ui.bg.default"
+);
+// ...
+// Add container for row layout
+<Box bg={containerBgColor} p="inset.wide">
+  <FilterBarInline
+    layout="row"
+    renderChildren={() => {
+      // Filter components...
+    }}
+    // ...
+  />
+</Box>
+; `}
+  language="jsx"
+/>
+
+<Canvas of={FilterBarInlineStories.UIContainers} />
+
+### Column Layout
+
+<Source
+  code={`
+/* LIGHT MODE ONLY */
+// Add container for column layout
+<Box bg="ui.bg.default" p="inset.default">
+  <FilterBarInline
+    layout="column"
+    renderChildren={() => {
+      // Filter components...
+    }}
+    // ...
+  />
+</Box>
+`}
+  language="jsx"
+/>
+
+<Source
+  code={`
+/* DARK MODE SUPPORT */
+// ...
+// Import useColorModeValue hook
+import { useColorModeValue } from "@nypl/design-system-react-components";
+// ...
+// Use hook to set values for light and dark mode
+const containerBgColor = useColorModeValue(
+  "ui.bg.default",
+  "dark.ui.bg.default"
+);
+// ...
+// Add container for column layout
+<Box bg={containerBgColor} p="inset.default">
+  <FilterBarInline
+    layout="column"
+    renderChildren={() => {
+      // Filter components...
+    }}
+    // ...
+  />
+</Box>;
+`}
+  language="jsx"
+/>
+
+<Canvas of={FilterBarInlineStories.ColumnLayout} />
+
+## Passing Children
+
+<Canvas of={FilterBarInlineStories.MultipleChildren} />
+
+In order to control the styling and props passed to children form elements,
+the `FilterBarInline` component accepts `CheckboxGroup`, `MultiSelectGroup`,
+`RadioGroup`, `Checkbox`, `DatePicker`, `MultiSelect`, `Radio`, `Select`,
+`Slider`, `TextInput`, and `Toggle` children through its `renderChildren` render
+prop function.
+
+This callback prop function returns an object argument with three properties:
+`isBlockElement`, `layout`, and `width`.
+
+- The `isBlockElement` argument value should be passed to the `isBlockElement`
+  prop of `MultiSelect` children.
+- The `closeOnBlur` argument value should be passed to the `closeOnBlur`
+  prop of `MultiSelect` children.
+- The `layout` argument value should be passed to the `layout` prop of
+  `CheckboxGroup`, `MultiSelectGroup`, and `RadioGroup` children.
+- The `width` argument value should be passed to the `multiSelectWidth` prop of
+  `MultiSelectGroup` children and the `width` prop of `MultiSelect` children.
+
+Here is an example of the shape of `FilterBarInline`:
+
+<Source
+  code={`
+<FilterBarInline
+  id="..."
+  heading="..."
+  renderChildren={({ isBlockElement, closeOnBlur, layout, width }) => {
+    return (...)
+  }}
+/>
+`}
+  language="jsx"
+/>
+
+## Controlling State Using selectedItems, onClear, and onSubmit Props
+
+### selectedItems
+
+The `FilterBarInline` component does not store its state internally. It expects
+a `selectedItems` prop whose value is an array of selected values of the filter
+children.
+
+To control each of the child form elements, you must pass the appropriate
+`onChange` and `value` props to them. Find documentation on how to do this on each
+individual component page.
+
+`useMultiSelect` is an optional but recommended hook for cases where managing
+the state of the component in the consuming app is less of a concern and general
+ease of use is prefered. Find the full documentation under
+[useMultiSelect](../?path=/docs/hooks-usemultiselect--docs)
+
+<Source
+  code={`
+const { onChange, onMixedStateChange, selectedItems, onClear, onClearAll } = useMultiSelect();
+const [selectedCheckbox, setSelectedCheckbox] = useState([]);
+const [textValue, setTextValue] = useState("");
+const [selectedFilterItems, setSelectedFilterItems] = useState([
+  selectedItems,
+  selectedCheckbox,
+  textValue,
+]);
+useEffect(() => {
+  setSelectedFilterItems([selectedItems, selectedCheckbox, textValue]);
+}, [selectedItems, selectedCheckbox, textValue]);
+`}
+  language="jsx"
+/>
+
+### onClear
+
+The `Clear all filters` button will only be visible when the `onClear` prop is
+passed. The `Apply filters` button will only be visible when the `onSubmit` prop is
+passed. Consuming apps are responsible for handling the logic and subsequent UI
+updates expected when the `onSubmit` and `onClear` handlers are called.
+
+<Source
+  code={`
+const onClearFilterBar = () => {
+  onClearAll();
+  setSelectedCheckbox([]);
+  setTextValue("");
+};`}
+  language="jsx"
+/>
+
+### onSubmit
+
+It is expected that the `onSubmit` handler will read the current values from the
+child form elements (the filters) and update the associated search results list
+based on those values.
+
+It is expected that the `onClear` handler will clear all of the current values
+from the child form elements and restore the associated search results list to an
+unfiltered state.
+
+To have better readability of the code it is recommended to separate nested render
+prop functions:
+
+<Source
+  code={`
+// function for renderMultiSelect prop of MultiSelectGroup 
+const renderMultiSelect = (closeOnBlur, { isBlockElement, multiSelectWidth }) => {
+  return (
+    shortMultiSelectItems &&
+    shortMultiSelectItems.map((multiSelect) => (
+      <MultiSelect
+        buttonText={multiSelect.name}
+        closeOnBlur={closeOnBlur}
+        id={multiSelect.id}
+        isBlockElement={isBlockElement}
+        items={multiSelect.items}
+        key={multiSelect.id}
+        onClear={() => onClear(multiSelect.id)}
+        onChange={(e) => onChange(e.target.id, multiSelect.id)}
+        onMixedStateChange={(e) => {
+          return onMixedStateChange(e.target.id, multiSelect.id, multiSelect.items);
+        }}
+        selectedItems={selectedItems}
+        width={multiSelectWidth}
+      />
+    )) 
+  ); 
+};`}
+  language="jsx"
+/>
+
+<Source
+  code={`
+// function for renderChildren prop of FilterBar 
+const renderFilterComponents = ({ closeOnBlur, layout, width }) => {
+  return (
+    <>
+      <MultiSelectGroup
+        id="multiselect-group"
+        labelText="MultiSelect Group"
+        layout={layout}
+        multiSelectWidth={width}
+        renderMultiSelect={renderMultiSelect.bind(this, closeOnBlur)}
+      />
+      <CheckboxGroup
+        id="checkbox-example"
+        labelText="Checkbox Group"
+        name="checkboxExample"
+        layout={layout}
+        value={selectedCheckbox}
+        onChange={(e) => {
+          setSelectedCheckbox(e);
+        }}
+      >
+        <Checkbox id="checkbox-1" value="1" labelText="Checkbox 1" />
+        <Checkbox id="checkbox-2" value="2" labelText="Checkbox 2" />
+      </CheckboxGroup>
+      <TextInput
+        id="textinput-example"
+        isClearable
+        isClearableCallback={() => setTextValue("")}
+        labelText="What is your favorite color?"
+        onChange={(e) => setTextValue(e.target.value)}
+        placeholder="i.e. blue, green, etc."
+        value={textValue}
+      />
+    </>
+  ); 
+};
+`}
+  language="jsx"
+/>
+
+<Source
+  code={`
+return (
+  <FilterBarInline
+    id={args.id}
+    heading={args.heading}
+    layout={args.layout}
+    onClear={onClearFilterBar}
+    onSubmit={() => console.log(selectedFilterItems)}
+    selectedItems={selectedFilterItems}
+    renderChildren={renderFilterComponents}
+  />
+); `}
+  language="jsx"
+/>
+
+## TagSet Example
+
+<Canvas of={FilterBarInlineStories.TagSetExample} />
+
+The following code is one example of how the `FilterBarInline` component can
+be used with the `TagSet` component. Consuming apps can modify this to fit their
+use case by ensuring the `tagSetData` is updated with changes to filter items and
+vice versa.
+
+<Source
+  code={`
+const [tagSetData, setTagSetData] = useState<TagSetFilterDataProps[]>([]);
+// update tagSetData with selectedFilterItems
+useEffect(() => {
+  const newTags = [];
+  for (let item of selectedFilterItems[0]) {
+    newTags.push({
+      id: \`tag-\${item}\`,
+      label: item,
+    });
+  }
+  if (selectedFilterItems[1] !== "")
+    newTags.push({ id: "tag-color", label: selectedFilterItems[1] });
+    
+  setTagSetData(newTags);
+}, [selectedFilterItems]);
+// handler for updating selected items when tag is clicked
+const handleOnClick = (tag) => {
+  if (tag.id === "clear-filters") {
+    setSelectedCheckbox([]);
+    setTextValue("");
+    setTagSetData([]);
+    return;
+  }
+  setSelectedCheckbox((checkboxes) =>
+    checkboxes.filter((checkbox) => {
+      return \`tag-\${checkbox}\` !== tag.id;
+    })
+  );
+  if (tag.id === "tag-color") {
+    setTextValue("");
+  }
+  setTagSetData((prevTagSetData) =>
+    prevTagSetData.filter((tag) => {
+    return tag.id !== tag.id;
+  })
+);
+}; `}
+  language="jsx"
+/>
+
+## Changelog
+
+<ComponentChangelogTable changelogData={changelogData} />

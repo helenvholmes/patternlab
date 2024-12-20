@@ -76,7 +76,7 @@ const meta: Meta<typeof Tabs> = {
   argTypes: {
     children: { table: { disable: true } },
     defaultIndex: {
-      table: { defaultValue: { summary: 0 } },
+      table: { defaultValue: { summary: "0" } },
     },
     id: { control: false },
     onChange: { control: false },

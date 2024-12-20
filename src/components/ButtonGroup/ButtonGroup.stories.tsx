@@ -16,7 +16,7 @@ const meta: Meta<typeof ButtonGroup> = {
     },
     className: { control: false },
     id: { control: false },
-    isDisabled: { table: { defaultValue: { summary: false } } },
+    isDisabled: { table: { defaultValue: { summary: "false" } } },
     layout: {
       control: { type: "radio" },
       options: ["column", "row"],

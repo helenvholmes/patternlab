@@ -13,69 +13,53 @@ exports[`SearchBar renders the UI snapshot correctly 1`] = `
     role="search"
   >
     <div
-      className="textInput css-1u8qly9"
-      id="searchbar-textinput-basic-wrapper"
+      className="css-1ik4laa"
     >
       <div
-        className="css-79elbk"
+        className="textInput css-g1fpd3"
+        id="searchbar-textinput-basic-wrapper"
       >
-        <input
-          aria-describedby="basic-helperText"
-          aria-label="Item Search"
-          autoComplete={null}
-          className="chakra-input css-0"
-          disabled={false}
-          id="searchbar-textinput-basic"
-          name="textInputName"
-          onBlur={[Function]}
-          onChange={[Function]}
-          onFocus={[Function]}
-          placeholder="Item Search "
-          required={false}
-          step={null}
-          type="text"
-        />
-      </div>
-    </div>
-    <button
-      className="chakra-button css-7l30z"
-      id="searchbar-button-basic"
-      type="submit"
-    >
-      <svg
-        aria-hidden={true}
-        className="chakra-icon css-1grhd2q"
-        focusable={false}
-        id="searchbar-icon-basic"
-        role="img"
-        title="search icon"
-        viewBox="0 0 24 24"
-      >
-        <g
-          stroke="currentColor"
-          strokeWidth="1.5"
+        <div
+          className="css-79elbk"
         >
-          <path
-            d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-            fill="none"
-            strokeLinecap="round"
+          <input
+            aria-describedby="basic-helperText"
+            aria-label="Item Search"
+            autoComplete={null}
+            className="chakra-input css-0"
+            disabled={false}
+            id="searchbar-textinput-basic"
+            name="textInputName"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            placeholder="Item Search "
+            required={false}
+            step={null}
+            type="text"
           />
-          <path
-            d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-            fill="currentColor"
-            strokeLinecap="round"
-          />
-          <circle
-            cx="12"
-            cy="12"
-            fill="none"
-            r="11.25"
-            strokeMiterlimit="10"
-          />
-        </g>
-      </svg>
-      Search
-    </button>
+        </div>
+      </div>
+      <button
+        aria-label="Search"
+        className="chakra-button searchButton css-8bx9xp"
+        id="searchbar-button-basic"
+        type="submit"
+      >
+        <svg
+          aria-hidden={true}
+          className="chakra-icon css-1vgifmd"
+          data-file-name="SvgSearch"
+          focusable={false}
+          id="searchbar-icon-basic"
+          role="img"
+          title="search icon"
+        />
+        <span>
+          Search
+        </span>
+      </button>
+    </div>
   </form>
   <div
     aria-atomic={true}
@@ -186,7 +170,8 @@ exports[`SearchBar renders the UI snapshot correctly 2`] = `
           >
             <svg
               aria-hidden={true}
-              className="chakra-icon chakra-select__icon css-q3eg3a"
+              className="chakra-icon chakra-select__icon css-1nreziu"
+              data-file-name="SvgArrow"
               focusable={false}
               id="searchbar-select-withSelect-icon"
               role="presentation"
@@ -198,99 +183,59 @@ exports[`SearchBar renders the UI snapshot correctly 2`] = `
                 }
               }
               title="arrow icon"
-              viewBox="0 0 24 24"
-            >
-              <g
-                stroke="currentColor"
-                strokeWidth="1.5"
-              >
-                <path
-                  d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-                  fill="none"
-                  strokeLinecap="round"
-                />
-                <path
-                  d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-                  fill="currentColor"
-                  strokeLinecap="round"
-                />
-                <circle
-                  cx="12"
-                  cy="12"
-                  fill="none"
-                  r="11.25"
-                  strokeMiterlimit="10"
-                />
-              </g>
-            </svg>
+            />
           </div>
         </div>
       </div>
     </div>
     <div
-      className="textInput css-1u8qly9"
-      id="searchbar-textinput-withSelect-wrapper"
+      className="css-1ik4laa"
     >
       <div
-        className="css-79elbk"
+        className="textInput css-z1r9u7"
+        id="searchbar-textinput-withSelect-wrapper"
       >
-        <input
-          aria-describedby="withSelect-helperText"
-          aria-label="Item Search"
-          autoComplete={null}
-          className="chakra-input css-0"
-          disabled={false}
-          id="searchbar-textinput-withSelect"
-          name="textInputName"
-          onBlur={[Function]}
-          onChange={[Function]}
-          onFocus={[Function]}
-          placeholder="Item Search "
-          required={false}
-          step={null}
-          type="text"
-        />
-      </div>
-    </div>
-    <button
-      className="chakra-button css-7l30z"
-      id="searchbar-button-withSelect"
-      type="submit"
-    >
-      <svg
-        aria-hidden={true}
-        className="chakra-icon css-1grhd2q"
-        focusable={false}
-        id="searchbar-icon-withSelect"
-        role="img"
-        title="search icon"
-        viewBox="0 0 24 24"
-      >
-        <g
-          stroke="currentColor"
-          strokeWidth="1.5"
+        <div
+          className="css-79elbk"
         >
-          <path
-            d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-            fill="none"
-            strokeLinecap="round"
+          <input
+            aria-describedby="withSelect-helperText"
+            aria-label="Item Search"
+            autoComplete={null}
+            className="chakra-input css-0"
+            disabled={false}
+            id="searchbar-textinput-withSelect"
+            name="textInputName"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            placeholder="Item Search "
+            required={false}
+            step={null}
+            type="text"
           />
-          <path
-            d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-            fill="currentColor"
-            strokeLinecap="round"
-          />
-          <circle
-            cx="12"
-            cy="12"
-            fill="none"
-            r="11.25"
-            strokeMiterlimit="10"
-          />
-        </g>
-      </svg>
-      Search
-    </button>
+        </div>
+      </div>
+      <button
+        aria-label=""
+        className="chakra-button searchButton css-8bx9xp"
+        id="searchbar-button-withSelect"
+        type="submit"
+      >
+        <svg
+          aria-hidden={true}
+          className="chakra-icon css-1vgifmd"
+          data-file-name="SvgSearch"
+          focusable={false}
+          id="searchbar-icon-withSelect"
+          role="img"
+          title="search icon"
+        />
+        <span>
+          Search
+        </span>
+      </button>
+    </div>
   </form>
   <div
     aria-atomic={true}
@@ -324,68 +269,52 @@ exports[`SearchBar renders the UI snapshot correctly 3`] = `
     role="search"
   >
     <div
-      className="textInput css-1u8qly9"
-      id="searchbar-textinput-withoutHelperText-wrapper"
+      className="css-1ik4laa"
     >
       <div
-        className="css-79elbk"
+        className="textInput css-g1fpd3"
+        id="searchbar-textinput-withoutHelperText-wrapper"
       >
-        <input
-          aria-label="Item Search"
-          autoComplete={null}
-          className="chakra-input css-0"
-          disabled={false}
-          id="searchbar-textinput-withoutHelperText"
-          name="textInputName"
-          onBlur={[Function]}
-          onChange={[Function]}
-          onFocus={[Function]}
-          placeholder="Item Search "
-          required={false}
-          step={null}
-          type="text"
-        />
-      </div>
-    </div>
-    <button
-      className="chakra-button css-7l30z"
-      id="searchbar-button-withoutHelperText"
-      type="submit"
-    >
-      <svg
-        aria-hidden={true}
-        className="chakra-icon css-1grhd2q"
-        focusable={false}
-        id="searchbar-icon-withoutHelperText"
-        role="img"
-        title="search icon"
-        viewBox="0 0 24 24"
-      >
-        <g
-          stroke="currentColor"
-          strokeWidth="1.5"
+        <div
+          className="css-79elbk"
         >
-          <path
-            d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-            fill="none"
-            strokeLinecap="round"
+          <input
+            aria-label="Item Search"
+            autoComplete={null}
+            className="chakra-input css-0"
+            disabled={false}
+            id="searchbar-textinput-withoutHelperText"
+            name="textInputName"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            placeholder="Item Search "
+            required={false}
+            step={null}
+            type="text"
           />
-          <path
-            d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-            fill="currentColor"
-            strokeLinecap="round"
-          />
-          <circle
-            cx="12"
-            cy="12"
-            fill="none"
-            r="11.25"
-            strokeMiterlimit="10"
-          />
-        </g>
-      </svg>
-      Search
-    </button>
+        </div>
+      </div>
+      <button
+        aria-label="Search"
+        className="chakra-button searchButton css-8bx9xp"
+        id="searchbar-button-withoutHelperText"
+        type="submit"
+      >
+        <svg
+          aria-hidden={true}
+          className="chakra-icon css-1vgifmd"
+          data-file-name="SvgSearch"
+          focusable={false}
+          id="searchbar-icon-withoutHelperText"
+          role="img"
+          title="search icon"
+        />
+        <span>
+          Search
+        </span>
+      </button>
+    </div>
   </form>
 </div>
 `;
@@ -403,69 +332,53 @@ exports[`SearchBar renders the UI snapshot correctly 4`] = `
     role="search"
   >
     <div
-      className="textInput css-1u8qly9"
-      id="searchbar-textinput-withClearButton-wrapper"
+      className="css-1ik4laa"
     >
       <div
-        className="css-79elbk"
+        className="textInput css-g1fpd3"
+        id="searchbar-textinput-withClearButton-wrapper"
       >
-        <input
-          aria-describedby="withClearButton-helperText"
-          aria-label="Item Search"
-          autoComplete={null}
-          className="chakra-input css-0"
-          disabled={false}
-          id="searchbar-textinput-withClearButton"
-          name="textInputName"
-          onBlur={[Function]}
-          onChange={[Function]}
-          onFocus={[Function]}
-          placeholder="Item Search "
-          required={false}
-          step={null}
-          type="text"
-        />
-      </div>
-    </div>
-    <button
-      className="chakra-button css-7l30z"
-      id="searchbar-button-withClearButton"
-      type="submit"
-    >
-      <svg
-        aria-hidden={true}
-        className="chakra-icon css-1grhd2q"
-        focusable={false}
-        id="searchbar-icon-withClearButton"
-        role="img"
-        title="search icon"
-        viewBox="0 0 24 24"
-      >
-        <g
-          stroke="currentColor"
-          strokeWidth="1.5"
+        <div
+          className="css-79elbk"
         >
-          <path
-            d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-            fill="none"
-            strokeLinecap="round"
+          <input
+            aria-describedby="withClearButton-helperText"
+            aria-label="Item Search"
+            autoComplete={null}
+            className="chakra-input css-0"
+            disabled={false}
+            id="searchbar-textinput-withClearButton"
+            name="textInputName"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            placeholder="Item Search "
+            required={false}
+            step={null}
+            type="text"
           />
-          <path
-            d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-            fill="currentColor"
-            strokeLinecap="round"
-          />
-          <circle
-            cx="12"
-            cy="12"
-            fill="none"
-            r="11.25"
-            strokeMiterlimit="10"
-          />
-        </g>
-      </svg>
-      Search
-    </button>
+        </div>
+      </div>
+      <button
+        aria-label=""
+        className="chakra-button searchButton css-8bx9xp"
+        id="searchbar-button-withClearButton"
+        type="submit"
+      >
+        <svg
+          aria-hidden={true}
+          className="chakra-icon css-1vgifmd"
+          data-file-name="SvgSearch"
+          focusable={false}
+          id="searchbar-icon-withClearButton"
+          role="img"
+          title="search icon"
+        />
+        <span>
+          Search
+        </span>
+      </button>
+    </div>
   </form>
   <div
     aria-atomic={true}
@@ -499,77 +412,61 @@ exports[`SearchBar renders the UI snapshot correctly 5`] = `
     role="search"
   >
     <div
-      className="textInput css-1u8qly9"
-      id="searchbar-textinput-invalidState-wrapper"
+      className="css-1ik4laa"
     >
       <div
-        className="css-79elbk"
+        className="textInput css-g1fpd3"
+        id="searchbar-textinput-invalidState-wrapper"
       >
-        <input
-          aria-describedby="searchbar-textinput-invalidState-helperText"
-          aria-invalid={true}
-          aria-label="Item Search"
-          autoComplete={null}
-          className="chakra-input css-0"
-          disabled={false}
-          id="searchbar-textinput-invalidState"
-          name="textInputName"
-          onBlur={[Function]}
-          onChange={[Function]}
-          onFocus={[Function]}
-          placeholder="Item Search "
-          required={false}
-          step={null}
-          type="text"
+        <div
+          className="css-79elbk"
+        >
+          <input
+            aria-describedby="searchbar-textinput-invalidState-helperText"
+            aria-invalid={true}
+            aria-label="Item Search"
+            autoComplete={null}
+            className="chakra-input css-0"
+            disabled={false}
+            id="searchbar-textinput-invalidState"
+            name="textInputName"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            placeholder="Item Search "
+            required={false}
+            step={null}
+            type="text"
+          />
+        </div>
+        <div
+          aria-atomic={true}
+          aria-live="polite"
+          className="css-1xdhyk6"
+          data-isinvalid={true}
+          id="searchbar-textinput-invalidState-helperText"
         />
       </div>
-      <div
-        aria-atomic={true}
-        aria-live="polite"
-        className="css-1xdhyk6"
-        data-isinvalid={true}
-        id="searchbar-textinput-invalidState-helperText"
-      />
-    </div>
-    <button
-      className="chakra-button css-7l30z"
-      id="searchbar-button-invalidState"
-      type="submit"
-    >
-      <svg
-        aria-hidden={true}
-        className="chakra-icon css-1grhd2q"
-        focusable={false}
-        id="searchbar-icon-invalidState"
-        role="img"
-        title="search icon"
-        viewBox="0 0 24 24"
+      <button
+        aria-label="Search"
+        className="chakra-button searchButton css-8bx9xp"
+        id="searchbar-button-invalidState"
+        type="submit"
       >
-        <g
-          stroke="currentColor"
-          strokeWidth="1.5"
-        >
-          <path
-            d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-            fill="none"
-            strokeLinecap="round"
-          />
-          <path
-            d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-            fill="currentColor"
-            strokeLinecap="round"
-          />
-          <circle
-            cx="12"
-            cy="12"
-            fill="none"
-            r="11.25"
-            strokeMiterlimit="10"
-          />
-        </g>
-      </svg>
-      Search
-    </button>
+        <svg
+          aria-hidden={true}
+          className="chakra-icon css-1vgifmd"
+          data-file-name="SvgSearch"
+          focusable={false}
+          id="searchbar-icon-invalidState"
+          role="img"
+          title="search icon"
+        />
+        <span>
+          Search
+        </span>
+      </button>
+    </div>
   </form>
 </div>
 `;
@@ -587,69 +484,53 @@ exports[`SearchBar renders the UI snapshot correctly 6`] = `
     role="search"
   >
     <div
-      className="textInput css-1u8qly9"
-      id="searchbar-textinput-disabledState-wrapper"
+      className="css-1ik4laa"
     >
       <div
-        className="css-79elbk"
+        className="textInput css-g1fpd3"
+        id="searchbar-textinput-disabledState-wrapper"
       >
-        <input
-          aria-label="Item Search"
-          autoComplete={null}
-          className="chakra-input css-0"
-          disabled={true}
-          id="searchbar-textinput-disabledState"
-          name="textInputName"
-          onBlur={[Function]}
-          onChange={[Function]}
-          onFocus={[Function]}
-          placeholder="Item Search "
-          required={false}
-          step={null}
-          type="text"
-        />
-      </div>
-    </div>
-    <button
-      className="chakra-button css-7l30z"
-      disabled={true}
-      id="searchbar-button-disabledState"
-      type="submit"
-    >
-      <svg
-        aria-hidden={true}
-        className="chakra-icon css-1grhd2q"
-        focusable={false}
-        id="searchbar-icon-disabledState"
-        role="img"
-        title="search icon"
-        viewBox="0 0 24 24"
-      >
-        <g
-          stroke="currentColor"
-          strokeWidth="1.5"
+        <div
+          className="css-79elbk"
         >
-          <path
-            d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-            fill="none"
-            strokeLinecap="round"
+          <input
+            aria-label="Item Search"
+            autoComplete={null}
+            className="chakra-input css-0"
+            disabled={true}
+            id="searchbar-textinput-disabledState"
+            name="textInputName"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            placeholder="Item Search "
+            required={false}
+            step={null}
+            type="text"
           />
-          <path
-            d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-            fill="currentColor"
-            strokeLinecap="round"
-          />
-          <circle
-            cx="12"
-            cy="12"
-            fill="none"
-            r="11.25"
-            strokeMiterlimit="10"
-          />
-        </g>
-      </svg>
-      Search
-    </button>
+        </div>
+      </div>
+      <button
+        aria-label=""
+        className="chakra-button searchButton css-8bx9xp"
+        disabled={true}
+        id="searchbar-button-disabledState"
+        type="submit"
+      >
+        <svg
+          aria-hidden={true}
+          className="chakra-icon css-1vgifmd"
+          data-file-name="SvgSearch"
+          focusable={false}
+          id="searchbar-icon-disabledState"
+          role="img"
+          title="search icon"
+        />
+        <span>
+          Search
+        </span>
+      </button>
+    </div>
   </form>
 </div>
 `;
@@ -667,70 +548,54 @@ exports[`SearchBar renders the UI snapshot correctly 7`] = `
     role="search"
   >
     <div
-      className="textInput css-1u8qly9"
-      id="searchbar-textinput-requiredState-wrapper"
+      className="css-1ik4laa"
     >
       <div
-        className="css-79elbk"
+        className="textInput css-g1fpd3"
+        id="searchbar-textinput-requiredState-wrapper"
       >
-        <input
-          aria-label="Item Search"
-          aria-required={true}
-          autoComplete={null}
-          className="chakra-input css-0"
-          disabled={true}
-          id="searchbar-textinput-requiredState"
-          name="textInputName"
-          onBlur={[Function]}
-          onChange={[Function]}
-          onFocus={[Function]}
-          placeholder="Item Search (Required)"
-          required={true}
-          step={null}
-          type="text"
-        />
-      </div>
-    </div>
-    <button
-      className="chakra-button css-7l30z"
-      disabled={true}
-      id="searchbar-button-requiredState"
-      type="submit"
-    >
-      <svg
-        aria-hidden={true}
-        className="chakra-icon css-1grhd2q"
-        focusable={false}
-        id="searchbar-icon-requiredState"
-        role="img"
-        title="search icon"
-        viewBox="0 0 24 24"
-      >
-        <g
-          stroke="currentColor"
-          strokeWidth="1.5"
+        <div
+          className="css-79elbk"
         >
-          <path
-            d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-            fill="none"
-            strokeLinecap="round"
+          <input
+            aria-label="Item Search"
+            aria-required={true}
+            autoComplete={null}
+            className="chakra-input css-0"
+            disabled={true}
+            id="searchbar-textinput-requiredState"
+            name="textInputName"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            placeholder="Item Search (required)"
+            required={true}
+            step={null}
+            type="text"
           />
-          <path
-            d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-            fill="currentColor"
-            strokeLinecap="round"
-          />
-          <circle
-            cx="12"
-            cy="12"
-            fill="none"
-            r="11.25"
-            strokeMiterlimit="10"
-          />
-        </g>
-      </svg>
-      Search
-    </button>
+        </div>
+      </div>
+      <button
+        aria-label="Search"
+        className="chakra-button searchButton css-8bx9xp"
+        disabled={true}
+        id="searchbar-button-requiredState"
+        type="submit"
+      >
+        <svg
+          aria-hidden={true}
+          className="chakra-icon css-1vgifmd"
+          data-file-name="SvgSearch"
+          focusable={false}
+          id="searchbar-icon-requiredState"
+          role="img"
+          title="search icon"
+        />
+        <span>
+          Search
+        </span>
+      </button>
+    </div>
   </form>
 </div>
 `;
@@ -748,70 +613,54 @@ exports[`SearchBar renders the UI snapshot correctly 8`] = `
     role="search"
   >
     <div
-      className="textInput css-1u8qly9"
-      id="searchbar-textinput-noBrandButtonType-wrapper"
+      className="css-1ik4laa"
     >
       <div
-        className="css-79elbk"
+        className="textInput css-g1fpd3"
+        id="searchbar-textinput-noBrandButtonType-wrapper"
       >
-        <input
-          aria-label="Item Search"
-          aria-required={true}
-          autoComplete={null}
-          className="chakra-input css-0"
-          disabled={true}
-          id="searchbar-textinput-noBrandButtonType"
-          name="textInputName"
-          onBlur={[Function]}
-          onChange={[Function]}
-          onFocus={[Function]}
-          placeholder="Item Search (Required)"
-          required={true}
-          step={null}
-          type="text"
-        />
-      </div>
-    </div>
-    <button
-      className="chakra-button css-7l30z"
-      disabled={true}
-      id="searchbar-button-noBrandButtonType"
-      type="submit"
-    >
-      <svg
-        aria-hidden={true}
-        className="chakra-icon css-1grhd2q"
-        focusable={false}
-        id="searchbar-icon-noBrandButtonType"
-        role="img"
-        title="search icon"
-        viewBox="0 0 24 24"
-      >
-        <g
-          stroke="currentColor"
-          strokeWidth="1.5"
+        <div
+          className="css-79elbk"
         >
-          <path
-            d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-            fill="none"
-            strokeLinecap="round"
+          <input
+            aria-label="Item Search"
+            aria-required={true}
+            autoComplete={null}
+            className="chakra-input css-0"
+            disabled={true}
+            id="searchbar-textinput-noBrandButtonType"
+            name="textInputName"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            placeholder="Item Search (required)"
+            required={true}
+            step={null}
+            type="text"
           />
-          <path
-            d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-            fill="currentColor"
-            strokeLinecap="round"
-          />
-          <circle
-            cx="12"
-            cy="12"
-            fill="none"
-            r="11.25"
-            strokeMiterlimit="10"
-          />
-        </g>
-      </svg>
-      Search
-    </button>
+        </div>
+      </div>
+      <button
+        aria-label=""
+        className="chakra-button searchButton css-8bx9xp"
+        disabled={true}
+        id="searchbar-button-noBrandButtonType"
+        type="submit"
+      >
+        <svg
+          aria-hidden={true}
+          className="chakra-icon css-1vgifmd"
+          data-file-name="SvgSearch"
+          focusable={false}
+          id="searchbar-icon-noBrandButtonType"
+          role="img"
+          title="search icon"
+        />
+        <span>
+          Search
+        </span>
+      </button>
+    </div>
   </form>
 </div>
 `;
@@ -834,45 +683,29 @@ exports[`SearchBar renders the UI snapshot correctly 9`] = `
     onSubmit={[MockFunction]}
     role="search"
   >
-    <button
-      className="chakra-button css-7l30z"
-      id="searchbar-button-withHeading"
-      type="submit"
+    <div
+      className="css-1ik4laa"
     >
-      <svg
-        aria-hidden={true}
-        className="chakra-icon css-1grhd2q"
-        focusable={false}
-        id="searchbar-icon-withHeading"
-        role="img"
-        title="search icon"
-        viewBox="0 0 24 24"
+      <button
+        aria-label="Search"
+        className="chakra-button searchButton css-8bx9xp"
+        id="searchbar-button-withHeading"
+        type="submit"
       >
-        <g
-          stroke="currentColor"
-          strokeWidth="1.5"
-        >
-          <path
-            d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-            fill="none"
-            strokeLinecap="round"
-          />
-          <path
-            d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-            fill="currentColor"
-            strokeLinecap="round"
-          />
-          <circle
-            cx="12"
-            cy="12"
-            fill="none"
-            r="11.25"
-            strokeMiterlimit="10"
-          />
-        </g>
-      </svg>
-      Search
-    </button>
+        <svg
+          aria-hidden={true}
+          className="chakra-icon css-1vgifmd"
+          data-file-name="SvgSearch"
+          focusable={false}
+          id="searchbar-icon-withHeading"
+          role="img"
+          title="search icon"
+        />
+        <span>
+          Search
+        </span>
+      </button>
+    </div>
   </form>
 </div>
 `;
@@ -894,45 +727,29 @@ exports[`SearchBar renders the UI snapshot correctly 10`] = `
     onSubmit={[MockFunction]}
     role="search"
   >
-    <button
-      className="chakra-button css-7l30z"
-      id="searchbar-button-withDescription"
-      type="submit"
+    <div
+      className="css-1ik4laa"
     >
-      <svg
-        aria-hidden={true}
-        className="chakra-icon css-1grhd2q"
-        focusable={false}
-        id="searchbar-icon-withDescription"
-        role="img"
-        title="search icon"
-        viewBox="0 0 24 24"
+      <button
+        aria-label=""
+        className="chakra-button searchButton css-8bx9xp"
+        id="searchbar-button-withDescription"
+        type="submit"
       >
-        <g
-          stroke="currentColor"
-          strokeWidth="1.5"
-        >
-          <path
-            d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-            fill="none"
-            strokeLinecap="round"
-          />
-          <path
-            d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-            fill="currentColor"
-            strokeLinecap="round"
-          />
-          <circle
-            cx="12"
-            cy="12"
-            fill="none"
-            r="11.25"
-            strokeMiterlimit="10"
-          />
-        </g>
-      </svg>
-      Search
-    </button>
+        <svg
+          aria-hidden={true}
+          className="chakra-icon css-1vgifmd"
+          data-file-name="SvgSearch"
+          focusable={false}
+          id="searchbar-icon-withDescription"
+          role="img"
+          title="search icon"
+        />
+        <span>
+          Search
+        </span>
+      </button>
+    </div>
   </form>
 </div>
 `;
@@ -960,45 +777,29 @@ exports[`SearchBar renders the UI snapshot correctly 11`] = `
     onSubmit={[MockFunction]}
     role="search"
   >
-    <button
-      className="chakra-button css-7l30z"
-      id="searchbar-button-withHeadingAndDescription"
-      type="submit"
+    <div
+      className="css-1ik4laa"
     >
-      <svg
-        aria-hidden={true}
-        className="chakra-icon css-1grhd2q"
-        focusable={false}
-        id="searchbar-icon-withHeadingAndDescription"
-        role="img"
-        title="search icon"
-        viewBox="0 0 24 24"
+      <button
+        aria-label="Search"
+        className="chakra-button searchButton css-8bx9xp"
+        id="searchbar-button-withHeadingAndDescription"
+        type="submit"
       >
-        <g
-          stroke="currentColor"
-          strokeWidth="1.5"
-        >
-          <path
-            d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-            fill="none"
-            strokeLinecap="round"
-          />
-          <path
-            d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-            fill="currentColor"
-            strokeLinecap="round"
-          />
-          <circle
-            cx="12"
-            cy="12"
-            fill="none"
-            r="11.25"
-            strokeMiterlimit="10"
-          />
-        </g>
-      </svg>
-      Search
-    </button>
+        <svg
+          aria-hidden={true}
+          className="chakra-icon css-1vgifmd"
+          data-file-name="SvgSearch"
+          focusable={false}
+          id="searchbar-icon-withHeadingAndDescription"
+          role="img"
+          title="search icon"
+        />
+        <span>
+          Search
+        </span>
+      </button>
+    </div>
   </form>
 </div>
 `;
@@ -1016,69 +817,53 @@ exports[`SearchBar renders the UI snapshot correctly 12`] = `
     role="search"
   >
     <div
-      className="textInput css-1u8qly9"
-      id="searchbar-textinput-chakra-wrapper"
+      className="css-1ik4laa"
     >
       <div
-        className="css-79elbk"
+        className="textInput css-g1fpd3"
+        id="searchbar-textinput-chakra-wrapper"
       >
-        <input
-          aria-describedby="chakra-helperText"
-          aria-label="Item Search"
-          autoComplete={null}
-          className="chakra-input css-0"
-          disabled={false}
-          id="searchbar-textinput-chakra"
-          name="textInputName"
-          onBlur={[Function]}
-          onChange={[Function]}
-          onFocus={[Function]}
-          placeholder="Item Search "
-          required={false}
-          step={null}
-          type="text"
-        />
-      </div>
-    </div>
-    <button
-      className="chakra-button css-7l30z"
-      id="searchbar-button-chakra"
-      type="submit"
-    >
-      <svg
-        aria-hidden={true}
-        className="chakra-icon css-1grhd2q"
-        focusable={false}
-        id="searchbar-icon-chakra"
-        role="img"
-        title="search icon"
-        viewBox="0 0 24 24"
-      >
-        <g
-          stroke="currentColor"
-          strokeWidth="1.5"
+        <div
+          className="css-79elbk"
         >
-          <path
-            d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-            fill="none"
-            strokeLinecap="round"
+          <input
+            aria-describedby="chakra-helperText"
+            aria-label="Item Search"
+            autoComplete={null}
+            className="chakra-input css-0"
+            disabled={false}
+            id="searchbar-textinput-chakra"
+            name="textInputName"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            placeholder="Item Search "
+            required={false}
+            step={null}
+            type="text"
           />
-          <path
-            d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-            fill="currentColor"
-            strokeLinecap="round"
-          />
-          <circle
-            cx="12"
-            cy="12"
-            fill="none"
-            r="11.25"
-            strokeMiterlimit="10"
-          />
-        </g>
-      </svg>
-      Search
-    </button>
+        </div>
+      </div>
+      <button
+        aria-label=""
+        className="chakra-button searchButton css-8bx9xp"
+        id="searchbar-button-chakra"
+        type="submit"
+      >
+        <svg
+          aria-hidden={true}
+          className="chakra-icon css-1vgifmd"
+          data-file-name="SvgSearch"
+          focusable={false}
+          id="searchbar-icon-chakra"
+          role="img"
+          title="search icon"
+        />
+        <span>
+          Search
+        </span>
+      </button>
+    </div>
   </form>
   <div
     aria-atomic={true}
@@ -1113,69 +898,53 @@ exports[`SearchBar renders the UI snapshot correctly 13`] = `
     role="search"
   >
     <div
-      className="textInput css-1u8qly9"
-      id="searchbar-textinput-props-wrapper"
+      className="css-1ik4laa"
     >
       <div
-        className="css-79elbk"
+        className="textInput css-g1fpd3"
+        id="searchbar-textinput-props-wrapper"
       >
-        <input
-          aria-describedby="props-helperText"
-          aria-label="Item Search"
-          autoComplete={null}
-          className="chakra-input css-0"
-          disabled={false}
-          id="searchbar-textinput-props"
-          name="textInputName"
-          onBlur={[Function]}
-          onChange={[Function]}
-          onFocus={[Function]}
-          placeholder="Item Search "
-          required={false}
-          step={null}
-          type="text"
-        />
-      </div>
-    </div>
-    <button
-      className="chakra-button css-7l30z"
-      id="searchbar-button-props"
-      type="submit"
-    >
-      <svg
-        aria-hidden={true}
-        className="chakra-icon css-1grhd2q"
-        focusable={false}
-        id="searchbar-icon-props"
-        role="img"
-        title="search icon"
-        viewBox="0 0 24 24"
-      >
-        <g
-          stroke="currentColor"
-          strokeWidth="1.5"
+        <div
+          className="css-79elbk"
         >
-          <path
-            d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-            fill="none"
-            strokeLinecap="round"
+          <input
+            aria-describedby="props-helperText"
+            aria-label="Item Search"
+            autoComplete={null}
+            className="chakra-input css-0"
+            disabled={false}
+            id="searchbar-textinput-props"
+            name="textInputName"
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            placeholder="Item Search "
+            required={false}
+            step={null}
+            type="text"
           />
-          <path
-            d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-            fill="currentColor"
-            strokeLinecap="round"
-          />
-          <circle
-            cx="12"
-            cy="12"
-            fill="none"
-            r="11.25"
-            strokeMiterlimit="10"
-          />
-        </g>
-      </svg>
-      Search
-    </button>
+        </div>
+      </div>
+      <button
+        aria-label="Search"
+        className="chakra-button searchButton css-8bx9xp"
+        id="searchbar-button-props"
+        type="submit"
+      >
+        <svg
+          aria-hidden={true}
+          className="chakra-icon css-1vgifmd"
+          data-file-name="SvgSearch"
+          focusable={false}
+          id="searchbar-icon-props"
+          role="img"
+          title="search icon"
+        />
+        <span>
+          Search
+        </span>
+      </button>
+    </div>
   </form>
   <div
     aria-atomic={true}

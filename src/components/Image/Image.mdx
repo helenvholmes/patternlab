@@ -12,7 +12,7 @@ import { changelogData } from "./imageChangelogData";
 | Component Version | DS Version |
 | ----------------- | ---------- |
 | Added             | `0.0.6`    |
-| Latest            | `3.1.1`    |
+| Latest            | `3.3.1`    |
 
 ## Table of Contents
 
@@ -43,9 +43,10 @@ If you want a simple HTML `img` element then don't pass in values for the
 
 ## Accessibility
 
-All images must have an `alt` attribute, even if it's empty. The `alt` prop should
-be used to concisely describe the image. If the image is decorative, then the
-`alt` prop should be an empty string `""`.
+The `alt` prop should be used to concisely describe the image. If the image is purely decorative,
+the `alt` attribute should still be present, but can be set to an empty string. In this scenario,
+an `alt` prop does not need to be passed. The component will set the attribute to an empty string
+`""` by default.
 
 Resources:
 

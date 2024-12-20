@@ -14,6 +14,7 @@ const meta: Meta<typeof Select> = {
   argTypes: {
     children: { table: { disable: true } },
     className: { control: false },
+    defaultValue: { control: false },
     helperText: { control: "text" },
     id: { control: false },
     invalidText: { control: "text" },
@@ -34,9 +35,9 @@ const meta: Meta<typeof Select> = {
       options: selectTypesArray,
       table: { defaultValue: { summary: "default" } },
     },
-    showHelperInvalidText: argsBooleanType(true),
-    showLabel: argsBooleanType(true),
-    showRequiredLabel: argsBooleanType(true),
+    showHelperInvalidText: argsBooleanType("true"),
+    showLabel: argsBooleanType("true"),
+    showRequiredLabel: argsBooleanType("true"),
     value: { control: false },
   },
 };
@@ -51,6 +52,7 @@ type Story = StoryObj<typeof Select>;
 export const WithControls: Story = {
   args: {
     className: undefined,
+    defaultValue: undefined,
     helperText: "This is the helper text.",
     id: "select-id",
     invalidText: "This is the error text :(",
@@ -61,6 +63,7 @@ export const WithControls: Story = {
     labelText: "What is your favorite color?",
     name: "color",
     onChange: undefined,
+    placeholder: undefined,
     showHelperInvalidText: undefined,
     showLabel: true,
     showRequiredLabel: true,
@@ -132,7 +135,7 @@ export const LabellingVariations: Story = {
         <option value="white">White</option>
       </Select>
       <Select
-        helperText="Display the Required text"
+        helperText="Display the required text"
         id="label-example3"
         isRequired
         labelText="What is your favorite color?"
@@ -145,7 +148,7 @@ export const LabellingVariations: Story = {
         <option value="white">White</option>
       </Select>
       <Select
-        helperText="Do not display the Required text"
+        helperText="Do not display the required text"
         id="label-example4"
         isRequired
         labelText="What is your favorite color?"
@@ -254,6 +257,7 @@ function SelectUncontrolledExample() {
     <Form id="form">
       <FormField>
         <Select
+          defaultValue="white"
           helperText="This is the helper text."
           id="example-2"
           labelText="What is your favorite color?"

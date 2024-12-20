@@ -93,9 +93,9 @@ describe("TextInput", () => {
     expect(screen.getByText("Custom Input Label")).toBeInTheDocument();
   });
 
-  it("renders 'Required' along with the label text", () => {
+  it("renders 'required' along with the label text", () => {
     expect(screen.getByText("Custom Input Label")).toBeInTheDocument();
-    expect(screen.getByText(/Required/i)).toBeInTheDocument();
+    expect(screen.getByText(/required/i)).toBeInTheDocument();
   });
 
   it("adds aria-describedby attribute", async () => {
@@ -207,7 +207,7 @@ describe("TextInput", () => {
     );
   });
 
-  it("does not render '(Required)' along with the label text", () => {
+  it("does not render '(required)' along with the label text", () => {
     utils.rerender(
       <TextInput
         id="myTextInput"
@@ -221,10 +221,10 @@ describe("TextInput", () => {
     );
 
     expect(screen.getByText("Custom Input Label")).toBeInTheDocument();
-    expect(screen.queryByText(/Required/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/required/i)).not.toBeInTheDocument();
   });
 
-  it("renders a custom 'Required' along with the label text", () => {
+  it("renders a custom 'required' along with the label text", () => {
     utils.rerender(
       <TextInput
         id="myTextInput"
@@ -240,7 +240,7 @@ describe("TextInput", () => {
     expect(screen.getByText(/Obligatoire/i)).toBeInTheDocument();
   });
 
-  it("does not render a custom '(Required)' along with the label text", () => {
+  it("does not render a custom '(required)' along with the label text", () => {
     utils.rerender(
       <TextInput
         id="myTextInput"

@@ -9,10 +9,10 @@ import { changelogData } from "./multiSelectChangelogData";
 
 # MultiSelect
 
-| Component Version | DS Version   |
-| ----------------- | ------------ |
-| Added             | `1.4.0`      |
-| Latest            | `Prerelease` |
+| Component Version | DS Version |
+| ----------------- | ---------- |
+| Added             | `1.4.0`    |
+| Latest            | `3.5.0`    |
 
 ## Table of Contents
 
@@ -24,6 +24,7 @@ import { changelogData } from "./multiSelectChangelogData";
 - {<Link href="#nested-list-items" target="_self">Nested List Items</Link>}
 - {<Link href="#disabled-list-items" target="_self">Disabled List Items</Link>}
 - {<Link href="#search-input-field" target="_self">Search Input Field</Link>}
+- {<Link href="#show-item-count" target="_self">Show Item Count</Link>}
 - {<Link href="#block-element-or-float" target="_self">Block Element or Float</Link>}
 - {<Link href="#width" target="_self">Width</Link>}
 - {<Link href="#default-open-state" target="_self">Default Open State</Link>}
@@ -120,7 +121,8 @@ The options rendered in the `MultiSelect` component are passed into the
 component's `items` prop. The expected data structure is an array of objects,
 with each item having an `id` and a `name`. You also have the option to include
 a second level of child items. Both parent and child items can optionally use
-the `isDisabled` flag. The format is as follows:
+the `isDisabled` flag and include the `itemCount` prop to render their associated
+count. The format is as follows:
 
 <Source
   code={`
@@ -132,11 +134,13 @@ the `isDisabled` flag. The format is as follows:
     {
       id: "art",
       name: "Art",
+      itemCount: 5
     },
     {
       id: "architecture",
       name: "Architecture",
       isDisabled: true,
+      itemCount: 7
     },
     {
       id: 'design',
@@ -153,7 +157,7 @@ the `isDisabled` flag. The format is as follows:
           name: 'User Experience'
         },
         {
-          id: 'tecture',
+          id: 'architecture',
           isDisabled: false,
           name: 'Architecture'
         },
@@ -325,7 +329,7 @@ child checkbox will not be clickable and its state will not change.
           name: 'User Experience'
         },
         {
-          id: 'tecture',
+          id: 'architecture_design',
           isDisabled: false,
           name: 'Architecture'
         },
@@ -378,7 +382,7 @@ child checkbox will not be clickable and its state will not change.
           name: 'User Experience'
         },
         {
-          id: 'tecture',
+          id: 'architecture_design',
           isDisabled: true,
           name: 'Architecture'
         },
@@ -439,6 +443,72 @@ the component to allow users to search the available checkbox items.
 `}
   language="jsx"
 />
+
+## Show Item Count
+
+The recommended UX pattern for filtering is to include an item count associated
+with each option in a `MultiSelect` component. The item counts can be rendered
+by passing the `itemCount` data property to the `items` prop.
+
+<Source
+  code={`
+<MultiSelect
+  buttonText="MultiSelect"
+  id="multi-select-id"
+  isBlockElement
+  items={[
+        {
+          id: "art",
+          name: "Art",
+          itemCount: 7,
+        },
+        {
+          id: "architecture",
+          name: "Architecture",
+          itemCount: 20,
+        },
+        {
+          id: "design",
+          name: "Design",
+          children: [
+            {
+              id: "fashion",
+              name: "Fashion",
+              itemCount: 2,
+            },
+            {
+              id: "ux",
+              name: "User Experience",
+              itemCount: 5,
+            },
+            {
+              id: "architecture_design",
+              name: "Architecture",
+              itemCount: 3,
+            },
+            {
+              id: "home",
+              name: "Home",
+              itemCount: 1,
+            },
+          ],
+          itemCount: 11,
+        },
+        {
+          id: "business",
+          name: "Business",
+          itemCount: 2,
+        },
+        ...
+      ],
+    },
+  ]}
+/>
+`}
+  language="jsx"
+/>
+
+<Canvas of={MultiSelectStories.itemCountListItems} />
 
 ## Block Element or Float
 

@@ -10,6 +10,22 @@ import { ChangelogData } from "../../utils/ComponentChangelogTable";
 
 export const changelogData: ChangelogData[] = [
   {
+    date: "2024-09-19",
+    version: "3.3.2",
+    type: "Bug Fix",
+    affects: ["Styles"],
+    notes: [
+      "Fixes issue where, if text value was not a string, necessary styles weren't applied.",
+    ],
+  },
+  {
+    date: "2024-07-25",
+    version: "3.2.0",
+    type: "Update",
+    affects: ["Functionality"],
+    notes: ["Exports the `HelperErrorTextProps` interface."],
+  },
+  {
     date: "2024-03-14",
     version: "3.0.0",
     type: "Update",

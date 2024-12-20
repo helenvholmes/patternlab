@@ -21,6 +21,10 @@ const meta: Meta<typeof Menu> = {
       options: ["left", "right"],
       table: { defaultValue: { summary: "left" } },
     },
+    showSelectionAsLabel: {
+      control: { type: "boolean" },
+      defaultValue: { summary: "false" },
+    },
     listItemsData: { control: false },
     selectedItem: { description: "Set item id to be selected on open." },
     showBorder: {
@@ -60,6 +64,33 @@ const defaultListItems: ListItemsData[] = [
     label: "I'm item 3",
     onClick: () => {
       console.log("Item Title 3 clicked");
+    },
+  },
+];
+
+const labelListItems: ListItemsData[] = [
+  {
+    type: "action",
+    id: "ascending",
+    label: "Ascending",
+    onClick: () => {
+      console.log("Ascending clicked");
+    },
+  },
+  {
+    type: "action",
+    id: "descending",
+    label: "Descending",
+    onClick: () => {
+      console.log("Descending clicked");
+    },
+  },
+  {
+    type: "action",
+    id: "alphabetical",
+    label: "Alphabetical",
+    onClick: () => {
+      console.log("Alphabetical clicked");
     },
   },
 ];
@@ -401,6 +432,30 @@ export const MenuTypes: Story = {
   parameters: {
     docs: {
       story: { height: "170px" },
+    },
+  },
+};
+
+export const MenuLabel: Story = {
+  render: () => (
+    <HStack>
+      <Menu labelText={"Sort By"} listItemsData={labelListItems} />
+      <Menu
+        showSelectionAsLabel
+        labelText={"Sort By"}
+        listItemsData={labelListItems}
+      />
+      <Menu
+        showSelectionAsLabel
+        selectedItem="ascending"
+        labelText={"Sort By"}
+        listItemsData={labelListItems}
+      />
+    </HStack>
+  ),
+  parameters: {
+    docs: {
+      story: { height: "200px" },
     },
   },
 };

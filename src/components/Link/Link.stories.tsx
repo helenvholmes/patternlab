@@ -11,10 +11,10 @@ const meta: Meta<typeof Link> = {
   argTypes: {
     children: { table: { disable: true } },
     className: { control: false },
-    hasVisitedState: argsBooleanType(true),
+    hasVisitedState: argsBooleanType("true"),
     href: { control: { type: "text" } },
     id: { control: false },
-    isUnderlined: argsBooleanType(true),
+    isUnderlined: argsBooleanType("true"),
     onClick: { control: false },
     ref: { table: { disable: true } },
     rel: { control: { type: "text" } },

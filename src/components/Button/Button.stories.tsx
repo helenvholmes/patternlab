@@ -38,8 +38,8 @@ const meta: Meta<typeof Button> = {
       description: "**Only used for Storybook – ** Select an icon. ",
     },
     id: { control: false },
-    isDisabled: { table: { defaultValue: { summary: false } } },
-    mouseDown: { table: { defaultValue: { summary: false } } },
+    isDisabled: { table: { defaultValue: { summary: "false" } } },
+    mouseDown: { table: { defaultValue: { summary: "false" } } },
     onClick: { control: false },
     size: {
       control: { type: "radio" },

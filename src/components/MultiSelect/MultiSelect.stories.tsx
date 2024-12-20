@@ -2,6 +2,7 @@ import { HStack, Stack } from "@chakra-ui/react";
 import { action } from "@storybook/addon-actions";
 import type { Meta, StoryObj } from "@storybook/react";
 import { useEffect, useState } from "react";
+import { userEvent, within, expect } from "@storybook/test";
 
 import Heading from "../Heading/Heading";
 import MultiSelect, {
@@ -86,7 +87,7 @@ const withChildrenItems = [
         name: "User Experience",
       },
       {
-        id: "tecture",
+        id: "architecture_design",
         name: "Architecture",
       },
       {
@@ -138,7 +139,7 @@ const withDisabledItems = [
         isDisabled: true,
       },
       {
-        id: "tecture",
+        id: "architecture_design",
         name: "Architecture",
         isDisabled: false,
       },
@@ -184,7 +185,7 @@ const withDisabledAllChildrenItems = [
         isDisabled: true,
       },
       {
-        id: "tecture",
+        id: "architecture_design",
         name: "Architecture",
         isDisabled: true,
       },
@@ -201,27 +202,82 @@ const withDisabledAllChildrenItems = [
   },
 ];
 
+const withItemCountItems = [
+  {
+    id: "art",
+    name: "Art",
+    itemCount: 7,
+  },
+  {
+    id: "architecture",
+    name: "Architecture",
+    itemCount: 20,
+  },
+  {
+    id: "design",
+    name: "Design",
+    children: [
+      {
+        id: "fashion",
+        name: "Fashion",
+        itemCount: 2,
+      },
+      {
+        id: "ux",
+        name: "User Experience",
+        itemCount: 5,
+      },
+      {
+        id: "architecture_design",
+        name: "Architecture",
+        itemCount: 3,
+      },
+      {
+        id: "home",
+        name: "Home",
+        itemCount: 1,
+      },
+    ],
+    itemCount: 11,
+  },
+  {
+    id: "business",
+    name: "Business",
+    itemCount: 2,
+  },
+  {
+    id: "education",
+    name: "Education",
+    itemCount: 15,
+  },
+  {
+    id: "games",
+    name: "Games",
+    itemCount: 6,
+  },
+];
+
 const meta: Meta<typeof MultiSelect> = {
   title: "Components/Form Elements/MultiSelect",
   component: MultiSelect,
   argTypes: {
     defaultItemsVisible: {
-      table: { defaultValue: { summary: 5 } },
+      table: { defaultValue: { summary: "5" } },
     },
     id: {
       control: false,
     },
     closeOnBlur: {
-      table: { defaultValue: { summary: false } },
+      table: { defaultValue: { summary: "false" } },
     },
     isBlockElement: {
-      table: { defaultValue: { summary: false } },
+      table: { defaultValue: { summary: "false" } },
     },
     isDefaultOpen: {
-      table: { defaultValue: { summary: false } },
+      table: { defaultValue: { summary: "false" } },
     },
     isSearchable: {
-      table: { defaultValue: { summary: false } },
+      table: { defaultValue: { summary: "false" } },
     },
     listOverflow: {
       control: "radio",
@@ -252,10 +308,10 @@ export const withControls: Story = {
   args: {
     buttonText: "MultiSelect",
     id: "multi-select-id",
-    closeOnBlur: false,
+    closeOnBlur: true,
     isBlockElement: true,
     isDefaultOpen: false,
-    isSearchable: false,
+    isSearchable: true,
     items: withItems,
     listOverflow: "scroll",
     onChange: undefined,
@@ -270,6 +326,39 @@ export const withControls: Story = {
       url: "https://www.figma.com/file/qShodlfNCJHb8n03IFyApM/Main?node-id=43593%3A24611",
     },
     jest: ["MultiSelect.test.tsx"],
+  },
+  play: async ({ canvasElement }) => {
+    let multiselect = within(canvasElement).getByRole("button");
+    await userEvent.click(multiselect);
+    await expect(multiselect).toHaveAttribute("aria-expanded", "true");
+    const checkbox1Label = within(canvasElement).getByText(/Architecture/);
+    await userEvent.click(checkbox1Label);
+    const checkbox2Label = within(canvasElement).getByText(/Cartography/);
+    await userEvent.click(checkbox2Label);
+    let clearMultiselect = within(canvasElement).getByTestId(
+      "multi-select-close-button-testid"
+    );
+    await expect(clearMultiselect).toHaveAttribute(
+      "aria-label",
+      "remove 2 items selected from MultiSelect"
+    );
+    await userEvent.click(clearMultiselect);
+    const searchBar = within(canvasElement).getAllByRole("textbox")[0];
+    await userEvent.type(searchBar, "Design");
+    await expect(checkbox2Label).not.toBeVisible();
+    let checkboxes = within(canvasElement).getAllByRole("checkbox");
+    expect(checkboxes.length).toBe(1);
+    const checkbox3Label = within(canvasElement).getByText(/Design/);
+    await expect(checkbox3Label).toBeVisible();
+    await userEvent.click(checkbox3Label);
+    const clearSearchBar = within(searchBar.parentElement).getAllByRole(
+      "button"
+    )[0];
+    await userEvent.click(clearSearchBar);
+    await userEvent.click(clearMultiselect);
+    expect(checkboxes).not.toBeChecked;
+    await userEvent.click(document.body);
+    await expect(multiselect).toHaveAttribute("aria-expanded", "false");
   },
 };
 
@@ -362,6 +451,18 @@ export const searchInputField: Story = {
   ),
 };
 
+export const itemCountListItems: Story = {
+  render: () => (
+    <MultiSelectStory
+      id="multi-select-id-8"
+      isBlockElement
+      isDefaultOpen={false}
+      isSearchable={false}
+      items={withItemCountItems}
+    />
+  ),
+};
+
 export const isBlockElement: Story = {
   name: "isBlockElement",
   render: () => (
@@ -372,13 +473,13 @@ export const isBlockElement: Story = {
           <Stack align="left" spacing="s">
             <Stack align="left">
               <MultiSelectStory
-                id="multi-select-id-8"
+                id="multi-select-id-9"
                 isBlockElement
                 items={withItems}
                 listOverflow="expand"
               />
               <MultiSelectStory
-                id="multi-select-id-9"
+                id="multi-select-id-10"
                 isBlockElement
                 items={withItems}
                 listOverflow="expand"
@@ -400,9 +501,9 @@ export const isBlockElement: Story = {
           />
           <Stack align="left" spacing="s">
             <Stack direction="row" width="100%" alignContent="stretch">
-              <MultiSelectStory id="multi-select-id-10" items={withItems} />
               <MultiSelectStory id="multi-select-id-11" items={withItems} />
               <MultiSelectStory id="multi-select-id-12" items={withItems} />
+              <MultiSelectStory id="multi-select-id-13" items={withItems} />
             </Stack>
             <Text>
               Maecenas sed diam eget risus varius blandit sit amet non magna.
@@ -440,7 +541,7 @@ export const width: Story = {
             text="full (default configuration)"
           />
           <MultiSelectStory
-            id="multi-select-id-13"
+            id="multi-select-id-14"
             isBlockElement
             items={withItems}
           />
@@ -448,7 +549,7 @@ export const width: Story = {
         <div>
           <Heading level="h3" size="heading6" text="fitContent" />
           <MultiSelectStory
-            id="multi-select-id-14"
+            id="multi-select-id-15"
             isBlockElement
             items={withItems}
             width="fitContent"
@@ -462,7 +563,7 @@ export const width: Story = {
 export const defaultOpenState: Story = {
   render: () => (
     <MultiSelectStory
-      id="multi-select-id-15"
+      id="multi-select-id-16"
       isBlockElement
       isDefaultOpen={true}
       items={withChildrenItems}
@@ -473,7 +574,7 @@ export const defaultOpenState: Story = {
 export const closeOnBlurState: Story = {
   render: () => (
     <MultiSelectStory
-      id="multi-select-id-15"
+      id="multi-select-id-17"
       closeOnBlur={true}
       isBlockElement
       items={withChildrenItems}

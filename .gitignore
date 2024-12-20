@@ -7,7 +7,6 @@ dependencyGraph.json
 .DS_Store
 lib
 dist
-.vscode
 .eslintcache
 coverage
 .idea

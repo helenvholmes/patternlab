@@ -43,7 +43,7 @@ exports[`UI Snapshots renders the text input UI snapshot correctly 2`] = `
   >
     Custom Input Label
     <span>
-       (Required)
+       (required)
     </span>
   </label>
   <div
@@ -174,7 +174,7 @@ exports[`UI Snapshots renders the text input UI snapshot correctly 6`] = `
   >
     Custom Input Label
     <span>
-       (Required)
+       (required)
     </span>
   </label>
   <div
@@ -227,7 +227,7 @@ exports[`UI Snapshots renders the text input UI snapshot correctly 7`] = `
   >
     Custom Input Label
     <span>
-       (Required)
+       (required)
     </span>
   </label>
   <div
@@ -281,7 +281,7 @@ exports[`UI Snapshots renders the text input UI snapshot correctly 8`] = `
   >
     Custom Input Label
     <span>
-       (Required)
+       (required)
     </span>
   </label>
   <div

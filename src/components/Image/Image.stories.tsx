@@ -146,7 +146,7 @@ export const WithControls: Story = {
     sizeBasedOn: "width",
     src: getPlaceholderImage(),
   },
-  render: (args) => <Image {...args} />,
+  render: (args) => <Image {...args} id="image-id" />,
   parameters: {
     design: {
       type: "figma",

@@ -9,7 +9,7 @@ import { forwardRef } from "react";
 export type AriaLiveValues = "assertive" | "off" | "polite" | undefined;
 export type HelperErrorTextType = string | JSX.Element;
 
-interface HelperErrorTextProps {
+export interface HelperErrorTextProps {
   /** Aria attribute. When true, assistive technologies will read the entire
    * DOM element. When false, only changes (additionals or removals) will be
    * read. True by default. */
@@ -81,7 +81,7 @@ export const HelperErrorText: ChakraComponent<
                 __css={styles.innerChild}
               />
             ) : (
-              text
+              <Box __css={styles.innerChild}>{text}</Box>
             )
           ) : null}
         </Box>

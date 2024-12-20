@@ -1,7 +1,7 @@
 import { Box, chakra, ChakraComponent, useStyleConfig } from "@chakra-ui/react";
 import React, { forwardRef } from "react";
 
-interface LabelProps {
+export interface LabelProps {
   /** Additional CSS class name to render in the `label` element. */
   className?: string;
   /** The id of the html element that this `Label` is describing. */
@@ -11,10 +11,10 @@ interface LabelProps {
   /** Controls whether the label should be inline with the input it goes with.
    * This prop should only be used internally. */
   isInlined?: boolean;
-  /** Controls whether the "(Required)" text should be displayed alongside the
+  /** Controls whether the "(required)" text should be displayed alongside the
    * label's text. False by default. */
   isRequired?: boolean;
-  /** Allows the '(Required)' text to be changed for language purposes
+  /** Allows the '(required)' text to be changed for language purposes
    * Note: Parenthesis will be added automatically by the component */
   requiredLabelText?: string;
 }
@@ -64,7 +64,7 @@ export const Label: ChakraComponent<
         {children}
         {isRequired && (
           <span>
-            {requiredLabelText ? ` (${requiredLabelText})` : " (Required)"}
+            {requiredLabelText ? ` (${requiredLabelText})` : " (required)"}
           </span>
         )}
       </Box>

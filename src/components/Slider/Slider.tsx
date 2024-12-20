@@ -65,7 +65,7 @@ export interface SliderProps {
   /** Offers the ability to show the label onscreen or hide it. Refer
    * to the `labelText` property for more information. */
   showLabel?: boolean;
-  /** Whether or not to display the "(Required)" text in the label text.
+  /** Whether or not to display the "(required)" text in the label text.
    * True by default. */
   showRequiredLabel?: boolean;
   /** Offers the ability to hide the static min/max values. */

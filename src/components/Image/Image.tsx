@@ -51,6 +51,8 @@ export interface ComponentImageProps extends Partial<HTMLImageElement> {
   credit?: string;
   /** Fallback image path or URL. */
   fallbackSrc?: string;
+  /** ID that other components can cross reference for accessibility purposes. */
+  id?: string;
   /** Flag to set the internal `Image` component to `isLazy` mode. */
   isLazy?: boolean;
   /** Additional action to perform in the `img`'s `onerror` attribute function. */
@@ -68,6 +70,8 @@ interface ImageWrapperProps {
   additionalWrapperStyles?: { [key: string]: any };
   /** ClassName you can add in addition to 'image' */
   className?: string;
+  /** ID that other components can cross reference for accessibility purposes. */
+  id?: string;
   /** Optional value to control the aspect ratio of the card image; default
    * value is `"original"` */
   ratio?: ImageRatios;
@@ -113,6 +117,7 @@ const ImageWrapper = chakra(
       additionalWrapperStyles = {},
       className = "",
       children,
+      id,
       ratio = "original",
       size = "default",
       sizeBasedOn = "width",
@@ -126,6 +131,7 @@ const ImageWrapper = chakra(
     return (
       <Box
         className={`the-wrap ${className}`}
+        id={id}
         __css={{ ...styles.base, ...additionalWrapperStyles }}
         {...rest}
       >
@@ -148,13 +154,14 @@ export const Image: ChakraComponent<
       additionalFigureStyles = {},
       additionalImageStyles = {},
       additionalWrapperStyles = {},
-      alt,
+      alt = "",
       aspectRatio = "original",
       caption,
       className = "",
       component,
       credit,
       fallbackSrc,
+      id,
       imageType = "default",
       isLazy = false,
       onError,
@@ -220,6 +227,7 @@ export const Image: ChakraComponent<
       <Box
         as="img"
         alt={alt}
+        id={id ? id : null}
         loading={isLazy ? "lazy" : undefined}
         onError={onImageError}
         {...srcProp}
@@ -230,8 +238,9 @@ export const Image: ChakraComponent<
     const finalImage = useImageWrapper ? (
       <ImageWrapper
         additionalWrapperStyles={additionalWrapperStyles}
-        ratio={aspectRatio}
         className={className}
+        id={id ? `${id}-wrapper` : null}
+        ratio={aspectRatio}
         size={size}
         sizeBasedOn={sizeBasedOn}
         {...(caption || credit ? {} : rest)}

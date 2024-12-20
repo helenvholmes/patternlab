@@ -12,7 +12,7 @@ import ComponentChangelogTable from "../../utils/ComponentChangelogTable";
 | Component Version | DS Version |
 | ----------------- | ---------- |
 | Added             | `0.24.0`   |
-| Latest            | `3.1.2`    |
+| Latest            | `3.3.2`    |
 
 ## Table of Contents
 
@@ -22,8 +22,10 @@ import ComponentChangelogTable from "../../utils/ComponentChangelogTable";
 - {<Link href="#image-position" target="_self">Image Position</Link>}
 - {<Link href="#image-size" target="_self">Image Size</Link>}
 - {<Link href="#custom-image-component" target="_self">Custom Image Component</Link>}
+- {<Link href="#fallback-image" target="_self">Fallback Image</Link>}
 - {<Link href="#card-with-link-heading" target="_self">Card With Link Heading</Link>}
 - {<Link href="#card-with-full-click-functionality" target="_self">Card With Full-Click Functionality</Link>}
+- {<Link href="#card-with-full-click-functionality-and-tooltip" target="_self">Card With Full-Click Functionality and Tooltip</Link>}
 - {<Link href="#card-with-right-side-cardactions" target="_self">Card with Right Side CardActions</Link>}
 - {<Link href="#cards-in-a-grid" target="_self">Cards in a Grid</Link>}
 - {<Link href="#cards-in-a-stack" target="_self">Cards in a Stack</Link>}
@@ -182,6 +184,38 @@ image component in using the `imageProps.component` prop.
 
 <Canvas of={CardStories.CustomImageComponent} />
 
+## Fallback Image
+
+Following the same pattern as the `Image` component, the `Card` component can
+also render a fallback image when the main image fails to load. Set a fallback
+image source through the `fallbackSrc` property in the `imageProps` prop. If an
+_additional_ action needs to be performed when the fallback image is
+loaded, pass a callback function to the `onError` property.
+
+For more details, see the [Image component documentation](./?path=/docs/components-media-icons-image--docs#fallback-image).
+
+Note that the following example renders a fallback image used in
+Digital Collections and is not from `loremflickr`. The code snippet below is
+a general example.
+
+<Source
+  code={`
+<Card
+  imageProps={{
+    alt: "Alt text",
+    fallbackSrc="https://loremflickr.com/540/420/cat"
+    onError: (_event) => console.log("Card fallback image loaded"),
+    src: "some-broken-image-url",
+  }}
+>
+  // ...
+</Card>
+  `}
+  language="jsx"
+/>
+
+<Canvas of={CardStories.FallbackImage} />
+
 ## Card with Link Heading
 
 The `CardHeading` component works just like the DS `Heading` component. This
@@ -207,6 +241,51 @@ from being having the full-click functionality.
 This example can be found in the [Turbine homepage](https://nypl-ds-test-app.vercel.app/).
 
 <Canvas of={CardStories.CardFullClickTurbineExample} />
+
+## Card With Full-Click Functionality and Tooltip
+
+When the `Card` is fully clickable, an internal component wraps everything in a link, which in turn overrides the pointer events that trigger a `Tooltip`.
+
+If you need a tooltip within a clickable `Card`, wrap the entire `Card` component inside the `Tooltip` and use the `Tooltip`'s `placement` and `offset` props to move the `Tooltip` to display next to the intended reference.
+Keep in mind that `offset` is static pixel values, so check where the `Tooltip` displays on all breakpoints.
+
+You may need to keep track of the offset values through state, and update accordingly– see below example.
+
+<Source
+  code={`
+  const [offset, setOffset] = useState<[number, number]>([0, 0]);
+const cardRef = useRef<HTMLDivElement>(null);
+const getOffset = () => {
+    if (cardRef.current) {
+      const image = cardRef.current.children[0] as HTMLElement;
+      const percentageHeightOffset = image.offsetHeight * 1.01;
+      const percentageWidthOffset = image.offsetWidth * 0.4;
+      setOffset([-percentageWidthOffset, -percentageHeightOffset]);
+    }
+  };
+useEffect(() => {
+  setTimeout(getOffset, 0);
+  window.addEventListener("resize", getOffset);
+  return () => {
+      window.removeEventListener("resize", getOffset);
+  }}
+[]);
+
+return (
+
+<Tooltip offset={offset} content={"Tooltip text"}>
+  <Card
+    ref={cardRef}
+    // ..
+  />
+</Tooltip>
+)
+
+`}
+language="tsx"
+/>
+
+<Canvas of={CardStories.FullClickWithTooltip} />
 
 ## Card with Right Side CardActions
 

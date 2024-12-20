@@ -107,6 +107,21 @@ describe("Table", () => {
     expect(screen.getByText("this is the caption")).toBeInTheDocument();
   });
 
+  it("renders an aria-label attribute", () => {
+    render(
+      <Table
+        columnHeaders={columnHeaders}
+        showTitleText={false}
+        tableData={tableData}
+        titleText="this is the aria-label"
+      />
+    );
+    expect(screen.getByRole("table")).toHaveAttribute(
+      "aria-label",
+      "this is the aria-label"
+    );
+  });
+
   it("renders a table header", () => {
     render(
       <Table
@@ -196,6 +211,17 @@ describe("Table", () => {
         />
       )
       .toJSON();
+    const withAriaLabel = renderer
+      .create(
+        <Table
+          columnHeaders={columnHeaders}
+          id="withCaption"
+          showTitleText={false}
+          tableData={tableData}
+          titleText="this is the caption"
+        />
+      )
+      .toJSON();
     const withHeaders = renderer
       .create(
         <Table
@@ -263,6 +289,7 @@ describe("Table", () => {
 
     expect(basic).toMatchSnapshot();
     expect(withCaption).toMatchSnapshot();
+    expect(withAriaLabel).toMatchSnapshot();
     expect(withHeaders).toMatchSnapshot();
     expect(withRowHeaders).toMatchSnapshot();
     expect(withCustomHeaderColors).toMatchSnapshot();

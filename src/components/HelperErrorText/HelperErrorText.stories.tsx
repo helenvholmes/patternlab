@@ -11,7 +11,7 @@ const meta: Meta<typeof HelperErrorText> = {
   argTypes: {
     ariaAtomic: {
       control: false,
-      table: { defaultValue: { summary: true } },
+      table: { defaultValue: { summary: "true" } },
     },
     ariaLive: {
       table: { defaultValue: { summary: "polite" } },
@@ -20,10 +20,10 @@ const meta: Meta<typeof HelperErrorText> = {
     className: { control: false },
     id: { control: false },
     isInvalid: {
-      table: { defaultValue: { summary: false } },
+      table: { defaultValue: { summary: "false" } },
     },
     isRenderedText: {
-      table: { defaultValue: { summary: false } },
+      table: { defaultValue: { summary: "false" } },
     },
   },
 };

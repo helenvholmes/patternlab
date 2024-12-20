@@ -1,5 +1,4 @@
 import { ArgTypes, Canvas, Description, Meta, Source } from "@storybook/blocks";
-import { GetTableData } from "./SocialMediaLinksUtils";
 import Table from "../Table/Table";
 import * as SocialMediaLinksStories from "./SocialMediaLinks.stories";
 import Link from "../Link/Link";
@@ -13,7 +12,7 @@ import ComponentChangelogTable from "../../utils/ComponentChangelogTable";
 | Component Version | DS Version |
 | ----------------- | ---------- |
 | Added             | `2.0.0`    |
-| Latest            | `3.0.1`    |
+| Latest            | `3.4.2`    |
 
 ## Table of Contents
 
@@ -32,48 +31,59 @@ import ComponentChangelogTable from "../../utils/ComponentChangelogTable";
 
 <Canvas of={SocialMediaLinksStories.WithControls} />
 
-Passing an array of social media objects to the `linksData` prop allows you to control which social media types are
-displayed, the order they appear, the specific URL used in the link, and the text used for the label of each.
-Of these, only the `type` value is required. The other two props, `labelText` and `url` are optional and will display
-a default value if left undeclared. Order is determined by the order of the array. You may also pass
-_no_ `linksData` prop and the component will return all available social media links with their default values. See [an
-example](#heading-nodata) at the bottom of this document.
-
-Labels are exposed in this example to demonstrate that the text is changed for the middle icon. Click "Show Code," above,
-to view the sample `linksData` code.
-
 <ArgTypes of={SocialMediaLinksStories.WithControls} />
 
-### Available Social Media Types & Their Default Values
+### Expected data structure for linkData and available Social Media Link Icons
 
-The `linksData` prop accepts an array of objects. Each object may be composed of three values: `type`, `labelText`,
-and `url`. Of these, only `type` is required, determining which of the allowed social media icons will be displayed.
-Each type has a default value for its label text and url. See table below for allowed types and default values.
-If values are set for `labelText` and/or `url` in the `linksData` array, those values will override the defaults.
+The `linksData` prop accepts an array of objects. Each item requires the properties: `icon`, `labelText`,
+and `url`. The `icon` property relates to the icon rendered on page.
+
+<Source
+  code={`
+interface SocialMediaLinkDataProps {
+  icon: IconNames;
+  labelText: string;
+  url: string;
+}
+
+type IconNames =
+| "fileTypeGenericDoc"
+| "socialFacebook"
+| "socialInstagram"
+| "socialPinterest"
+| "socialSoundCloud"
+| "socialTikTok"
+| "socialTumblr"
+| "socialTwitter"
+| "socialX"
+| "socialYoutube"
+`}
+language="ts"
+/>
+
+All available icons:
+
+<Canvas of={SocialMediaLinksStories.AllOptionsVariations} />
+
 For example:
 
 <Source
   code={`
-const myLinksData = [
-  { type: "twitter", labelText: "NYPL Educators", url: "https://twitter.com/NYPLEducators"},
-  { type: "instagram", labelText: "NYPL Educators", url: "https://www.instagram.com/nypleducators"},
-  { type: "facebook", labelText: "NYPL Educators", url: "https://www.facebook.com/NYPLEducators"},
+import {
+  SocialMediaLinks,
+  SocialMediaLinkDataProps,
+} from "@nypl/design-system-react-components";
+ 
+const myLinksData: SocialMediaLinkDataProps[] = [
+  { icon: "socialX", labelText: "NYPL Educators", url: "https://x.com/NYPLEducators"},
+  { icon: "socialInstagram", labelText: "NYPL Educators", url: "https://www.instagram.com/nypleducators"},
+  { icon: "socialFacebook", labelText: "NYPL Educators", url: "https://www.facebook.com/NYPLEducators"},
 ];
-// ...
-<SocialMediaLinks linksData=myLinksData />
+ 
+<SocialMediaLinks linksData={myLinksData} />
 `}
   language="tsx"
 />
-
-<Canvas withSource="none">
-  <Table
-    columnHeaders={["Type", "Label Text", "URL", "Icon Name*"]}
-    tableData={GetTableData()}
-    showRowDividers={true}
-  />
-</Canvas>
-
-\* `Icon Name` is not a prop. It is returned automatically by the component. Its value is shown here for transparency.
 
 ## Accessibility
 
@@ -102,27 +112,23 @@ will align horizontally automatically.
 
 Also, for any viewport less than or equal to the "md" breakpoint, links will be center-aligned.
 
-<Canvas of={SocialMediaLinksStories.LayoutVariations} sourceState={"none"} />
+<Canvas of={SocialMediaLinksStories.LayoutVariations} />
 
 ### Size Variations
 
-<Canvas of={SocialMediaLinksStories.SizeVariations} sourceState={"none"} />
+<Canvas of={SocialMediaLinksStories.SizeVariations} />
 
 ### Color Variations
 
-<Canvas of={SocialMediaLinksStories.ColorVariations} sourceState={"none"} />
+<Canvas of={SocialMediaLinksStories.ColorVariations} />
 
 ### Border Variations
 
-<Canvas of={SocialMediaLinksStories.BorderVariations} sourceState={"none"} />
+<Canvas of={SocialMediaLinksStories.BorderVariations} />
 
 ### Label Variations
 
-<Canvas of={SocialMediaLinksStories.LabelVariations} sourceState={"none"} />
-
-### Without linksData Prop (Default)
-
-<Canvas of={SocialMediaLinksStories.noLinksData} sourceState={"none"} />
+<Canvas of={SocialMediaLinksStories.LabelVariations} />
 
 ## Responsive Design
 

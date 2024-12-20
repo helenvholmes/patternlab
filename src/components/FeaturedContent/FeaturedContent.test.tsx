@@ -96,23 +96,6 @@ describe("FeaturedContent", () => {
       `NYPL Reservoir FeaturedContent: A value for 'imageProps.src' is required.`
     );
   });
-
-  it("logs a warning if `imageProps.alt` is empty", () => {
-    const warn = jest.spyOn(console, "warn");
-    render(
-      <FeaturedContent
-        isFullWidth={true}
-        imageProps={{
-          alt: "",
-          src: getPlaceholderImage("smaller", 0),
-        }}
-        textContent={textContent}
-      />
-    );
-    expect(warn).toHaveBeenCalledWith(
-      `NYPL Reservoir FeaturedContent: A value for 'imageProps.alt' is required.`
-    );
-  });
 });
 
 it("Renders the UI snapshot correctly", () => {

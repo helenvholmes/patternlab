@@ -16,7 +16,6 @@ exports[`MulitSelectGroup Accessibility renders the UI snapshots correctly 1`] =
     <div
       className="css-1xdhyk6"
       id="colors"
-      onBlur={false}
       onClick={[Function]}
     >
       <div
@@ -42,45 +41,22 @@ exports[`MulitSelectGroup Accessibility renders the UI snapshots correctly 1`] =
             <span
               className="css-1kmgev1"
             >
-              <div
+              <span
                 className="css-0"
                 title="MultiSelect"
               >
                 MultiSelect
-              </div>
+              </span>
             </span>
             <svg
               aria-hidden={true}
-              className="chakra-icon css-q3eg3a"
+              className="chakra-icon css-1nreziu"
+              data-file-name="SvgPlus"
               focusable={false}
               id="accordion-multi-select-accordion-colors-icon-0"
               role="img"
               title="plus icon"
-              viewBox="0 0 24 24"
-            >
-              <g
-                stroke="currentColor"
-                strokeWidth="1.5"
-              >
-                <path
-                  d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-                  fill="none"
-                  strokeLinecap="round"
-                />
-                <path
-                  d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-                  fill="currentColor"
-                  strokeLinecap="round"
-                />
-                <circle
-                  cx="12"
-                  cy="12"
-                  fill="none"
-                  r="11.25"
-                  strokeMiterlimit="10"
-                />
-              </g>
-            </svg>
+            />
           </button>
           <div
             className="chakra-collapse"
@@ -107,7 +83,7 @@ exports[`MulitSelectGroup Accessibility renders the UI snapshots correctly 1`] =
                   id="multi-select-checkbox-group-colors-checkbox-group"
                 >
                   <legend>
-                    Multi select checkbox group label
+                    MultiSelect
                   </legend>
                   <div
                     className="chakra-stack css-19s3t1h"
@@ -280,7 +256,11 @@ exports[`MulitSelectGroup Accessibility renders the UI snapshots correctly 1`] =
                     className="css-1xdhyk6"
                     data-isinvalid={false}
                     id="multi-select-checkbox-group-colors-helperErrorText"
-                  />
+                  >
+                    <div
+                      className="css-0"
+                    />
+                  </div>
                 </fieldset>
               </div>
             </div>
@@ -291,7 +271,6 @@ exports[`MulitSelectGroup Accessibility renders the UI snapshots correctly 1`] =
     <div
       className="css-1xdhyk6"
       id="pets"
-      onBlur={false}
       onClick={[Function]}
     >
       <div
@@ -317,45 +296,22 @@ exports[`MulitSelectGroup Accessibility renders the UI snapshots correctly 1`] =
             <span
               className="css-1kmgev1"
             >
-              <div
+              <span
                 className="css-0"
                 title="MultiSelect"
               >
                 MultiSelect
-              </div>
+              </span>
             </span>
             <svg
               aria-hidden={true}
-              className="chakra-icon css-q3eg3a"
+              className="chakra-icon css-1nreziu"
+              data-file-name="SvgPlus"
               focusable={false}
               id="accordion-multi-select-accordion-pets-icon-0"
               role="img"
               title="plus icon"
-              viewBox="0 0 24 24"
-            >
-              <g
-                stroke="currentColor"
-                strokeWidth="1.5"
-              >
-                <path
-                  d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-                  fill="none"
-                  strokeLinecap="round"
-                />
-                <path
-                  d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-                  fill="currentColor"
-                  strokeLinecap="round"
-                />
-                <circle
-                  cx="12"
-                  cy="12"
-                  fill="none"
-                  r="11.25"
-                  strokeMiterlimit="10"
-                />
-              </g>
-            </svg>
+            />
           </button>
           <div
             className="chakra-collapse"
@@ -382,7 +338,7 @@ exports[`MulitSelectGroup Accessibility renders the UI snapshots correctly 1`] =
                   id="multi-select-checkbox-group-pets-checkbox-group"
                 >
                   <legend>
-                    Multi select checkbox group label
+                    MultiSelect
                   </legend>
                   <div
                     className="chakra-stack css-19s3t1h"
@@ -714,7 +670,11 @@ exports[`MulitSelectGroup Accessibility renders the UI snapshots correctly 1`] =
                     className="css-1xdhyk6"
                     data-isinvalid={false}
                     id="multi-select-checkbox-group-pets-helperErrorText"
-                  />
+                  >
+                    <div
+                      className="css-0"
+                    />
+                  </div>
                 </fieldset>
               </div>
             </div>
@@ -725,7 +685,6 @@ exports[`MulitSelectGroup Accessibility renders the UI snapshots correctly 1`] =
     <div
       className="css-1xdhyk6"
       id="tools"
-      onBlur={false}
       onClick={[Function]}
     >
       <div
@@ -751,45 +710,22 @@ exports[`MulitSelectGroup Accessibility renders the UI snapshots correctly 1`] =
             <span
               className="css-1kmgev1"
             >
-              <div
+              <span
                 className="css-0"
                 title="MultiSelect"
               >
                 MultiSelect
-              </div>
+              </span>
             </span>
             <svg
               aria-hidden={true}
-              className="chakra-icon css-q3eg3a"
+              className="chakra-icon css-1nreziu"
+              data-file-name="SvgPlus"
               focusable={false}
               id="accordion-multi-select-accordion-tools-icon-0"
               role="img"
               title="plus icon"
-              viewBox="0 0 24 24"
-            >
-              <g
-                stroke="currentColor"
-                strokeWidth="1.5"
-              >
-                <path
-                  d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-                  fill="none"
-                  strokeLinecap="round"
-                />
-                <path
-                  d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-                  fill="currentColor"
-                  strokeLinecap="round"
-                />
-                <circle
-                  cx="12"
-                  cy="12"
-                  fill="none"
-                  r="11.25"
-                  strokeMiterlimit="10"
-                />
-              </g>
-            </svg>
+            />
           </button>
           <div
             className="chakra-collapse"
@@ -816,7 +752,7 @@ exports[`MulitSelectGroup Accessibility renders the UI snapshots correctly 1`] =
                   id="multi-select-checkbox-group-tools-checkbox-group"
                 >
                   <legend>
-                    Multi select checkbox group label
+                    MultiSelect
                   </legend>
                   <div
                     className="chakra-stack css-19s3t1h"
@@ -1148,7 +1084,11 @@ exports[`MulitSelectGroup Accessibility renders the UI snapshots correctly 1`] =
                     className="css-1xdhyk6"
                     data-isinvalid={false}
                     id="multi-select-checkbox-group-tools-helperErrorText"
-                  />
+                  >
+                    <div
+                      className="css-0"
+                    />
+                  </div>
                 </fieldset>
               </div>
             </div>
@@ -1176,7 +1116,6 @@ exports[`MulitSelectGroup Accessibility renders the UI snapshots correctly 2`] =
     <div
       className="css-1xdhyk6"
       id="colors"
-      onBlur={false}
       onClick={[Function]}
     >
       <div
@@ -1202,45 +1141,22 @@ exports[`MulitSelectGroup Accessibility renders the UI snapshots correctly 2`] =
             <span
               className="css-1kmgev1"
             >
-              <div
+              <span
                 className="css-0"
                 title="MultiSelect"
               >
                 MultiSelect
-              </div>
+              </span>
             </span>
             <svg
               aria-hidden={true}
-              className="chakra-icon css-q3eg3a"
+              className="chakra-icon css-1nreziu"
+              data-file-name="SvgPlus"
               focusable={false}
               id="accordion-multi-select-accordion-colors-icon-0"
               role="img"
               title="plus icon"
-              viewBox="0 0 24 24"
-            >
-              <g
-                stroke="currentColor"
-                strokeWidth="1.5"
-              >
-                <path
-                  d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-                  fill="none"
-                  strokeLinecap="round"
-                />
-                <path
-                  d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-                  fill="currentColor"
-                  strokeLinecap="round"
-                />
-                <circle
-                  cx="12"
-                  cy="12"
-                  fill="none"
-                  r="11.25"
-                  strokeMiterlimit="10"
-                />
-              </g>
-            </svg>
+            />
           </button>
           <div
             className="chakra-collapse"
@@ -1267,7 +1183,7 @@ exports[`MulitSelectGroup Accessibility renders the UI snapshots correctly 2`] =
                   id="multi-select-checkbox-group-colors-checkbox-group"
                 >
                   <legend>
-                    Multi select checkbox group label
+                    MultiSelect
                   </legend>
                   <div
                     className="chakra-stack css-19s3t1h"
@@ -1440,7 +1356,11 @@ exports[`MulitSelectGroup Accessibility renders the UI snapshots correctly 2`] =
                     className="css-1xdhyk6"
                     data-isinvalid={false}
                     id="multi-select-checkbox-group-colors-helperErrorText"
-                  />
+                  >
+                    <div
+                      className="css-0"
+                    />
+                  </div>
                 </fieldset>
               </div>
             </div>
@@ -1451,7 +1371,6 @@ exports[`MulitSelectGroup Accessibility renders the UI snapshots correctly 2`] =
     <div
       className="css-1xdhyk6"
       id="pets"
-      onBlur={false}
       onClick={[Function]}
     >
       <div
@@ -1477,45 +1396,22 @@ exports[`MulitSelectGroup Accessibility renders the UI snapshots correctly 2`] =
             <span
               className="css-1kmgev1"
             >
-              <div
+              <span
                 className="css-0"
                 title="MultiSelect"
               >
                 MultiSelect
-              </div>
+              </span>
             </span>
             <svg
               aria-hidden={true}
-              className="chakra-icon css-q3eg3a"
+              className="chakra-icon css-1nreziu"
+              data-file-name="SvgPlus"
               focusable={false}
               id="accordion-multi-select-accordion-pets-icon-0"
               role="img"
               title="plus icon"
-              viewBox="0 0 24 24"
-            >
-              <g
-                stroke="currentColor"
-                strokeWidth="1.5"
-              >
-                <path
-                  d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-                  fill="none"
-                  strokeLinecap="round"
-                />
-                <path
-                  d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-                  fill="currentColor"
-                  strokeLinecap="round"
-                />
-                <circle
-                  cx="12"
-                  cy="12"
-                  fill="none"
-                  r="11.25"
-                  strokeMiterlimit="10"
-                />
-              </g>
-            </svg>
+            />
           </button>
           <div
             className="chakra-collapse"
@@ -1542,7 +1438,7 @@ exports[`MulitSelectGroup Accessibility renders the UI snapshots correctly 2`] =
                   id="multi-select-checkbox-group-pets-checkbox-group"
                 >
                   <legend>
-                    Multi select checkbox group label
+                    MultiSelect
                   </legend>
                   <div
                     className="chakra-stack css-19s3t1h"
@@ -1874,7 +1770,11 @@ exports[`MulitSelectGroup Accessibility renders the UI snapshots correctly 2`] =
                     className="css-1xdhyk6"
                     data-isinvalid={false}
                     id="multi-select-checkbox-group-pets-helperErrorText"
-                  />
+                  >
+                    <div
+                      className="css-0"
+                    />
+                  </div>
                 </fieldset>
               </div>
             </div>
@@ -1885,7 +1785,6 @@ exports[`MulitSelectGroup Accessibility renders the UI snapshots correctly 2`] =
     <div
       className="css-1xdhyk6"
       id="tools"
-      onBlur={false}
       onClick={[Function]}
     >
       <div
@@ -1911,45 +1810,22 @@ exports[`MulitSelectGroup Accessibility renders the UI snapshots correctly 2`] =
             <span
               className="css-1kmgev1"
             >
-              <div
+              <span
                 className="css-0"
                 title="MultiSelect"
               >
                 MultiSelect
-              </div>
+              </span>
             </span>
             <svg
               aria-hidden={true}
-              className="chakra-icon css-q3eg3a"
+              className="chakra-icon css-1nreziu"
+              data-file-name="SvgPlus"
               focusable={false}
               id="accordion-multi-select-accordion-tools-icon-0"
               role="img"
               title="plus icon"
-              viewBox="0 0 24 24"
-            >
-              <g
-                stroke="currentColor"
-                strokeWidth="1.5"
-              >
-                <path
-                  d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-                  fill="none"
-                  strokeLinecap="round"
-                />
-                <path
-                  d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-                  fill="currentColor"
-                  strokeLinecap="round"
-                />
-                <circle
-                  cx="12"
-                  cy="12"
-                  fill="none"
-                  r="11.25"
-                  strokeMiterlimit="10"
-                />
-              </g>
-            </svg>
+            />
           </button>
           <div
             className="chakra-collapse"
@@ -1976,7 +1852,7 @@ exports[`MulitSelectGroup Accessibility renders the UI snapshots correctly 2`] =
                   id="multi-select-checkbox-group-tools-checkbox-group"
                 >
                   <legend>
-                    Multi select checkbox group label
+                    MultiSelect
                   </legend>
                   <div
                     className="chakra-stack css-19s3t1h"
@@ -2308,7 +2184,11 @@ exports[`MulitSelectGroup Accessibility renders the UI snapshots correctly 2`] =
                     className="css-1xdhyk6"
                     data-isinvalid={false}
                     id="multi-select-checkbox-group-tools-helperErrorText"
-                  />
+                  >
+                    <div
+                      className="css-0"
+                    />
+                  </div>
                 </fieldset>
               </div>
             </div>

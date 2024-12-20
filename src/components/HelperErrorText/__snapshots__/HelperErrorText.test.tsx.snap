@@ -65,11 +65,15 @@ exports[`HelperErrorText Renders the UI snapshot correctly 4`] = `
   data-isinvalid={true}
   id="invalid"
 >
-  This helper text 
-  <b>
-    contains HTML
-  </b>
-  .
+  <div
+    className="css-0"
+  >
+    This helper text 
+    <b>
+      contains HTML
+    </b>
+    .
+  </div>
 </div>
 `;
 

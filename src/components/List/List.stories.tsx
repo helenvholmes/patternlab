@@ -16,7 +16,7 @@ const meta: Meta<typeof List> = {
     inline: argsBooleanType(),
     listItems: { control: false },
     noStyling: argsBooleanType(),
-    showRowDividers: argsBooleanType(true),
+    showRowDividers: argsBooleanType("true"),
     title: { control: { type: "text" } },
     type: {
       control: { type: "radio" },

@@ -12,7 +12,7 @@ import Link from "../Link/Link";
 | Component Version | DS Version |
 | ----------------- | ---------- |
 | Added             | `0.0.10`   |
-| Latest            | `3.0.0`    |
+| Latest            | `3.3.2`    |
 
 ## Table of Contents
 
@@ -53,14 +53,14 @@ Resources:
 
 An optional helper string can be rendered at the end of the `Label` text through
 the `isRequired` prop. This is useful for visually labeling a field as required
-with the `"(Required)"` text next to the label's text. This is set to `false`
+with the `"(required)"` text next to the label's text. This is set to `false`
 by default.
 
 <Canvas of={LabelStories.RequiredState} />
 
 ## requiredLabelText to customize required label
 
-The `requiredLabelText` prop accepts values for type string and is available to update the "(Required)" text.
+The `requiredLabelText` prop accepts values for type string and is available to update the "(required)" text.
 It is recommend to be used carefully and to only pass text that means "required", including in other languages.
 We also recommend a maximum of two words for this text.
 Note: The parenthesis will be added automatically by the component.
