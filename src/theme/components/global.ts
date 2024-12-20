@@ -129,6 +129,10 @@ const labelLegendText = {
 const labelLegendTextSpecialSpacing = {
   marginBottom: "xxxs",
 };
+
+const responsiveGap = { base: "1rem", md: "1.5rem", xl: "2rem" };
+const responsivePadding = { base: "1rem", md: "1.5rem", xl: "1rem" };
+
 // Used for the disabled state of Select and TextInput
 const selectTextInputDisabledStyles = {
   bg: "ui.disabled.secondary",
@@ -167,6 +171,8 @@ export {
   defaultElementSizes,
   labelLegendText,
   labelLegendTextSpecialSpacing,
+  responsiveGap,
+  responsivePadding,
   selectTextInputDisabledStyles,
   selectTextInputFocusStyles,
   textMargin,

@@ -15,6 +15,14 @@ Currently, this repo is in Prerelease. When it is released, this project will ad
 
 ## Prerelease
 
+## 4.0.0 (TBD)
+
+### Updates
+
+- [Updates `Template` component(s)](https://newyorkpubliclibrary.atlassian.net/browse/DSD-1884) and styles per TAD.
+
+## 3.5.1 (December 19, 2024)
+
 ### Adds
 
 - Adds `jest-transformer-svg` to mock SVGs more accurately in our tests
