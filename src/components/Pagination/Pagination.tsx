@@ -144,7 +144,6 @@ export const Pagination: ChakraComponent<
         svg: {
           fill: "ui.link.primary",
           marginLeft: "xxs",
-          strokeWidth: "1.5px",
         },
         _dark: {
           color: "dark.ui.link.primary",
