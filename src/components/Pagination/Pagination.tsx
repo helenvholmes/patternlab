@@ -180,7 +180,14 @@ export const Pagination: ChakraComponent<
           }}
         >
           {!isPrevious && (
-            <Text sx={{ display: { base: "none", md: "inline" } }}>{text}</Text>
+            <Text
+              size="body2"
+              sx={{
+                display: { base: "none", md: "inline" },
+              }}
+            >
+              {text}
+            </Text>
           )}
           <Icon
             name="arrow"
@@ -188,8 +195,7 @@ export const Pagination: ChakraComponent<
             size="xsmall"
             sx={{
               display: { base: "none", md: "inline" },
-              marginRight: "xxs",
-              marginLeft: "xxs",
+              marginRight: isPrevious ? "xs" : 0,
             }}
           />
           <Icon
@@ -198,14 +204,13 @@ export const Pagination: ChakraComponent<
             size="small"
             sx={{
               display: { base: "inline", md: "none" },
-              marginRight: "xxs",
-              marginLeft: "xxs",
+              marginRight: isPrevious ? "xs" : 0,
             }}
           />
           {isPrevious && (
             <Text
+              size="body2"
               sx={{
-                "> p": { marginBottom: 0 },
                 display: { base: "none", md: "inline" },
               }}
             >
