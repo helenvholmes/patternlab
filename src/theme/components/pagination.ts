@@ -28,6 +28,7 @@ const Pagination = defineMultiStyleConfig({
     ul: {
       marginBottom: "0",
       gap: "10px",
+      justifyItems: "center",
     },
   }),
 });
