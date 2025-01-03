@@ -6,9 +6,11 @@ import {
 } from "@chakra-ui/react";
 import React, { forwardRef, useState, useRef } from "react";
 
+import Text from "../Text/Text";
 import Link from "../Link/Link";
 import List from "../List/List";
 import { range } from "../../utils/utils";
+import Icon from "../Icons/Icon";
 
 export interface PaginationProps {
   /** Additional className. */
@@ -123,76 +125,156 @@ export const Pagination: ChakraComponent<
         handlePageClick(e, nextPageNumber);
       }
     };
+
+    // Returns the "Previous" or "Next" link element, disabled according to current page number.
+    const previousNextElement = (
+      pageNumber: number,
+      text: string,
+      isDisabled: boolean
+    ) => {
+      const isPrevious = text === "Previous";
+      const baseStyles = {
+        justifyItems: "center",
+        textDecoration: "none !important",
+        color: "ui.link.primary",
+        _hover: {
+          svg: { fill: "ui.link.secondary" },
+          color: "ui.link.secondary",
+        },
+        svg: {
+          fill: "ui.link.primary",
+          marginLeft: "xxs",
+          strokeWidth: "1.5px",
+        },
+        _dark: {
+          color: "dark.ui.link.primary",
+          svg: { fill: "dark.ui.link.primary" },
+        },
+      };
+
+      const disabledStyles = isDisabled
+        ? {
+            color: "ui.disabled.primary",
+            pointerEvents: "none",
+            svg: { fill: "ui.disabled.primary" },
+            _dark: {
+              color: "ui.disabled.secondary",
+              svg: { fill: "ui.disabled.secondary" },
+            },
+          }
+        : {};
+
+      const combinedStyles = { ...baseStyles, ...disabledStyles };
+
+      return (
+        <Link
+          href={changeUrls ? getPageHref(pageNumber) : "#"}
+          id={`${id}-${text}`}
+          sx={combinedStyles}
+          type="action"
+          onClick={
+            changeUrls ? undefined : isPrevious ? previousPage : nextPage
+          }
+          {...{
+            "aria-label": `${isPrevious ? "Previous" : "Next"} page`,
+            "aria-disabled": isDisabled,
+          }}
+        >
+          {!isPrevious && (
+            <Text sx={{ display: { base: "none", md: "inline" } }}>{text}</Text>
+          )}
+          <Icon
+            name="arrow"
+            iconRotation={isPrevious ? "rotate90" : "rotate270"}
+            size="xsmall"
+            sx={{
+              display: { base: "none", md: "inline" },
+              marginRight: "xxs",
+              marginLeft: "xxs",
+            }}
+          />
+          <Icon
+            name="arrow"
+            iconRotation={isPrevious ? "rotate90" : "rotate270"}
+            size="small"
+            sx={{
+              display: { base: "inline", md: "none" },
+              marginRight: "xxs",
+              marginLeft: "xxs",
+            }}
+          />
+          {isPrevious && (
+            <Text
+              sx={{
+                "> p": { marginBottom: 0 },
+                display: { base: "none", md: "inline" },
+              }}
+            >
+              {text}
+            </Text>
+          )}
+        </Link>
+      );
+    };
+
     /**
      * All `Link` components have similar attributes but we need to differentiate
-     * between the "previous", "next", and regular number links.
+     * between the "previous"/"next", and regular number links.
      * 1. If `getPageHref` is passed, this means that the page refreshes and the
      *    URL changes. In this case, the parent component returns the `href` URL
      *    and the `onClick` callback is undefined.
      * 2. Otherwise, we stay on the same page by setting the `href` attribute to
      *    "#" and call the `onPageChange` prop through the `onClick` callback.
      */
-    const getLinkElement = (
-      type: "items" | "previous" | "next",
-      item?: number
-    ) => {
+    const getItemElement = (item?: number) => {
       const isSelectedPage = selectedPage === item;
-      // The current page link has different styles.
+
+      // Styles for the current page link.
       const currentStyles = isSelectedPage
         ? {
-            color: "ui.typography.body",
-            pointerEvent: "none",
+            pointerEvents: "none",
+            border: "1px solid",
+            padding: "4px 8px",
+            borderRadius: "4px",
+            borderColor: "ui.link.primary",
+            bg: "ui.link.primary-05",
+            color: "ui.link.primary",
+            _visited: {
+              color: "ui.link.primary",
+            },
             _dark: {
-              color: "dark.ui.typography.body",
+              bg: "transparent",
+              borderColor: "dark.ui.link.primary",
+              color: "dark.ui.link.primary",
+              _visited: {
+                color: "dark.ui.link.primary",
+              },
             },
           }
         : {};
-      const allAttrs = {
-        items: {
-          href: changeUrls ? getPageHref(item as number) : "#",
-          attributes: {
-            "aria-label": `Page ${item}`,
-            "aria-current": isSelectedPage ? "page" : null,
-            onClick: changeUrls
+
+      return (
+        <Link
+          href={changeUrls ? getPageHref(item as number) : "#"}
+          id={`${id}-${item}`}
+          aria-label={`Page ${item}`}
+          aria-current={isSelectedPage ? "page" : undefined}
+          onClick={
+            changeUrls
               ? undefined
               : (
                   e: React.MouseEvent<
                     HTMLDivElement | HTMLAnchorElement,
                     MouseEvent
                   >
-                ) => handlePageClick(e, item as number),
-          } as any,
-          text: item,
-        },
-        previous: {
-          href: changeUrls ? getPageHref(previousPageNumber) : "#",
-          attributes: {
-            "aria-label": "Previous page",
-            onClick: changeUrls ? undefined : previousPage,
-          },
-          text: "Previous",
-        },
-        next: {
-          href: changeUrls ? getPageHref(nextPageNumber) : "#",
-          attributes: {
-            "aria-label": "Next page",
-            onClick: changeUrls ? undefined : nextPage,
-          },
-          text: "Next",
-        },
-      };
-      const linkAttrs = allAttrs[type];
-      return (
-        <Link
-          href={linkAttrs.href}
-          id={`${id}-${linkAttrs.text}`}
-          {...linkAttrs.attributes}
+                ) => handlePageClick(e, item as number)
+          }
           __css={{
             ...styles.link,
             ...currentStyles,
           }}
         >
-          {linkAttrs.text}
+          {item}
         </Link>
       );
     };
@@ -261,20 +343,32 @@ export const Pagination: ChakraComponent<
       // otherwise return the `li` with the ellipse for a break.
       const pageLiItems = itemList.map((item) => {
         const itemElement =
-          typeof item === "number" ? getLinkElement("items", item) : "...";
+          typeof item === "number" ? getItemElement(item) : "...";
         return <li key={item}>{itemElement}</li>;
       });
 
       return pageLiItems;
     };
 
-    // Don't display the previous link when you're on the first page.
-    const previousLiLink = selectedPage !== 1 && (
-      <li key="previous">{getLinkElement("previous")}</li>
+    // Disable the previous link when you're on the first page.
+    const previousLiLink = (
+      <li key="previous">
+        {previousNextElement(
+          previousPageNumber,
+          "Previous",
+          selectedPage === 1
+        )}
+      </li>
     );
-    // Don't display the next link when you're on the last page.
-    const nextLiLink = selectedPage !== pageCount && (
-      <li key="next">{getLinkElement("next")}</li>
+    // Disable the next link when you're on the last page.
+    const nextLiLink = (
+      <li key="next">
+        {previousNextElement(
+          nextPageNumber,
+          "Next",
+          selectedPage === pageCount
+        )}
+      </li>
     );
 
     return (
