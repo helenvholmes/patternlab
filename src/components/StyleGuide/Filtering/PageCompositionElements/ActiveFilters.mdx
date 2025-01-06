@@ -1,12 +1,12 @@
 import { Meta } from "@storybook/blocks";
 
-import Image from "../Image/Image";
-import Link from "../Link/Link";
+import Image from "../../../Image/Image";
+import Link from "../../../Link/Link";
 
-import imageFilteringActiveFiltersList from "../../../static/filteringStyleGuide/filteringActiveFiltersList.png";
-import { exampleWrapperStyles } from "./FilteringOverview.mdx";
+import imageFilteringActiveFiltersList from "/static/filteringStyleGuide/filteringActiveFiltersList.png";
+import { exampleWrapperStyles } from "../Overview.mdx";
 
-<Meta title="Style Guide/Filtering/Page Composition/Active filters list" />
+<Meta title="Style Guide/Filtering/Page elements/Active filters list" />
 
 # Active filters list
 
@@ -21,7 +21,7 @@ The `active filters` list is used to display filters that have been applied.
 ## Table of Contents
 
 - {<Link href="#rendering" target="_self">Rendering</Link>}
-- {<Link href="#positioning" target="_self">Positioning</Link>}
+- {<Link href="#position" target="_self">Position</Link>}
 - {<Link href="#visibility" target="_self">Visibility</Link>}
 - {<Link href="#labeling" target="_self">Labeling</Link>}
 - {<Link href="#adding-filters" target="_self">Adding filters</Link>}
@@ -32,7 +32,7 @@ The `active filters` list is used to display filters that have been applied.
 The `active filters` list should be rendered using the DS
 [TagSet](./?path=/docs/components-content-display-tagset--docs) component.
 
-## Positioning
+## Position
 
 The `active filters` list should be positioned directly above the `results` list.
 

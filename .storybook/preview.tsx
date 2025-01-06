@@ -104,7 +104,8 @@ const parameters = {
           "*",
           [
             "Overview",
-            "Page Composition",
+            "Page composition",
+            "Page elements",
             [
               "Outline",
               "Text search field",
@@ -115,7 +116,7 @@ const parameters = {
               "Results list",
               "Pagination menu",
             ],
-            "Applying & Clearing Filters",
+            "Applying & clearing filters",
             "Accessibility",
             "JS-disabled",
           ],
