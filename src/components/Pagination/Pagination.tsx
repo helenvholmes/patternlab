@@ -127,7 +127,7 @@ export const Pagination: ChakraComponent<
     };
 
     // Returns the "Previous" or "Next" link element, disabled according to current page number.
-    const previousNextElement = ({
+    const getPreviousNextElement = ({
       pageNumber,
       text,
       isDisabled,
@@ -137,43 +137,17 @@ export const Pagination: ChakraComponent<
       isDisabled: boolean;
     }) => {
       const isPrevious = text === "Previous";
-      const baseStyles = {
-        justifyItems: "center",
-        textDecoration: "none !important",
-        color: "ui.link.primary",
-        _hover: {
-          svg: { fill: "ui.link.secondary" },
-          color: "ui.link.secondary",
-        },
-        svg: {
-          fill: "ui.link.primary",
-          marginLeft: "xxs",
-        },
-        _dark: {
-          color: "dark.ui.link.primary",
-          svg: { fill: "dark.ui.link.primary" },
-        },
-      };
-
-      const disabledStyles = isDisabled
-        ? {
-            color: "ui.disabled.primary",
-            pointerEvents: "none",
-            svg: { fill: "ui.disabled.primary" },
-            _dark: {
-              color: "ui.disabled.secondary",
-              svg: { fill: "ui.disabled.secondary" },
-            },
-          }
-        : {};
-
-      const combinedStyles = { ...baseStyles, ...disabledStyles };
+      const disabledStyles = isDisabled ? styles.disabledElement : {};
 
       return (
         <Link
           href={changeUrls ? getPageHref(pageNumber) : "#"}
           id={`${id}-${text}`}
-          sx={combinedStyles}
+          __css={{
+            ...styles.link,
+            ...styles.previousNextElement,
+            ...disabledStyles,
+          }}
           type="action"
           aria-label={`${isPrevious ? "Previous" : "Next"} page`}
           aria-disabled={isDisabled}
@@ -209,6 +183,7 @@ export const Pagination: ChakraComponent<
             sx={{
               display: { base: "inline", md: "none" },
               marginRight: isPrevious ? "xs" : 0,
+              marginLeft: isPrevious ? 0 : "xs",
             }}
           />
           {isPrevious && (
@@ -362,7 +337,7 @@ export const Pagination: ChakraComponent<
     // Disable the previous link when you're on the first page.
     const previousLiLink = (
       <li key="previous">
-        {previousNextElement({
+        {getPreviousNextElement({
           pageNumber: previousPageNumber,
           text: "Previous",
           isDisabled: selectedPage === 1,
@@ -372,7 +347,7 @@ export const Pagination: ChakraComponent<
     // Disable the next link when you're on the last page.
     const nextLiLink = (
       <li key="next">
-        {previousNextElement({
+        {getPreviousNextElement({
           pageNumber: nextPageNumber,
           text: "Next",
           isDisabled: selectedPage === pageCount,
