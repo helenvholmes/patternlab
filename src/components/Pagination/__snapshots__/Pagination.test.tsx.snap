@@ -15,7 +15,7 @@ exports[`Pagination Rendering renders the UI snapshot correctly 1`] = `
       <a
         aria-disabled={true}
         aria-label="Previous page"
-        className="chakra-link css-15jccru"
+        className="chakra-link css-1xdhyk6"
         href="page=0"
         id="firstPage-Previous"
         rel={null}
@@ -23,7 +23,7 @@ exports[`Pagination Rendering renders the UI snapshot correctly 1`] = `
       >
         <svg
           aria-hidden={true}
-          className="chakra-icon css-3i73uu"
+          className="chakra-icon css-1hiwo6q"
           data-file-name="SvgArrow"
           focusable={false}
           role="img"
@@ -31,17 +31,18 @@ exports[`Pagination Rendering renders the UI snapshot correctly 1`] = `
         />
         <svg
           aria-hidden={true}
-          className="chakra-icon css-1xdq4c0"
+          className="chakra-icon css-s2ejzr"
           data-file-name="SvgArrow"
           focusable={false}
           role="img"
           title="arrow icon"
         />
-        <p
-          className="chakra-text css-gd6c27"
+        <span
+          className="css-13b35wz"
+          size="body2"
         >
           Previous
-        </p>
+        </span>
       </a>
     </li>
     <li>
@@ -124,20 +125,21 @@ exports[`Pagination Rendering renders the UI snapshot correctly 1`] = `
       <a
         aria-disabled={false}
         aria-label="Next page"
-        className="chakra-link css-90tav9"
+        className="chakra-link css-1xdhyk6"
         href="page=2"
         id="firstPage-Next"
         rel={null}
         target={null}
       >
-        <p
-          className="chakra-text css-gd6c27"
+        <span
+          className="css-13b35wz"
+          size="body2"
         >
           Next
-        </p>
+        </span>
         <svg
           aria-hidden={true}
-          className="chakra-icon css-tngas5"
+          className="chakra-icon css-16chr5f"
           data-file-name="SvgArrow"
           focusable={false}
           role="img"
@@ -145,7 +147,7 @@ exports[`Pagination Rendering renders the UI snapshot correctly 1`] = `
         />
         <svg
           aria-hidden={true}
-          className="chakra-icon css-kgmpbo"
+          className="chakra-icon css-1lhtxwf"
           data-file-name="SvgArrow"
           focusable={false}
           role="img"
@@ -172,7 +174,7 @@ exports[`Pagination Rendering renders the UI snapshot correctly 2`] = `
       <a
         aria-disabled={false}
         aria-label="Previous page"
-        className="chakra-link css-90tav9"
+        className="chakra-link css-1xdhyk6"
         href="page=9"
         id="lastPage-Previous"
         rel={null}
@@ -180,7 +182,7 @@ exports[`Pagination Rendering renders the UI snapshot correctly 2`] = `
       >
         <svg
           aria-hidden={true}
-          className="chakra-icon css-3i73uu"
+          className="chakra-icon css-1hiwo6q"
           data-file-name="SvgArrow"
           focusable={false}
           role="img"
@@ -188,17 +190,18 @@ exports[`Pagination Rendering renders the UI snapshot correctly 2`] = `
         />
         <svg
           aria-hidden={true}
-          className="chakra-icon css-1xdq4c0"
+          className="chakra-icon css-s2ejzr"
           data-file-name="SvgArrow"
           focusable={false}
           role="img"
           title="arrow icon"
         />
-        <p
-          className="chakra-text css-gd6c27"
+        <span
+          className="css-13b35wz"
+          size="body2"
         >
           Previous
-        </p>
+        </span>
       </a>
     </li>
     <li>
@@ -281,20 +284,21 @@ exports[`Pagination Rendering renders the UI snapshot correctly 2`] = `
       <a
         aria-disabled={true}
         aria-label="Next page"
-        className="chakra-link css-15jccru"
+        className="chakra-link css-1xdhyk6"
         href="page=11"
         id="lastPage-Next"
         rel={null}
         target={null}
       >
-        <p
-          className="chakra-text css-gd6c27"
+        <span
+          className="css-13b35wz"
+          size="body2"
         >
           Next
-        </p>
+        </span>
         <svg
           aria-hidden={true}
-          className="chakra-icon css-tngas5"
+          className="chakra-icon css-16chr5f"
           data-file-name="SvgArrow"
           focusable={false}
           role="img"
@@ -302,7 +306,7 @@ exports[`Pagination Rendering renders the UI snapshot correctly 2`] = `
         />
         <svg
           aria-hidden={true}
-          className="chakra-icon css-kgmpbo"
+          className="chakra-icon css-1lhtxwf"
           data-file-name="SvgArrow"
           focusable={false}
           role="img"
@@ -329,7 +333,7 @@ exports[`Pagination Rendering renders the UI snapshot correctly 3`] = `
       <a
         aria-disabled={false}
         aria-label="Previous page"
-        className="chakra-link css-90tav9"
+        className="chakra-link css-1xdhyk6"
         href="page=4"
         id="middlePage-Previous"
         rel={null}
@@ -337,7 +341,7 @@ exports[`Pagination Rendering renders the UI snapshot correctly 3`] = `
       >
         <svg
           aria-hidden={true}
-          className="chakra-icon css-3i73uu"
+          className="chakra-icon css-1hiwo6q"
           data-file-name="SvgArrow"
           focusable={false}
           role="img"
@@ -345,17 +349,18 @@ exports[`Pagination Rendering renders the UI snapshot correctly 3`] = `
         />
         <svg
           aria-hidden={true}
-          className="chakra-icon css-1xdq4c0"
+          className="chakra-icon css-s2ejzr"
           data-file-name="SvgArrow"
           focusable={false}
           role="img"
           title="arrow icon"
         />
-        <p
-          className="chakra-text css-gd6c27"
+        <span
+          className="css-13b35wz"
+          size="body2"
         >
           Previous
-        </p>
+        </span>
       </a>
     </li>
     <li>
@@ -429,20 +434,21 @@ exports[`Pagination Rendering renders the UI snapshot correctly 3`] = `
       <a
         aria-disabled={false}
         aria-label="Next page"
-        className="chakra-link css-90tav9"
+        className="chakra-link css-1xdhyk6"
         href="page=6"
         id="middlePage-Next"
         rel={null}
         target={null}
       >
-        <p
-          className="chakra-text css-gd6c27"
+        <span
+          className="css-13b35wz"
+          size="body2"
         >
           Next
-        </p>
+        </span>
         <svg
           aria-hidden={true}
-          className="chakra-icon css-tngas5"
+          className="chakra-icon css-16chr5f"
           data-file-name="SvgArrow"
           focusable={false}
           role="img"
@@ -450,7 +456,7 @@ exports[`Pagination Rendering renders the UI snapshot correctly 3`] = `
         />
         <svg
           aria-hidden={true}
-          className="chakra-icon css-kgmpbo"
+          className="chakra-icon css-1lhtxwf"
           data-file-name="SvgArrow"
           focusable={false}
           role="img"
@@ -477,7 +483,7 @@ exports[`Pagination Rendering renders the UI snapshot correctly 4`] = `
       <a
         aria-disabled={true}
         aria-label="Previous page"
-        className="chakra-link css-15jccru"
+        className="chakra-link css-1xdhyk6"
         href="page=0"
         id="chakra-Previous"
         rel={null}
@@ -485,7 +491,7 @@ exports[`Pagination Rendering renders the UI snapshot correctly 4`] = `
       >
         <svg
           aria-hidden={true}
-          className="chakra-icon css-3i73uu"
+          className="chakra-icon css-1hiwo6q"
           data-file-name="SvgArrow"
           focusable={false}
           role="img"
@@ -493,17 +499,18 @@ exports[`Pagination Rendering renders the UI snapshot correctly 4`] = `
         />
         <svg
           aria-hidden={true}
-          className="chakra-icon css-1xdq4c0"
+          className="chakra-icon css-s2ejzr"
           data-file-name="SvgArrow"
           focusable={false}
           role="img"
           title="arrow icon"
         />
-        <p
-          className="chakra-text css-gd6c27"
+        <span
+          className="css-13b35wz"
+          size="body2"
         >
           Previous
-        </p>
+        </span>
       </a>
     </li>
     <li>
@@ -586,20 +593,21 @@ exports[`Pagination Rendering renders the UI snapshot correctly 4`] = `
       <a
         aria-disabled={false}
         aria-label="Next page"
-        className="chakra-link css-90tav9"
+        className="chakra-link css-1xdhyk6"
         href="page=2"
         id="chakra-Next"
         rel={null}
         target={null}
       >
-        <p
-          className="chakra-text css-gd6c27"
+        <span
+          className="css-13b35wz"
+          size="body2"
         >
           Next
-        </p>
+        </span>
         <svg
           aria-hidden={true}
-          className="chakra-icon css-tngas5"
+          className="chakra-icon css-16chr5f"
           data-file-name="SvgArrow"
           focusable={false}
           role="img"
@@ -607,7 +615,7 @@ exports[`Pagination Rendering renders the UI snapshot correctly 4`] = `
         />
         <svg
           aria-hidden={true}
-          className="chakra-icon css-kgmpbo"
+          className="chakra-icon css-1lhtxwf"
           data-file-name="SvgArrow"
           focusable={false}
           role="img"
@@ -635,7 +643,7 @@ exports[`Pagination Rendering renders the UI snapshot correctly 5`] = `
       <a
         aria-disabled={true}
         aria-label="Previous page"
-        className="chakra-link css-15jccru"
+        className="chakra-link css-1xdhyk6"
         href="page=0"
         id="props-Previous"
         rel={null}
@@ -643,7 +651,7 @@ exports[`Pagination Rendering renders the UI snapshot correctly 5`] = `
       >
         <svg
           aria-hidden={true}
-          className="chakra-icon css-3i73uu"
+          className="chakra-icon css-1hiwo6q"
           data-file-name="SvgArrow"
           focusable={false}
           role="img"
@@ -651,17 +659,18 @@ exports[`Pagination Rendering renders the UI snapshot correctly 5`] = `
         />
         <svg
           aria-hidden={true}
-          className="chakra-icon css-1xdq4c0"
+          className="chakra-icon css-s2ejzr"
           data-file-name="SvgArrow"
           focusable={false}
           role="img"
           title="arrow icon"
         />
-        <p
-          className="chakra-text css-gd6c27"
+        <span
+          className="css-13b35wz"
+          size="body2"
         >
           Previous
-        </p>
+        </span>
       </a>
     </li>
     <li>
@@ -744,20 +753,21 @@ exports[`Pagination Rendering renders the UI snapshot correctly 5`] = `
       <a
         aria-disabled={false}
         aria-label="Next page"
-        className="chakra-link css-90tav9"
+        className="chakra-link css-1xdhyk6"
         href="page=2"
         id="props-Next"
         rel={null}
         target={null}
       >
-        <p
-          className="chakra-text css-gd6c27"
+        <span
+          className="css-13b35wz"
+          size="body2"
         >
           Next
-        </p>
+        </span>
         <svg
           aria-hidden={true}
-          className="chakra-icon css-tngas5"
+          className="chakra-icon css-16chr5f"
           data-file-name="SvgArrow"
           focusable={false}
           role="img"
@@ -765,7 +775,7 @@ exports[`Pagination Rendering renders the UI snapshot correctly 5`] = `
         />
         <svg
           aria-hidden={true}
-          className="chakra-icon css-kgmpbo"
+          className="chakra-icon css-1lhtxwf"
           data-file-name="SvgArrow"
           focusable={false}
           role="img"
