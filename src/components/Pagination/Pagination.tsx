@@ -158,8 +158,8 @@ export const Pagination: ChakraComponent<
           {!isPrevious && (
             <Text
               as="span"
-              size="body2"
               sx={{
+                fontSize: "14px",
                 display: { base: "none", md: "inline" },
               }}
             >
@@ -189,8 +189,8 @@ export const Pagination: ChakraComponent<
           {isPrevious && (
             <Text
               as="span"
-              size="body2"
               sx={{
+                fontSize: "14px",
                 display: { base: "none", md: "inline" },
               }}
             >

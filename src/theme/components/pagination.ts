@@ -38,6 +38,7 @@ const Pagination = defineMultiStyleConfig({
       alignItems: "center",
       color: "ui.link.primary",
       _hover: {
+        textDecoration: "none",
         svg: { fill: "ui.link.secondary" },
         color: "ui.link.secondary",
       },
