@@ -108,7 +108,7 @@ const parameters = {
             "Page elements",
             [
               "Outline",
-              "Text search field",
+              "Keyword search field",
               "Filter bar",
               "Active filters list",
               "Total results heading",

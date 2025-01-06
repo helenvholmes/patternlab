@@ -3,24 +3,24 @@ import { Meta } from "@storybook/blocks";
 import Image from "../../../Image/Image";
 import Link from "../../../Link/Link";
 
-import imageFilteringTextSearchField from "/static/filteringStyleGuide/filteringTextSearchField.png";
+import imageFilteringKeywordSearchField from "/static/filteringStyleGuide/filteringKeywordSearchField.png";
 import { exampleWrapperStyles } from "../Overview.mdx";
 
-<Meta title="Style Guide/Filtering/Page elements/Text search field" />
+<Meta title="Style Guide/Filtering/Page elements/Keyword search field" />
 
-# Text search field
+# Keyword search field
 
-The `text search` field provides a way for users to enter a text string to
+The `keyword search` field provides a way for users to enter a text string to
 search and retrieve related information from a defined data set. It is not
 considered a filter.
 
-While the `text search` field is not required in a filtering scenario, more
+While the `keyword search` field is not required in a filtering scenario, more
 often than not, filtering is used to narrow a results set that was initially
-produced with a text search.
+produced with a keyword search.
 
 <Image
-  alt="Example of text search field"
-  src={imageFilteringTextSearchField}
+  alt="Example of keyword search field"
+  src={imageFilteringKeywordSearchField}
   {...exampleWrapperStyles}
 />
 
@@ -32,16 +32,16 @@ produced with a text search.
 
 ## Rendering
 
-The `text search` field should be rendered using the DS
+The `keyword search` field should be rendered using the DS
 [SearchBar](./?path=/docs/components-form-elements-searchbar--docs) or
 [TextInput](./?path=/docs/components-form-elements-textinput--docs) component.
 
 ## Position
 
-The `text search` field should be positioned above the `filter bar` and `active filters` list.
+The `keyword search` field should be positioned above the `filter bar` and `active filters` list.
 
 ## Anti-patterns
 
-The `text search` field should not be considered when using [live
+The `keyword search` field should not be considered when using [live
 filtering](./?path=/docs/style-guide-filtering-applying-clearing-filters--docs#applying-filters).
-Rather, a text search term should be applied using a submit button.
+Rather, a keyword search term should be applied using a submit button.
