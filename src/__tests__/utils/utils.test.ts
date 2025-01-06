@@ -1,4 +1,4 @@
-import { range } from "../../utils/utils";
+import { range, formatNumberRange } from "../../utils/utils";
 
 describe("range", () => {
   it("returns an array of values not including the stop argument", () => {
@@ -14,5 +14,17 @@ describe("range", () => {
     expect(range(2, 20, 4)).toEqual([2, 6, 10, 14, 18]);
     expect(range(2, 6, 2)).toEqual([2, 4]);
     expect(range(2, 20, 5)).toEqual([2, 7, 12, 17]);
+  });
+});
+
+describe("formatNumberRange", () => {
+  it("returns a number with commas and handles a range of numbers", () => {
+    expect(formatNumberRange(4382)).toEqual('4,382');
+    expect(formatNumberRange(4276835)).toEqual('4,276,835');
+    expect(formatNumberRange(4276835.879)).toEqual('4,276,835.879');
+    expect(formatNumberRange(1,99)).toEqual('1–99');
+    expect(formatNumberRange(141, 58)).toEqual("58–141");
+    expect(formatNumberRange(100, 102)).toEqual("100–102");
+    expect(formatNumberRange(10, 100)).toEqual('10–100');
   });
 });
