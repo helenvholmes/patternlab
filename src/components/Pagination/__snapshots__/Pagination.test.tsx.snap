@@ -38,8 +38,7 @@ exports[`Pagination Rendering renders the UI snapshot correctly 1`] = `
           title="arrow icon"
         />
         <span
-          className="css-13b35wz"
-          size="body2"
+          className="css-rb3ek3"
         >
           Previous
         </span>
@@ -132,8 +131,7 @@ exports[`Pagination Rendering renders the UI snapshot correctly 1`] = `
         target={null}
       >
         <span
-          className="css-13b35wz"
-          size="body2"
+          className="css-rb3ek3"
         >
           Next
         </span>
@@ -197,8 +195,7 @@ exports[`Pagination Rendering renders the UI snapshot correctly 2`] = `
           title="arrow icon"
         />
         <span
-          className="css-13b35wz"
-          size="body2"
+          className="css-rb3ek3"
         >
           Previous
         </span>
@@ -291,8 +288,7 @@ exports[`Pagination Rendering renders the UI snapshot correctly 2`] = `
         target={null}
       >
         <span
-          className="css-13b35wz"
-          size="body2"
+          className="css-rb3ek3"
         >
           Next
         </span>
@@ -356,8 +352,7 @@ exports[`Pagination Rendering renders the UI snapshot correctly 3`] = `
           title="arrow icon"
         />
         <span
-          className="css-13b35wz"
-          size="body2"
+          className="css-rb3ek3"
         >
           Previous
         </span>
@@ -441,8 +436,7 @@ exports[`Pagination Rendering renders the UI snapshot correctly 3`] = `
         target={null}
       >
         <span
-          className="css-13b35wz"
-          size="body2"
+          className="css-rb3ek3"
         >
           Next
         </span>
@@ -506,8 +500,7 @@ exports[`Pagination Rendering renders the UI snapshot correctly 4`] = `
           title="arrow icon"
         />
         <span
-          className="css-13b35wz"
-          size="body2"
+          className="css-rb3ek3"
         >
           Previous
         </span>
@@ -600,8 +593,7 @@ exports[`Pagination Rendering renders the UI snapshot correctly 4`] = `
         target={null}
       >
         <span
-          className="css-13b35wz"
-          size="body2"
+          className="css-rb3ek3"
         >
           Next
         </span>
@@ -666,8 +658,7 @@ exports[`Pagination Rendering renders the UI snapshot correctly 5`] = `
           title="arrow icon"
         />
         <span
-          className="css-13b35wz"
-          size="body2"
+          className="css-rb3ek3"
         >
           Previous
         </span>
@@ -760,8 +751,7 @@ exports[`Pagination Rendering renders the UI snapshot correctly 5`] = `
         target={null}
       >
         <span
-          className="css-13b35wz"
-          size="body2"
+          className="css-rb3ek3"
         >
           Next
         </span>
