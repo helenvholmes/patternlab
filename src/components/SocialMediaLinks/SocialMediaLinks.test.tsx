@@ -137,6 +137,16 @@ describe("SocialMediaLinks", () => {
     // The icons should appear.
     expect(screen.getByTitle("NYPL Facebook")).toBeInTheDocument();
     expect(screen.getByTitle("Alt Twitter")).toBeInTheDocument();
+
+    // The icon mocks should transform the correct icon file.
+    expect(screen.getByTitle("NYPL Facebook")).toHaveAttribute(
+      "data-file-name",
+      "SvgSocialFacebook"
+    );
+    expect(screen.getByTitle("Alt Twitter")).toHaveAttribute(
+      "data-file-name",
+      "SvgSocialTwitter"
+    );
   });
 });
 

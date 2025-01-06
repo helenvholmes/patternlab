@@ -7,36 +7,13 @@ exports[`Banner renders the UI snapshot correctly 1`] = `
 >
   <svg
     aria-hidden={true}
-    className="chakra-icon banner-icon css-28nzh"
+    className="chakra-icon banner-icon css-1976tye"
+    data-file-name="SvgErrorOutline"
     data-testid="undefined-banner-icon"
     focusable={false}
     role="img"
     title="Banner informative icon"
-    viewBox="0 0 24 24"
-  >
-    <g
-      stroke="currentColor"
-      strokeWidth="1.5"
-    >
-      <path
-        d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-        fill="none"
-        strokeLinecap="round"
-      />
-      <path
-        d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-        fill="currentColor"
-        strokeLinecap="round"
-      />
-      <circle
-        cx="12"
-        cy="12"
-        fill="none"
-        r="11.25"
-        strokeMiterlimit="10"
-      />
-    </g>
-  </svg>
+  />
   <div
     className="css-1bxarir"
   >
@@ -58,36 +35,13 @@ exports[`Banner renders the UI snapshot correctly 2`] = `
 >
   <svg
     aria-hidden={true}
-    className="chakra-icon banner-icon css-28nzh"
+    className="chakra-icon banner-icon css-1976tye"
+    data-file-name="SvgErrorOutline"
     data-testid="bannerID3-banner-icon"
     focusable={false}
     role="img"
     title="Banner negative icon"
-    viewBox="0 0 24 24"
-  >
-    <g
-      stroke="currentColor"
-      strokeWidth="1.5"
-    >
-      <path
-        d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-        fill="none"
-        strokeLinecap="round"
-      />
-      <path
-        d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-        fill="currentColor"
-        strokeLinecap="round"
-      />
-      <circle
-        cx="12"
-        cy="12"
-        fill="none"
-        r="11.25"
-        strokeMiterlimit="10"
-      />
-    </g>
-  </svg>
+  />
   <div
     className="css-1bxarir"
   >
@@ -109,36 +63,13 @@ exports[`Banner renders the UI snapshot correctly 3`] = `
 >
   <svg
     aria-hidden={true}
-    className="chakra-icon banner-icon css-28nzh"
+    className="chakra-icon banner-icon css-1976tye"
+    data-file-name="SvgErrorOutline"
     data-testid="bannerID3-banner-icon"
     focusable={false}
     role="img"
     title="Banner neutral icon"
-    viewBox="0 0 24 24"
-  >
-    <g
-      stroke="currentColor"
-      strokeWidth="1.5"
-    >
-      <path
-        d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-        fill="none"
-        strokeLinecap="round"
-      />
-      <path
-        d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-        fill="currentColor"
-        strokeLinecap="round"
-      />
-      <circle
-        cx="12"
-        cy="12"
-        fill="none"
-        r="11.25"
-        strokeMiterlimit="10"
-      />
-    </g>
-  </svg>
+  />
   <div
     className="css-1bxarir"
   >
@@ -160,36 +91,13 @@ exports[`Banner renders the UI snapshot correctly 4`] = `
 >
   <svg
     aria-hidden={true}
-    className="chakra-icon banner-icon css-28nzh"
+    className="chakra-icon banner-icon css-1976tye"
+    data-file-name="SvgActionCheckCircle"
     data-testid="bannerID3-banner-icon"
     focusable={false}
     role="img"
     title="Banner positive icon"
-    viewBox="0 0 24 24"
-  >
-    <g
-      stroke="currentColor"
-      strokeWidth="1.5"
-    >
-      <path
-        d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-        fill="none"
-        strokeLinecap="round"
-      />
-      <path
-        d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-        fill="currentColor"
-        strokeLinecap="round"
-      />
-      <circle
-        cx="12"
-        cy="12"
-        fill="none"
-        r="11.25"
-        strokeMiterlimit="10"
-      />
-    </g>
-  </svg>
+  />
   <div
     className="css-1bxarir"
   >
@@ -211,36 +119,13 @@ exports[`Banner renders the UI snapshot correctly 5`] = `
 >
   <svg
     aria-hidden={true}
-    className="chakra-icon banner-icon css-28nzh"
+    className="chakra-icon banner-icon css-1976tye"
+    data-file-name="SvgActionLightbulb"
     data-testid="bannerID3-banner-icon"
     focusable={false}
     role="img"
     title="Banner recommendation icon"
-    viewBox="0 0 24 24"
-  >
-    <g
-      stroke="currentColor"
-      strokeWidth="1.5"
-    >
-      <path
-        d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-        fill="none"
-        strokeLinecap="round"
-      />
-      <path
-        d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-        fill="currentColor"
-        strokeLinecap="round"
-      />
-      <circle
-        cx="12"
-        cy="12"
-        fill="none"
-        r="11.25"
-        strokeMiterlimit="10"
-      />
-    </g>
-  </svg>
+  />
   <div
     className="css-1bxarir"
   >
@@ -262,36 +147,13 @@ exports[`Banner renders the UI snapshot correctly 6`] = `
 >
   <svg
     aria-hidden={true}
-    className="chakra-icon banner-icon css-28nzh"
+    className="chakra-icon banner-icon css-1976tye"
+    data-file-name="SvgAlertNotificationImportant"
     data-testid="bannerID3-banner-icon"
     focusable={false}
     role="img"
     title="Banner warning icon"
-    viewBox="0 0 24 24"
-  >
-    <g
-      stroke="currentColor"
-      strokeWidth="1.5"
-    >
-      <path
-        d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-        fill="none"
-        strokeLinecap="round"
-      />
-      <path
-        d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-        fill="currentColor"
-        strokeLinecap="round"
-      />
-      <circle
-        cx="12"
-        cy="12"
-        fill="none"
-        r="11.25"
-        strokeMiterlimit="10"
-      />
-    </g>
-  </svg>
+  />
   <div
     className="css-1bxarir"
   >
@@ -313,36 +175,13 @@ exports[`Banner renders the UI snapshot correctly 7`] = `
 >
   <svg
     aria-hidden={true}
-    className="chakra-icon banner-icon css-1grhd2q"
+    className="chakra-icon banner-icon css-1vgifmd"
+    data-file-name="SvgErrorOutline"
     data-testid="bannerID4-banner-icon"
     focusable={false}
     role="img"
     title="Banner neutral icon"
-    viewBox="0 0 24 24"
-  >
-    <g
-      stroke="currentColor"
-      strokeWidth="1.5"
-    >
-      <path
-        d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-        fill="none"
-        strokeLinecap="round"
-      />
-      <path
-        d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-        fill="currentColor"
-        strokeLinecap="round"
-      />
-      <circle
-        cx="12"
-        cy="12"
-        fill="none"
-        r="11.25"
-        strokeMiterlimit="10"
-      />
-    </g>
-  </svg>
+  />
   <div
     className="css-1bxarir"
   >
@@ -359,36 +198,13 @@ exports[`Banner renders the UI snapshot correctly 8`] = `
 >
   <svg
     aria-hidden={true}
-    className="chakra-icon banner-icon css-1grhd2q"
+    className="chakra-icon banner-icon css-1vgifmd"
+    data-file-name="SvgErrorOutline"
     data-testid="bannerID7-banner-icon"
     focusable={false}
     role="img"
     title="Banner neutral icon"
-    viewBox="0 0 24 24"
-  >
-    <g
-      stroke="currentColor"
-      strokeWidth="1.5"
-    >
-      <path
-        d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-        fill="none"
-        strokeLinecap="round"
-      />
-      <path
-        d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-        fill="currentColor"
-        strokeLinecap="round"
-      />
-      <circle
-        cx="12"
-        cy="12"
-        fill="none"
-        r="11.25"
-        strokeMiterlimit="10"
-      />
-    </g>
-  </svg>
+  />
   <div
     className="css-1bxarir"
   >
@@ -403,36 +219,13 @@ exports[`Banner renders the UI snapshot correctly 8`] = `
   >
     <svg
       aria-hidden={true}
-      className="chakra-icon css-1grhd2q"
+      className="chakra-icon css-1vgifmd"
+      data-file-name="SvgClose"
       data-testid="bannerID7-dismissible-icon"
       focusable={false}
       role="img"
       title="Banner close icon"
-      viewBox="0 0 24 24"
-    >
-      <g
-        stroke="currentColor"
-        strokeWidth="1.5"
-      >
-        <path
-          d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-          fill="none"
-          strokeLinecap="round"
-        />
-        <path
-          d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-          fill="currentColor"
-          strokeLinecap="round"
-        />
-        <circle
-          cx="12"
-          cy="12"
-          fill="none"
-          r="11.25"
-          strokeMiterlimit="10"
-        />
-      </g>
-    </svg>
+    />
   </button>
 </aside>
 `;
@@ -445,36 +238,13 @@ exports[`Banner renders the UI snapshot correctly 9`] = `
 >
   <svg
     aria-hidden={true}
-    className="chakra-icon banner-icon css-28nzh"
+    className="chakra-icon banner-icon css-1976tye"
+    data-file-name="SvgErrorOutline"
     data-testid="chakra-banner-icon"
     focusable={false}
     role="img"
     title="Banner neutral icon"
-    viewBox="0 0 24 24"
-  >
-    <g
-      stroke="currentColor"
-      strokeWidth="1.5"
-    >
-      <path
-        d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-        fill="none"
-        strokeLinecap="round"
-      />
-      <path
-        d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-        fill="currentColor"
-        strokeLinecap="round"
-      />
-      <circle
-        cx="12"
-        cy="12"
-        fill="none"
-        r="11.25"
-        strokeMiterlimit="10"
-      />
-    </g>
-  </svg>
+  />
   <div
     className="css-1bxarir"
   >
@@ -497,36 +267,13 @@ exports[`Banner renders the UI snapshot correctly 10`] = `
 >
   <svg
     aria-hidden={true}
-    className="chakra-icon banner-icon css-28nzh"
+    className="chakra-icon banner-icon css-1976tye"
+    data-file-name="SvgErrorOutline"
     data-testid="props-banner-icon"
     focusable={false}
     role="img"
     title="Banner neutral icon"
-    viewBox="0 0 24 24"
-  >
-    <g
-      stroke="currentColor"
-      strokeWidth="1.5"
-    >
-      <path
-        d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-        fill="none"
-        strokeLinecap="round"
-      />
-      <path
-        d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-        fill="currentColor"
-        strokeLinecap="round"
-      />
-      <circle
-        cx="12"
-        cy="12"
-        fill="none"
-        r="11.25"
-        strokeMiterlimit="10"
-      />
-    </g>
-  </svg>
+  />
   <div
     className="css-1bxarir"
   >

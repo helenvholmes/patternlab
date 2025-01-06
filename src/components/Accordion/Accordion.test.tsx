@@ -156,12 +156,22 @@ describe("Accordion", () => {
     expect(accordionLabel).toHaveAttribute("aria-expanded", "false");
     // The panel's content should not be in the DOM unless the Accordion is open.
     expect(accordionPanelContent).not.toBeInTheDocument();
+    expect(screen.getByTitle("plus icon")).toBeInTheDocument();
+    expect(screen.getByTitle("plus icon")).toHaveAttribute(
+      "data-file-name",
+      "SvgPlus"
+    );
 
     userEvent.click(accordionLabel);
 
     accordionPanelContent = screen.queryByText(/operates the village store/i);
     expect(accordionLabel).toHaveAttribute("aria-expanded", "true");
     expect(accordionPanelContent).toBeInTheDocument();
+    expect(screen.getByTitle("minus icon")).toBeInTheDocument();
+    expect(screen.getByTitle("minus icon")).toHaveAttribute(
+      "data-file-name",
+      "SvgMinus"
+    );
   });
 
   it("closes the accordion when the button is in focus and the 'esc' key is pressed", async () => {
