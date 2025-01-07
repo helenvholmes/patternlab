@@ -1,13 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Radio Button renders the UI snapshot correctly 1`] = `
-<fieldset
-  className="css-1u8qly9"
+<div
+  className="css-1xdhyk6"
   id="radio-group-column"
 >
-  <legend>
+  <span
+    className="css-0"
+  >
     column
-  </legend>
+  </span>
   <div
     className="chakra-radio-group css-0"
     role="radiogroup"
@@ -138,17 +140,19 @@ exports[`Radio Button renders the UI snapshot correctly 1`] = `
       className="css-0"
     />
   </div>
-</fieldset>
+</div>
 `;
 
 exports[`Radio Button renders the UI snapshot correctly 2`] = `
-<fieldset
-  className="css-1u8qly9"
+<div
+  className="css-1xdhyk6"
   id="radio-group-row"
 >
-  <legend>
+  <span
+    className="css-0"
+  >
     row
-  </legend>
+  </span>
   <div
     className="chakra-radio-group css-0"
     role="radiogroup"
@@ -279,17 +283,19 @@ exports[`Radio Button renders the UI snapshot correctly 2`] = `
       className="css-0"
     />
   </div>
-</fieldset>
+</div>
 `;
 
 exports[`Radio Button renders the UI snapshot correctly 3`] = `
-<fieldset
-  className="css-1u8qly9"
+<div
+  className="css-1xdhyk6"
   id="radio-group-noLabel"
 >
-  <legend>
+  <span
+    className="css-0"
+  >
     no label
-  </legend>
+  </span>
   <div
     className="chakra-radio-group css-0"
     role="radiogroup"
@@ -420,17 +426,19 @@ exports[`Radio Button renders the UI snapshot correctly 3`] = `
       className="css-0"
     />
   </div>
-</fieldset>
+</div>
 `;
 
 exports[`Radio Button renders the UI snapshot correctly 4`] = `
-<fieldset
-  className="css-1u8qly9"
+<div
+  className="css-1xdhyk6"
   id="radio-group-helperText"
 >
-  <legend>
+  <span
+    className="css-0"
+  >
     helperText
-  </legend>
+  </span>
   <div
     className="chakra-radio-group css-0"
     role="radiogroup"
@@ -566,17 +574,19 @@ exports[`Radio Button renders the UI snapshot correctly 4`] = `
       }
     />
   </div>
-</fieldset>
+</div>
 `;
 
 exports[`Radio Button renders the UI snapshot correctly 5`] = `
-<fieldset
-  className="css-1u8qly9"
+<div
+  className="css-1xdhyk6"
   id="radio-group-invalidText"
 >
-  <legend>
+  <span
+    className="css-0"
+  >
     invalidText
-  </legend>
+  </span>
   <div
     className="chakra-radio-group css-0"
     role="radiogroup"
@@ -707,17 +717,19 @@ exports[`Radio Button renders the UI snapshot correctly 5`] = `
       className="css-0"
     />
   </div>
-</fieldset>
+</div>
 `;
 
 exports[`Radio Button renders the UI snapshot correctly 6`] = `
-<fieldset
-  className="css-1u8qly9"
+<div
+  className="css-1xdhyk6"
   id="radio-group-noRequiredLabel"
 >
-  <legend>
+  <span
+    className="css-0"
+  >
     no optional or required label
-  </legend>
+  </span>
   <div
     className="chakra-radio-group css-0"
     role="radiogroup"
@@ -850,20 +862,22 @@ exports[`Radio Button renders the UI snapshot correctly 6`] = `
       className="css-0"
     />
   </div>
-</fieldset>
+</div>
 `;
 
 exports[`Radio Button renders the UI snapshot correctly 7`] = `
-<fieldset
-  className="css-1u8qly9"
+<div
+  className="css-1xdhyk6"
   id="radio-group-required"
 >
-  <legend>
+  <span
+    className="css-0"
+  >
     required
     <span>
        (required)
     </span>
-  </legend>
+  </span>
   <div
     className="chakra-radio-group css-0"
     role="radiogroup"
@@ -996,17 +1010,19 @@ exports[`Radio Button renders the UI snapshot correctly 7`] = `
       className="css-0"
     />
   </div>
-</fieldset>
+</div>
 `;
 
 exports[`Radio Button renders the UI snapshot correctly 8`] = `
-<fieldset
-  className="css-1u8qly9"
+<div
+  className="css-1xdhyk6"
   id="radio-group-invalid"
 >
-  <legend>
+  <span
+    className="css-0"
+  >
     invalid
-  </legend>
+  </span>
   <div
     className="chakra-radio-group css-0"
     role="radiogroup"
@@ -1145,17 +1161,19 @@ exports[`Radio Button renders the UI snapshot correctly 8`] = `
       className="css-0"
     />
   </div>
-</fieldset>
+</div>
 `;
 
 exports[`Radio Button renders the UI snapshot correctly 9`] = `
-<fieldset
-  className="css-1u8qly9"
+<div
+  className="css-1xdhyk6"
   id="radio-group-disabled"
 >
-  <legend>
+  <span
+    className="css-0"
+  >
     disabled
-  </legend>
+  </span>
   <div
     className="chakra-radio-group css-0"
     role="radiogroup"
@@ -1294,17 +1312,19 @@ exports[`Radio Button renders the UI snapshot correctly 9`] = `
       className="css-0"
     />
   </div>
-</fieldset>
+</div>
 `;
 
 exports[`Radio Button renders the UI snapshot correctly 10`] = `
-<fieldset
-  className="css-1u8qly9"
+<div
+  className="css-1xdhyk6"
   id="radio-group-jsxLabels"
 >
-  <legend>
+  <span
+    className="css-0"
+  >
     RadioGroup example
-  </legend>
+  </span>
   <div
     className="chakra-radio-group css-0"
     role="radiogroup"
@@ -1459,17 +1479,19 @@ exports[`Radio Button renders the UI snapshot correctly 10`] = `
       className="css-0"
     />
   </div>
-</fieldset>
+</div>
 `;
 
 exports[`Radio Button renders the UI snapshot correctly 11`] = `
-<fieldset
-  className="css-1y4kn3e"
+<div
+  className="css-kle7zy"
   id="radio-group-chakra"
 >
-  <legend>
+  <span
+    className="css-0"
+  >
     chakra
-  </legend>
+  </span>
   <div
     className="chakra-radio-group css-0"
     role="radiogroup"
@@ -1600,18 +1622,20 @@ exports[`Radio Button renders the UI snapshot correctly 11`] = `
       className="css-0"
     />
   </div>
-</fieldset>
+</div>
 `;
 
 exports[`Radio Button renders the UI snapshot correctly 12`] = `
-<fieldset
-  className="css-1u8qly9"
+<div
+  className="css-1xdhyk6"
   data-testid="props"
   id="radio-group-props"
 >
-  <legend>
+  <span
+    className="css-0"
+  >
     props
-  </legend>
+  </span>
   <div
     className="chakra-radio-group css-0"
     role="radiogroup"
@@ -1742,5 +1766,5 @@ exports[`Radio Button renders the UI snapshot correctly 12`] = `
       className="css-0"
     />
   </div>
-</fieldset>
+</div>
 `;

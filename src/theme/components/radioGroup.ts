@@ -1,13 +1,20 @@
-import { checkboxRadioGroupStyles } from "./global";
 import { createMultiStyleConfigHelpers } from "@chakra-ui/styled-system";
+import { checkboxRadioGroupStyles, labelLegendText } from "./global";
+import { screenreaderOnly } from "./globalMixins";
 
 const { defineMultiStyleConfig, definePartsStyle } =
-  createMultiStyleConfigHelpers(["helperErrorText", "stack"]);
+  createMultiStyleConfigHelpers(["helperErrorText", "label", "legend"]);
 
 const RadioGroup = defineMultiStyleConfig({
-  baseStyle: definePartsStyle(({ isFullWidth = false }) => ({
-    ...checkboxRadioGroupStyles(isFullWidth),
-  })),
+  baseStyle: definePartsStyle(
+    ({ isFullWidth = false, isLegendHidden = false }) => ({
+      spanLegend: {
+        ...labelLegendText,
+        ...(isLegendHidden ? screenreaderOnly() : {}),
+      },
+      ...checkboxRadioGroupStyles(isFullWidth),
+    })
+  ),
 });
 
 export default RadioGroup;

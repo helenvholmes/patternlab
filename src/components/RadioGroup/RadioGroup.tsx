@@ -1,4 +1,5 @@
 import {
+  Box,
   chakra,
   ChakraComponent,
   RadioGroup as ChakraRadioGroup,
@@ -7,7 +8,6 @@ import {
 } from "@chakra-ui/react";
 import React, { forwardRef } from "react";
 
-import Fieldset from "../Fieldset/Fieldset";
 import HelperErrorText, {
   HelperErrorTextType,
 } from "../HelperErrorText/HelperErrorText";
@@ -57,9 +57,9 @@ export interface RadioGroupProps {
 const noop = () => {};
 
 /**
- * RadioGroup is a wrapper for DS `Radio` components that renders as a fieldset
- * HTML element along with optional helper text. The `name` prop is essential
- * for this form group element and is not needed for individual DS `Radio`
+ * `RadioGroup` is a wrapper for DS `Radio` components that render together
+ * along with an optional helper text. The `name` prop is essential for this
+ * form group element and is not needed for individual DS `Radio`
  * components when `RadioGroup` is used.
  */
 export const RadioGroup: ChakraComponent<
@@ -98,7 +98,10 @@ export const RadioGroup: ChakraComponent<
       const spacingProp = layout === "column" ? spacing.s : spacing.l;
       const newChildren: JSX.Element[] = [];
       // Get the Chakra-based styles for the custom elements in this component.
-      const styles = useMultiStyleConfig("RadioGroup", { isFullWidth });
+      const styles = useMultiStyleConfig("RadioGroup", {
+        isFullWidth,
+        isLegendHidden: !showLabel,
+      });
       // Props for the `ChakraRadioGroup` component.
       const radioGroupProps = {
         name,
@@ -145,16 +148,16 @@ export const RadioGroup: ChakraComponent<
       );
 
       return (
-        <Fieldset
+        <Box
           className={className}
           id={`radio-group-${id}`}
-          isLegendHidden={!showLabel}
-          isRequired={isRequired}
-          legendText={labelText}
-          showRequiredLabel={showRequiredLabel}
           {...rest}
           __css={styles}
         >
+          <Box as="span" __css={styles.spanLegend}>
+            {labelText}
+            {showRequiredLabel && isRequired && <span> (required)</span>}
+          </Box>
           <ChakraRadioGroup {...radioGroupProps}>
             <Stack direction={[layout]} spacing={spacingProp}>
               {newChildren}
@@ -167,7 +170,7 @@ export const RadioGroup: ChakraComponent<
             text={footnote}
             __css={styles.helperErrorText}
           />
-        </Fieldset>
+        </Box>
       );
     }
   )

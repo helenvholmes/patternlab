@@ -8,6 +8,10 @@ Currently, this repo is in Prerelease. When it is released, this project will ad
 
 ## Prerelease
 
+### Updates
+
+- Replaces the `fieldset` and `legend` wrappers in the `RadioGroup` with a div and span for the title. The main div wrapper around the `Radio` components already has a `role="radiogroup"` values which makes the `fieldset` redundant.
+
 ## 3.5.1 (December 19, 2024)
 
 ### Adds
