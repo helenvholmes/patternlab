@@ -15,7 +15,7 @@ export const changelogData: ChangelogData[] = [
     type: "Update",
     affects: ["Accessibility"],
     notes: [
-      "Removes the fieldset wrapper and replaces it wiht a div and simple span for the title. The main wrapper around the `Radio` componnents are already in an accessible 'radiogroup' role element.",
+      "Removes the fieldset wrapper and replaces it with a div and simple span for the title. The main wrapper around the `Radio` componnents are already in an accessible 'radiogroup' role element.",
     ],
   },
   {
