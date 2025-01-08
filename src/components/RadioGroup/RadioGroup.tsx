@@ -104,6 +104,7 @@ export const RadioGroup: ChakraComponent<
       });
       // Props for the `ChakraRadioGroup` component.
       const radioGroupProps = {
+        ["aria-labelledby"]: `rg-span-title-${id}`,
         name,
         onChange: (selected: string) => {
           setValue(selected);
@@ -154,7 +155,7 @@ export const RadioGroup: ChakraComponent<
           {...rest}
           __css={styles}
         >
-          <Box as="span" __css={styles.spanLegend}>
+          <Box as="span" id={`rg-span-title-${id}`} __css={styles.spanLegend}>
             {labelText}
             {showRequiredLabel && isRequired && <span> (required)</span>}
           </Box>
