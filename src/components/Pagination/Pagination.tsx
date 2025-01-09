@@ -161,6 +161,7 @@ export const Pagination: ChakraComponent<
               sx={{
                 fontSize: "14px",
                 display: { base: "none", md: "inline" },
+                marginInlineStart: "8px",
               }}
             >
               {text}
@@ -216,9 +217,11 @@ export const Pagination: ChakraComponent<
       // Styles for the current page link.
       const currentStyles = isSelectedPage
         ? {
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
             pointerEvents: "none",
             border: "1px solid",
-            padding: "4px 8px",
             borderRadius: "4px",
             borderColor: "ui.link.primary",
             bg: "ui.link.primary-05",
@@ -256,6 +259,11 @@ export const Pagination: ChakraComponent<
           __css={{
             ...styles.link,
             ...currentStyles,
+            ...{
+              minWidth: { base: "44px", md: "32px" },
+              height: { base: "44px", md: "32px" },
+              padding: { base: "2px 8px", md: "4px 8px" },
+            },
           }}
         >
           {item}

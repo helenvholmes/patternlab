@@ -9,9 +9,7 @@ const { defineMultiStyleConfig, definePartsStyle } =
 
 const Pagination = defineMultiStyleConfig({
   baseStyle: definePartsStyle({
-    alignItems: "stretch",
     display: "flex",
-    maxWidth: { base: "480px", md: "unset" },
     minWidth: { base: "320px", md: "unset" },
     width: "100%",
     link: {
@@ -30,8 +28,10 @@ const Pagination = defineMultiStyleConfig({
       },
     },
     ul: {
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
       marginBottom: "0",
-      gap: "10px",
       justifyItems: "center",
     },
     previousNextElement: {
