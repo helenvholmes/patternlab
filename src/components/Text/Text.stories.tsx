@@ -91,8 +91,7 @@ export const WithControls: Story = {
       </Text>
       <Text {...args}>
         As of June 2024, the Animal Crossing franchise has sold over{" "}
-        {args.totalSold}
-        copies worldwide.
+        {args.totalSold} copies worldwide.
       </Text>
       <Text {...args}>Suggested retail price: ${args.retailPrice}</Text>
     </>
