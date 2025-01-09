@@ -48,7 +48,7 @@ exports[`Pagination Rendering renders the UI snapshot correctly 1`] = `
       <a
         aria-current="page"
         aria-label="Page 1"
-        className="chakra-link css-1ye7m05"
+        className="chakra-link css-1oyhq6a"
         href="page=1"
         id="firstPage-1"
         rel={null}
@@ -60,7 +60,7 @@ exports[`Pagination Rendering renders the UI snapshot correctly 1`] = `
     <li>
       <a
         aria-label="Page 2"
-        className="chakra-link css-1xdhyk6"
+        className="chakra-link css-10hitgp"
         href="page=2"
         id="firstPage-2"
         rel={null}
@@ -72,7 +72,7 @@ exports[`Pagination Rendering renders the UI snapshot correctly 1`] = `
     <li>
       <a
         aria-label="Page 3"
-        className="chakra-link css-1xdhyk6"
+        className="chakra-link css-10hitgp"
         href="page=3"
         id="firstPage-3"
         rel={null}
@@ -84,7 +84,7 @@ exports[`Pagination Rendering renders the UI snapshot correctly 1`] = `
     <li>
       <a
         aria-label="Page 4"
-        className="chakra-link css-1xdhyk6"
+        className="chakra-link css-10hitgp"
         href="page=4"
         id="firstPage-4"
         rel={null}
@@ -96,7 +96,7 @@ exports[`Pagination Rendering renders the UI snapshot correctly 1`] = `
     <li>
       <a
         aria-label="Page 5"
-        className="chakra-link css-1xdhyk6"
+        className="chakra-link css-10hitgp"
         href="page=5"
         id="firstPage-5"
         rel={null}
@@ -111,7 +111,7 @@ exports[`Pagination Rendering renders the UI snapshot correctly 1`] = `
     <li>
       <a
         aria-label="Page 10"
-        className="chakra-link css-1xdhyk6"
+        className="chakra-link css-10hitgp"
         href="page=10"
         id="firstPage-10"
         rel={null}
@@ -131,7 +131,7 @@ exports[`Pagination Rendering renders the UI snapshot correctly 1`] = `
         target={null}
       >
         <span
-          className="css-rb3ek3"
+          className="css-70cl0f"
         >
           Next
         </span>
@@ -204,7 +204,7 @@ exports[`Pagination Rendering renders the UI snapshot correctly 2`] = `
     <li>
       <a
         aria-label="Page 1"
-        className="chakra-link css-1xdhyk6"
+        className="chakra-link css-10hitgp"
         href="page=1"
         id="lastPage-1"
         rel={null}
@@ -219,7 +219,7 @@ exports[`Pagination Rendering renders the UI snapshot correctly 2`] = `
     <li>
       <a
         aria-label="Page 6"
-        className="chakra-link css-1xdhyk6"
+        className="chakra-link css-10hitgp"
         href="page=6"
         id="lastPage-6"
         rel={null}
@@ -231,7 +231,7 @@ exports[`Pagination Rendering renders the UI snapshot correctly 2`] = `
     <li>
       <a
         aria-label="Page 7"
-        className="chakra-link css-1xdhyk6"
+        className="chakra-link css-10hitgp"
         href="page=7"
         id="lastPage-7"
         rel={null}
@@ -243,7 +243,7 @@ exports[`Pagination Rendering renders the UI snapshot correctly 2`] = `
     <li>
       <a
         aria-label="Page 8"
-        className="chakra-link css-1xdhyk6"
+        className="chakra-link css-10hitgp"
         href="page=8"
         id="lastPage-8"
         rel={null}
@@ -255,7 +255,7 @@ exports[`Pagination Rendering renders the UI snapshot correctly 2`] = `
     <li>
       <a
         aria-label="Page 9"
-        className="chakra-link css-1xdhyk6"
+        className="chakra-link css-10hitgp"
         href="page=9"
         id="lastPage-9"
         rel={null}
@@ -268,7 +268,7 @@ exports[`Pagination Rendering renders the UI snapshot correctly 2`] = `
       <a
         aria-current="page"
         aria-label="Page 10"
-        className="chakra-link css-1ye7m05"
+        className="chakra-link css-1oyhq6a"
         href="page=10"
         id="lastPage-10"
         rel={null}
@@ -288,7 +288,7 @@ exports[`Pagination Rendering renders the UI snapshot correctly 2`] = `
         target={null}
       >
         <span
-          className="css-rb3ek3"
+          className="css-70cl0f"
         >
           Next
         </span>
@@ -361,7 +361,7 @@ exports[`Pagination Rendering renders the UI snapshot correctly 3`] = `
     <li>
       <a
         aria-label="Page 1"
-        className="chakra-link css-1xdhyk6"
+        className="chakra-link css-10hitgp"
         href="page=1"
         id="middlePage-1"
         rel={null}
@@ -376,7 +376,7 @@ exports[`Pagination Rendering renders the UI snapshot correctly 3`] = `
     <li>
       <a
         aria-label="Page 4"
-        className="chakra-link css-1xdhyk6"
+        className="chakra-link css-10hitgp"
         href="page=4"
         id="middlePage-4"
         rel={null}
@@ -389,7 +389,7 @@ exports[`Pagination Rendering renders the UI snapshot correctly 3`] = `
       <a
         aria-current="page"
         aria-label="Page 5"
-        className="chakra-link css-1ye7m05"
+        className="chakra-link css-1oyhq6a"
         href="page=5"
         id="middlePage-5"
         rel={null}
@@ -401,7 +401,7 @@ exports[`Pagination Rendering renders the UI snapshot correctly 3`] = `
     <li>
       <a
         aria-label="Page 6"
-        className="chakra-link css-1xdhyk6"
+        className="chakra-link css-10hitgp"
         href="page=6"
         id="middlePage-6"
         rel={null}
@@ -416,7 +416,7 @@ exports[`Pagination Rendering renders the UI snapshot correctly 3`] = `
     <li>
       <a
         aria-label="Page 10"
-        className="chakra-link css-1xdhyk6"
+        className="chakra-link css-10hitgp"
         href="page=10"
         id="middlePage-10"
         rel={null}
@@ -436,7 +436,7 @@ exports[`Pagination Rendering renders the UI snapshot correctly 3`] = `
         target={null}
       >
         <span
-          className="css-rb3ek3"
+          className="css-70cl0f"
         >
           Next
         </span>
@@ -510,7 +510,7 @@ exports[`Pagination Rendering renders the UI snapshot correctly 4`] = `
       <a
         aria-current="page"
         aria-label="Page 1"
-        className="chakra-link css-1ye7m05"
+        className="chakra-link css-1oyhq6a"
         href="page=1"
         id="chakra-1"
         rel={null}
@@ -522,7 +522,7 @@ exports[`Pagination Rendering renders the UI snapshot correctly 4`] = `
     <li>
       <a
         aria-label="Page 2"
-        className="chakra-link css-1xdhyk6"
+        className="chakra-link css-10hitgp"
         href="page=2"
         id="chakra-2"
         rel={null}
@@ -534,7 +534,7 @@ exports[`Pagination Rendering renders the UI snapshot correctly 4`] = `
     <li>
       <a
         aria-label="Page 3"
-        className="chakra-link css-1xdhyk6"
+        className="chakra-link css-10hitgp"
         href="page=3"
         id="chakra-3"
         rel={null}
@@ -546,7 +546,7 @@ exports[`Pagination Rendering renders the UI snapshot correctly 4`] = `
     <li>
       <a
         aria-label="Page 4"
-        className="chakra-link css-1xdhyk6"
+        className="chakra-link css-10hitgp"
         href="page=4"
         id="chakra-4"
         rel={null}
@@ -558,7 +558,7 @@ exports[`Pagination Rendering renders the UI snapshot correctly 4`] = `
     <li>
       <a
         aria-label="Page 5"
-        className="chakra-link css-1xdhyk6"
+        className="chakra-link css-10hitgp"
         href="page=5"
         id="chakra-5"
         rel={null}
@@ -573,7 +573,7 @@ exports[`Pagination Rendering renders the UI snapshot correctly 4`] = `
     <li>
       <a
         aria-label="Page 10"
-        className="chakra-link css-1xdhyk6"
+        className="chakra-link css-10hitgp"
         href="page=10"
         id="chakra-10"
         rel={null}
@@ -593,7 +593,7 @@ exports[`Pagination Rendering renders the UI snapshot correctly 4`] = `
         target={null}
       >
         <span
-          className="css-rb3ek3"
+          className="css-70cl0f"
         >
           Next
         </span>
@@ -668,7 +668,7 @@ exports[`Pagination Rendering renders the UI snapshot correctly 5`] = `
       <a
         aria-current="page"
         aria-label="Page 1"
-        className="chakra-link css-1ye7m05"
+        className="chakra-link css-1oyhq6a"
         href="page=1"
         id="props-1"
         rel={null}
@@ -680,7 +680,7 @@ exports[`Pagination Rendering renders the UI snapshot correctly 5`] = `
     <li>
       <a
         aria-label="Page 2"
-        className="chakra-link css-1xdhyk6"
+        className="chakra-link css-10hitgp"
         href="page=2"
         id="props-2"
         rel={null}
@@ -692,7 +692,7 @@ exports[`Pagination Rendering renders the UI snapshot correctly 5`] = `
     <li>
       <a
         aria-label="Page 3"
-        className="chakra-link css-1xdhyk6"
+        className="chakra-link css-10hitgp"
         href="page=3"
         id="props-3"
         rel={null}
@@ -704,7 +704,7 @@ exports[`Pagination Rendering renders the UI snapshot correctly 5`] = `
     <li>
       <a
         aria-label="Page 4"
-        className="chakra-link css-1xdhyk6"
+        className="chakra-link css-10hitgp"
         href="page=4"
         id="props-4"
         rel={null}
@@ -716,7 +716,7 @@ exports[`Pagination Rendering renders the UI snapshot correctly 5`] = `
     <li>
       <a
         aria-label="Page 5"
-        className="chakra-link css-1xdhyk6"
+        className="chakra-link css-10hitgp"
         href="page=5"
         id="props-5"
         rel={null}
@@ -731,7 +731,7 @@ exports[`Pagination Rendering renders the UI snapshot correctly 5`] = `
     <li>
       <a
         aria-label="Page 10"
-        className="chakra-link css-1xdhyk6"
+        className="chakra-link css-10hitgp"
         href="page=10"
         id="props-10"
         rel={null}
@@ -751,7 +751,7 @@ exports[`Pagination Rendering renders the UI snapshot correctly 5`] = `
         target={null}
       >
         <span
-          className="css-rb3ek3"
+          className="css-70cl0f"
         >
           Next
         </span>

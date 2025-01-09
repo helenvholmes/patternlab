@@ -262,7 +262,11 @@ export const Pagination: ChakraComponent<
             ...{
               minWidth: { base: "44px", md: "32px" },
               height: { base: "44px", md: "32px" },
-              padding: { base: "2px 8px", md: "4px 8px" },
+              // Remove padding at 360px so all page numbers (up to 4 digits) can still fit.
+              padding: ["0", "inherit"],
+              "@media (min-width: 360px)": {
+                padding: { base: "2px 8px", md: "4px 8px" },
+              },
             },
           }}
         >
@@ -296,7 +300,8 @@ export const Pagination: ChakraComponent<
           // one number before the current page.
           selected - 1,
           // If the current page is near the end, show the last five items.
-          pageCount - 4
+          // If the page number has 4 digits, show only the last four items.
+          pageCount > 999 ? pageCount - 3 : pageCount - 4
         )
       );
       // Where should the middle range of numbers end at?
@@ -312,6 +317,8 @@ export const Pagination: ChakraComponent<
           5
         )
       );
+      //}
+
       const itemList =
         pageCount < 4
           ? // Get a short array with 2 or 3 items: [1, 2] or [1, 2, 3]
@@ -331,6 +338,7 @@ export const Pagination: ChakraComponent<
               // Always display the last page.
               pageCount,
             ];
+
       // If it's a number, render an `li` element with a link page item,
       // otherwise return the `li` with the ellipse for a break.
       const pageLiItems = itemList.map((item) => {
