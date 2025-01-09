@@ -1,8 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
-
 import Text, { textSizesArray } from "./Text";
 import { argsBooleanType } from "../../helpers/storybookUtils";
-import { formatNumber } from "../../utils/utils";
 
 const meta: Meta<typeof Text> = {
   title: "Components/Typography & Styles/Text",
@@ -75,11 +73,6 @@ export const WithControls: Story = {
         Nintendo 3DS, Animal Crossing: Amiibo Festival for Wii U, and Animal
         Crossing: Pocket Camp for mobile devices.
       </Text>
-      <Text {...args}>
-        As of June 2024, the Animal Crossing franchise has sold over{" "}
-        {formatNumber(81450000)} copies worldwide.
-      </Text>
-      <Text {...args}>Suggested retail price: ${formatNumber(5, 1000)}</Text>
     </>
   ),
 };
