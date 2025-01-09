@@ -15,7 +15,7 @@ export const changelogData: ChangelogData[] = [
     type: "Update",
     affects: ["Accessibility"],
     notes: [
-      "Removes the hard-coded `aria-label` attribute since it's redundant. The prop is still available for custom descriptive values.",
+      "Updates the `Form` component to remove the `aria-label`. The previous value of `'form'` was redundant and not required.",
     ],
   },
   {

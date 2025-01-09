@@ -8,9 +8,9 @@ Currently, this repo is in Prerelease. When it is released, this project will ad
 
 ## Prerelease
 
-### Removals
+### Updates
 
-- Removes the `aria-label` from the `Form` component. The previous value of `"form"` was redundant and not required.
+- Updates the `Form` component to remove the `aria-label`. The previous value of `"form"` was redundant and not required.
 
 ## 3.5.1 (December 19, 2024)
 
