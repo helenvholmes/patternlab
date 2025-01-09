@@ -79,7 +79,7 @@ export const WithControls: Story = {
         As of June 2024, the Animal Crossing franchise has sold over{" "}
         {formatNumber(81450000)} copies worldwide.
       </Text>
-      <Text {...args}>Suggested retail price: ${formatNumber(5,1000)}</Text>
+      <Text {...args}>Suggested retail price: ${formatNumber(5, 1000)}</Text>
     </>
   ),
 };
