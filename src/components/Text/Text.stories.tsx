@@ -45,20 +45,6 @@ export const WithControls: Story = {
     noSpace: false,
     role: undefined,
     size: "default",
-    totalSold: (
-      <span
-        dangerouslySetInnerHTML={{
-          __html: formatNumber(81450000),
-        }}
-      />
-    ),
-    retailPrice: (
-      <span
-        dangerouslySetInnerHTML={{
-          __html: formatNumber(10, 1500),
-        }}
-      />
-    ),
   },
   parameters: {
     design: {
@@ -91,9 +77,9 @@ export const WithControls: Story = {
       </Text>
       <Text {...args}>
         As of June 2024, the Animal Crossing franchise has sold over{" "}
-        {args.totalSold} copies worldwide.
+        {formatNumber(81450000)} copies worldwide.
       </Text>
-      <Text {...args}>Suggested retail price: ${args.retailPrice}</Text>
+      <Text {...args}>Suggested retail price: ${formatNumber(5,1000)}</Text>
     </>
   ),
 };
