@@ -220,9 +220,13 @@ export const formatNumber = (num1: number, num2?: number): string => {
 
   // If the range is between two consecutive numbers, display both
   if (end - start === 1) {
-    return `${formatNumberWithCommas(start)}&ndash;${formatNumberWithCommas(end)}`;  // Correct string return
+    return `${formatNumberWithCommas(start)}&ndash;${formatNumberWithCommas(
+      end
+    )}`; // Correct string return
   }
 
   // For a larger range, simply return the full formatted range with commas
-  return `${formatNumberWithCommas(start)}&ndash;${formatNumberWithCommas(end)}`;
+  return `${formatNumberWithCommas(start)}&ndash;${formatNumberWithCommas(
+    end
+  )}`;
 };

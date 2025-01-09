@@ -45,16 +45,20 @@ export const WithControls: Story = {
     noSpace: false,
     role: undefined,
     size: "default",
-    totalSold: <span dangerouslySetInnerHTML={
-      {
-        "__html":  formatNumber(81450000)
-      }
-    } />,
-    retailPrice: <span dangerouslySetInnerHTML={
-      {
-        "__html":  formatNumber(10, 1500)
-      }
-    } />,
+    totalSold: (
+      <span
+        dangerouslySetInnerHTML={{
+          __html: formatNumber(81450000),
+        }}
+      />
+    ),
+    retailPrice: (
+      <span
+        dangerouslySetInnerHTML={{
+          __html: formatNumber(10, 1500),
+        }}
+      />
+    ),
   },
   parameters: {
     design: {
@@ -86,12 +90,11 @@ export const WithControls: Story = {
         Crossing: Pocket Camp for mobile devices.
       </Text>
       <Text {...args}>
-        As of June 2024, the Animal Crossing franchise has sold over {args.totalSold}
+        As of June 2024, the Animal Crossing franchise has sold over{" "}
+        {args.totalSold}
         copies worldwide.
       </Text>
-      <Text {...args}>
-        Suggested retail price: ${args.retailPrice}
-      </Text>
+      <Text {...args}>Suggested retail price: ${args.retailPrice}</Text>
     </>
   ),
 };
