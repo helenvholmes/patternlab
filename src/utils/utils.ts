@@ -1,6 +1,5 @@
 import { HelperErrorTextType } from "../components/HelperErrorText/HelperErrorText";
 import { AriaAttributes } from "./interfaces";
-
 // Utility functions to use throughout the codebase
 
 /**
@@ -179,4 +178,3 @@ export const getPlaceholderImage = (
   const finalImage = `${selectedImage}&t=${t}`;
   return finalImage;
 };
-

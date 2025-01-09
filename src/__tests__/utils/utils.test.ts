@@ -16,3 +16,4 @@ describe("range", () => {
     expect(range(2, 20, 5)).toEqual([2, 7, 12, 17]);
   });
 });
+

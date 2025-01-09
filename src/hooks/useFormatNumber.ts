@@ -38,9 +38,13 @@ export default function useFormatNumber(num1: any, num2?: any) {
 
   // If the range is between two consecutive numbers, display both
   if (end - start === 1) {
-    return `${formatNumberWithCommas(start)}&ndash;${formatNumberWithCommas(end)}`;
+    return `${formatNumberWithCommas(start)}&ndash;${formatNumberWithCommas(
+      end
+    )}`;
   }
 
   // For a larger range, simply return the full formatted range with commas
-  return `${formatNumberWithCommas(start)}&ndash;${formatNumberWithCommas(end)}`;
+  return `${formatNumberWithCommas(start)}&ndash;${formatNumberWithCommas(
+    end
+  )}`;
 }
