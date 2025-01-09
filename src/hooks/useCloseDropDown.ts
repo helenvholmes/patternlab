@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import { useOutsideClick } from "@chakra-ui/react";
 
 /**
  * Close dropdowns when clicking outside of them or by pressing

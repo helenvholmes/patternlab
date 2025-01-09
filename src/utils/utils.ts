@@ -1,5 +1,6 @@
 import { HelperErrorTextType } from "../components/HelperErrorText/HelperErrorText";
 import { AriaAttributes } from "./interfaces";
+
 // Utility functions to use throughout the codebase
 
 /**
@@ -198,15 +199,15 @@ export const getPlaceholderImage = (
  *  - (10, 100) -> "10–100"
  */
 
-export const formatNumberRange = (num1: number, num2?: number): string => {
+export const formatNumber = (num1: number, num2?: number): string => {
   // Helper function to format a number with commas
-  const formatNumber = (num: number): string => {
+  const formatNumberWithCommas = (num: number): string => {
     return num.toLocaleString(); // Formats the number with commas (e.g., 4382 -> "4,382")
   };
 
   // Case 1: Only one number is provided
   if (num2 === undefined) {
-    return formatNumber(num1); // Simply return the formatted number
+    return formatNumberWithCommas(num1); // Simply return the formatted number
   }
 
   // Case 2: Two numbers are provided, create a range
@@ -214,14 +215,14 @@ export const formatNumberRange = (num1: number, num2?: number): string => {
 
   // If the numbers are the same, return one formatted number
   if (start === end) {
-    return formatNumber(start);
+    return formatNumberWithCommas(start);
   }
 
   // If the range is between two consecutive numbers, display both
   if (end - start === 1) {
-    return `${formatNumber(start)}–${formatNumber(end)}`;
+    return `${formatNumberWithCommas(start)}&ndash;${formatNumberWithCommas(end)}`;  // Correct string return
   }
 
   // For a larger range, simply return the full formatted range with commas
-  return `${formatNumber(start)}–${formatNumber(end)}`;
+  return `${formatNumberWithCommas(start)}&ndash;${formatNumberWithCommas(end)}`;
 };

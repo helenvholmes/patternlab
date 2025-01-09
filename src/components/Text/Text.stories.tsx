@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 
 import Text, { textSizesArray } from "./Text";
 import { argsBooleanType } from "../../helpers/storybookUtils";
-import { formatNumberRange } from "../../utils/utils";
+import { formatNumber } from "../../utils/utils";
 
 const meta: Meta<typeof Text> = {
   title: "Components/Typography & Styles/Text",
@@ -45,6 +45,16 @@ export const WithControls: Story = {
     noSpace: false,
     role: undefined,
     size: "default",
+    totalSold: <span dangerouslySetInnerHTML={
+      {
+        "__html":  formatNumber(81450000)
+      }
+    } />,
+    retailPrice: <span dangerouslySetInnerHTML={
+      {
+        "__html":  formatNumber(10, 1500)
+      }
+    } />,
   },
   parameters: {
     design: {
@@ -76,8 +86,11 @@ export const WithControls: Story = {
         Crossing: Pocket Camp for mobile devices.
       </Text>
       <Text {...args}>
-        As of June 2024, the Animal Crossing franchise has sold over 81,450,000
-        copies worldwide. Suggested retail price: ${formatNumberRange(10, 1500)}
+        As of June 2024, the Animal Crossing franchise has sold over {args.totalSold}
+        copies worldwide.
+      </Text>
+      <Text {...args}>
+        Suggested retail price: ${args.retailPrice}
       </Text>
     </>
   ),
