@@ -39,8 +39,8 @@ exports[`NewsletterSignup Snapshots Renders the bad email UI snapshot correctly 
     className="chakra-stack newsletter-signup-form css-tl3ftk"
   >
     <form
-      aria-label="form"
       className="css-1xdhyk6"
+      data-testid="ds-form"
       id="newsletter-form"
       onSubmit={[MockFunction]}
     >
@@ -368,8 +368,8 @@ exports[`NewsletterSignup Snapshots Renders the default form UI snapshot correct
     className="chakra-stack newsletter-signup-form css-tl3ftk"
   >
     <form
-      aria-label="form"
       className="css-1xdhyk6"
+      data-testid="ds-form"
       id="newsletter-form"
       onSubmit={[MockFunction]}
     >
@@ -495,8 +495,8 @@ exports[`NewsletterSignup Snapshots Renders the form UI with description snapsho
     className="chakra-stack newsletter-signup-form css-tl3ftk"
   >
     <form
-      aria-label="form"
       className="css-1xdhyk6"
+      data-testid="ds-form"
       id="newsletter-form"
       onSubmit={[MockFunction]}
     >
@@ -617,8 +617,8 @@ exports[`NewsletterSignup Snapshots Renders the form UI with formHelperText snap
     className="chakra-stack newsletter-signup-form css-tl3ftk"
   >
     <form
-      aria-label="form"
       className="css-1xdhyk6"
+      data-testid="ds-form"
       id="newsletter-form"
       onSubmit={[MockFunction]}
     >
@@ -740,8 +740,8 @@ exports[`NewsletterSignup Snapshots Renders the submitting state snapshot correc
     className="chakra-stack newsletter-signup-form css-tl3ftk"
   >
     <form
-      aria-label="form"
       className="css-1xdhyk6"
+      data-testid="ds-form"
       id="newsletter-form"
       onSubmit={[MockFunction]}
     >

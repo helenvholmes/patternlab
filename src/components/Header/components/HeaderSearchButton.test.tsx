@@ -51,7 +51,7 @@ describe("HeaderSearchButton", () => {
 
       userEvent.click(searchBtn);
 
-      expect(screen.getByRole("form")).toBeInTheDocument();
+      expect(screen.getByTestId("ds-form")).toBeInTheDocument();
     });
   });
 
@@ -87,7 +87,7 @@ describe("HeaderSearchButton", () => {
 
       userEvent.click(searchBtn);
 
-      expect(screen.getByRole("form")).toBeInTheDocument();
+      expect(screen.getByTestId("ds-form")).toBeInTheDocument();
     });
   });
 

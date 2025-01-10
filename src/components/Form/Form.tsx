@@ -125,8 +125,8 @@ export const Form: ChakraComponent<
     return (
       <Box
         as="form"
-        aria-label="form"
         className={className}
+        data-testid="ds-form"
         id={id}
         onSubmit={onSubmit}
         ref={ref}

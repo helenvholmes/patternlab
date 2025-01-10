@@ -5,8 +5,8 @@ exports[`HeaderSearchForm renders the UI snapshot correctly 1`] = `
   className="css-0"
 >
   <form
-    aria-label="form"
     className="css-16sv398"
+    data-testid="ds-form"
     id="search-header"
     onSubmit={[Function]}
   >
@@ -304,8 +304,8 @@ exports[`HeaderSearchForm renders the UI snapshot correctly 2`] = `
   className="css-0"
 >
   <form
-    aria-label="form"
     className="css-16sv398"
+    data-testid="ds-form"
     id="search-header"
     onSubmit={[Function]}
   >
