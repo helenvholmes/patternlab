@@ -129,7 +129,7 @@ describe("NewsletterSignup Unit Tests", () => {
         confirmationText={confirmationText}
       />
     );
-    expect(screen.getByRole("form")).toBeInTheDocument();
+    expect(screen.getByTestId("ds-form")).toBeInTheDocument();
     expect(screen.getByRole("textbox")).toBeInTheDocument();
     expect(screen.getByRole("button", { name: "Submit" })).toBeInTheDocument();
     expect(screen.getByRole("heading", { level: 2 })).toBeInTheDocument();
@@ -202,7 +202,7 @@ describe("NewsletterSignup Unit Tests", () => {
     expect(onChange).toHaveBeenCalledTimes(1);
     userEvent.type(screen.getByRole("textbox"), "est");
     expect(onChange).toHaveBeenCalledTimes(4);
-    expect(screen.getByRole("form")).toHaveFormValues({ email: "test" });
+    expect(screen.getByTestId("ds-form")).toHaveFormValues({ email: "test" });
   });
 
   it("calls the onSubmit on click submit button", async () => {
@@ -298,7 +298,7 @@ describe("NewsletterSignup Unit Tests", () => {
       expect(
         screen.getByText(/Please enter a valid email address./i)
       ).toBeInTheDocument();
-      expect(screen.getByRole("form")).toBeInTheDocument();
+      expect(screen.getByTestId("ds-form")).toBeInTheDocument();
       expect(screen.getByRole("textbox")).toBeInTheDocument();
       expect(screen.getByRole("button")).toBeInTheDocument();
     });
