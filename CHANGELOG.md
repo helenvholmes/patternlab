@@ -11,6 +11,7 @@ Currently, this repo is in Prerelease. When it is released, this project will ad
 ### Updates
 
 - Updates the `Form` component to remove the `aria-label`. The previous value of `"form"` was redundant and not required.
+- Replaces the `fieldset` and `legend` wrappers in the `RadioGroup` with a div and span for the title. The main div wrapper around the `Radio` components already has a `role="radiogroup"` values which makes the `fieldset` redundant.
 
 ### Fixes
 
