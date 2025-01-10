@@ -10,6 +10,13 @@ import { ChangelogData } from "../../utils/ComponentChangelogTable";
 
 export const changelogData: ChangelogData[] = [
   {
+    date: "Prerelease",
+    version: "Prerelease",
+    type: "Bug Fix",
+    affects: ["Functionality"],
+    notes: ["Fixes an infinite loop when no fallbackSrc value is provided."],
+  },
+  {
     date: "2024-09-05",
     version: "3.3.1",
     type: "Bug Fix",

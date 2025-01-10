@@ -8,6 +8,10 @@ Currently, this repo is in Prerelease. When it is released, this project will ad
 
 ## Prerelease
 
+### Fixes
+
+- Fixes the infinite loop in the `Image` component caused when there is no `fallbackSrc` prop value.
+
 ## 3.5.1 (December 19, 2024)
 
 ### Adds
