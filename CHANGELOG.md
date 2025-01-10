@@ -6,13 +6,22 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 Currently, this repo is in Prerelease. When it is released, this project will adhere to [Semantic Versioning](https://semver.org/spec/v2.0.0.html)
 ========
 
-## Prerelease
-
 ## 4.0.0 (TBD)
 
 ### Updates
 
 - [Updates `Template` component(s)](https://newyorkpubliclibrary.atlassian.net/browse/DSD-1884) and styles per TAD.
+
+## Prerelease
+
+### Updates
+
+- Updates the `Form` component to remove the `aria-label`. The previous value of `"form"` was redundant and not required.
+- Replaces the `fieldset` and `legend` wrappers in the `RadioGroup` with a div and span for the title. The main div wrapper around the `Radio` components already has a `role="radiogroup"` values which makes the `fieldset` redundant.
+
+### Fixes
+
+- Fixes the infinite loop in the `Image` component caused when there is no `fallbackSrc` prop value.
 
 ## 3.5.1 (December 19, 2024)
 
