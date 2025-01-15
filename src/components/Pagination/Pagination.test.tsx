@@ -52,30 +52,38 @@ describe("Pagination", () => {
       expect(screen.getAllByRole("link")).toHaveLength(7);
     });
 
-    it("does not render the Previous link on the first page", () => {
+    it("renders the disabled Previous link on the first page", () => {
       render(
         <Pagination pageCount={5} initialPage={1} getPageHref={getPageHref} />
       );
       // Pagination should show:
-      // 1 2 3 4 5 Next
+      // Previous 1 2 3 4 5 Next
       const links = screen.getAllByRole("link");
 
-      expect(links).toHaveLength(6);
-      expect(screen.queryByText("Previous")).not.toBeInTheDocument();
+      expect(links).toHaveLength(7);
+      expect(screen.queryByText("Previous")).toBeInTheDocument();
+      expect(screen.getByText("Previous").parentElement).toHaveAttribute(
+        "aria-disabled",
+        "true"
+      );
       expect(screen.getByText("Next")).toBeInTheDocument();
     });
 
-    it("does not render the Next link on the last page", () => {
+    it("renders the disabled Next link on the last page", () => {
       render(
         <Pagination pageCount={5} initialPage={5} getPageHref={getPageHref} />
       );
       // Pagination should show:
-      // Previous 1 2 3 4 5
+      // Previous 1 2 3 4 5 Next
       const links = screen.getAllByRole("link");
 
-      expect(links).toHaveLength(6);
+      expect(links).toHaveLength(7);
       expect(screen.getByText("Previous")).toBeInTheDocument();
-      expect(screen.queryByText("Next")).not.toBeInTheDocument();
+      expect(screen.queryByText("Next")).toBeInTheDocument();
+      expect(screen.getByText("Next").parentElement).toHaveAttribute(
+        "aria-disabled",
+        "true"
+      );
     });
 
     it("renders an ellipsis at the end of the list", () => {
@@ -83,15 +91,15 @@ describe("Pagination", () => {
         <Pagination pageCount={10} initialPage={1} getPageHref={getPageHref} />
       );
       // Pagination should show:
-      // 1 2 3 4 5 ... 10 Next
+      // Previous 1 2 3 4 5 ... 10 Next
       const listitem = screen.getAllByRole("listitem");
 
-      expect(listitem).toHaveLength(8);
+      expect(listitem).toHaveLength(9);
       // The ellipsis is not a link
-      expect(screen.getAllByRole("link")).toHaveLength(7);
-      expect(listitem[4].textContent).toEqual("5");
-      expect(listitem[5].textContent).toEqual("...");
-      expect(listitem[6].textContent).toEqual("10");
+      expect(screen.getAllByRole("link")).toHaveLength(8);
+      expect(listitem[5].textContent).toEqual("5");
+      expect(listitem[6].textContent).toEqual("...");
+      expect(listitem[7].textContent).toEqual("10");
       expect(screen.getByText("...")).toBeInTheDocument();
     });
 
@@ -100,12 +108,12 @@ describe("Pagination", () => {
         <Pagination pageCount={10} initialPage={10} getPageHref={getPageHref} />
       );
       // Pagination should show:
-      // Previous 1 ... 6 7 8 9 10
+      // Previous 1 ... 6 7 8 9 10 Next
       const listitem = screen.getAllByRole("listitem");
 
-      expect(listitem).toHaveLength(8);
+      expect(listitem).toHaveLength(9);
       // The ellipsis is not a link
-      expect(screen.getAllByRole("link")).toHaveLength(7);
+      expect(screen.getAllByRole("link")).toHaveLength(8);
       expect(listitem[1].textContent).toEqual("1");
       expect(listitem[2].textContent).toEqual("...");
       expect(listitem[3].textContent).toEqual("6");
@@ -361,7 +369,7 @@ describe("Pagination", () => {
         />
       );
       // Pagination should show:
-      // Previous 1 ... 6 7 8 9 10
+      // Previous 1 ... 6 7 8 9 10 Next
       links = screen.getAllByRole("link");
 
       // Page 6
@@ -376,9 +384,10 @@ describe("Pagination", () => {
       );
 
       let links = screen.getAllByRole("link");
-      let page1 = links[0].getAttribute("aria-current");
-      let page2 = links[1].getAttribute("aria-current");
-      let page3 = links[2].getAttribute("aria-current");
+      // links[0] is "Previous"
+      let page1 = links[1].getAttribute("aria-current");
+      let page2 = links[2].getAttribute("aria-current");
+      let page3 = links[3].getAttribute("aria-current");
 
       // Only the current page has `aria-current="page"` for accessibility.
       expect(page1).toEqual("page");
@@ -390,7 +399,7 @@ describe("Pagination", () => {
       );
 
       links = screen.getAllByRole("link");
-      // links[0] is now "Previous"
+      // links[0] is "Previous"
       page1 = links[1].getAttribute("aria-current");
       page2 = links[2].getAttribute("aria-current");
       page3 = links[3].getAttribute("aria-current");
