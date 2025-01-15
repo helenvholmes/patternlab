@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from "@storybook/react";
-
 import Text, { textSizesArray } from "./Text";
 import { argsBooleanType } from "../../helpers/storybookUtils";
 
