@@ -31,22 +31,26 @@ export default function useFormatNumber(num1: any, num2?: any) {
 
   // Check if num1 is valid
   if (!isValidNumber(num1)) {
-    console.warn("NYPL Reservoir useFormatNumber: An unsupported value was passed.");
+    console.warn(
+      "NYPL Reservoir useFormatNumber: An unsupported value was passed."
+    );
     return null;
   }
 
   // Convert num1 to a number if it is a valid numeric string
-  num1 = typeof num1 === 'string' ? parseFloat(num1) : num1;
+  num1 = typeof num1 === "string" ? parseFloat(num1) : num1;
 
   // Check if num2 is provided and valid
   if (num2 !== undefined && !isValidNumber(num2)) {
-    console.warn("NYPL Reservoir useFormatNumber: An unsupported value was passed.");
+    console.warn(
+      "NYPL Reservoir useFormatNumber: An unsupported value was passed."
+    );
     return null;
   }
 
   // Convert num2 to a number if it is a valid numeric string
   if (num2 !== undefined) {
-    num2 = typeof num2 === 'string' ? parseFloat(num2) : num2;
+    num2 = typeof num2 === "string" ? parseFloat(num2) : num2;
   }
 
   // Case 1: Only one number is provided
