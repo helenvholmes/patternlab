@@ -8,6 +8,10 @@ Currently, this repo is in Prerelease. When it is released, this project will ad
 
 ## Prerelease
 
+### Adds
+
+- Adds the `Filtering` subsection to the `Style Guide`.
+
 ### Updates
 
 - Updates the `Form` component to remove the `aria-label`. The previous value of `"form"` was redundant and not required.

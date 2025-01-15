@@ -1,0 +1,29 @@
+import { Meta } from "@storybook/blocks";
+
+import Image from "../../Image/Image";
+import Link from "../../Link/Link";
+
+import imageFullPageExample from "/static/filteringStyleGuide/fullPageExample.png";
+import { exampleWrapperStyles } from "../../../utils/utils.ts";
+
+<Meta title="Style Guide/Filtering/Page composition" />
+
+# Page composition
+
+The page structure for searching and filtering should incorporate the following
+UI elements:
+
+- [Keyword search field](?path=/docs/style-guide-filtering-page-elements-keyword-search-field--docs)
+- [Filter bar](?path=/docs/style-guide-filtering-page-elements-filter-bar--docs)
+- [Active filters list](?path=/docs/style-guide-filtering-page-elements-active-filters-list--docs)
+- [Total results heading](?path=/docs/style-guide-filtering-page-elements-total-results-heading--docs)
+- [Sorting menu](?path=/docs/style-guide-filtering-page-elements-sorting-menu--docs)
+- [Results list](?path=/docs/style-guide-filtering-page-elements-results-list--docs)
+- [Pagination menu](?path=/docs/style-guide-filtering-page-elements-pagination-menu--docs)
+
+<Image
+  alt="Example of full-page filtering app"
+  border="1px solid var(--nypl-colors-ui-border-default)"
+  src={imageFullPageExample}
+  {...exampleWrapperStyles}
+/>
