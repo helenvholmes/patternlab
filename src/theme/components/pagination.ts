@@ -65,8 +65,8 @@ const Pagination = defineMultiStyleConfig({
       pointerEvents: "none",
       svg: { fill: "ui.disabled.primary" },
       _dark: {
-        color: "ui.disabled.secondary",
-        svg: { fill: "ui.disabled.secondary" },
+        color: "dark.ui.disabled.secondary",
+        svg: { fill: "dark.ui.disabled.secondary" },
       },
     },
   }),
