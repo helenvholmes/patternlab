@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Form Snapshot Renders the UI snapshot correctly 1`] = `
+exports[`Form Snapshot renders the UI snapshot correctly 1`] = `
 <form
-  aria-label="form"
   className="css-1xdhyk6"
+  data-testid="ds-form"
   id="snapshot-form"
 >
   <div
@@ -37,10 +37,10 @@ exports[`Form Snapshot Renders the UI snapshot correctly 1`] = `
 </form>
 `;
 
-exports[`Form Snapshot Renders the UI snapshot correctly 2`] = `
+exports[`Form Snapshot renders the UI snapshot correctly 2`] = `
 <form
-  aria-label="form"
   className="css-16h1ce8"
+  data-testid="ds-form"
   id="chakra"
 >
   <div
@@ -74,9 +74,8 @@ exports[`Form Snapshot Renders the UI snapshot correctly 2`] = `
 </form>
 `;
 
-exports[`Form Snapshot Renders the UI snapshot correctly 3`] = `
+exports[`Form Snapshot renders the UI snapshot correctly 3`] = `
 <form
-  aria-label="form"
   className="css-1xdhyk6"
   data-testid="props"
   id="props"

@@ -55,7 +55,7 @@ export const UnchangingURL: Story = {
     onPageChange: (selectedPage) => {
       console.log(`Current page: ${selectedPage}`);
     },
-    pageCount: 100,
+    pageCount: 10,
   },
   name: "Pagination with Unchanging URL",
   render: (args) => <Pagination {...args} getPageHref={undefined} />,
