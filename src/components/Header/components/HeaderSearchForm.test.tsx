@@ -59,7 +59,7 @@ describe("HeaderSearchForm", () => {
     });
 
     it("renders a form with an input, radio inputs, and a search button", () => {
-      const form = screen.getByRole("form");
+      const form = screen.getByTestId("ds-form");
       const searchInput = screen.getByRole("textbox");
       const radioGroup = screen.getByRole("radiogroup");
       const searchBtn = screen.getByRole("button");
@@ -131,7 +131,7 @@ describe("HeaderSearchForm", () => {
     });
 
     it("renders a form with an input and three radios on mobile", () => {
-      const form = screen.getByRole("form");
+      const form = screen.getByTestId("ds-form");
       const searchInput = screen.getByRole("textbox");
       const radios = screen.getAllByRole("radio");
 
