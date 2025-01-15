@@ -272,24 +272,13 @@ export type {
   TagSetFilterProps,
 } from "./components/TagSet/TagSetFilter";
 export {
-  TemplateAppContainer,
   Template,
-  TemplateAboveHeader,
-  TemplateHeader,
   TemplateBreakout,
-  TemplateContent,
-  TemplateContentTop,
-  TemplateContentPrimary,
-  TemplateContentSidebar,
-  TemplateFooter,
-} from "./components/Template/Template";
-export type {
-  TemplateAppContainerProps,
-  TemplateProps,
-  TemplateContentProps,
-  TemplateFooterProps,
-  TemplateHeaderProps,
-  TemplateSidebarProps,
+  TemplateTop,
+  TemplateMain,
+  TemplateMainNarrow,
+  TemplateSidebar,
+  TemplateBottom,
 } from "./components/Template/Template";
 export { default as Text } from "./components/Text/Text";
 export type { TextProps, TextSizes } from "./components/Text/Text";
