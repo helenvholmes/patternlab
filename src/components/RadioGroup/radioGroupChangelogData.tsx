@@ -10,6 +10,15 @@ import { ChangelogData } from "../../utils/ComponentChangelogTable";
 
 export const changelogData: ChangelogData[] = [
   {
+    date: "Prerelease",
+    version: "Prerelease",
+    type: "Update",
+    affects: ["Accessibility"],
+    notes: [
+      "Removes the fieldset wrapper and replaces it with a div and simple span for the title. The main wrapper around the `Radio` componnents are already in an accessible 'radiogroup' role element.",
+    ],
+  },
+  {
     date: "2024-09-19",
     version: "3.3.2",
     type: "Update",
