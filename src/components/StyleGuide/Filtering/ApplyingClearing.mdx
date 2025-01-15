@@ -1,5 +1,6 @@
 import { Meta } from "@storybook/blocks";
 
+import Banner from "../../Banner/Banner";
 import Link from "../../Link/Link";
 
 <Meta title="Style Guide/Filtering/Applying & clearing filters" />
@@ -15,12 +16,24 @@ import Link from "../../Link/Link";
 
 ## Methods
 
-Filters should be applied and cleared using one of two methods: live filtering or batch filtering.
+Filters should be applied and cleared using one of two methods: live filtering
+or batch filtering.
+
+<Banner
+  content={
+    <>
+      <strong>REMINDER:</strong> Live filtering is the recommended method for
+      NYPL web apps.
+    </>
+  }
+  mb="s"
+  type="recommendation"
+/>
 
 ### Live filtering
 
 - Data is updated in real-time as the user selects filtering options.
-- This is the recommended method for applying filters because:
+- Live filtering is the recommended method for applying filters because:
   - Users tend to expect and are familiar with real-time filtering due to its
     prevalence in e-commerce and elsewhere.
   - We have observed in previous research that users tend to miss `Apply`
@@ -30,10 +43,10 @@ Filters should be applied and cleared using one of two methods: live filtering o
 
 ### Batch filtering
 
-- The user selects multiple filtering options and the data is updated after the
-  user takes the additional action of clicking the "Apply filters" button
-  included in the `filter bar`.
-- This method is recommended for:
+- Data is updated after the user selects one or more filtering options and then
+  takes the additional action of clicking the "Apply filters" button included in
+  the `filter bar`.
+- Batch filtering is recommended for:
   - very heavy data sets
   - low performing apps
 
