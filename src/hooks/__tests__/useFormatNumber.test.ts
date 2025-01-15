@@ -2,6 +2,12 @@ import useFormatNumber from "../useFormatNumber";
 
 describe("useFormatNumber hook", () => {
   it("returns a number with commas and handles a range of numbers", () => {
+    expect(useFormatNumber("4382")).toEqual("4,382");
+    expect(useFormatNumber("4382", "1234")).toEqual("1,234&ndash;4,382");
+    expect(useFormatNumber("4382", "XX1234")).toEqual(null);
+    expect(useFormatNumber("4382XXX", '1234')).toEqual(null);
+    expect(useFormatNumber("4382XXX", '1234XXX')).toEqual(null);
+    expect(useFormatNumber(4382)).toEqual("4,382");
     expect(useFormatNumber(4382)).toEqual("4,382");
     expect(useFormatNumber(4276835)).toEqual("4,276,835");
     expect(useFormatNumber(4276835.879)).toEqual("4,276,835.879");
