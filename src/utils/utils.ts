@@ -178,3 +178,14 @@ export const getPlaceholderImage = (
   const finalImage = `${selectedImage}&t=${t}`;
   return finalImage;
 };
+
+/** The default styles for images added as examples within doc pages. */
+export const exampleWrapperStyles = {
+  bgColor: "ui.gray.xx-light-cool",
+  borderRadius: ".5rem",
+  display: "flex",
+  justifyContent: "center",
+  mb: "xl",
+  overflow: "hidden",
+  width: "100%",
+};

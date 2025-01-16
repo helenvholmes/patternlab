@@ -26,61 +26,24 @@ describe("Form Accessibility", () => {
   });
 });
 
-describe("Form Snapshot", () => {
-  it("Renders the UI snapshot correctly", () => {
-    const tree = renderer
-      .create(
-        <Form id="snapshot-form">
-          <FormRow>
-            <FormField>Form Field 1</FormField>
-            <FormField>Form Field 2</FormField>
-            <FormField>Form Field 3</FormField>
-          </FormRow>
-        </Form>
-      )
-      .toJSON();
-    const withChakraProps = renderer
-      .create(
-        <Form id="chakra" p="20px" color="ui.error.primary">
-          <FormRow>
-            <FormField>Form Field 1</FormField>
-            <FormField>Form Field 2</FormField>
-            <FormField>Form Field 3</FormField>
-          </FormRow>
-        </Form>
-      )
-      .toJSON();
-    const withOtherProps = renderer
-      .create(
-        <Form id="props" data-testid="props">
-          <FormRow>
-            <FormField>Form Field 1</FormField>
-            <FormField>Form Field 2</FormField>
-            <FormField>Form Field 3</FormField>
-          </FormRow>
-        </Form>
-      )
-      .toJSON();
-
-    expect(tree).toMatchSnapshot();
-    expect(withChakraProps).toMatchSnapshot();
-    expect(withOtherProps).toMatchSnapshot();
-  });
-});
-
 describe("Form", () => {
-  it("Renders a <form> element", () => {
+  it("renders a <form> element", () => {
     render(<Form id="form" />);
-    expect(screen.getByRole("form")).toBeInTheDocument();
+    expect(screen.getByTestId("ds-form")).toBeInTheDocument();
   });
 
-  it("Renders a <form> element with child FormRow element", () => {
+  it("renders an aria-label attribute", () => {
+    render(<Form id="form" aria-label="form-test" />);
+    expect(screen.getByLabelText("form-test")).toBeInTheDocument();
+  });
+
+  it("renders a <form> element with child FormRow element", () => {
     render(
       <Form id="form">
         <FormRow />
       </Form>
     );
-    const form = screen.getByRole("form");
+    const form = screen.getByTestId("ds-form");
     const formRow = form.firstChild;
     expect(form).toBeInTheDocument();
     expect(formRow).toBeInTheDocument();
@@ -89,13 +52,13 @@ describe("Form", () => {
     });
   });
 
-  it("Renders a <form> element with child FormField element", () => {
+  it("renders a <form> element with child FormField element", () => {
     render(
       <Form id="form">
         <FormField />
       </Form>
     );
-    const form = screen.getByRole("form");
+    const form = screen.getByTestId("ds-form");
     const formField = form.firstChild;
     expect(form).toBeInTheDocument();
     expect(formField).toBeInTheDocument();
@@ -104,7 +67,7 @@ describe("Form", () => {
     });
   });
 
-  it("Renders a <form> element with FormRow, FormField and input elements properly nested", () => {
+  it("renders a <form> element with FormRow, FormField and input elements properly nested", () => {
     render(
       <Form id="form">
         <FormRow>
@@ -114,7 +77,7 @@ describe("Form", () => {
         </FormRow>
       </Form>
     );
-    const form = screen.getByRole("form");
+    const form = screen.getByTestId("ds-form");
     const formRow = form.firstChild;
     const formField = formRow?.firstChild;
     const textInput = screen.getByRole("textbox");
@@ -130,9 +93,9 @@ describe("Form", () => {
     expect(textInput).toBeInTheDocument();
   });
 
-  it("Renders a <form> element with custom `action` and `method` attributes", () => {
+  it("renders a <form> element with custom `action` and `method` attributes", () => {
     render(<Form id="form" action="/end/point" method="get" />);
-    const form = screen.getByRole("form");
+    const form = screen.getByTestId("ds-form");
     expect(form).toBeInTheDocument();
     expect(form).toHaveAttribute("action", "/end/point");
     expect(form).toHaveAttribute("method", "get");
@@ -208,13 +171,13 @@ describe("Form", () => {
         </FormRow>
       </Form>
     );
-    const form = screen.getByRole("form");
+    const form = screen.getByTestId("ds-form");
     expect(onSubmit).toHaveBeenCalledTimes(0);
     fireEvent.submit(form);
     expect(onSubmit).toHaveBeenCalledTimes(1);
   });
 
-  it("Logs a warning when there is no `id` passed", () => {
+  it("logs a warning when there is no `id` passed", () => {
     const warn = jest.spyOn(console, "warn");
     render(
       // @ts-ignore: Typescript complains when a required prop is not passed, but
@@ -245,5 +208,47 @@ describe("Form", () => {
     );
 
     expect(container.querySelector("form")).toBe(ref.current);
+  });
+});
+
+describe("Form Snapshot", () => {
+  it("renders the UI snapshot correctly", () => {
+    const tree = renderer
+      .create(
+        <Form id="snapshot-form">
+          <FormRow>
+            <FormField>Form Field 1</FormField>
+            <FormField>Form Field 2</FormField>
+            <FormField>Form Field 3</FormField>
+          </FormRow>
+        </Form>
+      )
+      .toJSON();
+    const withChakraProps = renderer
+      .create(
+        <Form id="chakra" p="20px" color="ui.error.primary">
+          <FormRow>
+            <FormField>Form Field 1</FormField>
+            <FormField>Form Field 2</FormField>
+            <FormField>Form Field 3</FormField>
+          </FormRow>
+        </Form>
+      )
+      .toJSON();
+    const withOtherProps = renderer
+      .create(
+        <Form id="props" data-testid="props">
+          <FormRow>
+            <FormField>Form Field 1</FormField>
+            <FormField>Form Field 2</FormField>
+            <FormField>Form Field 3</FormField>
+          </FormRow>
+        </Form>
+      )
+      .toJSON();
+
+    expect(tree).toMatchSnapshot();
+    expect(withChakraProps).toMatchSnapshot();
+    expect(withOtherProps).toMatchSnapshot();
   });
 });
