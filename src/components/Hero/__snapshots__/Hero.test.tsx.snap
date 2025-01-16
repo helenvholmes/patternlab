@@ -56,7 +56,6 @@ exports[`Hero Renders the UI snapshot correctly 2`] = `
           alt="Image example"
           className="css-0"
           id="image-example"
-          onError={[Function]}
           src="https://images.nypl.org/index.php?id=swope_243048&t=r"
         />
       </div>
@@ -102,7 +101,6 @@ exports[`Hero Renders the UI snapshot correctly 3`] = `
           alt="Image example"
           className="css-0"
           id="image-example"
-          onError={[Function]}
           src="https://images.nypl.org/index.php?id=swope_243048&t=r"
         />
       </div>
@@ -148,7 +146,6 @@ exports[`Hero Renders the UI snapshot correctly 4`] = `
           alt="Image example"
           className="css-0"
           id="image-example"
-          onError={[Function]}
           src="https://images.nypl.org/index.php?id=swope_243048&t=r"
         />
       </div>
@@ -194,7 +191,6 @@ exports[`Hero Renders the UI snapshot correctly 5`] = `
           alt="Image example"
           className="css-0"
           id="image-example"
-          onError={[Function]}
           src="https://images.nypl.org/index.php?id=swope_243048&t=r"
         />
       </div>
@@ -240,7 +236,6 @@ exports[`Hero Renders the UI snapshot correctly 6`] = `
           alt="Image example"
           className="css-0"
           id="image-example"
-          onError={[Function]}
           src="https://images.nypl.org/index.php?id=swope_243048&t=r"
         />
       </div>
@@ -318,7 +313,6 @@ exports[`Hero Renders the UI snapshot correctly 8`] = `
           alt="Image example"
           className="css-0"
           id="image-example"
-          onError={[Function]}
           src="https://images.nypl.org/index.php?id=swope_243048&t=r"
         />
       </div>
@@ -368,7 +362,6 @@ exports[`Hero Renders the UI snapshot correctly 9`] = `
           alt="Image example"
           className="css-0"
           id="image-example"
-          onError={[Function]}
           src="https://images.nypl.org/index.php?id=swope_243048&t=r"
         />
       </div>

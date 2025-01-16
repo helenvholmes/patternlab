@@ -5,8 +5,8 @@ exports[`HeaderSearchForm renders the UI snapshot correctly 1`] = `
   className="css-0"
 >
   <form
-    aria-label="form"
     className="css-16sv398"
+    data-testid="ds-form"
     id="search-header"
     onSubmit={[Function]}
   >
@@ -96,14 +96,18 @@ exports[`HeaderSearchForm renders the UI snapshot correctly 1`] = `
           className="css-7ajbp2"
           id="search-header-child1-grandchild0"
         >
-          <fieldset
-            className="css-anp9yh"
+          <div
+            className="css-1piljje"
             id="radio-group-search-type"
           >
-            <legend>
+            <span
+              className="css-0"
+              id="rg-span-title-search-type"
+            >
               Type of search
-            </legend>
+            </span>
             <div
+              aria-labelledby="rg-span-title-search-type"
               className="chakra-radio-group css-0"
               role="radiogroup"
             >
@@ -291,7 +295,7 @@ exports[`HeaderSearchForm renders the UI snapshot correctly 1`] = `
                 className="css-0"
               />
             </div>
-          </fieldset>
+          </div>
         </div>
       </div>
     </div>
@@ -304,8 +308,8 @@ exports[`HeaderSearchForm renders the UI snapshot correctly 2`] = `
   className="css-0"
 >
   <form
-    aria-label="form"
     className="css-16sv398"
+    data-testid="ds-form"
     id="search-header"
     onSubmit={[Function]}
   >
@@ -395,14 +399,18 @@ exports[`HeaderSearchForm renders the UI snapshot correctly 2`] = `
           className="css-7ajbp2"
           id="search-header-child1-grandchild0"
         >
-          <fieldset
-            className="css-anp9yh"
+          <div
+            className="css-1piljje"
             id="radio-group-search-type"
           >
-            <legend>
+            <span
+              className="css-0"
+              id="rg-span-title-search-type"
+            >
               Type of search
-            </legend>
+            </span>
             <div
+              aria-labelledby="rg-span-title-search-type"
               className="chakra-radio-group css-0"
               role="radiogroup"
             >
@@ -590,7 +598,7 @@ exports[`HeaderSearchForm renders the UI snapshot correctly 2`] = `
                 className="css-0"
               />
             </div>
-          </fieldset>
+          </div>
         </div>
       </div>
     </div>

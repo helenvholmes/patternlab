@@ -1,0 +1,232 @@
+import { Meta } from "@storybook/blocks";
+
+import { Box } from "@chakra-ui/react";
+import Banner from "../../../Banner/Banner";
+import Image from "../../../Image/Image";
+import Link from "../../../Link/Link";
+
+import imageExampleColumn from "/static/filteringStyleGuide/exampleColumn.png";
+import imageExamplePopup from "/static/filteringStyleGuide/examplePopup.png";
+import imageExampleRow from "/static/filteringStyleGuide/exampleRow.png";
+import imageFilterBar from "/static/filteringStyleGuide/filterBar.png";
+import { exampleWrapperStyles } from "../../../../utils/utils.ts";
+
+<Meta title="Style Guide/Filtering/Page elements/Filter bar" />
+
+# Filter bar
+
+The `filter bar` is a wrapper for individual form input elements, including the
+following DS components: `CheckboxGroup`, `MultiSelectGroup`, `RadioGroup`,
+`Checkbox`, `DatePicker`, `MultiSelect`, `Radio`, `Select`, `Slider`,
+`TextInput`, and `Toggle`.
+
+<Image
+  alt="Example of filter bar"
+  src={imageFilterBar}
+  {...exampleWrapperStyles}
+/>
+
+## Table of contents
+
+- {<Link href="#rendering" target="_self">Rendering</Link>}
+- {<Link href="#filter-option-labeling" target="_self">Filter option labeling</Link>}
+- {<Link href="#filter-option-status" target="_self">Filter option status</Link>}
+- {<Link href="#action-buttons" target="_self">Action buttons</Link>}
+
+## Rendering
+
+The `filter bar` element should be rendered using the DS
+[FilterBarInline](./?path=/docs/components-form-elements-filterbarinline--docs)
+and
+[FilterBarPopup](./?path=/docs/components-form-elements-filterbarpopup--docs)
+components.
+
+<Banner
+  content={
+    <>
+      <strong>IMPORTANT:</strong> The filter bar should be configured based on
+      the viewport.
+    </>
+  }
+  mb="s"
+  type="warning"
+/>
+
+### Desktop and tablet
+
+For tablet and desktop viewports, the `FilterBarInline` component should be used
+to render the `filter bar` element using one of two layouts: column (vertical)
+or row (horizontal).
+
+#### Column (vertical)
+
+<Box display="flex" flexDirection={{base: "column", md: "row"}} gap="l">
+
+  <Box>
+    - The `filter bar` element should be placed in a sidebar on either the left or
+      right side of the main content area.
+    - This configuration allows users to easily make selections across multiple
+      facets.
+    - This configuration is recommended:
+      - for filters that are non-contextual and apply to the entirety of the main
+        content area
+      - when there are a large number of filter facets
+    - Using the `MultiSelect` component:
+      - The `MultiSelect` component is the most common input element used for
+        applying filter options
+      - `MultiSelect` components should be configured to allow multiple
+        `MultiSelect` components to be opened at the same time
+      - `MultiSelect` components should be configured to use the `"expand"` overflow
+        functionality
+      - When `MultiSelect` components are used, at least one `MultiSelect` component
+        should be opened by default to make the options visible to users; other
+        `MultiSelect` components in the `filter bar` may remain collapsed
+  </Box>
+  <Image
+    alt="Example of column filter bar"
+    border="1px solid var(--nypl-colors-ui-border-default)"
+    caption="Example of column filter bar"
+    src={imageExampleColumn}
+    {...exampleWrapperStyles}
+  />
+</Box>
+
+#### Row (horizontal)
+
+<Box display="flex" flexDirection={{base: "column", md: "row"}} gap="l">
+
+  <Box>
+    - The `filter bar` should be placed above the area of the page that is pertinent
+      to the filters.
+    - The filters that compose the `filter bar` should render in one row for desktop
+      viewports (approx. five filter facets)
+      - For specific use cases that need more than five filter facets, the filters
+        should render on a maximum of two rows for desktop viewports
+    - Filters should be contextual and only apply to certain sections of the main
+      content area (such as the items table of the Research Catalog bib page)
+    - Using the `MultiSelect` component:
+      - `MultiSelect` components should be configured so that only one `MultiSelect`
+        component can be opened at any given time. (i.e. When a `MultiSelect`
+        component is opened, all other `MultiSelect` components will close.)
+        - NOTE: This configuration requires users to make selections in only one
+          opened dropdown at a time, making it slightly more difficult to quickly
+          make selections across multiple facets.
+      - `MultiSelect` components should be configured to use the `"scroll"` overflow
+        functionality
+  </Box>
+  <Image
+    alt="Example of row filter bar"
+    border="1px solid var(--nypl-colors-ui-border-default)"
+    caption="Example of row filter bar"
+    src={imageExampleRow}
+    {...exampleWrapperStyles}
+  />
+</Box>
+
+### Mobile
+
+<Box display="flex" flexDirection={{base: "column", md: "row"}} gap="l">
+
+  <Box>
+    For mobile viewports, the `FilterBarPopup` component should be used to render
+    the filter bar element. The `filter bar` element will not be visible when the
+    page first loads and users will need to click a "Show filters" button to open
+    the `filter bar` in a modal overlay.
+
+    The filter input fields will be presented in a column layout.
+
+    Using the `MultiSelect` component:
+
+    - `MultiSelect` components should be configured to allow multiple `MultiSelect`
+    components to be opened at the same time
+
+  </Box>
+  <Image
+    alt="Example of popup filters on mobile"
+    border="1px solid var(--nypl-colors-ui-border-default)"
+    caption="Example of popup filters on mobile"
+    src={imageExamplePopup}
+    {...exampleWrapperStyles}
+  />
+</Box>
+
+## Filter option labeling
+
+The label text for filter options should include the number of items associated
+with each filter option. For example, `English (5)` or `Offsite (11)`. The
+number of associated items included in the label text should be updated as
+filter options are applied. This treatment is applicable for the labels of the
+`Checkbox`, `Radio`, and `Toggle` components, and the labels of the checkbox
+options within a `MultiSelect` component, as well as the options within a
+`Select` component.
+
+## Filter option status
+
+If the number of items associated with a filter option is zero (0), that filter
+option should be set to disabled. Please note that this does not mean that a
+filter option should be hidden. This treatment is applicable for the labels of
+the `Checkbox`, `Radio`, and `Toggle` components, and the labels of the checkbox
+options within a `MultiSelect` component.
+
+Disabling a filter retains consistency and avoids the the need for a user to
+shift their eye. If the options set is constantly changing, users may become
+disoriented. Additionally, disabled options still convey information. They let
+the user know that an option might become available if they changed their filter
+criteria.
+
+## Action buttons
+
+### Desktop and tablet
+
+For desktop and tablet viewports, the `filter bar` can display optional "Apply
+filters" and "Clear all filters" buttons.
+
+The "Apply filters" button must be rendered when the [batch
+filtering](./?path=/docs/style-guide-filtering-applying-clearing-filters--docs#batch-filtering)
+method is being used. The "Apply filters" button should never be rendered when
+the [live
+filtering](./?path=/docs/style-guide-filtering-applying-clearing-filters--docs#live-filtering)
+method is being used.
+
+Clicking the "Apply filters" button should:
+
+- update the `active filters` list based on the filter options that have been
+  selected
+- update the `results` list based on the filter options that have been selected
+- update the `total results` heading to reflect the number of items in the
+  updated `results` list
+
+The "Clear all filters" button should be rendered in use cases where the
+`TagSet` component is not used as part of the overall searching and filtering
+UX.
+
+Clicking the "Clear all filters" button should:
+
+- reset all form input elements within the `filter bar`
+- update the `active filters` list to remove all filter options
+- update the `results` list to an unfiltered state
+- update the `total results` heading to reflect the number of items in the
+  updated `results` list
+
+### Mobile
+
+For mobile viewports, the filter bar will display a "Show results" button and can
+display an optional "Clear all filters" button.
+
+The "Show results" button will always be rendered at the bottom of the modal
+popup regardless of the filtering method being used. It is recommended that the
+label for the "Show results" button also include the current number of items in
+the results list. For example, "Show 72 results." The number value should update
+as filter options are selected. Clicking the "Show results" button will close
+the modal overlay.
+
+The "Clear all filters" button is optional, but it is recommended to render the
+buttons. Clicking the "Clear all filters" button should:
+
+- reset all form input elements within the `filter bar`
+- remove all tags from the `TagSet` component
+- update the `results` list to an unfiltered state
+- update the `total results` heading to reflect the number of items in the
+  updated `results` list
+- update the label for the "Clear all filters" button to reflect the number of
+  items in the updated `results` list
