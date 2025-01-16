@@ -8,6 +8,8 @@ Currently, this repo is in Prerelease. When it is released, this project will ad
 
 ## Prerelease
 
+## 3.5.2 (January 16, 2025)
+
 ### Adds
 
 - Adds the `Filtering` subsection to the `Style Guide`.
@@ -15,7 +17,8 @@ Currently, this repo is in Prerelease. When it is released, this project will ad
 ### Updates
 
 - Updates the `Form` component to remove the `aria-label`. The previous value of `"form"` was redundant and not required.
-- Replaces the `fieldset` and `legend` wrappers in the `RadioGroup` with a div and span for the title. The main div wrapper around the `Radio` components already has a `role="radiogroup"` values which makes the `fieldset` redundant.
+- Updates the `RadioGroup` component to replace the `fieldset` and `legend` wrappers with a div and span for the title. The main div wrapper around the `Radio` components already has a `role="radiogroup"` values which makes the `fieldset` redundant.
+- Updates the `Pagination` component to apply new visual styles.
 
 ### Fixes
 
