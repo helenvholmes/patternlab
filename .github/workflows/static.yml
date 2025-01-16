@@ -26,24 +26,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Use Node.js 18.x
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v4
         with:
           node-version: 18.x
-      - name: Cache and install node modules
-        uses: bahmutov/npm-install@v1
-      - name: Build Storybook
-        env:
-          NODE_OPTIONS: "--max_old_space_size=4096"
-        run: npm run prebuild:storybook && npm run build-storybook:v3
-      - name: Setup Pages
-        uses: actions/configure-pages@v3
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      # Based on https://storybook.js.org/docs/sharing/publish-storybook#github-pages
+      - uses: bitovi/github-actions-storybook-to-github-pages@v1.0.3
         with:
-          # Upload entire repository
-          path: "."
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v2
+          build_command: npm run prebuild:storybook && npm run build-storybook:v3
+          path: reservoir
+          checkout: false
+        run: npm run prebuild:storybook && npm run build-storybook:v3
