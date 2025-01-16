@@ -38,4 +38,3 @@ jobs:
           build_command: npm run prebuild:storybook && npm run build-storybook:v3
           path: reservoir
           checkout: false
-        run: npm run prebuild:storybook && npm run build-storybook:v3
