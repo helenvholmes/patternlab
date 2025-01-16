@@ -36,5 +36,5 @@ jobs:
         uses: bitovi/github-actions-storybook-to-github-pages@v1.0.3
         with:
           build_command: npm run prebuild:storybook && npm run build-storybook:v3
-          path: reservoir
+          path: "."
           checkout: false
