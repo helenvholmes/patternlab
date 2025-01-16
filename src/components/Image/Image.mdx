@@ -1,5 +1,6 @@
 import { ArgTypes, Canvas, Description, Meta, Source } from "@storybook/blocks";
 
+import Banner from "../Banner/Banner";
 import ComponentChangelogTable from "../../utils/ComponentChangelogTable";
 import * as ImageStories from "./Image.stories";
 import Link from "../Link/Link";
@@ -12,7 +13,7 @@ import { changelogData } from "./imageChangelogData";
 | Component Version | DS Version |
 | ----------------- | ---------- |
 | Added             | `0.0.6`    |
-| Latest            | `3.3.1`    |
+| Latest            | `3.5.2`    |
 
 ## Table of Contents
 
@@ -123,6 +124,16 @@ be logged to the console when the error occurs and the fallback image is loaded.
 If an _additional_ action needs to be performed when the fallback image is
 loaded, pass a callback function to the `onError` prop.
 
+<Banner
+  content={
+    <>
+      <strong>IMPORTANT:</strong> if no `fallbackSrc` prop is passed, the
+      `Image` component will not call the `onerror` image attribute.
+    </>
+  }
+  type="warning"
+/>
+
 <Source
   code={`
 <Image
@@ -135,10 +146,18 @@ loaded, pass a callback function to the `onError` prop.
   language="jsx"
 />
 
-**IMPORTANT**: If a custom image component, such as the Next.js `Image` component,
-is passed to the `component` prop, then the `fallbackSrc` and `onError` props
-won't work. It is expected that the custom image component that is passed in
-implements the `onError` attribute.
+<Banner
+  content={
+    <>
+      <strong>IMPORTANT:</strong> If a custom image component, such as the
+      Next.js `Image` component, is passed to the `component` prop, then the
+      `fallbackSrc` and `onError` props won't work. It is expected that the
+      custom image component that is passed in implements the `onError`
+      attribute.
+    </>
+  }
+  type="warning"
+/>
 
 <Source
   code={`
