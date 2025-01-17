@@ -27,10 +27,7 @@ const meta: Meta<typeof Text> = {
 };
 
 const copiesSold = formatNumber(81450000);
-const suggestedPrice = formatNumber(100, 20000);
-// const getFormattedNumbers = () => {
-//   formatNumber(81450000);
-// };
+const suggestedPrice = formatNumber(100, "20000");
 
 export default meta;
 type Story = StoryObj<typeof Text>;
