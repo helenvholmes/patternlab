@@ -10,7 +10,7 @@ Currently, this repo is in Prerelease. When it is released, this project will ad
 
 ### Updates
 
-- Updates the `Heading` component to add explicit values for the mobile `line-height` styles.
+- Updates the `Heading` component to add `line-height` styles for mobile.
 
 ## 3.5.2 (January 16, 2025)
 
