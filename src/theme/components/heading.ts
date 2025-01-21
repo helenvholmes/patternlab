@@ -172,7 +172,7 @@ export const headings = {
       },
       fontWeight: "heading.heading8",
       letterSpacing: "0",
-      lineHeight: { base: "1.50", md: "1.50" }, // This value is intensionally the same for mobile and desktop.
+      lineHeight: "1.50", // The lineHeight value is the same for mobile and desktop because the fontSize value is the same for mobile and desktop.
       width: "auto",
     },
   }),
