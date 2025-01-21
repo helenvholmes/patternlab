@@ -298,7 +298,11 @@ export const Pagination: ChakraComponent<
         Math.min(
           // If the current page is in the middle, start the range
           // one number before the current page.
-          selected - 1,
+          // But if page number has 4 digits and is fourth from the end,
+          // start the range at that number.
+          pageCount > 999 && selected === pageCount - 3
+            ? selected
+            : selected - 1,
           // If the current page is near the end, show the last five items.
           // If the page number has 4 digits, show only the last four items.
           pageCount > 999 ? pageCount - 3 : pageCount - 4
