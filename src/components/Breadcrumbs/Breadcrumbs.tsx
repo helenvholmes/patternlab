@@ -68,7 +68,6 @@ const tooltipWrapperOrText = (
       as={customLinkComponent}
       href={breadcrumbsData.url}
       aria-current={isCurrentPage ? "page" : undefined}
-      aria-label={updatedText}
       {...breadcrumbsData.linkProps}
     >
       {renderIcon && (

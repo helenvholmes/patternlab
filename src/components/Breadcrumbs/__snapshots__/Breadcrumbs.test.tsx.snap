@@ -13,7 +13,6 @@ exports[`Breadcrumbs Snapshot Renders the UI snapshot correctly 1`] = `
       className="chakra-breadcrumb__list-item css-18biwo"
     >
       <a
-        aria-label="string1"
         className="chakra-breadcrumb__link css-0"
         href="#string1"
       >
@@ -34,7 +33,6 @@ exports[`Breadcrumbs Snapshot Renders the UI snapshot correctly 1`] = `
       className="chakra-breadcrumb__list-item css-18biwo"
     >
       <a
-        aria-label="string2"
         className="chakra-breadcrumb__link css-0"
         href="#string2"
       >
@@ -65,7 +63,6 @@ exports[`Breadcrumbs Snapshot Renders the UI snapshot correctly 1`] = `
     >
       <a
         aria-current="page"
-        aria-label="string3"
         className="chakra-breadcrumb__link css-0"
         href="#string3"
       >
@@ -93,7 +90,6 @@ exports[`Breadcrumbs Snapshot Renders the UI snapshot correctly 2`] = `
       className="chakra-breadcrumb__list-item css-18biwo"
     >
       <a
-        aria-label="string1"
         className="chakra-breadcrumb__link css-0"
         href="#string1"
       >
@@ -114,7 +110,6 @@ exports[`Breadcrumbs Snapshot Renders the UI snapshot correctly 2`] = `
       className="chakra-breadcrumb__list-item css-18biwo"
     >
       <a
-        aria-label="string2"
         className="chakra-breadcrumb__link css-0"
         href="#string2"
       >
@@ -145,7 +140,6 @@ exports[`Breadcrumbs Snapshot Renders the UI snapshot correctly 2`] = `
     >
       <a
         aria-current="page"
-        aria-label="string3"
         className="chakra-breadcrumb__link css-0"
         href="#string3"
       >
@@ -173,7 +167,6 @@ exports[`Breadcrumbs Snapshot Renders the UI snapshot correctly 3`] = `
       className="chakra-breadcrumb__list-item css-18biwo"
     >
       <a
-        aria-label="string1"
         className="chakra-breadcrumb__link css-0"
         href="#string1"
       >
@@ -194,7 +187,6 @@ exports[`Breadcrumbs Snapshot Renders the UI snapshot correctly 3`] = `
       className="chakra-breadcrumb__list-item css-18biwo"
     >
       <a
-        aria-label="string2"
         className="chakra-breadcrumb__link css-0"
         href="#string2"
       >
@@ -225,7 +217,6 @@ exports[`Breadcrumbs Snapshot Renders the UI snapshot correctly 3`] = `
     >
       <a
         aria-current="page"
-        aria-label="string3"
         className="chakra-breadcrumb__link css-0"
         href="#string3"
       >
@@ -253,7 +244,6 @@ exports[`Breadcrumbs Snapshot Renders the UI snapshot correctly 4`] = `
       className="chakra-breadcrumb__list-item css-18biwo"
     >
       <a
-        aria-label="string1"
         className="chakra-breadcrumb__link css-0"
         href="#string1"
       >
@@ -274,7 +264,6 @@ exports[`Breadcrumbs Snapshot Renders the UI snapshot correctly 4`] = `
       className="chakra-breadcrumb__list-item css-18biwo"
     >
       <a
-        aria-label="string2"
         className="chakra-breadcrumb__link css-0"
         href="#string2"
       >
@@ -305,7 +294,6 @@ exports[`Breadcrumbs Snapshot Renders the UI snapshot correctly 4`] = `
     >
       <a
         aria-current="page"
-        aria-label="string3"
         className="chakra-breadcrumb__link css-0"
         href="#string3"
       >
@@ -333,7 +321,6 @@ exports[`Breadcrumbs Snapshot Renders the UI snapshot correctly 5`] = `
       className="chakra-breadcrumb__list-item css-18biwo"
     >
       <a
-        aria-label="string1"
         className="chakra-breadcrumb__link css-0"
         href="#string1"
       >
@@ -354,7 +341,6 @@ exports[`Breadcrumbs Snapshot Renders the UI snapshot correctly 5`] = `
       className="chakra-breadcrumb__list-item css-18biwo"
     >
       <a
-        aria-label="string2"
         className="chakra-breadcrumb__link css-0"
         href="#string2"
       >
@@ -385,7 +371,6 @@ exports[`Breadcrumbs Snapshot Renders the UI snapshot correctly 5`] = `
     >
       <a
         aria-current="page"
-        aria-label="string3"
         className="chakra-breadcrumb__link css-0"
         href="#string3"
       >
@@ -413,7 +398,6 @@ exports[`Breadcrumbs Snapshot Renders the UI snapshot correctly 6`] = `
       className="chakra-breadcrumb__list-item css-18biwo"
     >
       <a
-        aria-label="string1"
         className="chakra-breadcrumb__link css-0"
         href="#string1"
       >
@@ -434,7 +418,6 @@ exports[`Breadcrumbs Snapshot Renders the UI snapshot correctly 6`] = `
       className="chakra-breadcrumb__list-item css-18biwo"
     >
       <a
-        aria-label="string2"
         className="chakra-breadcrumb__link css-0"
         href="#string2"
       >
@@ -465,7 +448,6 @@ exports[`Breadcrumbs Snapshot Renders the UI snapshot correctly 6`] = `
     >
       <a
         aria-current="page"
-        aria-label="string3"
         className="chakra-breadcrumb__link css-0"
         href="#string3"
       >
@@ -494,7 +476,6 @@ exports[`Breadcrumbs Snapshot Renders the UI snapshot correctly 7`] = `
       className="chakra-breadcrumb__list-item css-18biwo"
     >
       <a
-        aria-label="string1"
         className="chakra-breadcrumb__link css-0"
         href="#string1"
       >
@@ -515,7 +496,6 @@ exports[`Breadcrumbs Snapshot Renders the UI snapshot correctly 7`] = `
       className="chakra-breadcrumb__list-item css-18biwo"
     >
       <a
-        aria-label="string2"
         className="chakra-breadcrumb__link css-0"
         href="#string2"
       >
@@ -546,7 +526,6 @@ exports[`Breadcrumbs Snapshot Renders the UI snapshot correctly 7`] = `
     >
       <a
         aria-current="page"
-        aria-label="string3"
         className="chakra-breadcrumb__link css-0"
         href="#string3"
       >
