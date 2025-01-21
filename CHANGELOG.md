@@ -8,6 +8,8 @@ Currently, this repo is in Prerelease. When it is released, this project will ad
 
 ## Prerelease
 
+- Updates the `Breadcrumbs` component to make link text screen readable on mobile breakpoints.
+
 ## 3.5.2 (January 16, 2025)
 
 ### Adds
