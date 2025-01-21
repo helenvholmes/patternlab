@@ -7,13 +7,13 @@ Currently, this repo is in Prerelease. When it is released, this project will ad
 ========
 
 ## Prerelease
- - Adds the `useFormatNumber` hook.
 
 ## 3.5.2 (January 16, 2025)
 
 ### Adds
 
 - Adds the `Filtering` subsection to the `Style Guide`.
+- Adds the `useFormatNumber` hook.
 
 ### Updates
 
