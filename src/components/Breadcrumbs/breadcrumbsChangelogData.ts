@@ -10,6 +10,15 @@ import { ChangelogData } from "../../utils/ComponentChangelogTable";
 
 export const changelogData: ChangelogData[] = [
   {
+    date: "Prerelease",
+    version: "Prerelease",
+    type: "Update",
+    affects: ["Accessibility"],
+    notes: [
+      "Adds screenreaderOnly styles to span inside breadcrumb so link has descriptive text on mobile.",
+    ],
+  },
+  {
     date: "2024-08-29",
     version: "3.3.0",
     type: "Update",
