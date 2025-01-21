@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import Text, { textSizesArray } from "./Text";
 import { argsBooleanType } from "../../helpers/storybookUtils";
+import formatNumber from "../../hooks/useFormatNumber";
 
 const meta: Meta<typeof Text> = {
   title: "Components/Typography & Styles/Text",
@@ -24,6 +25,9 @@ const meta: Meta<typeof Text> = {
     },
   },
 };
+
+const copiesSold = formatNumber(81450000);
+const suggestedPrice = formatNumber(100, "20000");
 
 export default meta;
 type Story = StoryObj<typeof Text>;
@@ -72,6 +76,10 @@ export const WithControls: Story = {
         games have also been released: Animal Crossing: Happy Home Designer for
         Nintendo 3DS, Animal Crossing: Amiibo Festival for Wii U, and Animal
         Crossing: Pocket Camp for mobile devices.
+      </Text>
+      <Text {...args}>
+        As of June 2024, the Animal Crossing franchise has sold over $
+        {copiesSold} copies worldwide. Suggested retail price: ${suggestedPrice}
       </Text>
     </>
   ),
