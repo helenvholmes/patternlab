@@ -305,6 +305,7 @@ export const Pagination: ChakraComponent<
             : selected - 1,
           // If the current page is near the end, show the last five items.
           // If the page number has 4 digits, show only the last four items.
+          // Ex. 1 ... 1998, 1999, 2000, 2001
           pageCount > 999 ? pageCount - 3 : pageCount - 4
         )
       );
