@@ -10,6 +10,7 @@ Currently, this repo is in Prerelease. When it is released, this project will ad
 
 ### Updates
 
+- Updates the `Pagination` component to handle 4 digit page counts.
 - Updates the `Heading` component to add `line-height` styles for mobile.
 
 ## 3.5.2 (January 16, 2025)
