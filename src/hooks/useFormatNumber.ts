@@ -33,11 +33,14 @@ const useFormatNumber = (num1: any, num2?: any) => {
   };
 
   const formatNumber = (num1: any, num2?: any): string => {
+    let hasLoggedWarning = false; // Flag to track if the warning has been logged
+    
     // Check if num1 is valid
     if (!isValidNumber(num1)) {
       console.warn(
         "NYPL Reservoir useFormatNumber: An unsupported value was passed."
       );
+      hasLoggedWarning = true; // Log the warning and set the flag
       return null;
     }
 
@@ -45,7 +48,7 @@ const useFormatNumber = (num1: any, num2?: any) => {
     num1 = typeof num1 === "string" ? parseFloat(num1) : num1;
 
     // Check if num2 is provided and valid
-    if (num2 !== undefined && !isValidNumber(num2)) {
+    if (num2 !== undefined && !isValidNumber(num2) && !hasLoggedWarning) {
       console.warn(
         "NYPL Reservoir useFormatNumber: An unsupported value was passed."
       );
