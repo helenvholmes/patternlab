@@ -34,7 +34,7 @@ const useFormatNumber = (num1: any, num2?: any) => {
 
   const formatNumber = (num1: any, num2?: any): string => {
     let hasLoggedWarning = false; // Flag to track if the warning has been logged
-    
+
     // Check if num1 is valid
     if (!isValidNumber(num1)) {
       console.warn(
