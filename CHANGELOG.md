@@ -6,20 +6,31 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 Currently, this repo is in Prerelease. When it is released, this project will adhere to [Semantic Versioning](https://semver.org/spec/v2.0.0.html)
 ========
 
-## Prerelease for Better Breakpoints
-
-### Updates
-
-- Updates the values for the breakpoints and the associated docs.
-- Updates the `viewport` preview options in Storybook to align with the Reservoir breakpoints.
-
-## Prerelease
-
 ## 4.0.0 (TBD)
 
 ### Updates
 
 - [Updates `Template` component(s)](https://newyorkpubliclibrary.atlassian.net/browse/DSD-1884) and styles per TAD.
+- Updates the values for the breakpoints and the associated docs.
+- Updates the `viewport` preview options in Storybook to align with the Reservoir breakpoints.
+
+## Prerelease
+
+## 3.5.2 (January 16, 2025)
+
+### Adds
+
+- Adds the `Filtering` subsection to the `Style Guide`.
+
+### Updates
+
+- Updates the `Form` component to remove the `aria-label`. The previous value of `"form"` was redundant and not required.
+- Updates the `RadioGroup` component to replace the `fieldset` and `legend` wrappers with a div and span for the title. The main div wrapper around the `Radio` components already has a `role="radiogroup"` values which makes the `fieldset` redundant.
+- Updates the `Pagination` component to apply new visual styles.
+
+### Fixes
+
+- Fixes the infinite loop in the `Image` component caused when there is no `fallbackSrc` prop value.
 
 ## 3.5.1 (December 19, 2024)
 

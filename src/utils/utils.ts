@@ -184,3 +184,14 @@ export const getPlaceholderImage = (
 export const sidebarLabel = (sidebar: SidebarPlacement) => {
   return `${sidebar[0].toUpperCase()}${sidebar.slice(1)} Sidebar`;
 };
+
+/** The default styles for images added as examples within doc pages. */
+export const exampleWrapperStyles = {
+  bgColor: "ui.gray.xx-light-cool",
+  borderRadius: ".5rem",
+  display: "flex",
+  justifyContent: "center",
+  mb: "xl",
+  overflow: "hidden",
+  width: "100%",
+};

@@ -1,0 +1,167 @@
+import { Meta } from "@storybook/blocks";
+
+import { Box } from "@chakra-ui/react";
+import Image from "../../Image/Image";
+import Link from "../../Link/Link";
+
+import imageFocusLiveFiltering from "/static/filteringStyleGuide/focusLiveFiltering.gif";
+import imageFocusKeywordSearch from "/static/filteringStyleGuide/focusKeywordSearch.gif";
+import imageFocusClearingFilters from "/static/filteringStyleGuide/focusClearingFilters.gif";
+import imageFocusPagination from "/static/filteringStyleGuide/focusPagination.gif";
+import imageFocusSorting from "/static/filteringStyleGuide/focusSorting.gif";
+import { exampleWrapperStyles } from "../../../utils/utils.ts";
+
+<Meta title="Style Guide/Filtering/Accessibility" />
+
+# Filtering accessibility
+
+The following accessibility recommendations are applicable for real-time UI
+updates resulting from user actions. If UI updates will be applied after a full
+page refresh, then no additional accommodations need to be applied.
+
+## Table of contents
+
+- {<Link href="#aria-live" target="_self">Using aria-live</Link>}
+- {<Link href="#focus-management" target="_self">Focus management</Link>}
+  - {<Link href="#applying-search-terms" target="_self">Applying search terms</Link>}
+  - {<Link href="#applying-filters" target="_self">Applying filters</Link>}
+  - {<Link href="#clearing-filters" target="_self">Clearing filters</Link>}
+  - {<Link href="#pagination" target="_self">Pagination</Link>}
+  - {<Link href="#sorting" target="_self">Sorting</Link>}
+  - {<Link href="#modal-overlay" target="_self">Modal overlay</Link>}
+
+## Using aria-live
+
+The parent element housing the `total results` heading should include the
+`aria-live="polite"` attribute. This will ensure that real-time updates made to
+the heading text are announced to screen reader users.
+
+## Focus management
+
+### Applying search terms
+
+<Box
+  display="grid"
+  gridTemplateColumns={{ base: "1fr", md: "1fr 1fr" }}
+  gap={{ base: "xs", md: "l" }}
+>
+  <Box>
+    When a search term is applied using the `keyword search` field, focus should
+    be moved to the `total results` heading.
+  </Box>
+  <Image
+    alt="Example of full-page filtering app"
+    border="1px solid var(--nypl-colors-ui-border-default)"
+    src={imageFocusKeywordSearch}
+    {...exampleWrapperStyles}
+  />
+</Box>
+
+### Applying filters
+
+#### Live filtering
+
+<Box
+  display="grid"
+  gridTemplateColumns={{ base: "1fr", md: "1fr 1fr" }}
+  gap={{ base: "xs", md: "l" }}
+>
+  <Box>
+    For live filtering, as a user makes changes to filtering options, focus
+    should be maintained on the filter the user is interacting with.
+  </Box>
+  <Image
+    alt="Example of full-page filtering app"
+    border="1px solid var(--nypl-colors-ui-border-default)"
+    src={imageFocusLiveFiltering}
+    {...exampleWrapperStyles}
+  />
+</Box>
+
+#### Batch filtering
+
+<Box
+  display="grid"
+  gridTemplateColumns={{ base: "1fr", md: "1fr 1fr" }}
+  gap={{ base: "xs", md: "l" }}
+>
+  <Box>
+    For batch filtering, focus should be moved to the `total results` heading
+    after the "Apply filters" button has been clicked.
+  </Box>
+  <Box></Box>
+</Box>
+
+### Clearing filters
+
+<Box
+  display="grid"
+  gridTemplateColumns={{ base: "1fr", md: "1fr 1fr" }}
+  gap={{ base: "xs", md: "l" }}
+>
+  <Box>
+    When filters are cleared using the methods available in the `active filters`
+    list or by clicking the "Clear all filters" button in the `filter bar`, focus
+    should be moved to the `total results` heading.
+
+    When clearing a filter by manually resetting an individual form input element,
+    focus should be maintained on the filter the user is interacting with.
+
+  </Box>
+  <Image
+    alt="Example of full-page filtering app"
+    border="1px solid var(--nypl-colors-ui-border-default)"
+    src={imageFocusClearingFilters}
+    {...exampleWrapperStyles}
+  />
+</Box>
+
+### Pagination
+
+<Box
+  display="grid"
+  gridTemplateColumns={{ base: "1fr", md: "1fr 1fr" }}
+  gap={{ base: "xs", md: "l" }}
+>
+  <Box>
+    When using the `pagination` menu to update the `results` list, focus should
+    be moved to the `total results` heading.
+  </Box>
+  <Image
+    alt="Example of full-page filtering app"
+    border="1px solid var(--nypl-colors-ui-border-default)"
+    src={imageFocusPagination}
+    {...exampleWrapperStyles}
+  />
+</Box>
+
+### Sorting
+
+<Box
+  display="grid"
+  gridTemplateColumns={{ base: "1fr", md: "1fr 1fr" }}
+  gap={{ base: "xs", md: "l" }}
+>
+  <Box>
+    After selecting an option in the `sorting` menu, focus should be maintained
+    on the `sorting` menu.
+  </Box>
+  <Image
+    alt="Example of full-page filtering app"
+    border="1px solid var(--nypl-colors-ui-border-default)"
+    src={imageFocusSorting}
+    {...exampleWrapperStyles}
+  />
+</Box>
+
+### Modal overlay
+
+When the modal overlay that is generated as part of the `FilterBarPopup`
+component is closed by clicking the close X in the UI, by clicking outside the
+modal overlay, or by pressing ESC on the keyboard, focus should be moved to the
+button that was initially clicked to launch the modal overlay. This is the
+default behavior of the modal overlay.
+
+When the modal overlay that is generated as part of the `FilterBarPopup`
+component is closed by clicking the "Show results" button in the UI, focus
+should be moved to the `total results` heading

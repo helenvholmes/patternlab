@@ -59,7 +59,7 @@ describe("Radio Accessibility", () => {
     );
     expect(await axe(container)).toHaveNoViolations();
   });
-  it("passes axe accessibility with the legend hidden", async () => {
+  it("passes axe accessibility with the title hidden", async () => {
     const { container } = render(
       <RadioGroup
         id="radioGroup"
@@ -93,7 +93,7 @@ describe("Radio Button", () => {
     expect(screen.getByText("Radio 4")).toBeInTheDocument();
   });
 
-  it("<legend> element is available in the DOM when 'showLabel' prop is set to true or false", () => {
+  it("span element is available in the DOM when 'showLabel' prop is set to true or false", () => {
     const { container, rerender } = render(
       <RadioGroup
         id="radioGroup"
@@ -106,8 +106,10 @@ describe("Radio Button", () => {
         <Radio id="radio4" value="4" labelText="Radio 4" />
       </RadioGroup>
     );
-    expect(container.querySelector("legend")).toBeVisible();
-    expect(container.querySelector("legend")).toHaveTextContent("Test Label");
+    expect(container.querySelectorAll("span")[0]).toBeVisible();
+    expect(container.querySelectorAll("span")[0]).toHaveTextContent(
+      "Test Label"
+    );
 
     rerender(
       <RadioGroup
@@ -121,8 +123,10 @@ describe("Radio Button", () => {
         <Radio id="radio4" value="4" labelText="Radio 4" />
       </RadioGroup>
     );
-    expect(container.querySelector("legend")).toBeVisible();
-    expect(container.querySelector("legend")).toHaveTextContent("Test Label");
+    expect(container.querySelectorAll("span")[0]).toBeVisible();
+    expect(container.querySelectorAll("span")[0]).toHaveTextContent(
+      "Test Label"
+    );
   });
 
   it("renders visible helper or error text", () => {
@@ -164,20 +168,6 @@ describe("Radio Button", () => {
     expect(
       screen.queryByText("This is the helper text for the full group.")
     ).not.toBeInTheDocument();
-  });
-
-  it("sets the RadioGroup's ID", () => {
-    render(
-      <RadioGroup labelText="Test Label" name="test5" id="some-id">
-        <Radio id="radio2" value="2" labelText="Radio 2" />
-      </RadioGroup>
-    );
-
-    // The "group" role here is for the `fieldset` element.
-    expect(screen.getByRole("group")).toHaveAttribute(
-      "id",
-      "radio-group-some-id"
-    );
   });
 
   it("sets the next value through the onChange function", () => {
@@ -290,6 +280,45 @@ describe("Radio Button", () => {
       </RadioGroup>
     );
     expect(screen.queryByText("There is an error :(")).not.toBeInTheDocument();
+  });
+
+  it("should throw warning when a non-Radio component is used as a child", () => {
+    const warn = jest.spyOn(console, "warn");
+    render(
+      <RadioGroup labelText="wrong child!" name="wrong" id="wrong-child">
+        <p>This is wrong!</p>
+      </RadioGroup>
+    );
+    expect(warn).toHaveBeenCalledWith(
+      "NYPL Reservoir RadioGroup: Only `Radio` components are allowed inside " +
+        "the `RadioGroup` component."
+    );
+  });
+
+  it("logs a warning when there is no `id` passed", () => {
+    const warn = jest.spyOn(console, "warn");
+    render(
+      // @ts-ignore: Typescript complains when a required prop is not passed, but
+      // here we don't want to pass the required prop to make sure the warning appears.
+      <RadioGroup labelText="RadioGroup example" name="a11y-test">
+        <Radio id="radio1" value="1" labelText="Radio 1" />
+      </RadioGroup>
+    );
+    expect(warn).toHaveBeenCalledWith(
+      "NYPL Reservoir RadioGroup: This component's required `id` prop was not passed."
+    );
+  });
+
+  it("passes a ref to the input element", () => {
+    const ref = React.createRef<HTMLDivElement>();
+    render(
+      <RadioGroup id="column" labelText="column" name="column" ref={ref}>
+        <Radio value="2" labelText="Radio 2" id="radio-2" />
+        <Radio value="3" labelText="Radio 3" id="radio-3" />
+      </RadioGroup>
+    );
+
+    expect(screen.getByRole("radiogroup")).toBe(ref.current);
   });
 
   it("renders the UI snapshot correctly", () => {
@@ -469,44 +498,5 @@ describe("Radio Button", () => {
     expect(withJSXRadioLabels).toMatchSnapshot();
     expect(withChakraProps).toMatchSnapshot();
     expect(withOtherProps).toMatchSnapshot();
-  });
-
-  it("should throw warning when a non-Radio component is used as a child", () => {
-    const warn = jest.spyOn(console, "warn");
-    render(
-      <RadioGroup labelText="wrong child!" name="wrong" id="wrong-child">
-        <p>This is wrong!</p>
-      </RadioGroup>
-    );
-    expect(warn).toHaveBeenCalledWith(
-      "NYPL Reservoir RadioGroup: Only `Radio` components are allowed inside " +
-        "the `RadioGroup` component."
-    );
-  });
-
-  it("logs a warning when there is no `id` passed", () => {
-    const warn = jest.spyOn(console, "warn");
-    render(
-      // @ts-ignore: Typescript complains when a required prop is not passed, but
-      // here we don't want to pass the required prop to make sure the warning appears.
-      <RadioGroup labelText="RadioGroup example" name="a11y-test">
-        <Radio id="radio1" value="1" labelText="Radio 1" />
-      </RadioGroup>
-    );
-    expect(warn).toHaveBeenCalledWith(
-      "NYPL Reservoir RadioGroup: This component's required `id` prop was not passed."
-    );
-  });
-
-  it("passes a ref to the input element", () => {
-    const ref = React.createRef<HTMLDivElement>();
-    const { container } = render(
-      <RadioGroup id="column" labelText="column" name="column" ref={ref}>
-        <Radio value="2" labelText="Radio 2" id="radio-2" />
-        <Radio value="3" labelText="Radio 3" id="radio-3" />
-      </RadioGroup>
-    );
-
-    expect(container.querySelector("fieldset > div")).toBe(ref.current);
   });
 });
