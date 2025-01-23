@@ -12,6 +12,7 @@ Currently, this repo is in Prerelease. When it is released, this project will ad
 
 - Updates the `Pagination` component to handle 4 digit page counts.
 - Updates the `Heading` component to add `line-height` styles for mobile.
+- Updates the `MultiSelect` component to adjust the text and size styles for the search input field.
 
 ## 3.5.2 (January 16, 2025)
 
