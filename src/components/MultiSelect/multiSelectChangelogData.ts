@@ -14,7 +14,7 @@ export const changelogData: ChangelogData[] = [
     version: "Prerelease",
     type: "Update",
     affects: ["Styles"],
-    notes: ["updates the text and size styles for the search input field."],
+    notes: ["Updates the text and size styles for the search input field."],
   },
   {
     date: "2024-12-05",
