@@ -1,13 +1,14 @@
-import { Meta, Source } from "@storybook/blocks";
+import { Canvas, Meta, Source } from "@storybook/blocks";
+import { BreakPointsExample } from "./useNYPLBreakpoints.stories";
 
 <Meta title="Hooks/useNYPLBreakpoints" />
 
 # useNYPLBreakpoints
 
-| Hook Version | DS Version |
-| ------------ | ---------- |
-| Added        | `1.0.4`    |
-| Latest       | `1.0.5`    |
+| Hook Version | DS Version   |
+| ------------ | ------------ |
+| Added        | `1.0.4`      |
+| Latest       | `Prerelease` |
 
 This custom hook is inspired by Chakra's `useMediaQuery` hook. Internally, the
 hook uses the `useMediaQuery` hook and the `MediaMatch` API to determine the
@@ -22,26 +23,36 @@ Breakpoints](../?path=/docs/style-guide-breakpoints--docs) style guide.
 
 ## Usage
 
-The hook returns an object with five boolean values:
+The hook returns an object with a series of boolean values. Some of the values
+adhere to the default Chakra syntax for breakpoints, while others use an NYPL
+semantic naming convention.
 
 <Source
   code={`
 const {
+  // Chakra syntax
   isLargerThanSmall,
   isLargerThanMedium,
-  isLargerThanMobile,
   isLargerThanLarge,
   isLargerThanXLarge,
+  
+  // NYPL semantic syntax
+  isLargerThanSmallMobile,
+  isLargerThanLargeMobile,
+  isLargerThanSmallTablet,
+  isLargerThanLargeTablet,
+  isLargerThanMobile,
+  isLargerThanTablet,
 } = useNYPLBreakpoints();
 `}
   language="jsx"
 />
 
 For the following example, we'll use the NYPL specific mobile breakpoint value.
-This breakpoint value is based on the "medium" breakpoint value of `"38em"`
-(or `"600px"`). If different components need to be conditionally rendered based
-on the current size of the viewport, we can use the `isLargerThanMobile`
-boolean value.
+This breakpoint value is based on the "medium" breakpoint value of `"48em"` (or
+`"768px"`). If different components need to be conditionally rendered based on
+the current size of the viewport, we can use the `isLargerThanMobile` boolean
+value.
 
 <Source
   code={`
@@ -57,3 +68,81 @@ const MobileLayout = () => ...
 `}
   language="jsx"
 />
+
+## Functional Examples
+
+{BreakPointsExample()}
+
+<Source
+  code={`
+import {
+  Heading,
+  List,
+  Text,
+  useNYPLBreakpoints,
+} from "@nypl/design-system-react-components";
+const {
+  isLargerThanSmall,
+  isLargerThanMedium,
+  isLargerThanLarge,
+  isLargerThanXLarge,
+  isLargerThanSmallMobile,
+  isLargerThanLargeMobile,
+  isLargerThanMobile,
+  isLargerThanSmallTablet,
+  isLargerThanLargeTablet,
+  isLargerThanTablet,
+} = useNYPLBreakpoints();
+
+<Stack direction="row" spacing="l" width="100%">
+  <Box flexBasis="50%">
+    <Heading text="Charka Syntax" level="h3" size="heading6" />
+    <Text>The windows size is currently:</Text>
+    <List type="ul">
+      <li>
+        {isLargerThanSmall ? <strong>LARGER</strong> : "smaller"} than small
+      </li>
+      <li>
+        {isLargerThanMedium ? <strong>LARGER</strong> : "smaller"} than medium
+      </li>
+      <li>
+        {isLargerThanLarge ? <strong>LARGER</strong> : "smaller"} than large
+      </li>
+      <li>
+        {isLargerThanXLarge ? <strong>LARGER</strong> : "smaller"} than extra
+        large
+      </li>
+    </List>
+  </Box>
+  <Box flexBasis="50%">
+    <Heading text="Semantic Syntax" level="h3" size="heading6" />
+    <Text>The windows size is currently:</Text>
+    <List type="ul">
+      <li>
+        {isLargerThanSmallMobile ? <strong>LARGER</strong> : "smaller"} than
+        small mobile
+      </li>
+      <li>
+        {isLargerThanLargeMobile ? <strong>LARGER</strong> : "smaller"} than
+        large mobile
+      </li>
+      <li>
+        {isLargerThanMobile ? <strong>LARGER</strong> : "smaller"} than mobile
+        (small and large)
+      </li>
+      <li>
+        {isLargerThanSmallTablet ? <strong>LARGER</strong> : "smaller"} than
+        small tablet
+      </li>
+      <li>
+        {isLargerThanLargeTablet ? <strong>LARGER</strong> : "smaller"} than
+        large tablet
+      </li>
+      <li>
+        {isLargerThanTablet ? <strong>LARGER</strong> : "smaller"} than tablet
+        (small and large)
+      </li>
+    </List>
+  </Box>
+</Stack>
+`} language="jsx" />
