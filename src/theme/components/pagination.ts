@@ -13,7 +13,7 @@ const Pagination = defineMultiStyleConfig({
     minWidth: { base: "320px", md: "unset" },
     width: "100%",
     link: {
-      lineHeight: "1.15",
+      lineHeight: "1",
       textDecoration: "none",
       _hover: {
         textDecoration: "none",
