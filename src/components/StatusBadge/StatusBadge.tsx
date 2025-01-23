@@ -1,8 +1,12 @@
 import { Box, chakra, ChakraComponent, useStyleConfig } from "@chakra-ui/react";
 import React, { forwardRef } from "react";
 
+export const statusBadgeFontSizeArray = ["body1", "body2", "caption"] as const;
+export type StatusBadgeFontSizes = typeof statusBadgeFontSizeArray[number];
+
 export const statusBadgeLevelArray = ["low", "medium", "high"] as const;
 export type StatusBadgeLevels = typeof statusBadgeLevelArray[number];
+
 export const statusBadgeTypeArray = [
   "informative",
   "negative",
@@ -18,6 +22,8 @@ export type StatusBadgeTypes = typeof statusBadgeTypeArray[number];
 export interface StatusBadgeProps {
   /** Additional class for the component */
   className?: string;
+  /** Font size of the badge label. */
+  labelFontSize?: StatusBadgeFontSizes;
   /** ID that other components can cross reference for accessibility purposes */
   id?: string;
   /** Level of the status badge. This prop has been deprecated in favor of the
@@ -42,9 +48,20 @@ export const StatusBadge: ChakraComponent<
 > = chakra(
   forwardRef<HTMLDivElement, React.PropsWithChildren<StatusBadgeProps>>(
     (props, ref?) => {
-      const { children, className, id, level, type, ...rest } = props;
+      const {
+        children,
+        className,
+        labelFontSize = "body2",
+        id,
+        level,
+        type,
+        ...rest
+      } = props;
       const finalVariant = level ? level : type ? type : "low";
-      const styles = useStyleConfig("StatusBadge", { variant: finalVariant });
+      const styles = useStyleConfig("StatusBadge", {
+        labelFontSize,
+        variant: finalVariant,
+      });
 
       if (!children) {
         console.warn("NYPL Reservoir StatusBadge: No children were passed.");

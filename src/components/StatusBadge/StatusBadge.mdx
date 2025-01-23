@@ -9,19 +9,20 @@ import { changelogData } from "./statusBadgeChangelogData";
 
 # StatusBadge
 
-| Component Version | DS Version |
-| ----------------- | ---------- |
-| Added             | `0.18.7`   |
-| Latest            | `3.1.1`    |
+| Component Version | DS Version   |
+| ----------------- | ------------ |
+| Added             | `0.18.7`     |
+| Latest            | `Prerelease` |
 
 ## Table of Contents
 
 - {<Link href="#overview" target="_self">Overview</Link>}
 - {<Link href="#component-props" target="_self">Component Props</Link>}
 - {<Link href="#accessibility" target="_self">Accessibility</Link>}
-- {<Link href="#semantic-type-variants" target="_self">Semantic Type Variants</Link>}
-- {<Link href="#level-variants-deprecated" target="_self">Level Variants (deprecated)</Link>}
-- {<Link href="#labeling-variations" target="_self">Labeling Variations</Link>}
+- {<Link href="#semantic-types" target="_self">Semantic Types</Link>}
+- {<Link href="#levels-deprecated" target="_self">Levels (deprecated)</Link>}
+- {<Link href="#font-size" target="_self">Font Size</Link>}
+- {<Link href="#labeling" target="_self">Labeling</Link>}
 - {<Link href="#changelog" target="_self">Changelog</Link>}
 
 ## Overview
@@ -48,22 +49,34 @@ with the general meaning associated with the semantic colors used in a specific
 variant. In this way, the user will be able to understand the priority of the
 `StatusBadge` and not rely just on the color.
 
-## Semantic Type Variants
+## Semantic Types
 
 The semantic `type` variants align with specific uses. Please refer to the
 purpose of each variant.
 
-<Canvas of={StatusBadgeStories.TypeVariants} />
+<Canvas of={StatusBadgeStories.SemanticTypes} />
 
-## Level Variants (deprecated)
+## Levels (deprecated)
 
 The `level` variants have been deprecated in favor of the semantic `type`
 variants. However, for backward compatability, the `level` prop will override
 the `type` prop.
 
-<Canvas of={StatusBadgeStories.LevelVariants} />
+<Canvas of={StatusBadgeStories.Levels} />
 
-## Labeling Variations
+## Font Size
+
+The label font size can be set using the font sizes from the `Text` component:
+
+- `body1`
+- `body2`
+- `caption`
+
+The default label font size is `body2`.
+
+<Canvas of={StatusBadgeStories.FontSize} />
+
+## Labeling
 
 The capitalization of a badge label will not be forced by the component and
 labels will render exactly as they are passed into the component. If an
@@ -73,7 +86,7 @@ all-caps string is passed in, the label will render all caps. And so on.
 The text case should be dependent on the use case and the final decision should
 ultimately come from Product and UX.
 
-<Canvas of={StatusBadgeStories.LabelingVariations} />
+<Canvas of={StatusBadgeStories.Labeling} />
 
 ### Icons
 
@@ -95,11 +108,26 @@ between the icon and the text. The use of the design tokens (ie, `xs`) is encour
   On-Site Access Only
 </StatusBadge>
 
+<StatusBadge labelFontSize="caption" type="warning">
+  <Icon
+    color="ui.warning.secondary"
+    mr="xs"
+    name="actionHelpDefault"
+    size="medium"
+  />
+  Mising information
+</StatusBadge>
+
 // Icon second (add margin-left)
 
 <StatusBadge level="low">
   Registration Required
   <Icon color="ui.black" ml="xs" name="actionIdentityFilled" size="medium" />
+</StatusBadge>
+
+<StatusBadge labelFontSize="body1" type="informative">
+  Includes audio
+  <Icon color="ui.link.secondary" ml="xs" name="headset" size="medium" />
 </StatusBadge>
 `} language="jsx" />
 
