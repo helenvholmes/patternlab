@@ -8,6 +8,10 @@ Currently, this repo is in Prerelease. When it is released, this project will ad
 
 ## Prerelease
 
+### Adds
+
+- Adds the `labelFontSize` prop to the `StatusBadge` component.
+
 ### Updates
 
 - Updates the `Pagination` component to handle 4 digit page counts.
