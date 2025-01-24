@@ -20,6 +20,7 @@ Currently, this repo is in Prerelease. When it is released, this project will ad
 ### Adds
 
 - Adds the `Filtering` subsection to the `Style Guide`.
+- Adds the `useFormatNumber` hook.
 
 ### Updates
 
