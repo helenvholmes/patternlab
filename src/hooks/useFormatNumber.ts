@@ -32,32 +32,34 @@ const useFormatNumber = (num1: any, num2?: any) => {
     return !isNaN(value) && !/[^0-9.-]/.test(value); // Ensures the value is purely numeric
   };
 
-  const formatNumber = (num1: any, num2?: any): string => {
-    let hasLoggedWarning = false; // Flag to track if the warning has been logged
+  const formatNumber = (num1: any, num2?: any): string | null => {
+    let hasWarnig = false; // Track if any warnings occurs
 
     // Check if num1 is valid
     if (!isValidNumber(num1)) {
       console.warn(
-        "NYPL Reservoir useFormatNumber: An unsupported value was passed."
+        `The provided value ${num1} is not supported. Please ensure a valid value is passed.`
       );
-      hasLoggedWarning = true; // Log the warning and set the flag
-      return null;
+      hasWarnig = true;
+    } else {
+      // Convert num1 to a number if it is a valid numeric string
+      num1 = typeof num1 === "string" ? parseFloat(num1) : num1;
     }
-
-    // Convert num1 to a number if it is a valid numeric string
-    num1 = typeof num1 === "string" ? parseFloat(num1) : num1;
 
     // Check if num2 is provided and valid
-    if (num2 !== undefined && !isValidNumber(num2) && !hasLoggedWarning) {
+    if (num2 !== undefined && !isValidNumber(num2)) {
       console.warn(
-        "NYPL Reservoir useFormatNumber: An unsupported value was passed."
+        `The provided value ${num2} for the second argument is not supported. Please ensure a valid value is passed.`
       );
-      return null;
+      hasWarnig = true;
+    } else if (num2 !== undefined) {
+      // Convert num2 to a number if it is a valid numeric string
+      num2 = typeof num2 === "string" ? parseFloat(num2) : num2;
     }
 
-    // Convert num2 to a number if it is a valid numeric string
-    if (num2 !== undefined) {
-      num2 = typeof num2 === "string" ? parseFloat(num2) : num2;
+    // If either num1 or num2 is invalid, return null
+    if (hasWarnig) {
+      return null;
     }
 
     // Case 1: Only one number is provided
@@ -86,7 +88,6 @@ const useFormatNumber = (num1: any, num2?: any) => {
       end
     )}`;
   };
-
   return formatNumber(num1, num2);
 };
 
