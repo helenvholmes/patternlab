@@ -17,7 +17,10 @@
  *  - (10, 100) -> "10–100"
  */
 
-const useFormatNumber = (num1: string | number, num2?: string | number): string | null => {
+const useFormatNumber = (
+  num1: string | number,
+  num2?: string | number
+): string | null => {
   // Helper function to format a number with commas
   const formatNumberWithCommas = (num: number): string => {
     return num.toLocaleString(); // Formats the number with commas (e.g., 4382 -> "4,382")

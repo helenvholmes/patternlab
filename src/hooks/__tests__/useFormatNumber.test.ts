@@ -34,7 +34,6 @@ describe("useFormatNumber hook", () => {
     expect(warn).toHaveBeenCalledWith(
       "NYPL Reservoir useFormatNumber: The provided value 1234XXX for the second argument is not supported. Please ensure a valid value is passed."
     );
-
   });
 
   it("handles valid numeric inputs with commas", () => {
@@ -46,7 +45,3 @@ describe("useFormatNumber hook", () => {
     expect(formatNumber(4276835.879)).toEqual("4,276,835.879");
   });
 });
-
-
-
-
