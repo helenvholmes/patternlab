@@ -17,10 +17,7 @@
  *  - (10, 100) -> "10–100"
  */
 
-// export default function useFormatNumber(num1: any, num2?: any) {
-const useFormatNumber = (num1: any, num2?: any) => {
-  // const num1Pass = num1;
-  // const num2Pass = num2;
+const useFormatNumber = (num1: string | number, num2?: string | number): string | null => {
   // Helper function to format a number with commas
   const formatNumberWithCommas = (num: number): string => {
     return num.toLocaleString(); // Formats the number with commas (e.g., 4382 -> "4,382")
@@ -38,7 +35,7 @@ const useFormatNumber = (num1: any, num2?: any) => {
     // Check if num1 is valid
     if (!isValidNumber(num1)) {
       console.warn(
-        `The provided value ${num1} is not supported. Please ensure a valid value is passed.`
+        `NYPL Reservoir useFormatNumber: The provided value ${num1} is not supported. Please ensure a valid value is passed.`
       );
       hasWarning = true;
     } else {
@@ -49,7 +46,7 @@ const useFormatNumber = (num1: any, num2?: any) => {
     // Check if num2 is provided and valid
     if (num2 !== undefined && !isValidNumber(num2)) {
       console.warn(
-        `The provided value ${num2} for the second argument is not supported. Please ensure a valid value is passed.`
+        `NYPL Reservoir useFormatNumber: The provided value ${num2} for the second argument is not supported. Please ensure a valid value is passed.`
       );
       hasWarning = true;
     } else if (num2 !== undefined) {
