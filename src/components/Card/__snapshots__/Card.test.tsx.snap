@@ -49,7 +49,6 @@ exports[`Card Renders the UI snapshot correctly 1`] = `
           alt="Alt text"
           className="css-0"
           id="img-id-regularCard"
-          onError={[Function]}
           src="https://images.nypl.org/index.php?id=swope_243048&t=r"
         />
       </div>
@@ -112,36 +111,13 @@ exports[`Card Renders the UI snapshot correctly 2`] = `
         >
           <svg
             aria-hidden={true}
-            className="chakra-icon css-1grhd2q"
+            className="chakra-icon css-1vgifmd"
+            data-file-name="SvgDownload"
             focusable={false}
             id="icon-cardWithExtendedStyles"
             role="img"
             title="download icon"
-            viewBox="0 0 24 24"
-          >
-            <g
-              stroke="currentColor"
-              strokeWidth="1.5"
-            >
-              <path
-                d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-                fill="none"
-                strokeLinecap="round"
-              />
-              <path
-                d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-                fill="currentColor"
-                strokeLinecap="round"
-              />
-              <circle
-                cx="12"
-                cy="12"
-                fill="none"
-                r="11.25"
-                strokeMiterlimit="10"
-              />
-            </g>
-          </svg>
+          />
           Download
         </a>
       </div>
@@ -157,7 +133,6 @@ exports[`Card Renders the UI snapshot correctly 2`] = `
           alt="Alt text"
           className="css-0"
           id="img-id-cardWithExtendedStyles"
-          onError={[Function]}
           src="https://images.nypl.org/index.php?id=swope_243048&t=r"
         />
       </div>
@@ -211,7 +186,6 @@ exports[`Card Renders the UI snapshot correctly 3`] = `
           alt="Alt text"
           className="css-0"
           id="img-id-cardWithNoCTAs"
-          onError={[Function]}
           src="https://images.nypl.org/index.php?id=swope_243048&t=r"
         />
       </div>
@@ -269,36 +243,13 @@ exports[`Card Renders the UI snapshot correctly 4`] = `
         >
           <svg
             aria-hidden={true}
-            className="chakra-icon css-1grhd2q"
+            className="chakra-icon css-1vgifmd"
+            data-file-name="SvgDownload"
             focusable={false}
             id="icon-cardWithNoContent"
             role="img"
             title="download icon"
-            viewBox="0 0 24 24"
-          >
-            <g
-              stroke="currentColor"
-              strokeWidth="1.5"
-            >
-              <path
-                d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-                fill="none"
-                strokeLinecap="round"
-              />
-              <path
-                d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-                fill="currentColor"
-                strokeLinecap="round"
-              />
-              <circle
-                cx="12"
-                cy="12"
-                fill="none"
-                r="11.25"
-                strokeMiterlimit="10"
-              />
-            </g>
-          </svg>
+          />
           Download
         </a>
       </div>
@@ -314,7 +265,6 @@ exports[`Card Renders the UI snapshot correctly 4`] = `
           alt="Alt text"
           className="css-0"
           id="img-id-cardWithNoContent"
-          onError={[Function]}
           src="https://images.nypl.org/index.php?id=swope_243048&t=r"
         />
       </div>
@@ -377,36 +327,13 @@ exports[`Card Renders the UI snapshot correctly 5`] = `
         >
           <svg
             aria-hidden={true}
-            className="chakra-icon css-1grhd2q"
+            className="chakra-icon css-1vgifmd"
+            data-file-name="SvgDownload"
             focusable={false}
             id="icon-cardWithNoImage"
             role="img"
             title="download icon"
-            viewBox="0 0 24 24"
-          >
-            <g
-              stroke="currentColor"
-              strokeWidth="1.5"
-            >
-              <path
-                d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-                fill="none"
-                strokeLinecap="round"
-              />
-              <path
-                d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-                fill="currentColor"
-                strokeLinecap="round"
-              />
-              <circle
-                cx="12"
-                cy="12"
-                fill="none"
-                r="11.25"
-                strokeMiterlimit="10"
-              />
-            </g>
-          </svg>
+          />
           Download
         </a>
       </div>
@@ -469,7 +396,6 @@ exports[`Card Renders the UI snapshot correctly 6`] = `
           alt="Alt text"
           className="css-0"
           id="img-id-fullclick"
-          onError={[Function]}
           src="https://images.nypl.org/index.php?id=swope_243048&t=r"
         />
       </div>
@@ -539,7 +465,6 @@ exports[`Card Renders the UI snapshot correctly 7`] = `
           alt="Alt text"
           className="css-0"
           id="img-id-cardWithRightActions"
-          onError={[Function]}
           src="https://images.nypl.org/index.php?id=swope_243048&t=r"
         />
       </div>
@@ -597,7 +522,6 @@ exports[`Card Renders the UI snapshot correctly 8`] = `
           alt="Alt text"
           className="css-0"
           id="img-id-chakraProps"
-          onError={[Function]}
           src="https://images.nypl.org/index.php?id=swope_243048&t=r"
         />
       </div>
@@ -658,7 +582,6 @@ exports[`Card Renders the UI snapshot correctly 9`] = `
           alt="Alt text"
           className="css-0"
           id="img-id-otherProps"
-          onError={[Function]}
           src="https://images.nypl.org/index.php?id=swope_243048&t=r"
         />
       </div>

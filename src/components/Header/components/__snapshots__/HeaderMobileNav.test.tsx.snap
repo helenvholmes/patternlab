@@ -1,0 +1,169 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HeaderMobileNav renders the UI snapshot correctly 1`] = `
+<div
+  className="css-0"
+>
+  <div
+    className="css-k008qs"
+  >
+    <div
+      className="css-0"
+    >
+      <svg
+        aria-hidden={false}
+        aria-label="NYPL Header Logo"
+        className="chakra-icon css-1vgifmd"
+        data-file-name="SvgLogoNyplTextWhite"
+        focusable={false}
+        role="img"
+        title="NYPL Header Logo"
+      />
+    </div>
+    <div
+      className="css-17xejub"
+    />
+    <nav
+      aria-label="Header mobile links"
+    >
+      <ul
+        className="css-oxl4r2"
+        id="header-mobile-nav"
+      >
+        <li>
+          <a
+            className="chakra-link css-1xdhyk6"
+            href="https://www.nypl.org/books-music-movies"
+            rel={null}
+            target={null}
+          >
+            Books/Music/Movies
+          </a>
+        </li>
+        <li>
+          <a
+            className="chakra-link css-1xdhyk6"
+            href="https://www.nypl.org/research"
+            rel={null}
+            target={null}
+          >
+            Research
+          </a>
+        </li>
+        <li>
+          <a
+            className="chakra-link css-1xdhyk6"
+            href="https://www.nypl.org/education"
+            rel={null}
+            target={null}
+          >
+            Education
+          </a>
+        </li>
+        <li>
+          <a
+            className="chakra-link css-1xdhyk6"
+            href="https://www.nypl.org/events"
+            rel={null}
+            target={null}
+          >
+            Events
+          </a>
+        </li>
+        <li>
+          <a
+            className="chakra-link css-1xdhyk6"
+            href="https://www.nypl.org/connect"
+            rel={null}
+            target={null}
+          >
+            Connect
+          </a>
+        </li>
+        <li>
+          <a
+            className="chakra-link css-1xdhyk6"
+            href="https://www.nypl.org/give"
+            rel={null}
+            target={null}
+          >
+            Give
+          </a>
+        </li>
+        <li>
+          <a
+            className="chakra-link css-1xdhyk6"
+            href="https://www.nypl.org/get-help"
+            rel={null}
+            target={null}
+          >
+            Get Help
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <div
+    className="css-1xdhyk6"
+    data-testid="bottomLinks"
+  >
+    <a
+      className="chakra-link css-a4nb38"
+      href="https://www.nypl.org/library-card/new"
+      rel={null}
+      target={null}
+    >
+      <svg
+        aria-hidden={true}
+        className="chakra-icon css-1k5hm9w"
+        data-file-name="SvgDecorativeLibraryCard"
+        focusable={false}
+        role="img"
+        title="decorativeLibraryCard icon"
+      />
+      Get A Library Card
+    </a>
+    <a
+      className="chakra-link css-ucg3r3"
+      href="https://pub.email.nypl.org/subscriptioncenter"
+      rel={null}
+      target={null}
+    >
+      <svg
+        aria-hidden={true}
+        className="chakra-icon css-1k5hm9w"
+        data-file-name="SvgDecorativeEnvelope"
+        focusable={false}
+        role="img"
+        title="decorativeEnvelope icon"
+      />
+      Get Email Updates
+    </a>
+    <a
+      className="chakra-link css-xnpdth"
+      href="https://shop.nypl.org/?utm_campaign=NYPLHeaderButton&utm_source=nypl.org&utm_medium=referral"
+      rel={null}
+      target={null}
+    >
+      <svg
+        aria-hidden={true}
+        className="chakra-icon css-1k5hm9w"
+        data-file-name="SvgDecorativeShoppingBag"
+        focusable={false}
+        role="img"
+        title="decorativeShoppingBag icon"
+      />
+      Shop
+       NYPL
+    </a>
+    <a
+      className="chakra-link css-tlhajk"
+      href="https://www.nypl.org/donate-button"
+      rel={null}
+      target={null}
+    >
+      DONATE
+    </a>
+  </div>
+</div>
+`;

@@ -49,36 +49,13 @@ exports[`SearchBar renders the UI snapshot correctly 1`] = `
       >
         <svg
           aria-hidden={true}
-          className="chakra-icon css-1grhd2q"
+          className="chakra-icon css-1vgifmd"
+          data-file-name="SvgSearch"
           focusable={false}
           id="searchbar-icon-basic"
           role="img"
           title="search icon"
-          viewBox="0 0 24 24"
-        >
-          <g
-            stroke="currentColor"
-            strokeWidth="1.5"
-          >
-            <path
-              d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-              fill="none"
-              strokeLinecap="round"
-            />
-            <path
-              d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-              fill="currentColor"
-              strokeLinecap="round"
-            />
-            <circle
-              cx="12"
-              cy="12"
-              fill="none"
-              r="11.25"
-              strokeMiterlimit="10"
-            />
-          </g>
-        </svg>
+        />
         <span>
           Search
         </span>
@@ -194,7 +171,8 @@ exports[`SearchBar renders the UI snapshot correctly 2`] = `
           >
             <svg
               aria-hidden={true}
-              className="chakra-icon chakra-select__icon css-q3eg3a"
+              className="chakra-icon chakra-select__icon css-1nreziu"
+              data-file-name="SvgArrow"
               focusable={false}
               id="searchbar-select-withSelect-icon"
               role="presentation"
@@ -206,31 +184,7 @@ exports[`SearchBar renders the UI snapshot correctly 2`] = `
                 }
               }
               title="arrow icon"
-              viewBox="0 0 24 24"
-            >
-              <g
-                stroke="currentColor"
-                strokeWidth="1.5"
-              >
-                <path
-                  d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-                  fill="none"
-                  strokeLinecap="round"
-                />
-                <path
-                  d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-                  fill="currentColor"
-                  strokeLinecap="round"
-                />
-                <circle
-                  cx="12"
-                  cy="12"
-                  fill="none"
-                  r="11.25"
-                  strokeMiterlimit="10"
-                />
-              </g>
-            </svg>
+            />
           </div>
         </div>
       </div>
@@ -272,36 +226,13 @@ exports[`SearchBar renders the UI snapshot correctly 2`] = `
       >
         <svg
           aria-hidden={true}
-          className="chakra-icon css-1grhd2q"
+          className="chakra-icon css-1vgifmd"
+          data-file-name="SvgSearch"
           focusable={false}
           id="searchbar-icon-withSelect"
           role="img"
           title="search icon"
-          viewBox="0 0 24 24"
-        >
-          <g
-            stroke="currentColor"
-            strokeWidth="1.5"
-          >
-            <path
-              d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-              fill="none"
-              strokeLinecap="round"
-            />
-            <path
-              d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-              fill="currentColor"
-              strokeLinecap="round"
-            />
-            <circle
-              cx="12"
-              cy="12"
-              fill="none"
-              r="11.25"
-              strokeMiterlimit="10"
-            />
-          </g>
-        </svg>
+        />
         <span>
           Search
         </span>
@@ -375,36 +306,13 @@ exports[`SearchBar renders the UI snapshot correctly 3`] = `
       >
         <svg
           aria-hidden={true}
-          className="chakra-icon css-1grhd2q"
+          className="chakra-icon css-1vgifmd"
+          data-file-name="SvgSearch"
           focusable={false}
           id="searchbar-icon-withoutHelperText"
           role="img"
           title="search icon"
-          viewBox="0 0 24 24"
-        >
-          <g
-            stroke="currentColor"
-            strokeWidth="1.5"
-          >
-            <path
-              d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-              fill="none"
-              strokeLinecap="round"
-            />
-            <path
-              d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-              fill="currentColor"
-              strokeLinecap="round"
-            />
-            <circle
-              cx="12"
-              cy="12"
-              fill="none"
-              r="11.25"
-              strokeMiterlimit="10"
-            />
-          </g>
-        </svg>
+        />
         <span>
           Search
         </span>
@@ -463,36 +371,13 @@ exports[`SearchBar renders the UI snapshot correctly 4`] = `
       >
         <svg
           aria-hidden={true}
-          className="chakra-icon css-1grhd2q"
+          className="chakra-icon css-1vgifmd"
+          data-file-name="SvgSearch"
           focusable={false}
           id="searchbar-icon-withClearButton"
           role="img"
           title="search icon"
-          viewBox="0 0 24 24"
-        >
-          <g
-            stroke="currentColor"
-            strokeWidth="1.5"
-          >
-            <path
-              d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-              fill="none"
-              strokeLinecap="round"
-            />
-            <path
-              d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-              fill="currentColor"
-              strokeLinecap="round"
-            />
-            <circle
-              cx="12"
-              cy="12"
-              fill="none"
-              r="11.25"
-              strokeMiterlimit="10"
-            />
-          </g>
-        </svg>
+        />
         <span>
           Search
         </span>
@@ -575,36 +460,13 @@ exports[`SearchBar renders the UI snapshot correctly 5`] = `
       >
         <svg
           aria-hidden={true}
-          className="chakra-icon css-1grhd2q"
+          className="chakra-icon css-1vgifmd"
+          data-file-name="SvgSearch"
           focusable={false}
           id="searchbar-icon-invalidState"
           role="img"
           title="search icon"
-          viewBox="0 0 24 24"
-        >
-          <g
-            stroke="currentColor"
-            strokeWidth="1.5"
-          >
-            <path
-              d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-              fill="none"
-              strokeLinecap="round"
-            />
-            <path
-              d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-              fill="currentColor"
-              strokeLinecap="round"
-            />
-            <circle
-              cx="12"
-              cy="12"
-              fill="none"
-              r="11.25"
-              strokeMiterlimit="10"
-            />
-          </g>
-        </svg>
+        />
         <span>
           Search
         </span>
@@ -663,36 +525,13 @@ exports[`SearchBar renders the UI snapshot correctly 6`] = `
       >
         <svg
           aria-hidden={true}
-          className="chakra-icon css-1grhd2q"
+          className="chakra-icon css-1vgifmd"
+          data-file-name="SvgSearch"
           focusable={false}
           id="searchbar-icon-disabledState"
           role="img"
           title="search icon"
-          viewBox="0 0 24 24"
-        >
-          <g
-            stroke="currentColor"
-            strokeWidth="1.5"
-          >
-            <path
-              d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-              fill="none"
-              strokeLinecap="round"
-            />
-            <path
-              d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-              fill="currentColor"
-              strokeLinecap="round"
-            />
-            <circle
-              cx="12"
-              cy="12"
-              fill="none"
-              r="11.25"
-              strokeMiterlimit="10"
-            />
-          </g>
-        </svg>
+        />
         <span>
           Search
         </span>
@@ -752,36 +591,13 @@ exports[`SearchBar renders the UI snapshot correctly 7`] = `
       >
         <svg
           aria-hidden={true}
-          className="chakra-icon css-1grhd2q"
+          className="chakra-icon css-1vgifmd"
+          data-file-name="SvgSearch"
           focusable={false}
           id="searchbar-icon-requiredState"
           role="img"
           title="search icon"
-          viewBox="0 0 24 24"
-        >
-          <g
-            stroke="currentColor"
-            strokeWidth="1.5"
-          >
-            <path
-              d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-              fill="none"
-              strokeLinecap="round"
-            />
-            <path
-              d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-              fill="currentColor"
-              strokeLinecap="round"
-            />
-            <circle
-              cx="12"
-              cy="12"
-              fill="none"
-              r="11.25"
-              strokeMiterlimit="10"
-            />
-          </g>
-        </svg>
+        />
         <span>
           Search
         </span>
@@ -841,36 +657,13 @@ exports[`SearchBar renders the UI snapshot correctly 8`] = `
       >
         <svg
           aria-hidden={true}
-          className="chakra-icon css-1grhd2q"
+          className="chakra-icon css-1vgifmd"
+          data-file-name="SvgSearch"
           focusable={false}
           id="searchbar-icon-noBrandButtonType"
           role="img"
           title="search icon"
-          viewBox="0 0 24 24"
-        >
-          <g
-            stroke="currentColor"
-            strokeWidth="1.5"
-          >
-            <path
-              d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-              fill="none"
-              strokeLinecap="round"
-            />
-            <path
-              d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-              fill="currentColor"
-              strokeLinecap="round"
-            />
-            <circle
-              cx="12"
-              cy="12"
-              fill="none"
-              r="11.25"
-              strokeMiterlimit="10"
-            />
-          </g>
-        </svg>
+        />
         <span>
           Search
         </span>
@@ -910,36 +703,13 @@ exports[`SearchBar renders the UI snapshot correctly 9`] = `
       >
         <svg
           aria-hidden={true}
-          className="chakra-icon css-1grhd2q"
+          className="chakra-icon css-1vgifmd"
+          data-file-name="SvgSearch"
           focusable={false}
           id="searchbar-icon-withHeading"
           role="img"
           title="search icon"
-          viewBox="0 0 24 24"
-        >
-          <g
-            stroke="currentColor"
-            strokeWidth="1.5"
-          >
-            <path
-              d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-              fill="none"
-              strokeLinecap="round"
-            />
-            <path
-              d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-              fill="currentColor"
-              strokeLinecap="round"
-            />
-            <circle
-              cx="12"
-              cy="12"
-              fill="none"
-              r="11.25"
-              strokeMiterlimit="10"
-            />
-          </g>
-        </svg>
+        />
         <span>
           Search
         </span>
@@ -978,36 +748,13 @@ exports[`SearchBar renders the UI snapshot correctly 10`] = `
       >
         <svg
           aria-hidden={true}
-          className="chakra-icon css-1grhd2q"
+          className="chakra-icon css-1vgifmd"
+          data-file-name="SvgSearch"
           focusable={false}
           id="searchbar-icon-withDescription"
           role="img"
           title="search icon"
-          viewBox="0 0 24 24"
-        >
-          <g
-            stroke="currentColor"
-            strokeWidth="1.5"
-          >
-            <path
-              d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-              fill="none"
-              strokeLinecap="round"
-            />
-            <path
-              d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-              fill="currentColor"
-              strokeLinecap="round"
-            />
-            <circle
-              cx="12"
-              cy="12"
-              fill="none"
-              r="11.25"
-              strokeMiterlimit="10"
-            />
-          </g>
-        </svg>
+        />
         <span>
           Search
         </span>
@@ -1052,36 +799,13 @@ exports[`SearchBar renders the UI snapshot correctly 11`] = `
       >
         <svg
           aria-hidden={true}
-          className="chakra-icon css-1grhd2q"
+          className="chakra-icon css-1vgifmd"
+          data-file-name="SvgSearch"
           focusable={false}
           id="searchbar-icon-withHeadingAndDescription"
           role="img"
           title="search icon"
-          viewBox="0 0 24 24"
-        >
-          <g
-            stroke="currentColor"
-            strokeWidth="1.5"
-          >
-            <path
-              d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-              fill="none"
-              strokeLinecap="round"
-            />
-            <path
-              d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-              fill="currentColor"
-              strokeLinecap="round"
-            />
-            <circle
-              cx="12"
-              cy="12"
-              fill="none"
-              r="11.25"
-              strokeMiterlimit="10"
-            />
-          </g>
-        </svg>
+        />
         <span>
           Search
         </span>
@@ -1140,36 +864,13 @@ exports[`SearchBar renders the UI snapshot correctly 12`] = `
       >
         <svg
           aria-hidden={true}
-          className="chakra-icon css-1grhd2q"
+          className="chakra-icon css-1vgifmd"
+          data-file-name="SvgSearch"
           focusable={false}
           id="searchbar-icon-chakra"
           role="img"
           title="search icon"
-          viewBox="0 0 24 24"
-        >
-          <g
-            stroke="currentColor"
-            strokeWidth="1.5"
-          >
-            <path
-              d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-              fill="none"
-              strokeLinecap="round"
-            />
-            <path
-              d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-              fill="currentColor"
-              strokeLinecap="round"
-            />
-            <circle
-              cx="12"
-              cy="12"
-              fill="none"
-              r="11.25"
-              strokeMiterlimit="10"
-            />
-          </g>
-        </svg>
+        />
         <span>
           Search
         </span>
@@ -1245,36 +946,13 @@ exports[`SearchBar renders the UI snapshot correctly 13`] = `
       >
         <svg
           aria-hidden={true}
-          className="chakra-icon css-1grhd2q"
+          className="chakra-icon css-1vgifmd"
+          data-file-name="SvgSearch"
           focusable={false}
           id="searchbar-icon-props"
           role="img"
           title="search icon"
-          viewBox="0 0 24 24"
-        >
-          <g
-            stroke="currentColor"
-            strokeWidth="1.5"
-          >
-            <path
-              d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-              fill="none"
-              strokeLinecap="round"
-            />
-            <path
-              d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-              fill="currentColor"
-              strokeLinecap="round"
-            />
-            <circle
-              cx="12"
-              cy="12"
-              fill="none"
-              r="11.25"
-              strokeMiterlimit="10"
-            />
-          </g>
-        </svg>
+        />
         <span>
           Search
         </span>

@@ -291,7 +291,7 @@ export const TextInput: ChakraComponent<
         setFinalValue("");
         isClearableCallback && isClearableCallback();
         // Set focus back to the input element.
-        (finalRef as any).current.focus();
+        closedRef.current?.focus();
       };
       let finalIsInvalid = isInvalid;
       let fieldOutput;

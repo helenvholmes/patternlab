@@ -87,7 +87,7 @@ const withChildrenItems = [
         name: "User Experience",
       },
       {
-        id: "tecture",
+        id: "architecture_design",
         name: "Architecture",
       },
       {
@@ -139,7 +139,7 @@ const withDisabledItems = [
         isDisabled: true,
       },
       {
-        id: "tecture",
+        id: "architecture_design",
         name: "Architecture",
         isDisabled: false,
       },
@@ -185,7 +185,7 @@ const withDisabledAllChildrenItems = [
         isDisabled: true,
       },
       {
-        id: "tecture",
+        id: "architecture_design",
         name: "Architecture",
         isDisabled: true,
       },
@@ -199,6 +199,61 @@ const withDisabledAllChildrenItems = [
   {
     id: "business",
     name: "Business",
+  },
+];
+
+const withItemCountItems = [
+  {
+    id: "art",
+    name: "Art",
+    itemCount: 7,
+  },
+  {
+    id: "architecture",
+    name: "Architecture",
+    itemCount: 20,
+  },
+  {
+    id: "design",
+    name: "Design",
+    children: [
+      {
+        id: "fashion",
+        name: "Fashion",
+        itemCount: 2,
+      },
+      {
+        id: "ux",
+        name: "User Experience",
+        itemCount: 5,
+      },
+      {
+        id: "architecture_design",
+        name: "Architecture",
+        itemCount: 3,
+      },
+      {
+        id: "home",
+        name: "Home",
+        itemCount: 1,
+      },
+    ],
+    itemCount: 11,
+  },
+  {
+    id: "business",
+    name: "Business",
+    itemCount: 2,
+  },
+  {
+    id: "education",
+    name: "Education",
+    itemCount: 15,
+  },
+  {
+    id: "games",
+    name: "Games",
+    itemCount: 6,
   },
 ];
 
@@ -396,6 +451,18 @@ export const searchInputField: Story = {
   ),
 };
 
+export const itemCountListItems: Story = {
+  render: () => (
+    <MultiSelectStory
+      id="multi-select-id-8"
+      isBlockElement
+      isDefaultOpen={false}
+      isSearchable={false}
+      items={withItemCountItems}
+    />
+  ),
+};
+
 export const isBlockElement: Story = {
   name: "isBlockElement",
   render: () => (
@@ -406,13 +473,13 @@ export const isBlockElement: Story = {
           <Stack align="left" spacing="s">
             <Stack align="left">
               <MultiSelectStory
-                id="multi-select-id-8"
+                id="multi-select-id-9"
                 isBlockElement
                 items={withItems}
                 listOverflow="expand"
               />
               <MultiSelectStory
-                id="multi-select-id-9"
+                id="multi-select-id-10"
                 isBlockElement
                 items={withItems}
                 listOverflow="expand"
@@ -434,9 +501,9 @@ export const isBlockElement: Story = {
           />
           <Stack align="left" spacing="s">
             <Stack direction="row" width="100%" alignContent="stretch">
-              <MultiSelectStory id="multi-select-id-10" items={withItems} />
               <MultiSelectStory id="multi-select-id-11" items={withItems} />
               <MultiSelectStory id="multi-select-id-12" items={withItems} />
+              <MultiSelectStory id="multi-select-id-13" items={withItems} />
             </Stack>
             <Text>
               Maecenas sed diam eget risus varius blandit sit amet non magna.
@@ -474,7 +541,7 @@ export const width: Story = {
             text="full (default configuration)"
           />
           <MultiSelectStory
-            id="multi-select-id-13"
+            id="multi-select-id-14"
             isBlockElement
             items={withItems}
           />
@@ -482,7 +549,7 @@ export const width: Story = {
         <div>
           <Heading level="h3" size="heading6" text="fitContent" />
           <MultiSelectStory
-            id="multi-select-id-14"
+            id="multi-select-id-15"
             isBlockElement
             items={withItems}
             width="fitContent"
@@ -496,7 +563,7 @@ export const width: Story = {
 export const defaultOpenState: Story = {
   render: () => (
     <MultiSelectStory
-      id="multi-select-id-15"
+      id="multi-select-id-16"
       isBlockElement
       isDefaultOpen={true}
       items={withChildrenItems}
@@ -507,7 +574,7 @@ export const defaultOpenState: Story = {
 export const closeOnBlurState: Story = {
   render: () => (
     <MultiSelectStory
-      id="multi-select-id-15"
+      id="multi-select-id-17"
       closeOnBlur={true}
       isBlockElement
       items={withChildrenItems}

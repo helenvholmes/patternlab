@@ -163,8 +163,10 @@ const iconSizesValues = [
   { size: "medium", display: "medium (18px)" },
   { size: "large", display: "large (24px)" },
   { size: "xlarge", display: "xlarge (32px)" },
-  { size: "xxlarge", display: "xxlarge (48px)" },
-  { size: "xxxlarge", display: "xxxlarge (64px)" },
+  { size: "xxlarge", display: "2xlarge or xxlarge (48px)" },
+  { size: "xxxlarge", display: "3xlarge or xxxlarge (64px)" },
+  { size: "4xlarge", display: "4xlarge or xxxxlarge (80px)" },
+  { size: "5xlarge", display: "5xlarge or xxxxxlarge (96px)" },
 ];
 for (const icon in iconNamesValues) {
   icons.push(

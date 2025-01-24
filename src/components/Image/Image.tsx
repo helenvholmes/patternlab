@@ -191,7 +191,7 @@ export const Image: ChakraComponent<
         "NYPL Reservoir Image: The initial image failed to load in the " +
           "browser. The fallback image source will now be used."
       );
-      (event.target as any).src = fallbackSrc || "";
+      (event.target as any).src = fallbackSrc;
       onError && onError(event);
     };
     let imageComponent: JSX.Element | null = null;
@@ -229,7 +229,7 @@ export const Image: ChakraComponent<
         alt={alt}
         id={id ? id : null}
         loading={isLazy ? "lazy" : undefined}
-        onError={onImageError}
+        onError={fallbackSrc && onImageError}
         {...srcProp}
         __css={{ ...styles.img, ...additionalImageStyles }}
         {...rest}

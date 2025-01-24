@@ -1,4 +1,7 @@
-import { ProgressIndicatorSizes } from "../../components/ProgressIndicator/ProgressIndicator";
+import {
+  ProgressIndicatorLabelPlacements,
+  ProgressIndicatorSizes,
+} from "../../components/ProgressIndicator/ProgressIndicator";
 import { createMultiStyleConfigHelpers } from "@chakra-ui/styled-system";
 import { StyleFunctionProps } from "@chakra-ui/system";
 
@@ -7,6 +10,7 @@ interface ProgressIndicatorBaseStyle extends StyleFunctionProps {
   // cause a breaking change for those apps that still use it.
   darkMode: boolean;
   size: ProgressIndicatorSizes;
+  labelPlacement: ProgressIndicatorLabelPlacements;
 }
 
 const { defineMultiStyleConfig, definePartsStyle } =
@@ -18,9 +22,33 @@ const { defineMultiStyleConfig, definePartsStyle } =
     "linearPercentage",
   ]);
 
+const getCircularContainerFlexDir = (labelPlacement) => {
+  let flexDir;
+  switch (labelPlacement) {
+    case "bottom":
+    default: {
+      flexDir = "column";
+      break;
+    }
+    case "left": {
+      flexDir = "row-reverse";
+      break;
+    }
+    case "right": {
+      flexDir = "row";
+      break;
+    }
+    case "top": {
+      flexDir = "column-reverse";
+      break;
+    }
+  }
+  return flexDir;
+};
+
 const ProgressIndicator = defineMultiStyleConfig({
   baseStyle: definePartsStyle(
-    ({ darkMode, size }: ProgressIndicatorBaseStyle) => {
+    ({ darkMode, size, labelPlacement }: ProgressIndicatorBaseStyle) => {
       return {
         color: darkMode
           ? "dark.ui.typography.heading"
@@ -53,8 +81,18 @@ const ProgressIndicator = defineMultiStyleConfig({
         circularContainer: {
           alignItems: "center",
           display: "flex",
-          flexDirection: "column",
+          flexDirection: getCircularContainerFlexDir(labelPlacement),
           width: "fit-content",
+        },
+        circularLabel: {
+          marginBottom: labelPlacement === "top" ? "xxs" : 0,
+          marginLeft: labelPlacement === "right" ? "xxs" : 0,
+          marginRight: labelPlacement === "left" ? "xxs" : 0,
+          marginTop: labelPlacement === "bottom" ? "xxs" : 0,
+          fontSize:
+            size === "default"
+              ? "desktop.label.label1"
+              : "desktop.label.label2",
         },
         linear: {
           // Hard to target this specific element without using

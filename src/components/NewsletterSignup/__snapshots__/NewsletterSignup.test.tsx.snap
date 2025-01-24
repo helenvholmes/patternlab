@@ -26,44 +26,21 @@ exports[`NewsletterSignup Snapshots Renders the bad email UI snapshot correctly 
       </span>
       <svg
         aria-hidden={true}
-        className="chakra-icon css-1grhd2q"
+        className="chakra-icon css-1vgifmd"
+        data-file-name="SvgActionLaunch"
         focusable={false}
         id="link-privacy-policy-external-icon"
         role="img"
         title="External link"
-        viewBox="0 0 24 24"
-      >
-        <g
-          stroke="currentColor"
-          strokeWidth="1.5"
-        >
-          <path
-            d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-            fill="none"
-            strokeLinecap="round"
-          />
-          <path
-            d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-            fill="currentColor"
-            strokeLinecap="round"
-          />
-          <circle
-            cx="12"
-            cy="12"
-            fill="none"
-            r="11.25"
-            strokeMiterlimit="10"
-          />
-        </g>
-      </svg>
+      />
     </a>
   </div>
   <div
     className="chakra-stack newsletter-signup-form css-tl3ftk"
   >
     <form
-      aria-label="form"
       className="css-1xdhyk6"
+      data-testid="ds-form"
       id="newsletter-form"
       onSubmit={[MockFunction]}
     >
@@ -173,36 +150,13 @@ exports[`NewsletterSignup Snapshots Renders the custom error state snapshot corr
       </span>
       <svg
         aria-hidden={true}
-        className="chakra-icon css-1grhd2q"
+        className="chakra-icon css-1vgifmd"
+        data-file-name="SvgActionLaunch"
         focusable={false}
         id="link-privacy-policy-external-icon"
         role="img"
         title="External link"
-        viewBox="0 0 24 24"
-      >
-        <g
-          stroke="currentColor"
-          strokeWidth="1.5"
-        >
-          <path
-            d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-            fill="none"
-            strokeLinecap="round"
-          />
-          <path
-            d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-            fill="currentColor"
-            strokeLinecap="round"
-          />
-          <circle
-            cx="12"
-            cy="12"
-            fill="none"
-            r="11.25"
-            strokeMiterlimit="10"
-          />
-        </g>
-      </svg>
+      />
     </a>
   </div>
   <div
@@ -217,35 +171,12 @@ exports[`NewsletterSignup Snapshots Renders the custom error state snapshot corr
       >
         <svg
           aria-hidden={true}
-          className="chakra-icon css-cr4d1u"
+          className="chakra-icon css-3u73el"
+          data-file-name="SvgErrorFilled"
           focusable={false}
           role="img"
           title="errorFilled icon"
-          viewBox="0 0 24 24"
-        >
-          <g
-            stroke="currentColor"
-            strokeWidth="1.5"
-          >
-            <path
-              d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-              fill="none"
-              strokeLinecap="round"
-            />
-            <path
-              d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-              fill="currentColor"
-              strokeLinecap="round"
-            />
-            <circle
-              cx="12"
-              cy="12"
-              fill="none"
-              r="11.25"
-              strokeMiterlimit="10"
-            />
-          </g>
-        </svg>
+        />
         <p
           className="chakra-text css-ia9jis"
         >
@@ -291,36 +222,13 @@ exports[`NewsletterSignup Snapshots Renders the default confirmation state snaps
       </span>
       <svg
         aria-hidden={true}
-        className="chakra-icon css-1grhd2q"
+        className="chakra-icon css-1vgifmd"
+        data-file-name="SvgActionLaunch"
         focusable={false}
         id="link-privacy-policy-external-icon"
         role="img"
         title="External link"
-        viewBox="0 0 24 24"
-      >
-        <g
-          stroke="currentColor"
-          strokeWidth="1.5"
-        >
-          <path
-            d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-            fill="none"
-            strokeLinecap="round"
-          />
-          <path
-            d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-            fill="currentColor"
-            strokeLinecap="round"
-          />
-          <circle
-            cx="12"
-            cy="12"
-            fill="none"
-            r="11.25"
-            strokeMiterlimit="10"
-          />
-        </g>
-      </svg>
+      />
     </a>
   </div>
   <div
@@ -335,35 +243,12 @@ exports[`NewsletterSignup Snapshots Renders the default confirmation state snaps
       >
         <svg
           aria-hidden={true}
-          className="chakra-icon css-1grhd2q"
+          className="chakra-icon css-1vgifmd"
+          data-file-name="SvgActionCheckCircleFilled"
           focusable={false}
           role="img"
           title="actionCheckCircleFilled icon"
-          viewBox="0 0 24 24"
-        >
-          <g
-            stroke="currentColor"
-            strokeWidth="1.5"
-          >
-            <path
-              d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-              fill="none"
-              strokeLinecap="round"
-            />
-            <path
-              d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-              fill="currentColor"
-              strokeLinecap="round"
-            />
-            <circle
-              cx="12"
-              cy="12"
-              fill="none"
-              r="11.25"
-              strokeMiterlimit="10"
-            />
-          </g>
-        </svg>
+        />
         <p
           className="chakra-text css-1e5ycxp"
         >
@@ -406,36 +291,13 @@ exports[`NewsletterSignup Snapshots Renders the default error state snapshot cor
       </span>
       <svg
         aria-hidden={true}
-        className="chakra-icon css-1grhd2q"
+        className="chakra-icon css-1vgifmd"
+        data-file-name="SvgActionLaunch"
         focusable={false}
         id="link-privacy-policy-external-icon"
         role="img"
         title="External link"
-        viewBox="0 0 24 24"
-      >
-        <g
-          stroke="currentColor"
-          strokeWidth="1.5"
-        >
-          <path
-            d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-            fill="none"
-            strokeLinecap="round"
-          />
-          <path
-            d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-            fill="currentColor"
-            strokeLinecap="round"
-          />
-          <circle
-            cx="12"
-            cy="12"
-            fill="none"
-            r="11.25"
-            strokeMiterlimit="10"
-          />
-        </g>
-      </svg>
+      />
     </a>
   </div>
   <div
@@ -450,35 +312,12 @@ exports[`NewsletterSignup Snapshots Renders the default error state snapshot cor
       >
         <svg
           aria-hidden={true}
-          className="chakra-icon css-cr4d1u"
+          className="chakra-icon css-3u73el"
+          data-file-name="SvgErrorFilled"
           focusable={false}
           role="img"
           title="errorFilled icon"
-          viewBox="0 0 24 24"
-        >
-          <g
-            stroke="currentColor"
-            strokeWidth="1.5"
-          >
-            <path
-              d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-              fill="none"
-              strokeLinecap="round"
-            />
-            <path
-              d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-              fill="currentColor"
-              strokeLinecap="round"
-            />
-            <circle
-              cx="12"
-              cy="12"
-              fill="none"
-              r="11.25"
-              strokeMiterlimit="10"
-            />
-          </g>
-        </svg>
+        />
         <p
           className="chakra-text css-ia9jis"
         >
@@ -516,44 +355,21 @@ exports[`NewsletterSignup Snapshots Renders the default form UI snapshot correct
       </span>
       <svg
         aria-hidden={true}
-        className="chakra-icon css-1grhd2q"
+        className="chakra-icon css-1vgifmd"
+        data-file-name="SvgActionLaunch"
         focusable={false}
         id="link-privacy-policy-external-icon"
         role="img"
         title="External link"
-        viewBox="0 0 24 24"
-      >
-        <g
-          stroke="currentColor"
-          strokeWidth="1.5"
-        >
-          <path
-            d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-            fill="none"
-            strokeLinecap="round"
-          />
-          <path
-            d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-            fill="currentColor"
-            strokeLinecap="round"
-          />
-          <circle
-            cx="12"
-            cy="12"
-            fill="none"
-            r="11.25"
-            strokeMiterlimit="10"
-          />
-        </g>
-      </svg>
+      />
     </a>
   </div>
   <div
     className="chakra-stack newsletter-signup-form css-tl3ftk"
   >
     <form
-      aria-label="form"
       className="css-1xdhyk6"
+      data-testid="ds-form"
       id="newsletter-form"
       onSubmit={[MockFunction]}
     >
@@ -666,44 +482,21 @@ exports[`NewsletterSignup Snapshots Renders the form UI with description snapsho
       </span>
       <svg
         aria-hidden={true}
-        className="chakra-icon css-1grhd2q"
+        className="chakra-icon css-1vgifmd"
+        data-file-name="SvgActionLaunch"
         focusable={false}
         id="link-privacy-policy-external-icon"
         role="img"
         title="External link"
-        viewBox="0 0 24 24"
-      >
-        <g
-          stroke="currentColor"
-          strokeWidth="1.5"
-        >
-          <path
-            d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-            fill="none"
-            strokeLinecap="round"
-          />
-          <path
-            d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-            fill="currentColor"
-            strokeLinecap="round"
-          />
-          <circle
-            cx="12"
-            cy="12"
-            fill="none"
-            r="11.25"
-            strokeMiterlimit="10"
-          />
-        </g>
-      </svg>
+      />
     </a>
   </div>
   <div
     className="chakra-stack newsletter-signup-form css-tl3ftk"
   >
     <form
-      aria-label="form"
       className="css-1xdhyk6"
+      data-testid="ds-form"
       id="newsletter-form"
       onSubmit={[MockFunction]}
     >
@@ -811,44 +604,21 @@ exports[`NewsletterSignup Snapshots Renders the form UI with formHelperText snap
       </span>
       <svg
         aria-hidden={true}
-        className="chakra-icon css-1grhd2q"
+        className="chakra-icon css-1vgifmd"
+        data-file-name="SvgActionLaunch"
         focusable={false}
         id="link-privacy-policy-external-icon"
         role="img"
         title="External link"
-        viewBox="0 0 24 24"
-      >
-        <g
-          stroke="currentColor"
-          strokeWidth="1.5"
-        >
-          <path
-            d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-            fill="none"
-            strokeLinecap="round"
-          />
-          <path
-            d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-            fill="currentColor"
-            strokeLinecap="round"
-          />
-          <circle
-            cx="12"
-            cy="12"
-            fill="none"
-            r="11.25"
-            strokeMiterlimit="10"
-          />
-        </g>
-      </svg>
+      />
     </a>
   </div>
   <div
     className="chakra-stack newsletter-signup-form css-tl3ftk"
   >
     <form
-      aria-label="form"
       className="css-1xdhyk6"
+      data-testid="ds-form"
       id="newsletter-form"
       onSubmit={[MockFunction]}
     >
@@ -957,44 +727,21 @@ exports[`NewsletterSignup Snapshots Renders the submitting state snapshot correc
       </span>
       <svg
         aria-hidden={true}
-        className="chakra-icon css-1grhd2q"
+        className="chakra-icon css-1vgifmd"
+        data-file-name="SvgActionLaunch"
         focusable={false}
         id="link-privacy-policy-external-icon"
         role="img"
         title="External link"
-        viewBox="0 0 24 24"
-      >
-        <g
-          stroke="currentColor"
-          strokeWidth="1.5"
-        >
-          <path
-            d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-            fill="none"
-            strokeLinecap="round"
-          />
-          <path
-            d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-            fill="currentColor"
-            strokeLinecap="round"
-          />
-          <circle
-            cx="12"
-            cy="12"
-            fill="none"
-            r="11.25"
-            strokeMiterlimit="10"
-          />
-        </g>
-      </svg>
+      />
     </a>
   </div>
   <div
     className="chakra-stack newsletter-signup-form css-tl3ftk"
   >
     <form
-      aria-label="form"
       className="css-1xdhyk6"
+      data-testid="ds-form"
       id="newsletter-form"
       onSubmit={[MockFunction]}
     >

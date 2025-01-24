@@ -321,6 +321,7 @@ export const Campaign: Story = {
     </Stack>
   ),
 };
+
 export const CampaignDarkBackgroundImage: Story = {
   render: () => (
     <Hero
@@ -333,10 +334,7 @@ export const CampaignDarkBackgroundImage: Story = {
           text="Hero Campaign"
         />
       }
-      imageProps={{
-        alt: "Image example",
-        src: "https://iiif.nypl.org/iiif/2/5164274/full/!900,900/0/default.jpg",
-      }}
+      imageProps={imageProps}
       isDarkBackgroundImage
       subHeaderText={otherSubHeaderText}
     />

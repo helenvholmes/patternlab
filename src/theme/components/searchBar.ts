@@ -60,7 +60,6 @@ const SearchBar = defineMultiStyleConfig({
       paddingBottom: { base: "xs", md: "unset" },
       flexShrink: "0",
       textOverflow: "ellipsis",
-      overflow: "hidden",
       _hover: {
         zIndex: "10",
         "+ .chakra-select__icon-wrapper": {

@@ -10,7 +10,101 @@ Currently, this repo is in Prerelease. When it is released, this project will ad
 
 ### Updates
 
+- Updates the `Pagination` component to handle 4 digit page counts.
+- Updates the `Heading` component to add `line-height` styles for mobile.
+- Updates the `Breadcrumbs` component to make link text screen readable on mobile breakpoints.
+- Updates the `MultiSelect` component to adjust the text and size styles for the search input field.
+
+## 3.5.2 (January 16, 2025)
+
+### Adds
+
+- Adds the `Filtering` subsection to the `Style Guide`.
+
+### Updates
+
+- Updates the `Form` component to remove the `aria-label`. The previous value of `"form"` was redundant and not required.
+- Updates the `RadioGroup` component to replace the `fieldset` and `legend` wrappers with a div and span for the title. The main div wrapper around the `Radio` components already has a `role="radiogroup"` values which makes the `fieldset` redundant.
+- Updates the `Pagination` component to apply new visual styles.
+
+### Fixes
+
+- Fixes the infinite loop in the `Image` component caused when there is no `fallbackSrc` prop value.
+
+## 3.5.1 (December 19, 2024)
+
+### Adds
+
+- Adds `jest-transformer-svg` to mock SVGs more accurately in our tests
+
+### Fixes
+
+- Fixes `TextInput`'s conflicting internal and external ref values for the clearable button focus management.
+
+## 3.5.0 (December 5, 2024)
+
+### Adds
+
+- Adds the `"SubNav"`component.
+- Adds the `useScrollFadeStyles` hook.
+
+### Updates
+
+- Updates the `MultiSelect` component to add `itemCount` as a data property to the `items` prop to render the item count for an option.
+
+### Fixes
+
+- Fixes issue where focus indicator was being cut off in places in the `Template` component.
+
+## 3.4.4 (November 20, 2024)
+
+### Adds
+
+- Fixes a styling issue in the `Header`'s list to make it stricter.
+
+## 3.4.3 (November 18, 2024)
+
+### Adds
+
+- Adds the NYPL Header as a DS component as a temporary solution for a specific application. It's only meant to be used internally and teams are still encouraged to use the `nypl-header-app`.
+
+## 3.4.2 (November 7, 2024)
+
+### Adds
+
+- Adds the `"contentFilterRelease"` option to the `Icon` component.
+- Adds the `"socialX"` option to the `Icon` component.
+- Adds the `heading7` and `heading8` to the font size design tokens.
+- Adds the `heading7` and `heading8` options for the `size` prop in the `Heading` component.
+
+### Updates
+
+- Updates Storybook and related dependencies to version 8.3.6.
+- Updates the `Link` component to prevent line breaks.
+- Updates the `SocialMediaLinks` component to support the `"socialX"` icon.
+
+## Fixes
+
+- Fixes spacing issues and dark mode color styles in the `Table` component.
+
+## 3.4.1 (October 24, 2024)
+
+### Adds
+
+- Adds the `"decorativeBookBroken"` option (for error pages) to the `Icon` component.
+- Adds the `"xxxxlarge"` and `"xxxxxlarge"` size options for the `Icon` component.
+- Adds the `"2xlarge"`, `"3xlarge"`, `"4xlarge"`, and `"5xlarge"` sustainable size options for the `Icon` component.
+
+### Updates
+
 - Updates `Select` in the `SearchBar` component to allow long option titles before truncation.
+- Updates the `ProgressIndicator` component to add the `labelPlacement` prop to allow for custom placement of a label for circular indicators.
+- Updates image props in the `Hero` component to allow custom image components.
+- Updates Vite from `5.2.8` to `5.2.14` to fix a security vulnerability.
+
+### Removes
+
+- Removes unused dependencies, two of which were causing npm vulnerabilities.
 
 ## 3.4.0 (October 2, 2024)
 

@@ -12,7 +12,7 @@ import { changelogData } from "./textInputChangelogData";
 | Component Version | DS Version |
 | ----------------- | ---------- |
 | Added             | `0.22.0`   |
-| Latest            | `3.3.2`    |
+| Latest            | `3.5.1`    |
 
 ## Table of Contents
 
@@ -164,6 +164,55 @@ export const App = () => {
 />
 
 <Canvas of={TextInputStories.ControlledExample} />
+
+### Focus Ref Management
+
+Focus management is important for accessibility and can get complicated in pages
+that have multiple focusable elements and various user interactions. The
+following is an example found in the Research Catalog's
+[My Account](https://nypl.org/research/research-catalog/account) page (you have
+to sign in) where the page's accessibility requirement conflicted with the
+`TextInput` component's internal focus management. This was apparent through the
+use of the clearable "X" button and has now been resolved.
+
+The `TextInput` component keeps track of it's own ref for clearing the input
+field. If your app needs to manage focus separately, you should still pass a ref
+to the `TextInput` component as you normally would with a React component.
+
+In the following example, when the user clicks on the "Edit" button, focus needs
+to go to the input field. It is the consuming application's responsibility to
+send focus to the input field when the "Edit" button is clicked.
+
+<Source
+  code={`
+// Snippet shorten for brevity
+<Button
+  id="edit"
+  ref={editBtnRef}
+  onClick={() => {
+    setIsEdit(true);
+    setTimeout(() => inputRef.current?.focus(), 0);
+  }}
+>
+  Edit
+</Button>
+// In Edit mode
+<TextInput
+  ref={inputRef}
+  id="focus-management"
+  labelText="What is your favorite color?"
+  onFocus={() => setIsEdit(true)}
+  placeholder="i.e. blue, green, etc."
+  isClearable
+  isClearableCallback={() => setValue("")}
+  value={value}
+  onChange={(e) => setValue(e.target.value)}
+/>
+`}
+  language="jsx"
+/>
+
+<Canvas of={TextInputStories.FocusRefManagement} />
 
 ## Number Type
 

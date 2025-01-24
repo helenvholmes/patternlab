@@ -23,36 +23,13 @@ exports[`Link renders the UI snapshot correctly 2`] = `
   Forwards
   <svg
     aria-hidden={true}
-    className="chakra-icon css-1grhd2q"
+    className="chakra-icon css-1vgifmd"
+    data-file-name="SvgArrow"
     focusable={false}
     id="forwards-link-direction-icon"
     role="img"
     title="arrow icon"
-    viewBox="0 0 24 24"
-  >
-    <g
-      stroke="currentColor"
-      strokeWidth="1.5"
-    >
-      <path
-        d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-        fill="none"
-        strokeLinecap="round"
-      />
-      <path
-        d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-        fill="currentColor"
-        strokeLinecap="round"
-      />
-      <circle
-        cx="12"
-        cy="12"
-        fill="none"
-        r="11.25"
-        strokeMiterlimit="10"
-      />
-    </g>
-  </svg>
+  />
 </a>
 `;
 
@@ -66,36 +43,13 @@ exports[`Link renders the UI snapshot correctly 3`] = `
 >
   <svg
     aria-hidden={true}
-    className="chakra-icon css-1grhd2q"
+    className="chakra-icon css-1vgifmd"
+    data-file-name="SvgArrow"
     focusable={false}
     id="backwards-link-direction-icon"
     role="img"
     title="arrow icon"
-    viewBox="0 0 24 24"
-  >
-    <g
-      stroke="currentColor"
-      strokeWidth="1.5"
-    >
-      <path
-        d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-        fill="none"
-        strokeLinecap="round"
-      />
-      <path
-        d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-        fill="currentColor"
-        strokeLinecap="round"
-      />
-      <circle
-        cx="12"
-        cy="12"
-        fill="none"
-        r="11.25"
-        strokeMiterlimit="10"
-      />
-    </g>
-  </svg>
+  />
   Backwards
 </a>
 `;
@@ -116,36 +70,13 @@ exports[`Link renders the UI snapshot correctly 4`] = `
   </span>
   <svg
     aria-hidden={true}
-    className="chakra-icon css-1grhd2q"
+    className="chakra-icon css-1vgifmd"
+    data-file-name="SvgActionLaunch"
     focusable={false}
     id="external-link-external-icon"
     role="img"
     title="External link"
-    viewBox="0 0 24 24"
-  >
-    <g
-      stroke="currentColor"
-      strokeWidth="1.5"
-    >
-      <path
-        d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-        fill="none"
-        strokeLinecap="round"
-      />
-      <path
-        d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-        fill="currentColor"
-        strokeLinecap="round"
-      />
-      <circle
-        cx="12"
-        cy="12"
-        fill="none"
-        r="11.25"
-        strokeMiterlimit="10"
-      />
-    </g>
-  </svg>
+  />
 </a>
 `;
 
@@ -160,36 +91,13 @@ exports[`Link renders the UI snapshot correctly 5`] = `
   Standalone
   <svg
     aria-hidden={true}
-    className="chakra-icon css-1grhd2q"
+    className="chakra-icon css-1vgifmd"
+    data-file-name="SvgArrow"
     focusable={false}
     id="standalone-link-standalone-icon"
     role="img"
     title="Navigation arrow"
-    viewBox="0 0 24 24"
-  >
-    <g
-      stroke="currentColor"
-      strokeWidth="1.5"
-    >
-      <path
-        d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-        fill="none"
-        strokeLinecap="round"
-      />
-      <path
-        d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-        fill="currentColor"
-        strokeLinecap="round"
-      />
-      <circle
-        cx="12"
-        cy="12"
-        fill="none"
-        r="11.25"
-        strokeMiterlimit="10"
-      />
-    </g>
-  </svg>
+  />
 </a>
 `;
 
@@ -275,36 +183,13 @@ exports[`Link renders the UI snapshot correctly 12`] = `
 >
   <svg
     aria-hidden={true}
-    className="chakra-icon css-1grhd2q"
+    className="chakra-icon css-1vgifmd"
+    data-file-name="SvgDownload"
     focusable={false}
     id="link-icon"
     role="img"
     title="download icon"
-    viewBox="0 0 24 24"
-  >
-    <g
-      stroke="currentColor"
-      strokeWidth="1.5"
-    >
-      <path
-        d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-        fill="none"
-        strokeLinecap="round"
-      />
-      <path
-        d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-        fill="currentColor"
-        strokeLinecap="round"
-      />
-      <circle
-        cx="12"
-        cy="12"
-        fill="none"
-        r="11.25"
-        strokeMiterlimit="10"
-      />
-    </g>
-  </svg>
+  />
   Download
 </a>
 `;
@@ -333,36 +218,13 @@ exports[`Link renders the UI snapshot correctly 14`] = `
 >
   <svg
     aria-hidden={true}
-    className="chakra-icon css-1grhd2q"
+    className="chakra-icon css-1vgifmd"
+    data-file-name="SvgCheck"
     focusable={false}
     id="link-icon"
     role="img"
     title="check icon"
-    viewBox="0 0 24 24"
-  >
-    <g
-      stroke="currentColor"
-      strokeWidth="1.5"
-    >
-      <path
-        d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25"
-        fill="none"
-        strokeLinecap="round"
-      />
-      <path
-        d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0"
-        fill="currentColor"
-        strokeLinecap="round"
-      />
-      <circle
-        cx="12"
-        cy="12"
-        fill="none"
-        r="11.25"
-        strokeMiterlimit="10"
-      />
-    </g>
-  </svg>
+  />
   <a
     href="#existing-anchor-tag"
   >

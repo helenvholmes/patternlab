@@ -1,18 +1,25 @@
 import { defineStyleConfig } from "@chakra-ui/react";
 import { defineStyle, StyleFunctionProps } from "@chakra-ui/system";
 
-const svgBase = {
+const svgBase: {
+  display: string;
+  fill: string;
+  width: string;
+  height: string;
+} = {
   display: "inline-block",
   fill: "currentColor",
   width: "auto",
   height: "100%",
 };
-const align = {
+
+const align: Record<string, { marginEnd?: string; marginStart?: string }> = {
   none: {},
   left: { marginEnd: "xxs" },
   right: { marginStart: "xxs" },
 };
-const iconRotation = {
+
+const iconRotation: Record<string, { transform: string }> = {
   rotate180: {
     transform: "rotate(180deg)",
   },
@@ -26,34 +33,69 @@ const iconRotation = {
     transform: "rotate(90deg)",
   },
 };
-const size = {
+
+const size: Record<string, { height?: string; width?: string }> = {
+  // 96 px
+  xxxxxlarge: {
+    height: "var(--nypl-space-xxxl)",
+    width: "var(--nypl-space-xxxl)",
+  },
+  "5xlarge": {
+    height: "var(--nypl-space-xxxl)",
+    width: "var(--nypl-space-xxxl)",
+  },
+  // 80px
+  xxxxlarge: {
+    height: "5rem",
+    width: "5rem",
+  },
+  "4xlarge": {
+    height: "5rem",
+    width: "5rem",
+  },
+  // 64px
   xxxlarge: {
     height: "var(--nypl-space-xxl)",
     width: "var(--nypl-space-xxl)",
   },
+  "3xlarge": {
+    height: "var(--nypl-space-xxl)",
+    width: "var(--nypl-space-xxl)",
+  },
+  // 48px
   xxlarge: {
     height: "var(--nypl-space-xl)",
     width: "var(--nypl-space-xl)",
   },
+  "2xlarge": {
+    height: "var(--nypl-space-xl)",
+    width: "var(--nypl-space-xl)",
+  },
+  // 32px
   xlarge: {
     height: "var(--nypl-space-l)",
     width: "var(--nypl-space-l)",
   },
+  // 24px
   large: {
     height: "var(--nypl-space-m)",
     width: "var(--nypl-space-m)",
   },
+  // 100%
   default: {
     width: "100%",
   },
+  // 18px
   medium: {
     height: "1.125rem",
     width: "1.125rem",
   },
+  // 14px
   small: {
     height: "0.875rem",
     width: "0.875rem",
   },
+  // 10px
   xsmall: {
     height: "0.65rem",
     width: "0.65rem",
@@ -76,10 +118,9 @@ const Icon = defineStyleConfig({
       ...iconRotation[props.iconRotation],
       ...size[props.size],
     };
+
     return {
       ...allStyles,
-      // We still want to style any custom SVG element that was
-      // passed to the `Icon` component.
       svg: {
         ...allStyles,
       },

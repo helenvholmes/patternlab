@@ -109,6 +109,7 @@ export {
 export type { FilterBarPopupProps } from "./components/FilterBarPopup/FilterBarPopup";
 export { default as Form, FormField, FormRow } from "./components/Form/Form";
 export type { FormProps } from "./components/Form/Form";
+export { default as Header } from "./components/Header/Header";
 export { default as Heading } from "./components/Heading/Heading";
 export type {
   HeadingLevels,
@@ -118,11 +119,7 @@ export type {
 export { default as HelperErrorText } from "./components/HelperErrorText/HelperErrorText";
 export type { HelperErrorTextProps } from "./components/HelperErrorText/HelperErrorText";
 export { default as Hero } from "./components/Hero/Hero";
-export type {
-  HeroImageProps,
-  HeroProps,
-  HeroTypes,
-} from "./components/Hero/Hero";
+export type { HeroProps, HeroTypes } from "./components/Hero/Hero";
 export { default as HorizontalRule } from "./components/HorizontalRule/HorizontalRule";
 export type { HorizontalRuleProps } from "./components/HorizontalRule/HorizontalRule";
 export { default as Icon } from "./components/Icons/Icon";
@@ -170,6 +167,7 @@ export type {
   ListItemsData,
   MenuProps,
 } from "./components/Menu/Menu";
+
 export { ModalTrigger, useModal } from "./components/Modal/Modal";
 export type {
   BaseModalProps,
@@ -248,6 +246,11 @@ export type {
   StyledListProps,
   StyledListTextSizes,
 } from "./components/StyledList/StyledList";
+export {
+  default as SubNav,
+  SubNavButton,
+  SubNavLink,
+} from "./components/SubNav/SubNav";
 export { default as Table } from "./components/Table/Table";
 export type { TableBodyTextSizes, TableProps } from "./components/Table/Table";
 export {
@@ -307,6 +310,7 @@ export { default as useMultiSelect } from "./hooks/useMultiSelect";
 export { default as useNYPLBreakpoints } from "./hooks/useNYPLBreakpoints";
 export { default as useNYPLTheme } from "./hooks/useNYPLTheme";
 export { default as useWindowSize } from "./hooks/useWindowSize";
+export { default as useScrollFadeStyles } from "./hooks/useScrollFadeStyles";
 export { default as VideoPlayer } from "./components/VideoPlayer/VideoPlayer";
 export type {
   VideoPlayerAspectRatios,

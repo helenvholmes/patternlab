@@ -12,7 +12,7 @@ import Link from "../Link/Link";
 | Component Version | DS Version |
 | ----------------- | ---------- |
 | Added             | `0.25.4`   |
-| Latest            | `3.0.0`    |
+| Latest            | `3.4.1`    |
 
 ## Table of Contents
 
@@ -104,6 +104,12 @@ the progress element to provide a description of the progress for screen
 readers.
 
 <Canvas of={ProgressIndicatorStories.Labels} />
+
+For circular indicator variants, the `labelPlacement` prop can be used to set the
+placement of a label relative to the indicator. By default, the label will be
+displayed below the indicator.
+
+<Canvas of={ProgressIndicatorStories.LabelPlacements} />
 
 ## Indeterminate State
 

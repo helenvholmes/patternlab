@@ -13,11 +13,19 @@ import Label from "../Label/Label";
 
 export const progressIndicatorSizesArray = ["default", "small"] as const;
 export const progressIndicatorTypesArray = ["circular", "linear"] as const;
+export const progressIndicatorLabelPlacementsArray = [
+  "bottom",
+  "right",
+  "top",
+  "left",
+] as const;
 
 export type ProgressIndicatorSizes = typeof progressIndicatorSizesArray[number];
 export type ProgressIndicatorTypes = typeof progressIndicatorTypesArray[number];
+export type ProgressIndicatorLabelPlacements =
+  typeof progressIndicatorLabelPlacementsArray[number];
 
-export interface ProgressIndicatorProps {
+interface BaseProgressIndicatorProps {
   /** The darkMode prop is deprecated and should no longer be used. */
   darkMode?: boolean;
   /** ID that other components can cross reference for accessibility purposes. */
@@ -38,6 +46,21 @@ export interface ProgressIndicatorProps {
   value?: number;
 }
 
+interface LinearProgressIndicatorProps extends BaseProgressIndicatorProps {
+  indicatorType?: "linear";
+  labelPlacement?: never;
+}
+
+interface CircularProgressIndicatorProps extends BaseProgressIndicatorProps {
+  indicatorType?: "circular";
+  /** The placement of the label relative to a circular indicator. */
+  labelPlacement?: ProgressIndicatorLabelPlacements;
+}
+
+export type ProgressIndicatorProps =
+  | LinearProgressIndicatorProps
+  | CircularProgressIndicatorProps;
+
 /**
  * A component that displays a progress status for any task that takes a long
  * time to complete or consists of multiple steps. Examples include downloading,
@@ -55,15 +78,18 @@ export const ProgressIndicator: ChakraComponent<
       id,
       indicatorType = "linear",
       isIndeterminate = false,
+      labelPlacement,
       labelText,
       showLabel = true,
       size = "default",
       value = 0,
       ...rest
     } = props;
+    const finalLabelPlacement = labelPlacement ?? "bottom";
     const styles = useMultiStyleConfig("ProgressIndicator", {
       darkMode,
       size,
+      labelPlacement: finalLabelPlacement,
     });
     let finalValue = value;
     if (!id) {
@@ -93,11 +119,6 @@ export const ProgressIndicator: ChakraComponent<
       // Only display the percentage text for the default size, not in the
       // indeterminate state, and when `showLabel` is true.
       if (indicatorType === "circular") {
-        // For the small size, since the label won't be visible, we need to add
-        // it to the parent component's `aria-label` attribute.
-        if (size === "small") {
-          progressProps["aria-label"] = labelText;
-        }
         return (
           <Box __css={styles.circularContainer}>
             <ChakraCircularProgress {...progressProps} sx={styles.circular}>
@@ -107,8 +128,8 @@ export const ProgressIndicator: ChakraComponent<
                 </ChakraCircularProgressLabel>
               )}
             </ChakraCircularProgress>
-            {showLabel && size !== "small" && (
-              <Label id={`${id}-label`} htmlFor={id}>
+            {showLabel && (
+              <Label id={`${id}-label`} htmlFor={id} sx={styles.circularLabel}>
                 {labelText}
               </Label>
             )}

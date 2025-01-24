@@ -23,6 +23,7 @@ type IconNames =
   | "socialTikTok"
   | "socialTumblr"
   | "socialTwitter"
+  | "socialX"
   | "socialYoutube";
 
 // Verify that SocialMediaIconNames is a subset of IconNames

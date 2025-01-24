@@ -1,0 +1,607 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HeaderSearchForm renders the UI snapshot correctly 1`] = `
+<div
+  className="css-0"
+>
+  <form
+    className="css-16sv398"
+    data-testid="ds-form"
+    id="search-header"
+    onSubmit={[Function]}
+  >
+    <div
+      className="css-uo6vru"
+      id="search-header-parent"
+    >
+      <div
+        className="css-10aw3py"
+        id="search-header-child0"
+      >
+        <div
+          className="css-18yyq8w"
+          id="search-header-child0-grandchild0"
+        >
+          <fieldset
+            className="css-1xdhyk6"
+            id="fieldset-search"
+          >
+            <legend>
+              Enter a keyword, then choose to search either the catalog or the website
+            </legend>
+            <div
+              className="css-1annanu"
+              id="searchInput-wrapper"
+            >
+              <label
+                className="css-1xdhyk6"
+                htmlFor="searchInput"
+                id="searchInput-label"
+              >
+                Enter Search Keyword
+              </label>
+              <div
+                className="css-79elbk"
+              >
+                <input
+                  aria-required={true}
+                  autoComplete={null}
+                  className="chakra-input css-0"
+                  disabled={false}
+                  id="searchInput"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  placeholder="What would you like to find?"
+                  required={true}
+                  step={null}
+                  type="text"
+                  value=""
+                />
+              </div>
+            </div>
+          </fieldset>
+        </div>
+        <div
+          className="css-1akhhia"
+          id="search-header-child0-grandchild1"
+        >
+          <div
+            className="chakra-stack css-11okbqf"
+          >
+            <button
+              aria-label="Search"
+              className="chakra-button css-l47gnk"
+              id="search-btn"
+              onClick={[Function]}
+              type="button"
+            >
+              <svg
+                aria-hidden={true}
+                className="chakra-icon css-1vgifmd"
+                data-file-name="SvgSearch"
+                focusable={false}
+                role="img"
+                title="search icon"
+              />
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        className="css-1jiq10l"
+        id="search-header-child1"
+      >
+        <div
+          className="css-7ajbp2"
+          id="search-header-child1-grandchild0"
+        >
+          <div
+            className="css-1piljje"
+            id="radio-group-search-type"
+          >
+            <span
+              className="css-0"
+              id="rg-span-title-search-type"
+            >
+              Type of search
+            </span>
+            <div
+              aria-labelledby="rg-span-title-search-type"
+              className="chakra-radio-group css-0"
+              role="radiogroup"
+            >
+              <div
+                className="chakra-stack css-1478f2b"
+              >
+                <div
+                  className="css-1xdhyk6"
+                  id="circulatingCatalogSearch-wrapper"
+                >
+                  <label
+                    className="chakra-radio css-rfs4w5"
+                    data-checked=""
+                  >
+                    <input
+                      checked={true}
+                      className="chakra-radio__input"
+                      disabled={false}
+                      id="circulatingCatalogSearch"
+                      name="catalogWebsiteSearch"
+                      onBlur={[Function]}
+                      onChange={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      onKeyUp={[Function]}
+                      required={false}
+                      style={
+                        {
+                          "border": "0",
+                          "clip": "rect(0, 0, 0, 0)",
+                          "height": "1px",
+                          "margin": "-1px",
+                          "overflow": "hidden",
+                          "padding": "0",
+                          "position": "absolute",
+                          "whiteSpace": "nowrap",
+                          "width": "1px",
+                        }
+                      }
+                      type="radio"
+                      value="circulatingCatalog"
+                    />
+                    <span
+                      aria-hidden={true}
+                      className="css-14wybg9"
+                      data-checked=""
+                      onMouseDown={[Function]}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      onMouseUp={[Function]}
+                    />
+                    <span
+                      className="chakra-radio__label css-1y8kf23"
+                      data-checked=""
+                      onMouseDown={[Function]}
+                    >
+                      <span
+                        className="css-0"
+                      >
+                        Search books, music, and movies
+                      </span>
+                    </span>
+                  </label>
+                </div>
+                <div
+                  className="css-1xdhyk6"
+                  id="researchcatalogSearch-wrapper"
+                >
+                  <label
+                    className="chakra-radio css-rfs4w5"
+                  >
+                    <input
+                      checked={false}
+                      className="chakra-radio__input"
+                      disabled={false}
+                      id="researchcatalogSearch"
+                      name="catalogWebsiteSearch"
+                      onBlur={[Function]}
+                      onChange={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      onKeyUp={[Function]}
+                      required={false}
+                      style={
+                        {
+                          "border": "0",
+                          "clip": "rect(0, 0, 0, 0)",
+                          "height": "1px",
+                          "margin": "-1px",
+                          "overflow": "hidden",
+                          "padding": "0",
+                          "position": "absolute",
+                          "whiteSpace": "nowrap",
+                          "width": "1px",
+                        }
+                      }
+                      type="radio"
+                      value="researchCatalog"
+                    />
+                    <span
+                      aria-hidden={true}
+                      className="css-14wybg9"
+                      onMouseDown={[Function]}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      onMouseUp={[Function]}
+                    />
+                    <span
+                      className="chakra-radio__label css-1y8kf23"
+                      onMouseDown={[Function]}
+                    >
+                      <span
+                        className="css-0"
+                      >
+                        Search the Research Catalog
+                      </span>
+                    </span>
+                  </label>
+                </div>
+                <div
+                  className="css-1xdhyk6"
+                  id="websiteSearch-wrapper"
+                >
+                  <label
+                    className="chakra-radio css-rfs4w5"
+                  >
+                    <input
+                      checked={false}
+                      className="chakra-radio__input"
+                      disabled={false}
+                      id="websiteSearch"
+                      name="catalogWebsiteSearch"
+                      onBlur={[Function]}
+                      onChange={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      onKeyUp={[Function]}
+                      required={false}
+                      style={
+                        {
+                          "border": "0",
+                          "clip": "rect(0, 0, 0, 0)",
+                          "height": "1px",
+                          "margin": "-1px",
+                          "overflow": "hidden",
+                          "padding": "0",
+                          "position": "absolute",
+                          "whiteSpace": "nowrap",
+                          "width": "1px",
+                        }
+                      }
+                      type="radio"
+                      value="website"
+                    />
+                    <span
+                      aria-hidden={true}
+                      className="css-14wybg9"
+                      onMouseDown={[Function]}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      onMouseUp={[Function]}
+                    />
+                    <span
+                      className="chakra-radio__label css-1y8kf23"
+                      onMouseDown={[Function]}
+                    >
+                      <span
+                        className="css-0"
+                      >
+                        Search the library website
+                      </span>
+                    </span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div
+              aria-atomic={true}
+              aria-live="polite"
+              className="css-1xdhyk6"
+              data-isinvalid={false}
+              id="search-type-helperErrorText"
+            >
+              <div
+                className="css-0"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`HeaderSearchForm renders the UI snapshot correctly 2`] = `
+<div
+  className="css-0"
+>
+  <form
+    className="css-16sv398"
+    data-testid="ds-form"
+    id="search-header"
+    onSubmit={[Function]}
+  >
+    <div
+      className="css-uo6vru"
+      id="search-header-parent"
+    >
+      <div
+        className="css-10aw3py"
+        id="search-header-child0"
+      >
+        <div
+          className="css-18yyq8w"
+          id="search-header-child0-grandchild0"
+        >
+          <fieldset
+            className="css-1xdhyk6"
+            id="fieldset-search"
+          >
+            <legend>
+              Enter a keyword, then choose to search either the catalog or the website
+            </legend>
+            <div
+              className="css-1annanu"
+              id="searchInput-wrapper"
+            >
+              <label
+                className="css-1xdhyk6"
+                htmlFor="searchInput"
+                id="searchInput-label"
+              >
+                Enter Search Keyword
+              </label>
+              <div
+                className="css-79elbk"
+              >
+                <input
+                  aria-required={true}
+                  autoComplete={null}
+                  className="chakra-input css-0"
+                  disabled={false}
+                  id="searchInput"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  placeholder="What would you like to find?"
+                  required={true}
+                  step={null}
+                  type="text"
+                  value=""
+                />
+              </div>
+            </div>
+          </fieldset>
+        </div>
+        <div
+          className="css-1akhhia"
+          id="search-header-child0-grandchild1"
+        >
+          <div
+            className="chakra-stack css-11okbqf"
+          >
+            <button
+              aria-label="Search"
+              className="chakra-button css-l47gnk"
+              id="search-btn"
+              onClick={[Function]}
+              type="button"
+            >
+              <svg
+                aria-hidden={true}
+                className="chakra-icon css-1vgifmd"
+                data-file-name="SvgSearch"
+                focusable={false}
+                role="img"
+                title="search icon"
+              />
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        className="css-1jiq10l"
+        id="search-header-child1"
+      >
+        <div
+          className="css-7ajbp2"
+          id="search-header-child1-grandchild0"
+        >
+          <div
+            className="css-1piljje"
+            id="radio-group-search-type"
+          >
+            <span
+              className="css-0"
+              id="rg-span-title-search-type"
+            >
+              Type of search
+            </span>
+            <div
+              aria-labelledby="rg-span-title-search-type"
+              className="chakra-radio-group css-0"
+              role="radiogroup"
+            >
+              <div
+                className="chakra-stack css-19s3t1h"
+              >
+                <div
+                  className="css-1xdhyk6"
+                  id="circulatingCatalogSearch-wrapper"
+                >
+                  <label
+                    className="chakra-radio css-rfs4w5"
+                    data-checked=""
+                  >
+                    <input
+                      checked={true}
+                      className="chakra-radio__input"
+                      disabled={false}
+                      id="circulatingCatalogSearch"
+                      name="catalogWebsiteSearch"
+                      onBlur={[Function]}
+                      onChange={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      onKeyUp={[Function]}
+                      required={false}
+                      style={
+                        {
+                          "border": "0",
+                          "clip": "rect(0, 0, 0, 0)",
+                          "height": "1px",
+                          "margin": "-1px",
+                          "overflow": "hidden",
+                          "padding": "0",
+                          "position": "absolute",
+                          "whiteSpace": "nowrap",
+                          "width": "1px",
+                        }
+                      }
+                      type="radio"
+                      value="circulatingCatalog"
+                    />
+                    <span
+                      aria-hidden={true}
+                      className="css-14wybg9"
+                      data-checked=""
+                      onMouseDown={[Function]}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      onMouseUp={[Function]}
+                    />
+                    <span
+                      className="chakra-radio__label css-1y8kf23"
+                      data-checked=""
+                      onMouseDown={[Function]}
+                    >
+                      <span
+                        className="css-0"
+                      >
+                        Search books, music, and movies
+                      </span>
+                    </span>
+                  </label>
+                </div>
+                <div
+                  className="css-1xdhyk6"
+                  id="researchcatalogSearch-wrapper"
+                >
+                  <label
+                    className="chakra-radio css-rfs4w5"
+                  >
+                    <input
+                      checked={false}
+                      className="chakra-radio__input"
+                      disabled={false}
+                      id="researchcatalogSearch"
+                      name="catalogWebsiteSearch"
+                      onBlur={[Function]}
+                      onChange={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      onKeyUp={[Function]}
+                      required={false}
+                      style={
+                        {
+                          "border": "0",
+                          "clip": "rect(0, 0, 0, 0)",
+                          "height": "1px",
+                          "margin": "-1px",
+                          "overflow": "hidden",
+                          "padding": "0",
+                          "position": "absolute",
+                          "whiteSpace": "nowrap",
+                          "width": "1px",
+                        }
+                      }
+                      type="radio"
+                      value="researchCatalog"
+                    />
+                    <span
+                      aria-hidden={true}
+                      className="css-14wybg9"
+                      onMouseDown={[Function]}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      onMouseUp={[Function]}
+                    />
+                    <span
+                      className="chakra-radio__label css-1y8kf23"
+                      onMouseDown={[Function]}
+                    >
+                      <span
+                        className="css-0"
+                      >
+                        Search the Research Catalog
+                      </span>
+                    </span>
+                  </label>
+                </div>
+                <div
+                  className="css-1xdhyk6"
+                  id="websiteSearch-wrapper"
+                >
+                  <label
+                    className="chakra-radio css-rfs4w5"
+                  >
+                    <input
+                      checked={false}
+                      className="chakra-radio__input"
+                      disabled={false}
+                      id="websiteSearch"
+                      name="catalogWebsiteSearch"
+                      onBlur={[Function]}
+                      onChange={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      onKeyUp={[Function]}
+                      required={false}
+                      style={
+                        {
+                          "border": "0",
+                          "clip": "rect(0, 0, 0, 0)",
+                          "height": "1px",
+                          "margin": "-1px",
+                          "overflow": "hidden",
+                          "padding": "0",
+                          "position": "absolute",
+                          "whiteSpace": "nowrap",
+                          "width": "1px",
+                        }
+                      }
+                      type="radio"
+                      value="website"
+                    />
+                    <span
+                      aria-hidden={true}
+                      className="css-14wybg9"
+                      onMouseDown={[Function]}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      onMouseUp={[Function]}
+                    />
+                    <span
+                      className="chakra-radio__label css-1y8kf23"
+                      onMouseDown={[Function]}
+                    >
+                      <span
+                        className="css-0"
+                      >
+                        Search the library website
+                      </span>
+                    </span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div
+              aria-atomic={true}
+              aria-live="polite"
+              className="css-1xdhyk6"
+              data-isinvalid={false}
+              id="search-type-helperErrorText"
+            >
+              <div
+                className="css-0"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+`;

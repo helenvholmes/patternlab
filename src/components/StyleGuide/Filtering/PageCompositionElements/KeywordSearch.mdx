@@ -1,0 +1,47 @@
+import { Meta } from "@storybook/blocks";
+
+import Image from "../../../Image/Image";
+import Link from "../../../Link/Link";
+
+import imageKeywordSearchField from "/static/filteringStyleGuide/keywordSearchField.png";
+import { exampleWrapperStyles } from "../../../../utils/utils.ts";
+
+<Meta title="Style Guide/Filtering/Page elements/Keyword search field" />
+
+# Keyword search field
+
+The `keyword search` field provides a way for users to enter a text string to
+search and retrieve related information from a defined data set. It is not
+considered a filter.
+
+While the `keyword search` field is not required in a filtering scenario, more
+often than not, filtering is used to narrow a results set that was initially
+produced with a keyword search.
+
+<Image
+  alt="Example of keyword search field"
+  src={imageKeywordSearchField}
+  {...exampleWrapperStyles}
+/>
+
+## Table of contents
+
+- {<Link href="#rendering" target="_self">Rendering</Link>}
+- {<Link href="#position" target="_self">Position</Link>}
+- {<Link href="#anti-patterns" target="_self">Anti-patterns</Link>}
+
+## Rendering
+
+The `keyword search` field should be rendered using the DS
+[SearchBar](./?path=/docs/components-form-elements-searchbar--docs) or
+[TextInput](./?path=/docs/components-form-elements-textinput--docs) component.
+
+## Position
+
+The `keyword search` field should be positioned above the `filter bar` and `active filters` list.
+
+## Anti-patterns
+
+The `keyword search` field should not be considered when using [live
+filtering](./?path=/docs/style-guide-filtering-applying-clearing-filters--docs#applying-filters).
+Rather, a keyword search term should be applied using a submit button.
