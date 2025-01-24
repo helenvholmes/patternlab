@@ -2,6 +2,7 @@ import { createMultiStyleConfigHelpers } from "@chakra-ui/styled-system";
 import { StyleFunctionProps } from "@chakra-ui/system";
 import { wrapperStyles } from "./global";
 import { screenreaderOnly } from "./globalMixins";
+import breakpoints from "../foundations/breakpoints";
 
 // This function creates a set of function that helps us
 // create multipart component styles.
@@ -46,18 +47,42 @@ const FeaturedContent = defineMultiStyleConfig({
             bgColor: "dark.ui.bg.default",
           },
           img: screenreaderOnly(),
+          containerType: "inline-size",
+          "@container (min-width: 0px)": {
+            "[data-wrapper]": {
+              flexDirection: imageAtEnd ? "column-reverse" : "column",
+            },
+            "[data-image]": {
+              height: "320px",
+              width: "100%",
+            },
+          },
+          [`@container (min-width: ${breakpoints.md})`]: {
+            "[data-wrapper]": {
+              flexDirection: imageAtEnd ? "row-reverse" : "row",
+              paddingLeft: full ? "s" : null,
+              paddingRight: full ? "s" : null,
+            },
+            "[data-image]": {
+              height: "auto",
+              width: wrapperWidth,
+            },
+            "[data-text]": {
+              /** The `paddingLeft` attribute is used to adjust the spacing around the
+               * text when the image is positioned at the end. For aesthetic reasons,
+               * we opted to not adjust the spacing around the text when the image is
+               * positioned at the start.
+               * */
+              paddingStart: full && imageAtEnd ? 0 : null,
+            },
+          },
         },
         wrapper: {
           ...wrapperStyles,
           alignItems: "stretch",
           display: "flex",
-          flexDirection: imageAtEnd
-            ? { base: "column-reverse", md: "row-reverse" }
-            : { base: "column", md: "row" },
           maxWidth: full ? "1280px" : "100%",
           minHeight: "320px",
-          paddingLeft: full ? { base: null, md: "s" } : null,
-          paddingRight: full ? { base: null, md: "s" } : null,
         },
         text: {
           display: "flex",
@@ -65,18 +90,10 @@ const FeaturedContent = defineMultiStyleConfig({
           flexDirection: "column",
           justifyContent: "center",
           padding: "l",
-          /** The `paddingLeft` attribute is used to adjust the spacing around the
-           * text when the image is positioned at the end. For aesthetic reasons,
-           * we opted to not adjust the spacing around the text when the image is
-           * positioned at the start.
-           * */
-          paddingStart: full && imageAtEnd ? { base: null, md: 0 } : null,
         },
         imgWrapper: {
           backgroundPosition: "center",
           backgroundSize: "cover",
-          height: { base: "320px", md: "auto" },
-          width: { base: "100%", md: wrapperWidth },
         },
       };
     }

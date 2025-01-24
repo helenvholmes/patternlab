@@ -206,6 +206,8 @@ export const SearchBar: ChakraComponent<
         isDisabled={isDisabled}
         onClick={buttonOnClick}
         type="submit"
+        sx={styles.button}
+        data-button
         aria-label={isLargerThanMobile ? "" : "Search"}
       >
         <Icon
@@ -232,6 +234,7 @@ export const SearchBar: ChakraComponent<
         }
         isInvalid={isInvalid}
         ref={ref}
+        sx={{ containerType: "inline-size" }}
         {...rest}
       >
         <Box

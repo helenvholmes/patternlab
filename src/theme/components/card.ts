@@ -1,6 +1,7 @@
 import { defineStyleConfig } from "@chakra-ui/react";
 import { createMultiStyleConfigHelpers } from "@chakra-ui/styled-system";
 import { defineStyle, StyleFunctionProps } from "@chakra-ui/system";
+import breakpoints from "../foundations/breakpoints";
 import { baseLinkStyles } from "./link";
 
 const { defineMultiStyleConfig, definePartsStyle } =
@@ -14,6 +15,7 @@ interface CardBaseStyleProps extends StyleFunctionProps {
   isCentered: boolean;
   layout: string;
   mainActionLink: boolean;
+  imageSize: keyof typeof imageSizes;
 }
 interface BodyPaddingProps extends Partial<StyleFunctionProps> {
   hasImage: boolean;
@@ -40,6 +42,17 @@ const imageSizes = {
   small: { flex: { md: "0 0 165px" } },
   medium: { flex: { md: "0 0 225px" } },
   large: { flex: { md: "0 0 360px" } },
+};
+
+const imageSizesMinWidth0 = {
+  xxsmall: { flex: "0 0 100%", width: "100%" },
+};
+const imageSizesMinWidth600 = {
+  xxsmall: { flex: "0 0 64px", width: "100%" },
+  xsmall: { flex: "0 0 96px" },
+  small: { flex: "0 0 165px" },
+  medium: { flex: "0 0 225px" },
+  large: { flex: "0 0 360px" },
 };
 // This is complicated and can be refactored later...
 const getBodyPaddingStyles = ({
@@ -83,15 +96,12 @@ const ReservoirCard = defineMultiStyleConfig({
       isCentered,
       layout,
       mainActionLink,
+      imageSize,
     }: CardBaseStyleProps) => {
       const isRow = layout === "row";
       const layoutStyles = isRow
         ? {
             display: "flex",
-            flexFlow: {
-              base: "column nowrap",
-              md: "row",
-            },
             maxWidth: "100%",
             textAlign: "left",
             alignItems: isCentered ? "center" : null,
@@ -119,8 +129,63 @@ const ReservoirCard = defineMultiStyleConfig({
           bodyMargin = "0";
         }
       }
+      // These sizes are only for the "row" layout.
+      // const imageSize = size ? imageSizes[size] : {};
       return {
         base: {
+          containerType: "inline-size",
+          "@container (min-width: 0px)": {
+            "[data-wrapper]": {
+              flexFlow: isRow ? "column nowrap" : null,
+            },
+            "[data-actions]": {
+              flexShrink: isAlignedRightActions ? "0" : null,
+              marginStart: "0",
+              marginTop: "xs",
+              maxWidth: "100%",
+            },
+            "[data-body]": {
+              width: "100%",
+            },
+            "[data-image]": {
+              maxWidth: "100%",
+              margin: imageIsAtEnd ? "var(--nypl-space-m) 0 0" : null,
+              width: "100%",
+              ...imageSizesMinWidth0[imageSize],
+            },
+          },
+          [`@container (min-width: ${breakpoints.sm})`]: {
+            "[data-body]": {
+              flexBasis: isRow ? "100%" : null,
+            },
+          },
+          [`@container (min-width: ${breakpoints.md})`]: {
+            "[data-wrapper]": {
+              flexFlow: isRow ? "row" : null,
+            },
+            "[data-actions]": {
+              flexShrink: "0",
+              marginStart: "m",
+              marginTop: "0",
+              maxWidth: "180px",
+            },
+            "[data-body]": {
+              display: "block",
+              flexFlow: "row nowrap",
+              width: "auto",
+            },
+            "[data-image]": {
+              maxWidth: "50%",
+              flex: "0 0 225px",
+              margin: imageIsAtEnd
+                ? "0 0 0 var(--nypl-space-m)"
+                : "0 var(--nypl-space-m) 0 0",
+              width: null,
+              ...imageSizesMinWidth600[imageSize],
+            },
+          },
+        },
+        wrapper: {
           alignItems: "flex-start",
           display: "flex",
           flexFlow: "column wrap",
@@ -129,19 +194,11 @@ const ReservoirCard = defineMultiStyleConfig({
           ...layoutStyles,
         },
         actions: {
-          flexShrink: { base: isAlignedRightActions ? "0" : null, md: "0" },
-          marginStart: { base: "0", md: "m" },
-          marginTop: { base: "xs", md: "0" },
-          maxWidth: { base: "100%", md: "180px" },
           width: "100%",
         },
         body: {
-          display: { md: "block" },
-          flexBasis: { sm: isRow ? "100%" : null },
-          flexFlow: { md: "row nowrap" },
           margin: bodyMargin,
           padding: bodyPadding,
-          width: { base: "100%", md: "auto" },
         },
         heading: {
           marginBottom: "xs",
@@ -215,25 +272,13 @@ const CardContent = defineStyleConfig({
 
 const CardImage = defineStyleConfig({
   baseStyle: defineStyle(
-    ({ imageIsAtEnd, isCentered, layout, size }: CardImageBaseStyleProps) => {
-      // These sizes are only for the "row" layout.
-      const imageSize = size ? imageSizes[size] : {};
+    ({ imageIsAtEnd, isCentered, layout }: CardImageBaseStyleProps) => {
       const layoutStyles =
         layout === "row"
           ? {
-              flex: { md: "0 0 225px" },
-              maxWidth: { base: "100%", md: "50%" },
               textAlign: "left",
               alignItems: isCentered ? "center" : null,
-              margin: {
-                base: imageIsAtEnd ? "var(--nypl-space-m) 0 0" : null,
-                md: imageIsAtEnd
-                  ? "0 0 0 var(--nypl-space-m)"
-                  : "0 var(--nypl-space-m) 0 0",
-              },
-              width: { base: "100%", md: null },
               marginBottom: ["xs", "xs"],
-              ...imageSize,
             }
           : {
               marginBottom: "xs",
