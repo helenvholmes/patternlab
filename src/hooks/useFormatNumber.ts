@@ -75,14 +75,15 @@ const useFormatNumber = (
       return formatNumberWithCommas(start);
     }
 
+    const enDash = "\u2013";
+
     // If the range is between two consecutive numbers, display both
     if (end - start === 1) {
-      return `${formatNumberWithCommas(start)}&ndash;${formatNumberWithCommas(
+      return `${formatNumberWithCommas(start)}${enDash}${formatNumberWithCommas(
         end
       )}`;
     }
 
-    const enDash = "\u2013";
     // For a larger range, simply return the full formatted range with commas
     return `${formatNumberWithCommas(start)}${enDash}${formatNumberWithCommas(
       end
