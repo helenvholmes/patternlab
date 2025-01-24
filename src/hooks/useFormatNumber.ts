@@ -33,14 +33,14 @@ const useFormatNumber = (num1: any, num2?: any) => {
   };
 
   const formatNumber = (num1: any, num2?: any): string | null => {
-    let hasWarnig = false; // Track if any warnings occurs
+    let hasWarning = false; // Track if any warnings occurs
 
     // Check if num1 is valid
     if (!isValidNumber(num1)) {
       console.warn(
         `The provided value ${num1} is not supported. Please ensure a valid value is passed.`
       );
-      hasWarnig = true;
+      hasWarning = true;
     } else {
       // Convert num1 to a number if it is a valid numeric string
       num1 = typeof num1 === "string" ? parseFloat(num1) : num1;
@@ -51,14 +51,14 @@ const useFormatNumber = (num1: any, num2?: any) => {
       console.warn(
         `The provided value ${num2} for the second argument is not supported. Please ensure a valid value is passed.`
       );
-      hasWarnig = true;
+      hasWarning = true;
     } else if (num2 !== undefined) {
       // Convert num2 to a number if it is a valid numeric string
       num2 = typeof num2 === "string" ? parseFloat(num2) : num2;
     }
 
     // If either num1 or num2 is invalid, return null
-    if (hasWarnig) {
+    if (hasWarning) {
       return null;
     }
 
