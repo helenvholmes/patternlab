@@ -1,4 +1,5 @@
 import { HelperErrorTextType } from "../components/HelperErrorText/HelperErrorText";
+import { SidebarPlacement } from "../components/Template/Template";
 import { AriaAttributes } from "./interfaces";
 // Utility functions to use throughout the codebase
 
@@ -177,6 +178,11 @@ export const getPlaceholderImage = (
   const selectedImage = imageArray[finalIndex];
   const finalImage = `${selectedImage}&t=${t}`;
   return finalImage;
+};
+
+/** Creates the correct sidebar label in Template stories or tests */
+export const sidebarLabel = (sidebar: SidebarPlacement) => {
+  return `${sidebar[0].toUpperCase()}${sidebar.slice(1)} Sidebar`;
 };
 
 /** The default styles for images added as examples within doc pages. */

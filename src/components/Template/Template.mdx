@@ -5,16 +5,12 @@ import { changelogData } from "./templateChangelogData";
 import * as TemplateStories from "./Template.stories";
 import {
   Template,
-  TemplateAboveHeader,
-  TemplateAppContainer,
   TemplateBreakout,
-  TemplateContent,
-  TemplateContentBottom,
-  TemplateContentPrimary,
-  TemplateContentSidebar,
-  TemplateContentTop,
-  TemplateFooter,
-  TemplateHeader,
+  TemplateTop,
+  TemplateSidebar,
+  TemplateMain,
+  TemplateMainNarrow,
+  TemplateBottom,
 } from "./Template";
 import Link from "../Link/Link";
 
@@ -22,478 +18,110 @@ import Link from "../Link/Link";
 
 # Template
 
-| Component Version | DS Version |
-| ----------------- | ---------- |
-| Added             | `0.3.6`    |
-| Latest            | `3.5.0`    |
+| Component Version | DS Version   |
+| ----------------- | ------------ |
+| Added             | `0.3.6`      |
+| Latest            | `Prerelease` |
 
 ## Table of Contents
 
-- {<Link href="#templateappcontainer-overview" target="_self">TemplateAppContainer Overview</Link>}
-- {<Link href="#templateappcontainer-component-props" target="_self">TemplateAppContainer Component Props</Link>}
-- {<Link href="#templateappcontainer-accessibility" target="_self">TemplateAppContainer Accessibility</Link>}
-- {<Link href="#template-children-overview" target="_self">Template Children Overview</Link>}
-- {<Link href="#template-children-component-props" target="_self">Template Children Component Props</Link>}
-- {<Link href="#full-example-with-template-children-components" target="_self">Full Example with Template Children Components</Link>}
+- {<Link href="#template-overview" target="_self">Template Overview</Link>}
+- {<Link href="#template-props" target="_self">Template Props</Link>}
+- {<Link href="#template-components" target="_self">Template Components</Link>}
+- {<Link href="#template-accessibility" target="_self">Template Accessibility</Link>}
+- {<Link href="#template-sidebar-configuration" target="_self">Template Sidebar Configuration</Link>}
 - {<Link href="#changelog" target="_self">Changelog</Link>}
 
-## TemplateAppContainer Overview
+## Overview
 
-<Description of={TemplateAppContainer} />
-
-If you have a custom `Header` component that _already_ renders an HTML `<header>`
-element, set `renderHeaderElement` to false so only one `<header>` element is
-rendered.
-
-If you need to render the `SkipNavigation` component, set `renderSkipNavigation`
-to true.
-
-Likewise, if you have a custom `Footer` component that _already_ renders an HTML
-`<footer>` element, set `renderFooterElement` to false so only one `<footer>`
-element is rendered.
-
-**This is the recommended way to render an app page template.**
-
-<Source
-  code={`
-import { TemplateAppContainer } from "@nypl/design-system-react-components";
-// ...
-<TemplateAppContainer
-  aboveHeader={<Placeholder variant="short">Above Header</Placeholder>}
-  header={<Placeholder variant="short">Header</Placeholder>}
-  breakout={
-    <>
-      <Placeholder variant="short">Breadcrumbs</Placeholder>
-      <Placeholder>Hero</Placeholder>
-    </>
-  }
-  sidebar="left"
-  contentTop={<Placeholder variant="short">Content Top</Placeholder>}
-  contentSidebar={<Placeholder>Left Sidebar</Placeholder>}
-  contentPrimary={
-    <>
-      <Placeholder>Main Content</Placeholder>
-      <Placeholder variant="short">More Content</Placeholder>
-    </>
-  }
-  contentBottom={<Placeholder variant="short">Content Bottom</Placeholder>}
-  footer={<Placeholder>Footer</Placeholder>}
-  renderSkipNavigation={true}
-/>
-`}
-  language="jsx"
-/>
-
-## TemplateAppContainer Component Props
-
-<Canvas of={TemplateStories.WithControls} />
-
-<ArgTypes of={TemplateStories.WithControls} />
-
-## TemplateAppContainer Accessibility
-
-**The `TemplateAppContainer` component is the recommended way to render the entire
-application.** Therefore, this accessibility section is specifically for the
-`TemplateAppContainer` but the same rules apply to the individual "Template"
-components.
-
-The `TemplateAppContainer` component renders the header as a `<header>` element,
-the content as a `<main>` element, and the footer as a `<footer>` element.
-
-If you need to render an alert or notification at the top of the page with an
-`aside` HTML element or HTML element with the `role="complementary"` attribute,
-then pass that alert or notification component to the `aboveHeader` prop. These
-elements should _not_ be rendered in the `header` HTML section since that's an
-accessibility violation.
-
-The `TemplateAppContainer` component renders a full DOM and one of the children
-is the `main` HTML element with a default "id" of `"mainContent"`. This should
-be used as the anchor element that the skip navigation link points to. If your
-application is using the current Header, it already contains the skip
-navigation feature but make sure it is pointing to the correct anchor element.
-
-If you are using a custom header component or you need to use the Reservoir
-Design System (DS) `SkipNavigation` component, then set the `renderSkipNavigation`
-prop to true. This will render the `SkipNavigation` component at the top of the
-page before any other elements. The main link will point to the `#mainContent`
-`main` element.
-
-Resources
-
-- [W3C Aria Landmarks Example](https://www.w3.org/TR/wai-aria-practices/examples/landmarks/complementary.html)
-- [Digital A11y Role=Complementary](https://www.digitala11y.com/complementary-role/)
-- [WebAim Skip Navigation Link](https://webaim.org/techniques/skipnav/)
-- [A11ymatters Skip Navigation Link](https://www.a11ymatters.com/pattern/skip-link/)
-
-## Template Children Overview
-
-The Reservoir Design System (DS) also provides a set of "template" components
-that work together to render a consistent mobile and desktop layout. More
-information on individual components and how they should be composed can be
-found below. Even though these component are available for use, we recommend
-using the `TemplateAppContainer` component and passing down children component
-as props as needed.
-
-Note: If you need to render the `SkipNavigation` component, you need to explicitly
-render it immediately before the `Template` component. This is done
-automatically in the `TemplateAppContainer` component.
-
-Note: All components that go above the main content `TemplateContent` component
-should be wrapped in a `<div>` element or a `<Box>` component.
-
-Basic "template" components structure:
+Documentation for this component is a work in progress.
 
 <Source
   code={`
 import {
   Template,
-  TemplateAboveHeader,
   TemplateBreakout,
-  TemplateContent,
-  TemplateContentBottom,
-  TemplateContentPrimary,
-  TemplateContentSidebar,
-  TemplateContentTop,
-  TemplateFooter,
-  TemplateHeader,
+  TemplateTop,
+  TemplateSidebar,
+  TemplateMain,
+  TemplateBottom
 } from "@nypl/design-system-react-components";
-// ...
+//...
+
 <>
   <SkipNavigation />
-  <Template>
-    <TemplateBreakout>
-      <TemplateAboveHeader>
-        // ...
-      </TemplateAboveHeader>
-      <TemplateHeader>
-        // ...
-      </TemplateHeader>
-    </TemplateBreakout>
-    <TemplateContent sidebar="...">
-      <TemplateContentTop>
-        // ...
-      </TemplateContentTop>
-      <TemplateContentPrimary>
-        // ...
-      </TemplateContentPrimary>
-      <TemplateContentBottom>
-        // ...
-      </TemplateContentBottom>
-    </TemplateContent>
-    <TemplateFooter>
-      // ...
-    </TemplateFooter>
+  <Template sidebar="...">
+    <TemplateBreakout>...</TemplateBreakout>
+    <TemplateTop>...</TemplateTop>
+    <TemplateSidebar>...</TemplateSidebar>
+    <TemplateMain>...</TemplateMain>
+    <TemplateBottom>...</TemplateBottom>
   </Template>
 </>
-`}
-  language="jsx"
-/>
+`} language="jsx" />
 
-## Template Children Component Props
+## Template Props
 
-<Canvas of={TemplateStories.ChildrenComponentProps} />
+<Canvas of={TemplateStories.WithControls} />
 
-<ArgTypes of={TemplateStories.ChildrenComponentProps} />
+<ArgTypes of={TemplateStories.WithControls} />
 
-### Template Components
+## Template Components
 
 The components consist of, listed in DOM structure order:
 
 - `Template`
-- `TemplateAboveHeader`
-- `TemplateHeader`
 - `TemplateBreakout`
-- `TemplateContent`
-- `TemplateContentTop`
-- `TemplateContentPrimary`
-- `TemplateContentSidebar`
-- `TemplateContentBottom`
-- `TemplateFooter`
+- `TemplateTop`
+- `TemplateSidebar` (if meant to render on left)
+- `TemplateMain` or `TemplateMainNarrow`
+- `TemplateSidebar` (if meant to render on right)
+- `TemplateBottom`
 
-#### Template
+### Using the `Template` with the `Header` and `Footer`
+
+TBD.
+
+## Template Accessibility
+
+Wide lines of text are difficult to read and are proven to make it harder for
+people to focus, while short lines of text force the eye to travel back too often,
+breaking a reader's rhythm. The `TemplateMain` component has a max width of 1280px,
+which is too wide for text. If your content includes long chunks of text, you
+should use the `TemplateMainNarrow` component instead. Note that `TemplateMainNarrow`
+is not meant to be used in conjunction with a sidebar.
+
+This means you may use `TemplateMain` or `TemplateMainNarrow` depending on your needs,
+but the two should not be used in conjunction.
+
+The `TemplateMain` and `TemplateMainNarrow` components render the content as a
+`<main>` element with a default `id` of `"mainContent"`. This should be used as
+the anchor element that the skip navigation link points to. If your application
+is using the current Header, it already contains the skip navigation feature but
+make sure it is pointing to the correct anchor element.
+
+Resources
+
+- [WebAim Skip Navigation Link](https://webaim.org/techniques/skipnav/)
+- [A11ymatters Skip Navigation Link](https://www.a11ymatters.com/pattern/skip-link/)
+
+## Template Sidebar Configuration
+
+In order to render a sidebar, the `Template` component needs to be aware of it.
+Pass the location of the sidebar to the `sidebar` prop as either "left" or "right".
+
+For accessibility purposes, you should also structure the DOM logically. This means
+if you are using `sidebar="left"`, place the `TemplateSidebar` before `TemplateMain`.
+If you are using `sidebar="right"`, place the `TemplateSidebar` after.
 
 <Source
   code={`
-<Template>
-  // ...
+<Template sidebar="left">
+  ...
 </Template>
 `}
   language="jsx"
 />
-
-<Description of={Template} />
-
-#### TemplateBreakout
-
-<Source
-  code={`
-<Template>
-  <TemplateBreakout>
-    // ...
-  </TemplateBreakout>
-</Template>
-`}
-  language="jsx"
-/>
-
-<Description of={TemplateBreakout} />
-
-#### TemplateAboveHeader
-
-<Source
-  code={`
-<Template>
-  <TemplateBreakout>
-    <TemplateAboveHeader>
-      // ...
-    </TemplateAboveHeader>
-  </TemplateBreakout>
-</Template>
-`}
-  language="jsx"
-/>
-
-<Description of={TemplateAboveHeader} />
-
-#### TemplateHeader
-
-<Source
-  code={`
-<Template>
-  <TemplateBreakout>
-    <TemplateAboveHeader>
-      // ...
-    </TemplateAboveHeader>
-    <TemplateHeader>
-      // ...
-    </TemplateHeader>
-  </TemplateBreakout>
-</Template>
-`}
-  language="jsx"
-/>
-
-<Description of={TemplateHeader} />
-
-#### TemplateContent
-
-<Source
-  code={`
-<Template>
-  <TemplateBreakout>
-    <TemplateHeader>
-      // ...
-    </TemplateHeader>
-  </TemplateBreakout>
-  <TemplateContent id="mainContent">
-    // ...
-  </TemplateContent>
-</Template>
-`}
-  language="jsx"
-/>
-
-<Description of={TemplateContent} />
-
-#### TemplateContentTop
-
-<Source
-  code={`
-<Template>
-  <TemplateBreakout>
-    <TemplateAboveHeader>
-      // ...
-    </TemplateAboveHeader>
-    <TemplateHeader>
-      // ...
-    </TemplateHeader>
-  </TemplateBreakout>
-  <TemplateContent>
-    <TemplateContentTop>
-      // ...
-    </TemplateContentTop>
-  </TemplateContent>
-</Template>
-`}
-  language="jsx"
-/>
-
-<Description of={TemplateContentTop} />
-
-#### TemplateContentPrimary
-
-<Source
-  code={`
-<Template>
-  <TemplateBreakout>
-    <TemplateAboveHeader>
-      // ...
-    </TemplateAboveHeader>
-    <TemplateHeader>
-      // ...
-    </TemplateHeader>
-  </TemplateBreakout>
-  <TemplateContent>
-    <TemplateContentPrimary>
-      // ...
-    </TemplateContentPrimary>
-  </TemplateContent>
-<Template>
-`}
-  language="jsx"
-/>
-
-<Description of={TemplateContentPrimary} />
-
-#### TemplateContentSidebar
-
-<Source
-  code={`
-<Template>
-  <TemplateBreakout>
-    <TemplateAboveHeader>
-      // ...
-    </TemplateAboveHeader>
-    <TemplateHeader>
-      // ...
-    </TemplateHeader>
-  <TemplateBreakout>
-  <TemplateContent sidebar="right">
-    <TemplateContentPrimary>
-      // ...
-    </TemplateContentPrimary>
-    <TemplateContentSidebar>
-      // RIGHT SIDEBAR
-    </TemplateContentSidebar>
-  </TemplateContent>
-</Template>
-
-<Template>
-  <TemplateBreakout>
-    <TemplateAboveHeader>
-      // ...
-    </TemplateAboveHeader>
-    <TemplateHeader>
-      // ...
-    </TemplateHeader>
-  </TemplateBreakout>
-  <TemplateContent sidebar="left">
-    <TemplateContentSidebar>
-      // LEFT SIDEBAR
-    </TemplateContentSidebar>
-    <TemplateContentPrimary>
-      // ...
-    </TemplateContentPrimary>
-  </TemplateContent>
-<Template>
-`} language="jsx" />
-
-<Description of={TemplateContentSidebar} />
-
-#### TemplateContentBottom
-
-<Source
-  code={`
-<Template>
-  <TemplateBreakout>
-    <TemplateAboveHeader>
-      // ...
-    </TemplateAboveHeader>
-    <TemplateHeader>
-      // ...
-    </TemplateHeader>
-  </TemplateBreakout>
-  <TemplateContent>
-    <TemplateContentTop>
-      // ...
-    </TemplateContentTop>
-    <TemplateContentPrimary>
-      // ...
-    </TemplateContentPrimary>
-    <TemplateContentBottom>
-      // ...
-    </TemplateContentBottom>
-  </TemplateContent>
-</Template>
-`}
-  language="jsx"
-/>
-
-<Description of={TemplateContentBottom} />
-
-#### TemplateFooter
-
-<Source
-  code={`
-<Template>
-  <TemplateBreakout>
-    <TemplateAboveHeader>
-      // ...
-    </TemplateAboveHeader>
-    <TemplateHeader>
-      // ...
-    </TemplateHeader>
-  </TemplateBreakout>
-  <TemplateContent sidebar="right">
-    //...
-  </TemplateContent>
-  <TemplateFooter>
-    // ...
-  </TemplateFooter>
-</Template>
-`}
-  language="jsx"
-/>
-
-<Description of={TemplateFooter} />
-
-### Template Children Components Sidebar Configuration
-
-In order to render a sidebar, two steps must be taken.
-
-1. The `TemplateContent` component needs to be aware of it. Pass the location
-   of the sidebar to the `sidebar` prop as either "left" or "right".
-
-<Source
-  code={`
-<TemplateContent sidebar="left">
-`}
-  language="jsx"
-/>
-
-2. Render `TemplateContentSidebar` and `TemplateContentPrimary` next to each
-   other in the appropriate order. If the sidebar must show left, then
-   `TemplateContentSidebar` comes before `TemplateContentPrimary`. Otherwise,
-   `TemplateContentPrimary` must come before `TemplateContentSidebar`.
-
-<Source
-  code={`
-// Render left sidebar
-<TemplateContent sidebar="left">
-  <TemplateContentSidebar>
-    // ...
-  </TemplateContentSidebar>
-  <TemplateContentPrimary>
-    // ...
-  </TemplateContentPrimary>
-</TemplateContent>
-// Render right sidebar
-<TemplateContent sidebar="right">
-  <TemplateContentPrimary>// ...</TemplateContentPrimary>
-  <TemplateContentSidebar>// ...</TemplateContentSidebar>
-</TemplateContent>
-`}
-  language="jsx"
-/>
-
-## Full Example with Template Children Components
-
-export const otherSubHeaderText =
-  "With 92 locations across the Bronx, Manhattan, and Staten Island, The New York Public Library is an essential part of neighborhoods across the city. Visit us today.";
-
-This is best viewed in the Storybook "Canvas" and not "Docs" section.
-
-<Canvas of={TemplateStories.FullExampleWithTemplateChildrenComponents} />
 
 ## Changelog
 
