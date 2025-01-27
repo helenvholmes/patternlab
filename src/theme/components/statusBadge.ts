@@ -1,7 +1,12 @@
 import { defineStyleConfig } from "@chakra-ui/react";
 import { defineStyle } from "@chakra-ui/system";
+import { statusBadgeFontSizeArray } from "../../components/StatusBadge/StatusBadge";
 
 const baseStyle = defineStyle(({ labelFontSize }) => {
+  const finalFontSize = statusBadgeFontSizeArray.includes(labelFontSize)
+    ? `desktop.body.${labelFontSize}`
+    : labelFontSize;
+
   return {
     alignItems: "center",
     bgColor: "ui.bg.default",
@@ -10,10 +15,7 @@ const baseStyle = defineStyle(({ labelFontSize }) => {
     borderRadius: "base",
     color: "ui.typography.heading",
     display: "flex",
-    fontSize:
-      labelFontSize === "caption"
-        ? "desktop.caption"
-        : `desktop.body.${labelFontSize}`,
+    fontSize: labelFontSize === "caption" ? "desktop.caption" : finalFontSize,
     fontWeight: "500",
     py: "inset.extranarrow",
     paddingInlineEnd: "inset.default",

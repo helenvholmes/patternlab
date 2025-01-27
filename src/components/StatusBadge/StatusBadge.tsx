@@ -22,8 +22,6 @@ export type StatusBadgeTypes = typeof statusBadgeTypeArray[number];
 export interface StatusBadgeProps {
   /** Additional class for the component */
   className?: string;
-  /** Font size of the badge label. */
-  labelFontSize?: StatusBadgeFontSizes;
   /** ID that other components can cross reference for accessibility purposes */
   id?: string;
   /** Level of the status badge. This prop has been deprecated in favor of the
@@ -40,23 +38,15 @@ export interface StatusBadgeProps {
  */
 export const StatusBadge: ChakraComponent<
   React.ForwardRefExoticComponent<
-    StatusBadgeProps & {
-      children?: React.ReactNode;
-    } & React.RefAttributes<HTMLDivElement>
+    React.PropsWithChildren<StatusBadgeProps> &
+      React.RefAttributes<HTMLDivElement>
   >,
-  StatusBadgeProps
+  React.PropsWithChildren<StatusBadgeProps>
 > = chakra(
   forwardRef<HTMLDivElement, React.PropsWithChildren<StatusBadgeProps>>(
     (props, ref?) => {
-      const {
-        children,
-        className,
-        labelFontSize = "body2",
-        id,
-        level,
-        type,
-        ...rest
-      } = props;
+      const { children, className, id, level, type, ...rest } = props;
+      const labelFontSize = rest["font-size"] || "body2";
       const finalVariant = level ? level : type ? type : "low";
       const styles = useStyleConfig("StatusBadge", {
         labelFontSize,
