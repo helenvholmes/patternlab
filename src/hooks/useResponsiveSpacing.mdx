@@ -28,6 +28,7 @@ import {
 // ...
 const {
   responsiveGap,
+  responsiveMargin,
   responsivePadding,
 } = useResponsiveSpacing();
 `}
@@ -36,8 +37,8 @@ const {
 
 ## responsiveGap
 
-The `responsiveGap` is intended to be used as the gap values for repeating grids
-and table.
+The `responsiveGap` object is intended to be used as the gap values for
+repeating grids and table.
 
 - Mobile: `1rem` (16px)
 - Tablet: `1.5rem` (24px)
@@ -66,11 +67,13 @@ const gridStyles = {
   language="jsx"
 />
 
-## responsiveMargin
+## responsiveMargin and responsivePadding
 
-The `responsiveMargin` is intended to be used as the spacing value for the left
-and right margins for any element that could potentially touch the edge of the
-browser window.
+The `responsiveMargin` and `responsivePadding` objects are intended to be used
+as the values for the left and right spacing on any element that could
+potentially touch the edge of the browser window. The values for each object are
+the same, but separate objects have been provided to enable the use of the
+object that aligns semantically with spacing methods used in consuming apps.
 
 - Mobile: `1rem` (16px)
 - Tablet: `1.5rem` (24px)
@@ -79,12 +82,13 @@ browser window.
 <Source
   code={`
 const {
-  responsiveMargin,
+  responsivePadding,
 } = useResponsiveSpacing();
 // ...
 const containerStyles = {
-  marginLeft: responsiveMargin,
-  marginRight: responsiveMargin,
+  maxWidth: "1280px",
+  paddingLeft: responsivePadding,
+  paddingRight: responsivePadding,
 }
 <div style={ containerStyles }>
   <div>...</div>
@@ -95,15 +99,17 @@ const containerStyles = {
 
 ## Visual example
 
-The example below can be used to illustrate the responsive margin and gap in
-action. The `margin` is orange and the `gap` is blue.
+The example below illustrates the responsive padding and gap values in action.
+The `padding` is orange and the `gap` is blue. Change the size of your browser
+window and watch the spacing values adjust as the width of the window decreases
+and increases.
 
-Change the size of your browser window and watch the spacing values adjust as
-the window gets bigger and smaller.
-
-export const { responsiveGap, responsiveMargin } = useResponsiveSpacing();
+export const { responsiveGap, responsiveMargin, responsivePadding } =
+  useResponsiveSpacing();
 export const containerStyles = {
   bgColor: "ui.warning.primary",
+  maxWidth: "1280px",
+  px: responsivePadding,
 };
 export const gridStyles = {
   bgColor: "ui.link.primary",
@@ -115,7 +121,6 @@ export const gridStyles = {
     md: "repeat(3, 1fr)",
     lg: "repeat(4, 1fr)",
   },
-  mx: responsiveMargin,
 };
 export const contentStyles = {
   bgColor: "ui.bg.default",

@@ -5,11 +5,15 @@
  */
 function useResponsiveSpacing() {
   const responsiveGap = { base: "1rem", md: "1.5rem", xl: "2rem" };
-  const responsiveMargin = { base: "1rem", md: "1.5rem", xl: "1rem" };
+
+  const responsiveEdgeSpacing = { base: "1rem", md: "1.5rem", xl: "1rem" };
+  const responsiveMargin = responsiveEdgeSpacing;
+  const responsivePadding = responsiveEdgeSpacing;
 
   return {
     responsiveGap,
     responsiveMargin,
+    responsivePadding,
   };
 }
 
