@@ -10,6 +10,13 @@ import { ChangelogData } from "../../utils/ComponentChangelogTable";
 
 export const changelogData: ChangelogData[] = [
   {
+    date: "Prerelease",
+    version: "Prerelease",
+    type: "Update",
+    affects: ["Styles"],
+    notes: ["Updates styles with container queries to be more responsive."],
+  },
+  {
     date: "2024-09-19",
     version: "3.3.2",
     type: "Update",

@@ -95,20 +95,23 @@ export const FeaturedContent: ChakraComponent<
           ref={ref}
           {...rest}
         >
-          <Box __css={styles.wrapper}>
+          <Box __css={styles.wrapper} data-wrapper>
             <Box
               data-testid="featuredcontent-bg-image"
               __css={{
                 ...styles.imgWrapper,
                 backgroundImage: `/**/url(${imageProps.src})`,
               }}
+              data-image
             >
               <FeaturedContentImage
                 alt={imageProps.alt}
                 src={imageProps.src ? imageProps.src : undefined}
               />
             </Box>
-            <Box __css={styles.text}>{textContent}</Box>
+            <Box __css={styles.text} data-text>
+              {textContent}
+            </Box>
           </Box>
         </Box>
       );
