@@ -21,9 +21,9 @@ const useNYPLBreakpoints = () => {
     isLargerThanLarge,
     isLargerThanXLarge,
   ] = useMediaQuery([
-    "(min-width: 320px)",
-    "(min-width: 600px)",
-    "(min-width: 960px)",
+    "(min-width: 480px)",
+    "(min-width: 768px)",
+    "(min-width: 1024px)",
     "(min-width: 1280px)",
   ]);
 
@@ -42,13 +42,25 @@ const useNYPLBreakpoints = () => {
   ]);
 
   return {
+    // Chakra default
     isLargerThanSmall: layoutSize.isLargerThanSmall,
     isLargerThanMedium: layoutSize.isLargerThanMedium,
-    // NYPL uses the medium 600px breakpoint to determine if the screen is
-    // in the mobile view. This is the recommended boolean value to use.
-    isLargerThanMobile: layoutSize.isLargerThanMedium,
     isLargerThanLarge: layoutSize.isLargerThanLarge,
     isLargerThanXLarge: layoutSize.isLargerThanXLarge,
+
+    // NYPL semantic
+    isLargerThanSmallMobile: layoutSize.isLargerThanSmall,
+    isLargerThanLargeMobile: layoutSize.isLargerThanMedium,
+    isLargerThanSmallTablet: layoutSize.isLargerThanLarge,
+    isLargerThanLargeTablet: layoutSize.isLargerThanXLarge,
+
+    // NYPL uses the medium 768px breakpoint to determine if the screen is in
+    // the mobile view. This is the recommended boolean value to use.
+    isLargerThanMobile: layoutSize.isLargerThanMedium,
+
+    // NYPL uses the extra large 1280px breakpoint to determine if the screen is
+    // in the tablet view. This is the recommended boolean value to use.
+    isLargerThanTablet: layoutSize.isLargerThanXLarge,
   };
 };
 

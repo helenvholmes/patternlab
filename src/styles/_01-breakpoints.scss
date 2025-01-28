@@ -11,15 +11,15 @@
 // Sass' breakpoint() mixin doesn't work without Sass variables.
 // CSS variables expose the breakpoint variables to consumers.
 :root {
-  --nypl-breakpoint-small: 320px;
-  --nypl-breakpoint-medium: 600px;
-  --nypl-breakpoint-large: 960px;
+  --nypl-breakpoint-small: 480px;
+  --nypl-breakpoint-medium: 768px;
+  --nypl-breakpoint-large: 1024px;
   --nypl-breakpoint-xl: 1280px;
 }
 
-$nypl-breakpoint-small: 320px;
-$nypl-breakpoint-medium: 600px;
-$nypl-breakpoint-large: 960px;
+$nypl-breakpoint-small: 480px;
+$nypl-breakpoint-medium: 768px;
+$nypl-breakpoint-large: 1024px;
 $nypl-breakpoint-xl: 1280px;
 // The max-width breakpoint is used when the design should be applied at
 // whatever the largest breakpoint is regardless of actual pixel value,
