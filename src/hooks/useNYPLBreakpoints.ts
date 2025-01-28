@@ -58,7 +58,7 @@ const useNYPLBreakpoints = () => {
     // the mobile view. This is the recommended boolean value to use.
     isLargerThanMobile: layoutSize.isLargerThanMedium,
 
-    // NYPL uses the extra are 1280px breakpoint to determine if the screen is
+    // NYPL uses the extra large 1280px breakpoint to determine if the screen is
     // in the tablet view. This is the recommended boolean value to use.
     isLargerThanTablet: layoutSize.isLargerThanXLarge,
   };

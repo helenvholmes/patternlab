@@ -23,7 +23,7 @@ export const BreakPointsExample = () => {
   return (
     <Stack direction="row" spacing="l" width="100%">
       <Box flexBasis="50%">
-        <Heading text="Charka Syntax" level="h3" size="heading6" />
+        <Heading text="Chakra Syntax" level="h3" size="heading6" />
         <Text>The windows size is currently:</Text>
         <List type="ul">
           <li>

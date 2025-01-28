@@ -1,5 +1,5 @@
 import { Meta, Source } from "@storybook/blocks";
-
+import Banner from "../Banner/Banner";
 import Link from "../Link/Link";
 
 <Meta title="Style Guide/Breakpoints" />
@@ -28,6 +28,17 @@ responsive layouts and typography.
 
 The following CSS variables are available through the DS.
 
+<Banner
+  content={
+    <>
+      <strong>Recommendation:</strong> It is recommended that NYPL apps use the
+      sematic tokens to define media queries.
+    </>
+  }
+  mb="s"
+  type="recommendation"
+/>
+
 <Source
   code={`
 // Chakra Syntax
@@ -39,8 +50,9 @@ The following CSS variables are available through the DS.
 // NYPL Semantic Syntax
 --nypl-breakpoint-smallMobile: 480px;
 --nypl-breakpoint-largeMobile: 768px;
+--nypl-breakpoint-mobile: 768px;
 --nypl-breakpoint-smallTablet: 1024px;
---nypl-breakpoint-largeTablet: 1280px;
+--nypl-breakpoint-tablet: 1280px;
 `}
 language="css"
 />

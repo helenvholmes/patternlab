@@ -20,8 +20,10 @@ export const headerBreakpoints = {
  * ------------ | ------------------------------- | -------------- | --------------
  * smallMobile  | --nypl-breakpoint-smallMobile   | 30em / 480px   | small mobile
  * largeMobile  | --nypl-breakpoint-largeMobile   | 48em / 768px   | large mobile
+ * mobile       | --nypl-breakpoint-mobile        | 48em / 768px   | mobile
  * smallTablet  | --nypl-breakpoint-smallTablet   | 64em / 1024px  | small tablet
  * largeTablet  | --nypl-breakpoint-xlargeTablet  | 80em / 1280px  | large tablet
+ * tablet       | --nypl-breakpoint-tablet        | 80em / 1280px  | tablet
  */
 export default {
   sm: "30em",
@@ -37,6 +39,8 @@ export default {
   // NYPL semantic keys
   smallMobile: "30em",
   largeMobile: "48em",
+  mobile: "48em",
   smallTablet: "64em",
   largeTablet: "80em",
+  tablet: "80em",
 };
