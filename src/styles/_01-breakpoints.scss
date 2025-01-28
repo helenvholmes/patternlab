@@ -11,16 +11,32 @@
 // Sass' breakpoint() mixin doesn't work without Sass variables.
 // CSS variables expose the breakpoint variables to consumers.
 :root {
+  // Chakra syntax
   --nypl-breakpoint-small: 480px;
   --nypl-breakpoint-medium: 768px;
   --nypl-breakpoint-large: 1024px;
   --nypl-breakpoint-xl: 1280px;
+
+  // NYPL Semantic syntax
+  --nypl-breakpoint-smallMobile: 480px;
+  --nypl-breakpoint-largeMobile: 768px;
+  --nypl-breakpoint-mobile: 768px;
+  --nypl-breakpoint-smallTablet: 1024px;
+  --nypl-breakpoint-tablet: 1280px;
 }
 
+// Chakra syntax
 $nypl-breakpoint-small: 480px;
 $nypl-breakpoint-medium: 768px;
 $nypl-breakpoint-large: 1024px;
 $nypl-breakpoint-xl: 1280px;
+
+// NYPL Semantic syntax
+$nypl-breakpoint-smallMobile: 480px;
+$nypl-breakpoint-largeMobile: 768px;
+$nypl-breakpoint-mobile: 768px;
+$nypl-breakpoint-smallTablet: 1024px;
+$nypl-breakpoint-tablet: 1280px;
 // The max-width breakpoint is used when the design should be applied at
 // whatever the largest breakpoint is regardless of actual pixel value,
 // e.g. removing outer margin on body wrapper.

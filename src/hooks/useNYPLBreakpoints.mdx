@@ -1,5 +1,6 @@
 import { Canvas, Meta, Source } from "@storybook/blocks";
 import { BreakPointsExample } from "./useNYPLBreakpoints.stories";
+import Link from "../components/Link/Link";
 
 <Meta title="Hooks/useNYPLBreakpoints" />
 
@@ -9,6 +10,17 @@ import { BreakPointsExample } from "./useNYPLBreakpoints.stories";
 | ------------ | ------------ |
 | Added        | `1.0.4`      |
 | Latest       | `Prerelease` |
+
+## Table of Contents
+
+- {<Link href="#overview" target="_self">Overview</Link>}
+- {<Link href="#mobile-first" target="_self">Mobile-First</Link>}
+- {<Link href="#usage" target="_self">Usage</Link>}
+- {<Link href="#common-patterns" target="_self">Common Patterns</Link>}
+- {<Link href="#code-example" target="_self">Code Example</Link>}
+- {<Link href="#functional-example" target="_self">Functional Example</Link>}
+
+## Overview
 
 This custom hook is inspired by Chakra's `useMediaQuery` hook. Internally, the
 hook uses the `useMediaQuery` hook and the `MediaMatch` API to determine the
@@ -48,11 +60,31 @@ const {
   language="jsx"
 />
 
-For the following example, we'll use the NYPL specific mobile breakpoint value.
-This breakpoint value is based on the "medium" breakpoint value of `"48em"` (or
-`"768px"`). If different components need to be conditionally rendered based on
-the current size of the viewport, we can use the `isLargerThanMobile` boolean
-value.
+## Common Patterns
+
+NYPL Product Designers will often only provide `mobile` and `desktop` layouts.
+When necesary, NYPL Product Designer may also provide `tablet` layouts.
+
+When development needs to target only `mobile` and `desktop` viewports:
+
+- use `isLargerThanMobile` to conditionally target the `desktop` viewport
+
+When development needs to target `mobile`, `tablet`, and `desktop` viewports:
+
+- use `isLargerThanMobile` to conditionally target the `tablet` viewport
+- use `isLargerThanTablet` to conditionally target the `desktop` viewport
+
+When development needs more granular control when targetting viewports:
+
+- use `isLargerThanSmallMobile` to conditionally target the `large mobile` viewport
+- use `isLargerThanLargeMobile` to conditionally target the `small tablet` viewport
+- use `isLargerThanSmallTablet` to conditionally target the `large tablet` viewport
+- use `isLargerThanLargeTablet` to conditionally target the `desktop` viewport
+
+## Code Example
+
+Conditionally render different components based on the current size of the
+viewport.
 
 <Source
   code={`
@@ -71,10 +103,8 @@ const MobileLayout = () => ...
 
 ## Functional Examples
 
-The `Chakra Syntax` and `Semantic Syntax` examples below utilize the boolean
-values to update text values based on the viewport size. Change the size of your
-browser window and watch the text adjust as the width of the window decreases
-and increases.
+Change the size of your browser window and watch the text adjust as the width of
+the window decreases and increases.
 
 {BreakPointsExample()}
 
