@@ -13,6 +13,13 @@ export const changelogData: ChangelogData[] = [
     date: "Prerelease",
     version: "Prerelease",
     type: "Update",
+    affects: ["Styles"],
+    notes: ["Updates arrow to be center aligned vertically."],
+  },
+  {
+    date: "Prerelease",
+    version: "Prerelease",
+    type: "Update",
     affects: ["Accessibility"],
     notes: [
       "Adds screenreaderOnly styles to span inside breadcrumb so link has descriptive text on mobile.",
