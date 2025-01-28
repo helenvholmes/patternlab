@@ -1,22 +1,25 @@
 import { defineStyleConfig } from "@chakra-ui/react";
 import { defineStyle } from "@chakra-ui/system";
-import { responsiveGap, responsivePadding } from "./global";
+import useResponsiveSpacing from "../../hooks/useResponsiveSpacing";
 
 const Template = defineStyleConfig({
-  baseStyle: defineStyle({
-    boxSizing: "border-box",
-    color: "ui.typography.body",
-    display: "grid",
-    maxWidth: "1280px",
-    // 320px screen width - 32px padding = 288px
-    minWidth: "288px",
-    m: "0 auto",
-    p: responsivePadding,
-    gridTemplateAreas: `"breakout" "top" "main" "bottom"`,
-    gridTemplateColumns: "100%",
-    gridTemplateRows: "auto",
-    columnGap: responsiveGap,
-    "& > *:not(:last-child)": { mb: responsiveGap },
+  baseStyle: defineStyle(() => {
+    const { responsiveGap, responsiveMargin } = useResponsiveSpacing();
+    return {
+      boxSizing: "border-box",
+      color: "ui.typography.body",
+      display: "grid",
+      maxWidth: "1280px",
+      // 320px screen width - 32px padding = 288px
+      minWidth: "288px",
+      m: "0 auto",
+      p: responsiveMargin,
+      gridTemplateAreas: `"breakout" "top" "main" "bottom"`,
+      gridTemplateColumns: "100%",
+      gridTemplateRows: "auto",
+      columnGap: responsiveGap,
+      "& > *:not(:last-child)": { mb: responsiveGap },
+    };
   }),
   variants: {
     left: {
@@ -47,10 +50,13 @@ const Template = defineStyleConfig({
 });
 
 const TemplateBreakout = defineStyleConfig({
-  baseStyle: defineStyle({
-    width: "100vw",
-    ml: "calc(-50vw + 50%)",
-    px: responsivePadding,
+  baseStyle: defineStyle(() => {
+    const { responsiveMargin } = useResponsiveSpacing();
+    return {
+      width: "100vw",
+      ml: "calc(-50vw + 50%)",
+      px: responsiveMargin,
+    };
   }),
 });
 
