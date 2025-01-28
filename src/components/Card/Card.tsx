@@ -327,15 +327,12 @@ export const Card: ChakraComponent<
             className={className}
             mainActionLink={mainActionLink}
             styles={{
-              ...styles.base,
+              ...styles.wrapper,
               ...customColors,
             }}
             data-wrapper
             {...rest}
           >
-            <Box className="card-body" __css={styles.body} data-body>
-              {cardContents}
-            </Box>
             {hasImage && (
               <CardImage
                 alt={imageProps.alt}
@@ -353,6 +350,9 @@ export const Card: ChakraComponent<
                 src={imageProps.src ? imageProps.src : undefined}
               />
             )}
+            <Box className="card-body" __css={styles.body} data-body>
+              {cardContents}
+            </Box>
             {cardRightContents.length ? (
               <Box
                 className="card-right"

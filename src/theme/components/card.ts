@@ -147,12 +147,14 @@ const ReservoirCard = defineMultiStyleConfig({
             "[data-body]": {
               width: "100%",
             },
-            "[data-image]": {
-              maxWidth: "100%",
-              margin: imageIsAtEnd ? "var(--nypl-space-m) 0 0" : null,
-              width: "100%",
-              ...imageSizesMinWidth0[imageSize],
-            },
+            ...(isRow && {
+              "[data-image]": {
+                maxWidth: "100%",
+                margin: imageIsAtEnd ? "var(--nypl-space-m) 0 0" : null,
+                width: "100%",
+                ...imageSizesMinWidth0[imageSize],
+              },
+            }),
           },
           [`@container (min-width: ${breakpoints.sm})`]: {
             "[data-body]": {
@@ -174,16 +176,19 @@ const ReservoirCard = defineMultiStyleConfig({
               flexFlow: "row nowrap",
               width: "auto",
             },
-            "[data-image]": {
-              maxWidth: "50%",
-              flex: "0 0 225px",
-              margin: imageIsAtEnd
-                ? "0 0 0 var(--nypl-space-m)"
-                : "0 var(--nypl-space-m) 0 0",
-              width: null,
-              ...imageSizesMinWidth600[imageSize],
-            },
+            ...(isRow && {
+              "[data-image]": {
+                maxWidth: "50%",
+                flex: "0 0 225px",
+                margin: imageIsAtEnd
+                  ? "0 0 0 var(--nypl-space-m)"
+                  : "0 var(--nypl-space-m) 0 0",
+                width: null,
+                ...imageSizesMinWidth600[imageSize],
+              },
+            }),
           },
+          width: "100%",
         },
         wrapper: {
           alignItems: "flex-start",
