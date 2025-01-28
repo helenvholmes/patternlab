@@ -1,0 +1,142 @@
+import { Meta, Source } from "@storybook/blocks";
+import { Box } from "@chakra-ui/react";
+import useResponsiveSpacing from "../hooks/useResponsiveSpacing";
+
+<Meta title="Hooks/useResponsiveSpacing" />
+
+# useResponsiveSpacing
+
+| Hook Version | DS Version   |
+| ------------ | ------------ |
+| Added        | `Prerelease` |
+| Latest       | `Prerelease` |
+
+The `useResponsiveSpacing` hook returns responsive gap and padding values that
+align with NYPL design standards for responsive grids and columns. The values
+will adjust based on the width of the viewport.
+
+The `Template` component uses the `useResponsiveSpacing` hook for margin and
+grid spacing values.
+
+## Usage
+
+<Source
+  code={`
+import { 
+  useResponsiveSpacing,
+} from "@nypl/design-system-react-components";
+// ...
+const {
+  responsiveGap,
+  responsivePadding,
+} = useResponsiveSpacing();
+`}
+  language="jsx"
+/>
+
+## responsiveGap
+
+The `responsiveGap` is intended to be used as the gap values for repeating grids
+and table.
+
+- Mobile: `1rem` (16px)
+- Tablet: `1.5rem` (24px)
+- Desktop: `2rem` (32px)
+
+<Source
+  code={`
+const {
+  responsiveGap
+} = useResponsiveSpacing();
+// ...
+const gridStyles = {
+  display: "grid",
+  gap: responsiveGap,
+  gridTemplateColumns: "repeat(3, 1fr)",
+}
+<div style={ gridStyles }>
+  <div>...</div>
+  <div>...</div>
+  <div>...</div>
+  <div>...</div>
+  <div>...</div>
+  <div>...</div>
+</div>
+`}
+  language="jsx"
+/>
+
+## responsiveMargin
+
+The `responsiveMargin` is intended to be used as the spacing value for the left
+and right margins for any element that could potentially touch the edge of the
+browser window.
+
+- Mobile: `1rem` (16px)
+- Tablet: `1.5rem` (24px)
+- Desktop: `1rem` (16px)
+
+<Source
+  code={`
+const {
+  responsiveMargin,
+} = useResponsiveSpacing();
+// ...
+const containerStyles = {
+  marginLeft: responsiveMargin,
+  marginRight: responsiveMargin,
+}
+<div style={ containerStyles }>
+  <div>...</div>
+</div>
+`}
+  language="jsx"
+/>
+
+## Visual example
+
+The example below can be used to illustrate the responsive margin and gap in
+action. The `margin` is orange and the `gap` is blue.
+
+Change the size of your browser window and watch the spacing values adjust as
+the window gets bigger and smaller.
+
+export const { responsiveGap, responsiveMargin } = useResponsiveSpacing();
+export const containerStyles = {
+  bgColor: "ui.warning.primary",
+};
+export const gridStyles = {
+  bgColor: "ui.link.primary",
+  display: "grid",
+  gap: responsiveGap,
+  gridTemplateColumns: {
+    base: "1fr",
+    sm: "repeat(2, 1fr)",
+    md: "repeat(3, 1fr)",
+    lg: "repeat(4, 1fr)",
+  },
+  mx: responsiveMargin,
+};
+export const contentStyles = {
+  bgColor: "ui.bg.default",
+  color: "ui.typography.heading",
+  p: "l",
+  textAlign: "center",
+};
+
+<Box __css={containerStyles}>
+  <Box __css={gridStyles}>
+    <Box __css={contentStyles}>Content</Box>
+    <Box __css={contentStyles}>Content</Box>
+    <Box __css={contentStyles}>Content</Box>
+    <Box __css={contentStyles}>Content</Box>
+    <Box __css={contentStyles}>Content</Box>
+    <Box __css={contentStyles}>Content</Box>
+    <Box __css={contentStyles}>Content</Box>
+    <Box __css={contentStyles}>Content</Box>
+    <Box __css={contentStyles}>Content</Box>
+    <Box __css={contentStyles}>Content</Box>
+    <Box __css={contentStyles}>Content</Box>
+    <Box __css={contentStyles}>Content</Box>
+  </Box>
+</Box>

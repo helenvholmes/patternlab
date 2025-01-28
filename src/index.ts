@@ -298,8 +298,9 @@ export { default as useCloseDropDown } from "./hooks/useCloseDropDown";
 export { default as useMultiSelect } from "./hooks/useMultiSelect";
 export { default as useNYPLBreakpoints } from "./hooks/useNYPLBreakpoints";
 export { default as useNYPLTheme } from "./hooks/useNYPLTheme";
-export { default as useWindowSize } from "./hooks/useWindowSize";
+export { default as useResponsiveSpacing } from "./hooks/useResponsiveSpacing";
 export { default as useScrollFadeStyles } from "./hooks/useScrollFadeStyles";
+export { default as useWindowSize } from "./hooks/useWindowSize";
 export { default as VideoPlayer } from "./components/VideoPlayer/VideoPlayer";
 export type {
   VideoPlayerAspectRatios,

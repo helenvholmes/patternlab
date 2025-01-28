@@ -8,6 +8,10 @@ Currently, this repo is in Prerelease. When it is released, this project will ad
 
 ## 4.0.0 (TBD)
 
+### Adds
+
+- Adds the `useResponsiveSpacing` hook.
+
 ### Updates
 
 - [Updates `Template` component(s)](https://newyorkpubliclibrary.atlassian.net/browse/DSD-1884) and styles per TAD.
