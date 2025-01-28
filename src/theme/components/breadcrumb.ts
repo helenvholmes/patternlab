@@ -162,6 +162,7 @@ const Breadcrumb = defineStyleConfig({
       display: { base: "none", md: "inline-block" },
       a: {
         marginEnd: { base: "xs", md: "0" },
+        display: { base: "flex", md: "unset" },
       },
       ".icon": {
         display: { base: "inline", md: "none" },
