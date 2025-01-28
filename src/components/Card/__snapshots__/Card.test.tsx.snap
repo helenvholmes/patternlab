@@ -10,6 +10,21 @@ exports[`Card Renders the UI snapshot correctly 1`] = `
     id="regularCard"
   >
     <div
+      className="css-0"
+      data-image={true}
+    >
+      <div
+        className="css-0"
+      >
+        <img
+          alt="Alt text"
+          className="css-0"
+          id="img-id-regularCard"
+          src="https://images.nypl.org/index.php?id=swope_243048&t=r"
+        />
+      </div>
+    </div>
+    <div
       className="card-body css-0"
       data-body={true}
     >
@@ -38,21 +53,6 @@ exports[`Card Renders the UI snapshot correctly 1`] = `
         </button>
       </div>
     </div>
-    <div
-      className="css-0"
-      data-image={true}
-    >
-      <div
-        className="css-0"
-      >
-        <img
-          alt="Alt text"
-          className="css-0"
-          id="img-id-regularCard"
-          src="https://images.nypl.org/index.php?id=swope_243048&t=r"
-        />
-      </div>
-    </div>
   </div>
 </div>
 `;
@@ -66,6 +66,21 @@ exports[`Card Renders the UI snapshot correctly 2`] = `
     data-wrapper={true}
     id="cardWithExtendedStyles"
   >
+    <div
+      className="css-0"
+      data-image={true}
+    >
+      <div
+        className="css-0"
+      >
+        <img
+          alt="Alt text"
+          className="css-0"
+          id="img-id-cardWithExtendedStyles"
+          src="https://images.nypl.org/index.php?id=swope_243048&t=r"
+        />
+      </div>
+    </div>
     <div
       className="card-body css-0"
       data-body={true}
@@ -122,21 +137,6 @@ exports[`Card Renders the UI snapshot correctly 2`] = `
         </a>
       </div>
     </div>
-    <div
-      className="css-0"
-      data-image={true}
-    >
-      <div
-        className="css-0"
-      >
-        <img
-          alt="Alt text"
-          className="css-0"
-          id="img-id-cardWithExtendedStyles"
-          src="https://images.nypl.org/index.php?id=swope_243048&t=r"
-        />
-      </div>
-    </div>
   </div>
 </div>
 `;
@@ -150,6 +150,21 @@ exports[`Card Renders the UI snapshot correctly 3`] = `
     data-wrapper={true}
     id="cardWithNoCTAs"
   >
+    <div
+      className="css-0"
+      data-image={true}
+    >
+      <div
+        className="css-0"
+      >
+        <img
+          alt="Alt text"
+          className="css-0"
+          id="img-id-cardWithNoCTAs"
+          src="https://images.nypl.org/index.php?id=swope_243048&t=r"
+        />
+      </div>
+    </div>
     <div
       className="card-body css-0"
       data-body={true}
@@ -175,21 +190,6 @@ exports[`Card Renders the UI snapshot correctly 3`] = `
         </p>
       </div>
     </div>
-    <div
-      className="css-0"
-      data-image={true}
-    >
-      <div
-        className="css-0"
-      >
-        <img
-          alt="Alt text"
-          className="css-0"
-          id="img-id-cardWithNoCTAs"
-          src="https://images.nypl.org/index.php?id=swope_243048&t=r"
-        />
-      </div>
-    </div>
   </div>
 </div>
 `;
@@ -203,6 +203,21 @@ exports[`Card Renders the UI snapshot correctly 4`] = `
     data-wrapper={true}
     id="cardWithNoContent"
   >
+    <div
+      className="css-0"
+      data-image={true}
+    >
+      <div
+        className="css-0"
+      >
+        <img
+          alt="Alt text"
+          className="css-0"
+          id="img-id-cardWithNoContent"
+          src="https://images.nypl.org/index.php?id=swope_243048&t=r"
+        />
+      </div>
+    </div>
     <div
       className="card-body css-0"
       data-body={true}
@@ -252,21 +267,6 @@ exports[`Card Renders the UI snapshot correctly 4`] = `
           />
           Download
         </a>
-      </div>
-    </div>
-    <div
-      className="css-0"
-      data-image={true}
-    >
-      <div
-        className="css-0"
-      >
-        <img
-          alt="Alt text"
-          className="css-0"
-          id="img-id-cardWithNoContent"
-          src="https://images.nypl.org/index.php?id=swope_243048&t=r"
-        />
       </div>
     </div>
   </div>
@@ -352,6 +352,21 @@ exports[`Card Renders the UI snapshot correctly 6`] = `
     id="fullclick"
   >
     <div
+      className="css-0"
+      data-image={true}
+    >
+      <div
+        className="css-0"
+      >
+        <img
+          alt="Alt text"
+          className="css-0"
+          id="img-id-fullclick"
+          src="https://images.nypl.org/index.php?id=swope_243048&t=r"
+        />
+      </div>
+    </div>
+    <div
       className="card-body css-0"
       data-body={true}
     >
@@ -385,21 +400,6 @@ exports[`Card Renders the UI snapshot correctly 6`] = `
         </button>
       </div>
     </div>
-    <div
-      className="css-0"
-      data-image={true}
-    >
-      <div
-        className="css-0"
-      >
-        <img
-          alt="Alt text"
-          className="css-0"
-          id="img-id-fullclick"
-          src="https://images.nypl.org/index.php?id=swope_243048&t=r"
-        />
-      </div>
-    </div>
   </div>
 </div>
 `;
@@ -413,6 +413,21 @@ exports[`Card Renders the UI snapshot correctly 7`] = `
     data-wrapper={true}
     id="cardID"
   >
+    <div
+      className="css-0"
+      data-image={true}
+    >
+      <div
+        className="css-0"
+      >
+        <img
+          alt="Alt text"
+          className="css-0"
+          id="img-id-cardWithRightActions"
+          src="https://images.nypl.org/index.php?id=swope_243048&t=r"
+        />
+      </div>
+    </div>
     <div
       className="card-body css-0"
       data-body={true}
@@ -454,21 +469,6 @@ exports[`Card Renders the UI snapshot correctly 7`] = `
         </button>
       </div>
     </div>
-    <div
-      className="css-0"
-      data-image={true}
-    >
-      <div
-        className="css-0"
-      >
-        <img
-          alt="Alt text"
-          className="css-0"
-          id="img-id-cardWithRightActions"
-          src="https://images.nypl.org/index.php?id=swope_243048&t=r"
-        />
-      </div>
-    </div>
   </div>
 </div>
 `;
@@ -482,6 +482,21 @@ exports[`Card Renders the UI snapshot correctly 8`] = `
     data-wrapper={true}
     id="chakraProps"
   >
+    <div
+      className="css-0"
+      data-image={true}
+    >
+      <div
+        className="css-0"
+      >
+        <img
+          alt="Alt text"
+          className="css-0"
+          id="img-id-chakraProps"
+          src="https://images.nypl.org/index.php?id=swope_243048&t=r"
+        />
+      </div>
+    </div>
     <div
       className="card-body css-0"
       data-body={true}
@@ -511,21 +526,6 @@ exports[`Card Renders the UI snapshot correctly 8`] = `
         </button>
       </div>
     </div>
-    <div
-      className="css-0"
-      data-image={true}
-    >
-      <div
-        className="css-0"
-      >
-        <img
-          alt="Alt text"
-          className="css-0"
-          id="img-id-chakraProps"
-          src="https://images.nypl.org/index.php?id=swope_243048&t=r"
-        />
-      </div>
-    </div>
   </div>
 </div>
 `;
@@ -540,6 +540,21 @@ exports[`Card Renders the UI snapshot correctly 9`] = `
     data-wrapper={true}
     id="otherProps"
   >
+    <div
+      className="css-0"
+      data-image={true}
+    >
+      <div
+        className="css-0"
+      >
+        <img
+          alt="Alt text"
+          className="css-0"
+          id="img-id-otherProps"
+          src="https://images.nypl.org/index.php?id=swope_243048&t=r"
+        />
+      </div>
+    </div>
     <div
       className="card-body css-0"
       data-body={true}
@@ -569,21 +584,6 @@ exports[`Card Renders the UI snapshot correctly 9`] = `
         >
           Example CTA
         </button>
-      </div>
-    </div>
-    <div
-      className="css-0"
-      data-image={true}
-    >
-      <div
-        className="css-0"
-      >
-        <img
-          alt="Alt text"
-          className="css-0"
-          id="img-id-otherProps"
-          src="https://images.nypl.org/index.php?id=swope_243048&t=r"
-        />
       </div>
     </div>
   </div>
