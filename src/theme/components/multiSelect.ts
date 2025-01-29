@@ -69,7 +69,7 @@ const MultiSelect = defineMultiStyleConfig({
         minWidth: "auto",
         right: "0",
         top: "0",
-        width: { base: defaultElementSizes.mobileFieldHeight, md: "30px" },
+        width: { base: defaultElementSizes.mobileFieldHeight, md: "34px" },
       },
       input: {
         backgroundColor: "ui.bg.default",
