@@ -166,7 +166,7 @@ export const FontSize: Story = {
       tableData={[
         [
           <>
-            <StatusBadge labelFontSize="body1" type="neutral">
+            <StatusBadge font-size="body1" type="neutral">
               Neutral
             </StatusBadge>
           </>,
@@ -174,14 +174,14 @@ export const FontSize: Story = {
             <StatusBadge type="neutral">Neutral</StatusBadge>
           </>,
           <>
-            <StatusBadge labelFontSize="caption" type="neutral">
+            <StatusBadge font-size="caption" type="neutral">
               Neutral
             </StatusBadge>
           </>,
         ],
         [
           <>
-            <StatusBadge labelFontSize="body1" type="informative">
+            <StatusBadge font-size="body1" type="informative">
               Informative
             </StatusBadge>
           </>,
@@ -189,14 +189,14 @@ export const FontSize: Story = {
             <StatusBadge type="informative">Informative</StatusBadge>
           </>,
           <>
-            <StatusBadge labelFontSize="caption" type="informative">
+            <StatusBadge font-size="caption" type="informative">
               Informative
             </StatusBadge>
           </>,
         ],
         [
           <>
-            <StatusBadge labelFontSize="body1" type="positive">
+            <StatusBadge font-size="body1" type="positive">
               Positive
             </StatusBadge>
           </>,
@@ -204,14 +204,14 @@ export const FontSize: Story = {
             <StatusBadge type="positive">Positive</StatusBadge>
           </>,
           <>
-            <StatusBadge labelFontSize="caption" type="positive">
+            <StatusBadge font-size="caption" type="positive">
               Positive
             </StatusBadge>
           </>,
         ],
         [
           <>
-            <StatusBadge labelFontSize="body1" type="negative">
+            <StatusBadge font-size="body1" type="negative">
               Negative
             </StatusBadge>
           </>,
@@ -219,14 +219,14 @@ export const FontSize: Story = {
             <StatusBadge type="negative">Negative</StatusBadge>
           </>,
           <>
-            <StatusBadge labelFontSize="caption" type="negative">
+            <StatusBadge font-size="caption" type="negative">
               Negative
             </StatusBadge>
           </>,
         ],
         [
           <>
-            <StatusBadge labelFontSize="body1" type="warning">
+            <StatusBadge font-size="body1" type="warning">
               Warning
             </StatusBadge>
           </>,
@@ -234,14 +234,14 @@ export const FontSize: Story = {
             <StatusBadge type="warning">Warning</StatusBadge>
           </>,
           <>
-            <StatusBadge labelFontSize="caption" type="warning">
+            <StatusBadge font-size="caption" type="warning">
               Warning
             </StatusBadge>
           </>,
         ],
         [
           <>
-            <StatusBadge labelFontSize="body1" type="recommendation">
+            <StatusBadge font-size="body1" type="recommendation">
               Recommendation
             </StatusBadge>
           </>,
@@ -249,7 +249,7 @@ export const FontSize: Story = {
             <StatusBadge type="recommendation">Recommendation</StatusBadge>
           </>,
           <>
-            <StatusBadge labelFontSize="caption" type="recommendation">
+            <StatusBadge font-size="caption" type="recommendation">
               Recommendation
             </StatusBadge>
           </>,
@@ -324,7 +324,7 @@ export const Icons: Story = {
         <Icon color="brand.primary" mr="xs" name="errorFilled" size="medium" />
         On-Site Access Only
       </StatusBadge>
-      <StatusBadge labelFontSize="caption" type="warning">
+      <StatusBadge font-size="caption" type="warning">
         <Icon
           color="ui.warning.secondary"
           mr="xs"
@@ -342,7 +342,7 @@ export const Icons: Story = {
           size="medium"
         />
       </StatusBadge>
-      <StatusBadge labelFontSize="body1" type="informative">
+      <StatusBadge font-size="body1" type="informative">
         Includes audio
         <Icon color="ui.link.secondary" ml="xs" name="headset" size="medium" />
       </StatusBadge>
