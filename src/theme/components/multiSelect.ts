@@ -76,6 +76,7 @@ const MultiSelect = defineMultiStyleConfig({
         border: "none",
         fontSize: "desktop.caption",
         height: "auto",
+        lineHeight: "inherit",
         minHeight: { base: defaultElementSizes.mobileFieldHeight, md: "auto" },
       },
     },
