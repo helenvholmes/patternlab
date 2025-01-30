@@ -160,6 +160,7 @@ export const SearchBar: ChakraComponent<
         selectType="searchbar"
         value={selectProps?.value}
         __css={styles.select}
+        data-select
         {...stateProps}
       >
         {selectProps?.optionsData.map((option) => (

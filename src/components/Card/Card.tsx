@@ -350,15 +350,11 @@ export const Card: ChakraComponent<
                 src={imageProps.src ? imageProps.src : undefined}
               />
             )}
-            <Box className="card-body" __css={styles.body} data-body>
+            <Box __css={styles.body} data-body>
               {cardContents}
             </Box>
             {cardRightContents.length ? (
-              <Box
-                className="card-right"
-                __css={{ ...styles.body, ...styles.actions }}
-                data-actions
-              >
+              <Box __css={{ ...styles.body, ...styles.actions }} data-actions>
                 {cardRightContents}
               </Box>
             ) : null}

@@ -130,7 +130,6 @@ const ReservoirCard = defineMultiStyleConfig({
         }
       }
       // These sizes are only for the "row" layout.
-      // const imageSize = size ? imageSizes[size] : {};
       return {
         base: {
           containerType: "inline-size",
