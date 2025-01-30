@@ -32,7 +32,8 @@ jobs:
         with:
           node-version: 18.x
       # Based on https://storybook.js.org/docs/sharing/publish-storybook#github-pages
-      - uses: bitovi/github-actions-storybook-to-github-pages@v1.0.3
+      - name: Build and Deploy to GitHub Pages
+        uses: bitovi/github-actions-storybook-to-github-pages@v1.0.3
         with:
           build_command: npm run prebuild:storybook && npm run build-storybook:v3
           path: "."
