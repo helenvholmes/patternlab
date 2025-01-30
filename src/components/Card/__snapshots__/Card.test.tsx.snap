@@ -25,7 +25,7 @@ exports[`Card Renders the UI snapshot correctly 1`] = `
       </div>
     </div>
     <div
-      className="card-body css-0"
+      className="css-0"
       data-body={true}
     >
       <h3
@@ -82,7 +82,7 @@ exports[`Card Renders the UI snapshot correctly 2`] = `
       </div>
     </div>
     <div
-      className="card-body css-0"
+      className="css-0"
       data-body={true}
     >
       <h2
@@ -166,7 +166,7 @@ exports[`Card Renders the UI snapshot correctly 3`] = `
       </div>
     </div>
     <div
-      className="card-body css-0"
+      className="css-0"
       data-body={true}
     >
       <h2
@@ -219,7 +219,7 @@ exports[`Card Renders the UI snapshot correctly 4`] = `
       </div>
     </div>
     <div
-      className="card-body css-0"
+      className="css-0"
       data-body={true}
     >
       <h2
@@ -283,7 +283,7 @@ exports[`Card Renders the UI snapshot correctly 5`] = `
     id="cardWithNoImage"
   >
     <div
-      className="card-body css-0"
+      className="css-0"
       data-body={true}
     >
       <h2
@@ -367,7 +367,7 @@ exports[`Card Renders the UI snapshot correctly 6`] = `
       </div>
     </div>
     <div
-      className="card-body css-0"
+      className="css-0"
       data-body={true}
     >
       <h3
@@ -429,7 +429,7 @@ exports[`Card Renders the UI snapshot correctly 7`] = `
       </div>
     </div>
     <div
-      className="card-body css-0"
+      className="css-0"
       data-body={true}
     >
       <h3
@@ -498,7 +498,7 @@ exports[`Card Renders the UI snapshot correctly 8`] = `
       </div>
     </div>
     <div
-      className="card-body css-0"
+      className="css-0"
       data-body={true}
     >
       <h3
@@ -556,7 +556,7 @@ exports[`Card Renders the UI snapshot correctly 9`] = `
       </div>
     </div>
     <div
-      className="card-body css-0"
+      className="css-0"
       data-body={true}
     >
       <h3

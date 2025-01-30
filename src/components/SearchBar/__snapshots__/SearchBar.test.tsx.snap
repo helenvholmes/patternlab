@@ -95,6 +95,7 @@ exports[`SearchBar renders the UI snapshot correctly 2`] = `
   >
     <div
       className="css-1u8qly9"
+      data-select={true}
       id="searchbar-select-withSelect-wrapper"
     >
       <div
