@@ -1,7 +1,11 @@
 import { Box, chakra, ChakraComponent, useStyleConfig } from "@chakra-ui/react";
 import React, { forwardRef } from "react";
 
-export const statusBadgeFontSizeArray = ["body1", "body2", "caption"] as const;
+export const statusBadgeFontSizeArray = [
+  "desktop.body.body1",
+  "desktop.body.body2",
+  "desktop.caption",
+] as const;
 export type StatusBadgeFontSizes = typeof statusBadgeFontSizeArray[number];
 
 export const statusBadgeLevelArray = ["low", "medium", "high"] as const;
@@ -46,7 +50,7 @@ export const StatusBadge: ChakraComponent<
   forwardRef<HTMLDivElement, React.PropsWithChildren<StatusBadgeProps>>(
     (props, ref?) => {
       const { children, className, id, level, type, ...rest } = props;
-      const labelFontSize = rest["font-size"] || "body2";
+      const labelFontSize = rest["fontSize"] || "desktop.body.body2";
       const finalVariant = level ? level : type ? type : "low";
       const styles = useStyleConfig("StatusBadge", {
         labelFontSize,

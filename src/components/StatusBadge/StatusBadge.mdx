@@ -19,10 +19,10 @@ import { changelogData } from "./statusBadgeChangelogData";
 - {<Link href="#overview" target="_self">Overview</Link>}
 - {<Link href="#component-props" target="_self">Component Props</Link>}
 - {<Link href="#accessibility" target="_self">Accessibility</Link>}
-- {<Link href="#semantic-types" target="_self">Semantic Types</Link>}
-- {<Link href="#levels-deprecated" target="_self">Levels (deprecated)</Link>}
+- {<Link href="#visual-style" target="_self">Visual Style</Link>}
 - {<Link href="#font-size" target="_self">Font Size</Link>}
-- {<Link href="#labeling" target="_self">Labeling</Link>}
+- {<Link href="#label-capitalization" target="_self">Capitalization</Link>}
+- {<Link href="#icons" target="_self">Icons</Link>}
 - {<Link href="#changelog" target="_self">Changelog</Link>}
 
 ## Overview
@@ -49,53 +49,56 @@ with the general meaning associated with the semantic colors used in a specific
 variant. In this way, the user will be able to understand the priority of the
 `StatusBadge` and not rely just on the color.
 
-## Semantic Types
+## Visual Style
 
-The semantic `type` variants align with specific uses. Please refer to the
-purpose of each variant.
+The component offers two props for setting the visuall style:
 
-<Canvas of={StatusBadgeStories.SemanticTypes} />
+- `type`
+- `level` (deprecated)
 
-## Levels (deprecated)
+### Type
 
-The `level` variants have been deprecated in favor of the semantic `type`
-variants. However, for backward compatability, the `level` prop will override
-the `type` prop.
+- The semantic `type` variants align with specific uses.
+- Refer to the table below for the recommended purpose of each variant.
+
+<Canvas of={StatusBadgeStories.Types} />
+
+### Level (deprecated)
+
+- The `level` variants have been deprecated in favor of the semantic `type`
+  variants.
+- For backward compatability, the `level` prop will override the `type` prop.
 
 <Canvas of={StatusBadgeStories.Levels} />
 
 ## Font Size
 
-The label font size can be set using the font sizes from the `Text` component:
+Use the `fontSize` prop to set the font size with the following design tokens:
 
-- `body1`
-- `body2`
-- `caption`
+- `desktop.body.body1`
+- `desktop.body.body2`
+- `desktop.caption`
 
-The default label font size is `body2`.
+The default label font size is `desktop.body.body2`.
 
 <Canvas of={StatusBadgeStories.FontSize} />
 
-## Labeling
+## Capitalization
 
-The capitalization of a badge label will not be forced by the component and
-labels will render exactly as they are passed into the component. If an
-all-lowercase string is passed in, the label will render all lowercase. If an
-all-caps string is passed in, the label will render all caps. And so on.
-
-The text case should be dependent on the use case and the final decision should
-ultimately come from Product and UX.
+- Capitalization of a badge label will not be forced by the component.
+- Labels will render exactly as they are passed into the component.
+- Text capitalization is dependent on each use case and final decisions should
+  come from Product and UX.
 
 <Canvas of={StatusBadgeStories.Labeling} />
 
 ### Icons
 
-You may render an icon within the `StatusBadge` by passing it as a child to the component.
-If you are using an icon, you should still pass text to the badge so that the user can
-understand its meaning.
-
-You will have to pass a `margin-left` or `margin-right` to add space
-between the icon and the text. The use of the design tokens (ie, `xs`) is encouraged.
+- An icon can be rendered within the component by passing a DS `Icon` component
+  as a child.
+- When using an icon, text should also be included to ensure understanding.
+- For proper spacing, add a left or right marign to icons, as needed. Use design
+  tokens for spacing vlaues (ex. `marginRight="xs"`).
 
 <Canvas of={StatusBadgeStories.Icons} />
 

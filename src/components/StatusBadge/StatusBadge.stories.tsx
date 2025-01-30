@@ -14,8 +14,10 @@ const meta: Meta<typeof StatusBadge> = {
   component: StatusBadge,
   argTypes: {
     className: { control: false },
-    labelFontSize: {
-      table: { defaultValue: { summary: "body2" } },
+    fontSize: {
+      description: "**Only used for Storybook** - Set the label font size.",
+      table: { defaultValue: { summary: "desktop.body.body2" } },
+      type: { name: "string" },
       control: { type: "radio" },
       options: statusBadgeFontSizeArray,
     },
@@ -42,7 +44,7 @@ type Story = StoryObj<typeof StatusBadge>;
 export const WithControls: Story = {
   args: {
     className: undefined,
-    labelFontSize: undefined,
+    fontSize: undefined,
     id: "statusBadge-id",
     level: undefined,
     type: undefined,
@@ -61,7 +63,7 @@ export const WithControls: Story = {
 
 // The following are additional StatusBadge example Stories.
 
-export const SemanticTypes: Story = {
+export const Types: Story = {
   render: () => (
     <Table
       columnHeaders={["", "Variant", "Purpose", "Examples"]}
@@ -162,11 +164,11 @@ export const Levels: Story = {
 export const FontSize: Story = {
   render: () => (
     <Table
-      columnHeaders={["Body1", "Body2", "Caption"]}
+      columnHeaders={["Body1", "Body2 (default)", "Caption"]}
       tableData={[
         [
           <>
-            <StatusBadge font-size="body1" type="neutral">
+            <StatusBadge fontSize="desktop.body.body1" type="neutral">
               Neutral
             </StatusBadge>
           </>,
@@ -174,14 +176,14 @@ export const FontSize: Story = {
             <StatusBadge type="neutral">Neutral</StatusBadge>
           </>,
           <>
-            <StatusBadge font-size="caption" type="neutral">
+            <StatusBadge fontSize="desktop.caption" type="neutral">
               Neutral
             </StatusBadge>
           </>,
         ],
         [
           <>
-            <StatusBadge font-size="body1" type="informative">
+            <StatusBadge fontSize="desktop.body.body1" type="informative">
               Informative
             </StatusBadge>
           </>,
@@ -189,14 +191,14 @@ export const FontSize: Story = {
             <StatusBadge type="informative">Informative</StatusBadge>
           </>,
           <>
-            <StatusBadge font-size="caption" type="informative">
+            <StatusBadge fontSize="desktop.caption" type="informative">
               Informative
             </StatusBadge>
           </>,
         ],
         [
           <>
-            <StatusBadge font-size="body1" type="positive">
+            <StatusBadge fontSize="desktop.body.body1" type="positive">
               Positive
             </StatusBadge>
           </>,
@@ -204,14 +206,14 @@ export const FontSize: Story = {
             <StatusBadge type="positive">Positive</StatusBadge>
           </>,
           <>
-            <StatusBadge font-size="caption" type="positive">
+            <StatusBadge fontSize="desktop.caption" type="positive">
               Positive
             </StatusBadge>
           </>,
         ],
         [
           <>
-            <StatusBadge font-size="body1" type="negative">
+            <StatusBadge fontSize="desktop.body.body1" type="negative">
               Negative
             </StatusBadge>
           </>,
@@ -219,14 +221,14 @@ export const FontSize: Story = {
             <StatusBadge type="negative">Negative</StatusBadge>
           </>,
           <>
-            <StatusBadge font-size="caption" type="negative">
+            <StatusBadge fontSize="desktop.caption" type="negative">
               Negative
             </StatusBadge>
           </>,
         ],
         [
           <>
-            <StatusBadge font-size="body1" type="warning">
+            <StatusBadge fontSize="desktop.body.body1" type="warning">
               Warning
             </StatusBadge>
           </>,
@@ -234,14 +236,14 @@ export const FontSize: Story = {
             <StatusBadge type="warning">Warning</StatusBadge>
           </>,
           <>
-            <StatusBadge font-size="caption" type="warning">
+            <StatusBadge fontSize="desktop.caption" type="warning">
               Warning
             </StatusBadge>
           </>,
         ],
         [
           <>
-            <StatusBadge font-size="body1" type="recommendation">
+            <StatusBadge fontSize="desktop.body.body1" type="recommendation">
               Recommendation
             </StatusBadge>
           </>,
@@ -249,7 +251,7 @@ export const FontSize: Story = {
             <StatusBadge type="recommendation">Recommendation</StatusBadge>
           </>,
           <>
-            <StatusBadge font-size="caption" type="recommendation">
+            <StatusBadge fontSize="desktop.caption" type="recommendation">
               Recommendation
             </StatusBadge>
           </>,
@@ -324,7 +326,7 @@ export const Icons: Story = {
         <Icon color="brand.primary" mr="xs" name="errorFilled" size="medium" />
         On-Site Access Only
       </StatusBadge>
-      <StatusBadge font-size="caption" type="warning">
+      <StatusBadge fontSize="desktop.caption" type="warning">
         <Icon
           color="ui.warning.secondary"
           mr="xs"
@@ -342,7 +344,7 @@ export const Icons: Story = {
           size="medium"
         />
       </StatusBadge>
-      <StatusBadge font-size="body1" type="informative">
+      <StatusBadge fontSize="desktop.body.body1" type="informative">
         Includes audio
         <Icon color="ui.link.secondary" ml="xs" name="headset" size="medium" />
       </StatusBadge>
