@@ -2,7 +2,7 @@
 
 exports[`SearchBar renders the UI snapshot correctly 1`] = `
 <div
-  className="css-1xdhyk6"
+  className="css-v54qrt"
   id="basic-wrapper"
 >
   <form
@@ -43,6 +43,7 @@ exports[`SearchBar renders the UI snapshot correctly 1`] = `
       <button
         aria-label="Search"
         className="chakra-button searchButton css-8bx9xp"
+        data-button={true}
         id="searchbar-button-basic"
         type="submit"
       >
@@ -82,7 +83,7 @@ exports[`SearchBar renders the UI snapshot correctly 1`] = `
 
 exports[`SearchBar renders the UI snapshot correctly 2`] = `
 <div
-  className="css-1xdhyk6"
+  className="css-v54qrt"
   id="withSelect-wrapper"
 >
   <form
@@ -94,6 +95,7 @@ exports[`SearchBar renders the UI snapshot correctly 2`] = `
   >
     <div
       className="css-1u8qly9"
+      data-select={true}
       id="searchbar-select-withSelect-wrapper"
     >
       <div
@@ -219,6 +221,7 @@ exports[`SearchBar renders the UI snapshot correctly 2`] = `
       <button
         aria-label=""
         className="chakra-button searchButton css-8bx9xp"
+        data-button={true}
         id="searchbar-button-withSelect"
         type="submit"
       >
@@ -258,7 +261,7 @@ exports[`SearchBar renders the UI snapshot correctly 2`] = `
 
 exports[`SearchBar renders the UI snapshot correctly 3`] = `
 <div
-  className="css-1xdhyk6"
+  className="css-v54qrt"
   id="withoutHelperText-wrapper"
 >
   <form
@@ -298,6 +301,7 @@ exports[`SearchBar renders the UI snapshot correctly 3`] = `
       <button
         aria-label="Search"
         className="chakra-button searchButton css-8bx9xp"
+        data-button={true}
         id="searchbar-button-withoutHelperText"
         type="submit"
       >
@@ -321,7 +325,7 @@ exports[`SearchBar renders the UI snapshot correctly 3`] = `
 
 exports[`SearchBar renders the UI snapshot correctly 4`] = `
 <div
-  className="css-1xdhyk6"
+  className="css-v54qrt"
   id="withClearButton-wrapper"
 >
   <form
@@ -362,6 +366,7 @@ exports[`SearchBar renders the UI snapshot correctly 4`] = `
       <button
         aria-label=""
         className="chakra-button searchButton css-8bx9xp"
+        data-button={true}
         id="searchbar-button-withClearButton"
         type="submit"
       >
@@ -401,7 +406,7 @@ exports[`SearchBar renders the UI snapshot correctly 4`] = `
 
 exports[`SearchBar renders the UI snapshot correctly 5`] = `
 <div
-  className="css-1xdhyk6"
+  className="css-v54qrt"
   id="invalidState-wrapper"
 >
   <form
@@ -450,6 +455,7 @@ exports[`SearchBar renders the UI snapshot correctly 5`] = `
       <button
         aria-label="Search"
         className="chakra-button searchButton css-8bx9xp"
+        data-button={true}
         id="searchbar-button-invalidState"
         type="submit"
       >
@@ -473,7 +479,7 @@ exports[`SearchBar renders the UI snapshot correctly 5`] = `
 
 exports[`SearchBar renders the UI snapshot correctly 6`] = `
 <div
-  className="css-1xdhyk6"
+  className="css-v54qrt"
   id="disabledState-wrapper"
 >
   <form
@@ -513,6 +519,7 @@ exports[`SearchBar renders the UI snapshot correctly 6`] = `
       <button
         aria-label=""
         className="chakra-button searchButton css-8bx9xp"
+        data-button={true}
         disabled={true}
         id="searchbar-button-disabledState"
         type="submit"
@@ -537,7 +544,7 @@ exports[`SearchBar renders the UI snapshot correctly 6`] = `
 
 exports[`SearchBar renders the UI snapshot correctly 7`] = `
 <div
-  className="css-1xdhyk6"
+  className="css-v54qrt"
   id="requiredState-wrapper"
 >
   <form
@@ -578,6 +585,7 @@ exports[`SearchBar renders the UI snapshot correctly 7`] = `
       <button
         aria-label="Search"
         className="chakra-button searchButton css-8bx9xp"
+        data-button={true}
         disabled={true}
         id="searchbar-button-requiredState"
         type="submit"
@@ -602,7 +610,7 @@ exports[`SearchBar renders the UI snapshot correctly 7`] = `
 
 exports[`SearchBar renders the UI snapshot correctly 8`] = `
 <div
-  className="css-1xdhyk6"
+  className="css-v54qrt"
   id="noBrandButtonType-wrapper"
 >
   <form
@@ -643,6 +651,7 @@ exports[`SearchBar renders the UI snapshot correctly 8`] = `
       <button
         aria-label=""
         className="chakra-button searchButton css-8bx9xp"
+        data-button={true}
         disabled={true}
         id="searchbar-button-noBrandButtonType"
         type="submit"
@@ -667,7 +676,7 @@ exports[`SearchBar renders the UI snapshot correctly 8`] = `
 
 exports[`SearchBar renders the UI snapshot correctly 9`] = `
 <div
-  className="css-1xdhyk6"
+  className="css-v54qrt"
   id="withHeading-wrapper"
 >
   <h2
@@ -689,6 +698,7 @@ exports[`SearchBar renders the UI snapshot correctly 9`] = `
       <button
         aria-label="Search"
         className="chakra-button searchButton css-8bx9xp"
+        data-button={true}
         id="searchbar-button-withHeading"
         type="submit"
       >
@@ -712,7 +722,7 @@ exports[`SearchBar renders the UI snapshot correctly 9`] = `
 
 exports[`SearchBar renders the UI snapshot correctly 10`] = `
 <div
-  className="css-1xdhyk6"
+  className="css-v54qrt"
   id="withDescription-wrapper"
 >
   <p
@@ -733,6 +743,7 @@ exports[`SearchBar renders the UI snapshot correctly 10`] = `
       <button
         aria-label=""
         className="chakra-button searchButton css-8bx9xp"
+        data-button={true}
         id="searchbar-button-withDescription"
         type="submit"
       >
@@ -756,7 +767,7 @@ exports[`SearchBar renders the UI snapshot correctly 10`] = `
 
 exports[`SearchBar renders the UI snapshot correctly 11`] = `
 <div
-  className="css-1xdhyk6"
+  className="css-v54qrt"
   id="withHeadingAndDescription-wrapper"
 >
   <h2
@@ -783,6 +794,7 @@ exports[`SearchBar renders the UI snapshot correctly 11`] = `
       <button
         aria-label="Search"
         className="chakra-button searchButton css-8bx9xp"
+        data-button={true}
         id="searchbar-button-withHeadingAndDescription"
         type="submit"
       >
@@ -806,7 +818,7 @@ exports[`SearchBar renders the UI snapshot correctly 11`] = `
 
 exports[`SearchBar renders the UI snapshot correctly 12`] = `
 <div
-  className="css-1xdhyk6"
+  className="css-v54qrt"
   id="chakra-wrapper"
 >
   <form
@@ -847,6 +859,7 @@ exports[`SearchBar renders the UI snapshot correctly 12`] = `
       <button
         aria-label=""
         className="chakra-button searchButton css-8bx9xp"
+        data-button={true}
         id="searchbar-button-chakra"
         type="submit"
       >
@@ -886,7 +899,7 @@ exports[`SearchBar renders the UI snapshot correctly 12`] = `
 
 exports[`SearchBar renders the UI snapshot correctly 13`] = `
 <div
-  className="css-1xdhyk6"
+  className="css-v54qrt"
   data-testid="props"
   id="props-wrapper"
 >
@@ -928,6 +941,7 @@ exports[`SearchBar renders the UI snapshot correctly 13`] = `
       <button
         aria-label="Search"
         className="chakra-button searchButton css-8bx9xp"
+        data-button={true}
         id="searchbar-button-props"
         type="submit"
       >

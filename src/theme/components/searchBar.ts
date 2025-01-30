@@ -1,14 +1,44 @@
+import breakpoints from "../foundations/breakpoints";
 import { createMultiStyleConfigHelpers } from "@chakra-ui/styled-system";
 
 const { defineMultiStyleConfig, definePartsStyle } =
-  createMultiStyleConfigHelpers(["select"]);
+  createMultiStyleConfigHelpers(["button", "select"]);
 
 const SearchBar = defineMultiStyleConfig({
   baseStyle: definePartsStyle({
     display: "flex",
-    marginBottom: {
-      base: "xs",
-      md: "auto",
+    "@container (min-width: 0px)": {
+      "&": { marginBottom: "xs", flexFlow: "column nowrap" },
+      "[data-select]": {
+        maxWidth: undefined,
+        marginBottom: "-1px",
+        paddingBottom: "xs",
+      },
+      "[data-button]": {
+        padding: "xs",
+        " > span": {
+          display: "none",
+        },
+      },
+    },
+    [`@container (min-width: ${breakpoints.md})`]: {
+      "&": { marginBottom: "auto", flexFlow: "row" },
+      "[data-select]": {
+        marginBottom: "0",
+        maxWidth: "255px",
+        paddingBottom: "unset",
+      },
+      "[data-button]": {
+        borderRightRadius: "sm",
+        maxWidth: "80px",
+        paddingTop: "xs",
+        paddingLeft: "s",
+        paddingBottom: "xs",
+        paddingRight: "s",
+        " > span": {
+          display: "block",
+        },
+      },
     },
     ".textInput": {
       flexGrow: 1,
@@ -16,30 +46,19 @@ const SearchBar = defineMultiStyleConfig({
         borderRightRadius: 0,
       },
     },
-    flexFlow: { base: "column nowrap", md: "row" },
     ".searchButton": {
       minWidth: "44px",
       borderLeftRadius: "none",
       lineHeight: "1.70",
       marginBottom: "auto",
-      paddingTop: { base: "xs", md: "xs" },
-      paddingLeft: { base: "xs", md: "s" },
-      paddingBottom: { base: "xs", md: "xs" },
-      paddingRight: { base: "xs", md: "s" },
       gap: "xxs",
       borderRightRadius: "sm",
-      " > span": {
-        display: { base: "none", md: "block" },
-      },
       " > svg": {
         margin: 0,
       },
     },
     select: {
-      paddingBottom: { base: "xs", md: "unset" },
       flexShrink: "0",
-      marginBottom: { base: "-1px", md: "0" },
-      maxWidth: { base: undefined, md: "255px" },
       textOverflow: "ellipsis",
       _hover: {
         zIndex: "10",
