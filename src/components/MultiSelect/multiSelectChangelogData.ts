@@ -10,6 +10,13 @@ import { ChangelogData } from "../../utils/ComponentChangelogTable";
 
 export const changelogData: ChangelogData[] = [
   {
+    date: "2025-01-30",
+    version: "3.5.3",
+    type: "Update",
+    affects: ["Styles"],
+    notes: ["Updates the text and size styles for the search input field."],
+  },
+  {
     date: "2024-12-05",
     version: "3.5.0",
     type: "Update",
