@@ -1,3 +1,4 @@
+import { defaultElementSizes } from "./global";
 import { createMultiStyleConfigHelpers } from "@chakra-ui/styled-system";
 
 // This function creates a set of function that helps us
@@ -63,9 +64,20 @@ const MultiSelect = defineMultiStyleConfig({
       marginLeft: "56px",
     },
     menuSearchInputBox: {
+      button: {
+        height: "100%",
+        minWidth: "auto",
+        right: "0",
+        top: "0",
+        width: { base: defaultElementSizes.mobileFieldHeight, md: "34px" },
+      },
       input: {
         backgroundColor: "ui.bg.default",
         border: "none",
+        fontSize: "desktop.caption",
+        height: "auto",
+        lineHeight: "inherit",
+        minHeight: { base: defaultElementSizes.mobileFieldHeight, md: "auto" },
       },
     },
     accordionStyles: {
