@@ -8,6 +8,12 @@ Currently, this repo is in Prerelease. When it is released, this project will ad
 
 ## Prerelease
 
+## 3.5.3 (January 30, 2025)
+
+### Adds
+
+- Adds the `useFormatNumber` hook.
+
 ### Updates
 
 - Updates the `Pagination` component to handle 4 digit page counts.
@@ -20,7 +26,6 @@ Currently, this repo is in Prerelease. When it is released, this project will ad
 ### Adds
 
 - Adds the `Filtering` subsection to the `Style Guide`.
-- Adds the `useFormatNumber` hook.
 
 ### Updates
 
