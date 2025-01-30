@@ -1,6 +1,6 @@
 import { defineStyleConfig } from "@chakra-ui/react";
 import { defineStyle } from "@chakra-ui/system";
-import { customFocusColor } from "./global";
+import { customFocusColor, screenreaderOnly } from "./global";
 
 // Variant styling
 const blogs = defineStyle({
@@ -169,13 +169,12 @@ const Breadcrumb = defineStyleConfig({
       "span:not(.breadcrumb-label)": {
         marginInlineEnd: "xxs",
         marginInlineStart: "xxs",
+        ...screenreaderOnly(true),
       },
     },
     "li:nth-last-of-type(2)": {
       display: "inline-block",
-      span: {
-        display: { base: "none", md: "inline" },
-      },
+      span: screenreaderOnly(true),
     },
   }),
   // Available variants:

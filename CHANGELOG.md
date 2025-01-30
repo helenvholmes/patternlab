@@ -12,10 +12,18 @@ Currently, this repo is in Prerelease. When it is released, this project will ad
 
 - Adds the `labelFontSize` prop to the `StatusBadge` component.
 
+## 3.5.3 (January 30, 2025)
+
+### Adds
+
+- Adds the `useFormatNumber` hook.
+
 ### Updates
 
 - Updates the `Pagination` component to handle 4 digit page counts.
 - Updates the `Heading` component to add `line-height` styles for mobile.
+- Updates the `Breadcrumbs` component to make link text screen readable on mobile breakpoints.
+- Updates the `MultiSelect` component to adjust the text and size styles for the search input field.
 
 ## 3.5.2 (January 16, 2025)
 
