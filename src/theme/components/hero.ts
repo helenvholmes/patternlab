@@ -171,11 +171,10 @@ const primary = definePartsStyle(({ foregroundColor, isDarkText }) => ({
       base: "0 0 100%",
       md: "0 0 60%",
     },
-    maxWidth: { md: "960px" },
-    paddingTop: "inset.extrawide",
-    paddingBottom: "inset.extrawide",
-    paddingEnd: "inset.wide",
-    paddingStart: "inset.wide",
+    maxWidth: { md: "860px" },
+    padding: { base: "inset.default", lg: "inset.wide" },
+    paddingEnd: { lg: "inset.wide" },
+    paddingStart: { lg: "inset.wide" },
     a: {
       color: "inherit",
       display: "inline-block",
@@ -350,10 +349,7 @@ const campaign = definePartsStyle(({ foregroundColor, isDarkText }) => ({
   interior: {
     alignSelf: "center",
     maxWidth: { md: "960px" },
-    padding: {
-      base: "inset.default",
-      md: "inset.wide",
-    },
+    padding: "inset.wide",
     width: {
       base: "100%",
       lg: "50%",

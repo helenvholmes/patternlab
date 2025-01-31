@@ -10,6 +10,16 @@ import { ChangelogData } from "../../utils/ComponentChangelogTable";
 
 export const changelogData: ChangelogData[] = [
   {
+    date: "Prerelease",
+    version: "Prerelease",
+    type: "Update",
+    affects: ["Styles"],
+    notes: [
+      "Updates the `primary` variant of the `Hero` component to have appropriate padding for desktop and mobile, and `max-width` of 860px",
+      "Updates the `campaign` variant of the `Hero component to have consistent padding.",
+    ],
+  },
+  {
     date: "2024-10-24",
     version: "3.4.1",
     type: "Update",
