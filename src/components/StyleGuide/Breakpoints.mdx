@@ -1,5 +1,5 @@
 import { Meta, Source } from "@storybook/blocks";
-
+import Banner from "../Banner/Banner";
 import Link from "../Link/Link";
 
 <Meta title="Style Guide/Breakpoints" />
@@ -15,47 +15,75 @@ import Link from "../Link/Link";
 
 ## General Information
 
-The Reservoir Design System (DS) adheres to four global breakpoints for
+The Reservoir Design System (DS) adheres to the following breakpoints for
 responsive layouts and typography.
 
-- Mobile: 320px
-- Tablet Portrait: 600px
-- Tablet Landscape: 960px
-- Desktop: 1280px
+- <strong>Small mobile:</strong> less than 480px
+- <strong>Large mobile:</strong> less than 768px
+- <strong>Small tablet:</strong> less than 1024px
+- <strong>Large tablet:</strong> less than 1280px
+- <strong>Desktop:</strong> greater than or equal to 1280px
 
 ## CSS Variables
 
-The following CSS variables are available through the DS.
+<Banner
+  content={
+    <>
+      <strong>Recommendation:</strong> It is recommended that NYPL apps use the
+      sematic tokens to define media queries.
+    </>
+  }
+  mb="s"
+  type="recommendation"
+/>
 
 <Source
   code={`
---nypl-breakpoint-small: 320px;
---nypl-breakpoint-medium: 600px;
---nypl-breakpoint-large: 960px;
+// Chakra syntax
+--nypl-breakpoint-small: 480px;
+--nypl-breakpoint-medium: 768px;
+--nypl-breakpoint-large: 1024px;
 --nypl-breakpoint-xl: 1280px;
+
+// NYPL semantic syntax
+--nypl-breakpoint-smallMobile: 480px;
+--nypl-breakpoint-largeMobile: 768px;
+--nypl-breakpoint-mobile: 768px;
+--nypl-breakpoint-smallTablet: 1024px;
+--nypl-breakpoint-tablet: 1280px;
 `}
-  language="css"
+language="css"
 />
 
 ## SCSS Variables
 
-If you are using SCSS and imported the DS `/dist/resources.scss` file, then you
-can use the following SCSS variables in your media queries or SCSS `breakpoint`
-function (if used).
+When using SCSS in an app:
+
+- define an import for the DS `/dist/resources.scss` file
+- use the following SCSS variables in media queries or SCSS custom `breakpoint` functions
 
 <Source
   code={`
-$nypl-breakpoint-small: 320px;
-$nypl-breakpoint-medium: 600px;
-$nypl-breakpoint-large: 960px;
+// Chakra syntax
+$nypl-breakpoint-small: 480px;
+$nypl-breakpoint-medium: 768px;
+$nypl-breakpoint-large: 1024px;
 $nypl-breakpoint-xl: 1280px;
+
+// NYPL semantic syntax
+$nypl-breakpoint-smallMobile: 480px;
+$nypl-breakpoint-largeMobile: 768px;
+$nypl-breakpoint-mobile: 768px;
+$nypl-breakpoint-smallTablet: 1024px;
+$nypl-breakpoint-tablet: 1280px;
+
 $nypl-max-width: $nypl-breakpoint-xl;
 `}
-  language="scss"
+language="css"
 />
 
 ## Figma Reference
 
 For additional spacing information, please refer to the Figma Main file.
 
-- https://www.figma.com/file/qShodlfNCJHb8n03IFyApM/Master?node-id=17983%3A60146
+- https://www.figma.com/file/qShodlfNCJHb8n03IFyApM/Main?type=design&node-id=36835-26738&mode=design&t=w3RXt8BBaOjtXvvh-11

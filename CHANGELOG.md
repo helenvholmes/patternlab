@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 Currently, this repo is in Prerelease. When it is released, this project will adhere to [Semantic Versioning](https://semver.org/spec/v2.0.0.html)
 ========
 
+## 4.0.0 (TBD)
+
+### Updates
+
+- [Updates `Template` component(s)](https://newyorkpubliclibrary.atlassian.net/browse/DSD-1884) and styles per TAD.
+- Updates the values for the breakpoints and the associated docs.
+- Updates the `viewport` preview options in Storybook to align with the Reservoir breakpoints.
+
 ## Prerelease
 
 ## 3.5.3 (January 30, 2025)
