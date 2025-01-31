@@ -14,38 +14,38 @@ import results from "../.jest-test-results.json";
 // Custom viewport options
 const customViewports = {
   sm: {
-    name: "sm (320px)",
+    name: "sm - small mobile (less than 480)",
     styles: {
-      width: "320px",
-      height: "568px",
+      width: "390px",
+      height: "667px",
     },
   },
   md: {
-    name: "md (600px)",
+    name: "md - large mobile (less than 768) ",
     styles: {
       width: "600px",
-      height: "800px",
+      height: "715px",
     },
   },
   lg: {
-    name: "lg (960px)",
+    name: "lg - small tablet (less than 1024)",
     styles: {
       width: "960px",
-      height: "800px",
+      height: "1024px",
     },
   },
   xl: {
-    name: "xl (1280px)",
+    name: "xl - large tablet (less than 1280)",
     styles: {
-      width: "1280px",
-      height: "1080px",
+      width: "1200px",
+      height: "1024px",
     },
   },
   "2xl": {
-    name: "2xl (1536px)",
+    name: "desktop (greater than or equal to 1280)",
     styles: {
-      width: "1536px",
-      height: "1080px",
+      width: "1280px",
+      height: "1024px",
     },
   },
 };

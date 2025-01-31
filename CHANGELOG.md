@@ -11,6 +11,8 @@ Currently, this repo is in Prerelease. When it is released, this project will ad
 ### Updates
 
 - [Updates `Template` component(s)](https://newyorkpubliclibrary.atlassian.net/browse/DSD-1884) and styles per TAD.
+- Updates the values for the breakpoints and the associated docs.
+- Updates the `viewport` preview options in Storybook to align with the Reservoir breakpoints.
 
 ## Prerelease
 
