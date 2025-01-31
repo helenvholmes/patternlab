@@ -3,6 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 
 import Icon from "../Icons/Icon";
 import StatusBadge, {
+  statusBadgeFontSizeArray,
   statusBadgeLevelArray,
   statusBadgeTypeArray,
 } from "./StatusBadge";
@@ -13,6 +14,13 @@ const meta: Meta<typeof StatusBadge> = {
   component: StatusBadge,
   argTypes: {
     className: { control: false },
+    fontSize: {
+      description: "**Only used for Storybook** - Set the label font size.",
+      table: { defaultValue: { summary: "desktop.body.body2" } },
+      type: { name: "string" },
+      control: { type: "radio" },
+      options: statusBadgeFontSizeArray,
+    },
     id: { control: false },
     level: {
       table: { defaultValue: { summary: "low" } },
@@ -36,6 +44,7 @@ type Story = StoryObj<typeof StatusBadge>;
 export const WithControls: Story = {
   args: {
     className: undefined,
+    fontSize: undefined,
     id: "statusBadge-id",
     level: undefined,
     type: undefined,
@@ -54,7 +63,7 @@ export const WithControls: Story = {
 
 // The following are additional StatusBadge example Stories.
 
-export const TypeVariants: Story = {
+export const Types: Story = {
   render: () => (
     <Table
       columnHeaders={["", "Variant", "Purpose", "Examples"]}
@@ -110,11 +119,12 @@ export const TypeVariants: Story = {
           "Recommended for you, Related",
         ],
       ]}
+      tableTextSize="body2"
     />
   ),
 };
 
-export const LevelVariants: Story = {
+export const Levels: Story = {
   render: () => (
     <Table
       columnHeaders={["", "Variant", "Purpose", "Examples"]}
@@ -146,11 +156,112 @@ export const LevelVariants: Story = {
           "On-Site Access Only, Closed, Unavailable",
         ],
       ]}
+      tableTextSize="body2"
     />
   ),
 };
 
-export const LabelingVariations: Story = {
+export const FontSize: Story = {
+  render: () => (
+    <Table
+      columnHeaders={["Body1", "Body2 (default)", "Caption"]}
+      tableData={[
+        [
+          <>
+            <StatusBadge fontSize="desktop.body.body1" type="neutral">
+              Neutral
+            </StatusBadge>
+          </>,
+          <>
+            <StatusBadge type="neutral">Neutral</StatusBadge>
+          </>,
+          <>
+            <StatusBadge fontSize="desktop.caption" type="neutral">
+              Neutral
+            </StatusBadge>
+          </>,
+        ],
+        [
+          <>
+            <StatusBadge fontSize="desktop.body.body1" type="informative">
+              Informative
+            </StatusBadge>
+          </>,
+          <>
+            <StatusBadge type="informative">Informative</StatusBadge>
+          </>,
+          <>
+            <StatusBadge fontSize="desktop.caption" type="informative">
+              Informative
+            </StatusBadge>
+          </>,
+        ],
+        [
+          <>
+            <StatusBadge fontSize="desktop.body.body1" type="positive">
+              Positive
+            </StatusBadge>
+          </>,
+          <>
+            <StatusBadge type="positive">Positive</StatusBadge>
+          </>,
+          <>
+            <StatusBadge fontSize="desktop.caption" type="positive">
+              Positive
+            </StatusBadge>
+          </>,
+        ],
+        [
+          <>
+            <StatusBadge fontSize="desktop.body.body1" type="negative">
+              Negative
+            </StatusBadge>
+          </>,
+          <>
+            <StatusBadge type="negative">Negative</StatusBadge>
+          </>,
+          <>
+            <StatusBadge fontSize="desktop.caption" type="negative">
+              Negative
+            </StatusBadge>
+          </>,
+        ],
+        [
+          <>
+            <StatusBadge fontSize="desktop.body.body1" type="warning">
+              Warning
+            </StatusBadge>
+          </>,
+          <>
+            <StatusBadge type="warning">Warning</StatusBadge>
+          </>,
+          <>
+            <StatusBadge fontSize="desktop.caption" type="warning">
+              Warning
+            </StatusBadge>
+          </>,
+        ],
+        [
+          <>
+            <StatusBadge fontSize="desktop.body.body1" type="recommendation">
+              Recommendation
+            </StatusBadge>
+          </>,
+          <>
+            <StatusBadge type="recommendation">Recommendation</StatusBadge>
+          </>,
+          <>
+            <StatusBadge fontSize="desktop.caption" type="recommendation">
+              Recommendation
+            </StatusBadge>
+          </>,
+        ],
+      ]}
+    />
+  ),
+};
+
+export const Labeling: Story = {
   render: () => (
     <Table
       columnHeaders={["Standard", "All Caps"]}
@@ -215,6 +326,15 @@ export const Icons: Story = {
         <Icon color="brand.primary" mr="xs" name="errorFilled" size="medium" />
         On-Site Access Only
       </StatusBadge>
+      <StatusBadge fontSize="desktop.caption" type="warning">
+        <Icon
+          color="ui.warning.secondary"
+          mr="xs"
+          name="actionHelpDefault"
+          size="medium"
+        />
+        Mising information
+      </StatusBadge>
       <StatusBadge level="low">
         Registration Required
         <Icon
@@ -223,6 +343,10 @@ export const Icons: Story = {
           name="actionIdentityFilled"
           size="medium"
         />
+      </StatusBadge>
+      <StatusBadge fontSize="desktop.body.body1" type="informative">
+        Includes audio
+        <Icon color="ui.link.secondary" ml="xs" name="headset" size="medium" />
       </StatusBadge>
     </VStack>
   ),

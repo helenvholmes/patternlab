@@ -88,6 +88,27 @@ describe("StatusBadge", () => {
         </StatusBadge>
       )
       .toJSON();
+    const body1 = renderer
+      .create(
+        <StatusBadge id="body1" type="neutral">
+          Font size body1
+        </StatusBadge>
+      )
+      .toJSON();
+    const body2 = renderer
+      .create(
+        <StatusBadge id="body2" type="neutral">
+          Font size body2
+        </StatusBadge>
+      )
+      .toJSON();
+    const caption = renderer
+      .create(
+        <StatusBadge id="caption" type="neutral">
+          Font size caption
+        </StatusBadge>
+      )
+      .toJSON();
     const withChakraProps = renderer
       .create(
         <StatusBadge id="chakra" p="20px" color="ui.error.primary">
@@ -112,6 +133,9 @@ describe("StatusBadge", () => {
     expect(negative).toMatchSnapshot();
     expect(warning).toMatchSnapshot();
     expect(recommendation).toMatchSnapshot();
+    expect(body1).toMatchSnapshot();
+    expect(body2).toMatchSnapshot();
+    expect(caption).toMatchSnapshot();
     expect(withChakraProps).toMatchSnapshot();
     expect(withOtherProps).toMatchSnapshot();
   });

@@ -83,6 +83,33 @@ exports[`StatusBadge renders the UI snapshot correctly 9`] = `
 
 exports[`StatusBadge renders the UI snapshot correctly 10`] = `
 <div
+  className="css-1xdhyk6"
+  id="body1"
+>
+  Font size body1
+</div>
+`;
+
+exports[`StatusBadge renders the UI snapshot correctly 11`] = `
+<div
+  className="css-1xdhyk6"
+  id="body2"
+>
+  Font size body2
+</div>
+`;
+
+exports[`StatusBadge renders the UI snapshot correctly 12`] = `
+<div
+  className="css-1xdhyk6"
+  id="caption"
+>
+  Font size caption
+</div>
+`;
+
+exports[`StatusBadge renders the UI snapshot correctly 13`] = `
+<div
   className="css-kle7zy"
   id="chakra"
 >
@@ -90,7 +117,7 @@ exports[`StatusBadge renders the UI snapshot correctly 10`] = `
 </div>
 `;
 
-exports[`StatusBadge renders the UI snapshot correctly 11`] = `
+exports[`StatusBadge renders the UI snapshot correctly 14`] = `
 <div
   className="css-1xdhyk6"
   data-testid="props"

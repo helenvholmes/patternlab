@@ -1,26 +1,35 @@
 import { defineStyleConfig } from "@chakra-ui/react";
 import { defineStyle } from "@chakra-ui/system";
+import { statusBadgeFontSizeArray } from "../../components/StatusBadge/StatusBadge";
 
-const baseStyle = defineStyle({
-  alignItems: "center",
-  bgColor: "ui.bg.default",
-  borderLeft: "4px solid",
-  borderColor: "ui.gray.semi-dark",
-  borderRadius: "base",
-  color: "ui.typography.heading",
-  display: "flex",
-  fontSize: "desktop.body.body2", // slightly smaller than the default size
-  fontWeight: "500",
-  py: "inset.extranarrow",
-  paddingInlineEnd: "inset.default",
-  paddingInlineStart: ".75rem",
-  whiteSpace: "nowrap",
-  width: "fit-content",
-  _dark: {
-    backgroundColor: "dark.ui.bg.default",
-    borderColor: "dark.ui.border.default",
-    color: "dark.ui.typography.heading",
-  },
+const baseStyle = defineStyle(({ labelFontSize }) => {
+  const defaultFontSize = "desktop.body.body2";
+  const finalFontSize = statusBadgeFontSizeArray.includes(labelFontSize)
+    ? labelFontSize
+    : defaultFontSize;
+
+  return {
+    alignItems: "center",
+    bgColor: "ui.bg.default",
+    borderLeft: "4px solid",
+    borderColor: "ui.gray.semi-dark",
+    borderRadius: "base",
+    color: "ui.typography.heading",
+    display: "flex",
+    fontSize:
+      labelFontSize === "desktop.caption" ? "desktop.caption" : finalFontSize,
+    fontWeight: "500",
+    py: "inset.extranarrow",
+    paddingInlineEnd: "inset.default",
+    paddingInlineStart: ".75rem",
+    whiteSpace: "nowrap",
+    width: "fit-content",
+    _dark: {
+      backgroundColor: "dark.ui.bg.default",
+      borderColor: "dark.ui.border.default",
+      color: "dark.ui.typography.heading",
+    },
+  };
 });
 
 // Level variants
